@@ -1,0 +1,29 @@
+{
+  "skill_name": "vina-me",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "giải thích cho mình vì sao app chạy trong container gọi localhost:5432 thì bị từ chối, trong khi chạy ngoài container thì gọi được. mình biết code java, chưa biết gì về docker. viết khoảng 300 chữ, kiểu ghi chú để mình đọc lại",
+      "expected_output": "Một ghi chú giải thích xưng mình và bạn, mở bằng điều người đọc đang thắc mắc, đi từ thứ họ đã biết, mỗi đoạn tối đa một thuật ngữ mới có giải nghĩa ngay, câu nối câu, không gạch dài, không kết bằng lời kêu gọi.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "sửa lại đoạn này cho tự nhiên, đọc cái là biết AI viết: \"Trong thời đại công nghệ số hiện nay, Docker không chỉ là một công cụ \u2014 mà còn là một cuộc cách mạng trong cách chúng ta đóng gói phần mềm. Hãy cùng khám phá hành trình này! Thật ra, container đóng vai trò then chốt: nó nhanh, gọn và mạnh mẽ. Do đó, việc triển khai được thực hiện thông qua các image. Tóm lại, Docker chính là chìa khoá mở ra tương lai.\"",
+      "expected_output": "Bản sửa giữ đúng các dữ kiện có trong bản gốc (Docker đóng gói phần mềm, có container và image), không thêm dữ kiện mới, bỏ các khuôn văn máy, và kèm danh sách ngắn những thay đổi chính.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "viết giúp email gửi anh trưởng nhóm: tối qua 22h deploy bản 2.4.1 lên production bị lỗi, trang đăng nhập trả 502 khoảng 12 phút, mình đã quay lại bản 2.4.0 lúc 22h15, nguyên nhân là thiếu một biến môi trường mới, sáng nay sẽ bổ sung và deploy lại lúc 14h, cần anh duyệt",
+      "expected_output": "Email trang trọng vừa phải, câu đầu nói ngay việc gì đã xảy ra, đủ mốc giờ và con số như đề cho, kết bằng điều cần ở người nhận kèm hạn. Không xưng mình và bạn kiểu bài giảng, không hỏi rồi đáp, không thêm chi tiết đề không cho.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "soát giúp đoạn này, chỉ ra chỗ nào chưa ổn chứ chưa cần sửa: \"Với bản cập nhật này đã khắc phục được lỗi đăng nhập. Database lưu dữ liệu người dùng. CSDL này chạy trên server. Tuy nhiên, nó rất nhanh. Việc sao lưu kịp thời này lẽ ra phải được làm từ tuần trước.\"",
+      "expected_output": "Danh sách theo dạng câu gốc, vấn đề, cách sửa đề xuất: câu thiếu chủ ngữ do mở bằng Với, một thứ hai tên (database và CSDL), dùng sai từ nối Tuy nhiên, đại từ nó trỏ không rõ, câu tự mâu thuẫn (kịp thời đi với lẽ ra). Không tự viết lại cả đoạn.",
+      "files": []
+    }
+  ]
+}
