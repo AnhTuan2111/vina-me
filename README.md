@@ -25,7 +25,7 @@ thì dùng phím mũi tên (phông của terminal không có ký tự Powerline,
 
 Bạn đồng ý lưu lên GitHub thì script tạo một repo riêng tư `agent-memory` trên tài khoản của bạn (cần `gh auth login` trước).
 Trong lúc làm việc agent chỉ sửa tệp; các thay đổi được gom thành một commit và đẩy lên khi mở và đóng phiên Claude Code,
-khi đăng nhập máy, và mỗi 2 giờ. Cùng lúc đó vina-me tự kéo bản mới nhất về. Cài trên máy thứ hai bằng đúng lệnh trên:
+khi đăng nhập máy, và mỗi 2 giờ. Cùng lúc đó vina-me tự cập nhật lên bản phát hành mới nhất. Cài trên máy thứ hai bằng đúng lệnh trên:
 script thấy repo đã có thì kéo về, khỏi hỏi lại.
 
 Đội có bộ luật chung (phông chữ, mẫu văn bản) thì đưa đường dẫn tệp luật khi được hỏi. Bạn đồng ý cho agent học từ các
