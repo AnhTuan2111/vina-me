@@ -9,7 +9,7 @@
     },
     {
       "id": 2,
-      "prompt": "sửa lại đoạn này cho tự nhiên, đọc cái là biết AI viết: \"Trong thời đại công nghệ số hiện nay, Docker không chỉ là một công cụ \u2014 mà còn là một cuộc cách mạng trong cách chúng ta đóng gói phần mềm. Hãy cùng khám phá hành trình này! Thật ra, container đóng vai trò then chốt: nó nhanh, gọn và mạnh mẽ. Do đó, việc triển khai được thực hiện thông qua các image. Tóm lại, Docker chính là chìa khoá mở ra tương lai.\"",
+      "prompt": "sửa lại đoạn này cho tự nhiên, đọc cái là biết AI viết: \"Trong thời đại công nghệ số hiện nay, Docker không chỉ là một công cụ — mà còn là một cuộc cách mạng trong cách chúng ta đóng gói phần mềm. Hãy cùng khám phá hành trình này! Thật ra, container đóng vai trò then chốt: nó nhanh, gọn và mạnh mẽ. Do đó, việc triển khai được thực hiện thông qua các image. Tóm lại, Docker chính là chìa khoá mở ra tương lai.\"",
       "expected_output": "Bản sửa giữ đúng các dữ kiện có trong bản gốc (Docker đóng gói phần mềm, có container và image), không thêm dữ kiện mới, bỏ các khuôn văn máy, và kèm danh sách ngắn những thay đổi chính.",
       "files": []
     },
@@ -23,6 +23,18 @@
       "id": 4,
       "prompt": "soát giúp đoạn này, chỉ ra chỗ nào chưa ổn chứ chưa cần sửa: \"Với bản cập nhật này đã khắc phục được lỗi đăng nhập. Database lưu dữ liệu người dùng. CSDL này chạy trên server. Tuy nhiên, nó rất nhanh. Việc sao lưu kịp thời này lẽ ra phải được làm từ tuần trước.\"",
       "expected_output": "Danh sách theo dạng câu gốc, vấn đề, cách sửa đề xuất: câu thiếu chủ ngữ do mở bằng Với, một thứ hai tên (database và CSDL), dùng sai từ nối Tuy nhiên, đại từ nó trỏ không rõ, câu tự mâu thuẫn (kịp thời đi với lẽ ra). Không tự viết lại cả đoạn.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "viết báo cáo rà soát gửi nhóm BA, không xưng hô, chỉ báo cáo. dữ kiện: (1) trang văn bản trên web ghi ngày ban hành quyết định xếp hạng là 11/01/1993, bản scan quyết định ghi \"ngày 18 tháng 1 năm 1993\". (2) trang chủ có hai ô số liệu \"Thời Lê: Khởi dựng\" và \"Thế kỷ XVII: Trùng tu lớn\", còn khối mốc thời gian ghi \"Thế kỷ XVII: khởi dựng dưới triều Lê Trung Hưng\"; hồ sơ di tích năm 1992 ghi hai lần tu sửa là thời Bảo Đại và năm 1990. (3) web ghi giờ mở cửa 6:00 tới 18:00 hằng ngày, bảng theo dõi dữ liệu dòng E1 (giờ mở cửa) ghi \"Chưa nhận\".",
+      "expected_output": "Báo cáo không xưng hô, có một câu nêu phạm vi, mỗi điểm một mục đánh số với tên mục là câu khẳng định cụ thể, thân mục theo nhãn cố định kiểu Trên site, Tài liệu gốc, Cần xác nhận; trích nguyên văn trong ngoặc kép; xếp nặng tới nhẹ; không thêm dữ kiện ngoài đề; không đoạn kết chung chung, không khen, không gạch dài.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "viết tin nhắn zalo ngắn gửi chị BA, mình cần chị hỏi khách 3 thứ trước chiều nay để nhập dữ liệu lên web: giờ mở cửa chính thức, toạ độ cổng đền (link maps hiện trên web đang trỏ sai chỗ, cách khoảng 30km), và ai là người duyệt bài trước khi đăng",
+      "expected_output": "Tin nhắn ngắn, xưng hô em và chị, câu đầu nói việc cần và hạn chiều nay, ba điều cần hỏi mỗi điều đủ ngữ cảnh để chị BA chuyển thẳng cho khách (giờ mở cửa gồm ngày thường và dịp lễ, toạ độ sai bao xa, duyệt bài là ai duyệt), không chia đề mục in đậm, không thêm chi tiết đề không cho, không gạch dài.",
       "files": []
     }
   ]

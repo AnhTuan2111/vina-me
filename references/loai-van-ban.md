@@ -59,6 +59,9 @@ Một báo cáo đủ khung gồm tên, tóm tắt, mở đầu, nội dung, k�
 Báo cáo công việc và báo cáo sự cố thì nói ngay việc gì đã xảy ra, khi nào, ảnh hưởng tới đâu, đã làm gì, lý do,
 việc tiếp theo và ai làm.
 
+Báo cáo lỗi, báo cáo rà soát nội dung so với tài liệu gốc: xem `bao-cao-ra-soat.md`. Báo cáo trạng thái hệ thống, tài
+liệu cấu hình gửi khách, sơ đồ và trang trình chiếu: xem `so-do-va-tai-lieu.md`. Xuất ra tệp Word: xem `xuat-docx.md`.
+
 ## Thư và email công việc
 
 - Câu đầu nói mục đích viết.

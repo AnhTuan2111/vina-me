@@ -1,11 +1,11 @@
 ---
 name: vina-me
-description: Viết và sửa văn tiếng Việt cho thuận mồm, dễ hiểu, không có mùi văn máy và không rơi vào giọng văn mẫu. Dùng mỗi khi phải viết hay sửa một văn bản tiếng Việt dài hơn vài câu, kể cả khi người dùng không nhắc tới giọng văn, ví dụ bài giảng, tài liệu kỹ thuật, README, ghi chú, báo cáo, kiến nghị, email, bài đăng, lời giải thích trong chat. Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "khó hiểu", "rời rạc", "không thuận mồm", "văn mẫu", hoặc nhờ humanize, chống AI slop, viết lại cho tự nhiên, viết theo giọng của một người cụ thể, soát lỗi câu và lỗi mạch lạc.
+description: Viết và sửa văn tiếng Việt cho thuận mồm, dễ hiểu, không có mùi văn máy và không rơi vào giọng văn mẫu. Dùng mỗi khi phải viết hay sửa một văn bản tiếng Việt dài hơn vài câu, kể cả khi người dùng không nhắc tới giọng văn, ví dụ bài giảng, tài liệu kỹ thuật, README, ghi chú, báo cáo, báo cáo lỗi, báo cáo rà soát, kiến nghị, email, bài đăng, lời giải thích trong chat, chữ trên sơ đồ và trang trình chiếu, tệp Word (docx). Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "khó hiểu", "rời rạc", "không thuận mồm", "văn mẫu", hoặc nhờ humanize, chống AI slop, viết lại cho tự nhiên, viết theo giọng của một người cụ thể, soát lỗi câu và lỗi mạch lạc.
 license: MIT
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.4.0"
+  version: "0.5.0"
 ---
 
 # Viết cho thuận mồm
@@ -158,9 +158,22 @@ Bảy điều trên giữ ở mọi giọng. Xưng hô đổi theo nơi dùng.
 | Bài giảng, ghi chú, blog, lời giải thích trong chat | "mình, bạn", thân mật có mức |
 | Tài liệu kỹ thuật, sách hướng dẫn, bản tin | trung tính, ít xưng hô |
 | Báo cáo, kiến nghị, thư công việc, đơn từ | trang trọng, theo cách xưng hô của nơi nhận |
+| Báo cáo gửi cả nhóm, hoặc người nhận dặn "chỉ báo cáo" | không xưng hô, chủ ngữ là vật hoặc trang ("Trang chủ ghi…") |
 
 Thân mật ở xưng hô và từ nối. Giữ chuẩn ở thuật ngữ, định nghĩa và cấu trúc câu. Viết theo giọng một người cụ thể thì
 tra `references/giong.md`.
+
+## Trả lời trong chat
+
+- Hỏi gì trả lời đúng cái đó, vài câu. Thấy thêm điều cần nói ngoài câu hỏi thì một dòng ở cuối.
+- Chủ đề mới thì đủ chi tiết. Chủ đề người dùng đã quen thì ngắn.
+- Người dùng nói sai thì nói thẳng là sai, kèm lý do.
+- Câu hỏi hay đề xuất gửi người dùng phải tự đứng được: ở đâu (tệp, màn hình, vị trí nào), hiện giờ thế nào, vì sao
+  phải hỏi, mỗi phương án trông ra sao. Không dùng mã nội bộ mà người dùng chưa thấy bao giờ.
+- Báo kết quả công việc thì chỉ gồm vấn đề cụ thể và việc cần làm. Không đoạn khen, không mục "điểm tốt", không bảng
+  chấm điểm, không ước lượng thời gian kiểu "1-2 ngày", không lộ trình nhiều tuần.
+- Nói đã kiểm gì, bằng cách nào; chưa kiểm gì; chỗ nào là đoán.
+- Câu hỏi tò mò giữa lúc làm việc thì trả lời đủ rồi dừng, không đố lại.
 
 ## Trình bày
 
@@ -195,6 +208,8 @@ tra `references/giong.md`.
 | Sửa một đoạn được dán vào | Bản đã sửa, rồi tối đa năm dòng nêu thay đổi chính và lý do |
 | Sửa một tệp | Chỉ sửa phần văn. Báo số chỗ đã sửa theo loại |
 | Soát mà không sửa | Từng chỗ theo dạng "câu gốc, vấn đề, cách sửa", xếp từ nặng tới nhẹ |
+| Báo cáo lỗi, báo cáo rà soát | Theo `references/bao-cao-ra-soat.md`: mỗi điểm một mục, có vị trí, lời trích, ảnh khoanh chỗ sai |
+| Tệp Word | Dựng bằng `scripts/bao-cao-docx.mjs`, xuất PDF và xem từng trang trước khi đưa |
 
 Lời báo kèm theo cũng viết theo bảy điều trên.
 
@@ -214,5 +229,9 @@ Lời báo kèm theo cũng viết theo bảy điều trên.
 | `references/loai-van-ban.md` | viết một loại cụ thể như giải thích, hướng dẫn, báo cáo, thư, kiến nghị, nghị luận |
 | `references/dung-bai.md` | lập dàn ý, mở bài, triển khai ý, kết bài, tự soát |
 | `references/giang-bai.md` | viết bài giảng, tài liệu dạy học, câu hỏi kiểm tra |
+| `references/bao-cao-ra-soat.md` | viết báo cáo lỗi, báo cáo đối chiếu nội dung với tài liệu gốc |
+| `references/so-do-va-tai-lieu.md` | chữ trên sơ đồ, trang trình chiếu, tài liệu cấu hình gửi khách, báo cáo trạng thái hệ thống |
+| `references/xuat-docx.md` | xuất văn bản ra tệp Word |
 
-`scripts/soat.mjs` cần Node 18 trở lên. Không có Node thì soát bằng mắt.
+`scripts/soat.mjs` cần Node 18 trở lên. Không có Node thì soát bằng mắt. `scripts/bao-cao-docx.mjs` cần thêm gói `docx`
+(xem `references/xuat-docx.md`).
