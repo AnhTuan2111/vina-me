@@ -2,10 +2,10 @@
 // Rút lời người dùng trong các phiên cũ của Claude Code và Codex ra thành các đợt văn bản ngắn, để agent đọc rồi soạn
 // nháp bộ nhớ cho người dùng duyệt. Script không ghi gì vào bộ nhớ.
 //
-//   node scripts/hoc-tu-phien.mjs                    mọi phiên, ghi ra <thư mục tạm>/vina-me-hoc-phien
-//   node scripts/hoc-tu-phien.mjs --tu 2026-09-01    chỉ phiên từ ngày đó
-//   node scripts/hoc-tu-phien.mjs --ra <thư mục>     chọn chỗ ghi
-//   --home <thư mục>   thử trên home khác;  --co-dot <số ký tự>  độ dài mỗi đợt (mặc định 60000)
+//   node scripts/learn-from-sessions.mjs                    mọi phiên, ghi ra <thư mục tạm>/vina-me-learn
+//   node scripts/learn-from-sessions.mjs --since 2026-09-01 chỉ phiên từ ngày đó
+//   node scripts/learn-from-sessions.mjs --out <thư mục>    chọn chỗ ghi
+//   --home <thư mục>   thử trên home khác;  --batch-size <số ký tự>  độ dài mỗi đợt (mặc định 60000)
 //
 // Lấy gì: chỉ tin người dùng tự gõ. Bỏ output công cụ, lời agent, khối hệ thống tự chèn (AGENTS.md, environment_context,
 // system-reminder), thông báo task, lệnh gạch chéo, tóm tắt khi nén ngữ cảnh, phiên của agent con.
@@ -23,9 +23,9 @@ const valueOf = (name) => {
 };
 
 const home = path.resolve(valueOf('--home') ?? os.homedir());
-const outDir = path.resolve(valueOf('--ra') ?? path.join(os.tmpdir(), 'vina-me-hoc-phien'));
-const since = valueOf('--tu') ? new Date(valueOf('--tu')) : null;
-const batchSize = Number(valueOf('--co-dot') ?? 60000);
+const outDir = path.resolve(valueOf('--out') ?? path.join(os.tmpdir(), 'vina-me-learn'));
+const since = valueOf('--since') ? new Date(valueOf('--since')) : null;
+const batchSize = Number(valueOf('--batch-size') ?? 60000);
 const MAX_MSG = 2000;
 
 const unique = (xs) => [...new Set(xs.map((x) => path.resolve(x)))];
@@ -146,7 +146,7 @@ for (const b of blocks) {
 }
 if (cur) batches.push(cur);
 batches.forEach((b, i) => {
-  const name = `dot-${String(i + 1).padStart(2, '0')}.md`;
+  const name = `batch-${String(i + 1).padStart(2, '0')}.md`;
   fs.writeFileSync(path.join(outDir, name), `# Đợt ${i + 1} trên ${batches.length}: lời người dùng trong các phiên cũ\n\n${b}`, 'utf8');
 });
 
@@ -159,9 +159,9 @@ const summary = [
   sessions.length ? `Từ ${stamp(sessions[0].start)} tới ${stamp(sessions.at(-1).start)}.` : '',
   '', '| Thư mục làm việc | Số tin |', '|---|---|',
   ...Object.entries(byProject).sort((a, b) => b[1] - a[1]).map(([k, v]) => `| ${k} | ${v} |`),
-  '', 'Cách đọc và soạn nháp bộ nhớ: `references/bo-nho.md`, mục "Học từ phiên cũ".', '',
+  '', 'Cách đọc và soạn nháp bộ nhớ: `references/agent-memory.md`, mục "Học từ phiên cũ".', '',
 ].join('\n');
-fs.writeFileSync(path.join(outDir, 'tong-quan.md'), summary, 'utf8');
+fs.writeFileSync(path.join(outDir, 'overview.md'), summary, 'utf8');
 
 console.log(`Nguồn Claude Code: ${claudeRoots.join(', ') || 'không có'}`);
 console.log(`Nguồn Codex: ${codexRoots.join(', ') || 'không có'}`);

@@ -9,7 +9,7 @@ Muốn thử một câu thì tự hỏi, nếu nói chuyện này với một ng
 
 | Dấu hiệu | Sửa |
 |---|---|
-| Dấu gạch dài, gạch vừa, ở bất cứ đâu | Bỏ hết. Bảng thay thế theo từng việc ở `dau-cau.md` |
+| Dấu gạch dài, gạch vừa, ở bất cứ đâu | Bỏ hết. Bảng thay thế theo từng việc ở `punctuation.md` |
 | Mũi tên, `~`, `&`, `=`, `vs` trong câu văn | Viết thành chữ |
 | Dấu hai chấm làm khung cho định nghĩa | Hai câu, câu sau lặp từ khoá của câu trước |
 | Dấu hai chấm nhét lời giải thích vào cuối câu, lặp ở nhiều câu | "vì", "nên", "tức là", hoặc tách câu |

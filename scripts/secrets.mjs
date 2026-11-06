@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 // Giữ mật khẩu, token cho agent dùng mà không lộ ra trong chat hay trong lịch sử phiên.
 //
-//   node scripts/bi-mat.mjs them <tên>                      mở một cửa sổ riêng để người dùng gõ tài khoản, mật khẩu
-//   node scripts/bi-mat.mjs them <tên> --tai-khoan <tk> --tu-stdin   lấy mật khẩu từ stdin (khi người dùng đã dán vào chat)
-//   node scripts/bi-mat.mjs chay <tên> -- <lệnh> [tham số]  chạy lệnh với biến môi trường <TÊN>_USER, <TÊN>_PASS
-//   node scripts/bi-mat.mjs stdin <tên> -- <lệnh> [tham số] chạy lệnh, đưa mật khẩu vào stdin của nó (--password-stdin)
-//   node scripts/bi-mat.mjs ds | kiem <tên> | xoa <tên>
+//   node scripts/secrets.mjs add <tên>                       mở một cửa sổ riêng để người dùng gõ tài khoản, mật khẩu
+//   node scripts/secrets.mjs add <tên> --account <tk> --from-stdin   lấy mật khẩu từ stdin (khi người dùng đã dán vào chat)
+//   node scripts/secrets.mjs run <tên> -- <lệnh> [tham số]   chạy lệnh với biến môi trường <TÊN>_USER, <TÊN>_PASS
+//   node scripts/secrets.mjs stdin <tên> -- <lệnh> [tham số] chạy lệnh, đưa mật khẩu vào stdin của nó (--password-stdin)
+//   node scripts/secrets.mjs list | check <tên> | remove <tên>
 //
-// Thêm --home <thư mục> để thử trên home khác, --bien <TIỀN_TỐ> để đổi tên biến môi trường.
+// Thêm --home <thư mục> để thử trên home khác, --env-prefix <TIỀN_TỐ> để đổi tên biến môi trường.
 //
 // Cất ở đâu: Windows lưu mỗi bí mật thành ~/.secrets/<tên>.xml bằng Export-Clixml của PowerShell, mật khẩu mã hoá bằng
 // DPAPI nên chỉ đúng tài khoản Windows đó trên đúng máy đó giải mã được; tệp chép sang máy khác là vô dụng. macOS lưu
@@ -28,7 +28,7 @@ const valueOf = (name) => {
   return i >= 0 && args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : undefined;
 };
 const hasFlag = (name) => args.includes(name);
-const [action, name] = args.filter((a, i) => !a.startsWith('--') && !(i > 0 && args[i - 1].startsWith('--') && ['--home', '--tai-khoan', '--bien'].includes(args[i - 1])));
+const [action, name] = args.filter((a, i) => !a.startsWith('--') && !(i > 0 && args[i - 1].startsWith('--') && ['--home', '--account', '--env-prefix'].includes(args[i - 1])));
 
 const home = path.resolve(valueOf('--home') ?? os.homedir());
 const secretsDir = path.join(home, '.secrets');
@@ -37,7 +37,7 @@ const isMac = process.platform === 'darwin';
 
 const fail = (msg, code = 1) => { console.error(msg); process.exit(code); };
 const fileOf = (n) => path.join(secretsDir, `${n}.xml`);
-const envPrefix = (n) => valueOf('--bien') ?? n.toUpperCase().replace(/[^A-Z0-9]/g, '_');
+const envPrefix = (n) => valueOf('--env-prefix') ?? n.toUpperCase().replace(/[^A-Z0-9]/g, '_');
 
 function checkName(n) {
   if (!n || !/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(n)) fail('Tên bí mật chỉ gồm chữ không dấu, số, dấu chấm, gạch nối, gạch dưới. Ví dụ: gitlab, sso-cong-ty.');
@@ -77,7 +77,7 @@ function winSave(n, account, password) {
 }
 
 function winRead(n) {
-  if (!fs.existsSync(fileOf(n))) fail(`Chưa có bí mật "${n}". Lưu bằng: node scripts/bi-mat.mjs them ${n}`);
+  if (!fs.existsSync(fileOf(n))) fail(`Chưa có bí mật "${n}". Lưu bằng: node scripts/secrets.mjs add ${n}`);
   const out = runPs([
     '$ErrorActionPreference = "Stop"',
     `$c = Import-Clixml -Path ${psQuote(fileOf(n))}`,
@@ -150,7 +150,7 @@ function readStdin() {
 }
 
 function runChild(env, input) {
-  if (!command.length) fail('Thiếu lệnh sau dấu --. Ví dụ: node scripts/bi-mat.mjs chay gitlab -- bash -c \'curl -u "$GITLAB_USER:$GITLAB_PASS" ...\'');
+  if (!command.length) fail('Thiếu lệnh sau dấu --. Ví dụ: node scripts/secrets.mjs run gitlab -- bash -c \'curl -u "$GITLAB_USER:$GITLAB_PASS" ...\'');
   const r = spawnSync(command[0], command.slice(1), {
     stdio: [input === undefined ? 'inherit' : 'pipe', 'inherit', 'inherit'],
     input, env: { ...process.env, ...env },
@@ -178,20 +178,20 @@ function list() {
 }
 
 switch (action) {
-  case 'them': {
+  case 'add': {
     checkName(name);
-    const account = valueOf('--tai-khoan');
-    if (hasFlag('--tu-stdin')) {
+    const account = valueOf('--account');
+    if (hasFlag('--from-stdin')) {
       const password = readStdin();
       if (!password) fail('stdin trống, không có gì để lưu.');
       store.save(name, account || '-', password);
     } else if (!store.prompt(name, account)) {
       fail('Chưa lưu: người dùng đóng cửa sổ hoặc bỏ trống mật khẩu.');
     }
-    console.log(`Đã lưu bí mật "${name}". Dùng: node scripts/bi-mat.mjs chay ${name} -- <lệnh>, biến ${envPrefix(name)}_USER và ${envPrefix(name)}_PASS.`);
+    console.log(`Đã lưu bí mật "${name}". Dùng: node scripts/secrets.mjs run ${name} -- <lệnh>, biến ${envPrefix(name)}_USER và ${envPrefix(name)}_PASS.`);
     break;
   }
-  case 'chay': {
+  case 'run': {
     checkName(name);
     const { account, password } = store.read(name);
     runChild({ [`${envPrefix(name)}_USER`]: account, [`${envPrefix(name)}_PASS`]: password });
@@ -203,20 +203,20 @@ switch (action) {
     runChild({ [`${envPrefix(name)}_USER`]: account }, `${password}\n`);
     break;
   }
-  case 'kiem': {
+  case 'check': {
     checkName(name);
     const { account, password } = store.read(name);
     console.log(`"${name}": tài khoản ${account}, giải mã được${password ? '' : ' nhưng mật khẩu trống'}.`);
     break;
   }
-  case 'xoa': {
+  case 'remove': {
     checkName(name);
     if (isMac) spawnSync('security', ['delete-generic-password', '-s', macService(name)]);
     else fs.rmSync(fileOf(name), { force: true });
     console.log(`Đã xoá bí mật "${name}".`);
     break;
   }
-  case 'ds': list(); break;
+  case 'list': list(); break;
   default:
-    console.log('Dùng: node scripts/bi-mat.mjs them|chay|stdin|kiem|xoa|ds <tên> [-- lệnh]. Chi tiết ở đầu tệp này và references/bo-nho.md.');
+    console.log('Dùng: node scripts/secrets.mjs add|run|stdin|check|remove|list <tên> [-- lệnh]. Chi tiết ở đầu tệp này và references/agent-memory.md.');
 }

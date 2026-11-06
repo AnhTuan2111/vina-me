@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Dựng tệp docx từ một tệp JSON, theo quy ước ở references/xuat-docx.md.
-// Dùng: NODE_PATH=<thư mục node_modules có gói docx> node bao-cao-docx.mjs <noi-dung.json> <ra.docx>
+// Dựng tệp docx từ một tệp JSON, theo quy ước ở references/docx-export.md.
+// Dùng: NODE_PATH=<thư mục node_modules có gói docx> node report-docx.mjs <noi-dung.json> <ra.docx>
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
@@ -19,7 +19,7 @@ const {
 
 const [, , input, output] = process.argv;
 if (!input || !output) {
-  console.error('Dùng: node bao-cao-docx.mjs <noi-dung.json> <ra.docx>');
+  console.error('Dùng: node report-docx.mjs <noi-dung.json> <ra.docx>');
   process.exit(1);
 }
 const baseDir = path.dirname(path.resolve(input));

@@ -239,7 +239,7 @@ Những điều làm ngược lại với các văn bản khác:
 
 ## Soát
 
-`scripts/soat.mjs` tự chuyển sang chế độ văn bản hành chính khi tệp có Quốc hiệu, hoặc khi chạy với `--hanh-chinh`. Ở chế
+`scripts/lint.mjs` tự chuyển sang chế độ văn bản hành chính khi tệp có Quốc hiệu, hoặc khi chạy với `--official`. Ở chế
 độ này script bỏ các phép đếm nhịp câu, đoạn, chữ in hoa, và bắt thêm:
 
 - Tiêu ngữ viết bằng gạch dài hoặc thiếu dấu cách;
@@ -249,7 +249,7 @@ Những điều làm ngược lại với các văn bản khác:
 - khối Kính gửi, Nơi nhận, Căn cứ sai dấu cuối dòng; có Kính gửi mà Nơi nhận thiếu "Như trên";
 - viện dẫn viết hoa "Khoản", "Điểm" hoặc viết thường "điều" sau khoản, điểm.
 
-Script không kiểm được cỡ chữ, lề, phông. Xuất ra Word thì dùng `scripts/van-ban-hc-docx.mjs` (xem `xuat-docx.md`), rồi
+Script không kiểm được cỡ chữ, lề, phông. Xuất ra Word thì dùng `scripts/official-doc-docx.mjs` (xem `docx-export.md`), rồi
 mở bản PDF xem từng trang.
 
 ## Nguồn

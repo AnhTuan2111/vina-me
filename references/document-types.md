@@ -59,8 +59,8 @@ Một báo cáo đủ khung gồm tên, tóm tắt, mở đầu, nội dung, k�
 Báo cáo công việc và báo cáo sự cố thì nói ngay việc gì đã xảy ra, khi nào, ảnh hưởng tới đâu, đã làm gì, lý do,
 việc tiếp theo và ai làm.
 
-Báo cáo, tờ trình, công văn gửi cơ quan nhà nước hoặc do cơ quan nhà nước ban hành: xem `van-ban-hanh-chinh.md`. Báo cáo lỗi, báo cáo rà soát nội dung so với tài liệu gốc: xem `bao-cao-ra-soat.md`. Báo cáo trạng thái hệ thống, tài
-liệu cấu hình gửi khách, sơ đồ và trang trình chiếu: xem `so-do-va-tai-lieu.md`. Xuất ra tệp Word: xem `xuat-docx.md`.
+Báo cáo, tờ trình, công văn gửi cơ quan nhà nước hoặc do cơ quan nhà nước ban hành: xem `official-documents.md`. Báo cáo lỗi, báo cáo rà soát nội dung so với tài liệu gốc: xem `review-reports.md`. Báo cáo trạng thái hệ thống, tài
+liệu cấu hình gửi khách, sơ đồ và trang trình chiếu: xem `diagrams-and-docs.md`. Xuất ra tệp Word: xem `docx-export.md`.
 
 ## Thư và email công việc
 
@@ -83,7 +83,7 @@ liệu cấu hình gửi khách, sơ đồ và trang trình chiếu: xem `so-do-
 
 - Tường trình chỉ ghi lúc nào, ở đâu, thấy gì, đã làm gì. Bỏ "tôi cảm thấy", "theo tôi nghĩ".
 - Biên bản và kế hoạch dùng bảng ba cột là việc gì, ai làm, khi nào.
-- Biên bản, kế hoạch của cơ quan nhà nước theo thể thức và bố cục ở `van-ban-hanh-chinh.md`.
+- Biên bản, kế hoạch của cơ quan nhà nước theo thể thức và bố cục ở `official-documents.md`.
 
 ## Nghị luận, thuyết phục
 

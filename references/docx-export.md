@@ -1,7 +1,7 @@
 # Xuất tài liệu ra tệp Word (docx)
 
 Người đọc mở tệp Word bằng nhiều phần mềm khác nhau (Word, Google Docs, LibreOffice, xem trước trong ứng dụng chat), nên
-trình bày càng đơn giản càng ít vỡ. Phần này là cách trình bày; script dựng sẵn nằm ở `scripts/bao-cao-docx.mjs`.
+trình bày càng đơn giản càng ít vỡ. Phần này là cách trình bày; script dựng sẵn nằm ở `scripts/report-docx.mjs`.
 Văn bản gửi cơ quan nhà nước thì theo thể thức riêng, xem mục cuối.
 
 ## Trình bày
@@ -30,15 +30,15 @@ Văn bản gửi cơ quan nhà nước thì theo thể thức riêng, xem mục 
 2. Tìm: ảnh tràn lề, chú thích rơi sang trang sau ảnh, trang trống, đề mục nằm cuối trang mà nội dung ở trang sau.
 3. Tìm dấu gạch dài, gạch vừa trong nội dung trước khi dựng tệp.
 4. Một số dịch vụ xem tệp trên mạng từ chối tệp zip có mục thư mục rỗng. Tệp do thư viện sinh ra thì xoá các mục đó:
-   `zip -d tep.docx '*/'`.
+   `zip -d file.docx '*/'`.
 
 ## Script dựng sẵn
 
-`scripts/bao-cao-docx.mjs` đọc một tệp JSON và dựng tệp docx theo đúng các quy ước trên. Cần Node 18 trở lên và thư
+`scripts/report-docx.mjs` đọc một tệp JSON và dựng tệp docx theo đúng các quy ước trên. Cần Node 18 trở lên và thư
 viện `docx` (`npm install docx` trong một thư mục bất kỳ, rồi chạy script với `NODE_PATH` trỏ tới `node_modules` đó).
 
 ```bash
-NODE_PATH=/duong/dan/node_modules node scripts/bao-cao-docx.mjs noi-dung.json bao-cao.docx
+NODE_PATH=/path/to/node_modules node scripts/report-docx.mjs content.json report.docx
 ```
 
 Cấu trúc JSON:
@@ -60,7 +60,7 @@ Cấu trúc JSON:
           "fields": [["Trên site:", "Ngày ban hành ghi 11/01/1993."],
                      ["Tài liệu gốc:", "Bản quyết định ghi \"ngày 18 tháng 1 năm 1993\"."],
                      ["Cần xác nhận:", "Sửa thành 18/01/1993."]],
-          "images": [{ "file": "anh/qd.jpg", "caption": "Bản quyết định: ngày ký" }]
+          "images": [{ "file": "images/decision.jpg", "caption": "Bản quyết định: ngày ký" }]
         }
       ]
     }
@@ -87,47 +87,59 @@ Cấu trúc JSON:
 
 ## Văn bản hành chính theo Nghị định 30/2020
 
-`scripts/van-ban-hc-docx.mjs` dựng báo cáo, tờ trình, kế hoạch, công văn theo thể thức ở `van-ban-hanh-chinh.md`: A4, lề
+`scripts/official-doc-docx.mjs` dựng báo cáo, tờ trình, kế hoạch, công văn theo thể thức ở `official-documents.md`: A4, lề
 trên và dưới 20 mm, trái 30 mm, phải 15 mm, Times New Roman cỡ 14, canh đều, lùi đầu dòng 1,27 cm, cách đoạn 6pt; khối
 tên cơ quan và Quốc hiệu hai cột; số trang giữa lề trên, trang đầu không hiện; mỗi phụ lục một phần riêng, đánh lại số
 trang. Script tự thêm số 0 vào ngày và tháng, tự đặt chấm phẩy và dấu chấm cho các khối Căn cứ, Kính gửi, Nơi nhận, tự đánh
 mục I., khoản 1., điểm a) theo bảng chữ cái tiếng Việt, thêm "- Như trên;" khi có Kính gửi, và kết nội dung bằng "./.".
 
 ```bash
-NODE_PATH=/duong/dan/node_modules node scripts/van-ban-hc-docx.mjs bao-cao.json bao-cao.docx
+NODE_PATH=/path/to/node_modules node scripts/official-doc-docx.mjs report.json report.docx
 ```
 
 ```json
 {
-  "coQuanChuQuan": "Sở Giáo dục và Đào tạo tỉnh A",
-  "coQuan": "Trường Trung học\nphổ thông B",
-  "so": "05/BC-THPTB",
-  "diaDanh": "Thành phố A",
-  "ngay": "2026-01-06",
-  "tenLoai": "Báo cáo",
-  "trichYeu": "Kết quả triển khai phần mềm quản lý thư viện năm 2025",
-  "canCu": [],
-  "kinhGui": ["Sở Giáo dục và Đào tạo tỉnh A"],
-  "moDau": ["Thực hiện Kế hoạch số 12/KH-SGDĐT ngày 05 tháng 9 năm 2025 của ..., Trường ... báo cáo kết quả như sau:"],
-  "noiDung": [
-    { "muc": "Tình hình thực hiện", "khoan": [
-      { "tieuDe": "Kết quả đạt được", "diem": ["Đã nhập 1.234 đầu sách, đạt 98,5% ...", ["Phần mềm chạy ổn định:", "ý nhỏ;", "ý nhỏ."]] }
+  "parentAgency": "Sở Giáo dục và Đào tạo tỉnh A",
+  "agency": "Trường Trung học\nphổ thông B",
+  "number": "05/BC-THPTB",
+  "place": "Thành phố A",
+  "date": "2026-01-06",
+  "docType": "Báo cáo",
+  "subject": "Kết quả triển khai phần mềm quản lý thư viện năm 2025",
+  "legalBases": [],
+  "recipients": ["Sở Giáo dục và Đào tạo tỉnh A"],
+  "opening": ["Thực hiện Kế hoạch số 12/KH-SGDĐT ngày 05 tháng 9 năm 2025 của ..., Trường ... báo cáo kết quả như sau:"],
+  "body": [
+    { "heading": "Tình hình thực hiện", "clauses": [
+      { "title": "Kết quả đạt được", "points": ["Đã nhập 1.234 đầu sách, đạt 98,5% ...", ["Phần mềm chạy ổn định:", "ý nhỏ;", "ý nhỏ."]] }
     ] },
-    { "muc": "Đề xuất, kiến nghị", "doan": ["Đề nghị ..."] }
+    { "heading": "Đề xuất, kiến nghị", "paragraphs": ["Đề nghị ..."] }
   ],
-  "ketThuc": ["Trên đây là báo cáo ... Kính đề nghị ... xem xét."],
-  "noiNhan": ["Ban Giám hiệu"],
-  "luu": "VT, TV",
-  "quyenHan": "KT. Hiệu trưởng",
-  "chucVu": "Phó Hiệu trưởng",
-  "nguoiKy": "Nguyễn Văn C",
-  "phuLuc": [{ "ten": "Danh mục sách", "bang": [{ "columns": ["STT", "Tên sách", "Số bản"], "rows": [["1", "Sách giáo khoa Toán 10", "40"]] }] }]
+  "closing": ["Trên đây là báo cáo ... Kính đề nghị ... xem xét."],
+  "distribution": ["Ban Giám hiệu"],
+  "archive": "VT, TV",
+  "signingAuthority": "KT. Hiệu trưởng",
+  "signerTitle": "Phó Hiệu trưởng",
+  "signer": "Nguyễn Văn C",
+  "appendices": [{ "title": "Danh mục sách", "tables": [{ "columns": ["STT", "Tên sách", "Số bản"], "rows": [["1", "Sách giáo khoa Toán 10", "40"]] }] }]
 }
 ```
 
-- Bỏ `tenLoai` thì thành công văn: trích yếu hiện dưới số ký hiệu sau "V/v".
-- `ngay` nhận `2026-01-06` hoặc `06/01/2026`. Tên cơ quan dài thì tự ngắt dòng bằng `\n` cho khỏi bị ngắt giữa một cụm.
-- Một mục có `doan`, `khoan`, `bang`. Một khoản có `tieuDe` (khoản đậm, một dòng riêng), `doan`, `diem`, `bang`. Một điểm
-  là chuỗi, hoặc mảng mà phần tử đầu là ý chính, các phần tử sau thành dòng gạch nối.
-- `kinhGui` một nơi thì cùng dòng với "Kính gửi:", nhiều nơi thì mỗi nơi một dòng.
+| Khoá | Phần nào của văn bản |
+|---|---|
+| `parentAgency`, `agency` | tên cơ quan chủ quản, tên cơ quan ban hành |
+| `number`, `place`, `date` | số ký hiệu, địa danh, ngày ban hành |
+| `docType`, `subject` | tên loại (Báo cáo, Tờ trình...), trích yếu |
+| `legalBases`, `recipients`, `opening` | các dòng Căn cứ, nơi Kính gửi, đoạn mở đầu |
+| `body` | các mục I., II.; mỗi mục có `heading`, `paragraphs`, `clauses`, `tables` |
+| `closing` | câu kết, dòng cuối tự thêm "./." |
+| `distribution`, `archive` | Nơi nhận, dòng Lưu |
+| `signingAuthority`, `signerTitle`, `signer` | quyền hạn ký (KT., TL....), chức vụ, họ tên người ký |
+| `appendices` | phụ lục; mỗi phụ lục có `title`, `paragraphs`, `clauses`, `tables` |
+
+- Bỏ `docType` thì thành công văn: trích yếu hiện dưới số ký hiệu sau "V/v".
+- `date` nhận `2026-01-06` hoặc `06/01/2026`. Tên cơ quan dài thì tự ngắt dòng bằng `\n` cho khỏi bị ngắt giữa một cụm.
+- Một khoản (`clauses`) có `title` (khoản đậm, một dòng riêng), `paragraphs`, `points`, `tables`. Một điểm là chuỗi, hoặc
+  mảng mà phần tử đầu là ý chính, các phần tử sau thành dòng gạch nối.
+- `recipients` một nơi thì cùng dòng với "Kính gửi:", nhiều nơi thì mỗi nơi một dòng.
 - Chữ ký để trống chỗ ký; dấu và chữ ký số do văn thư làm.

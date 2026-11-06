@@ -9,31 +9,34 @@ Máy có Node thì cách này gọn nhất:
 
 ```bash
 git clone https://github.com/AnhTuan2111/vina-me.git
-node vina-me/scripts/cai-dat.mjs
+node vina-me/scripts/setup.mjs
 ```
 
 Script hỏi vài câu (bạn muốn được gọi là gì, làm vai trò gì, hay viết cho ai, muốn agent trả lời dài hay ngắn), câu chọn
-thì dùng phím mũi tên (phông của terminal không có ký tự Powerline, hiện ô vuông, thì thêm `--tron`), rồi làm ba việc:
+thì dùng phím mũi tên (phông của terminal không có ký tự Powerline, hiện ô vuông, thì thêm `--plain`), rồi làm ba việc:
 
 1. Chép skill vào thư mục skill của Claude Code (`~/.claude/skills`) và Codex (`~/.agents/skills`, `~/.codex/skills`), agent
    nào có trên máy thì chép cho agent đó.
 2. Dựng bộ nhớ ở `~/agent-memory/`. Agent đọc bộ nhớ này ở đầu mỗi phiên, và tự ghi thêm khi bạn sửa hay khen một cách làm,
-   nên điều đã dặn một lần thì không phải dặn lại. Dặn Claude Code điều gì thì Codex cũng biết.
-3. Nối bộ nhớ vào `~/.claude/CLAUDE.md` và `~/.codex/AGENTS.md`. Hai tệp này được sao lưu trước khi sửa.
+   nên điều đã dặn một lần thì không phải dặn lại. Điều nói về bạn vào `user.md`, điều nói về cách làm việc vào `memory.md`;
+   agent tự xếp. Dặn Claude Code điều gì thì Codex cũng biết.
+3. Nối bộ nhớ vào `~/.claude/CLAUDE.md` và `~/.codex/AGENTS.md`, cài hook và lịch tự lưu. Tệp cấu hình được sao lưu trước
+   khi sửa.
 
 Bạn đồng ý lưu lên GitHub thì script tạo một repo riêng tư `agent-memory` trên tài khoản của bạn (cần `gh auth login` trước).
-Agent sửa bộ nhớ xong thì commit và đẩy lên; đầu mỗi phiên, Claude Code tự kéo bản mới qua hook, Codex được dặn chạy lệnh
-kéo. Cài trên máy thứ hai bằng đúng lệnh trên: script thấy repo đã có thì kéo về, khỏi hỏi lại.
+Trong lúc làm việc agent chỉ sửa tệp; các thay đổi được gom thành một commit và đẩy lên khi mở và đóng phiên Claude Code,
+khi đăng nhập máy, và mỗi 2 giờ. Cùng lúc đó vina-me tự kéo bản mới nhất về. Cài trên máy thứ hai bằng đúng lệnh trên:
+script thấy repo đã có thì kéo về, khỏi hỏi lại.
 
 Đội có bộ luật chung (phông chữ, mẫu văn bản) thì đưa đường dẫn tệp luật khi được hỏi. Bạn đồng ý cho agent học từ các
 phiên cũ thì ở phiên đầu tiên, agent đọc lại những gì bạn đã gõ trong các phiên Claude Code, Codex trước đó, soạn nháp bộ
 nhớ để bạn duyệt rồi mới ghi.
 
-Agent cần mật khẩu (GitLab, VPN, trang quản trị) thì không dán vào chat: chạy `node scripts/bi-mat.mjs them <tên>`, gõ vào
+Agent cần mật khẩu (GitLab, VPN, trang quản trị) thì không dán vào chat: chạy `node scripts/secrets.mjs add <tên>`, gõ vào
 cửa sổ hiện ra. Mật khẩu được mã hoá bằng tài khoản Windows của bạn (Keychain trên macOS), agent dùng được mà không thấy
 giá trị.
 
-Chi tiết, cách cập nhật và cách gỡ ở `references/bo-nho.md`.
+Chi tiết, cách cập nhật và cách gỡ ở `references/agent-memory.md`.
 
 Không muốn có bộ nhớ thì cài theo các mục dưới.
 
@@ -72,7 +75,7 @@ liệu của agent đang dùng. Thư mục phải giữ nguyên tên `vina-me` v
 ## AI không có khái niệm skill
 
 Dán toàn bộ nội dung `SKILL.md` vào phần chỉ dẫn hệ thống (system prompt, custom instructions). Nếu còn chỗ thì dán
-thêm `references/dau-hieu.md` và `references/dau-cau.md`, vì hai tệp này giữ bảng dấu hiệu văn máy và quy tắc dấu câu.
+thêm `references/machine-tells.md` và `references/punctuation.md`, vì hai tệp này giữ bảng dấu hiệu văn máy và quy tắc dấu câu.
 
 Cách này AI không tự mở được các tệp còn lại trong `references/`, nên kết quả sẽ kém hơn cài thành skill.
 

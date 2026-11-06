@@ -5,7 +5,7 @@ license: MIT
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.7.0"
+  version: "0.8.0"
 ---
 
 # Viết cho thuận mồm
@@ -21,13 +21,13 @@ thành thói quen thì người đọc nhận ra ngay đây là văn máy.
 1. Trả lời bốn câu hỏi là viết cho ai, để làm gì, viết cái gì, và viết như thế nào. Xác định người đọc đã biết gì.
 2. Xác định loại văn bản và chọn một mục đích chính trong bốn mục đích là cung cấp thông tin, giải thích, thuyết
    phục, hướng dẫn. Tra
-   `references/loai-van-ban.md`.
+   `references/document-types.md`.
 3. Chọn một cách sắp thông tin (theo thời gian, nhân quả, mức quan trọng, hoặc so sánh) và giữ nó suốt bài. Tra
-   `references/dung-bai.md`.
+   `references/structure.md`.
 4. Chốt tên gọi cho những thứ sẽ nhắc nhiều lần, và chốt xưng hô theo bảng ở mục Giọng.
 5. Viết theo bảy điều cốt lõi.
-6. Soát. Chạy `node scripts/soat.mjs <tệp>` nếu chạy được lệnh. Rồi đọc lại hai lượt, một lượt làm người chưa biết
-   gì về đề tài, một lượt đi bắt văn máy và văn mẫu theo `references/dau-hieu.md`. Script chỉ đếm bề mặt, nên vẫn
+6. Soát. Chạy `node scripts/lint.mjs <tệp>` nếu chạy được lệnh. Rồi đọc lại hai lượt, một lượt làm người chưa biết
+   gì về đề tài, một lượt đi bắt văn máy và văn mẫu theo `references/machine-tells.md`. Script chỉ đếm bề mặt, nên vẫn
    phải đọc đủ hai lượt.
 7. Báo lại đã kiểm gì, chưa kiểm gì, chỗ nào chưa chắc.
 
@@ -63,7 +63,7 @@ Có mạch lạc rồi mới tới nối câu. Mỗi câu nối với câu trư�
 - Lặp từ khoá của câu trước. Tốt nhất là mở câu sau bằng thứ câu trước vừa kết thúc.
 - Thay bằng danh từ gốc kèm "này", "ấy", "đó", ví dụ "Nhận thức ấy…". Chỉ dùng "nó", "họ" khi câu trước có đúng một
   danh từ để trỏ về.
-- Dùng từ nối đúng với quan hệ thật giữa hai ý. Bảng tra ở `references/lien-ket.md`.
+- Dùng từ nối đúng với quan hệ thật giữa hai ý. Bảng tra ở `references/cohesion.md`.
 - Dùng mốc thời gian hoặc nơi chốn ở đầu câu.
 
 Cách thử là che câu trước đi. Câu sau vẫn đứng một mình được, không thiếu gì, thì hai câu đang rời nhau.
@@ -100,7 +100,7 @@ liền.
 - Chữ viết tắt phải có chỗ giải. Thuật ngữ tiếng Anh giữ nguyên, một dạng viết duy nhất.
 - Một câu không mang quá hai đoạn mã hay ký hiệu.
 
-Sáu cách giải nghĩa một từ nằm ở `references/tu-ngu.md`.
+Sáu cách giải nghĩa một từ nằm ở `references/word-choice.md`.
 
 ### 6. Nói thật
 
@@ -114,7 +114,7 @@ Sáu cách giải nghĩa một từ nằm ở `references/tu-ngu.md`.
 - Không khen, không phán xét người đọc. Viết "rất dễ nghĩ là…", không viết "người mới hay…".
 - Câu nào ai cũng viết ra được, không có chi tiết thật đứng sau, thì sửa hoặc bỏ.
 
-Quy tắc về trích dẫn, nguồn, số liệu, hình nằm ở `references/trich-dan-so-lieu-hinh.md`.
+Quy tắc về trích dẫn, nguồn, số liệu, hình nằm ở `references/citations-data-figures.md`.
 
 ### 7. Dùng chữ người ta vẫn nói ngoài đời
 
@@ -127,7 +127,7 @@ chữ đó không?
   tỉnh lược tới mức mất chủ ngữ.
 - Chữ viết không có giọng và nét mặt. Ý nào khi nói phải nhấn giọng thì khi viết nói thành lời.
 
-Những dấu hiệu gặp nhiều nhất, bảng đầy đủ ở `references/dau-hieu.md`:
+Những dấu hiệu gặp nhiều nhất, bảng đầy đủ ở `references/machine-tells.md`:
 
 - "Không phải X, mà là Y" khi chưa ai nói X.
 - "Không chỉ… mà còn…" để nâng tầm. Bộ ba cho đủ vần. Dãy từ gần nghĩa thay cho một con số.
@@ -147,7 +147,7 @@ Những dấu hiệu gặp nhiều nhất, bảng đầy đủ ở `references/d
 - Không viết in hoa cả chữ để nhấn. Không in đậm rải khắp đoạn.
 - Sửa xong thì tìm hai ký tự gạch đó trong mọi tệp. Kết quả phải là 0.
 
-Bảng thay thế đầy đủ nằm ở `references/dau-cau.md`.
+Bảng thay thế đầy đủ nằm ở `references/punctuation.md`.
 
 ## Giọng
 
@@ -159,10 +159,10 @@ Bảy điều trên giữ ở mọi giọng. Xưng hô đổi theo nơi dùng.
 | Tài liệu kỹ thuật, sách hướng dẫn, bản tin | trung tính, ít xưng hô |
 | Báo cáo, kiến nghị, thư công việc, đơn từ | trang trọng, theo cách xưng hô của nơi nhận |
 | Báo cáo gửi cả nhóm, hoặc người nhận dặn "chỉ báo cáo" | không xưng hô, chủ ngữ là vật hoặc trang ("Trang chủ ghi…") |
-| Văn bản hành chính nhà nước | không xưng hô, chủ ngữ là cơ quan, đơn vị; theo thể thức ở `references/van-ban-hanh-chinh.md` |
+| Văn bản hành chính nhà nước | không xưng hô, chủ ngữ là cơ quan, đơn vị; theo thể thức ở `references/official-documents.md` |
 
 Thân mật ở xưng hô và từ nối. Giữ chuẩn ở thuật ngữ, định nghĩa và cấu trúc câu. Viết theo giọng một người cụ thể thì
-tra `references/giong.md`.
+tra `references/voice.md`.
 
 ## Trả lời trong chat
 
@@ -196,7 +196,7 @@ tra `references/giong.md`.
 ## Không làm
 
 - Không áp skill cho văn bản quy phạm pháp luật, hợp đồng, biểu mẫu, thơ, lời thoại. Văn bản hành chính nhà nước thì
-  theo `references/van-ban-hanh-chinh.md`: ở đó khuôn mẫu là bắt buộc, và một số điều ở trên làm ngược lại.
+  theo `references/official-documents.md`: ở đó khuôn mẫu là bắt buộc, và một số điều ở trên làm ngược lại.
 - Không sửa một dấu hiệu đơn lẻ. Sửa khi nó lặp thành khuôn hoặc làm khó hiểu. Riêng dấu gạch dài thì gặp là bỏ.
 - Không chặt hết thành câu cụt. Không rút cho ngắn. Không rải "ừ thì", "nói thật là" để ra vẻ người.
 - Không ép giọng thân mật cho mọi văn bản. Không bỏ định nghĩa chuẩn hay nguồn để cho đời thường.
@@ -210,8 +210,8 @@ tra `references/giong.md`.
 | Sửa một đoạn được dán vào | Bản đã sửa, rồi tối đa năm dòng nêu thay đổi chính và lý do |
 | Sửa một tệp | Chỉ sửa phần văn. Báo số chỗ đã sửa theo loại |
 | Soát mà không sửa | Từng chỗ theo dạng "câu gốc, vấn đề, cách sửa", xếp từ nặng tới nhẹ |
-| Báo cáo lỗi, báo cáo rà soát | Theo `references/bao-cao-ra-soat.md`: mỗi điểm một mục, có vị trí, lời trích, ảnh khoanh chỗ sai |
-| Tệp Word | Dựng bằng `scripts/bao-cao-docx.mjs`, văn bản hành chính thì `scripts/van-ban-hc-docx.mjs`; xuất PDF và xem từng trang trước khi đưa |
+| Báo cáo lỗi, báo cáo rà soát | Theo `references/review-reports.md`: mỗi điểm một mục, có vị trí, lời trích, ảnh khoanh chỗ sai |
+| Tệp Word | Dựng bằng `scripts/report-docx.mjs`, văn bản hành chính thì `scripts/official-doc-docx.mjs`; xuất PDF và xem từng trang trước khi đưa |
 
 Lời báo kèm theo cũng viết theo bảy điều trên.
 
@@ -219,31 +219,31 @@ Lời báo kèm theo cũng viết theo bảy điều trên.
 
 Skill kèm một bộ nhớ dùng chung cho các agent ở `~/agent-memory/`, để người dùng không phải dặn lại sau mỗi phiên. Nếu
 trong ngữ cảnh chưa có bộ nhớ người dùng nào được nạp, và trên máy chưa có cả `~/agent-memory/AGENTS.md` lẫn
-`~/agent-memory/.khong-dung`, thì làm xong việc đang làm rồi hỏi người dùng một lần có muốn dựng bộ nhớ không. Đồng ý
-thì làm theo `references/bo-nho.md`. Không đồng ý thì tạo tệp rỗng `~/agent-memory/.khong-dung` để lần sau khỏi hỏi.
+`~/agent-memory/.disabled`, thì làm xong việc đang làm rồi hỏi người dùng một lần có muốn dựng bộ nhớ không. Đồng ý
+thì làm theo `references/agent-memory.md`. Không đồng ý thì tạo tệp rỗng `~/agent-memory/.disabled` để lần sau khỏi hỏi.
 
 ## Tệp tham khảo
 
 | Tệp | Đọc khi |
 |---|---|
-| `references/dau-hieu.md` | soát văn máy và văn mẫu |
-| `references/vi-du.md` | cần thấy quy tắc chạy trên câu cụ thể |
-| `references/lien-ket.md` | văn rời rạc, hoặc cần chọn từ nối |
-| `references/cau-va-doan.md` | dựng câu ghép, trạng ngữ, đoạn, câu chủ đề |
-| `references/loi-thuong-gap.md` | soát lỗi câu, lỗi đoạn, lỗi dùng từ |
-| `references/dau-cau.md` | thay dấu gạch, ký hiệu, hoặc phân vân về dấu câu |
-| `references/tu-ngu.md` | giải nghĩa thuật ngữ, chọn từ, viết hoa, tên riêng |
-| `references/giong.md` | chọn giọng, hoặc viết theo giọng một người |
-| `references/trich-dan-so-lieu-hinh.md` | có lời trích, nguồn, con số, hình, bảng |
-| `references/loai-van-ban.md` | viết một loại cụ thể như giải thích, hướng dẫn, báo cáo, thư, kiến nghị, nghị luận |
-| `references/dung-bai.md` | lập dàn ý, mở bài, triển khai ý, kết bài, tự soát |
-| `references/giang-bai.md` | viết bài giảng, tài liệu dạy học, câu hỏi kiểm tra |
-| `references/bao-cao-ra-soat.md` | viết báo cáo lỗi, báo cáo đối chiếu nội dung với tài liệu gốc |
-| `references/so-do-va-tai-lieu.md` | chữ trên sơ đồ, trang trình chiếu, tài liệu cấu hình gửi khách, báo cáo trạng thái hệ thống |
-| `references/van-ban-hanh-chinh.md` | báo cáo, tờ trình, công văn, kế hoạch, biên bản gửi hay do cơ quan nhà nước ban hành; số liệu báo cáo; hồ sơ |
-| `references/xuat-docx.md` | xuất văn bản ra tệp Word |
-| `references/bo-nho.md` | cài vina-me cho các agent, dựng hoặc sửa bộ nhớ dùng chung, học từ phiên cũ, giữ mật khẩu cho agent |
+| `references/machine-tells.md` | soát văn máy và văn mẫu |
+| `references/examples.md` | cần thấy quy tắc chạy trên câu cụ thể |
+| `references/cohesion.md` | văn rời rạc, hoặc cần chọn từ nối |
+| `references/sentences-and-paragraphs.md` | dựng câu ghép, trạng ngữ, đoạn, câu chủ đề |
+| `references/common-errors.md` | soát lỗi câu, lỗi đoạn, lỗi dùng từ |
+| `references/punctuation.md` | thay dấu gạch, ký hiệu, hoặc phân vân về dấu câu |
+| `references/word-choice.md` | giải nghĩa thuật ngữ, chọn từ, viết hoa, tên riêng |
+| `references/voice.md` | chọn giọng, hoặc viết theo giọng một người |
+| `references/citations-data-figures.md` | có lời trích, nguồn, con số, hình, bảng |
+| `references/document-types.md` | viết một loại cụ thể như giải thích, hướng dẫn, báo cáo, thư, kiến nghị, nghị luận |
+| `references/structure.md` | lập dàn ý, mở bài, triển khai ý, kết bài, tự soát |
+| `references/teaching.md` | viết bài giảng, tài liệu dạy học, câu hỏi kiểm tra |
+| `references/review-reports.md` | viết báo cáo lỗi, báo cáo đối chiếu nội dung với tài liệu gốc |
+| `references/diagrams-and-docs.md` | chữ trên sơ đồ, trang trình chiếu, tài liệu cấu hình gửi khách, báo cáo trạng thái hệ thống |
+| `references/official-documents.md` | báo cáo, tờ trình, công văn, kế hoạch, biên bản gửi hay do cơ quan nhà nước ban hành; số liệu báo cáo; hồ sơ |
+| `references/docx-export.md` | xuất văn bản ra tệp Word |
+| `references/agent-memory.md` | cài vina-me cho các agent, dựng hoặc sửa bộ nhớ dùng chung, học từ phiên cũ, giữ mật khẩu cho agent |
 
-`scripts/soat.mjs` cần Node 18 trở lên. Không có Node thì soát bằng mắt. `scripts/bao-cao-docx.mjs` và
-`scripts/van-ban-hc-docx.mjs` cần thêm gói `docx` (xem `references/xuat-docx.md`).
-`scripts/cai-dat.mjs`, `scripts/hoc-tu-phien.mjs`, `scripts/bi-mat.mjs` chỉ cần Node.
+`scripts/lint.mjs` cần Node 18 trở lên. Không có Node thì soát bằng mắt. `scripts/report-docx.mjs` và
+`scripts/official-doc-docx.mjs` cần thêm gói `docx` (xem `references/docx-export.md`).
+`scripts/setup.mjs`, `scripts/learn-from-sessions.mjs`, `scripts/secrets.mjs` chỉ cần Node.
