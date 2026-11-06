@@ -9,7 +9,8 @@
 //   node scripts/setup.mjs remote <url git>      như trên nhưng với một repo git bất kỳ đã tạo sẵn
 //   node scripts/setup.mjs team <tệp luật>       thay luật chung của đội trong bộ nhớ
 //   node scripts/setup.mjs codex                 chép lại bộ nhớ vào ~/.codex/AGENTS.md
-//   node scripts/setup.mjs update                kéo bản vina-me mới nhất và chép sang các agent (sync tự kiểm 6 giờ một lần)
+//   node scripts/setup.mjs update                kéo bản phát hành vina-me mới nhất và chép sang các agent (sync tự kiểm 6 giờ một lần)
+//   node scripts/setup.mjs channel release|main  theo tag phát hành (mặc định) hay theo đầu nhánh main (người bảo trì)
 //   node scripts/setup.mjs check                 soát bộ nhớ: quá 200 dòng, ý gần trùng, lời trích thiếu ngày
 //   node scripts/setup.mjs conflict              sync báo không gộp được: in phần khác nhau giữa bản máy này và bản trên repo
 //   node scripts/setup.mjs resolve mine|theirs   giữ bản máy này ở chỗ đụng nhau, hoặc lấy bản trên repo (sao lưu bản cũ)
@@ -31,7 +32,7 @@ import { emitKeypressEvents } from 'node:readline';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
-const COMMANDS = ['sync', 'save', 'github', 'remote', 'team', 'codex', 'update', 'check', 'conflict', 'resolve'];
+const COMMANDS = ['sync', 'save', 'github', 'remote', 'team', 'codex', 'update', 'check', 'conflict', 'resolve', 'channel'];
 const args = process.argv.slice(2);
 const hasFlag = (name) => args.includes(name);
 const valueOf = (name) => {
@@ -252,14 +253,41 @@ function updateSkill(force = false) {
   writeConfig({ ...cfg, lastSkillCheck: Date.now() });
   const g = gitIn(source);
   const before = g('rev-parse', 'HEAD').stdout.trim();
-  const r = gitNet(source, 'pull', '-q', '--ff-only');
   // Ép cập nhật (lệnh update) mà lỗi thì nói lỗi; trong sync tự động thì im, lần sau thử lại.
-  if (r.status !== 0) return force ? `  chưa cập nhật được vina-me: ${timedOut(r) ? OFFLINE : firstLine(r)}` : '';
+  const failed = (r) => (force ? `  chưa cập nhật được vina-me: ${timedOut(r) ? OFFLINE : firstLine(r)}` : '');
+  // Kênh release (mặc định): đứng ở tag vX.Y.Z mới nhất. Kênh main: theo đầu nhánh main, dành cho người bảo trì thử bản
+  // đang làm. Repo chưa có tag nào thì kênh release cũng theo main.
+  const channel = cfg.channel === 'main' ? 'main' : 'release';
+  const f = gitNet(source, 'fetch', '-q', '--tags', '--prune', 'origin');
+  if (f.status !== 0) return failed(f);
+  const tag = channel === 'release' ? latestTag(source) : null;
+  const target = tag ?? 'origin/main';
+  const c = g('checkout', '-q', '--detach', target);
+  if (c.status !== 0) return failed(c);
   const after = g('rev-parse', 'HEAD').stdout.trim();
   const missing = (cfg.targets ?? []).some((t) => !exists(path.join(t, 'SKILL.md')));
   if (before === after && !missing) return '';
   for (const t of cfg.targets ?? []) copySkill(t, source);
-  return `vina-me vừa được cập nhật lên ${after.slice(0, 7)}: ${g('log', '-1', '--format=%s').stdout.trim()}`;
+  const label = tag ?? `${after.slice(0, 7)} (nhánh main)`;
+  const note = tag ? changelogLine(source, tag) : g('log', '-1', '--format=%s').stdout.trim();
+  return `vina-me vừa được cập nhật lên ${label}${note ? `: ${note}` : ''}`;
+}
+
+// Tag phát hành mới nhất dạng vX.Y.Z, so theo số phiên bản chứ không theo chữ.
+function latestTag(dir) {
+  const tags = gitIn(dir)('tag', '-l', 'v*', '--sort=-v:refname').stdout.split('\n').map((t) => t.trim());
+  return tags.find((t) => /^v\d+\.\d+\.\d+$/.test(t)) ?? null;
+}
+
+// Dòng gạch đầu dòng đầu tiên của mục phiên bản đó trong CHANGELOG.md.
+function changelogLine(dir, tag) {
+  const file = path.join(dir, 'CHANGELOG.md');
+  if (!exists(file)) return '';
+  const lines = read(file).split('\n');
+  const start = lines.findIndex((l) => l.startsWith(`## ${tag.replace(/^v/, '')}`));
+  if (start < 0) return '';
+  const first = lines.slice(start + 1).find((l) => /^-\s/.test(l));
+  return first ? first.replace(/^-\s+/, '').trim() : '';
 }
 
 function readConfig() {
@@ -736,6 +764,13 @@ async function main() {
   if (command === 'codex') { if (syncCodex()) log(`  Codex: đã chép bộ nhớ vào ${path.join(codexDir, 'AGENTS.md')}`); return; }
   if (command === 'update') { log(updateSkill(true) || '  vina-me đang là bản mới nhất'); return; }
   if (command === 'check') { cmdCheck(); return; }
+  if (command === 'channel') {
+    if (!['release', 'main'].includes(commandArg)) { console.error('Dùng: setup.mjs channel release|main'); process.exit(1); }
+    writeConfig({ ...readConfig(), channel: commandArg, lastSkillCheck: 0 });
+    log(`  kênh cập nhật: ${commandArg}`);
+    log(updateSkill(true) || '  vina-me đang ở bản mới nhất của kênh này');
+    return;
+  }
   if (command === 'conflict') { cmdConflict(); return; }
   if (command === 'resolve') { cmdResolve(); return; }
   if (command === 'team') {

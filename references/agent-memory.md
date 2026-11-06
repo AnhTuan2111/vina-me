@@ -55,9 +55,18 @@ lần chạy ghi một dòng vào `~/.config/vina-me/sync.log`, giữ 200 dòng 
 ## Tự cập nhật vina-me
 
 Khi cài, script giữ một bản clone của vina-me ở `~/.config/vina-me/source` (chép từ thư mục đã clone, hoặc clone lại từ
-GitHub nếu tải zip). Mỗi lần `sync` chạy, nó `git pull` bản clone đó; có bản mới thì chép sang mọi thư mục skill đã cài và
-in một dòng "vina-me vừa được cập nhật lên …". Cập nhật bằng tay: `<setup> update`. Danh sách thư mục skill nằm ở
-`~/.config/vina-me/config.json`.
+GitHub nếu tải zip). Mỗi lần `sync` chạy (tối đa 6 giờ kiểm một lần), nó lấy tag phát hành `vX.Y.Z` mới nhất; có bản mới thì
+chép sang mọi thư mục skill đã cài và in một dòng "vina-me vừa được cập nhật lên vX.Y.Z" kèm dòng đầu của mục đó trong
+`CHANGELOG.md`. Commit mới trên `main` chưa gắn tag thì máy người dùng chưa nhận. Cập nhật ngay: `<setup> update`.
+
+Người bảo trì muốn máy mình chạy bản đang làm thì `<setup> channel main`: máy đó theo đầu nhánh `main`. Về lại bản phát
+hành: `<setup> channel release`. Danh sách thư mục skill và kênh nằm ở `~/.config/vina-me/config.json`.
+
+Phát hành một bản:
+
+1. sửa `version` trong `SKILL.md`, thêm mục mới lên đầu `CHANGELOG.md` (dòng đầu là điều đáng báo nhất);
+2. merge vào `main`, gắn tag: `git tag v0.9.0 && git push origin v0.9.0`;
+3. tạo bản phát hành trên GitHub: `gh release create v0.9.0 --notes-file <mục changelog>`.
 
 ## Cài lần đầu
 
