@@ -21,6 +21,10 @@ việc:
    nên điều đã dặn một lần thì không phải dặn lại. Dặn Claude Code điều gì thì Codex cũng biết.
 3. Nối bộ nhớ vào `~/.claude/CLAUDE.md` và `~/.codex/AGENTS.md`. Hai tệp này được sao lưu trước khi sửa.
 
+Bạn đồng ý lưu lên GitHub thì script tạo một repo riêng tư `agent-memory` trên tài khoản của bạn (cần `gh auth login` trước).
+Agent sửa bộ nhớ xong thì commit và đẩy lên; đầu mỗi phiên, Claude Code tự kéo bản mới qua hook, Codex được dặn chạy lệnh
+kéo. Cài trên máy thứ hai bằng đúng lệnh trên: script thấy repo đã có thì kéo về, khỏi hỏi lại.
+
 Đội có bộ luật chung (phông chữ, mẫu văn bản) thì đưa đường dẫn tệp luật khi được hỏi. Bạn đồng ý cho agent học từ các
 phiên cũ thì ở phiên đầu tiên, agent đọc lại những gì bạn đã gõ trong các phiên Claude Code, Codex trước đó, soạn nháp bộ
 nhớ để bạn duyệt rồi mới ghi.

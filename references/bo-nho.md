@@ -2,27 +2,32 @@
 
 Agent quên hết sau mỗi phiên, nên người dùng phải dặn lại những điều đã dặn: gọi mình là gì, trả lời dài hay ngắn, văn bản
 gửi sếp mở thế nào. Bộ nhớ là một thư mục `~/agent-memory/` mà agent đọc ở đầu mỗi phiên và tự ghi thêm khi người dùng sửa
-hay khen một cách làm. Một thư mục dùng chung cho mọi agent trên máy, nên dặn Claude Code điều gì thì Codex cũng biết.
+hay khen một cách làm. Mọi agent trên máy dùng chung thư mục đó, nên dặn Claude Code điều gì thì Codex cũng biết. Thư mục có
+thể là một repo GitHub riêng tư: sửa ở máy này thì máy kia kéo về ở phiên sau.
 
 ## Trong thư mục có gì
 
-| Tệp | Chứa gì | Ai sửa |
-|---|---|---|
-| `AGENTS.md` | cửa vào: nạp ba tệp dưới, và luật khi nào ghi, ghi thế nào | ít khi sửa |
-| `user.md` | người dùng là ai, cách họ muốn được trả lời | agent, theo lời người dùng |
-| `memory.md` | cách làm việc người dùng đã dặn hoặc đã khen | agent, theo lời người dùng |
-| `doi.md` | luật chung của đội: phông chữ, mẫu văn bản, việc không được làm | đội, qua `--doi` |
+| Tệp | Chứa gì | Ai sửa | Lên repo |
+|---|---|---|---|
+| `AGENTS.md` | cửa vào: nạp bốn tệp dưới, luật khi nào ghi, ghi thế nào | ít khi sửa | có |
+| `may-nay.md` | lệnh và đường dẫn trên máy đang chạy (`<cai-dat>`, `<bi-mat>`, thư mục skill, địa chỉ repo) | script cài đặt | không |
+| `user.md` | người dùng là ai, cách họ muốn được trả lời | agent, theo lời người dùng | có |
+| `memory.md` | cách làm việc người dùng đã dặn hoặc đã khen | agent, theo lời người dùng | có |
+| `doi.md` | luật chung của đội: phông chữ, mẫu văn bản, việc không được làm | đội, qua `--doi` | có |
 
-Mẫu của các tệp này nằm ở `mau-bo-nho/` trong thư mục skill. Mẫu không chứa thông tin của ai.
+`may-nay.md` tách riêng vì mỗi máy một đường dẫn: máy này có Claude Code ở `~/.claude`, máy kia chỉ có Codex. Mẫu của các tệp
+nằm ở `mau-bo-nho/` trong thư mục skill, không chứa thông tin của ai.
 
 ## Agent đọc bộ nhớ bằng cách nào
 
-- **Claude Code** đọc `~/.claude/CLAUDE.md` ở mọi phiên. Script thêm vào đó dòng `@~/agent-memory/AGENTS.md`, và `AGENTS.md`
-  lại có ba dòng `@user.md`, `@memory.md`, `@doi.md`, nên Claude nạp đủ bốn tệp.
-- **Codex** đọc `~/.codex/AGENTS.md` ở mọi phiên nhưng không có cú pháp `@` để nạp tệp khác. Script chép cả bộ nhớ vào tệp đó,
-  giữa hai dòng đánh dấu "bộ nhớ vina-me: bắt đầu" và "bộ nhớ vina-me: hết". Bộ nhớ đổi thì bản chép phải đồng bộ lại, và
-  `AGENTS.md` đã dặn agent chạy lệnh đồng bộ sau mỗi lần sửa.
-- **Agent khác**: trỏ tệp chỉ dẫn toàn cục của nó tới `~/agent-memory/AGENTS.md`, hoặc chép nội dung bốn tệp vào đó.
+- **Claude Code** đọc `CLAUDE.md` trong thư mục cấu hình (`~/.claude`, hoặc `$CLAUDE_CONFIG_DIR` nếu có) ở mọi phiên. Script
+  thêm vào đó dòng `@~/agent-memory/AGENTS.md`, và `AGENTS.md` lại có bốn dòng `@`, nên Claude nạp đủ năm tệp. Bộ nhớ có repo
+  thì script thêm hook `SessionStart` vào `settings.json`: mỗi phiên mới, hook chạy `<cai-dat> --keo` để kéo bản mới; có tệp
+  nào đổi thì hook in nội dung tệp đó ra, và Claude Code đưa chữ đó vào ngữ cảnh của phiên.
+- **Codex** đọc `~/.codex/AGENTS.md` (hoặc `$CODEX_HOME/AGENTS.md`) ở mọi phiên nhưng không có cú pháp `@`. Script chép cả bộ
+  nhớ vào tệp đó, giữa hai dòng đánh dấu "bộ nhớ vina-me: bắt đầu" và "bộ nhớ vina-me: hết". `may-nay.md` dặn Codex chạy
+  `<cai-dat> --keo` ở đầu phiên. Codex có hook riêng nhưng phải bật cờ thử nghiệm và tin cậy hook, nên script chưa dùng.
+- **Agent khác**: trỏ tệp chỉ dẫn toàn cục của nó tới `~/agent-memory/AGENTS.md`, hoặc chép nội dung các tệp vào đó.
 
 ## Cài lần đầu
 
@@ -32,45 +37,59 @@ Người dùng tự chạy, trong thư mục skill:
 node scripts/cai-dat.mjs
 ```
 
-Script hỏi bảy câu (gọi là gì, vai trò, hay viết cho ai, trả lời dài hay ngắn, điều không muốn agent làm, tệp luật của
-đội, có cho agent học từ các phiên cũ không), rồi:
+Script hỏi tám câu (gọi là gì, vai trò, hay viết cho ai, trả lời dài hay ngắn, điều không muốn agent làm, tệp luật của
+đội, có cho agent học từ các phiên cũ không, có lưu bộ nhớ lên GitHub không), rồi:
 
-1. chép skill vào `~/.claude/skills/vina-me` nếu có Claude Code, vào `~/.agents/skills/vina-me` và `~/.codex/skills/vina-me`
-   nếu có Codex;
-2. dựng `~/agent-memory/` từ câu trả lời, hoặc giữ nguyên nếu đã có;
-3. nối bộ nhớ vào từng agent như mục trên.
+1. chép skill vào thư mục skill của Claude Code (`~/.claude/skills/vina-me`) nếu có Claude Code, vào `~/.agents/skills/vina-me`
+   và `~/.codex/skills/vina-me` nếu có Codex;
+2. dựng `~/agent-memory/` từ câu trả lời;
+3. nếu người dùng muốn lưu lên GitHub: tạo repo riêng tư `<tài khoản GitHub>/agent-memory` bằng `gh`, commit và đẩy lên;
+4. sinh `may-nay.md`, rồi nối bộ nhớ vào từng agent như mục trên.
 
-Tệp cấu hình nào sắp bị sửa thì được sao lưu một lần thành `<tệp>.truoc-vina-me`. Chạy lại nhiều lần không sinh thêm dòng
-hay khối trùng.
+Lưu lên GitHub cần `gh` đã đăng nhập (`gh auth login`, chạy một lần). Chưa đăng nhập thì script vẫn dựng bộ nhớ trên máy và
+nói lệnh để đưa lên sau: `node scripts/cai-dat.mjs --github`. Muốn dùng repo khác (GitLab của công ty chẳng hạn) thì tạo repo
+trống rồi chạy `node scripts/cai-dat.mjs --remote <url git>`.
+
+**Máy thứ hai**: chạy đúng lệnh cài như trên. Script thấy trên GitHub đã có repo `agent-memory` của người dùng thì hỏi có kéo
+về không, kéo về rồi khỏi hỏi tám câu. Với repo khác thì `--remote <url>`: repo đã có bộ nhớ thì kéo về.
+
+Tệp cấu hình nào sắp bị sửa thì được sao lưu một lần thành `<tệp>.truoc-vina-me`. Chạy lại nhiều lần không sinh thêm dòng,
+hook hay khối trùng.
 
 ## Agent dựng thay người dùng
 
 Script không hỏi được khi agent chạy nó, vì không có cửa sổ dòng lệnh để gõ. Agent làm thế này:
 
-1. Hỏi người dùng bảy câu ở trên ngay trong chat, gộp vào một tin. Câu nào người dùng bỏ trống thì để trống.
+1. Hỏi người dùng tám câu ở trên ngay trong chat, gộp vào một tin. Câu nào người dùng bỏ trống thì để trống.
 2. Ghi câu trả lời vào một tệp JSON tạm, các khoá là `ten`, `vaiTro`, `vietCho`, `doDai` (`1` ngắn, `2` vừa, `3` đủ chi
-   tiết), `khongMuon`, `luatDoi` (đường dẫn tệp luật của đội), `hocPhienCu` (`c` hoặc `k`).
+   tiết), `khongMuon`, `luatDoi` (đường dẫn tệp luật của đội), `hocPhienCu` và `github` (`c` hoặc `k`). Tuỳ chọn: `repo`
+   (tên repo, mặc định `agent-memory`), `remote` (url git), `keoTuGithub` (`c`/`k`, khi đã có repo từ máy khác).
 3. Chạy `node <thư mục skill>/scripts/cai-dat.mjs --tra-loi <tệp JSON>`, rồi xoá tệp tạm.
-4. Báo người dùng: bộ nhớ nằm ở đâu, đã nối vào agent nào, và phải mở phiên mới thì agent mới đọc.
+4. Báo người dùng: bộ nhớ nằm ở đâu, có repo chưa, đã nối vào agent nào, và phải mở phiên mới thì agent mới đọc.
 
 Máy không có Node thì dựng tay: chép ba tệp trong `mau-bo-nho/` vào `~/agent-memory/` (đổi `AGENTS.mau.md` thành
-`AGENTS.md`, thay `{{NGAY}}` bằng ngày hôm nay, `{{SKILL}}` và `{{BI_MAT}}` bằng đường dẫn thư mục skill và
-`scripts/bi-mat.mjs`, xoá `{{DONG_BO}}`), viết `user.md` từ câu trả lời, rồi thêm dòng
+`AGENTS.md`, thay `{{NGAY}}` bằng ngày hôm nay), viết `user.md` từ câu trả lời và `may-nay.md` theo bảng trên, rồi thêm dòng
 `@~/agent-memory/AGENTS.md` vào `~/.claude/CLAUDE.md` hoặc chép nội dung vào `~/.codex/AGENTS.md`.
 
 Người dùng không muốn có bộ nhớ thì tạo tệp rỗng `~/agent-memory/.khong-dung` để lần sau khỏi hỏi.
 
 ## Việc sau khi cài
 
-- Sửa bộ nhớ xong mà máy có Codex: chạy `node <thư mục skill>/scripts/cai-dat.mjs --dong-bo`.
-- Đội đổi luật chung: chạy `node <thư mục skill>/scripts/cai-dat.mjs --doi <tệp luật>`. Lệnh này thay `doi.md` và đồng bộ
-  luôn cho Codex.
-- Gỡ: xoá dòng `@~/agent-memory/AGENTS.md` trong `~/.claude/CLAUDE.md` và khối giữa hai dòng đánh dấu trong
-  `~/.codex/AGENTS.md` (hoặc chép lại bản `.truoc-vina-me`), rồi xoá `~/agent-memory/` nếu không cần nữa.
+- Sửa bộ nhớ xong: `<cai-dat> --day "<đã ghi gì>"`. Lệnh chép bản mới sang Codex nếu có, rồi nếu có repo thì kéo bản trên
+  repo về gộp, commit và đẩy lên.
+- `--day` báo "không gộp được": máy khác đã sửa cùng chỗ. Bản trên máy vẫn còn, chưa đẩy. Agent xem hai bản
+  (`git -C ~/agent-memory diff HEAD origin/main`), hỏi người dùng giữ ý nào, sửa tệp cho đúng, rồi
+  `git -C ~/agent-memory pull --rebase` và giải xung đột như mọi repo git; xong chạy lại `--day`. Không ép đẩy.
+- Kéo bản mới bằng tay: `<cai-dat> --keo`. Không có gì mới thì lệnh không in gì.
+- Đội đổi luật chung: `<cai-dat> --doi <tệp luật>`, rồi `--day "cập nhật luật đội"`.
+- Mật khẩu lưu bằng `bi-mat.mjs` không theo repo: mã hoá bằng tài khoản của từng máy, nên máy mới phải lưu lại.
+- Gỡ: xoá dòng `@~/agent-memory/AGENTS.md` trong `CLAUDE.md`, hook có `cai-dat.mjs --keo` trong `settings.json`, khối giữa
+  hai dòng đánh dấu trong `~/.codex/AGENTS.md` (hoặc chép lại các bản `.truoc-vina-me`), rồi xoá `~/agent-memory/` nếu không
+  cần nữa. Repo trên GitHub thì xoá trên GitHub.
 
 ## Học từ phiên cũ
 
-Bộ nhớ dựng từ bảy câu hỏi thì còn mỏng. Phần dày lên được là những gì người dùng đã sửa, đã khen, đã kể về mình trong các
+Bộ nhớ dựng từ tám câu hỏi thì còn mỏng. Phần dày lên được là những gì người dùng đã sửa, đã khen, đã kể về mình trong các
 phiên trước. Agent làm việc này một lần, khi người dùng đồng ý (tệp `~/agent-memory/.can-hoc-phien` là dấu đã đồng ý):
 
 1. Chạy `node <thư mục skill>/scripts/hoc-tu-phien.mjs`. Script đọc các phiên Claude Code (`~/.claude/projects`,
@@ -88,7 +107,8 @@ phiên trước. Agent làm việc này một lần, khi người dùng đồng 
 4. Gộp các ý trùng. Hai ý ngược nhau thì giữ ý mới hơn, ghi rõ là đã đổi.
 5. Đưa người dùng bản nháp chia hai phần (thêm vào `user.md`, thêm vào `memory.md`). Mỗi ý kèm một lời trích nguyên văn và
    ngày. Người dùng duyệt, sửa, bỏ từng ý.
-6. Ghi các ý đã duyệt theo luật ở `AGENTS.md`, chạy đồng bộ cho Codex nếu có, xoá thư mục tạm và tệp `.can-hoc-phien`.
+6. Ghi các ý đã duyệt theo luật ở `AGENTS.md`, chạy `<cai-dat> --day "học từ phiên cũ"`, xoá thư mục tạm và tệp
+   `.can-hoc-phien`.
 
 Lịch sử dài thì có nhiều đợt; đọc lần lượt và giữ tệp nháp ngắn, đừng chép lại nguyên văn các đợt vào nháp.
 

@@ -1,14 +1,16 @@
 # Bộ nhớ của người dùng
 
-Thư mục này là bộ nhớ dùng chung cho mọi agent trên máy (Claude Code, Codex và các agent khác). Agent đọc nó ở đầu mỗi
-phiên, nên điều gì đã ghi ở đây thì người dùng không phải dặn lại. Dựng ngày {{NGAY}} bằng skill vina-me.
+Thư mục này là bộ nhớ dùng chung cho mọi agent (Claude Code, Codex và các agent khác) trên mọi máy của người dùng. Agent
+đọc nó ở đầu mỗi phiên, nên điều gì đã ghi ở đây thì người dùng không phải dặn lại. Dựng ngày {{NGAY}} bằng skill vina-me.
 
+@may-nay.md
 @user.md
 @memory.md
 @doi.md
 
-Agent nào không tự nạp được ba dòng `@` ở trên thì đọc ba tệp đó trong cùng thư mục này trước khi làm việc:
+Agent nào không tự nạp được bốn dòng `@` ở trên thì đọc bốn tệp đó trong cùng thư mục này trước khi làm việc:
 
+- `may-nay.md`: lệnh và đường dẫn trên máy đang chạy. Tệp này mỗi máy một bản, không đẩy lên repo.
 - `user.md`: người dùng là ai, cách họ muốn được trả lời.
 - `memory.md`: cách làm việc người dùng đã dặn hoặc đã khen, áp cho mọi việc.
 - `doi.md`: luật chung của đội, do đội quản lý.
@@ -33,18 +35,28 @@ Agent nào không tự nạp được ba dòng `@` ở trên thì đọc ba tệ
 
 Thư mục này có tệp `.can-hoc-phien` nghĩa là người dùng đã đồng ý cho agent học từ các phiên Claude Code, Codex cũ trên máy
 mà việc đó chưa làm. Đầu phiên, hỏi người dùng có muốn làm ngay không; đồng ý thì làm theo mục "Học từ phiên cũ" trong
-`references/bo-nho.md` của skill vina-me ({{SKILL}}), xong thì xoá tệp `.can-hoc-phien`.
+`references/bo-nho.md` của skill vina-me (đường dẫn ở `may-nay.md`), xong thì xoá tệp `.can-hoc-phien`.
 
 ## Mật khẩu và token
 
-- Không bảo người dùng dán mật khẩu, token vào chat. Cần thì chạy `node "{{BI_MAT}}" them <tên>`: script mở một cửa sổ riêng
+Dưới đây `<bi-mat>` là lệnh ghi ở `may-nay.md`.
+
+- Không bảo người dùng dán mật khẩu, token vào chat. Cần thì chạy `<bi-mat> them <tên>`: script mở một cửa sổ riêng
   để người dùng tự gõ, mật khẩu được mã hoá và không đi qua agent.
-- Người dùng đã lỡ dán vào chat thì lưu bằng `node "{{BI_MAT}}" them <tên> --tai-khoan <tk> --tu-stdin` (mật khẩu đưa vào
+- Người dùng đã lỡ dán vào chat thì lưu bằng `<bi-mat> them <tên> --tai-khoan <tk> --tu-stdin` (mật khẩu đưa vào
   stdin), rồi nhắc họ: thứ đã dán nằm trong lịch sử phiên, nên đổi mật khẩu nếu nó quan trọng.
-- Dùng: `node "{{BI_MAT}}" chay <tên> -- <lệnh>` (lệnh con có biến `<TÊN>_USER`, `<TÊN>_PASS`), hoặc
-  `node "{{BI_MAT}}" stdin <tên> -- <lệnh>` cho lệnh đọc mật khẩu từ stdin. Xem có những gì: `ds`.
+- Dùng: `<bi-mat> chay <tên> -- <lệnh>` (lệnh con có biến `<TÊN>_USER`, `<TÊN>_PASS`), hoặc
+  `<bi-mat> stdin <tên> -- <lệnh>` cho lệnh đọc mật khẩu từ stdin. Xem có những gì: `ds`.
 - Không in, không echo, không ghi mật khẩu ra tệp hay vào câu trả lời. Bộ nhớ chỉ ghi tên bí mật và nó dùng cho việc gì.
-{{DONG_BO}}
+
+## Sau khi sửa bộ nhớ
+
+Sửa xong tệp nào trong thư mục này (trừ `may-nay.md`) thì chạy `<cai-dat> --day "<đã ghi gì, một dòng>"`, trong đó
+`<cai-dat>` là lệnh ghi ở `may-nay.md`.
+
+Lệnh này chép bản mới sang Codex nếu máy có Codex, và nếu bộ nhớ nằm trong một repo git thì commit rồi đẩy lên, để máy khác
+kéo về. Đẩy lỗi (mất mạng, xung đột với bản sửa ở máy khác) thì báo người dùng nguyên văn lỗi, không tự ép đẩy.
+
 ## Viết tiếng Việt
 
 Khi viết hay sửa một đoạn tiếng Việt dài hơn vài câu, dùng skill `vina-me`.
