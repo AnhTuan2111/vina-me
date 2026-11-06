@@ -110,9 +110,14 @@ Người dùng không muốn có bộ nhớ thì tạo tệp rỗng `~/agent-mem
 
 ## Việc sau khi cài
 
-- `sync` báo "không gộp được": máy khác đã sửa cùng chỗ. Bản trên máy vẫn còn, chưa đẩy. Agent xem hai bản
-  (`git -C ~/agent-memory diff HEAD origin/main`), hỏi người dùng giữ ý nào, rồi `git -C ~/agent-memory pull --rebase`, giải
-  xung đột như mọi repo git, và chạy lại `<setup> sync`. Không ép đẩy.
+- `sync` báo "không gộp được": máy khác đã sửa cùng chỗ. Bản trên máy vẫn còn, chưa đẩy. Agent chạy `<setup> conflict` để
+  in phần khác nhau, hỏi người dùng giữ bản nào, rồi `<setup> resolve mine` (giữ bản máy này ở chỗ đụng nhau, phần không
+  đụng vẫn gộp bản trên repo) hoặc `<setup> resolve theirs` (lấy bản trên repo; bản cũ của máy này sao lưu ở
+  `~/.config/vina-me/conflict-backup-<số>`). Không ép đẩy.
+- Soát bộ nhớ: `<setup> check` báo khi `user.md` cộng `memory.md` quá 200 dòng, khi hai gạch đầu dòng gần trùng, và khi
+  một dòng có lời trích mà thiếu ngày. Lệnh chỉ báo, không tự sửa.
+- Mất mạng: các lượt kéo, đẩy chờ tối đa 15 giây rồi bỏ qua; đầu phiên agent chỉ thấy một dòng báo, lần sync sau thử lại.
+  vina-me được kiểm bản mới tối đa 6 giờ một lần; muốn kiểm ngay thì `<setup> update`.
 - Đội đổi luật chung: `<setup> team <tệp luật>`. Lần `sync` sau sẽ lưu lên repo.
 - Mật khẩu lưu bằng `secrets.mjs` không theo repo: mã hoá bằng tài khoản của từng máy, nên máy mới phải lưu lại.
 - Gỡ:

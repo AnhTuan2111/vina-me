@@ -44,14 +44,16 @@ trung, nên báo cáo chỉ ghi vấn đề và việc cần làm": phần "đ�
 - Giữ `user.md` cộng `memory.md` dưới khoảng 200 dòng, vì cả hai được nạp vào đầu mọi phiên.
 - Không ghi mật khẩu, token, khoá API, thông tin khách hàng, chuyện riêng người dùng kể.
 - Không sửa `team.md`. Thấy luật của đội cần đổi thì nói với người dùng.
-- Ghi xong thì báo người dùng một dòng: đã ghi gì, vào tệp nào.
+- Ghi xong thì báo người dùng một dòng: đã ghi gì, vào tệp nào. Rồi chạy `<setup> check` (lệnh ở `machine.md`); nó báo
+  ý gần trùng hay quá dài thì gộp lại.
 
 ## Lưu lên repo
 
 Chỉ sửa tệp, không tự commit. Lệnh `<setup> sync` (ghi ở `machine.md`) gom mọi thay đổi chưa commit thành một commit rồi
 đẩy lên repo. Claude Code chạy nó khi mở và khi đóng phiên, máy chạy nó khi đăng nhập và mỗi 2 giờ, nên thay đổi không mất
 dù phiên bị tắt ngang. Người dùng bảo lưu ngay thì chạy `<setup> save "<đã ghi gì, một dòng>"`. Lệnh báo không gộp được
-(máy khác đã sửa cùng chỗ) thì báo người dùng nguyên văn lỗi, không tự ép đẩy.
+(máy khác đã sửa cùng chỗ) thì chạy `<setup> conflict`, đưa người dùng xem hai bản, hỏi giữ bản nào, rồi chạy
+`<setup> resolve mine` hay `<setup> resolve theirs`. Không tự chọn thay người dùng, không ép đẩy.
 
 ## Học từ phiên cũ
 
