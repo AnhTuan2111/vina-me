@@ -1,25 +1,18 @@
 #!/usr/bin/env node
 // Dựng tệp docx từ một tệp JSON, theo quy ước ở references/docx-export.md.
-// Dùng: NODE_PATH=<thư mục node_modules có gói docx> node report-docx.mjs <noi-dung.json> <ra.docx>
+// Dùng: node report-docx.mjs <content.json> <out.docx>. Lần đầu chạy, script tự cài gói docx (xem load-docx.mjs).
 import fs from 'node:fs';
 import path from 'node:path';
-import { createRequire } from 'node:module';
+import { loadDocx } from './load-docx.mjs';
 
-const require = createRequire(import.meta.url);
-let docx;
-try {
-  docx = require('docx');
-} catch {
-  console.error('Không tìm thấy gói "docx". Chạy "npm install docx" ở một thư mục rồi đặt NODE_PATH trỏ tới node_modules của nó.');
-  process.exit(1);
-}
+const docx = loadDocx();
 const {
   Document, Packer, Paragraph, TextRun, ImageRun, HeadingLevel, AlignmentType, LevelFormat, BorderStyle, ShadingType, Table, TableRow, TableCell, WidthType,
 } = docx;
 
 const [, , input, output] = process.argv;
 if (!input || !output) {
-  console.error('Dùng: node report-docx.mjs <noi-dung.json> <ra.docx>');
+  console.error('Dùng: node report-docx.mjs <content.json> <out.docx>');
   process.exit(1);
 }
 const baseDir = path.dirname(path.resolve(input));
