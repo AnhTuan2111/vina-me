@@ -56,7 +56,8 @@ dù phiên bị tắt ngang. Người dùng bảo lưu ngay thì chạy `<setup>
 ## Học từ phiên cũ
 
 Thư mục này có tệp `.pending-learn` nghĩa là người dùng đã đồng ý cho agent học từ các phiên Claude Code, Codex cũ trên máy
-mà việc đó chưa làm. Đầu phiên, hỏi người dùng có muốn làm ngay không; đồng ý thì làm theo mục "Học từ phiên cũ" trong
+mà việc đó chưa làm. Đầu phiên, hỏi người dùng có muốn làm ngay không, nói rõ: đọc lịch sử thì nội dung được gửi lên nhà
+cung cấp mô hình, và hỏi dự án nào cần bỏ ra. Đồng ý thì làm theo mục "Học từ phiên cũ" trong
 `references/agent-memory.md` của skill vina-me (đường dẫn ở `machine.md`), xong thì xoá tệp `.pending-learn`.
 
 ## Mật khẩu và token

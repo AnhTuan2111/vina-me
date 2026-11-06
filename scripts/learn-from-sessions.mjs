@@ -5,7 +5,12 @@
 //   node scripts/learn-from-sessions.mjs                    mọi phiên, ghi ra <thư mục tạm>/vina-me-learn
 //   node scripts/learn-from-sessions.mjs --since 2026-09-01 chỉ phiên từ ngày đó
 //   node scripts/learn-from-sessions.mjs --out <thư mục>    chọn chỗ ghi
+//   node scripts/learn-from-sessions.mjs --only project-a --only project-b chỉ phiên có thư mục làm việc chứa một trong các chữ đó
+//   node scripts/learn-from-sessions.mjs --exclude private          bỏ phiên có thư mục làm việc chứa chữ đó (lặp lại được)
 //   --home <thư mục>   thử trên home khác;  --batch-size <số ký tự>  độ dài mỗi đợt (mặc định 60000)
+//
+// Riêng tư: các đợt rút ra nằm trên máy, nhưng khi agent đọc chúng thì nội dung được gửi lên nhà cung cấp mô hình thêm
+// một lần. Dùng --only, --exclude để giữ lại những dự án không muốn gửi.
 //
 // Lấy gì: chỉ tin người dùng tự gõ. Bỏ output công cụ, lời agent, khối hệ thống tự chèn (AGENTS.md, environment_context,
 // system-reminder), thông báo task, lệnh gạch chéo, tóm tắt khi nén ngữ cảnh, phiên của agent con.
@@ -26,6 +31,13 @@ const home = path.resolve(valueOf('--home') ?? os.homedir());
 const outDir = path.resolve(valueOf('--out') ?? path.join(os.tmpdir(), 'vina-me-learn'));
 const since = valueOf('--since') ? new Date(valueOf('--since')) : null;
 const batchSize = Number(valueOf('--batch-size') ?? 60000);
+const valuesOf = (name) => args.flatMap((a, i) => (a === name && args[i + 1] && !args[i + 1].startsWith('--') ? [args[i + 1].toLowerCase()] : []));
+const only = valuesOf('--only');
+const exclude = valuesOf('--exclude');
+const wanted = (cwd) => {
+  const c = String(cwd ?? '').toLowerCase();
+  return (!only.length || only.some((x) => c.includes(x))) && !exclude.some((x) => c.includes(x));
+};
 const MAX_MSG = 2000;
 
 const unique = (xs) => [...new Set(xs.map((x) => path.resolve(x)))];
@@ -70,10 +82,13 @@ function redact(text) {
     .replace(/\b(?=[A-Za-z0-9+/_-]{32,}\b)(?=[A-Za-z0-9+/_-]*\d)(?=[A-Za-z0-9+/_-]*[A-Za-z])[A-Za-z0-9+/_-]{32,}={0,2}/g, HIDDEN);
 }
 
-function clean(text) {
+// s là phiên đang đọc: số chỗ đã che cộng vào s.hidden, để chỉ đếm những phiên được giữ lại sau khi lọc.
+function clean(text, s) {
   let t = text.replace(/<system-reminder>[\s\S]*?<\/system-reminder>/g, '').replace(/\r\n/g, '\n').trim();
   if (t.length < 4) return '';
+  const before = t.split(HIDDEN).length;
   t = redact(t);
+  s.hidden += t.split(HIDDEN).length - before;
   if (t.length > MAX_MSG) t = `${t.slice(0, MAX_MSG)}\n[cắt bớt ${t.length - MAX_MSG} ký tự]`;
   return t;
 }
@@ -85,7 +100,7 @@ const textOf = (content) =>
 
 // Mỗi phiên: { agent, cwd, start, messages: [{ time, text }] }
 function readClaude(file) {
-  const s = { agent: 'Claude Code', cwd: '', start: null, messages: [] };
+  const s = { agent: 'Claude Code', cwd: '', start: null, messages: [], hidden: 0 };
   for (const o of records(file)) {
     if (o.type !== 'user' || o.isMeta || o.isCompactSummary || o.isSidechain) continue;
     const c = o.message?.content;
@@ -93,7 +108,7 @@ function readClaude(file) {
     if (o.origin && o.origin.kind !== 'human') continue;
     const raw = textOf(c);
     if (raw.trimStart().startsWith('<')) continue; // lệnh gạch chéo, lệnh !, thông báo task
-    const text = clean(raw);
+    const text = clean(raw, s);
     if (!text) continue;
     s.cwd ||= o.cwd ?? '';
     s.start ??= o.timestamp;
@@ -104,7 +119,7 @@ function readClaude(file) {
 
 const CODEX_INJECTED = /^\s*(# AGENTS\.md instructions|<environment_context>|<recommended_plugins>|<INSTRUCTIONS>|<user_instructions>|<user_shell_command>|<turn_aborted>)/;
 function readCodex(file) {
-  const s = { agent: 'Codex', cwd: '', start: null, messages: [] };
+  const s = { agent: 'Codex', cwd: '', start: null, messages: [], hidden: 0 };
   let last = '';
   for (const o of records(file)) {
     if (o.type === 'session_meta') { s.cwd ||= o.payload?.cwd ?? ''; s.start ??= o.payload?.timestamp ?? o.timestamp; continue; }
@@ -113,7 +128,7 @@ function readCodex(file) {
     if (CODEX_INJECTED.test(raw)) continue;
     const marker = raw.indexOf('## My request for Codex:'); // tiện ích IDE chèn ngữ cảnh trước lời người dùng
     if (marker >= 0) raw = raw.slice(marker + '## My request for Codex:'.length);
-    const text = clean(raw);
+    const text = clean(raw, s);
     if (!text || text === last) continue;
     last = text;
     s.messages.push({ time: o.timestamp, text });
@@ -128,7 +143,7 @@ const sessions = [
     .map((f) => [path.basename(f), f])).values()].map(readClaude),
   ...codexRoots.flatMap((r) => walk(r)).map(readCodex),
 ]
-  .filter((s) => s.messages.length && (!since || new Date(s.start) >= since))
+  .filter((s) => s.messages.length && (!since || new Date(s.start) >= since) && wanted(s.cwd))
   .sort((a, b) => String(a.start).localeCompare(String(b.start)));
 
 const stamp = (iso) => (iso ? new Date(iso).toLocaleString('sv-SE', { hour12: false }).slice(0, 16) : '?');
@@ -153,9 +168,12 @@ batches.forEach((b, i) => {
 const byProject = {};
 for (const s of sessions) byProject[s.cwd || 'không rõ'] = (byProject[s.cwd || 'không rõ'] ?? 0) + s.messages.length;
 const total = sessions.reduce((n, s) => n + s.messages.length, 0);
+const hiddenCount = sessions.reduce((n, s) => n + s.hidden, 0);
 const summary = [
   '# Tổng quan', '',
   `Rút ngày ${new Date().toLocaleDateString('vi-VN')}. ${sessions.length} phiên, ${total} tin của người dùng, chia ${batches.length} đợt.`,
+  `Đã che ${hiddenCount} chỗ trông như mật khẩu, token, khoá. Bộ lọc dựa trên mẫu chữ nên có thể sót.`,
+  only.length || exclude.length ? `Lọc theo thư mục: chỉ lấy ${only.join(', ') || 'mọi thư mục'}; bỏ ${exclude.join(', ') || 'không'}.` : '',
   sessions.length ? `Từ ${stamp(sessions[0].start)} tới ${stamp(sessions.at(-1).start)}.` : '',
   '', '| Thư mục làm việc | Số tin |', '|---|---|',
   ...Object.entries(byProject).sort((a, b) => b[1] - a[1]).map(([k, v]) => `| ${k} | ${v} |`),
@@ -165,4 +183,5 @@ fs.writeFileSync(path.join(outDir, 'overview.md'), summary, 'utf8');
 
 console.log(`Nguồn Claude Code: ${claudeRoots.join(', ') || 'không có'}`);
 console.log(`Nguồn Codex: ${codexRoots.join(', ') || 'không có'}`);
-console.log(`${sessions.length} phiên, ${total} tin, ${batches.length} đợt, ghi ở ${outDir}`);
+console.log(`${sessions.length} phiên, ${total} tin, ${batches.length} đợt, đã che ${hiddenCount} chỗ, ghi ở ${outDir}`);
+console.log('Lưu ý: agent đọc các đợt này thì nội dung được gửi lên nhà cung cấp mô hình. Dự án nào không muốn gửi thì chạy lại với --exclude.');
