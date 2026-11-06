@@ -3,6 +3,29 @@
 Skill giúp AI agent viết và sửa văn tiếng Việt cho thuận mồm, dễ hiểu, không có mùi văn máy. Skill theo chuẩn
 [Agent Skills](https://agentskills.io/specification), nên agent nào đọc được chuẩn này cũng cài được.
 
+## Cài một lần cho mọi agent, kèm bộ nhớ
+
+Máy có Node thì cách này gọn nhất:
+
+```bash
+git clone https://github.com/AnhTuan2111/vina-me.git
+node vina-me/scripts/cai-dat.mjs
+```
+
+Script hỏi vài câu (bạn muốn được gọi là gì, làm vai trò gì, hay viết cho ai, muốn agent trả lời dài hay ngắn), rồi làm ba
+việc:
+
+1. Chép skill vào thư mục skill của Claude Code (`~/.claude/skills`) và Codex (`~/.agents/skills`, `~/.codex/skills`), agent
+   nào có trên máy thì chép cho agent đó.
+2. Dựng bộ nhớ ở `~/agent-memory/`. Agent đọc bộ nhớ này ở đầu mỗi phiên, và tự ghi thêm khi bạn sửa hay khen một cách làm,
+   nên điều đã dặn một lần thì không phải dặn lại. Dặn Claude Code điều gì thì Codex cũng biết.
+3. Nối bộ nhớ vào `~/.claude/CLAUDE.md` và `~/.codex/AGENTS.md`. Hai tệp này được sao lưu trước khi sửa.
+
+Đội có bộ luật chung (phông chữ, mẫu văn bản) thì đưa đường dẫn tệp luật ở câu hỏi cuối. Chi tiết, cách cập nhật và cách gỡ ở
+`references/bo-nho.md`.
+
+Không muốn có bộ nhớ thì cài theo các mục dưới.
+
 ## Claude Code
 
 Muốn dùng skill ở mọi dự án thì clone repo vào thư mục skill của tài khoản:

@@ -1,11 +1,11 @@
 ---
 name: vina-me
-description: Viết và sửa văn tiếng Việt cho thuận mồm, dễ hiểu, không có mùi văn máy và không rơi vào giọng văn mẫu. Dùng mỗi khi phải viết hay sửa một văn bản tiếng Việt dài hơn vài câu, kể cả khi người dùng không nhắc tới giọng văn, ví dụ bài giảng, tài liệu kỹ thuật, README, ghi chú, báo cáo, báo cáo lỗi, báo cáo rà soát, kiến nghị, văn bản hành chính nhà nước (báo cáo, tờ trình, công văn, kế hoạch, biên bản theo Nghị định 30/2020), email, bài đăng, lời giải thích trong chat, chữ trên sơ đồ và trang trình chiếu, tệp Word (docx). Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "khó hiểu", "rời rạc", "không thuận mồm", "văn mẫu", hoặc nhờ humanize, chống AI slop, viết lại cho tự nhiên, viết theo giọng của một người cụ thể, soát lỗi câu và lỗi mạch lạc.
+description: Viết và sửa văn tiếng Việt cho thuận mồm, dễ hiểu, không có mùi văn máy và không rơi vào giọng văn mẫu. Dùng mỗi khi phải viết hay sửa một văn bản tiếng Việt dài hơn vài câu, kể cả khi người dùng không nhắc tới giọng văn, ví dụ bài giảng, tài liệu kỹ thuật, README, ghi chú, báo cáo, báo cáo lỗi, báo cáo rà soát, kiến nghị, văn bản hành chính nhà nước (báo cáo, tờ trình, công văn, kế hoạch, biên bản theo Nghị định 30/2020), email, bài đăng, lời giải thích trong chat, chữ trên sơ đồ và trang trình chiếu, tệp Word (docx). Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "khó hiểu", "rời rạc", "không thuận mồm", "văn mẫu", hoặc nhờ humanize, chống AI slop, viết lại cho tự nhiên, viết theo giọng của một người cụ thể, soát lỗi câu và lỗi mạch lạc. Kèm script cài skill và dựng bộ nhớ dùng chung cho các agent (Claude Code, Codex); dùng khi người dùng nhờ cài vina-me hay dựng bộ nhớ cho agent.
 license: MIT
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.6.0"
+  version: "0.7.0"
 ---
 
 # Viết cho thuận mồm
@@ -215,6 +215,13 @@ tra `references/giong.md`.
 
 Lời báo kèm theo cũng viết theo bảy điều trên.
 
+## Bộ nhớ cho agent
+
+Skill kèm một bộ nhớ dùng chung cho các agent ở `~/agent-memory/`, để người dùng không phải dặn lại sau mỗi phiên. Nếu
+trong ngữ cảnh chưa có bộ nhớ người dùng nào được nạp, và trên máy chưa có cả `~/agent-memory/AGENTS.md` lẫn
+`~/agent-memory/.khong-dung`, thì làm xong việc đang làm rồi hỏi người dùng một lần có muốn dựng bộ nhớ không. Đồng ý
+thì làm theo `references/bo-nho.md`. Không đồng ý thì tạo tệp rỗng `~/agent-memory/.khong-dung` để lần sau khỏi hỏi.
+
 ## Tệp tham khảo
 
 | Tệp | Đọc khi |
@@ -235,6 +242,8 @@ Lời báo kèm theo cũng viết theo bảy điều trên.
 | `references/so-do-va-tai-lieu.md` | chữ trên sơ đồ, trang trình chiếu, tài liệu cấu hình gửi khách, báo cáo trạng thái hệ thống |
 | `references/van-ban-hanh-chinh.md` | báo cáo, tờ trình, công văn, kế hoạch, biên bản gửi hay do cơ quan nhà nước ban hành; số liệu báo cáo; hồ sơ |
 | `references/xuat-docx.md` | xuất văn bản ra tệp Word |
+| `references/bo-nho.md` | cài vina-me cho các agent, dựng hoặc sửa bộ nhớ dùng chung |
 
 `scripts/soat.mjs` cần Node 18 trở lên. Không có Node thì soát bằng mắt. `scripts/bao-cao-docx.mjs` và
 `scripts/van-ban-hc-docx.mjs` cần thêm gói `docx` (xem `references/xuat-docx.md`).
+`scripts/cai-dat.mjs` chỉ cần Node.
