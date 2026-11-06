@@ -119,6 +119,7 @@ const QUESTIONS = [
   ['doDai', 'Bạn muốn agent trả lời: 1 ngắn gọn, 2 vừa phải, 3 đủ chi tiết? (bỏ trống là 1) '],
   ['khongMuon', 'Có điều gì bạn không muốn agent làm không? (bỏ trống nếu chưa có) '],
   ['luatDoi', 'Đường dẫn tệp luật chung của đội, nếu có (bỏ trống nếu chưa có): '],
+  ['hocPhienCu', 'Cho agent đọc các phiên Claude Code, Codex cũ trên máy để soạn nháp bộ nhớ cho bạn duyệt không? (c/k, bỏ trống là có) '],
 ];
 
 async function getAnswers() {
@@ -181,12 +182,20 @@ function buildMemory(answers) {
         '',
       ].join('\n')
     : '';
-  const entry = read(path.join(templates, 'AGENTS.mau.md')).replace('{{NGAY}}', today()).replace('{{DONG_BO}}', syncNote);
+  // Đường dẫn skill ghi vào bộ nhớ: bản đã chép cho agent, hoặc chính thư mục đang chạy nếu không chép.
+  const skillHome = hasFlag('--khong-chep-skill') ? skillSrc : useClaude ? claudeSkill : useCodex ? codexSkills[0] : skillSrc;
+  const entry = read(path.join(templates, 'AGENTS.mau.md'))
+    .replace('{{NGAY}}', today())
+    .replace('{{DONG_BO}}', syncNote)
+    .replaceAll('{{SKILL}}', '`' + shown(skillHome) + '`')
+    .replaceAll('{{BI_MAT}}', shown(path.join(skillHome, 'scripts', 'bi-mat.mjs')));
   write(path.join(memDir, 'AGENTS.md'), entry);
   write(path.join(memDir, 'user.md'), userMd(answers));
   write(path.join(memDir, 'memory.md'), read(path.join(templates, 'memory.md')));
   const team = answers.luatDoi && String(answers.luatDoi).trim();
   write(path.join(memDir, 'doi.md'), team ? teamMd(team) : read(path.join(templates, 'doi.md')));
+  // Đồng ý học từ phiên cũ thì để lại dấu; AGENTS.md dặn agent thấy dấu này thì làm ở phiên đầu tiên.
+  if (!/^\s*k/i.test(String(answers.hocPhienCu ?? ''))) write(path.join(memDir, '.can-hoc-phien'), `Người dùng đồng ý ngày ${today()}.\n`);
   log(`  dựng bộ nhớ ở ${memDir}`);
 }
 

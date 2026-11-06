@@ -21,8 +21,15 @@ việc:
    nên điều đã dặn một lần thì không phải dặn lại. Dặn Claude Code điều gì thì Codex cũng biết.
 3. Nối bộ nhớ vào `~/.claude/CLAUDE.md` và `~/.codex/AGENTS.md`. Hai tệp này được sao lưu trước khi sửa.
 
-Đội có bộ luật chung (phông chữ, mẫu văn bản) thì đưa đường dẫn tệp luật ở câu hỏi cuối. Chi tiết, cách cập nhật và cách gỡ ở
-`references/bo-nho.md`.
+Đội có bộ luật chung (phông chữ, mẫu văn bản) thì đưa đường dẫn tệp luật khi được hỏi. Bạn đồng ý cho agent học từ các
+phiên cũ thì ở phiên đầu tiên, agent đọc lại những gì bạn đã gõ trong các phiên Claude Code, Codex trước đó, soạn nháp bộ
+nhớ để bạn duyệt rồi mới ghi.
+
+Agent cần mật khẩu (GitLab, VPN, trang quản trị) thì không dán vào chat: chạy `node scripts/bi-mat.mjs them <tên>`, gõ vào
+cửa sổ hiện ra. Mật khẩu được mã hoá bằng tài khoản Windows của bạn (Keychain trên macOS), agent dùng được mà không thấy
+giá trị.
+
+Chi tiết, cách cập nhật và cách gỡ ở `references/bo-nho.md`.
 
 Không muốn có bộ nhớ thì cài theo các mục dưới.
 

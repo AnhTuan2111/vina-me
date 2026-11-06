@@ -28,6 +28,22 @@ Agent nào không tự nạp được ba dòng `@` ở trên thì đọc ba tệ
 - Không ghi mật khẩu, token, khoá API, thông tin khách hàng, chuyện riêng người dùng kể.
 - Không sửa `doi.md`. Thấy luật của đội cần đổi thì nói với người dùng.
 - Ghi xong thì báo người dùng một dòng: đã ghi gì, vào tệp nào.
+
+## Học từ phiên cũ
+
+Thư mục này có tệp `.can-hoc-phien` nghĩa là người dùng đã đồng ý cho agent học từ các phiên Claude Code, Codex cũ trên máy
+mà việc đó chưa làm. Đầu phiên, hỏi người dùng có muốn làm ngay không; đồng ý thì làm theo mục "Học từ phiên cũ" trong
+`references/bo-nho.md` của skill vina-me ({{SKILL}}), xong thì xoá tệp `.can-hoc-phien`.
+
+## Mật khẩu và token
+
+- Không bảo người dùng dán mật khẩu, token vào chat. Cần thì chạy `node "{{BI_MAT}}" them <tên>`: script mở một cửa sổ riêng
+  để người dùng tự gõ, mật khẩu được mã hoá và không đi qua agent.
+- Người dùng đã lỡ dán vào chat thì lưu bằng `node "{{BI_MAT}}" them <tên> --tai-khoan <tk> --tu-stdin` (mật khẩu đưa vào
+  stdin), rồi nhắc họ: thứ đã dán nằm trong lịch sử phiên, nên đổi mật khẩu nếu nó quan trọng.
+- Dùng: `node "{{BI_MAT}}" chay <tên> -- <lệnh>` (lệnh con có biến `<TÊN>_USER`, `<TÊN>_PASS`), hoặc
+  `node "{{BI_MAT}}" stdin <tên> -- <lệnh>` cho lệnh đọc mật khẩu từ stdin. Xem có những gì: `ds`.
+- Không in, không echo, không ghi mật khẩu ra tệp hay vào câu trả lời. Bộ nhớ chỉ ghi tên bí mật và nó dùng cho việc gì.
 {{DONG_BO}}
 ## Viết tiếng Việt
 
