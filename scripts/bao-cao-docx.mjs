@@ -14,7 +14,7 @@ try {
   process.exit(1);
 }
 const {
-  Document, Packer, Paragraph, TextRun, ImageRun, HeadingLevel, AlignmentType, LevelFormat, BorderStyle, ShadingType,
+  Document, Packer, Paragraph, TextRun, ImageRun, HeadingLevel, AlignmentType, LevelFormat, BorderStyle, ShadingType, Table, TableRow, TableCell, WidthType,
 } = docx;
 
 const [, , input, output] = process.argv;
@@ -63,6 +63,31 @@ function runs(text, base = {}) {
 
 const para = (children, after = 120) => new Paragraph({ spacing: { after }, children });
 
+// Bảng: { columns: [...], rows: [[...]], widths: [phần trăm] }. Ô trống để người nhận tự điền.
+const TEXT_W = 11906 - 2 * 1134; // bề ngang chữ của A4 lề 2 cm, đơn vị DXA
+function table(t) {
+  const n = t.columns.length;
+  const pct = t.widths ?? Array(n).fill(100 / n);
+  const widths = pct.map((x) => Math.round(TEXT_W * x / 100));
+  widths[n - 1] = TEXT_W - widths.slice(0, -1).reduce((a, b) => a + b, 0);
+  const border = { style: BorderStyle.SINGLE, size: 4, color: 'BFB8AA' };
+  const borders = { top: border, bottom: border, left: border, right: border };
+  const cell = (text, i, head) => new TableCell({
+    width: { size: widths[i], type: WidthType.DXA }, borders,
+    margins: { top: 60, bottom: 60, left: 100, right: 100 },
+    ...(head ? { shading: { type: ShadingType.CLEAR, fill: 'EFEAE0', color: 'auto' } } : {}),
+    children: String(text ?? '').split(/\r?\n/).map((line) => new Paragraph({ spacing: { after: 0 },
+      children: runs(line, head ? { bold: true, size: 20 } : { size: 20 }) })),
+  });
+  return [
+    new Table({ width: { size: TEXT_W, type: WidthType.DXA }, columnWidths: widths, rows: [
+      new TableRow({ tableHeader: true, children: t.columns.map((c, i) => cell(c, i, true)) }),
+      ...t.rows.map((r) => new TableRow({ children: t.columns.map((_, i) => cell(r[i], i, false)) })),
+    ] }),
+    ...(t.caption ? [para(runs(t.caption, { italics: true, color: '666666', size: 18 }), 200)] : [para([], 160)]),
+  ];
+}
+
 function image(img) {
   const file = path.resolve(baseDir, img.file);
   const buf = fs.readFileSync(file);
@@ -86,6 +111,7 @@ if (data.meta) children.push(para(runs(data.meta, { color: '555555', size: 20 })
 (data.sections ?? []).forEach((sec, si) => {
   children.push(new Paragraph({ heading: HeadingLevel.HEADING_1, children: runs(`${si + 1}. ${sec.heading}`) }));
   for (const p of sec.paragraphs ?? []) children.push(para(runs(p)));
+  for (const t of sec.tables ?? []) children.push(...table(t));
   for (const b of sec.bullets ?? []) {
     children.push(new Paragraph({ numbering: { reference: 'bullets', level: 0 }, spacing: { after: 80 }, children: runs(b) }));
   }
@@ -95,6 +121,7 @@ if (data.meta) children.push(para(runs(data.meta, { color: '555555', size: 20 })
     for (const [label, text] of it.fields ?? []) {
       children.push(para([new TextRun({ text: label + ' ', bold: true, font: FONT }), ...runs(text)]));
     }
+    for (const t of it.tables ?? []) children.push(...table(t));
     for (const img of it.images ?? []) children.push(...image(img));
   });
 });

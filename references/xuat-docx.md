@@ -2,6 +2,7 @@
 
 Người đọc mở tệp Word bằng nhiều phần mềm khác nhau (Word, Google Docs, LibreOffice, xem trước trong ứng dụng chat), nên
 trình bày càng đơn giản càng ít vỡ. Phần này là cách trình bày; script dựng sẵn nằm ở `scripts/bao-cao-docx.mjs`.
+Văn bản gửi cơ quan nhà nước thì theo thể thức riêng, xem mục cuối.
 
 ## Trình bày
 
@@ -70,4 +71,63 @@ Cấu trúc JSON:
 - `items` được đánh số theo phần, ví dụ 2.1, 2.2.
 - `fields` là các cặp nhãn và nội dung. Trong nội dung, chữ bọc `` `…` `` thành phông mã.
 - `images[].file` là đường dẫn tương đối với tệp JSON. Script tự thu ảnh về rộng 16 cm.
-- Một phần có thể có `paragraphs` (đoạn văn thường), `bullets`, `items`, theo thứ tự đó.
+- Một phần có thể có `paragraphs` (đoạn văn thường), `tables`, `bullets`, `items`, theo thứ tự đó. Một mục có thể có
+  `paragraphs`, `fields`, `tables`, `images`.
+- `tables[]` gồm `columns` (tên cột), `rows` (mảng các hàng), `widths` (phần trăm bề ngang mỗi cột, không bắt buộc),
+  `caption`. Ô để chuỗi rỗng thành ô trống cho người nhận điền; muốn xuống dòng trong ô thì đặt ký tự xuống dòng trong chuỗi (trong JSON là
+  `\n`).
+
+## Văn bản gửi khách để xin dữ liệu
+
+- Viết từ phía người nhận: mở bằng những gì họ đã gửi và sẽ dùng ở đâu, rồi mới tới phần còn thiếu.
+- Mỗi yêu cầu nói cần gì (số lượng, định dạng), vì sao (người xem sẽ thấy gì ở chuyên mục đó), và đã có phần nào.
+- Dùng đúng cách phân mức, cách đặt tên tệp mà bên nhận đã đặt ra trong tài liệu của họ.
+- Không đưa lỗi nội bộ của bên làm vào văn bản gửi khách; việc cần khách làm thì viết thành yêu cầu.
+- Thứ khách phải điền thì đưa bảng mẫu có sẵn cột; thứ mình đã soạn nháp thì đưa bản nháp để khách chỉ việc duyệt.
+
+## Văn bản hành chính theo Nghị định 30/2020
+
+`scripts/van-ban-hc-docx.mjs` dựng báo cáo, tờ trình, kế hoạch, công văn theo thể thức ở `van-ban-hanh-chinh.md`: A4, lề
+trên và dưới 20 mm, trái 30 mm, phải 15 mm, Times New Roman cỡ 14, canh đều, lùi đầu dòng 1,27 cm, cách đoạn 6pt; khối
+tên cơ quan và Quốc hiệu hai cột; số trang giữa lề trên, trang đầu không hiện; mỗi phụ lục một phần riêng, đánh lại số
+trang. Script tự thêm số 0 vào ngày và tháng, tự đặt chấm phẩy và dấu chấm cho các khối Căn cứ, Kính gửi, Nơi nhận, tự đánh
+mục I., khoản 1., điểm a) theo bảng chữ cái tiếng Việt, thêm "- Như trên;" khi có Kính gửi, và kết nội dung bằng "./.".
+
+```bash
+NODE_PATH=/duong/dan/node_modules node scripts/van-ban-hc-docx.mjs bao-cao.json bao-cao.docx
+```
+
+```json
+{
+  "coQuanChuQuan": "Sở Giáo dục và Đào tạo tỉnh A",
+  "coQuan": "Trường Trung học\nphổ thông B",
+  "so": "05/BC-THPTB",
+  "diaDanh": "Thành phố A",
+  "ngay": "2026-01-06",
+  "tenLoai": "Báo cáo",
+  "trichYeu": "Kết quả triển khai phần mềm quản lý thư viện năm 2025",
+  "canCu": [],
+  "kinhGui": ["Sở Giáo dục và Đào tạo tỉnh A"],
+  "moDau": ["Thực hiện Kế hoạch số 12/KH-SGDĐT ngày 05 tháng 9 năm 2025 của ..., Trường ... báo cáo kết quả như sau:"],
+  "noiDung": [
+    { "muc": "Tình hình thực hiện", "khoan": [
+      { "tieuDe": "Kết quả đạt được", "diem": ["Đã nhập 1.234 đầu sách, đạt 98,5% ...", ["Phần mềm chạy ổn định:", "ý nhỏ;", "ý nhỏ."]] }
+    ] },
+    { "muc": "Đề xuất, kiến nghị", "doan": ["Đề nghị ..."] }
+  ],
+  "ketThuc": ["Trên đây là báo cáo ... Kính đề nghị ... xem xét."],
+  "noiNhan": ["Ban Giám hiệu"],
+  "luu": "VT, TV",
+  "quyenHan": "KT. Hiệu trưởng",
+  "chucVu": "Phó Hiệu trưởng",
+  "nguoiKy": "Nguyễn Văn C",
+  "phuLuc": [{ "ten": "Danh mục sách", "bang": [{ "columns": ["STT", "Tên sách", "Số bản"], "rows": [["1", "Sách giáo khoa Toán 10", "40"]] }] }]
+}
+```
+
+- Bỏ `tenLoai` thì thành công văn: trích yếu hiện dưới số ký hiệu sau "V/v".
+- `ngay` nhận `2026-01-06` hoặc `06/01/2026`. Tên cơ quan dài thì tự ngắt dòng bằng `\n` cho khỏi bị ngắt giữa một cụm.
+- Một mục có `doan`, `khoan`, `bang`. Một khoản có `tieuDe` (khoản đậm, một dòng riêng), `doan`, `diem`, `bang`. Một điểm
+  là chuỗi, hoặc mảng mà phần tử đầu là ý chính, các phần tử sau thành dòng gạch nối.
+- `kinhGui` một nơi thì cùng dòng với "Kính gửi:", nhiều nơi thì mỗi nơi một dòng.
+- Chữ ký để trống chỗ ký; dấu và chữ ký số do văn thư làm.

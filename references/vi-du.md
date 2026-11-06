@@ -201,3 +201,30 @@ Sau:
 > Chào anh, tối qua lúc 22h em deploy bản 2.4.1 lên production thì bị lỗi, trang đăng nhập trả 502 trong khoảng 12
 > phút. Em đã quay lại bản 2.4.0 lúc 22h15. Lý do là bản mới cần một biến môi trường mà production chưa có. Em sẽ bổ
 > sung và deploy lại lúc 14h hôm nay, anh duyệt giúp em trước giờ đó.
+
+## 17. Báo cáo gửi cơ quan nhà nước
+
+Trước, viết theo kiểu báo cáo kỹ thuật gửi trong nhóm:
+
+> Bọn mình đã xong phần nhập dữ liệu, khoảng 1,234 đầu sách (gần như đủ hết). Hệ thống chạy ổn từ 15/11, chưa thấy lỗi
+> gì. Còn mấy chục cuốn thiếu mã vạch vì phiếu nhập cũ mất, cái này chắc phải hỏi Sở.
+
+Sau, theo thể thức văn bản hành chính:
+
+> I. KẾT QUẢ ĐẠT ĐƯỢC
+>
+> 1. Đã nhập 1.234 đầu sách, đạt 98,5% số đầu sách hiện có (số liệu tính đến ngày 14/12/2025).
+>
+> 2. Phần mềm vận hành ổn định từ ngày 15/11/2025, chưa phát sinh sự cố mất dữ liệu.
+>
+> II. TỒN TẠI, HẠN CHẾ VÀ NGUYÊN NHÂN
+>
+> Còn 19 đầu sách chưa có mã vạch do phiếu nhập sách năm 2015 bị thất lạc.
+>
+> III. ĐỀ XUẤT, KIẾN NGHỊ
+>
+> Đề nghị Sở Giáo dục và Đào tạo hướng dẫn cách ghi nhận các đầu sách không còn phiếu nhập gốc.
+
+Chủ ngữ là đơn vị chứ không phải "bọn mình". "Khoảng", "gần như đủ hết", "mấy chục" thay bằng con số có kỳ số liệu. Số
+viết theo kiểu Việt Nam. Ý đoán "chắc phải hỏi Sở" thành một kiến nghị cụ thể. Ba mục theo khung của Nghị định 09/2019.
+Bản "trước" thiếu con số 19 và 98,5% nên người viết phải đi tra lại; không có dữ kiện thì để trống, không tự điền.

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Soát phần máy đếm được trong một văn bản tiếng Việt (.md, .txt, .html).
-// Dùng: node soat.mjs <tệp> [tệp khác…]
+// Dùng: node soat.mjs [--hanh-chinh] <tệp> [tệp khác…]
+// Tệp có Quốc hiệu, hoặc chạy với --hanh-chinh, thì soát theo thể thức văn bản hành chính (references/van-ban-hanh-chinh.md).
 // Script chỉ bắt dấu hiệu bề mặt. Nó không biết câu nào rời câu nào, nên vẫn phải tự đọc lại hai lượt.
 import fs from 'node:fs';
 
@@ -33,11 +34,85 @@ function layVan(tep) {
   return s;
 }
 
-function soat(tep) {
+// Điểm trong khoản đánh theo bảng chữ cái tiếng Việt (Nghị định 30/2020, Phụ lục I).
+const CHU_CAI = 'a b c d đ e g h i k l m n o p q r s t u v x y'.split(' ');
+
+// Các phép dò thể thức văn bản hành chính. Chỉ bắt chỗ máy đếm được; cỡ chữ, lề, phông phải xem trong tệp Word.
+function soatHanhChinh(tho) {
+  const loi = [];
+  const dong = tho.replace(/\r\n/g, '\n').split('\n').map((l) => l.replace(/^\s*[|>]\s*|\s*\|\s*$/g, '').trim());
+
+  const tieuNgu = tho.match(/Độc\s*lập\s*\S?\s*Tự\s*do\s*\S?\s*Hạnh\s*phúc/g) || [];
+  const sai = tieuNgu.filter((t) => t !== 'Độc lập - Tự do - Hạnh phúc');
+  if (sai.length) loi.push(`Tiêu ngữ viết "${sai[0]}": phải là gạch nối có cách chữ, "Độc lập - Tự do - Hạnh phúc"`);
+
+  const ngay = tho.match(/ngày\s+[1-9]\s+tháng|tháng\s+[12]\s+năm|\bngày\s+[1-9]\/\d{1,2}\/\d{4}|\b\d{1,2}\/[12]\/\d{4}/g) || [];
+  if (ngay.length) loi.push(`ngày dưới 10 hoặc tháng 1, 2 thiếu số 0: ${[...new Set(ngay)].slice(0, 3).join(', ')}`);
+  const so = tho.match(/Số:\s*[1-9]\//g) || [];
+  if (so.length) loi.push(`số văn bản dưới 10 thiếu số 0: ${so[0]}`);
+
+  // Điểm a), b)…: chữ không có trong bảng chữ cái tiếng Việt, hoặc nhảy chữ trong cùng một khoản.
+  let truoc = -1;
+  const diemSai = [];
+  for (const l of dong) {
+    const m = l.match(/^([a-zđ])\)\s/);
+    if (!m) { if (/^\d+\.\s/.test(l)) truoc = -1; continue; }
+    const i = CHU_CAI.indexOf(m[1]);
+    if (i < 0) diemSai.push(`${m[1]}) không có trong bảng chữ cái tiếng Việt`);
+    else if (i !== 0 && truoc >= 0 && i !== truoc + 1) diemSai.push(`${CHU_CAI[truoc]}) rồi ${m[1]}), phải là ${CHU_CAI[truoc + 1]})`);
+    truoc = i < 0 ? truoc + 1 : i;
+  }
+  if (diemSai.length) loi.push(`đánh điểm sai: ${[...new Set(diemSai)].slice(0, 3).join('; ')}`);
+
+  const soAnh = tho.match(/\b\d{1,3}(,\d{3})+(\.\d+)?\b|\b\d+\.\d{1,2}\s?%/g) || [];
+  if (soAnh.length) loi.push(`số viết kiểu tiếng Anh: ${[...new Set(soAnh)].slice(0, 3).join(', ')}; tiếng Việt dùng dấu chấm tách hàng nghìn, dấu phẩy trước phần thập phân`);
+
+  // Ba khối có dấu cố định: Kính gửi, Nơi nhận (dòng mở bằng gạch nối) và Căn cứ.
+  const khoi = (batDau, laDong) => {
+    const i = dong.findIndex((l) => batDau.test(l));
+    if (i < 0) return null;
+    const ds = [];
+    const dauDong = dong[i].replace(batDau, '').trim();
+    if (dauDong && laDong(dauDong)) ds.push(dauDong);
+    for (let k = i + 1; k < dong.length && (laDong(dong[k]) || (!dong[k] && !ds.length)); k++) if (dong[k]) ds.push(dong[k]);
+    return ds;
+  };
+  const kiemDau = (ten, ds) => {
+    if (!ds || ds.length < 2) return;
+    const giua = ds.slice(0, -1).filter((l) => !/;$/.test(l));
+    if (giua.length) loi.push(`khối ${ten}: dòng "${giua[0].slice(0, 40)}" phải kết bằng chấm phẩy`);
+    if (!/\.$/.test(ds[ds.length - 1])) loi.push(`khối ${ten}: dòng cuối "${ds[ds.length - 1].slice(0, 40)}" phải kết bằng dấu chấm`);
+  };
+  const gach = (l) => /^-\s?\S/.test(l);
+  const kinhGui = khoi(/^Kính gửi:\s*/, gach);
+  kiemDau('Kính gửi', kinhGui);
+  const noiNhan = khoi(/^Nơi nhận:\s*/, gach);
+  kiemDau('Nơi nhận', noiNhan);
+  if (dong.some((l) => /^Kính gửi:/.test(l)) && noiNhan && noiNhan.length && !/Như trên/.test(noiNhan[0])) {
+    loi.push('có Kính gửi mà dòng đầu Nơi nhận không phải "- Như trên;"');
+  }
+  if (noiNhan && noiNhan.length && !noiNhan.some((l) => /Lưu:/.test(l))) loi.push('Nơi nhận thiếu dòng "- Lưu: VT, ..."');
+  kiemDau('Căn cứ', khoi(/^(?=Căn cứ )/, (l) => /^(Căn cứ|Xét|Theo đề nghị|Thực hiện) /.test(l)));
+
+  // Viện dẫn: Phần, Chương, Mục, Điều viết hoa; khoản, điểm viết thường.
+  const vienHoa = tho.match(/(?<=[\p{Ll},]\s)(Khoản\s+\d+|Điểm\s+[a-zđ])\s+(khoản|Điều)/gu) || [];
+  const dieuThuong = tho.match(/(khoản\s+\d+|điểm\s+[a-zđ])\s+điều\s+\d+/giu) || [];
+  const vd = [...vienHoa, ...dieuThuong.filter((x) => /điều\s+\d+$/.test(x))];
+  if (vd.length) loi.push(`viện dẫn: ${[...new Set(vd)].slice(0, 3).map((x) => `"${x}"`).join(", ")}; viết "điểm a khoản 2 Điều 5"`);
+  return loi;
+}
+
+function soat(tep, hanhChinh) {
   const tho = fs.readFileSync(tep, 'utf8');
   const s = layVan(tep);
   const baoCao = [];
   const ghiChu = [];   // thấy nhưng chưa tới mức phải sửa
+  // Văn bản hành chính: khuôn mẫu là bắt buộc, đề mục in hoa là quy định, khoản và điểm thường chỉ một câu.
+  const hc = hanhChinh || /CỘNG\s+H(ÒA|OÀ)\s+XÃ\s+HỘI\s+CHỦ\s+NGHĨA\s+VIỆT\s+NAM/.test(tho);
+  if (hc) {
+    console.log('  (soát theo thể thức văn bản hành chính)');
+    baoCao.push(...soatHanhChinh(tho));
+  }
 
   // 1. gạch dài, gạch vừa: đếm trên cả tệp, kể cả code và tiêu đề
   const GACH = new RegExp('[' + String.fromCharCode(0x2014, 0x2013) + ']', 'g');
@@ -56,7 +131,7 @@ function soat(tep) {
   const soChuTep = thap.split(/\s+/).length;
   if (tongItGap) {
     const ds = itGap.map(([c, n]) => (n > 1 ? `${c} (${n})` : c)).join(", ");
-    const day = tongItGap / soChuTep > 0.004 || itGap.some(([, n]) => n >= 3);
+    const day = !hc && (tongItGap / soChuTep > 0.004 || itGap.some(([, n]) => n >= 3));
     (day ? baoCao : ghiChu).push(`cụm ít gặp ngoài đời${day ? ", đang dày" : ""}: ${ds}`);
   }
   for (const m of MO_CAU) {
@@ -68,7 +143,7 @@ function soat(tep) {
   const doiLap = (s.match(/không phải[^.?!\n]{1,80}(, | )mà là/gi) || []).length;
   if (doiLap) baoCao.push(`"không phải … mà là": ${doiLap} lần (chỉ giữ khi sửa một chỗ hiểu sai có thật)`);
   const inHoa = (s.match(/(?<![\p{L}\d])[\p{Lu}]{5,}(?![\p{L}\d])/gu) || []).filter((w) => !/^[A-Z0-9]+$/.test(w));
-  if (inHoa.length) baoCao.push(`chữ in hoa nhấn mạnh: ${[...new Set(inHoa)].slice(0, 5).join(', ')}`);
+  if (inHoa.length && !hc) baoCao.push(`chữ in hoa nhấn mạnh: ${[...new Set(inHoa)].slice(0, 5).join(', ')}`);
   if (/\p{Extended_Pictographic}/u.test(s)) baoCao.push('có emoji');
   // ký hiệu trong câu văn (code và output đã được bỏ ra ở layVan)
   const MUI_TEN = new RegExp('[' + [0x2190, 0x2192, 0x21d0, 0x21d2, 0x2713, 0x2714, 0x2717, 0x2718].map((c) => String.fromCharCode(c)).join('') + ']', 'g');
@@ -101,7 +176,7 @@ function soat(tep) {
     }
     moHoi.push(cau.length > 0 && cau[0].trim().endsWith('?'));
   }
-  if (soCau) {
+  if (soCau && !hc) {
     const tb = soChu / soCau, cd = soCau / doan.length;
     console.log(`  ${doan.length} đoạn, ${soCau} câu · ${tb.toFixed(1)} chữ mỗi câu · ${cd.toFixed(1)} câu mỗi đoạn · ${(100 * soHoi / soCau).toFixed(1)}% là câu hỏi`);
     if (tb < 15) baoCao.push(`câu trung bình chỉ ${tb.toFixed(1)} chữ: xem có đang chặt câu cụt và bỏ từ nối không`);
@@ -131,8 +206,10 @@ function soat(tep) {
   return baoCao.length;
 }
 
-const tep = process.argv.slice(2);
-if (!tep.length) { console.log('Dùng: node soat.mjs <tệp> [tệp khác…]'); process.exit(1); }
+const thamSo = process.argv.slice(2);
+const hanhChinh = thamSo.includes('--hanh-chinh');
+const tep = thamSo.filter((t) => t !== '--hanh-chinh');
+if (!tep.length) { console.log('Dùng: node soat.mjs [--hanh-chinh] <tệp> [tệp khác…]'); process.exit(1); }
 let tong = 0;
-for (const t of tep) { console.log(t); tong += soat(t); }
+for (const t of tep) { console.log(t); tong += soat(t, hanhChinh); }
 console.log(`\n${tong} chỗ cần xem lại. Xong bước này vẫn phải tự đọc hai lượt: người mới, và người bắt văn máy.`);

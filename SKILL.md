@@ -1,11 +1,11 @@
 ---
 name: vina-me
-description: Viết và sửa văn tiếng Việt cho thuận mồm, dễ hiểu, không có mùi văn máy và không rơi vào giọng văn mẫu. Dùng mỗi khi phải viết hay sửa một văn bản tiếng Việt dài hơn vài câu, kể cả khi người dùng không nhắc tới giọng văn, ví dụ bài giảng, tài liệu kỹ thuật, README, ghi chú, báo cáo, báo cáo lỗi, báo cáo rà soát, kiến nghị, email, bài đăng, lời giải thích trong chat, chữ trên sơ đồ và trang trình chiếu, tệp Word (docx). Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "khó hiểu", "rời rạc", "không thuận mồm", "văn mẫu", hoặc nhờ humanize, chống AI slop, viết lại cho tự nhiên, viết theo giọng của một người cụ thể, soát lỗi câu và lỗi mạch lạc.
+description: Viết và sửa văn tiếng Việt cho thuận mồm, dễ hiểu, không có mùi văn máy và không rơi vào giọng văn mẫu. Dùng mỗi khi phải viết hay sửa một văn bản tiếng Việt dài hơn vài câu, kể cả khi người dùng không nhắc tới giọng văn, ví dụ bài giảng, tài liệu kỹ thuật, README, ghi chú, báo cáo, báo cáo lỗi, báo cáo rà soát, kiến nghị, văn bản hành chính nhà nước (báo cáo, tờ trình, công văn, kế hoạch, biên bản theo Nghị định 30/2020), email, bài đăng, lời giải thích trong chat, chữ trên sơ đồ và trang trình chiếu, tệp Word (docx). Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "khó hiểu", "rời rạc", "không thuận mồm", "văn mẫu", hoặc nhờ humanize, chống AI slop, viết lại cho tự nhiên, viết theo giọng của một người cụ thể, soát lỗi câu và lỗi mạch lạc.
 license: MIT
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.5.0"
+  version: "0.6.0"
 ---
 
 # Viết cho thuận mồm
@@ -159,6 +159,7 @@ Bảy điều trên giữ ở mọi giọng. Xưng hô đổi theo nơi dùng.
 | Tài liệu kỹ thuật, sách hướng dẫn, bản tin | trung tính, ít xưng hô |
 | Báo cáo, kiến nghị, thư công việc, đơn từ | trang trọng, theo cách xưng hô của nơi nhận |
 | Báo cáo gửi cả nhóm, hoặc người nhận dặn "chỉ báo cáo" | không xưng hô, chủ ngữ là vật hoặc trang ("Trang chủ ghi…") |
+| Văn bản hành chính nhà nước | không xưng hô, chủ ngữ là cơ quan, đơn vị; theo thể thức ở `references/van-ban-hanh-chinh.md` |
 
 Thân mật ở xưng hô và từ nối. Giữ chuẩn ở thuật ngữ, định nghĩa và cấu trúc câu. Viết theo giọng một người cụ thể thì
 tra `references/giong.md`.
@@ -194,7 +195,8 @@ tra `references/giong.md`.
 
 ## Không làm
 
-- Không áp skill cho văn bản pháp lý, hợp đồng, biểu mẫu, thơ, lời thoại.
+- Không áp skill cho văn bản quy phạm pháp luật, hợp đồng, biểu mẫu, thơ, lời thoại. Văn bản hành chính nhà nước thì
+  theo `references/van-ban-hanh-chinh.md`: ở đó khuôn mẫu là bắt buộc, và một số điều ở trên làm ngược lại.
 - Không sửa một dấu hiệu đơn lẻ. Sửa khi nó lặp thành khuôn hoặc làm khó hiểu. Riêng dấu gạch dài thì gặp là bỏ.
 - Không chặt hết thành câu cụt. Không rút cho ngắn. Không rải "ừ thì", "nói thật là" để ra vẻ người.
 - Không ép giọng thân mật cho mọi văn bản. Không bỏ định nghĩa chuẩn hay nguồn để cho đời thường.
@@ -209,7 +211,7 @@ tra `references/giong.md`.
 | Sửa một tệp | Chỉ sửa phần văn. Báo số chỗ đã sửa theo loại |
 | Soát mà không sửa | Từng chỗ theo dạng "câu gốc, vấn đề, cách sửa", xếp từ nặng tới nhẹ |
 | Báo cáo lỗi, báo cáo rà soát | Theo `references/bao-cao-ra-soat.md`: mỗi điểm một mục, có vị trí, lời trích, ảnh khoanh chỗ sai |
-| Tệp Word | Dựng bằng `scripts/bao-cao-docx.mjs`, xuất PDF và xem từng trang trước khi đưa |
+| Tệp Word | Dựng bằng `scripts/bao-cao-docx.mjs`, văn bản hành chính thì `scripts/van-ban-hc-docx.mjs`; xuất PDF và xem từng trang trước khi đưa |
 
 Lời báo kèm theo cũng viết theo bảy điều trên.
 
@@ -231,7 +233,8 @@ Lời báo kèm theo cũng viết theo bảy điều trên.
 | `references/giang-bai.md` | viết bài giảng, tài liệu dạy học, câu hỏi kiểm tra |
 | `references/bao-cao-ra-soat.md` | viết báo cáo lỗi, báo cáo đối chiếu nội dung với tài liệu gốc |
 | `references/so-do-va-tai-lieu.md` | chữ trên sơ đồ, trang trình chiếu, tài liệu cấu hình gửi khách, báo cáo trạng thái hệ thống |
+| `references/van-ban-hanh-chinh.md` | báo cáo, tờ trình, công văn, kế hoạch, biên bản gửi hay do cơ quan nhà nước ban hành; số liệu báo cáo; hồ sơ |
 | `references/xuat-docx.md` | xuất văn bản ra tệp Word |
 
-`scripts/soat.mjs` cần Node 18 trở lên. Không có Node thì soát bằng mắt. `scripts/bao-cao-docx.mjs` cần thêm gói `docx`
-(xem `references/xuat-docx.md`).
+`scripts/soat.mjs` cần Node 18 trở lên. Không có Node thì soát bằng mắt. `scripts/bao-cao-docx.mjs` và
+`scripts/van-ban-hc-docx.mjs` cần thêm gói `docx` (xem `references/xuat-docx.md`).
