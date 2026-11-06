@@ -76,7 +76,7 @@ liền.
 - Hai ý có quan hệ nhân quả, điều kiện, nhượng bộ thì cho vào một câu ghép: vì… nên, nếu… thì, tuy… nhưng, phải… thì…
   mới.
 - Đã mở cặp thì đóng cặp. Hai vế nói về cùng một loại thứ.
-- Câu 20 tới 30 chữ không sao, miễn khớp nối rõ. Câu cụt để dành cho chỗ cần chốt.
+- Câu 20 tới 30 tiếng không sao, miễn khớp nối rõ. Câu cụt để dành cho chỗ cần chốt.
 - Nhịp không đều. Câu rất ngắn xen câu dài, đoạn dài xen đoạn một câu.
 - Không rút câu cho vừa một mốc số chữ. Văn bản quá dài thì bỏ hẳn một ý không cần hoặc tách làm hai, và báo con số
   thật.
@@ -245,5 +245,5 @@ thì làm theo `references/agent-memory.md`. Không đồng ý thì tạo tệp 
 | `references/agent-memory.md` | cài vina-me cho các agent, dựng hoặc sửa bộ nhớ dùng chung, học từ phiên cũ, giữ mật khẩu cho agent |
 
 `scripts/lint.mjs` cần Node 18 trở lên. Không có Node thì soát bằng mắt. `scripts/report-docx.mjs` và
-`scripts/official-doc-docx.mjs` cần thêm gói `docx` (xem `references/docx-export.md`).
+`scripts/official-doc-docx.mjs` tự cài gói `docx` ở lần chạy đầu (xem `references/docx-export.md`).
 `scripts/setup.mjs`, `scripts/learn-from-sessions.mjs`, `scripts/secrets.mjs` chỉ cần Node.

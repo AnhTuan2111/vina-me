@@ -1,18 +1,11 @@
 #!/usr/bin/env node
 // Dựng văn bản hành chính (báo cáo, tờ trình, kế hoạch, công văn...) ra tệp docx theo thể thức Nghị định 30/2020/NĐ-CP,
 // Phụ lục I. Nội dung lấy từ một tệp JSON, cấu trúc ở references/docx-export.md.
-// Dùng: NODE_PATH=<thư mục node_modules có gói docx> node official-doc-docx.mjs <content.json> <out.docx>
+// Dùng: node official-doc-docx.mjs <content.json> <out.docx>. Lần đầu chạy, script tự cài gói docx (xem load-docx.mjs).
 import fs from 'node:fs';
-import { createRequire } from 'node:module';
+import { loadDocx } from './load-docx.mjs';
 
-const require = createRequire(import.meta.url);
-let docx;
-try {
-  docx = require('docx');
-} catch {
-  console.error('Không tìm thấy gói "docx". Chạy "npm install docx" ở một thư mục rồi đặt NODE_PATH trỏ tới node_modules của nó.');
-  process.exit(1);
-}
+const docx = loadDocx();
 const {
   Document, Packer, Paragraph, TextRun, AlignmentType, BorderStyle, Table, TableRow, TableCell, WidthType, Header,
   PageNumber,

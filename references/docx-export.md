@@ -34,11 +34,12 @@ Văn bản gửi cơ quan nhà nước thì theo thể thức riêng, xem mục 
 
 ## Script dựng sẵn
 
-`scripts/report-docx.mjs` đọc một tệp JSON và dựng tệp docx theo đúng các quy ước trên. Cần Node 18 trở lên và thư
-viện `docx` (`npm install docx` trong một thư mục bất kỳ, rồi chạy script với `NODE_PATH` trỏ tới `node_modules` đó).
+`scripts/report-docx.mjs` đọc một tệp JSON và dựng tệp docx theo đúng các quy ước trên. Cần Node 18 trở lên và npm.
+Lần chạy đầu, script tự cài thư viện `docx` vào `~/.cache/vina-me` (đổi chỗ bằng biến `VINA_ME_CACHE`); máy đã có `docx`
+qua `NODE_PATH` thì dùng luôn bản đó.
 
 ```bash
-NODE_PATH=/path/to/node_modules node scripts/report-docx.mjs content.json report.docx
+node scripts/report-docx.mjs content.json report.docx
 ```
 
 Cấu trúc JSON:
@@ -94,7 +95,7 @@ trang. Script tự thêm số 0 vào ngày và tháng, tự đặt chấm phẩy
 mục I., khoản 1., điểm a) theo bảng chữ cái tiếng Việt, thêm "- Như trên;" khi có Kính gửi, và kết nội dung bằng "./.".
 
 ```bash
-NODE_PATH=/path/to/node_modules node scripts/official-doc-docx.mjs report.json report.docx
+node scripts/official-doc-docx.mjs report.json report.docx
 ```
 
 ```json

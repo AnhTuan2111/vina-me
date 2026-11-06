@@ -2,6 +2,7 @@
 // Soát phần máy đếm được trong một văn bản tiếng Việt (.md, .txt, .html).
 // Dùng: node lint.mjs [--official] <tệp> [tệp khác…]
 // Tệp có Quốc hiệu, hoặc chạy với --official, thì soát theo thể thức văn bản hành chính (references/official-documents.md).
+// Độ dài câu đếm theo tiếng (âm tiết, tách theo dấu cách), như cách người Việt vẫn đếm "chữ".
 // Script chỉ bắt dấu hiệu bề mặt. Nó không biết câu nào rời câu nào, nên vẫn phải tự đọc lại hai lượt.
 import fs from 'node:fs';
 
@@ -178,10 +179,10 @@ function lint(file, forceOfficial) {
   }
   if (sentences && !official) {
     const avg = words / sentences, perPara = sentences / paragraphs.length;
-    console.log(`  ${paragraphs.length} đoạn, ${sentences} câu · ${avg.toFixed(1)} chữ mỗi câu · ${perPara.toFixed(1)} câu mỗi đoạn · ${(100 * questions / sentences).toFixed(1)}% là câu hỏi`);
-    if (avg < 15) report.push(`câu trung bình chỉ ${avg.toFixed(1)} chữ: xem có đang chặt câu cụt và bỏ từ nối không`);
+    console.log(`  ${paragraphs.length} đoạn, ${sentences} câu · ${avg.toFixed(1)} tiếng mỗi câu · ${perPara.toFixed(1)} câu mỗi đoạn · ${(100 * questions / sentences).toFixed(1)}% là câu hỏi`);
+    if (avg < 15) report.push(`câu trung bình chỉ ${avg.toFixed(1)} tiếng: xem có đang chặt câu cụt và bỏ từ nối không`);
     if (perPara < 2.2) report.push(`đoạn trung bình chỉ ${perPara.toFixed(1)} câu: xem các đoạn có rời rạc không`);
-    if (shortOnes / sentences > 0.25) report.push(`${Math.round(100 * shortOnes / sentences)}% số câu dài không quá 6 chữ`);
+    if (shortOnes / sentences > 0.25) report.push(`${Math.round(100 * shortOnes / sentences)}% số câu dài không quá 6 tiếng`);
     if (colons / sentences > 0.2) report.push(`${colons} câu có dấu hai chấm theo sau là lời giải thích: xem có đang dùng nó làm khung không`);
   }
   if (paragraphs.length && SCHOOL_OPENING.test(paragraphs[0])) report.push('mở bài bằng khuôn "Trong xã hội hiện đại…": mở bằng việc đang bàn và một thứ cụ thể');
