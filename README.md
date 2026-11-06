@@ -13,8 +13,7 @@ node vina-me/scripts/cai-dat.mjs
 ```
 
 Script hỏi vài câu (bạn muốn được gọi là gì, làm vai trò gì, hay viết cho ai, muốn agent trả lời dài hay ngắn), câu chọn
-thì dùng phím mũi tên, rồi làm ba việc. Phông của terminal không có ký tự Powerline (hiện ô vuông) thì thêm `--tron`.
-
+thì dùng phím mũi tên (phông của terminal không có ký tự Powerline, hiện ô vuông, thì thêm `--tron`), rồi làm ba việc:
 
 1. Chép skill vào thư mục skill của Claude Code (`~/.claude/skills`) và Codex (`~/.agents/skills`, `~/.codex/skills`), agent
    nào có trên máy thì chép cho agent đó.
