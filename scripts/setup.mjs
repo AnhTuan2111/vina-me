@@ -360,7 +360,7 @@ const QUESTIONS = [
   { key: 'length', label: 'Trả lời', q: 'Bạn muốn agent trả lời thế nào?', choices: [['Ngắn gọn', '1'], ['Vừa phải', '2'], ['Đủ chi tiết', '3']] },
   { key: 'avoid', label: 'Không muốn', q: 'Có điều gì bạn không muốn agent làm không?', hint: 'bỏ trống nếu chưa có' },
   { key: 'teamRules', label: 'Luật đội', q: 'Tệp luật chung của đội, nếu có?', hint: 'đường dẫn tệp, bỏ trống nếu chưa có' },
-  { key: 'learnFromSessions', label: 'Học phiên cũ', q: 'Cho agent đọc các phiên Claude Code, Codex cũ trên máy để soạn nháp bộ nhớ cho bạn duyệt?', choices: YES_NO },
+  { key: 'learnFromSessions', label: 'Học phiên cũ', q: 'Cho agent đọc các phiên Claude Code, Codex cũ để soạn nháp bộ nhớ cho bạn duyệt?', hint: 'agent đọc lịch sử thì nội dung được gửi lên nhà cung cấp mô hình; trước khi đọc agent sẽ hỏi lại và cho bỏ bớt dự án', choices: YES_NO },
   { key: 'github', label: 'GitHub', q: 'Lưu bộ nhớ vào một repo GitHub riêng tư để máy nào của bạn cũng kéo về được?', choices: YES_NO },
 ];
 
@@ -456,7 +456,8 @@ let lineReader;
 async function askPlain(q) {
   if (!lineReader) lineReader = readline.createInterface({ input: process.stdin, output: process.stdout });
   lineReader.iter ??= lineReader[Symbol.asyncIterator]();
-  const extra = q.choices ? q.choices.map(([label, v]) => `${v} ${label.toLowerCase()}`).join(', ') + ', bỏ trống là cái đầu' : q.hint;
+  const choiceText = q.choices && q.choices.map(([label, v]) => `${v} ${label.toLowerCase()}`).join(', ') + ', bỏ trống là cái đầu';
+  const extra = [choiceText, q.hint].filter(Boolean).join('; ');
   process.stdout.write(`${q.q}${extra ? ` (${extra})` : ''} `);
   const { value, done } = await lineReader.iter.next();
   const v = done ? '' : value.trim();

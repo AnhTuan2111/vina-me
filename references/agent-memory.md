@@ -128,23 +128,26 @@ Người dùng không muốn có bộ nhớ thì tạo tệp rỗng `~/agent-mem
 Bộ nhớ dựng từ tám câu hỏi thì còn mỏng. Phần dày lên được là những gì người dùng đã sửa, đã khen, đã kể về mình trong các
 phiên trước. Agent làm việc này một lần, khi người dùng đồng ý (tệp `~/agent-memory/.pending-learn` là dấu đã đồng ý):
 
-1. Chạy `node <thư mục skill>/scripts/learn-from-sessions.mjs`. Script đọc các phiên Claude Code (`~/.claude/projects`,
+1. Nói với người dùng trước khi làm: các đợt rút ra nằm trên máy, nhưng khi agent đọc chúng thì nội dung được gửi lên nhà
+   cung cấp mô hình thêm một lần. Hỏi dự án nào cần bỏ ra; người dùng đổi ý thì dừng.
+2. Chạy `node <thư mục skill>/scripts/learn-from-sessions.mjs`. Script đọc các phiên Claude Code (`~/.claude/projects`,
    `$CLAUDE_CONFIG_DIR/projects`) và Codex (`~/.codex/sessions`), chỉ lấy tin người dùng tự gõ, che mật khẩu và token trông
    thấy được, rồi ghi ra thư mục tạm: `overview.md` và các đợt `batch-01.md`, `batch-02.md`… mỗi đợt khoảng 60.000 ký tự.
-   Chỉ muốn từ một ngày thì thêm `--since 2026-09-01`.
-2. Đọc `overview.md`, rồi từng đợt theo thứ tự. Sau mỗi đợt, ghi các ý tìm được vào một tệp nháp trong cùng thư mục tạm,
+   Chỉ muốn từ một ngày thì thêm `--since 2026-09-01`. Chỉ lấy vài dự án thì `--only <chữ trong đường dẫn>`, bỏ dự án
+   thì `--exclude <chữ trong đường dẫn>`; hai cờ lặp lại được. Script báo số chỗ đã che.
+3. Đọc `overview.md`, rồi từng đợt theo thứ tự. Sau mỗi đợt, ghi các ý tìm được vào một tệp nháp trong cùng thư mục tạm,
    không ghi thẳng vào bộ nhớ. Tìm bốn loại:
    - người dùng sửa cách làm: "đừng", "sao lại", "không phải thế", "lần sau", "tôi bảo rồi";
    - người dùng khen hay nhận một cách làm: "hay đấy", "đúng rồi", "cứ thế";
    - người dùng kể về mình: vai trò, việc đang làm, người đọc văn bản của họ, cách họ muốn được trả lời;
    - điều người dùng nhắc đi nhắc lại ở nhiều phiên. Nhắc càng nhiều lần thì càng chắc là luật.
-3. Bỏ: việc chỉ đúng trong một dự án, chi tiết của một lần làm, chuyện riêng tư, thông tin khách hàng, và mọi thứ trông
+4. Bỏ: việc chỉ đúng trong một dự án, chi tiết của một lần làm, chuyện riêng tư, thông tin khách hàng, và mọi thứ trông
    giống mật khẩu dù script đã che hay chưa.
-4. Gộp các ý trùng. Hai ý ngược nhau thì giữ ý mới hơn, ghi rõ là đã đổi. Xếp từng ý vào `user.md` hay `memory.md` theo bảng
+5. Gộp các ý trùng. Hai ý ngược nhau thì giữ ý mới hơn, ghi rõ là đã đổi. Xếp từng ý vào `user.md` hay `memory.md` theo bảng
    trong `AGENTS.md`.
-5. Đưa người dùng bản nháp chia hai phần (thêm vào `user.md`, thêm vào `memory.md`). Mỗi ý kèm một lời trích nguyên văn và
+6. Đưa người dùng bản nháp chia hai phần (thêm vào `user.md`, thêm vào `memory.md`). Mỗi ý kèm một lời trích nguyên văn và
    ngày. Người dùng duyệt, sửa, bỏ từng ý.
-6. Ghi các ý đã duyệt theo luật ở `AGENTS.md`, chạy `<setup> save "học từ phiên cũ"`, xoá thư mục tạm và tệp
+7. Ghi các ý đã duyệt theo luật ở `AGENTS.md`, chạy `<setup> save "học từ phiên cũ"`, xoá thư mục tạm và tệp
    `.pending-learn`.
 
 Lịch sử dài thì có nhiều đợt; đọc lần lượt và giữ tệp nháp ngắn, đừng chép lại nguyên văn các đợt vào nháp.
