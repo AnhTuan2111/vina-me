@@ -5,7 +5,7 @@
 //   node scripts/learn-from-sessions.mjs                    mọi phiên, ghi ra <thư mục tạm>/vina-me-learn
 //   node scripts/learn-from-sessions.mjs --since 2026-09-01 chỉ phiên từ ngày đó
 //   node scripts/learn-from-sessions.mjs --out <thư mục>    chọn chỗ ghi
-//   node scripts/learn-from-sessions.mjs --only kpi --only blog   chỉ phiên có thư mục làm việc chứa một trong các chữ đó
+//   node scripts/learn-from-sessions.mjs --only project-a --only project-b chỉ phiên có thư mục làm việc chứa một trong các chữ đó
 //   node scripts/learn-from-sessions.mjs --exclude private          bỏ phiên có thư mục làm việc chứa chữ đó (lặp lại được)
 //   --home <thư mục>   thử trên home khác;  --batch-size <số ký tự>  độ dài mỗi đợt (mặc định 60000)
 //
