@@ -64,7 +64,7 @@ mà việc đó chưa làm. Đầu phiên, hỏi người dùng có muốn làm 
 Dưới đây `<secrets>` là lệnh ghi ở `machine.md`.
 
 - Không bảo người dùng dán mật khẩu, token vào chat. Cần thì chạy `<secrets> add <tên>`: script mở một cửa sổ riêng
-  để người dùng tự gõ, mật khẩu được mã hoá và không đi qua agent.
+  để người dùng tự gõ; mật khẩu được mã hoá và không lọt vào chat hay lịch sử phiên.
 - Người dùng đã lỡ dán vào chat thì lưu bằng `<secrets> add <tên> --account <tk> --from-stdin` (mật khẩu đưa vào
   stdin), rồi nhắc họ: thứ đã dán nằm trong lịch sử phiên, nên đổi mật khẩu nếu nó quan trọng.
 - Dùng: `<secrets> run <tên> -- <lệnh>` (lệnh con có biến `<TÊN>_USER`, `<TÊN>_PASS`), hoặc

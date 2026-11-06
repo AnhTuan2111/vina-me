@@ -172,3 +172,13 @@ node scripts/secrets.mjs list                             # tên và tài khoả
 - Người dùng đã lỡ dán mật khẩu vào chat: lưu bằng `add <tên> --account <tk> --from-stdin` với mật khẩu đưa vào stdin, rồi
   nhắc người dùng đổi mật khẩu nếu nó quan trọng.
 - Agent không in, không echo, không ghi mật khẩu ra tệp. Lệnh con tự in mật khẩu (như `env`, `set -x`) cũng là lộ.
+
+Phạm vi bảo vệ:
+
+- Chặn được: mật khẩu gõ vào cửa sổ riêng thì không vào chat, không vào lịch sử phiên, không bị gửi lên nhà cung cấp mô hình;
+  tệp bí mật chép sang máy khác hay tài khoản Windows khác thì không giải mã được.
+- Không chặn được: chương trình nào chạy bằng tài khoản của bạn cũng giải mã được, kể cả agent. Agent chỉ cần
+  `secrets.mjs run <tên> -- node -e "console.log(process.env)"` là thấy mật khẩu, và chữ in ra đó sẽ vào lịch sử phiên. Mật
+  khẩu đã dán vào chat thì đã nằm trong lịch sử, lưu lại không xoá được bản đó.
+- Vì vậy: dùng token có phạm vi hẹp và hạn dùng ngắn thay cho mật khẩu chính khi được; để agent hỏi trước khi chạy lệnh nếu
+  không muốn nó tự dùng bí mật.

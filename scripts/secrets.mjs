@@ -11,8 +11,9 @@
 //
 // Cất ở đâu: Windows lưu mỗi bí mật thành ~/.secrets/<tên>.xml bằng Export-Clixml của PowerShell, mật khẩu mã hoá bằng
 // DPAPI nên chỉ đúng tài khoản Windows đó trên đúng máy đó giải mã được; tệp chép sang máy khác là vô dụng. macOS lưu
-// vào Keychain với tên dịch vụ "vina-me:<tên>" (chưa thử). Script không bao giờ in mật khẩu ra màn hình: giá trị chỉ đi
-// thẳng vào biến môi trường hoặc stdin của lệnh con.
+// vào Keychain với tên dịch vụ "vina-me:<tên>" (chưa thử). Script không tự in mật khẩu: giá trị chỉ đi thẳng vào biến môi
+// trường hoặc stdin của lệnh con. Việc này giữ mật khẩu khỏi chat và lịch sử phiên, nhưng không giấu nó khỏi chương trình
+// chạy bằng cùng tài khoản: lệnh con nào cũng đọc được biến môi trường của nó.
 
 import fs from 'node:fs';
 import os from 'node:os';
@@ -88,7 +89,7 @@ function winRead(n) {
   return { account, password: rest.join('\n') };
 }
 
-// Mở một cửa sổ PowerShell riêng cho người dùng gõ. Chữ gõ vào không hiện, không đi qua agent, không vào lịch sử phiên.
+// Mở một cửa sổ PowerShell riêng cho người dùng gõ. Chữ gõ vào không hiện, không đi qua chat, không vào lịch sử phiên.
 function winPrompt(n, account) {
   const inner = [
     '$ErrorActionPreference = "Stop"',

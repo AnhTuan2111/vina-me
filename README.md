@@ -33,8 +33,9 @@ phiên cũ thì ở phiên đầu tiên, agent đọc lại những gì bạn đ
 nhớ để bạn duyệt rồi mới ghi.
 
 Agent cần mật khẩu (GitLab, VPN, trang quản trị) thì không dán vào chat: chạy `node scripts/secrets.mjs add <tên>`, gõ vào
-cửa sổ hiện ra. Mật khẩu được mã hoá bằng tài khoản Windows của bạn (Keychain trên macOS), agent dùng được mà không thấy
-giá trị.
+cửa sổ hiện ra. Mật khẩu được mã hoá bằng tài khoản Windows của bạn (Keychain trên macOS) và không lọt vào chat hay lịch
+sử phiên. Nó không giấu được mật khẩu khỏi chính agent: chương trình nào chạy bằng tài khoản của bạn cũng giải mã được.
+Phạm vi bảo vệ ghi ở `references/agent-memory.md`.
 
 Chi tiết, cách cập nhật và cách gỡ ở `references/agent-memory.md`.
 
