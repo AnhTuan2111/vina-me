@@ -9,7 +9,10 @@
 //   node scripts/setup.mjs remote <url git>      như trên nhưng với một repo git bất kỳ đã tạo sẵn
 //   node scripts/setup.mjs team <tệp luật>       thay luật chung của đội trong bộ nhớ
 //   node scripts/setup.mjs codex                 chép lại bộ nhớ vào ~/.codex/AGENTS.md
-//   node scripts/setup.mjs update                kéo bản vina-me mới nhất và chép sang các agent
+//   node scripts/setup.mjs update                kéo bản vina-me mới nhất và chép sang các agent (sync tự kiểm 6 giờ một lần)
+//   node scripts/setup.mjs check                 soát bộ nhớ: quá 200 dòng, ý gần trùng, lời trích thiếu ngày
+//   node scripts/setup.mjs conflict              sync báo không gộp được: in phần khác nhau giữa bản máy này và bản trên repo
+//   node scripts/setup.mjs resolve mine|theirs   giữ bản máy này ở chỗ đụng nhau, hoặc lấy bản trên repo (sao lưu bản cũ)
 //
 // Cờ: --home <thư mục> để thử trên home giả, --no-copy-skill để không chép skill, --plain để hỏi trơn không màu,
 // --no-schedule để không cài lịch tự lưu, --claude hoặc --codex để nối vào agent đó dù chưa thấy thư mục cấu hình của nó.
@@ -28,7 +31,7 @@ import { emitKeypressEvents } from 'node:readline';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
-const COMMANDS = ['sync', 'save', 'github', 'remote', 'team', 'codex', 'update'];
+const COMMANDS = ['sync', 'save', 'github', 'remote', 'team', 'codex', 'update', 'check', 'conflict', 'resolve'];
 const args = process.argv.slice(2);
 const hasFlag = (name) => args.includes(name);
 const valueOf = (name) => {
@@ -187,14 +190,22 @@ function commitPending(message) {
   return files;
 }
 
+// Lệnh git đi qua mạng (pull, push) chạy trong thời hạn ngắn, để mất mạng thì hook đầu phiên bỏ qua nhanh thay vì treo.
+const NET_TIMEOUT = 15000;
+const gitNet = (dir, ...argv) => run('git', ['-C', dir, ...argv], { timeout: NET_TIMEOUT });
+const timedOut = (r) => r.error?.code === 'ETIMEDOUT' || r.signal === 'SIGTERM';
+const OFFLINE = 'không kết nối được repo (hết thời gian chờ)';
+
 // Kéo bản mới; có tệp bộ nhớ nào đổi thì trả về danh sách tệp đó. Gặp xung đột thì huỷ rebase để repo không kẹt giữa chừng.
-function pull() {
+// strategy 'mine' giữ bản trên máy ở những đoạn đụng nhau (trong rebase, phía "theirs" là commit của máy này).
+function pull(strategy) {
   if (!hasUpstream()) return { changed: [] };
   const before = git('rev-parse', 'HEAD').stdout.trim();
-  const r = git('pull', '-q', '--rebase', '--autostash');
+  const r = gitNet(memDir, 'pull', '-q', '--rebase', '--autostash', ...(strategy === 'mine' ? ['-X', 'theirs'] : []));
+  const stuck = () => exists(path.join(memDir, '.git', 'rebase-merge')) || exists(path.join(memDir, '.git', 'rebase-apply'));
   if (r.status !== 0) {
-    if (exists(path.join(memDir, '.git', 'rebase-merge')) || exists(path.join(memDir, '.git', 'rebase-apply'))) git('rebase', '--abort');
-    return { error: firstLine(r), changed: [] };
+    if (stuck()) git('rebase', '--abort');
+    return { error: timedOut(r) ? OFFLINE : firstLine(r), offline: timedOut(r), changed: [] };
   }
   const after = git('rev-parse', 'HEAD').stdout.trim();
   if (before === after) return { changed: [] };
@@ -206,8 +217,8 @@ function pushIfAhead() {
   if (!hasUpstream()) return null;
   const ahead = Number(git('rev-list', '--count', '@{u}..HEAD').stdout.trim() || 0);
   if (!ahead) return null;
-  const r = git('push', '-q');
-  return r.status === 0 ? null : firstLine(r);
+  const r = gitNet(memDir, 'push', '-q');
+  return r.status === 0 ? null : timedOut(r) ? OFFLINE : firstLine(r);
 }
 
 // ---------- cập nhật vina-me ----------
@@ -231,14 +242,19 @@ function copySkill(target, from = skillSrc) {
 }
 
 // Kéo vina-me mới nhất; có bản mới thì chép sang mọi thư mục skill đã cài. Trả về dòng báo, hoặc rỗng nếu không có gì mới.
-function updateSkill() {
+// Không ép (force) thì kiểm tối đa 6 giờ một lần, để hook đầu phiên không tốn thêm một lượt mạng ở mọi phiên.
+const SKILL_CHECK_EVERY = 6 * 3600 * 1000;
+function updateSkill(force = false) {
   const cfg = readConfig();
   const source = cfg.source && exists(path.join(cfg.source, '.git')) ? cfg.source : null;
   if (!source) return '';
+  if (!force && Date.now() - (cfg.lastSkillCheck ?? 0) < SKILL_CHECK_EVERY) return '';
+  writeConfig({ ...cfg, lastSkillCheck: Date.now() });
   const g = gitIn(source);
   const before = g('rev-parse', 'HEAD').stdout.trim();
-  const r = g('pull', '-q', '--ff-only');
-  if (r.status !== 0) return '';
+  const r = gitNet(source, 'pull', '-q', '--ff-only');
+  // Ép cập nhật (lệnh update) mà lỗi thì nói lỗi; trong sync tự động thì im, lần sau thử lại.
+  if (r.status !== 0) return force ? `  chưa cập nhật được vina-me: ${timedOut(r) ? OFFLINE : firstLine(r)}` : '';
   const after = g('rev-parse', 'HEAD').stdout.trim();
   const missing = (cfg.targets ?? []).some((t) => !exists(path.join(t, 'SKILL.md')));
   if (before === after && !missing) return '';
@@ -596,9 +612,12 @@ function cmdSync() {
       try {
         const committed = commitPending();
         if (committed.length) logLines.push(`commit ${committed.join(', ')}`);
-        const { changed, error } = pull();
-        if (error) {
-          report.push(`Không gộp được bộ nhớ với bản trên repo (${error}). Bản trên máy vẫn còn, chưa đẩy; báo người dùng.`);
+        const { changed, error, offline } = pull();
+        if (offline) {
+          report.push('Không kết nối được repo bộ nhớ lúc này; đang dùng bản trên máy, lần sync sau sẽ thử lại.');
+          logLines.push(`pull: ${error}`);
+        } else if (error) {
+          report.push(`Không gộp được bộ nhớ với bản trên repo (${error}). Bản trên máy vẫn còn, chưa đẩy. Chạy \`${selfCommand} conflict\` để xem hai bản, rồi báo người dùng.`);
           logLines.push(`pull lỗi: ${error}`);
         } else {
           const pushError = pushIfAhead();
@@ -615,6 +634,77 @@ function cmdSync() {
     appendLog(logLines);
     if (!quiet) for (const r of report) console.log(r);
   });
+}
+
+// Soát bộ nhớ: tổng số dòng có chữ, ý gần trùng giữa các gạch đầu dòng (trong cùng tệp hay giữa user.md và memory.md),
+// và lời trích trong ngoặc kép mà dòng đó không có ngày. Chỉ báo, không sửa: gộp hay xoá là việc của agent và người dùng.
+function cmdCheck() {
+  const files = ['user.md', 'memory.md'].filter((f) => exists(path.join(memDir, f)));
+  if (!files.length) { console.error(`Chưa có bộ nhớ ở ${memDir}.`); process.exit(1); }
+  const issues = [];
+  const bullets = [];
+  let lines = 0;
+  for (const f of files) {
+    read(path.join(memDir, f)).split('\n').forEach((l, i) => {
+      if (l.trim()) lines++;
+      if (/^\s*-\s+\S/.test(l)) bullets.push({ f, n: i + 1, text: l.replace(/^\s*-\s+/, '').trim() });
+    });
+  }
+  if (lines > 200) issues.push(`user.md cộng memory.md có ${lines} dòng, quá mốc 200: gộp ý trùng, bỏ ý đã cũ.`);
+  const words = (t) => new Set(t.toLowerCase().normalize('NFC').replace(/[^\p{L}\d\s]/gu, ' ').split(/\s+/).filter((w) => w.length > 1));
+  const sets = bullets.map((b) => words(b.text));
+  for (let i = 0; i < bullets.length; i++) {
+    for (let j = i + 1; j < bullets.length; j++) {
+      const a = sets[i], b = sets[j];
+      if (a.size < 4 || b.size < 4) continue;
+      const common = [...a].filter((w) => b.has(w)).length;
+      if (common / Math.min(a.size, b.size) >= 0.8) {
+        issues.push(`gần trùng: ${bullets[i].f}:${bullets[i].n} và ${bullets[j].f}:${bullets[j].n} ("${bullets[i].text.slice(0, 50)}…")`);
+      }
+    }
+  }
+  for (const b of bullets) {
+    if (/"[^"]{8,}"/.test(b.text) && !/\d{1,2}\/\d{1,2}\/\d{4}/.test(b.text)) issues.push(`có lời trích mà thiếu ngày: ${b.f}:${b.n}`);
+  }
+  console.log(`${files.join(', ')}: ${lines} dòng có chữ, ${bullets.length} gạch đầu dòng.`);
+  if (issues.length) for (const i of issues) console.log(`  - ${i}`);
+  else console.log('  không thấy gì cần sửa');
+}
+
+// Khi sync báo không gộp được: in phần khác nhau giữa bản trên máy và bản trên repo của các tệp bộ nhớ.
+function cmdConflict() {
+  if (!hasUpstream()) { console.log('Bộ nhớ chưa có repo, không có gì để so.'); return; }
+  const f = gitNet(memDir, 'fetch', '-q');
+  if (f.status !== 0) { console.log(`Không kéo được bản trên repo: ${timedOut(f) ? OFFLINE : firstLine(f)}`); return; }
+  const diff = git('diff', '@{u}', 'HEAD', '--', ...MEMORY_FILES).stdout.trim();
+  if (!diff) { console.log('Bản trên máy và trên repo giống nhau ở các tệp bộ nhớ.'); return; }
+  console.log('Dòng "-" là bản trên repo (máy khác vừa sửa), dòng "+" là bản trên máy này:\n');
+  console.log(diff);
+  console.log(`\nGiữ bản máy này ở chỗ đụng nhau: ${selfCommand} resolve mine`);
+  console.log(`Lấy bản trên repo, bỏ thay đổi của máy này (sao lưu trước khi bỏ): ${selfCommand} resolve theirs`);
+  console.log('Hoặc sửa tay các tệp cho đúng rồi chạy lại sync.');
+}
+
+function cmdResolve() {
+  if (!['mine', 'theirs'].includes(commandArg)) { console.error('Dùng: setup.mjs resolve mine|theirs'); process.exit(1); }
+  if (!hasUpstream()) { console.error('Bộ nhớ chưa có repo.'); process.exit(1); }
+  commitPending();
+  if (commandArg === 'theirs') {
+    const f = gitNet(memDir, 'fetch', '-q');
+    if (f.status !== 0) { console.error(`Không kéo được bản trên repo: ${timedOut(f) ? OFFLINE : firstLine(f)}`); process.exit(1); }
+    const backup = path.join(configDir, `conflict-backup-${Date.now()}`);
+    for (const name of MEMORY_FILES) if (exists(path.join(memDir, name))) { fs.mkdirSync(backup, { recursive: true }); fs.copyFileSync(path.join(memDir, name), path.join(backup, name)); }
+    git('reset', '-q', '--hard', '@{u}');
+    syncCodex();
+    log(`  đã lấy bản trên repo; bản cũ của máy này sao lưu ở ${backup}`);
+    return;
+  }
+  const p = pull('mine');
+  if (p.error) { console.error(`Vẫn chưa gộp được: ${p.error}. Sửa tay các tệp rồi chạy lại sync.`); process.exit(1); }
+  const pushError = pushIfAhead();
+  if (pushError) { console.error(`Đã gộp nhưng chưa đẩy được: ${pushError}`); process.exit(1); }
+  syncCodex();
+  log('  đã gộp, giữ bản máy này ở chỗ đụng nhau, và đẩy lên repo');
 }
 
 function cmdSave() {
@@ -644,7 +734,10 @@ async function main() {
   if (command === 'sync') { cmdSync(); return; }
   if (command === 'save') { cmdSave(); return; }
   if (command === 'codex') { if (syncCodex()) log(`  Codex: đã chép bộ nhớ vào ${path.join(codexDir, 'AGENTS.md')}`); return; }
-  if (command === 'update') { log(updateSkill() || '  vina-me đang là bản mới nhất'); return; }
+  if (command === 'update') { log(updateSkill(true) || '  vina-me đang là bản mới nhất'); return; }
+  if (command === 'check') { cmdCheck(); return; }
+  if (command === 'conflict') { cmdConflict(); return; }
+  if (command === 'resolve') { cmdResolve(); return; }
   if (command === 'team') {
     if (!commandArg) { console.error('Thiếu đường dẫn tệp luật: node setup.mjs team <tệp>'); process.exit(1); }
     write(path.join(memDir, 'team.md'), teamMd(commandArg));
