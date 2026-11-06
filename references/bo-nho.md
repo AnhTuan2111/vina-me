@@ -46,6 +46,11 @@ Script hỏi tám câu (gọi là gì, vai trò, hay viết cho ai, trả lời 
 3. nếu người dùng muốn lưu lên GitHub: tạo repo riêng tư `<tài khoản GitHub>/agent-memory` bằng `gh`, commit và đẩy lên;
 4. sinh `may-nay.md`, rồi nối bộ nhớ vào từng agent như mục trên.
 
+Trong cửa sổ dòng lệnh có màu, script hỏi theo kiểu dải màu như prompt oh-my-posh: mỗi câu có số thứ tự và nhãn, câu đã
+trả lời thu thành một dòng, câu có/không và câu chọn độ dài thì chọn bằng phím mũi tên. Dải màu dùng ký tự Powerline (có
+sẵn trong phông Cascadia của Windows Terminal và các phông Nerd Font); phông nào hiện thành ô vuông thì thêm `--tron` để hỏi
+trơn từng dòng. Chạy qua pipe hoặc có biến `NO_COLOR` thì script tự hỏi trơn.
+
 Lưu lên GitHub cần `gh` đã đăng nhập (`gh auth login`, chạy một lần). Chưa đăng nhập thì script vẫn dựng bộ nhớ trên máy và
 nói lệnh để đưa lên sau: `node scripts/cai-dat.mjs --github`. Muốn dùng repo khác (GitLab của công ty chẳng hạn) thì tạo repo
 trống rồi chạy `node scripts/cai-dat.mjs --remote <url git>`.

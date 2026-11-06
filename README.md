@@ -12,8 +12,9 @@ git clone https://github.com/AnhTuan2111/vina-me.git
 node vina-me/scripts/cai-dat.mjs
 ```
 
-Script hỏi vài câu (bạn muốn được gọi là gì, làm vai trò gì, hay viết cho ai, muốn agent trả lời dài hay ngắn), rồi làm ba
-việc:
+Script hỏi vài câu (bạn muốn được gọi là gì, làm vai trò gì, hay viết cho ai, muốn agent trả lời dài hay ngắn), câu chọn
+thì dùng phím mũi tên, rồi làm ba việc. Phông của terminal không có ký tự Powerline (hiện ô vuông) thì thêm `--tron`.
+
 
 1. Chép skill vào thư mục skill của Claude Code (`~/.claude/skills`) và Codex (`~/.agents/skills`, `~/.codex/skills`), agent
    nào có trên máy thì chép cho agent đó.
