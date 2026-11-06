@@ -80,6 +80,20 @@ thêm `references/machine-tells.md` và `references/punctuation.md`, vì hai t�
 
 Cách này AI không tự mở được các tệp còn lại trong `references/`, nên kết quả sẽ kém hơn cài thành skill.
 
+## Phát triển
+
+Chạy bộ test (cần Node 18 trở lên và git):
+
+```bash
+node --test tests/setup.test.mjs tests/tools.test.mjs
+```
+
+Bộ test chạy trên home giả với repo git trần, trỏ `gh` vào thư mục cấu hình trống nên không chạm GitHub, không đụng lịch
+thật (crontab giả trên Linux, macOS; bỏ qua lịch trên Windows). Đã chạy được trên Windows 11 và Ubuntu (WSL). Chưa thử:
+macOS (Keychain, crontab thật), Codex thật, tạo repo GitHub thật.
+
+Quy trình phát hành ở `references/agent-memory.md`, mục Tự cập nhật vina-me.
+
 ## Giấy phép
 
 MIT.
