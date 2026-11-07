@@ -67,8 +67,13 @@ function changelogLine(dir, tag) {
   const lines = read(file).split('\n');
   const start = lines.findIndex((l) => l.startsWith(`## ${tag.replace(/^v/, '')}`));
   if (start < 0) return '';
-  const first = lines.slice(start + 1).find((l) => /^-\s/.test(l));
-  return first ? first.replace(/^-\s+/, '').trim() : '';
+  const rest = lines.slice(start + 1);
+  const at = rest.findIndex((l) => /^-\s/.test(l));
+  if (at < 0) return '';
+  // một gạch đầu dòng có thể xuống dòng giữa câu: nối các dòng thụt vào ngay sau nó
+  const tail = [];
+  for (const l of rest.slice(at + 1)) { if (!/^\s+\S/.test(l)) break; tail.push(l.trim()); }
+  return [rest[at].replace(/^-\s+/, '').trim(), ...tail].join(' ');
 }
 
 function readConfig() {
