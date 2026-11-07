@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="180" viewBox="0 0 900 180" font-family="ui-monospace, 'Cascadia Mono', 'JetBrains Mono', Consolas, 'DejaVu Sans Mono', monospace" role="img" aria-label="vina-me: viết tiếng Việt cho thuận mồm">
+<title>vina-me: viết tiếng Việt cho thuận mồm</title>
+<rect width="900" height="180" rx="10" fill="#1a1b26"/>
+<rect x="40" y="44" width="162" height="48" fill="#bb9af7"/><text x="58" y="77.6" fill="#1a1b26" font-size="30" font-weight="700" textLength="126.0" lengthAdjust="spacingAndGlyphs">vina-me</text><rect x="202" y="44" width="558" height="48" fill="#7aa2f7"/><text x="220" y="77.6" fill="#1a1b26" font-size="30" font-weight="700" textLength="522.0" lengthAdjust="spacingAndGlyphs">viết tiếng Việt cho thuận mồm</text><polygon points="202,44 226,68 202,92" fill="#bb9af7"/><polygon points="760,44 784,68 760,92" fill="#7aa2f7"/>
+<text x="40" y="140" fill="#787c99" font-size="17" textLength="775.2" lengthAdjust="spacingAndGlyphs">Skill viết văn cho AI agent, kèm bộ nhớ dùng chung cho Claude Code và Codex.</text>
+</svg>

@@ -12,6 +12,7 @@ dòng đầu của mục là dòng được in ra khi cập nhật.
 - Mô tả đúng phạm vi bảo vệ của `secrets.mjs`: chặn lộ qua chat và lịch sử phiên, không chặn chương trình chạy cùng tài khoản.
 - Script xuất Word tự cài gói `docx` ở lần chạy đầu; `lint.mjs` đếm độ dài câu theo tiếng.
 - Thêm sáu đề thử cho văn bản hành chính và văn bản của BA, tester.
+- README gọn lại, có ảnh màn hỏi khi cài.
 
 ## 0.8.0 (06/11/2026)
 
