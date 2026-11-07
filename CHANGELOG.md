@@ -3,6 +3,11 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.11.0 (07/11/2026)
+
+- SKILL.md gọn còn một nửa (khoảng 4.300 token thay vì 8.700 mỗi lần gọi skill); bản đầy đủ của bảy điều chuyển sang
+  `references/core-rules.md`, agent đọc khi viết văn bản dài hay soát kỹ. Mô tả skill nạp ở mọi phiên ngắn đi một phần ba.
+
 ## 0.10.1 (07/11/2026)
 
 - Dòng báo khi cập nhật in đủ câu, không còn bị cắt ở chỗ CHANGELOG xuống dòng.

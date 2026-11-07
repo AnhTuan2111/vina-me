@@ -47,8 +47,8 @@ trình nào chạy bằng tài khoản của bạn, kể cả agent, vẫn giả
 - Claude Code: `git clone https://github.com/AnhTuan2111/vina-me.git ~/.claude/skills/vina-me`, cập nhật bằng `git pull`.
 - Claude trên web, ứng dụng desktop: tải zip, đổi thư mục bên trong thành `vina-me`, nén lại rồi tải lên ở mục Skills.
 - Agent khác có Agent Skills: chép thư mục `vina-me` (có `SKILL.md` ngay bên trong) vào thư mục skill của agent.
-- AI không có skill: dán `SKILL.md` vào phần chỉ dẫn hệ thống, còn chỗ thì thêm `references/machine-tells.md` và
-  `references/punctuation.md`.
+- AI không có skill: dán `SKILL.md` vào phần chỉ dẫn hệ thống, còn chỗ thì thêm `references/core-rules.md`,
+  `references/machine-tells.md` và `references/punctuation.md`.
 
 ## Phát triển
 
