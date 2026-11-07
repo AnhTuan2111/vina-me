@@ -103,14 +103,16 @@ test('kênh release dừng ở tag mới nhất, kênh main theo đầu nhánh',
   const dev = path.join(root, 'dev');
   git(root, 'clone', '-q', bare, dev);
   git(dev, 'checkout', '-q', '-B', 'main', 'origin/main');
-  git(dev, '-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '-q', '--allow-empty', '-m', 'release');
+  fs.writeFileSync(path.join(dev, 'CHANGELOG.md'), '# Thay đổi\n\n## 9.9.0 (01/01/2027)\n\n- Dòng đầu xuống dòng\n  giữa câu vẫn đọc liền.\n- Dòng hai.\n');
+  git(dev, 'add', 'CHANGELOG.md');
+  git(dev, '-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '-q', '-m', 'release');
   git(dev, 'tag', 'v9.9.0');
   fs.appendFileSync(path.join(dev, 'README.md'), '\nchưa phát hành\n');
   git(dev, '-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '-q', '-am', 'unreleased');
   git(dev, 'push', '-q', 'origin', 'main', '--tags');
   git(source, 'remote', 'set-url', 'origin', bare);
   const readme = path.join(a, '.claude', 'skills', 'vina-me', 'README.md');
-  assert.match(node('setup.mjs', ['--home', a, 'update']).stdout, /v9\.9\.0/);
+  assert.match(node('setup.mjs', ['--home', a, 'update']).stdout, /v9\.9\.0: Dòng đầu xuống dòng giữa câu vẫn đọc liền\.\n/);
   assert.ok(!read(readme).includes('chưa phát hành'));
   node('setup.mjs', ['--home', a, 'channel', 'main']);
   assert.ok(read(readme).includes('chưa phát hành'));

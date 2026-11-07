@@ -3,6 +3,10 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.10.1 (07/11/2026)
+
+- Dòng báo khi cập nhật in đủ câu, không còn bị cắt ở chỗ CHANGELOG xuống dòng.
+
 ## 0.10.0 (07/11/2026)
 
 - Học từ phiên cũ kèm tóm gọn từng lượt của agent: đoạn đầu phần suy nghĩ, đoạn đầu câu trả lời, skill đã gọi; `overview.md`
