@@ -145,16 +145,23 @@ phiên trước. Agent làm việc này một lần, khi người dùng đồng 
 1. Nói với người dùng trước khi làm: các đợt rút ra nằm trên máy, nhưng khi agent đọc chúng thì nội dung được gửi lên nhà
    cung cấp mô hình thêm một lần. Hỏi dự án nào cần bỏ ra; người dùng đổi ý thì dừng.
 2. Chạy `node <thư mục skill>/scripts/learn-from-sessions.mjs`. Script đọc các phiên Claude Code (`~/.claude/projects`,
-   `$CLAUDE_CONFIG_DIR/projects`) và Codex (`~/.codex/sessions`), chỉ lấy tin người dùng tự gõ, che mật khẩu và token trông
+   `$CLAUDE_CONFIG_DIR/projects`) và Codex (`~/.codex/sessions`), lấy tin người dùng tự gõ, che mật khẩu và token trông
    thấy được, rồi ghi ra thư mục tạm: `overview.md` và các đợt `batch-01.md`, `batch-02.md`… mỗi đợt khoảng 60.000 ký tự.
+   Dưới mỗi tin có tối đa ba dòng tóm gọn lượt đó của agent: `agent nghĩ` (đoạn đầu phần suy nghĩ, chỉ có khi phiên có
+   ghi), `agent trả lời` (đoạn đầu câu trả lời cuối), `skill` (skill agent đã gọi). `overview.md` có bảng skill dùng nhiều.
+   Chỉ muốn lời người dùng thì thêm `--user-only`.
    Chỉ muốn từ một ngày thì thêm `--since 2026-09-01`. Chỉ lấy vài dự án thì `--only <chữ trong đường dẫn>`, bỏ dự án
    thì `--exclude <chữ trong đường dẫn>`; hai cờ lặp lại được. Script báo số chỗ đã che.
 3. Đọc `overview.md`, rồi từng đợt theo thứ tự. Sau mỗi đợt, ghi các ý tìm được vào một tệp nháp trong cùng thư mục tạm,
-   không ghi thẳng vào bộ nhớ. Tìm bốn loại:
+   không ghi thẳng vào bộ nhớ. Tìm năm loại:
    - người dùng sửa cách làm: "đừng", "sao lại", "không phải thế", "lần sau", "tôi bảo rồi";
    - người dùng khen hay nhận một cách làm: "hay đấy", "đúng rồi", "cứ thế";
    - người dùng kể về mình: vai trò, việc đang làm, người đọc văn bản của họ, cách họ muốn được trả lời;
-   - điều người dùng nhắc đi nhắc lại ở nhiều phiên. Nhắc càng nhiều lần thì càng chắc là luật.
+   - điều người dùng nhắc đi nhắc lại ở nhiều phiên. Nhắc càng nhiều lần thì càng chắc là luật;
+   - skill người dùng hay cần, xem ở bảng trong `overview.md`, kèm loại việc họ hay nhờ skill đó.
+
+   Dòng của agent chỉ để hiểu tin người dùng: câu "không phải thế" ngay sau dòng `agent trả lời` cho biết agent đã làm sai
+   điều gì, và luật ghi vào bộ nhớ là điều người dùng muốn thay vào. Không chép suy nghĩ hay câu trả lời của agent vào bộ nhớ.
 4. Bỏ: việc chỉ đúng trong một dự án, chi tiết của một lần làm, chuyện riêng tư, thông tin khách hàng, và mọi thứ trông
    giống mật khẩu dù script đã che hay chưa.
 5. Gộp các ý trùng. Hai ý ngược nhau thì giữ ý mới hơn, ghi rõ là đã đổi. Xếp từng ý vào `user.md` hay `memory.md` theo bảng
