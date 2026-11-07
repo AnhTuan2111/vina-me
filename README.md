@@ -1,5 +1,7 @@
 <img src="assets/banner.svg" alt="vina-me: viết tiếng Việt cho thuận mồm" width="100%">
 
+[![test](https://github.com/AnhTuan2111/vina-me/actions/workflows/test.yml/badge.svg)](https://github.com/AnhTuan2111/vina-me/actions/workflows/test.yml)
+
 vina-me giúp AI agent viết và sửa văn tiếng Việt cho dễ đọc, không có mùi văn máy: bài giảng, tài liệu, báo cáo gửi sếp,
 văn bản hành chính, email, tệp Word. Cài một lần là có thêm bộ nhớ dùng chung cho Claude Code và Codex, nên điều đã dặn
 agent một lần thì không phải dặn lại.

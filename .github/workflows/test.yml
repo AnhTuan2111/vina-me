@@ -1,0 +1,27 @@
+# Chạy bộ test cho mọi pull request và mỗi lần push lên main.
+# Hai hệ bù nhau: bài lịch tự lưu (crontab) chỉ chạy trên Ubuntu, bài mật khẩu (DPAPI) chỉ chạy trên Windows.
+name: test
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: git identity cho các repo giả trong test
+        run: |
+          git config --global user.name ci
+          git config --global user.email ci@example.com
+          git config --global init.defaultBranch main
+      - run: node --test tests/setup.test.mjs tests/tools.test.mjs
