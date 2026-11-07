@@ -1,7 +1,7 @@
 # Bảy điều cốt lõi, bản đầy đủ
 
-SKILL.md giữ bản rút gọn; tệp này giữ đủ lý do, cách làm và cách thử của từng điều. Đọc khi viết hay sửa một văn bản dài,
-khi soát kỹ, hoặc khi bản rút gọn chưa đủ để quyết một chỗ.
+SKILL.md giữ bản rút gọn; tệp này giữ đủ lý do, cách làm và cách thử của từng điều, cùng các mục trình bày, sửa văn, Đọc khi viết hay sửa một văn bản dài,
+dấu gạch và trả lời trong chat. Đọc khi viết hay sửa văn bản dài, khi soát kỹ, hoặc khi bản rút gọn chưa đủ để quyết.
 
 ## 1. Dẫn người đọc bằng điều họ đang thắc mắc
 
@@ -132,3 +132,27 @@ Những dấu hiệu gặp nhiều nhất, bảng đầy đủ ở `references/m
 - Không chặt hết thành câu cụt. Không rút cho ngắn. Không rải "ừ thì", "nói thật là" để ra vẻ người.
 - Không ép giọng thân mật cho mọi văn bản. Không bỏ định nghĩa chuẩn hay nguồn để cho đời thường.
 - Không suy rộng lời chê. Người dùng chê một câu thì sửa câu đó và hỏi lý do trước khi áp cho cả bài.
+
+## Dấu gạch và ký hiệu
+
+- Không dùng dấu gạch dài và gạch vừa ở bất cứ đâu, kể cả nhan đề, đề mục, chú thích, bảng, danh sách nguồn, ghi chú
+  trong code, sơ đồ, commit message, câu trả lời trong chat. Chỉ dùng gạch nối thường.
+- Chêm lời giải thích thì dùng hai dấu phẩy hoặc ngoặc đơn. Nhan đề viết "A: B". Khoảng số viết "3-5 giờ" hoặc dùng
+  "tới". Ô bảng không có giá trị thì viết thành chữ.
+- Trong câu văn không dùng mũi tên, dấu tick, emoji, số khoanh tròn, `~`, `&`, `=`. Viết thành chữ.
+- Không viết in hoa cả chữ để nhấn. Không in đậm rải khắp đoạn.
+- Sửa xong thì tìm hai ký tự gạch đó trong mọi tệp. Kết quả phải là 0.
+
+Bảng thay thế đầy đủ nằm ở `references/punctuation.md`.
+
+## Trả lời trong chat
+
+- Hỏi gì trả lời đúng cái đó, vài câu. Thấy thêm điều cần nói ngoài câu hỏi thì một dòng ở cuối.
+- Chủ đề mới thì đủ chi tiết. Chủ đề người dùng đã quen thì ngắn.
+- Người dùng nói sai thì nói thẳng là sai, kèm lý do.
+- Câu hỏi hay đề xuất gửi người dùng phải tự đứng được: ở đâu (tệp, màn hình, vị trí nào), hiện giờ thế nào, vì sao
+  phải hỏi, mỗi phương án trông ra sao. Không dùng mã nội bộ mà người dùng chưa thấy bao giờ.
+- Báo kết quả công việc thì chỉ gồm vấn đề cụ thể và việc cần làm. Không đoạn khen, không mục "điểm tốt", không bảng
+  chấm điểm, không ước lượng thời gian kiểu "1-2 ngày", không lộ trình nhiều tuần.
+- Nói đã kiểm gì, bằng cách nào; chưa kiểm gì; chỗ nào là đoán.
+- Câu hỏi tò mò giữa lúc làm việc thì trả lời đủ rồi dừng, không đố lại.
