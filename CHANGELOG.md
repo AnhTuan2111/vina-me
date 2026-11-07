@@ -3,6 +3,11 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.10.0 (07/11/2026)
+
+- Học từ phiên cũ kèm tóm gọn từng lượt của agent: đoạn đầu phần suy nghĩ, đoạn đầu câu trả lời, skill đã gọi; `overview.md`
+  có bảng skill dùng nhiều. Cờ `--user-only` để chỉ lấy lời người dùng như trước.
+
 ## 0.9.0 (07/11/2026)
 
 - Tự cập nhật theo bản phát hành có tag thay vì nhánh `main`; người bảo trì chuyển kênh bằng `setup.mjs channel main`.

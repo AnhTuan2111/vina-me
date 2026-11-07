@@ -5,7 +5,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { tmp, node, read } from './helpers.mjs';
 
-// Phiên giả: Claude Code có tin người dùng gõ, tool_result, tin meta, lệnh gạch chéo; Codex có khối AGENTS.md tự chèn.
+// Phiên giả: Claude Code có tin người dùng gõ, tool_result, tin meta, lệnh gạch chéo, lượt agent có suy nghĩ, gọi skill và
+// trả lời; Codex có khối AGENTS.md tự chèn, reasoning summary, lệnh đọc SKILL.md và câu trả lời.
 function fakeSessions(home) {
   const claude = path.join(home, '.claude', 'projects', 'proj-alpha');
   fs.mkdirSync(claude, { recursive: true });
@@ -16,7 +17,10 @@ function fakeSessions(home) {
     line({ type: 'user', cwd: '/work/proj-alpha', timestamp: '2026-11-01T02:06:00Z', message: { content: [{ type: 'tool_result', content: 'output dài' }] } }),
     line({ type: 'user', isMeta: true, cwd: '/work/proj-alpha', timestamp: '2026-11-01T02:07:00Z', message: { content: 'tin meta' } }),
     line({ type: 'user', origin: { kind: 'human' }, cwd: '/work/proj-alpha', timestamp: '2026-11-01T02:08:00Z', message: { content: '<command-name>/clear</command-name>' } }),
+    line({ type: 'assistant', cwd: '/work/proj-alpha', message: { content: [{ type: 'thinking', thinking: 'Người dùng muốn **kết luận** lên đầu báo cáo, token=abc123xyz' }] } }),
+    line({ type: 'assistant', cwd: '/work/proj-alpha', message: { content: [{ type: 'tool_use', name: 'Skill', input: { skill: 'vina-me' } }] } }),
     line({ type: 'assistant', cwd: '/work/proj-alpha', message: { content: [{ type: 'text', text: 'lời agent' }] } }),
+    line({ type: 'assistant', isSidechain: true, cwd: '/work/proj-alpha', message: { content: [{ type: 'text', text: 'agent con nói' }] } }),
   ].join('\n'));
   const codex = path.join(home, '.codex', 'sessions', '2026', '11', '02');
   fs.mkdirSync(codex, { recursive: true });
@@ -24,21 +28,31 @@ function fakeSessions(home) {
     line({ type: 'session_meta', timestamp: '2026-11-02T03:00:00Z', payload: { cwd: '/work/proj-beta', timestamp: '2026-11-02T03:00:00Z' } }),
     line({ type: 'response_item', timestamp: '2026-11-02T03:00:01Z', payload: { type: 'message', role: 'user', content: [{ type: 'input_text', text: '# AGENTS.md instructions for /work/proj-beta' }] } }),
     line({ type: 'response_item', timestamp: '2026-11-02T03:00:02Z', payload: { type: 'message', role: 'user', content: [{ type: 'input_text', text: 'đừng giảng lý thuyết dài, đi thẳng vào việc' }] } }),
+    line({ type: 'response_item', payload: { type: 'reasoning', summary: [{ type: 'summary_text', text: '**Rút gọn câu trả lời**' }] } }),
+    line({ type: 'response_item', payload: { type: 'function_call', name: 'exec_command', arguments: JSON.stringify({ cmd: String.raw`Get-Content 'C:\Users\x\.agents\skills\docx\SKILL.md'` }) } }),
+    line({ type: 'response_item', payload: { type: 'message', role: 'assistant', content: [{ type: 'output_text', text: `Làm luôn: ${'x'.repeat(400)}` }] } }),
   ].join('\n'));
 }
 
-test('learn-from-sessions chỉ lấy tin người dùng gõ, che mật khẩu, lọc theo dự án', () => {
+test('learn-from-sessions lấy tin người dùng gõ kèm tóm gọn phần agent, che mật khẩu, lọc theo dự án', () => {
   const home = tmp();
   fakeSessions(home);
   const out = path.join(home, 'out');
   const r = node('learn-from-sessions.mjs', ['--home', home, '--out', out]);
   assert.equal(r.status, 0, r.out);
-  assert.match(r.stdout, /2 phiên, 3 tin, 1 đợt, đã che 1 chỗ/);
+  assert.match(r.stdout, /2 phiên, 3 tin, 1 đợt, đã che 2 chỗ/);
   const batch = read(path.join(out, 'batch-01.md'));
   assert.match(batch, /câu đầu là kết luận/);
   assert.match(batch, /đừng giảng lý thuyết dài/);
   assert.match(batch, /mật khẩu: \[ĐÃ ẨN\]/);
-  for (const bad of ['Abc@12345', 'output dài', 'tin meta', '/clear', 'lời agent', 'AGENTS.md instructions']) assert.ok(!batch.includes(bad), bad);
+  // phần agent gắn vào tin người dùng gần nhất trước nó: mỗi loại một dòng, bỏ dấu markdown, câu trả lời dài thì cắt
+  assert.match(batch, /câu đầu là kết luận nhé\n\[/);
+  assert.match(batch, /dùng cho máy chủ\n {4}agent nghĩ: Người dùng muốn kết luận lên đầu báo cáo, token=\[ĐÃ ẨN\]\n {4}agent trả lời: lời agent\n {4}skill: vina-me\n/);
+  assert.match(batch, /đi thẳng vào việc\n {4}agent nghĩ: Rút gọn câu trả lời\n {4}agent trả lời: Làm luôn: x{180,200}\.\.\.\n {4}skill: docx\n/);
+  assert.match(read(path.join(out, 'overview.md')), /\| vina-me \| 1 \|[\s\S]*\| docx \| 1 \|/);
+  for (const bad of ['Abc@12345', 'abc123xyz', 'output dài', 'tin meta', '/clear', 'agent con nói', 'AGENTS.md instructions']) assert.ok(!batch.includes(bad), bad);
+  assert.equal(node('learn-from-sessions.mjs', ['--home', home, '--out', out, '--user-only']).status, 0);
+  assert.ok(!/agent nghĩ|agent trả lời|skill:/.test(read(path.join(out, 'batch-01.md'))));
   const only = node('learn-from-sessions.mjs', ['--home', home, '--out', out, '--exclude', 'alpha']);
   assert.match(only.stdout, /1 phiên, 1 tin, 1 đợt, đã che 0 chỗ/);
 });
