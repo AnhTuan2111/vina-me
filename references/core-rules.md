@@ -1,7 +1,7 @@
 # Bảy điều cốt lõi, bản đầy đủ
 
-SKILL.md giữ bản rút gọn; tệp này giữ đủ lý do, cách làm và cách thử của từng điều, cùng các mục trình bày, sửa văn, Đọc khi viết hay sửa một văn bản dài,
-dấu gạch và trả lời trong chat. Đọc khi viết hay sửa văn bản dài, khi soát kỹ, hoặc khi bản rút gọn chưa đủ để quyết.
+SKILL.md giữ bản rút gọn. Tệp này giữ đủ lý do, cách làm và cách thử của từng điều, cùng các mục trình bày, sửa văn có
+sẵn, dấu gạch và trả lời trong chat. Đọc khi viết hay sửa văn bản dài, khi soát kỹ, hoặc khi bản rút gọn chưa đủ để quyết.
 
 ## 1. Dẫn người đọc bằng điều họ đang thắc mắc
 
