@@ -3,6 +3,11 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.12.0 (09/11/2026)
+
+- Người dùng chê hay góp ý về chính skill thì agent hỏi có muốn gửi thành issue trên repo vina-me không, soạn bản nháp cho
+  người dùng duyệt rồi gửi bằng `scripts/feedback.mjs` (che mật khẩu, token; chưa có gh thì đưa link trang tạo issue điền sẵn).
+
 ## 0.11.0 (07/11/2026)
 
 - SKILL.md gọn còn một nửa (khoảng 4.300 token thay vì 8.700 mỗi lần gọi skill); bản đầy đủ của bảy điều chuyển sang
