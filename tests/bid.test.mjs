@@ -106,6 +106,7 @@ test('bid-check bắt chỗ để trống, mục dẫn sai, chữ của gói cũ
     '# 2. Tiến độ',
     'Thời gian thực hiện 30 ngày; bảo hành 12 (mười hai) tháng; số điện thoại [cần xác nhận].',
     'Mẫu lấy theo HSYC của Tỉnh Hòa Bình.',
+    'Catalog bản A08 tháng 8/2026; số khoang ổ đĩa [chưa có chứng minh].',
   ].join('\n'));
   const r = node('bid-check.mjs', [draft, '--hsmt', hsmt, '--sample', sample, '--tlkt', tlkt, '--term', 'Hòa Bình']);
   assert.equal(r.status, 1, r.out);
@@ -119,6 +120,8 @@ test('bid-check bắt chỗ để trống, mục dẫn sai, chữ của gói cũ
   assert.doesNotMatch(r.out, /Trần Văn Mẫu/, 'tên không có trong bản nháp thì không nêu');
   assert.match(r.out, /XEM {2}Thời hạn "30 ngày" không có trong HSMT/);
   assert.doesNotMatch(r.out, /Thời hạn "12 tháng"/, '"12 (mười hai) tháng" khớp với "12 tháng" của HSMT');
+  assert.match(r.out, /LỖI {2}Còn để trống .*\[chưa có chứng minh\]/);
+  assert.doesNotMatch(r.out, /Thời hạn "8 tháng"/, '"A08 tháng 8/2026" không phải thời hạn');
 
   const clean = write(dir, 'clean.md', '# 1. Giới thiệu\nPhần mềm đặt tại Học viện Giả, bảo hành 12 tháng.\n');
   const ok = node('bid-check.mjs', [clean, '--hsmt', hsmt, '--sample', sample]);

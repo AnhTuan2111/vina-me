@@ -47,7 +47,7 @@ const snippet = (text, idx, len) => {
 };
 
 // 1. Chỗ còn để trống, đánh dấu chờ xác nhận.
-const PLACEHOLDER = /\[(?:cần|chờ|bổ sung|điền|xác nhận|TODO)[^\]]*\]|\bTODO\b|\bxxx+\b|\?\?\?+|\.{4,}|…{2,}|<[^<>]{1,30}>/gi;
+const PLACEHOLDER = /\[(?:cần|chờ|chưa|bổ sung|điền|xác nhận|TODO)[^\]]*\]|\bTODO\b|\bxxx+\b|\?\?\?+|\.{4,}|…{2,}|<[^<>]{1,30}>/gi;
 for (const p of located) {
   for (const m of p.text.matchAll(PLACEHOLDER)) {
     errors.push(`Còn để trống ${where(p)}: ${snippet(p.text, m.index, m[0].length)}`);
@@ -136,7 +136,8 @@ if (opt.sample.length) {
 // 5. Con số thời hạn (ngày, tháng, giờ) trong bản nháp mà HSMT không có: hoặc là cam kết mới cần BA duyệt, hoặc là số
 // của gói cũ còn sót. "04 giờ" và "4 giờ" coi là một; "12 (mười hai) tháng" vẫn nhận ra.
 if (opt.hsmt.length) {
-  const re = /(\d+)\s*(?:\([^)]{1,30}\)\s*)?(ngày|tháng|giờ)/g;
+  // Số đứng riêng, không dính chữ hay số khác: "A08 tháng 8/2026" là mã bản tài liệu và ngày, không phải thời hạn.
+  const re = /(?<![\p{L}\d.,/])(\d+)\s*(?:\([^)]{1,30}\)\s*)?(ngày|tháng|giờ)(?![\p{L}\d]|\s*\/\s*\d)/gu;
   const inHsmt = new Set([...hsmtText.matchAll(re)].map((m) => `${Number(m[1])} ${m[2]}`));
   const seen = new Map();
   for (const p of located) {

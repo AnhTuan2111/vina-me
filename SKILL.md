@@ -5,7 +5,7 @@ license: MIT
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.13.0"
+  version: "0.13.1"
 ---
 
 # Viết cho thuận mồm
