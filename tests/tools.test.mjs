@@ -1,9 +1,9 @@
-// Test cho learn-from-sessions.mjs, lint.mjs, secrets.mjs. Chạy: node --test tests/
+// Test cho learn-from-sessions.mjs, lint.mjs, secrets.mjs, feedback.mjs. Chạy: node --test tests/
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { tmp, node, read } from './helpers.mjs';
+import { tmp, node, read, ROOT } from './helpers.mjs';
 
 // Phiên giả: Claude Code có tin người dùng gõ, tool_result, tin meta, lệnh gạch chéo, lượt agent có suy nghĩ, gọi skill và
 // trả lời; Codex có khối AGENTS.md tự chèn, reasoning summary, lệnh đọc SKILL.md và câu trả lời.
@@ -95,4 +95,49 @@ test('secrets lưu, dùng qua biến môi trường và stdin, liệt kê, xoá'
   assert.ok(!fs.readFileSync(path.join(home, '.secrets', 'thu.xml'), 'utf8').includes('khẩu'));
   node('secrets.mjs', ['remove', 'thu', '--home', home]);
   assert.match(node('secrets.mjs', ['list', '--home', home]).stdout, /Chưa có bí mật nào/);
+});
+
+// feedback.mjs: mọi lần chạy trỏ vào một repo không tồn tại, nên dù máy có gh đăng nhập cũng không tạo issue thật.
+const NO_REPO = 'vina-me-test/does-not-exist';
+const NO_GH = { GH_TOKEN: '', GITHUB_TOKEN: '' };
+const urlOf = (out) => out.split(/\r?\n/).find((l) => l.startsWith('https://github.com/'));
+
+test('feedback chạy thử: che bí mật, gắn "Góp ý: ", thêm phiên bản skill, in link điền sẵn', () => {
+  const dir = tmp();
+  const file = path.join(dir, 'body.md');
+  const ghToken = `ghp_${'a1'.repeat(18)}`;
+  fs.writeFileSync(file, `**Người dùng nói gì**: "câu này vẫn máy"\nmật khẩu: Abc@12345\ntoken của tôi ${ghToken}\n`);
+  const r = node('feedback.mjs', ['--title', 'Quy tắc hỏi rồi đáp áp nhầm cho thư', '--body-file', file, '--agent', 'Claude Code', '--dry-run', '--repo', NO_REPO], { env: NO_GH });
+  assert.equal(r.status, 0, r.out);
+  assert.match(r.out, /Tiêu đề: Góp ý: Quy tắc hỏi rồi đáp áp nhầm cho thư/);
+  assert.match(r.out, /Chạy thử, chưa gửi gì/);
+  assert.ok(!r.out.includes('Abc@12345') && !r.out.includes(ghToken), r.out);
+  assert.match(r.out, /\[ĐÃ ẨN\]/);
+  const version = read(path.join(ROOT, 'SKILL.md')).match(/version:\s*"([^"]+)"/)[1];
+  assert.ok(r.out.includes(`vina-me ${version}, Claude Code, ${process.platform}`), r.out);
+  const url = urlOf(r.out);
+  assert.ok(url.startsWith(`https://github.com/${NO_REPO}/issues/new?title=`), url);
+  assert.ok(!decodeURIComponent(url).includes('Abc@12345'));
+});
+
+test('feedback trên máy chưa đăng nhập gh thì in link, không gửi; tiêu đề không gắn "Góp ý: " hai lần', () => {
+  const r = node('feedback.mjs', ['--title', 'Góp ý: lint báo nhầm câu dài', '--body-file', '-', '--repo', NO_REPO], { input: 'lint báo câu 25 tiếng là quá dài', env: NO_GH });
+  assert.equal(r.status, 0, r.out);
+  assert.match(r.out, /chưa có gh đăng nhập|gh chưa tạo được issue/);
+  const title = new URL(urlOf(r.out)).searchParams.get('title');
+  assert.equal(title, 'Góp ý: lint báo nhầm câu dài');
+});
+
+test('feedback cắt nội dung dài cho link vừa giới hạn, dừng khi thiếu tiêu đề hay nội dung', () => {
+  const dir = tmp();
+  const file = path.join(dir, 'long.md');
+  fs.writeFileSync(file, 'Câu tiếng Việt có dấu khá dài. '.repeat(1000));
+  const r = node('feedback.mjs', ['--title', 'Nội dung dài', '--body-file', file, '--dry-run', '--repo', NO_REPO], { env: NO_GH });
+  assert.equal(r.status, 0, r.out);
+  assert.match(r.out, /\[cắt bớt \d+ ký tự\]/);
+  assert.ok(urlOf(r.out).length <= 7500, String(urlOf(r.out).length));
+  assert.equal(node('feedback.mjs', ['--body-file', file, '--dry-run'], { env: NO_GH }).status, 2);
+  const empty = path.join(dir, 'empty.md');
+  fs.writeFileSync(empty, '  \n');
+  assert.equal(node('feedback.mjs', ['--title', 'x', '--body-file', empty, '--dry-run'], { env: NO_GH }).status, 2);
 });

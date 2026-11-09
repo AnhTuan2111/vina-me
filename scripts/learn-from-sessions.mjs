@@ -24,7 +24,8 @@
 
 import fs from 'node:fs';
 import os from 'node:os';
-import path from 'node:path';
+import path from 'node:path';
+import { HIDDEN, redact } from './lib/redact.mjs';
 
 const args = process.argv.slice(2);
 const valueOf = (name) => {
@@ -73,21 +74,6 @@ function* records(file) {
     if (!line.trim()) continue;
     try { yield JSON.parse(line); } catch { /* dòng hỏng thì bỏ */ }
   }
-}
-
-// Che bí mật trông thấy được. Giữ tên khoá để agent vẫn hiểu câu, chỉ thay giá trị.
-const HIDDEN = '[ĐÃ ẨN]';
-function redact(text) {
-  return text
-    .replace(/-----BEGIN [A-Z ]*PRIVATE KEY-----[\s\S]*?-----END [A-Z ]*PRIVATE KEY-----/g, HIDDEN)
-    // "mật khẩu: x", "token=x" thì che luôn; "mật khẩu là x" chỉ che khi x có số hay ký tự đặc biệt, vì câu thường cũng hay
-    // có "mật khẩu là ...". Hai luật này chạy trước các mẫu token để một giá trị không bị che hai lần.
-    .replace(/(\b(?:password|passwd|pwd|pass|mật khẩu|mat khau|mk|token|secret|api[ _-]?key|khoá|khóa)\s*[:=]\s*)("[^"]*"|'[^']*'|\S+)/gi, `$1${HIDDEN}`)
-    .replace(/(\b(?:password|pass|mật khẩu|mat khau|mk|token|khoá|khóa)\s+(?:là|is)\s+)(?=\S*[\d@#$%^&*!?_])\S+/gi, `$1${HIDDEN}`)
-    .replace(/\b(gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|glpat-[A-Za-z0-9_-]{16,}|sk-[A-Za-z0-9_-]{20,}|xox[abprs]-[A-Za-z0-9-]{10,}|AKIA[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{35})\b/g, HIDDEN)
-    .replace(/\beyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\b/g, HIDDEN)
-    .replace(/(\b[a-z][a-z0-9+.-]*:\/\/[^\s:/@]+:)[^\s@/]+@/gi, `$1${HIDDEN}@`)
-    .replace(/\b(?=[A-Za-z0-9+/_-]{32,}\b)(?=[A-Za-z0-9+/_-]*\d)(?=[A-Za-z0-9+/_-]*[A-Za-z])[A-Za-z0-9+/_-]{32,}={0,2}/g, HIDDEN);
 }
 
 // s là phiên đang đọc: số chỗ đã che cộng vào s.hidden, để chỉ đếm những phiên được giữ lại sau khi lọc.
