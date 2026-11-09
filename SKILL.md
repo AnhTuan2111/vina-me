@@ -5,7 +5,7 @@ license: MIT
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.11.0"
+  version: "0.12.0"
 ---
 
 # Viết cho thuận mồm
@@ -90,6 +90,11 @@ có cả `~/agent-memory/AGENTS.md` lẫn `~/agent-memory/.disabled`, thì làm 
 có muốn dựng bộ nhớ không. Đồng ý thì làm theo `references/agent-memory.md`; không thì tạo tệp rỗng
 `~/agent-memory/.disabled` để lần sau khỏi hỏi.
 
+## Góp ý về skill
+
+Người dùng chê chính skill (quy tắc sai hay thiếu, script lỗi) thì làm xong việc rồi hỏi một lần có muốn gửi góp ý
+thành issue trên repo vina-me không; đồng ý thì làm theo `references/feedback.md`.
+
 ## Tệp tham khảo
 
 | Tệp | Đọc khi |
@@ -112,5 +117,6 @@ có muốn dựng bộ nhớ không. Đồng ý thì làm theo `references/agent
 | `references/official-documents.md` | báo cáo, tờ trình, công văn, kế hoạch, biên bản của cơ quan nhà nước |
 | `references/docx-export.md` | xuất tệp Word |
 | `references/agent-memory.md` | cài vina-me, bộ nhớ dùng chung, học từ phiên cũ, mật khẩu cho agent |
+| `references/feedback.md` | người dùng chê hay góp ý về chính skill, gửi góp ý thành issue |
 
 Các script cần Node 18 trở lên; không có Node thì soát bằng mắt. Script xuất Word tự cài gói `docx` ở lần chạy đầu.

@@ -44,6 +44,13 @@ Mật khẩu được mã hoá bằng tài khoản Windows (Keychain trên macOS
 trình nào chạy bằng tài khoản của bạn, kể cả agent, vẫn giải mã được. Chi tiết về bộ nhớ, đồng bộ, xung đột và cách gỡ ở
 [`references/agent-memory.md`](references/agent-memory.md).
 
+## Góp ý
+
+Thấy skill viết sai, thiếu một trường hợp hay script lỗi thì cứ chê ngay trong phiên. Agent sẽ hỏi bạn có muốn gửi góp ý
+thành issue ở repo này không, soạn bản nháp cho bạn xem, bạn đồng ý mới gửi. Máy có `gh` đăng nhập thì issue được tạo
+luôn; chưa có thì agent đưa link trang tạo issue đã điền sẵn để bạn đăng nhập GitHub rồi bấm gửi. Issue ở đây ai cũng đọc
+được, nên đừng để tài liệu nội bộ trong bản nháp. Cũng có thể mở issue trực tiếp trên GitHub.
+
 ## Chỉ cài skill, không cần bộ nhớ
 
 - Claude Code: `git clone https://github.com/AnhTuan2111/vina-me.git ~/.claude/skills/vina-me`, cập nhật bằng `git pull`.
