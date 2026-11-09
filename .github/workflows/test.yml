@@ -24,4 +24,4 @@ jobs:
           git config --global user.name ci
           git config --global user.email ci@example.com
           git config --global init.defaultBranch main
-      - run: node --test tests/setup.test.mjs tests/tools.test.mjs
+      - run: node --test tests/setup.test.mjs tests/tools.test.mjs tests/bid.test.mjs
