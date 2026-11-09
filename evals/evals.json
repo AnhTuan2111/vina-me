@@ -72,6 +72,12 @@
       "prompt": "soát giúp văn bản hành chính này, chỉ ra chỗ sai thể thức chứ chưa cần sửa:\n\nCỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập – Tự do – Hạnh phúc\n\nSố: 5/BC-THPTB                    Thành phố A, ngày 6 tháng 1 năm 2026\n\nKính gửi:\n- Sở Giáo dục và Đào tạo\n- Phòng Kế hoạch - Tài chính;\n\n1. Kết quả\na) Đã nhập 1,234 đầu sách.\nb) Phần mềm chạy ổn.\nd) Còn 19 đầu sách thiếu mã vạch.\n\nNơi nhận:\n- Ban Giám hiệu;\n- Lưu: VT;",
       "expected_output": "Chỉ ra đủ: Tiêu ngữ dùng gạch dài thay gạch nối; số văn bản và ngày, tháng dưới 10 thiếu số 0; dòng Kính gửi đầu thiếu chấm phẩy và dòng cuối phải là dấu chấm; điểm nhảy từ b) sang d); số viết kiểu tiếng Anh 1,234; Nơi nhận thiếu \"- Như trên;\" khi có Kính gửi và dòng cuối phải là dấu chấm; mỗi lỗi dạng câu gốc, vấn đề, cách sửa; không sửa lại cả văn bản; không gạch dài trong lời soát.",
       "files": []
+    },
+    {
+      "id": 13,
+      "prompt": "viết mục \"Mức độ đáp ứng các yêu cầu về bảo hành\" cho hồ sơ dự thầu. tiêu chí của hồ sơ mời thầu: thời hạn bảo hành theo nhà sản xuất nhưng tối thiểu 12 tháng; đổi trả miễn phí hàng lỗi do nhà sản xuất hoặc nhà thầu; có kế hoạch bảo hành, bảo trì, đáp ứng trong tối đa 48 giờ kể từ khi nhận yêu cầu; cam kết thu hồi hàng không bảo đảm chất lượng. hàng chào: máy chủ hãng bảo hành 36 tháng, máy tính bảng hãng bảo hành 12 tháng. hotline và địa chỉ công ty mình chưa có.",
+      "expected_output": "Mỗi ý trong tiêu chí có một mục con hoặc một dòng bảng riêng, tên gần đúng chữ hồ sơ mời thầu; thời hạn bảo hành ghi theo từng hàng (36 tháng, 12 tháng), không thấp hơn 12 tháng; thời gian đáp ứng không quá 48 giờ; có cam kết đổi trả và thu hồi; không xưng hô, chủ ngữ là Nhà thầu; hotline và địa chỉ để chỗ đánh dấu cần xác nhận chứ không bịa; không thêm con số cam kết mà đề không cho (độ khả dụng, RTO); không gạch dài.",
+      "files": []
     }
   ]
 }
