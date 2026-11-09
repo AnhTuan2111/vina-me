@@ -24,7 +24,7 @@
 
 import fs from 'node:fs';
 import os from 'node:os';
-import path from 'node:path';
+import path from 'node:path';
 import { HIDDEN, redact } from './lib/redact.mjs';
 
 const args = process.argv.slice(2);
