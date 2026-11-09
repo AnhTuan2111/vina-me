@@ -3,18 +3,6 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
-## 0.13.1 (09/11/2026)
-
-- `bid-check.mjs` bắt cả chỗ đánh dấu "[chưa có chứng minh]", không còn đọc nhầm "A08 tháng 8/2026" thành thời hạn 8 tháng.
-  Hướng dẫn hồ sơ dự thầu nói thêm: bản chữ trích từ PDF hay mất ký hiệu ≥ và ≤, nên cột yêu cầu chép theo ảnh trang.
-
-## 0.13.0 (09/11/2026)
-
-- Viết hồ sơ dự thầu: hướng dẫn ở `references/bid-proposals.md` (bảng truy vết yêu cầu, dàn mục theo tiêu chuẩn đánh giá
-  kỹ thuật, bảng đáp ứng thông số, tài liệu kỹ thuật sản phẩm, dùng hồ sơ cũ làm bản đối chứng); `scripts/bid-docx.mjs`
-  dựng tệp Word trên khuôn là tệp Word của công ty; `scripts/bid-check.mjs` soát chỗ còn trống, mục dẫn sai, tên và thời
-  hạn của gói cũ còn sót. Hai script không cần cài gói npm.
-
 ## 0.12.0 (09/11/2026)
 
 - Người dùng chê hay góp ý về chính skill thì agent hỏi có muốn gửi thành issue trên repo vina-me không, soạn bản nháp cho
