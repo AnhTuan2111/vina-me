@@ -3,8 +3,8 @@
 [![test](https://github.com/AnhTuan2111/vina-me/actions/workflows/test.yml/badge.svg)](https://github.com/AnhTuan2111/vina-me/actions/workflows/test.yml)
 
 vina-me giúp AI agent viết và sửa văn tiếng Việt cho dễ đọc, không có mùi văn máy: bài giảng, tài liệu, báo cáo gửi sếp,
-văn bản hành chính, hồ sơ dự thầu, email, tệp Word. Cài một lần là có thêm bộ nhớ dùng chung cho Claude Code và Codex,
-nên điều đã dặn agent một lần thì không phải dặn lại.
+văn bản hành chính, email, tệp Word. Cài một lần là có thêm bộ nhớ dùng chung cho Claude Code và Codex, nên điều đã dặn
+agent một lần thì không phải dặn lại.
 
 ## Cài
 
@@ -37,8 +37,6 @@ script; bạn muốn chạy tay thì đứng trong thư mục `vina-me`:
 |---|---|
 | `node scripts/lint.mjs <tệp>` | soát văn máy, dấu câu, độ dài câu; thêm `--official` để soát thể thức văn bản hành chính |
 | `node scripts/report-docx.mjs <content.json> <out.docx>` | xuất báo cáo ra Word |
-| `node scripts/bid-docx.mjs <content.json> <out.docx> --template <mẫu.docx>` | dựng hồ sơ dự thầu ra Word theo khuôn tệp mẫu của công ty |
-| `node scripts/bid-check.mjs <bản nháp> --hsmt <tệp> --sample <hồ sơ cũ>` | soát hồ sơ dự thầu: chỗ còn trống, mục dẫn sai, chữ của gói cũ còn sót |
 | `node scripts/secrets.mjs add <tên>` | cất mật khẩu cho agent dùng mà không dán vào chat |
 | `node scripts/setup.mjs check` | soát bộ nhớ: quá dài, ý gần trùng |
 
