@@ -21,9 +21,16 @@ Hồ sơ mời thầu do chủ đầu tư viết; tệp này không dùng để 
 | Bản đối chứng | hồ sơ đã nộp ở gói trước, tệp Word, dùng theo mục Bản đối chứng bên dưới |
 
 Trích chữ PDF bằng `pdftotext -layout -enc UTF-8 <tệp.pdf> <tệp.txt>`, hoặc PyMuPDF. Tệp quét không có chữ (quyết định có
-dấu đỏ, đăng ký kinh doanh) thì OCR, hoặc hỏi BA những thông tin cần. Bảng nhiều cột trong PDF hay bị lệch dòng khi trích:
-thông số của hạng mục này nhảy sang dòng hạng mục khác. Bảng yêu cầu kỹ thuật thì xem ảnh từng trang (`pdftoppm -png`) và
-đối chiếu từng hàng trước khi dùng.
+dấu đỏ, đăng ký kinh doanh) thì OCR, hoặc hỏi BA những thông tin cần. Bảng yêu cầu kỹ thuật thì xem ảnh từng trang
+(`pdftoppm -png`) và đối chiếu từng hàng trước khi dùng, vì bản chữ trích ra hay sai ở ba chỗ:
+
+- ký hiệu so sánh bị mất: "Nguồn ≥ 1.200W" thành "Nguồn 1.200W", "Trọng lượng ≤ 500 g" thành "Trọng lượng 500 g", nên
+  mức tối thiểu đọc thành con số bắt buộc đúng bằng;
+- hàng của một hạng mục tràn sang trang sau thì phần tràn trông như thuộc hạng mục ở dòng kế, và bảng nhiều cột bị lệch
+  dòng làm thông số nhảy sang hạng mục khác;
+- tên riêng, số hiệu bị ngắt dòng giữa chừng.
+
+Cột yêu cầu trong bảng đáp ứng chép theo ảnh trang, không chép theo bản chữ.
 
 ## Quy trình
 
