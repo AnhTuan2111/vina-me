@@ -3,6 +3,15 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.14.0 (10/11/2026)
+
+- Viết phần kỹ thuật của hồ sơ dự thầu (thuyết minh đề xuất kỹ thuật E-HSDT) từ hồ sơ mời thầu: quy trình tám bước ở
+  `references/bid-proposals.md`, hướng dẫn từng bước ở `references/bid/`. Script ở `scripts/bid/`: `bid-docx.mjs` dựng Word
+  theo khuôn hồ sơ mẫu của công ty hoặc khuôn dựng sẵn; `bid-check.mjs` soát chỗ còn trống, chữ gán sai trang catalog, cam
+  kết và chi tiết kỹ thuật tự đặt chưa đánh dấu, chữ của gói cũ; `docx-profile.mjs` so định dạng với hồ sơ mẫu;
+  `page-check.mjs` soát bố cục trang PDF; `render-pdf.ps1` cho Word cập nhật mục lục và xuất PDF. Bảng, mục lục, bìa, bảng
+  tiến độ trình bày gọn hơn hồ sơ mẫu. Thay cho phần hồ sơ dự thầu của bản 0.13 đã gỡ.
+
 ## 0.12.0 (09/11/2026)
 
 - Người dùng chê hay góp ý về chính skill thì agent hỏi có muốn gửi thành issue trên repo vina-me không, soạn bản nháp cho

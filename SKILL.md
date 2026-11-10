@@ -1,11 +1,11 @@
 ---
 name: vina-me
-description: Viết và sửa văn tiếng Việt cho thuận mồm, dễ hiểu, không có mùi văn máy hay giọng văn mẫu. Dùng mỗi khi viết hay sửa văn bản tiếng Việt dài hơn vài câu, kể cả khi người dùng không nhắc tới giọng văn, ví dụ bài giảng, tài liệu, README, báo cáo, báo cáo lỗi, văn bản hành chính theo Nghị định 30/2020, email, lời giải thích trong chat, chữ trên sơ đồ, tệp Word. Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "rời rạc", "văn mẫu", hoặc nhờ humanize, viết theo giọng một người. Kèm script cài skill, bộ nhớ dùng chung cho Claude Code và Codex, học từ phiên cũ, giữ mật khẩu cho agent.
+description: Viết và sửa văn tiếng Việt cho thuận mồm, dễ hiểu, không có mùi văn máy hay giọng văn mẫu. Dùng mỗi khi viết hay sửa văn bản tiếng Việt dài hơn vài câu, kể cả khi người dùng không nhắc tới giọng văn, ví dụ bài giảng, tài liệu, README, báo cáo, báo cáo lỗi, văn bản hành chính theo Nghị định 30/2020, hồ sơ dự thầu (thuyết minh đề xuất kỹ thuật E-HSDT), email, lời giải thích trong chat, chữ trên sơ đồ, tệp Word. Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "rời rạc", "văn mẫu", hoặc nhờ humanize, viết theo giọng một người. Kèm script cài skill, bộ nhớ dùng chung cho Claude Code và Codex, học từ phiên cũ, giữ mật khẩu cho agent.
 license: MIT
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.12.0"
+  version: "0.14.0"
 ---
 
 # Viết cho thuận mồm
@@ -81,6 +81,7 @@ hỏi lý do trước khi áp cho cả bài. Không áp skill cho văn bản quy
 | Sửa một tệp | Chỉ sửa phần văn, báo số chỗ đã sửa theo loại |
 | Soát mà không sửa | Từng chỗ "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ |
 | Báo cáo lỗi, báo cáo rà soát | Theo `references/review-reports.md` |
+| Hồ sơ dự thầu | Làm đủ tám bước trong `references/bid-proposals.md`: đọc bộ tài liệu, bảng truy vết, dựng Word bằng `scripts/bid/bid-docx.mjs`, soát bằng bốn lệnh |
 | Tệp Word | `scripts/report-docx.mjs`, văn bản hành chính thì `scripts/official-doc-docx.mjs`; xuất PDF xem từng trang trước khi đưa |
 
 ## Bộ nhớ cho agent
@@ -115,6 +116,7 @@ thành issue trên repo vina-me không; đồng ý thì làm theo `references/fe
 | `references/review-reports.md` | báo cáo lỗi, báo cáo đối chiếu với tài liệu gốc |
 | `references/diagrams-and-docs.md` | chữ trên sơ đồ, trang trình chiếu, tài liệu gửi khách, báo cáo trạng thái hệ thống |
 | `references/official-documents.md` | báo cáo, tờ trình, công văn, kế hoạch, biên bản của cơ quan nhà nước |
+| `references/bid-proposals.md` | hồ sơ dự thầu: quy trình, việc cấm; chi tiết từng bước ở `references/bid/` |
 | `references/docx-export.md` | xuất tệp Word |
 | `references/agent-memory.md` | cài vina-me, bộ nhớ dùng chung, học từ phiên cũ, mật khẩu cho agent |
 | `references/feedback.md` | người dùng chê hay góp ý về chính skill, gửi góp ý thành issue |

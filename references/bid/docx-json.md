@@ -1,0 +1,77 @@
+# Cấu trúc content.json cho bid-docx.mjs
+
+```bash
+node scripts/bid/bid-docx.mjs content.json HSDX.docx --template <hồ sơ mẫu.docx>
+```
+
+Có khuôn thì script giữ bìa, mục lục, cách chia section của khuôn và học định dạng thực tế của từng loại đoạn; không có khuôn
+thì dùng khuôn dựng sẵn theo số đo của hồ sơ mẫu. Không cần cài gì ngoài Node.
+
+```json
+{
+  "title": "Thuyết minh đề xuất kỹ thuật",
+  "author": "<tên nhà thầu>",
+  "cover": ["NHÀ THẦU: ...", "GÓI THẦU ...", "<tên gói>", "Hà Nội, 2026"],
+  "toc": true,
+  "blocks": [
+    { "part": "A. <tên tiêu chí 1>" },
+    { "doc": "I. Bảng đáp ứng yêu cầu kỹ thuật hàng hóa" },
+    { "h1": "1. <tên hạng mục>" },
+    { "h2": "1.1. <mục con>" },
+    { "h3": "1.1.1. <mục nhỏ>" },
+    { "p": "Đoạn văn. **Chữ đậm**, *chữ nghiêng*. Ký tự xuống dòng tách thành đoạn mới." },
+    { "label": "a) Nhãn đậm đầu một khối" },
+    { "bullets": ["**Nhãn:** nội dung", ["ý con"], "ý khác"] },
+    { "table": { "columns": ["STT", "Yêu cầu", "Đáp ứng", "Tham chiếu"], "widths": [7, 35, 38, 20],
+                 "rows": [{ "cells": ["I", "Máy chủ ..."], "bold": true, "shade": true }, ["1", "...", "...", "..."]],
+                 "caption": "Bảng 1: ...", "center": [0] } },
+    { "figure": { "file": "img/kien-truc.png", "caption": "Hình 1: ...", "width": 100 } },
+    { "gantt": { "days": 60, "perTable": 10, "dayOne": "ngày ký hợp đồng",
+                 "intro": [{ "h1": "3. Bảng tiến độ theo ngày" }, { "p": "Tiến độ chi tiết theo ngày như sau:" }],
+                 "rows": [{ "no": "I", "task": "CUNG CẤP HÀNG HÓA VÀ DỊCH VỤ LIÊN QUAN", "group": 1 },
+                          { "no": "1", "task": "Khởi động", "group": 2 },
+                          { "no": "1.1", "task": "Ký hợp đồng, khởi động dự án", "owner": "Chủ trì dự án", "from": 1, "to": 2 }] } },
+    { "letter": { "org": ["CÔNG TY CỔ PHẦN", "TÊN CÔNG TY"], "date": "Hà Nội, ngày ... tháng ... năm 2026",
+                  "subject": "Về việc ...", "to": "Kính gửi: <Chủ đầu tư>",
+                  "info": ["**Tên nhà thầu:** ...", "Địa chỉ: ...", "Mã số doanh nghiệp: ...; Điện thoại: ...", "Fax: ...; Thư điện tử: ...", "Người đại diện: ..., <chức danh>"],
+                  "body": ["Sau khi nghiên cứu ...", "Cam kết ...", "Chúng tôi hoàn toàn chịu trách nhiệm trước pháp luật về nội dung cam kết nêu trên./."],
+                  "signer": "<họ tên>" } },
+    { "pageBreak": true }
+  ]
+}
+```
+
+- `cover`: khuôn có bìa thì đủ số dòng chữ của bìa khuôn, theo thứ tự; sai số dòng thì script in ra các dòng của bìa khuôn
+  và dừng. Chữ dài hơn bìa khuôn thì script tự bớt khoảng trống để bìa vẫn vừa một trang. Dòng bìa nào của khuôn ghi thông
+  tin gói không có (khuôn có "GÓI THẦU SỐ ..." mà HSMT không đánh số gói) thì thay bằng thông tin cùng vai mà gói có: tên tài
+  liệu ("THUYẾT MINH ĐỀ XUẤT KỸ THUẬT") ở dòng đó, tên gói kèm số E-TBMT ở dòng tên gói.
+- `part` là phần lớn (sang trang mới); `doc` là tài liệu con (sang trang mới, trừ khi ngay sau `part`); `h1`, `h2`, `h3` tự ghi
+  số vào chữ, script không đánh số.
+- Viết chữ đề mục đúng như khuôn gõ, không tự viết hoa: khuôn mẫu gõ phần lớn và đề mục cấp 1 chữ thường ("A. Yêu cầu kỹ thuật
+  của hàng hóa", "1. Giới thiệu phần mềm"), kiểu đoạn tự hiện chữ hoa trên trang, còn mục lục giữ chữ thường. Tài liệu con
+  cũng viết chữ thường ("I. Bảng đáp ứng yêu cầu kỹ thuật hàng hóa"): với `tocStyle` mặc định, khuôn mẫu gõ chữ hoa tài liệu
+  con thì script cho kiểu đoạn tự in hoa. `bid-docx` cảnh báo đề mục gõ hoa ở loại đoạn tự in hoa.
+- `tocStyle`: mặc định `"clean"` (mục lục hai cấp, mục con chữ thường không đậm, dòng thứ hai thụt thẳng); `"template"` giữ
+  kiểu mục lục của khuôn.
+- `coverStyle`: mặc định `"clean"` (khung viền đôi xanh đậm ở trang bìa, tên tài liệu cùng màu, dòng nhà thầu dài tự ngắt hai
+  dòng cân nhau); `"template"` giữ bìa của khuôn. Bìa không cần chữ `size` hay ngắt dòng tay.
+- `tableStyle`: mặc định `"clean"`, kiểu bảng của skill (viền ngoài xám đậm mảnh, viền trong xám nhạt, tiêu đề nền xanh nhạt
+  chữ xanh đậm, hàng nhóm nền xám nhạt, ô có lề), sửa chỗ yếu của bảng mẫu (viền đen dày, nền xám nhạt khó phân biệt, chữ sát
+  viền). `"template"` thì giữ kiểu bảng của khuôn. Cột có từ tiêu đề không vừa một dòng ("STT") được script tự nới, lấy bớt từ
+  cột rộng nhất.
+- `table.widths` là phần trăm; `center` là các cột căn giữa (mặc định cột STT); hàng nhóm `bold`, `shade`. Hàng có ít ô hơn số
+  cột thì ô cuối trải ngang hết các cột còn lại (hàng nhóm `["B", "DỊCH VỤ LIÊN QUAN"]`). Bảng rộng hết bề ngang chữ; trong khối
+  `gantt`, `landscape` thì theo bề ngang trang ngang.
+- Đề mục, nhãn tự giữ với đoạn sau; đoạn `p` đứng ngay trước bảng, hình tự giữ với hàng đầu bảng. Đề mục vẫn rơi cuối trang
+  (đoạn sau quá dài) thì `page-check.mjs` báo; sửa bằng cách thêm câu mở ngắn trước bảng hoặc chia đoạn.
+- `gantt` tự mở và đóng section ngang. `outro` là các khối in ngay dưới bảng cuối, trên trang ngang (câu "Nhà thầu cam kết
+  ..." kết phần tiến độ khi phần kết bằng bảng tiến độ). `dayOne` bắt buộc (mốc ngày 1, in ở tiêu đề mọi bảng). `intro` là các khối in trên
+  trang ngang đầu tiên trước bảng 1 (đề mục, câu mở). `title` là phần lớn đặt trên trang ngang, chỉ dùng khi cả phần tiến độ
+  chỉ có bảng theo ngày (như hồ sơ mẫu: "E. TIẾN ĐỘ"); `title` vào mục lục như mọi phần lớn. `landscape: [blocks]` đặt các khối
+  thường trên trang ngang.
+- `letter.org`: các dòng tên công ty, in đậm hết. Dòng đầu là cơ quan chủ quản (không phải một phần tên công ty) thì thêm
+  `"orgParent": true` để dòng đó chữ thường theo Nghị định 30.
+- `letter` mở trang mới; bản cam kết đầu tiên mở section cuối của khuôn (không in số trang, như hồ sơ mẫu). Script ngắt trang
+  bằng đoạn có "ngắt trước", nên bản vừa khít trang không sinh trang trắng.
+- Ảnh PNG hoặc JPEG, đường dẫn tương đối với tệp JSON.
+- Không dùng dấu gạch dài, gạch vừa, mũi tên trong chữ.
