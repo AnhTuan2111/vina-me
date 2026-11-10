@@ -24,6 +24,25 @@ try {
     $pdf = if ($OutDir) { Join-Path $OutDir $name } else { [IO.Path]::ChangeExtension($full, '.pdf') }
     $d.SaveAs2($pdf, 17)
     $d.Close(0)
+    if ($UpdateDocx) {
+      # Word ghi tên tài khoản máy vào "người sửa cuối" (cp:lastModifiedBy) khi lưu, kể cả khi đã đặt lại thuộc tính trước Save:
+      # sửa thẳng docProps/core.xml sau khi Word đóng tệp, đặt bằng tác giả (tên nhà thầu bid-docx đã ghi).
+      Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
+      $zip = [IO.Compression.ZipFile]::Open($full, 'Update')
+      try {
+        $entry = $zip.GetEntry('docProps/core.xml')
+        if ($entry) {
+          $sr = New-Object IO.StreamReader($entry.Open()); $xml = $sr.ReadToEnd(); $sr.Close()
+          $m = [regex]::Match($xml, '<dc:creator>([^<]*)</dc:creator>')
+          if ($m.Success) {
+            $xml = [regex]::Replace($xml, '<cp:lastModifiedBy>[^<]*</cp:lastModifiedBy>', "<cp:lastModifiedBy>$($m.Groups[1].Value)</cp:lastModifiedBy>")
+            $entry.Delete()
+            $sw = New-Object IO.StreamWriter($zip.CreateEntry('docProps/core.xml').Open(), (New-Object Text.UTF8Encoding($false)))
+            $sw.Write($xml); $sw.Close()
+          }
+        }
+      } finally { $zip.Dispose() }
+    }
     Write-Output $pdf
   }
 } finally { $w.Quit() }

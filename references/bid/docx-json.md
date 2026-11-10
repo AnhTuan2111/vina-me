@@ -28,7 +28,7 @@ thì dùng khuôn dựng sẵn theo số đo của hồ sơ mẫu. Không cần 
     { "figure": { "file": "img/kien-truc.png", "caption": "Hình 1: ...", "width": 100 } },
     { "gantt": { "days": 60, "perTable": 10, "dayOne": "ngày ký hợp đồng",
                  "intro": [{ "h1": "3. Bảng tiến độ theo ngày" }, { "p": "Tiến độ chi tiết theo ngày như sau:" }],
-                 "rows": [{ "no": "I", "task": "CUNG CẤP HÀNG HÓA VÀ DỊCH VỤ LIÊN QUAN", "group": 1 },
+                 "rows": [{ "no": "I", "task": "CUNG CẤP HÀNG HÓA", "group": 1 },
                           { "no": "1", "task": "Khởi động", "group": 2 },
                           { "no": "1.1", "task": "Ký hợp đồng, khởi động dự án", "owner": "Chủ trì dự án", "from": 1, "to": 2 }] } },
     { "letter": { "org": ["CÔNG TY CỔ PHẦN", "TÊN CÔNG TY"], "date": "Hà Nội, ngày ... tháng ... năm 2026",
@@ -45,6 +45,8 @@ thì dùng khuôn dựng sẵn theo số đo của hồ sơ mẫu. Không cần 
   và dừng. Chữ dài hơn bìa khuôn thì script tự bớt khoảng trống để bìa vẫn vừa một trang. Dòng bìa nào của khuôn ghi thông
   tin gói không có (khuôn có "GÓI THẦU SỐ ..." mà HSMT không đánh số gói) thì thay bằng thông tin cùng vai mà gói có: tên tài
   liệu ("THUYẾT MINH ĐỀ XUẤT KỸ THUẬT") ở dòng đó, tên gói kèm số E-TBMT ở dòng tên gói.
+- Tên phần lớn, tài liệu con dài (giữ nguyên chữ HSMT): script tự dính hai chữ cuối để dòng cuối không còn một chữ ("NGHỆ");
+  không tự đổi chữ của HSMT.
 - `part` là phần lớn (sang trang mới); `doc` là tài liệu con (sang trang mới, trừ khi ngay sau `part`); `h1`, `h2`, `h3` tự ghi
   số vào chữ, script không đánh số.
 - Viết chữ đề mục đúng như khuôn gõ, không tự viết hoa: khuôn mẫu gõ phần lớn và đề mục cấp 1 chữ thường ("A. Yêu cầu kỹ thuật
@@ -60,7 +62,7 @@ thì dùng khuôn dựng sẵn theo số đo của hồ sơ mẫu. Không cần 
   viền). `"template"` thì giữ kiểu bảng của khuôn. Cột có từ tiêu đề không vừa một dòng ("STT") được script tự nới, lấy bớt từ
   cột rộng nhất.
 - `table.widths` là phần trăm; `center` là các cột căn giữa (mặc định cột STT); hàng nhóm `bold`, `shade`. Hàng có ít ô hơn số
-  cột thì ô cuối trải ngang hết các cột còn lại (hàng nhóm `["B", "DỊCH VỤ LIÊN QUAN"]`). Bảng rộng hết bề ngang chữ; trong khối
+  cột thì ô cuối trải ngang hết các cột còn lại (hàng nhóm `["B", "TRIỂN KHAI, ĐÀO TẠO"]`). Bảng rộng hết bề ngang chữ; trong khối
   `gantt`, `landscape` thì theo bề ngang trang ngang.
 - Đề mục, nhãn tự giữ với đoạn sau; đoạn `p` đứng ngay trước bảng, hình tự giữ với hàng đầu bảng. Đề mục vẫn rơi cuối trang
   (đoạn sau quá dài) thì `page-check.mjs` báo; sửa bằng cách thêm câu mở ngắn trước bảng hoặc chia đoạn.

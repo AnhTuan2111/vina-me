@@ -26,7 +26,8 @@ kỹ thuật của E-HSMT; Đáp ứng kỹ thuật của hàng hóa dự thầu
 - Chứng nhận, tiêu chuẩn (80 Plus, Energy Star, TPM 2.0, ISO) phải có đúng tên trên trang dẫn. Catalog chỉ ghi "Platinum" thì
   chưa chứng minh "80 Plus Platinum": ghi "Catalog ghi "Platinum"" kèm `[chưa có chứng minh: chứng nhận 80 Plus]`, không ghi "tốt hơn".
 - HSMT đòi hình ảnh sản phẩm (Mục 3, Chương V) thì mỗi thiết bị có một hình: cắt ảnh máy từ trang catalog (`pdftoppm -f N -l N`,
-  cắt bằng công cụ ảnh có sẵn) và đặt bằng khối `figure`, chú thích dẫn trang catalog; chưa có catalog thì
+  cắt bằng công cụ ảnh có sẵn) và đặt bằng khối `figure`, chú thích dẫn trang catalog; cắt sát thân máy, bỏ đường chú thích,
+  số chú dẫn của catalog (xem ảnh sau khi cắt, mép ảnh không còn đường kẻ cụt); chưa có catalog thì
   `[cần bổ sung: hình ảnh sản phẩm]`.
 - Thông số không đạt (ví dụ cần 2 cổng 10GbE, máy có 1): ghi đúng hiện trạng và `[cần xác nhận: thêm card mạng hay đổi model]`.
 - Loại thiết bị phải khớp (HSMT đòi máy chủ dạng tháp mà model là máy trạm): ghi `[cần xác nhận: giải trình tương đương hay đổi
@@ -54,8 +55,15 @@ thành "nếu Chủ đầu tư yêu cầu". Chưa có danh mục, giá thì đ�
   chờ ("còn chờ tài liệu", "chờ xác nhận cấu hình"): điều chờ BA chỉ nằm trong chỗ đánh dấu.
 - Mẫu 10B (STT, danh mục, ký mã hiệu, nhãn hiệu, hãng, xuất xứ, năm sản xuất) có nhiều cột hẹp: ô chưa biết để chữ ngắn
   "[cần bổ sung]", không nhét câu đánh dấu dài vào cột hẹp (ô cao mười dòng, mỗi dòng một chữ). Không viết đoạn "Ghi chú: ô
-  [cần bổ sung] là..." vào thân hồ sơ: giải thích chỗ đánh dấu thuộc về báo cáo cho BA. Tỉ lệ cột 6/24/18/20/12/10/10 (STT, danh
-  mục, ký mã hiệu và nhãn hiệu, hãng sản xuất, xuất xứ, năm sản xuất, số lượng); tên hãng dài thì cột hãng không dưới 18%.
+  [cần bổ sung] là..." vào thân hồ sơ: giải thích chỗ đánh dấu thuộc về báo cáo cho BA.
+- Bảng Mẫu 10B dựng 6 cột, gộp xuất xứ và năm sản xuất: STT, danh mục, ký mã hiệu và nhãn hiệu, hãng sản xuất, xuất xứ và năm
+  sản xuất, số lượng; tỉ lệ 6/27/21/18/17/11. `bid-docx` báo tiêu đề cột xếp mỗi dòng một tiếng hay chữ ngắn gãy dòng thì nới
+  cột đó, lấy bớt từ cột danh mục.
+- Mẫu 10B cho hạng mục phần mềm do nhà thầu hay đơn vị phát triển làm ra: ký mã hiệu là tên phần mềm (kèm phiên bản nếu có),
+  hãng là đơn vị phát triển, xuất xứ theo nơi phát triển, năm là năm bàn giao; mỗi ô đó đánh dấu `[cần xác nhận]` khi BA chưa
+  chốt. Hạng mục dịch vụ (triển khai, đào tạo, bảo hành) ghi tên dịch vụ, đơn vị thực hiện, các cột ký mã hiệu, xuất xứ, năm
+  sản xuất ghi đúng chữ ghi chú của Mẫu 10B trong HSMT (thường là "không có"; thiếu ký mã hiệu, xuất xứ thì hồ sơ không được xem
+  xét, nên đọc kỹ ghi chú đó). Hỏi BA cách điền trên hệ thống nếu HSMT có hướng dẫn khác.
 
 ## Sau bảng
 

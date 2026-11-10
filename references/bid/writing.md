@@ -11,7 +11,9 @@ với HSMT, nên câu ngắn, cụ thể, dùng đúng chữ của HSMT, và đ�
   xưng "chúng tôi".
 - Gọi các bên và hồ sơ đúng như HSMT: Chủ đầu tư, E-HSMT, E-HSDT, Chương V. Không dùng "HSYC" khi gói không phải hồ sơ yêu cầu.
 - Tên gói, tên hạng mục, tên chủ đầu tư, địa điểm chép đúng HSMT; một thứ một tên suốt hồ sơ, kể cả trong hình, bảng tài liệu
-  nộp kèm, bảng kê sai khác (không lúc "thiết bị di động", lúc "máy tính bảng").
+  nộp kèm, bảng kê sai khác (không lúc "thiết bị di động", lúc "máy tính bảng"). HSMT tự dùng hai tên (tên hạng mục ở Mẫu 01A
+  và loại thiết bị ở Chương V) thì lấy tên hạng mục, nói một lần ở đầu bảng đáp ứng "(dưới đây gọi là ...)" nếu cần tên ngắn,
+  rồi giữ đúng một tên đó; ô chép nguyên văn yêu cầu HSMT giữ chữ HSMT.
 - Văn bản hành chính, không hỏi rồi đáp, không văn hoa, không "hiện đại, vượt trội, toàn diện" không kèm số.
 
 ## Câu mẫu, lấy từ hồ sơ mẫu
@@ -30,8 +32,11 @@ với HSMT, nên câu ngắn, cụ thể, dùng đúng chữ của HSMT, và đ�
   kể cả bản cam kết và ô bảng (trừ bảng tiến độ theo ngày): thời gian thực hiện "60 (sáu mươi) ngày", bảo hành "12 (mười hai)
   tháng", "36 (ba mươi sáu) tháng", đáp ứng "48 (bốn mươi tám) giờ", sửa chữa thay thế "02 (hai) ngày". `bid-check` nêu thời hạn
   lúc kèm chữ lúc không và số đếm thiếu số 0.
-- Số tiền, số lớn: dấu chấm ngăn nghìn ("37.000.000 đồng"); số thập phân: dấu phẩy ("3,84 TB") trong câu văn; giữ nguyên cách
-  ghi của catalog khi trích thông số.
+- Số tiền, số lớn: dấu chấm ngăn nghìn ("37.000.000 đồng"); số thập phân: dấu phẩy ("3,84 TB", "4,80 GHz", "37,56 kg") ở mọi
+  chữ của nhà thầu, kể cả ô đáp ứng của bảng; chỉ giữ dấu chấm kiểu Anh trong chữ trích nguyên catalog đặt trong ngoặc kép.
+  `bid-check` nêu số thập phân dấu chấm kèm đơn vị đo nằm ngoài ngoặc kép.
+- Chi tiết lắp đặt, điện, mạng lấy đúng chữ catalog (trích trong ngoặc kép kèm trang), không suy thêm cách đấu nối ("qua bộ chia
+  nguồn của phòng"); không có trong catalog thì ghi theo yêu cầu của hãng và đánh dấu.
 - Cam kết không được kém HSMT: HSMT đòi tối đa 48 giờ thì không hứa 72 giờ; HSMT đòi tối thiểu 36 tháng thì ghi từ 36 tháng.
 - Con số HSMT không hỏi (độ khả dụng, RTO, RPO, số người dùng đồng thời) chỉ đưa vào khi có nguồn (tài liệu kỹ thuật, BA);
   không có thì `[cần xác nhận: ...]`.
@@ -40,6 +45,15 @@ với HSMT, nên câu ngắn, cụ thể, dùng đúng chữ của HSMT, và đ�
   bị trong thời gian sửa, cử người trực tại chỗ). HSMT, BA không đưa thì vẫn được đề xuất (người chấm cần thấy
   kế hoạch cụ thể), nhưng mỗi cam kết kèm `[cần xác nhận: cam kết mới của nhà thầu]` ở lần nhắc đầu và có trong danh sách báo
   lại. `bid-check` nêu các tần suất, số buổi, thời hạn không có trong HSMT; chỗ nào chưa đánh dấu thì đánh dấu.
+- Một chỗ đánh dấu phủ cả câu chứa nó: điều BA đã chốt (ngày giao 21 đến 22) không đứng chung câu với dấu của điều chưa chốt
+  (lịch còn lại). Tách câu, hoặc đặt dấu ngay sau đúng cụm chưa chốt.
+- Đề xuất của nhà thầu (sao lưu tự động, thử khôi phục, cập nhật bản vá, thiết bị dự phòng) nhắc lại ở bảng bảo trì, giải
+  pháp, bàn giao cũng có `[cần xác nhận]` ngắn ở mỗi chỗ, như lịch.
+- Điều chưa chốt (địa chỉ, nơi chạy Chatbot, model, lịch, cam kết mới) nhắc lại ở chỗ khác, kể cả bản cam kết, thì mỗi chỗ nhắc
+  lại có `[cần xác nhận]` ngắn: BA sửa ở một chỗ sẽ sót những chỗ không có dấu.
+- Chữ trong chỗ đánh dấu ngắn, trung tính, nói cần gì (`[cần xác nhận: vai nhà thầu phụ]`), không ghi lý do bất lợi cho hồ
+  sơ ("HSMT chỉ cho thầu phụ làm dịch vụ liên quan"): sót khi nộp là tự khai hồ sơ trái HSMT. Lý do, điều khoản dẫn chứng nằm ở
+  báo cáo cho BA.
 - Mốc bắt đầu bảo hành, bảo trì mà HSMT không nêu (từ ngày nghiệm thu, từ ngày bàn giao) là cam kết mới: đánh dấu như trên.
 - Mốc tính thời gian (ngày 1 là ngày ký hợp đồng hay ngày hợp đồng có hiệu lực) theo đúng chữ HSMT, một mốc suốt hồ sơ, kể cả
   tiêu đề bảng tiến độ theo ngày (`gantt.dayOne`). HSMT tự lệch (Mẫu 01A điền "ngày ký hợp đồng", đầu cột in sẵn "ngày hợp đồng

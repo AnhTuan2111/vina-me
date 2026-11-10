@@ -5,13 +5,21 @@
 - Thời gian thực hiện lấy từ HSMT; ghi rõ ngày 1 tính từ đâu (ngày ký hợp đồng hay ngày hợp đồng có hiệu lực) theo đúng chữ của
   HSMT. Mốc giao hàng sớm nhất, muộn nhất theo Mẫu 01A.
 - Bảng tiến độ tóm tắt (bảng thường, trang dọc): STT | Nội dung công việc | Đơn vị tính | Khối lượng | Tổng số ngày | Kết quả /
-  Ghi chú (7/28/12/11/14/28). Nhóm A cung cấp hàng hóa (từng hạng mục, khối lượng theo Mẫu 01A), nhóm B dịch vụ liên quan.
+  Ghi chú (7/22/12/19/13/27). Nhóm A cung cấp hàng hóa (từng hạng mục, khối lượng theo Mẫu 01A); nhóm B theo hạng mục triển khai, đào tạo (chỉ gọi "dịch vụ liên quan" khi Mẫu 01D có).
 - Mọi câu nói thời điểm ở phần khác (đặt hàng, giao, lắp, đào tạo, nghiệm thu) lấy đúng "ngày N" của bảng tiến độ; không viết
   "ngay sau khi ký hợp đồng" khi bảng bắt đầu việc đó từ ngày 3.
 - Lịch từng việc trong thời gian HSMT cho là đề xuất của nhà thầu: đánh dấu `[cần xác nhận: lịch tiến độ do nhà thầu đề xuất]`
-  ở lần nhắc đầu tiên trong hồ sơ và một lần nữa ở câu mở phần tiến độ (người chấm đọc phần tiến độ riêng), không đánh dấu từng
-  mốc. Lịch lớp đào tạo, lịch bảo trì cũng vậy.
+  ở lần nhắc đầu tiên trong hồ sơ và một lần nữa ở câu mở phần tiến độ (người chấm đọc phần tiến độ riêng); trong phần tiến độ
+  (bảng tóm tắt, bảng theo ngày) không đánh dấu từng mốc. Ngoài phần tiến độ (giải pháp, giao nhận, nghiệm thu, đào tạo, bản cam
+  kết) mỗi câu nhắc lại một mốc có `[cần xác nhận]` ngắn; `bid-check` nêu "ngày N đến ngày M" ngoài phần tiến độ không có dấu.
+  Lịch lớp đào tạo, lịch bảo trì cũng vậy. Số sẽ điền vào biểu mẫu trên hệ thống (số ngày nhà thầu đề xuất ở Mẫu 10A, Mẫu 01A)
+  có `[cần xác nhận]` ngay tại ô, vì BA chép ô đó sang webform.
+- Tên hàng nhóm trong bảng tiến độ theo đúng HSMT: Mẫu 01D ghi không có dịch vụ liên quan thì không có nhóm "dịch vụ liên quan"
+  (ghi "CUNG CẤP HÀNG HÓA", "TRIỂN KHAI, ĐÀO TẠO" theo hạng mục).
 - Phần tiến độ kết bằng bảng theo ngày thì câu cam kết kết phần đặt trong `outro` của khối `gantt`.
+- Bảng tiến độ theo ngày chia nhóm và đặt tên nhóm đúng như bảng tiến độ tóm tắt (cùng hạng mục, cùng việc trong nhóm). Cột "Tổng
+  số ngày" của bảng tóm tắt bằng số ngày từ ngày đầu tới ngày cuối của các việc thuộc hạng mục đó trong bảng theo ngày; soát
+  lại bằng cách cộng từng dòng trước khi giao.
 - Bảng tiến độ theo ngày: khối `gantt` của `bid-docx.mjs` (trang ngang, mỗi bảng 10 ngày, đủ số bảng cho thời gian thực hiện).
   `dayOne` bắt buộc, chữ đúng mốc của HSMT và trùng mốc ghi ở mục tiến độ. Đề mục và câu mở của mục bảng tiến độ theo ngày đặt
   trong `intro` của khối `gantt` để in ngay trên bảng đầu tiên của trang ngang; đặt ở trang dọc trước đó thì trang dọc gần trắng.
@@ -54,8 +62,9 @@ nhà thầu, thân, khối ký). Mỗi bản một trang, đặt cuối hồ sơ
 - `org`: tên nhà thầu ngắt thành 2-3 dòng ngắn, dòng đầu là loại hình ("CÔNG TY CỔ PHẦN"), các dòng sau đậm.
 - `info`: "**Tên nhà thầu:** ...", địa chỉ trụ sở, mã số doanh nghiệp, điện thoại, fax, thư điện tử, người đại diện và chức
   danh, tất cả lấy từ giấy tờ nhà thầu. Giấy tờ không có thư điện tử thì vẫn giữ dòng: "Thư điện tử: [cần bổ sung]".
-- Mỗi bản vừa một trang A4: thông tin nhà thầu 4-5 dòng, thân 3-6 câu cam kết ngắn, mỗi câu dẫn một mục HSMT. Dài hơn thì
-  `page-check.mjs` báo trang không mở bằng quốc hiệu; bớt chữ chứ không thu cỡ chữ.
+- Mỗi bản vừa một trang A4: thông tin nhà thầu 5 dòng (gộp fax và thư điện tử một dòng), thân 2-4 câu cam kết ngắn ngoài câu mở
+  và câu kết, mỗi câu dẫn một mục HSMT. Nội dung nhiều (bảo hành, đổi trả, thu hồi) thì tách hai bản theo từng ý chứ không nén
+  câu. Dài hơn thì `page-check.mjs` báo trang không mở bằng quốc hiệu; bớt chữ chứ không thu cỡ chữ.
 - `body`: câu mở "Sau khi nghiên cứu E-HSMT gói thầu: <tên gói> do <chủ đầu tư> làm Chủ đầu tư, chúng tôi cam kết như sau:", các
   câu cam kết dẫn đúng mục HSMT, câu kết "Chúng tôi hoàn toàn chịu trách nhiệm trước pháp luật về nội dung cam kết nêu trên./.".
 - Ngày ký để trống dạng "Hà Nội, ngày ... tháng ... năm 2026" trừ khi BA đưa ngày.

@@ -54,6 +54,24 @@ pdftoppm -r 60 -png HSDX.pdf pages/p
   hành dài hơn chuẩn hãng, 24/7) có đánh dấu (`goods.md`).
 - Không còn chữ của gói cũ; không có thông số, con số, tần suất, văn bản không có nguồn mà không đánh dấu.
 
+## Soát cuối như người chấm
+
+Các lệnh trên chưa bắt hết. Trước khi giao, đọc lại cả hồ sơ một lượt theo từng dạng dưới đây (đều là lỗi người chấm đã trừ điểm ở
+các lần thử), dùng tìm chữ trong `content.json` cho từng từ khóa:
+
+1. Mỗi chỗ đánh dấu: lấy từ khóa của nó (lịch, nơi chạy Chatbot, ai làm phần mềm, model, địa chỉ, đề xuất kỹ thuật), tìm mọi chỗ
+   khác nhắc lại; chỗ nào không có dấu thì thêm `[cần xác nhận]` ngắn, trừ bảng trong phần tiến độ.
+2. Câu mở bảng, câu giới thiệu đầu phần không khẳng định điều đang chờ BA ("hạng mục 3, 4 do Nhà thầu thực hiện").
+3. Mọi việc nhà thầu hứa mà HSMT không đòi, kể cả không có số (bản in, trực tại chỗ, thiết bị dự phòng, cho mượn): có dấu, có
+   trong danh sách cam kết mới.
+4. Chi tiết kỹ thuật, lắp đặt, điện, mạng không có nguồn: bỏ hoặc đánh dấu.
+5. Câu nói thứ tự việc ("trước khi", "sau khi", "song song", "từ ngày N") khớp đúng ngày trong bảng tiến độ; số người, số bộ, số
+   lần tự đặt ("hai người nâng máy") cũng là cam kết mới, đánh dấu.
+6. Dẫn điều khoản đúng nguồn của từng con số (48 giờ là Mục 3 Chương III, 02 ngày sửa chữa là E-ĐKCT 23.5).
+7. Thông tin lấy từ tên tệp chứ không từ nội dung tài liệu (số E-TBMT trong tên tệp quyết định) thì đánh dấu.
+8. Báo cáo: mỗi câu "đã đánh dấu ở X" kiểm lại trong tệp Word; không ghi thông số theo trí nhớ.
+9. Ảnh trang: tên phần không để một chữ ở dòng cuối, cột bảng không gãy chữ ngắn, ảnh sản phẩm sạch đường chú thích.
+
 ## Báo lại BA
 
 Gửi kèm tệp Word và PDF:
@@ -64,10 +82,17 @@ Gửi kèm tệp Word và PDF:
 2. Danh sách chỗ đánh dấu, gom theo mục như dòng `ĐẾM` của `bid-check` (số chỗ từng mục khớp), mỗi mục ghi cần gì.
 3. Danh sách cam kết mới do nhà thầu tự đặt (thời hạn, tần suất, số buổi, số lớp) chờ BA duyệt.
 4. Câu hỏi bắt buộc khi có: vai của đơn vị đứng tên trong hồ sơ mẫu mà khác nhà thầu (`reading.md`); model, catalog của
-   hàng hóa chưa có tài liệu; thông số không đáp ứng hay khác loại (đổi model, thêm linh kiện, giải trình tương đương).
+   hàng hóa chưa có tài liệu; thông số không đáp ứng hay khác loại (đổi model, thêm linh kiện, giải trình tương đương). Điều
+   BA đã chốt (giữ model, giải trình tương đương) thì không hỏi lại, chỉ nêu rủi ro còn lại và tài liệu còn thiếu.
 5. Chỗ HSMT tự lệch, bản chữ trích sai, và cách hồ sơ đã xử lý.
 6. Tiêu chí mới mà hồ sơ mẫu không có, và mục đã thêm.
+   Giả định chưa chốt (nhà thầu tự làm phần mềm, nơi chạy Chatbot, lịch) xuất hiện ở bảng nhân sự, giải pháp, tiến độ, bản cam
+   kết thì mỗi chỗ có `[cần xác nhận]` ngắn; soát bằng cách tìm từ khóa của từng chỗ đánh dấu trong cả hồ sơ.
    Danh sách cam kết mới trong báo cáo khớp đúng các chỗ đánh dấu cam kết mới trong hồ sơ, không thêm điều hồ sơ không đánh dấu.
+   Báo cáo không đưa thông số của hàng chưa có catalog theo trí nhớ hay "hiểu biết chung": ghi "chưa có catalog, chưa đánh giá
+   được" và việc cần làm.
+   Lập danh sách đó từ các dòng `LỖI Còn để trống` mà bid-check in ra (mỗi dòng có mục và chữ đánh dấu), không viết theo trí
+   nhớ; câu "đã đánh dấu" trong báo cáo phải đúng với tệp Word.
    Điều nào báo cáo xếp vào cam kết mới hay việc BA phải quyết (vai thầu phụ, ai làm phần mềm, thiết bị dự phòng, cho mượn
    thiết bị) thì trong thân hồ sơ cũng có chỗ đánh dấu ở đúng câu đó; câu khẳng định thẳng mà BA chưa chốt là lỗi.
 7. Đã soát gì bằng lệnh nào: kết quả `docx-profile --compare` (chép nguyên văn các dòng lệch, không tự diễn giải), `page-check`, số dòng `LỖI` và `XEM` của `bid-check` sau khi xử

@@ -94,7 +94,20 @@ test('bid-docx in dòng SỬA: đề mục gõ hoa, bảng ngay sau đề mục,
   assert.equal(r.status, 0, r.out);
   assert.match(r.out, /SỬA {2}part "A\. ĐẶC TÍNH KỸ THUẬT" gõ chữ hoa/);
   assert.match(r.out, /SỬA {2}Bảng .* đứng ngay sau đề mục "1\. Tiến độ", thiếu câu mở/);
-  assert.match(r.out, /SỬA {2}Bảng .*tiêu đề cột 3 "Đơn vị tính" xuống từ ba dòng/);
+  assert.match(r.out, /SỬA {2}Bảng .*tiêu đề cột 3 "Đơn vị tính" xuống mỗi dòng một tiếng/);
+});
+
+test('bid-docx dính hai chữ cuối của tên phần, mã hiệu có gạch nối không gãy dòng', () => {
+  const dir = tmp();
+  const json = write(dir, 'c.json', { blocks: [
+    { part: 'A. Giải pháp và phương pháp luận về công nghệ' },
+    { p: 'Nguồn W-3500 của máy chủ.' },
+  ] });
+  const out = path.join(dir, 'out.docx');
+  assert.equal(node('bid/bid-docx.mjs', [json, out]).status, 0);
+  const doc = xml(out, 'word/document.xml');
+  assert.match(doc, /về công nghệ|công nghệ/);
+  assert.match(doc, /W<\/w:t><w:noBreakHyphen\/><w:t xml:space="preserve">3500/);
 });
 
 test('bid-docx với khuôn là hồ sơ cũ: giữ khổ trang, bỏ nội dung, ảnh, người sửa và số đếm của hồ sơ cũ', () => {
@@ -174,6 +187,28 @@ test('bid-check bắt lời nói với BA, mốc bảo hành tự đặt, phần
   assert.doesNotMatch(r.out, /Phần "A\. Đặc tính kỹ thuật" không có câu kết/);
   assert.match(r.out, /XEM {2}Chi tiết kỹ thuật "RESTful" không có trong HSMT/);
   assert.match(r.out, /XEM {2}Chi tiết kỹ thuật "dạng băm" không có trong HSMT/);
+});
+
+test('bid-check bắt lịch nhắc lại ngoài phần tiến độ, số thập phân dấu chấm, câu khẳng định ai làm phần mềm khi đang chờ BA', () => {
+  const dir = tmp();
+  const hsmt = write(dir, 'hsmt.txt', 'Thời gian thực hiện 60 ngày. Tần số CPU tối đa ≥ 4.5 GHz.');
+  const draft = write(dir, 'draft.md', [
+    '# A. Giải pháp',
+    'Phần mềm do đơn vị phát triển [cần xác nhận: đơn vị phát triển phần mềm] xây dựng.',
+    'Phần mềm quản lý do Nhà thầu thực hiện theo yêu cầu.',
+    'Giao nhận thiết bị từ ngày 2 đến ngày 25.',
+    'CPU đạt 4.80 GHz, ổ cứng 3,84 TB.',
+    'Catalog ghi "4.80 GHz".',
+    '# B. Tiến độ thực hiện',
+    'Lắp đặt từ ngày 26 đến ngày 40 [cần xác nhận: lịch].',
+    'Đào tạo ngày 41 đến ngày 45.',
+  ].join('\n'));
+  const r = node('bid/bid-check.mjs', [draft, '--hsmt', hsmt]);
+  assert.match(r.out, /Lịch "ngày 2 đến ngày 25" nhắc lại ngoài phần tiến độ/);
+  assert.doesNotMatch(r.out, /Lịch "ngày 41 đến ngày 45"/, 'trong phần tiến độ không bắt từng mốc');
+  assert.match(r.out, /Số thập phân "4\.80 GHz" dùng dấu chấm/);
+  assert.doesNotMatch(r.out, /Số thập phân "4\.5 GHz"/, 'chữ chép nguyên HSMT giữ như HSMT viết');
+  assert.match(r.out, /Câu "do Nhà thầu thực hiện" khẳng định ai làm phần mềm/);
 });
 
 test('docx-profile so bản dựng với chính nó: khớp trọn', () => {

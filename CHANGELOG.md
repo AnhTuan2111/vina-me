@@ -3,6 +3,14 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.15.0 (10/11/2026)
+
+- Hồ sơ dự thầu soát kỹ hơn, theo các lỗi người chấm đã trừ điểm ở những lần thử: `bid-check.mjs` bắt lịch nhắc lại ngoài phần
+  tiến độ chưa đánh dấu, số thập phân dấu chấm kiểu Anh, câu khẳng định ai làm phần mềm khi đang chờ BA, thêm lời nói với BA
+  trong thân hồ sơ. `bid-docx.mjs` không để tên phần còn một chữ ở dòng cuối, không gãy mã hiệu ở dấu gạch nối, báo cột bảng
+  quá hẹp, căn giữa cột STT, Bước, Mã. `render-pdf.ps1 -UpdateDocx` giữ tên nhà thầu ở "người sửa cuối" của tệp Word. Hướng
+  dẫn thêm mục soát cuối như người chấm, cách điền Mẫu 10B, cách đánh dấu lịch và đề xuất nhắc lại ở nhiều chỗ.
+
 ## 0.14.0 (10/11/2026)
 
 - Viết phần kỹ thuật của hồ sơ dự thầu (thuyết minh đề xuất kỹ thuật E-HSDT) từ hồ sơ mời thầu: quy trình tám bước ở

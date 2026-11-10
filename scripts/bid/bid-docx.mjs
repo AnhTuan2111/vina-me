@@ -48,7 +48,7 @@ function defaultTemplate() {
     + st('ListParagraph', 'List Paragraph', '<w:spacing w:after="80" w:line="312" w:lineRule="auto"/><w:ind w:left="454" w:hanging="284"/><w:contextualSpacing/>', '')
     + st('CK05Text', 'CK05Text', '<w:spacing w:after="0" w:line="240" w:lineRule="auto"/><w:jc w:val="left"/>', '<w:sz w:val="28"/><w:szCs w:val="28"/>')
     + st('Figure', 'Figure', '<w:keepNext/><w:spacing w:before="200" w:after="60" w:line="240" w:lineRule="auto"/><w:jc w:val="center"/>', '')
-    + st('Caption', 'caption', '<w:spacing w:after="240" w:line="240" w:lineRule="auto"/><w:jc w:val="center"/>', '<w:i/><w:sz w:val="24"/><w:szCs w:val="24"/>')
+    + st('Caption', 'caption', '<w:spacing w:after="240" w:line="240" w:lineRule="auto"/><w:jc w:val="center"/>', '<w:i/><w:sz w:val="26"/><w:szCs w:val="26"/>')
     + st('TableText', 'Table Text', '<w:spacing w:before="20" w:after="20" w:line="240" w:lineRule="auto"/><w:jc w:val="left"/>', '<w:sz w:val="24"/><w:szCs w:val="24"/>')
     + st('TableHeader', 'Table Header', '<w:jc w:val="center"/>', '<w:b/>', 'TableText')
     + st('AfterTable', 'After Table', '<w:spacing w:after="0" w:line="120" w:lineRule="auto"/>', '<w:sz w:val="12"/><w:szCs w:val="12"/>')
@@ -335,7 +335,9 @@ function runs(s, rpr = '') {
     const t = bold ? part.slice(2, -2) : ital ? part.slice(1, -1) : part;
     const props = mergeRpr(rpr, bold ? '<w:b/><w:bCs/>' : '', ital ? '<w:i/><w:iCs/>' : '');
     // "E-HSMT", "E-HSDT", "E-TBMT": gạch nối không ngắt dòng, để Word không bẻ thành "E-" cuối dòng và "HSMT" dòng sau.
-    const body = esc(t).replace(/(^|[^\p{L}])E-(?=[A-ZĐ])/gu, '$1E</w:t><w:noBreakHyphen/><w:t xml:space="preserve">');
+    // Mã hiệu có gạch nối ("W-3500", "Immortalis-G925", "Wi-Fi") không được gãy ở dấu gạch: dùng gạch nối không ngắt của Word.
+    const body = esc(t).replace(/(^|[^\p{L}])E-(?=[A-ZĐ])/gu, '$1E</w:t><w:noBreakHyphen/><w:t xml:space="preserve">')
+      .replace(/([A-Za-z0-9])-(?=[A-Za-z0-9])/g, '$1</w:t><w:noBreakHyphen/><w:t xml:space="preserve">');
     return `<w:r>${props ? `<w:rPr>${props}</w:rPr>` : ''}<w:t xml:space="preserve">${body}</w:t></w:r>`;
   }).join('');
 }
@@ -368,7 +370,7 @@ function table(t) {
     });
   }
   // Cột số thứ tự căn giữa như hồ sơ mẫu; cột khác căn giữa khi JSON chỉ định.
-  const center = new Set(t.center ?? cols.map((c, i) => (/^(stt|tt|số tt)$/i.test(String(c).trim()) ? i : -1)).filter((i) => i >= 0));
+  const center = new Set(t.center ?? cols.map((c, i) => (/^(stt|tt|số tt|bước|lớp|hạng mục số|mã)$/i.test(String(c).trim()) ? i : -1)).filter((i) => i >= 0));
   // Ước lượng chữ Times New Roman: một ký tự thường rộng khoảng 0,45 cỡ chữ, chữ đậm in hoa ở ô tiêu đề khoảng 0,6; lề ô hai
   // bên khoảng 160 twip. Từ dài hơn bề ngang ô thì Word ngắt giữa từ ("ST / T"); cột hẹp (dưới 15%) mà ô quá 8 dòng là nhét
   // chữ dài (chỗ đánh dấu) vào cột hẹp.
@@ -388,7 +390,11 @@ function table(t) {
       const word = plain.split(/\s+/).reduce((a, b) => (b.length > a.length ? b : a), '');
       if (word.length > fit(i, header) && !seenWarn.has(`w${i}`)) { seenWarn.add(`w${i}`); warnings.push(`Bảng "${name}": cột ${i + 1} hẹp, chữ "${word}" bị ngắt giữa từ; nới tỉ lệ cột`); }
       // Ô tiêu đề mỗi dòng một tiếng ("Đơn / vị / tính"): ba dòng trở lên thì nới cột.
-      if (header && wrapLines(plain, fit(i, true)) >= 3 && wrapLines(plain, fit(i, true)) >= plain.split(/\s+/).length && !seenWarn.has(`v${i}`)) { seenWarn.add(`v${i}`); warnings.push(`Bảng "${name}": tiêu đề cột ${i + 1} "${plain}" xuống từ ba dòng, mỗi dòng một tiếng; nới cột (khoảng 11-12% cho "Đơn vị tính", "Tổng số ngày")`); }
+      // Ô tiêu đề mỗi dòng một tiếng ("Đơn / vị / tính", "Xuất / xứ"): nới cột.
+      const nw = plain.split(/\s+/).length;
+      if (header && nw >= 2 && wrapLines(plain, fit(i, true)) >= nw && !seenWarn.has(`v${i}`)) { seenWarn.add(`v${i}`); warnings.push(`Bảng "${name}": tiêu đề cột ${i + 1} "${plain}" xuống mỗi dòng một tiếng; nới cột (khoảng 11-12% cho "Đơn vị tính", "Tổng số ngày")`); }
+      // Ô thân có chữ ngắn (tới 14 ký tự: "[cần bổ sung]", "2.1 đến 2.16") mà vẫn gãy dòng: cột quá hẹp cho chữ của nó.
+      if (!header && plain.length <= 14 && nw >= 2 && wrapLines(plain, fit(i)) >= 2 && !seenWarn.has(`s${i}`)) { seenWarn.add(`s${i}`); warnings.push(`Bảng "${name}": cột ${i + 1} hẹp, chữ ngắn "${plain}" vẫn gãy dòng; nới cột hoặc viết gọn`); }
       if (narrow(i) && Math.ceil(plain.length / fit(i)) > 8 && !seenWarn.has(`h${i}`)) { seenWarn.add(`h${i}`); warnings.push(`Bảng "${name}": cột ${i + 1} hẹp so với chữ trong ô ("${plain.slice(0, 40)}..."), ô cao quá 8 dòng; nới cột hoặc dồn ghi chú sang cột rộng`); }
     }
   };
@@ -473,7 +479,7 @@ function gantt(g) {
     out.push(`<w:tbl><w:tblPr><w:tblW w:w="${width}" w:type="dxa"/><w:jc w:val="center"/>${border}<w:tblLayout w:type="fixed"/><w:tblCellMar><w:top w:w="0" w:type="dxa"/><w:left w:w="57" w:type="dxa"/><w:bottom w:w="0" w:type="dxa"/><w:right w:w="57" w:type="dxa"/></w:tblCellMar><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr><w:tblGrid>${[...fixed, ...Array(cnt).fill(dayW), totalW].map((x) => `<w:gridCol w:w="${x}"/>`).join('')}</w:tblGrid>${r1}${r2}${rows}</w:tbl>`);
   }
   // Chữ sau bảng cuối (câu cam kết kết phần tiến độ) in ngay dưới bảng trên trang ngang, không sang trang dọc gần trắng.
-  if (g.outro) out.push(blocks(g.outro, undefined, false));
+  if (g.outro) out.push('<w:p><w:pPr><w:spacing w:before="0" w:after="0" w:line="160" w:lineRule="exact"/></w:pPr></w:p>', blocks(g.outro, undefined, false));
   out.push(TINY);
   return out.join('');
 }
@@ -695,8 +701,11 @@ function blocks(list, prev = undefined, atTop = prev === undefined) {
     // nằm cùng trang với nó, như hồ sơ đã nộp vẫn làm. Khối đầu tiên đã nằm đầu trang (sau mục lục, đầu section ngang) nên
     // không ngắt trang thêm.
     const noBreak = first || (prev && prev.part !== undefined) ? '<w:pageBreakBefore w:val="0"/>' : '';
-    if (b.part !== undefined) body.push(para(b.part, F.part, (first ? '<w:pageBreakBefore w:val="0"/>' : '') + KEEP));
-    else if (b.doc !== undefined) body.push(para(b.doc, F.doc, noBreak + KEEP));
+    // Tên phần dài in hoa hay để dòng cuối còn một chữ ("NGHỆ"): dính hai chữ cuối bằng dấu cách hẹp không ngắt (U+202F) để Word
+    // mang cả hai xuống dòng. Word vẫn ngắt ở U+00A0 trong đoạn này (đã thử 10/11/2026), U+202F thì không.
+    const glue = (t) => String(t).replace(/ (\S+)$/, '\u202F$1');
+    if (b.part !== undefined) body.push(para(glue(b.part), F.part, (first ? '<w:pageBreakBefore w:val="0"/>' : '') + KEEP));
+    else if (b.doc !== undefined) body.push(para(glue(b.doc), F.doc, noBreak + KEEP));
     else if (b.h1 !== undefined) body.push(para(b.h1, F.h1, KEEP));
     else if (b.h2 !== undefined) body.push(para(b.h2, F.h2, KEEP));
     else if (b.h3 !== undefined) body.push(para(b.h3, F.h3, KEEP));

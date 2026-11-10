@@ -46,19 +46,23 @@ Mọi con số đưa vào hồ sơ (thông số, số lượng, thời hạn, ti
 
 ## Đối chiếu chéo
 
+- **Ngành nghề**: đọc trang ngành nghề kinh doanh của đăng ký kinh doanh (kể cả giấy xác nhận thay đổi). Gói có phần mềm mà không
+  thấy ngành lập trình (mã 62) hay xuất bản phần mềm (5820) thì luôn đưa vào câu hỏi cho BA. Địa chỉ còn ghi quận, huyện đã bỏ
+  từ 01/7/2025 thì nêu trong câu hỏi về địa chỉ.
 - **Nhà thầu** là đơn vị trên đăng ký kinh doanh và báo cáo tài chính trong thư mục nhà thầu. Hồ sơ cũ có thể đứng tên công ty
   khác (công ty phát triển phần mềm, công ty liên danh). Khác nhau thì ghi rõ trong `00-reading.md` và luôn đưa vào câu hỏi cho
   BA, kể cả khi hồ sơ mới không nhắc đơn vị kia: đơn vị đứng tên ở hồ sơ mẫu là gì với nhà thầu (thầu phụ, liên danh, đơn vị
   phát triển), ai ký, tài liệu kỹ thuật sản phẩm đứng tên ai.
 - **Nhà thầu phụ**: đọc điều về nhà thầu phụ ở Chương I (E-CDNT, thường mục 27) và E-BDL, Mẫu 01D (dịch vụ liên quan). HSMT
   chỉ cho thầu phụ làm dịch vụ liên quan mà Mẫu 01D ghi "Không", hay giới hạn phần việc, thì BA định giao cho thầu phụ phần
-  việc khác (phát triển phần mềm) là rủi ro bị loại: nêu đầu báo cáo, trích đúng điều HSMT, hỏi BA cách xử lý (nhà thầu tự làm,
+  việc khác (phát triển phần mềm) là rủi ro bị loại: nêu đầu báo cáo (BA có tệp trả lời thì nêu ở dòng của câu trả lời đó trong bảng mở báo cáo), trích đúng điều HSMT, hỏi BA cách xử lý (nhà thầu tự làm,
   liên danh), không tự khuyên kê thầu phụ.
 - **Tên gói** so giữa quyết định phê duyệt, Chương II, Chương IV, Chương V. Khác một chữ cũng ghi lại; dùng tên trong quyết
   định.
 - **Địa chỉ nhà thầu**: đăng ký kinh doanh cũ có thể ghi phường, quận trước khi sắp xếp đơn vị hành chính; báo cáo tài chính
   mới ghi tên mới. Ghi cả hai, hỏi BA dùng cái nào. Trong lúc chờ, hồ sơ ghi theo đăng ký kinh doanh (giấy tờ pháp lý gốc) và
-  đánh dấu `[cần xác nhận: địa chỉ]` một lần ở mục đầu mối liên hệ, không đánh dấu ở mọi bản cam kết.
+  đánh dấu `[cần xác nhận: địa chỉ]` ở mục đầu mối liên hệ và `[cần xác nhận]` ngắn ở mỗi chỗ in lại địa chỉ (bản cam kết),
+  để BA sửa một chỗ không sót chỗ khác.
 - **Thời hạn**: thời gian thực hiện (Chương V), ngày giao sớm nhất, muộn nhất (Mẫu 01A), mốc tính (ngày ký hay ngày hợp đồng
   có hiệu lực), bảo hành từng hạng mục, thời gian đáp ứng (Mục 3), thời hạn sửa chữa thay thế và hỗ trợ (Chương VII).
 - **Tiêu chí** ở Mục 3 so với yêu cầu ở Chương V: yêu cầu nào thuộc tiêu chí nào.
