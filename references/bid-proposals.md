@@ -36,7 +36,8 @@ Làm đủ các bước, theo thứ tự. Mỗi bước có tệp kết quả tr
    - xuất PDF bằng Word (`scripts/bid/render-pdf.ps1 -UpdateDocx HSDX.docx`: mục lục cập nhật vào cả tệp Word giao BA),
      `page-check.mjs` không còn lỗi bố cục;
    - đặt ảnh trang của bản dựng cạnh trang mẫu cùng loại (bìa, mục lục, mở phần, bảng, tiến độ, cam kết) và sửa tới khi giống;
-   - đi lại bảng truy vết.
+   - đi lại bảng truy vết;
+   - soát cuối như người chấm: đi từng dạng lỗi trong mục "Soát cuối như người chấm" của `references/bid/checks.md`.
 8. **Báo lại BA** (mục Báo lại trong `references/bid/checks.md`).
 
 ## Những điều không được làm

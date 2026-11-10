@@ -44,7 +44,8 @@ const hsmtLoose = loose(hsmtText);
 const fromHsmt = (t, start, end) => {
   if (!opt.hsmt.length) return false;
   const left = t.slice(Math.max(0, start - 20), start);
-  const piece = left.slice(left.lastIndexOf('|') + 1) + t.slice(start, end);
+  // Cắt ở ranh ô bảng hay sau tiền tố "Hạng mục 1, dòng 19:" để chỉ so phần chép nguyên HSMT.
+  const piece = left.slice(Math.max(left.lastIndexOf('|'), left.lastIndexOf(':')) + 1) + t.slice(start, end);
   return loose(piece).length >= 4 && hsmtLoose.includes(loose(piece));
 };
 const errors = [];
@@ -390,7 +391,7 @@ if (opt.sample.length) {
 // 16. Lời nói với BA lọt vào thân hồ sơ (ngoài chỗ đánh dấu): người chấm đọc thấy hồ sơ chưa xong.
 {
   // "BA" phân biệt hoa thường ("ba mươi sáu" là số).
-  const talk = /(?<![\p{L}])BA(?![\p{L}])|trước khi nộp|để hoàn thiện hồ sơ|[Tt]heo nhận định của [Nn]hà thầu/u;
+  const talk = /(?<![\p{L}])BA(?![\p{L}])|trước khi nộp|để hoàn thiện hồ sơ|[Tt]heo nhận định của [Nn]hà thầu|[Pp]hần này nêu|ở mức thành phần/u;
   for (const p of located) {
     const outside = p.text.replace(/\[[^\]]*\]/g, '');
     const m = outside.match(talk);
@@ -398,7 +399,7 @@ if (opt.sample.length) {
   }
   // Chi tiết công nghệ, an toàn thông tin cụ thể (RESTful, TLS 1.2, băm mật khẩu, OWASP) mà HSMT, BA không nêu: đề xuất của
   // nhà thầu, phải có chỗ đánh dấu trong cùng mục (đánh dấu một lần ở đầu mục là đủ).
-  const tech = /\b(?:RESTful|REST API|JSON|XML|TLS\s*v?\d(?:\.\d)?|SSL|HTTPS?(?:\s*v?\d(?:\.\d)?)?|OAuth\s*\d?(?:\.\d)?|JWT|OWASP(?: Top 10)?|bcrypt|SHA-?\d+|AES-?\d+|WebSocket|gRPC|Docker|Kubernetes|Redis|Kafka|Nginx)\b|dạng băm|khóa tài khoản khi đăng nhập sai|hiển thị dần|thiết bị (?:dự phòng|cùng loại)|cho (?:Chủ đầu tư )?mượn/gi;
+  const tech = /\b(?:RESTful|REST API|JSON|XML|TLS\s*v?\d(?:\.\d)?|SSL|HTTPS?(?:\s*v?\d(?:\.\d)?)?|OAuth\s*\d?(?:\.\d)?|JWT|OWASP(?: Top 10)?|bcrypt|SHA-?\d+|AES-?\d+|WebSocket|gRPC|Docker|Kubernetes|Redis|Kafka|Nginx)\b|dạng băm|khóa tài khoản khi đăng nhập sai|hiển thị dần|thiết bị (?:dự phòng|cùng loại)|cho (?:Chủ đầu tư )?mượn|sao lưu tự động|thử khôi phục|bản vá|(?:giao|nộp|cung cấp|kèm)[^.;]{0,30}bản in|trực tại chỗ|thường trực|\b(?:0?[2-9]|hai|ba|bốn) người (?:nâng|khiêng|trực|lắp)/gi;
   // Phạm vi đánh dấu theo cây đề mục: chỗ đánh dấu ở mục cha (A.IV.3) phủ cả mục con (3.1, 3.2). Cấp đề mục: phần lớn 0, tài
   // liệu con 1, heading N là N + 1.
   const level = (s) => (/^mucchinh/i.test(s) ? 0 : /^muc/i.test(s) ? 1 : Number(s.match(/heading (\d)/i)?.[1] ?? 9) + 1);
@@ -422,8 +423,54 @@ if (opt.sample.length) {
       warnings.push(`Chi tiết kỹ thuật "${k}" không có trong HSMT, tệp trả lời của BA, mục không có chỗ đánh dấu ${where(p)}: đề xuất của nhà thầu thì đánh dấu [cần xác nhận: đề xuất của nhà thầu] ở đầu mục`);
     }
   }
+  // Ai làm phần mềm đang chờ BA (có chỗ đánh dấu nhắc đơn vị phát triển, nhà thầu phụ) mà câu khác khẳng định thẳng "do Nhà thầu
+  // thực hiện", "Nhà thầu tự phát triển": BA đổi vai sẽ sót câu đó.
+  if (located.some((p) => /\[(?:cần|chưa|chờ)[^\]]*(?:đơn vị phát triển|nhà thầu phụ|thầu phụ|ai làm|phát triển phần mềm)/i.test(p.text))) {
+    for (const p of located) {
+      if (/\[(?:cần|chưa|chờ)/i.test(p.text)) continue;
+      const m = p.text.match(/(?:do|bởi) Nhà thầu (?:tự )?(?:thực hiện|phát triển|xây dựng)|Nhà thầu tự (?:thực hiện|phát triển|xây dựng)/i);
+      if (m) warnings.push(`Câu "${m[0]}" khẳng định ai làm phần mềm trong khi hồ sơ đang đánh dấu chỗ này chờ BA ${where(p)}: thêm [cần xác nhận] hay viết trung tính`);
+    }
+  }
   // Mục lục còn chữ giữ chỗ của bid-docx: tệp Word chưa được Word cập nhật trường.
   if (draft.some((p) => p.text.startsWith('Mục lục chưa dựng'))) errors.push('Tệp Word còn chữ giữ chỗ của mục lục: chạy render-pdf.ps1 -UpdateDocx HSDX.docx để Word dựng mục lục vào chính tệp');
+}
+
+// 18. Số thập phân dấu chấm kiểu Anh trong chữ của nhà thầu ("4.80 GHz", "37.56 kg"); chữ trích catalog trong ngoặc kép giữ
+// nguyên. Hai chữ số trở xuống sau dấu chấm mới là thập phân ("1.500 W" là một nghìn năm trăm).
+{
+  const seenDec = new Set();
+  for (const p of located) {
+    const t = p.text.replace(/"[^"]*"|“[^”]*”/g, '');
+    for (const m of t.matchAll(/(?<![\d.,])\d+\.\d{1,2}\s?(?:GHz|MHz|kg|TB|GB|MB|mm|cm|inch|W|V|A)(?![A-Za-z])/g)) {
+      // Ô yêu cầu chép nguyên HSMT ("Tần số CPU Tối đa ≥ 4.5 GHz") giữ như HSMT viết.
+      if (seenDec.has(m[0]) || fromHsmt(t, m.index, m.index + m[0].length)) continue;
+      seenDec.add(m[0]);
+      warnings.push(`Số thập phân "${m[0]}" dùng dấu chấm ${where(p)}: chữ của nhà thầu viết dấu phẩy ("${m[0].replace('.', ',')}"), chỉ giữ dấu chấm khi trích nguyên catalog trong ngoặc kép`);
+    }
+  }
+}
+
+// 17. Lịch tự đặt nhắc lại ngoài phần tiến độ ("giao nhận ngày 2 đến ngày 25", "nghiệm thu ngày 58 đến ngày 60") mà không
+// đánh dấu: BA đổi lịch ở phần tiến độ sẽ sót những chỗ này. Bỏ qua phần lớn có tên "tiến độ" (bảng tiến độ là chỗ gốc), bảng
+// tiến độ theo ngày, bản cam kết tiến độ, và câu chép nguyên HSMT.
+{
+  let inSchedule = false;
+  const seenDay = new Set();
+  for (const p of located) {
+    if (isHeading(p.style) && /^[A-H]\.\s+\S/.test(p.text)) inSchedule = /tiến độ/i.test(p.text);
+    if (inSchedule || /^Bản cam kết/.test(p.section) || /\[(?:cần|chưa|chờ)/i.test(p.text)) continue;
+    if (p.style === 'table' && /\| \d+ \| \d+/.test(p.text)) continue;
+    const t = p.text.replace(/\[[^\]]*\]/g, '');
+    for (const m of t.matchAll(/ngày\s+(\d{1,3})\s*(?:đến|tới|-)\s*(?:ngày\s+)?(\d{1,3})/giu)) {
+      // Khoảng ngày có nguyên trong HSMT hay tệp trả lời của BA (BA chốt "giao ngày 21 đến ngày 22") là lịch đã chốt.
+      if (fromHsmt(t, m.index, m.index + m[0].length) || (opt.hsmt.length && hsmtLoose.includes(loose(m[0])))) continue;
+      const k = `${m[1]}-${m[2]}`;
+      if (seenDay.has(k)) continue;
+      seenDay.add(k);
+      warnings.push(`Lịch "${m[0]}" nhắc lại ngoài phần tiến độ không đánh dấu ${where(p)}: lịch là đề xuất của nhà thầu thì mỗi chỗ nhắc lại có [cần xác nhận]`);
+    }
+  }
 }
 
 // 14. Phần lớn (A., B., ...) nào cũng kết bằng câu cam kết của nhà thầu, như hồ sơ mẫu ("Nhà thầu cam kết ... nêu trên.").

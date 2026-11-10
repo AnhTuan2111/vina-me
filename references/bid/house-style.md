@@ -70,7 +70,7 @@ skill không chép theo.
 | Tiêu chí, Mức độ, Diễn giải | 28, 15, 56 |
 | STT, Chuyên đề, Nội dung | 7, 33, 60 |
 | STT, Vị trí, Yêu cầu năng lực, Nhiệm vụ | 7, 21, 36, 36 |
-| STT, Nội dung công việc, Đơn vị tính, Khối lượng, Tổng số ngày, Kết quả | 7, 28, 12, 11, 14, 28 |
+| STT, Nội dung công việc, Đơn vị tính, Khối lượng, Tổng số ngày, Kết quả | 7, 22, 12, 19, 13, 27 |
 | Kênh tiếp nhận, Thông tin | 30, 70 |
 | Loại yêu cầu, Thời gian đáp ứng | 43, 57 |
 | Lớp, Tên lớp, Nhóm học viên, Thời lượng, Thời gian | 7, 25, 19, 32, 17 |
