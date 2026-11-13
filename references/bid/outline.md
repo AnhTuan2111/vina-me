@@ -53,6 +53,13 @@ phân rã chức năng và đối tượng tham gia; chức năng; trường h�
 mô hình triển khai; mô hình kết nối và IPv6; môi trường vận hành; đặc tính phi chức năng; tiêu chuẩn, quy chuẩn; an toàn thông
 tin; quy trình và môi trường phát triển; năng lực tổ chức, cán bộ; kiểm thử.
 
+## Bộ tệp
+
+Thuyết minh là một tệp trong bộ hồ sơ kỹ thuật (`package.md`). Mục "Bảng đáp ứng yêu cầu kỹ thuật hàng hóa" của phần A không chép
+lại bảng: kể hàng hóa chào theo từng hạng mục (hãng, model, ký mã hiệu, xuất xứ, số lượng) trong bảng ngắn, dẫn sang KT-01 và mã
+tài liệu hãng. Tài liệu kỹ thuật phần mềm là tệp riêng; thuyết minh tóm tắt và dẫn "KT-04, mục 3.2".
+
 ## Kết quả `03-outline.md`
 
-Cây đề mục đầy đủ tới cấp 2, mỗi mục ghi các mã truy vết nó đáp ứng; bảng so với dàn mục mẫu; danh sách bản cam kết.
+Danh sách tệp và mã; cây đề mục từng tệp tới cấp 2, mỗi mục ghi các mã truy vết nó đáp ứng; bảng so với dàn mục mẫu; danh sách
+bản cam kết và người ký từng bản.

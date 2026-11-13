@@ -46,6 +46,8 @@ const isHeadLine = (text) => {
     return n >= 4 && h.slice(0, n) === t.slice(0, n);
   });
 };
+// Đoạn văn (không phải ô bảng) kết bằng dấu hai chấm: câu dẫn danh sách, bảng.
+const leadIns = readParagraphs(docx).filter((p) => p.style !== 'table' && /:\s*$/.test(p.text)).map((p) => norm(p.text));
 const isToc = (p) => {
   const ends = p.body.filter((l) => /(\.{3,}|…)\s*\d+$|\s\d{1,3}$/.test(l.text)).length;
   return /^m[ụu]c l[ụu]c$/i.test(p.body[0]?.text ?? '') || (p.body.length >= 5 && ends / p.body.length > 0.5);
@@ -77,6 +79,18 @@ for (const p of pages) {
   if (!last && !lastLandscape && fill < 0.3) {
     errors.push(`Trang ${p.no}: gần trắng, chữ chiếm ${Math.round(fill * 100)}% vùng chữ (${p.body.length} dòng, bắt đầu "${p.body[0].text.slice(0, 50)}")`);
   }
+  // Trang ngang cuối chỉ còn một hai dòng tràn (câu kết dưới bảng cuối): trang gần trắng thật, không phải bảng cuối ít việc.
+  if (lastLandscape && p.body.length <= 3 && fill < 0.15) {
+    errors.push(`Trang ${p.no}: trang ngang chỉ có ${p.body.length} dòng tràn từ trang trước ("${p.body[0].text.slice(0, 50)}"); rút câu kết hay đưa vào bảng`);
+  }
+  // Trang cuối chỉ còn vài dòng tràn (hai dòng link, một câu kết): trang gần trắng thật, không phải phần ngắn cuối tài liệu.
+  if (last && p.no > 1 && !p.landscape && p.body.length <= 5 && fill < 0.15 && !nation(p)) {
+    errors.push(`Trang ${p.no}: trang cuối chỉ còn ${p.body.length} dòng tràn ("${p.body[0].text.slice(0, 50)}"); rút gọn để vừa trang trước`);
+  }
+  // Trang cuối chỉ còn khối ký (chức danh ký, ghi chú ký, họ tên): khối ký bị tách khỏi nội dung nó ký cho.
+  if (last && p.no > 1 && p.body.length <= 8 && /^(ĐẠI DIỆN|THAY MẶT)/i.test(p.body[0].text)) {
+    errors.push(`Trang ${p.no}: trang cuối chỉ có khối ký, tách khỏi nội dung; rút gọn trang trước để khối ký lên cùng trang`);
+  }
   if (!last) {
     // Đề mục mà sau nó trên cùng trang còn dưới hai dòng (đề mục là dòng cuối, hoặc chỉ kèm một dòng rồi bảng sang trang).
     // Đề mục kèm hai dòng chữ trở lên ở cuối trang là cách ngắt trang bình thường của sách in.
@@ -84,7 +98,8 @@ for (const p of pages) {
     const h = tail.find((l) => isHeadLine(l.text));
     // Câu dẫn kết bằng ":" là dòng cuối trang: danh sách, bảng theo sau sang trang khác.
     const end = p.body[p.body.length - 1];
-    if (!h && p.body.length > 3 && /:\s*$/.test(end.text) && !isHeadLine(end.text)) errors.push(`Trang ${p.no}: câu dẫn "${end.text.slice(-60)}" nằm cuối trang, phần nó dẫn sang trang ${p.no + 1}`);
+    // Chỉ tính câu dẫn là đoạn văn thật của bản dựng; ô bảng kết bằng dấu hai chấm (chữ dịch của tài liệu hãng) không dẫn gì.
+    if (!h && p.body.length > 3 && /:\s*$/.test(end.text) && !isHeadLine(end.text) && leadIns.some((t) => t.endsWith(norm(end.text).slice(-25)))) errors.push(`Trang ${p.no}: câu dẫn "${end.text.slice(-60)}" nằm cuối trang, phần nó dẫn sang trang ${p.no + 1}`);
     if (h && p.body.length > 3) errors.push(`Trang ${p.no}: đề mục "${h.text.slice(0, 60)}" nằm cuối trang, nội dung sang trang ${p.no + 1}`);
   }
   if (firstLetter >= 0 && p.no - 1 > firstLetter && !nation(p) && !p.landscape) {

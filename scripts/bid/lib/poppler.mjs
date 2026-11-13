@@ -21,7 +21,14 @@ export function popplerPdftotext() {
 }
 
 export const pdftotext = (pdf, args = []) =>
-  execFileSync(popplerPdftotext(), [...args, pdf, '-'], { encoding: 'utf8', maxBuffer: 1 << 28 });
+  // stderr bỏ đi: Poppler in "Syntax Warning: Invalid Font Weight" với nhiều bản in trang web, lẫn vào kết quả soát.
+  execFileSync(popplerPdftotext(), [...args, pdf, '-'], { encoding: 'utf8', maxBuffer: 1 << 28, stdio: ['ignore', 'pipe', 'ignore'] });
 
 // Chữ từng trang, trang 1 ở phần tử 0 (pdftotext ngăn trang bằng ký tự \f).
 export const pdfPages = (pdf) => pdftotext(pdf, ['-layout']).split('\f');
+
+// Khối chữ từng trang theo -bbox-layout: mỗi khối là một ô bảng hay một đoạn, các dòng của khối nối bằng dấu cách ("Khe cắm
+// tai nghe/Khe" và "cắm đa năng (USB Type-C)" là một khối). Trang 1 ở phần tử 0.
+const dec = (s) => s.replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+export const pdfBlocks = (pdf) => [...pdftotext(pdf, ['-bbox-layout']).matchAll(/<page\b[^>]*>([\s\S]*?)<\/page>/g)].map((pg) =>
+  [...pg[1].matchAll(/<block\b[^>]*>([\s\S]*?)<\/block>/g)].map((b) => dec([...b[1].matchAll(/<word\b[^>]*>([^<]*)<\/word>/g)].map((w) => w[1]).join(' '))));

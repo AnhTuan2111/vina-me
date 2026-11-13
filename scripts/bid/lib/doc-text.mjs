@@ -2,7 +2,10 @@
 // docx: mỗi đoạn một phần tử, style là tên kiểu đoạn (heading 1, List Paragraph…); mỗi hàng bảng thành một phần tử
 // style "table", các ô nối bằng " | ". md, txt: mỗi dòng không trống một phần tử, dòng "#" thành heading theo số dấu #.
 // PDF thì trích chữ trước bằng pdftotext (xem references/bid/reading.md) rồi đưa tệp .txt vào.
+// Chạy thẳng `node scripts/bid/lib/doc-text.mjs <tệp.docx>` để in chữ từng đoạn kèm kiểu: "[heading 2] ...", "[table] ô | ô".
 import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { readZip } from './zip.mjs';
 
 export function decodeXml(s) {
@@ -47,7 +50,8 @@ export function docxParagraphs(buf) {
       }
       for (const row of body.slice(m.index, j).matchAll(/<w:tr(?:\s[^>]*)?>[\s\S]*?<\/w:tr>/g)) {
         const cells = [...row[0].matchAll(/<w:tc>([\s\S]*?)<\/w:tc>/g)]
-          .map((c) => [...c[1].matchAll(/<w:p(?:\s[^>]*)?>[\s\S]*?<\/w:p>/g)].map((x) => paraText(x[0])).join(' ').trim());
+          // Dấu "|" trong ô (bảng nhiều cột của tài liệu hãng chép vào một ô) đổi thành "/" để không lẫn với ranh ô.
+          .map((c) => [...c[1].matchAll(/<w:p(?:\s[^>]*)?>[\s\S]*?<\/w:p>/g)].map((x) => paraText(x[0])).join(' ').replace(/\|/g, '/').trim());
         if (cells.some(Boolean)) out.push({ style: 'table', text: cells.join(' | ') });
       }
       tokens.lastIndex = j;
@@ -68,6 +72,13 @@ export function readParagraphs(file) {
       const h = line.match(/^(#{1,6})\s+(.*)$/);
       return h ? { style: `heading ${h[1].length}`, text: h[2] } : { style: 'Normal', text: line };
     });
+}
+
+// realpath hai phía: chạy qua junction hay symlink thì import.meta.url là đường thật, argv[1] là đường đã gõ.
+const real = (f) => { try { return fs.realpathSync(f); } catch { return path.resolve(f); } };
+if (process.argv[1] && real(process.argv[1]) === real(fileURLToPath(import.meta.url))) {
+  if (!process.argv[2]) { console.error('Dùng: node scripts/bid/lib/doc-text.mjs <tệp.docx|.md|.txt>'); process.exit(2); }
+  for (const p of readParagraphs(process.argv[2])) console.log(`[${p.style}] ${p.text}`);
 }
 
 export const isHeading = (style) => /^(heading \d|title|muc|toc heading)/i.test(style);
