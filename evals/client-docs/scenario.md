@@ -92,7 +92,7 @@ email nhận chưa có (đưa sang mục 9). Grafana chỉ mở cho dải 10.20.
 - Nơi lưu ảnh hóa đơn scan. Phương án Bên B đề xuất: dùng S3 nội bộ của Bên A (Ceph RGW) để Bên A lo sao lưu; phương án
   còn lại là MinIO trên app01, app02. Hạn như trên.
 - Có thể thêm: việc Bên A nâng RAM app02 lên 16 GB trước 20/11 (không bắt buộc, không trừ).
-- Thời gian giữ bản sao lưu KHÔNG còn ở đây (đã chốt 30 ngày).
+- Thời gian giữ bản sao lưu không còn ở đây (đã chốt 30 ngày).
 
 ### Trả lời trong chat
 

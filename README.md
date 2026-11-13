@@ -78,8 +78,8 @@ lại đủ bộ tệp kỹ thuật, mỗi tệp một bản Word và một bả
 - báo cáo cho người duyệt hồ sơ.
 
 Thiếu tài liệu hãng thì agent tự tìm trên trang chính thức của hãng, câu tìm chỉ có tên sản phẩm. Thông số nào chưa có tài
-liệu chứng minh, hay điều gì phải để người duyệt quyết, thì agent để dấu `[cần xác nhận: ...]` ngay chỗ đó chứ không tự điền,
-và báo cáo kê lại từng dấu cùng các giấy tờ cần xin thêm. Tài liệu gói thầu không rời máy: agent không gửi chúng lên mạng.
+liệu chứng minh, hay điều gì phải để người duyệt quyết, thì agent để dấu `[cần xác nhận: ...]` ngay chỗ đó chứ không tự điền.
+Trong tệp Word, dấu này được tô nền vàng để người duyệt thấy ngay, và báo cáo kê lại từng dấu cùng các giấy tờ cần xin thêm. Tài liệu gói thầu không rời máy: agent không gửi chúng lên mạng.
 
 ## Góp ý
 
@@ -95,16 +95,17 @@ bao giờ mang tài liệu nội bộ.
 - Claude Code: `git clone https://github.com/AnhTuan2111/vina-me.git ~/.claude/skills/vina-me`, cập nhật bằng `git pull`.
 - Claude trên web, ứng dụng desktop: tải zip, đổi thư mục bên trong thành `vina-me`, nén lại rồi tải lên ở mục Skills.
 - Agent khác có Agent Skills: chép thư mục `vina-me` (có `SKILL.md` ngay bên trong) vào thư mục skill của agent.
-- AI không có skill: dán `SKILL.md` vào phần chỉ dẫn hệ thống, còn chỗ thì thêm `references/core-rules.md`,
-  `references/machine-tells.md` và `references/punctuation.md`.
+- AI không có skill: dán `SKILL.md` vào phần chỉ dẫn hệ thống. Còn chỗ thì dán thêm ba tệp core-rules.md, machine-tells.md và
+  punctuation.md trong thư mục `references/`.
 
 ## Phát triển
 
 ```bash
-node --test tests/setup.test.mjs tests/tools.test.mjs
+node --test tests/setup.test.mjs tests/tools.test.mjs tests/bid.test.mjs tests/bid-package.test.mjs
 ```
 
-Bộ test chạy trên home giả và repo git trần, không chạm GitHub hay lịch thật. Đã chạy trên Windows 11 và Ubuntu; chưa
+Bộ test chạy trên home giả và repo git trần, không chạm GitHub hay lịch thật. Muốn chấm chất lượng văn của skill thì dùng các
+đề thử trong `evals/`, cách làm và cách chấm ghi ở [`evals/README.md`](evals/README.md). Đã chạy trên Windows 11 và Ubuntu; chưa
 thử trên macOS. Lịch sử thay đổi ở [`CHANGELOG.md`](CHANGELOG.md), quy trình phát hành ở `references/agent-memory.md`.
 
 ## Giấy phép
