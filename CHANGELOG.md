@@ -3,6 +3,12 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.16.1 (13/11/2026)
+
+- Agent dùng skill cho mọi câu trả lời trong chat bằng tiếng Việt, kể cả câu trả lời chỉ vài câu, không chỉ khi viết văn dài.
+  Máy đã cài trước bản này giữ tệp `AGENTS.md` cũ: sửa dòng trong mục "Viết tiếng Việt" thành "Mọi câu trả lời trong chat bằng
+  tiếng Việt, dù chỉ vài câu, và mọi đoạn tiếng Việt viết ra hay sửa đều theo skill `vina-me`."
+
 ## 0.16.0 (13/11/2026)
 
 - Hồ sơ dự thầu dựng đủ bộ tệp kỹ thuật: bảng đáp ứng dẫn đúng trang tài liệu hãng, tài liệu hãng tự tìm, tải và tô vàng đúng
