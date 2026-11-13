@@ -8,6 +8,9 @@ export function redact(text) {
     // có "mật khẩu là ...". Hai luật này chạy trước các mẫu token để một giá trị không bị che hai lần.
     .replace(/(\b(?:password|passwd|pwd|pass|mật khẩu|mat khau|mk|token|secret|api[ _-]?key|khoá|khóa)\s*[:=]\s*)("[^"]*"|'[^']*'|\S+)/gi, `$1${HIDDEN}`)
     .replace(/(\b(?:password|pass|mật khẩu|mat khau|mk|token|khoá|khóa)\s+(?:là|is)\s+)(?=\S*[\d@#$%^&*!?_])\S+/gi, `$1${HIDDEN}`)
+    // Có vài chữ chen giữa ("mật khẩu wifi văn phòng là X"): cùng điều kiện X có số hay ký tự đặc biệt. Chép từ
+    // learn-from-sessions.mjs để feedback.mjs cũng được che.
+    .replace(/(\b(?:password|passwd|pass|mật khẩu|mat khau)(?:\s+[^\s:=]+){1,4}?\s+(?:là|is)\s+)(?=\S*[\d@#$%^&*!?_])(?!\[ĐÃ ẨN\])\S+/gi, `$1${HIDDEN}`)
     .replace(/\b(gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|glpat-[A-Za-z0-9_-]{16,}|sk-[A-Za-z0-9_-]{20,}|xox[abprs]-[A-Za-z0-9-]{10,}|AKIA[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{35})\b/g, HIDDEN)
     .replace(/\beyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\b/g, HIDDEN)
     .replace(/(\b[a-z][a-z0-9+.-]*:\/\/[^\s:/@]+:)[^\s@/]+@/gi, `$1${HIDDEN}@`)

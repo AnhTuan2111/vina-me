@@ -327,12 +327,17 @@ const TINY = '<w:p><w:pPr><w:spacing w:before="0" w:after="0" w:line="20" w:line
 const TINY_BREAK = '<w:p><w:pPr><w:pageBreakBefore/><w:spacing w:before="0" w:after="0" w:line="20" w:lineRule="exact"/></w:pPr><w:r><w:rPr><w:sz w:val="2"/><w:szCs w:val="2"/></w:rPr></w:r></w:p>';
 
 // ---------- Viết đoạn ----------
-// Chữ bọc **…** thành chữ đậm, *…* thành chữ nghiêng. Hồ sơ mẫu đậm nhãn đầu đoạn, đầu gạch đầu dòng ("Phần mềm X: …").
+// Chữ bọc **…** thành chữ đậm, *…* thành chữ nghiêng, ***…*** đậm nghiêng (câu cam kết dưới bảng đáp ứng của Chương V). Hồ
+// sơ mẫu đậm nhãn đầu đoạn, đầu gạch đầu dòng ("Phần mềm X: …").
+// Dấu sao thật (chú thích "8.400 mAh*", "**" của tài liệu hãng) viết `\*` trong chữ (trong JSON là "\\*"): giữ nguyên, không
+// thành chữ đậm, nghiêng.
+const STAR = '\u0001';
 function runs(s, rpr = '') {
-  return String(s).split(/(\*\*[^*]+\*\*|\*[^*\s][^*]*\*)/).filter(Boolean).map((part) => {
-    const bold = /^\*\*[\s\S]+\*\*$/.test(part);
-    const ital = !bold && /^\*[\s\S]+\*$/.test(part);
-    const t = bold ? part.slice(2, -2) : ital ? part.slice(1, -1) : part;
+  return String(s).replace(/\\\*/g, STAR).split(/(\*\*\*[^*]+\*\*\*|\*\*[^*]+\*\*|\*[^*\s][^*]*\*)/).filter(Boolean).map((part) => {
+    const both = /^\*\*\*[\s\S]+\*\*\*$/.test(part);
+    const bold = both || /^\*\*[\s\S]+\*\*$/.test(part);
+    const ital = both || (!bold && /^\*[\s\S]+\*$/.test(part));
+    const t = (both ? part.slice(3, -3) : bold ? part.slice(2, -2) : ital ? part.slice(1, -1) : part).split(STAR).join('*');
     const props = mergeRpr(rpr, bold ? '<w:b/><w:bCs/>' : '', ital ? '<w:i/><w:iCs/>' : '');
     // "E-HSMT", "E-HSDT", "E-TBMT": gạch nối không ngắt dòng, để Word không bẻ thành "E-" cuối dòng và "HSMT" dòng sau.
     // Mã hiệu có gạch nối ("W-3500", "Immortalis-G925", "Wi-Fi") không được gãy ở dấu gạch: dùng gạch nối không ngắt của Word.
@@ -347,7 +352,7 @@ function para(content, f, extraPpr = '', extraRpr = '') {
 }
 const lines = (v) => (Array.isArray(v) ? v : String(v).split('\n')).filter((x) => x !== '');
 
-function table(t) {
+function table(t, { last = false } = {}) {
   const cols = t.columns ?? [];
   const rowsIn = (t.rows ?? []).map((r) => (Array.isArray(r) ? { cells: r } : r));
   const n = Math.max(cols.length, ...rowsIn.map((r) => r.cells.length));
@@ -387,12 +392,23 @@ function table(t) {
   const checkCell = (value, i, header = false) => {
     for (const l of lines(value ?? '')) {
       const plain = l.replace(/\*\*|\*/g, '');
+      // Word không ngắt ở dấu "/" mà cắt giữa chữ ("10GbE/5GbE/2." xuống dòng "5GbE"), đã thử 12/11/2026: đo cả chuỗi.
       const word = plain.split(/\s+/).reduce((a, b) => (b.length > a.length ? b : a), '');
-      if (word.length > fit(i, header) && !seenWarn.has(`w${i}`)) { seenWarn.add(`w${i}`); warnings.push(`Bảng "${name}": cột ${i + 1} hẹp, chữ "${word}" bị ngắt giữa từ; nới tỉ lệ cột`); }
+      // Chữ hoa, chữ số rộng hơn chữ thường (mã "KT-02A", "SM-X730"): đổi về số ký tự thường tương đương trước khi so.
+      // Ô tiêu đề đã tính chữ đậm hoa trong fit; link (https://...) Word tự ngắt giữa chuỗi, không cảnh báo.
+      const wide = header ? word.length : [...word].reduce((a, ch) => a + (/[A-ZĐ0-9]/.test(ch) ? 1.4 : 1), 0);
+      if (wide > fit(i, header) && !/^(?:https?:|www[.])/i.test(word) && !seenWarn.has(`w${i}`)) { seenWarn.add(`w${i}`); warnings.push(`Bảng "${name}": cột ${i + 1} hẹp, chữ "${word}" bị ngắt giữa từ; nới tỉ lệ cột${word.includes('/') ? ', hoặc ở chữ của nhà thầu viết dấu cách quanh "/" ("10GbE / 5GbE"); chữ trích nguyên tài liệu hãng thì giữ và nới cột' : ''}`); }
       // Ô tiêu đề mỗi dòng một tiếng ("Đơn / vị / tính"): ba dòng trở lên thì nới cột.
       // Ô tiêu đề mỗi dòng một tiếng ("Đơn / vị / tính", "Xuất / xứ"): nới cột.
       const nw = plain.split(/\s+/).length;
-      if (header && nw >= 2 && wrapLines(plain, fit(i, true)) >= nw && !seenWarn.has(`v${i}`)) { seenWarn.add(`v${i}`); warnings.push(`Bảng "${name}": tiêu đề cột ${i + 1} "${plain}" xuống mỗi dòng một tiếng; nới cột (khoảng 11-12% cho "Đơn vị tính", "Tổng số ngày")`); }
+      if (header && nw >= 2 && wrapLines(plain, fit(i, true)) >= nw && !seenWarn.has(`v${i}`)) {
+        seenWarn.add(`v${i}`);
+        // Bề ngang tối thiểu để hai tiếng liền nhau ngắn nhất nằm chung một dòng, theo đúng công thức fit ở trên.
+        const ws = plain.split(/\s+/);
+        const pair = Math.min(...ws.slice(1).map((x, k) => ws[k].length + 1 + x.length));
+        const needPct = Math.ceil(((pair * cellPt * 0.6 * 20 + 200) / TEXT_W) * 100);
+        warnings.push(`Bảng "${name}": tiêu đề cột ${i + 1} "${plain}" xuống mỗi dòng một tiếng; nới cột này lên khoảng ${needPct}% bề ngang bảng, hoặc viết tiêu đề gọn hơn`);
+      }
       // Ô thân có chữ ngắn (tới 14 ký tự: "[cần bổ sung]", "2.1 đến 2.16") mà vẫn gãy dòng: cột quá hẹp cho chữ của nó.
       if (!header && plain.length <= 14 && nw >= 2 && wrapLines(plain, fit(i)) >= 2 && !seenWarn.has(`s${i}`)) { seenWarn.add(`s${i}`); warnings.push(`Bảng "${name}": cột ${i + 1} hẹp, chữ ngắn "${plain}" vẫn gãy dòng; nới cột hoặc viết gọn`); }
       if (narrow(i) && Math.ceil(plain.length / fit(i)) > 8 && !seenWarn.has(`h${i}`)) { seenWarn.add(`h${i}`); warnings.push(`Bảng "${name}": cột ${i + 1} hẹp so với chữ trong ô ("${plain.slice(0, 40)}..."), ô cao quá 8 dòng; nới cột hoặc dồn ghi chú sang cột rộng`); }
@@ -415,17 +431,25 @@ function table(t) {
   const head = cols.length ? `<w:tr><w:trPr><w:cantSplit/><w:tblHeader/></w:trPr>${cols.map((c, i) => cell(c, i, { header: true })).join('')}</w:tr>` : '';
   // Hàng áp chót giữ với hàng cuối, để hàng cuối (thường là hàng tổng) không sang trang một mình.
   const body = rowsIn.map((o0, ri) => {
-    const o = ri === rowsIn.length - 2 ? { ...o0, keepRow: true } : o0;
+    // Hàng đánh số cột "(1) | (2) | (3) | (4)" ngay dưới tiêu đề giữ với hàng sau, để trang không kết bằng tiêu đề bảng và hàng
+    // đánh số mà chưa có hàng dữ liệu nào (s4j, KT-01 tr. 3).
+    const numbering = o0.cells.every((c) => /^\(?\d{1,2}\)?$/.test(String(c ?? '').trim()));
+    const o = ri === rowsIn.length - 2 || (numbering && ri < 2) ? { ...o0, keepRow: true } : o0;
     // Hàng ít ô hơn số cột (hàng nhóm "B | DỊCH VỤ LIÊN QUAN"): ô cuối trải ngang hết các cột còn lại, như hồ sơ mẫu.
     const k = o.cells.length;
     const cells = k < n ? o.cells.map((c, i) => cell(c, i, o, i === k - 1 ? n - i : 1)) : o.cells.map((c, i) => cell(c, i, o));
-    return `<w:tr><w:trPr><w:cantSplit/></w:trPr>${cells.join('')}</w:tr>`;
+    // Hàng cao (ô hơn 700 ký tự, như bảng Tech Specs ba cột của trang hãng dồn vào một hàng bản dịch) được cắt qua trang: giữ
+    // nguyên thì Word đẩy cả hàng sang trang sau, trang trước còn gần trắng. "splitRows": true cho mọi hàng của bảng được cắt.
+    const tall = t.splitRows || o.cells.some((c) => String(c ?? '').length > 700);
+    return `<w:tr>${tall ? '' : '<w:trPr><w:cantSplit/></w:trPr>'}${cells.join('')}</w:tr>`;
   }).join('');
   const out = [];
   if (t.caption) out.push(para(t.caption, F.caption, '<w:keepNext/>'));
   out.push(`<w:tbl><w:tblPr><w:tblW w:w="${w.reduce((a, b) => a + b, 0)}" w:type="dxa"/>${TABLE.tblPr}</w:tblPr><w:tblGrid>${w.map((x) => `<w:gridCol w:w="${x}"/>`).join('')}</w:tblGrid>${head}${body}</w:tbl>`);
   // Kiểu clean: đoạn sau bảng cao 8pt để chữ sau không dính mép dưới bảng.
-  out.push(CLEAN ? '<w:p><w:pPr><w:spacing w:before="0" w:after="0" w:line="160" w:lineRule="exact"/></w:pPr></w:p>' : para('', F.after));
+  // Bảng là khối cuối của tài liệu: không thêm đoạn đệm (blocks() thêm một đoạn TINY), vì bảng vừa hết trang thì đoạn đệm cao 8pt
+  // rơi sang một trang trắng (s4i, bản dịch KT-03).
+  if (!last) out.push(CLEAN ? '<w:p><w:pPr><w:spacing w:before="0" w:after="0" w:line="160" w:lineRule="exact"/></w:pPr></w:p>' : para('', F.after));
   return out.join('');
 }
 
@@ -487,10 +511,13 @@ function gantt(g) {
 // Bản cam kết, hình thức đo từ hồ sơ mẫu: đầu trang là bảng hai cột không viền (tên đơn vị 3700, quốc hiệu 5671), dưới
 // mỗi bên một gạch ngắn; ngày tháng nghiêng; tên văn bản đậm có gạch dưới; thân chữ 14, giãn dòng 1,2, thụt 1 cm; khối ký
 // căn giữa nửa phải.
+// Đoạn chữ của bản cam kết và khối ký (chữ 14, kiểu đoạn của khuôn nếu có).
+const letterPara = (t, { jc = 'both', bold = false, ital = false, size = 28, spacing = '<w:spacing w:after="120" w:line="288" w:lineRule="auto"/>', ind = '', keep = false } = {}) =>
+    `<w:p><w:pPr>${S.letter ? `<w:pStyle w:val="${S.letter}"/>` : ''}${keep ? '<w:keepNext/>' : ''}${spacing}${ind}<w:jc w:val="${jc}"/></w:pPr>${runs(t, `${bold ? '<w:b/><w:bCs/>' : ''}${ital ? '<w:i/><w:iCs/>' : ''}<w:sz w:val="${size}"/><w:szCs w:val="${size}"/>`)}</w:p>`;
+
 function letter(l, atPageTop = false) {
   const base = '<w:spacing w:before="0" w:after="0" w:line="240" w:lineRule="auto"/>';
-  const lp = (t, { jc = 'both', bold = false, ital = false, size = 28, spacing = '<w:spacing w:after="120" w:line="288" w:lineRule="auto"/>', ind = '', keep = false } = {}) =>
-    `<w:p><w:pPr>${S.letter ? `<w:pStyle w:val="${S.letter}"/>` : ''}${keep ? '<w:keepNext/>' : ''}${spacing}${ind}<w:jc w:val="${jc}"/></w:pPr>${runs(t, `${bold ? '<w:b/><w:bCs/>' : ''}${ital ? '<w:i/><w:iCs/>' : ''}<w:sz w:val="${size}"/><w:szCs w:val="${size}"/>`)}</w:p>`;
+  const lp = letterPara;
   const rule = (ind) => `<w:p><w:pPr>${S.letter ? `<w:pStyle w:val="${S.letter}"/>` : ''}<w:pBdr><w:bottom w:val="single" w:sz="6" w:space="0" w:color="000000"/></w:pBdr><w:spacing w:before="0" w:after="0" w:line="40" w:lineRule="exact"/><w:ind w:left="${ind}" w:right="${ind}"/></w:pPr></w:p>`;
   // Tên công ty in đậm cả mấy dòng; chỉ khi dòng đầu là cơ quan chủ quản (orgParent) thì dòng đó chữ thường như Nghị định 30.
   const org = (l.org ?? []).map((t, i) => lp(t, { jc: 'center', bold: !(l.orgParent && i === 0), size: 26, spacing: base })).join('');
@@ -505,15 +532,35 @@ function letter(l, atPageTop = false) {
   if (l.to) out.push(lp(l.to, { bold: true, ind: '<w:ind w:left="567"/>', spacing: '<w:spacing w:before="240" w:after="120" w:line="288" w:lineRule="auto"/>' }));
   for (const t of l.info ?? []) out.push(lp(t, { ind: '<w:ind w:left="567"/>' }));
   for (const t of l.body ?? []) out.push(lp(t, { ind: '<w:ind w:firstLine="567"/>' }));
-  const signW = 5440; // 58% bề ngang như khối ký của hồ sơ mẫu
-  const sign = [
-    lp(l.signTitle ?? 'ĐẠI DIỆN HỢP PHÁP CỦA NHÀ THẦU', { jc: 'center', bold: true, spacing: '<w:spacing w:before="120" w:after="0" w:line="288" w:lineRule="auto"/>', keep: true }),
-    lp(l.signNote ?? '(Ký tên, đóng dấu)', { jc: 'center', ital: true, spacing: '<w:spacing w:before="0" w:after="1200" w:line="288" w:lineRule="auto"/>', keep: true }),
-    lp(l.signer ?? '', { jc: 'center', bold: true, spacing: '<w:spacing w:before="0" w:after="0" w:line="288" w:lineRule="auto"/>' }),
-  ].join('');
-  out.push(`<w:tbl><w:tblPr><w:tblW w:w="9371" w:type="dxa"/>${noBorder}<w:tblLayout w:type="fixed"/><w:tblCellMar><w:left w:w="0" w:type="dxa"/><w:right w:w="0" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid><w:gridCol w:w="${9371 - signW}"/><w:gridCol w:w="${signW}"/></w:tblGrid><w:tr><w:trPr><w:cantSplit/></w:trPr><w:tc><w:tcPr><w:tcW w:w="${9371 - signW}" w:type="dxa"/></w:tcPr><w:p/></w:tc><w:tc><w:tcPr><w:tcW w:w="${signW}" w:type="dxa"/></w:tcPr>${sign}</w:tc></w:tr></w:tbl>`);
+  out.push(signBlock(l.signers ?? [{ title: l.signTitle, note: l.signNote, name: l.signer }], lp));
   // Không có đoạn trống sau khối ký: bản tiếp theo mở bằng đoạn ngắt trang, bản cuối được blocks() thêm một đoạn rất thấp.
   return out.join('');
+}
+
+// Khối ký. Một người ký: nửa phải, 58% bề ngang như hồ sơ mẫu. Liên danh có nhiều thành viên cùng ký (bản cam kết uy tín
+// của từng thành viên, thỏa thuận cam kết chung): mỗi người một cột bằng nhau. Mỗi người: chức danh ký (in đậm), tên công ty
+// (đậm, khi ký thay mặt liên danh hay khi có nhiều cột), ghi chú ký (nghiêng), khoảng ký, họ tên.
+function signBlock(signers, lp) {
+  const noBorder = '<w:tblBorders><w:top w:val="nil"/><w:left w:val="nil"/><w:bottom w:val="nil"/><w:right w:val="nil"/><w:insideH w:val="nil"/><w:insideV w:val="nil"/></w:tblBorders>';
+  const sp = (before, after) => `<w:spacing w:before="${before}" w:after="${after}" w:line="288" w:lineRule="auto"/>`;
+  const W = 9371;
+  const cols = signers.length === 1 ? [W - 5440, 5440] : signers.map(() => Math.floor(W / signers.length));
+  const colW = cols.at(-1) - 114;
+  // Nhiều cột thì chữ 13 cho vừa; ghi chú ký chữ 12 để không rớt một chữ ("dấu") xuống dòng riêng.
+  const size = signers.length === 1 ? 28 : 26;
+  // Dòng chữ hoa đậm dài hơn cột thì Word ngắt giữa hai tiếng của một từ ("PHÁT / TRIỂN"): báo để người viết tự xuống dòng
+  // bằng \n ở chỗ tách từ hợp lý.
+  const check = (t, sz) => {
+    if (t.length * (sz / 2) * 0.68 * 20 > colW) warnings.push(`Khối ký: dòng "${t.slice(0, 60)}" dài hơn cột ký, Word sẽ ngắt giữa từ; tự xuống dòng (ký tự \\n trong JSON) ở chỗ tách từ, như "CÔNG TY CỔ PHẦN ĐẦU TƯ" / "VÀ PHÁT TRIỂN CÔNG NGHỆ" / "PHƯƠNG NAM"`);
+  };
+  const cell = (s) => [
+    ...String(s.title ?? 'ĐẠI DIỆN HỢP PHÁP CỦA NHÀ THẦU').split('\n').map((t, i) => { check(t, size); return lp(t, { jc: 'center', bold: true, size, spacing: sp(i ? 0 : 120, 0), keep: true }); }),
+    ...(s.org ? String(s.org).split('\n').map((t) => { check(t, size); return lp(t, { jc: 'center', bold: true, size, spacing: sp(0, 0), keep: true }); }) : []),
+    lp(s.note ?? '(Ký tên, đóng dấu)', { jc: 'center', ital: true, size: 24, spacing: sp(0, 1200), keep: true }),
+    lp(s.name ?? '', { jc: 'center', bold: true, size, spacing: sp(0, 0) }),
+  ].join('');
+  const cells = signers.length === 1 ? ['<w:p/>', cell(signers[0])] : signers.map(cell);
+  return `<w:tbl><w:tblPr><w:tblW w:w="${W}" w:type="dxa"/>${noBorder}<w:tblLayout w:type="fixed"/><w:tblCellMar><w:left w:w="57" w:type="dxa"/><w:right w:w="57" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid>${cols.map((w) => `<w:gridCol w:w="${w}"/>`).join('')}</w:tblGrid><w:tr><w:trPr><w:cantSplit/></w:trPr>${cells.map((c, i) => `<w:tc><w:tcPr><w:tcW w:w="${cols[i]}" w:type="dxa"/></w:tcPr>${c}</w:tc>`).join('')}</w:tr></w:tbl>`;
 }
 
 function imageSize(buf) {
@@ -559,7 +606,9 @@ const TOC_PLACEHOLDER = 'Mục lục chưa dựng: mở tệp bằng Word, chọ
 const tocField = (instr, f) => `<w:p>${f?.ppr ? `<w:pPr>${f.ppr}</w:pPr>` : ''}<w:r><w:fldChar w:fldCharType="begin" w:dirty="true"/></w:r><w:r><w:instrText xml:space="preserve">${instr}</w:instrText></w:r><w:r><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:t xml:space="preserve">${TOC_PLACEHOLDER}</w:t></w:r><w:r><w:fldChar w:fldCharType="end"/></w:r></w:p>`;
 let front = '';
 const firstHead = out_.find((p) => [S.part, S.doc, S.h1].filter(Boolean).includes(p.style));
-if (templatePath && firstHead) {
+// "cover": false: tài liệu không bìa, không mục lục (bảng đáp ứng, bản dịch, mục lục hồ sơ, bộ cam kết) mà vẫn học định dạng
+// đoạn, bảng, khổ trang của khuôn: bỏ hẳn phần đầu của khuôn, thân mở ngay ở section chính.
+if (templatePath && firstHead && data.cover !== false) {
   front = oldBody.slice(0, firstHead.start);
   // Trường mục lục: từ đoạn chứa lệnh TOC tới đoạn chứa dấu kết thúc của đúng trường đó (trường PAGEREF lồng bên trong
   // có begin, end riêng nên phải đếm độ sâu).
@@ -638,9 +687,11 @@ if (templatePath && firstHead) {
   if (!usedToc && data.toc) front += para(data.tocTitle ?? 'MỤC LỤC', F.tocTitle) + tocField(` TOC \\o "${typeof data.toc === 'string' ? data.toc : '1-3'}" \\h \\z \\u `);
   // Section đầu của khuôn (thường có "trang đầu khác" để bìa không in số trang) kết thúc ngay sau mục lục; phần nội dung
   // dùng section chính.
+  // Khuôn chỉ có một section (tài liệu kỹ thuật mẫu): bìa, mục lục, thân chung một section, ngắt trang bằng đoạn của khuôn;
+  // chèn thêm section break ở đây sẽ đẩy dòng cuối của phần đầu ra đứng một mình một trang.
   const firstSect = sections[0];
-  if (firstSect && !/<w:sectPr\b/.test(front)) front += `<w:p><w:pPr><w:spacing w:after="0" w:line="240" w:lineRule="auto"/>${firstSect}</w:pPr></w:p>`;
-} else if (data.cover?.length || data.toc) {
+  if (firstSect && sections.length > 1 && !/<w:sectPr\b/.test(front)) front += `<w:p><w:pPr><w:spacing w:after="0" w:line="240" w:lineRule="auto"/>${firstSect}</w:pPr></w:p>`;
+} else if (data.cover !== false && (data.cover?.length || data.toc)) {
   // Khuôn dựng sẵn: bìa theo bố cục của hồ sơ mẫu (dòng nhà thầu ở đầu, tên tài liệu giữa trang, nơi và năm ở cuối),
   // bìa là một section riêng có trang đầu khác nên không in số trang.
   const c = (data.cover ?? []).map((x) => (typeof x === 'string' ? { text: x } : x));
@@ -724,7 +775,7 @@ function blocks(list, prev = undefined, atTop = prev === undefined) {
           body.push(para(l, F.bullet, `<w:numPr><w:ilvl w:val="${level}"/><w:numId w:val="${bulletNum}"/></w:numPr>`));
         }
       }
-    } else if (b.table) body.push(table(b.table));
+    } else if (b.table) body.push(table(b.table, { last: i === list.length - 1 }));
     else if (b.figure) body.push(figure(b.figure));
     else if (b.gantt || b.landscape) {
       // Trang xoay ngang là một section riêng: đóng section dọc đang mở, viết nội dung, đóng section ngang.
@@ -738,18 +789,27 @@ function blocks(list, prev = undefined, atTop = prev === undefined) {
       // Bản cam kết đầu tiên mở section cuối (không số trang): đóng section đang mở bằng section chính.
       if (!inTail && TAIL !== MAIN) { body.push(sectBreak(MAIN)); inTail = true; body.push(letter(b.letter, true)); } else body.push(letter(b.letter));
     }
+    else if (b.sign) {
+      // Khối ký đứng riêng, cuối một tài liệu không phải bản cam kết (bảng đáp ứng, thuyết minh): "sign": { "signers": [...] }.
+      body.push('<w:p><w:pPr><w:spacing w:before="0" w:after="0" w:line="120" w:lineRule="exact"/></w:pPr></w:p>', signBlock(b.sign.signers ?? [b.sign], letterPara));
+    }
     else if (b.pageBreak) body.push(TINY_BREAK);
     else throw new Error(`Khối không rõ loại: ${JSON.stringify(b).slice(0, 80)}`);
     prev = b;
   }
-  if (list.length && list.at(-1).letter) body.push(TINY);
+  // Tài liệu kết bằng bảng (khối ký, bản cam kết): Word tự thêm dấu đoạn cuối sau bảng và có thể đẩy nó sang trang trắng; đặt
+  // sẵn một đoạn rất thấp.
+  if (list.length && (list.at(-1).letter || list.at(-1).sign || list.at(-1).table)) body.push(TINY);
   return body.join('');
 }
 const content = blocks(data.blocks ?? []);
 
 // Khung bìa: gắn vào section đầu (section của bìa), chỉ hiện ở trang đầu của section đó.
 if (COVER_CLEAN && data.cover?.length) front = front.replace(/<w:sectPr\b[\s\S]*?<\/w:sectPr>/, (x) => addCoverBorder(x));
-docXml = `${docXml.slice(0, bodyStart)}${front}${content}${inTail ? TAIL : MAIN}${docXml.slice(bodyEnd)}`;
+// Khuôn một section: phần đầu không có section riêng, khung bìa gắn vào section duy nhất (chỉ hiện ở trang đầu của nó).
+const oneSection = COVER_CLEAN && data.cover?.length && templatePath && data.cover !== false && !/<w:sectPr\b/.test(front);
+const lastSectXml = inTail ? TAIL : MAIN;
+docXml = `${docXml.slice(0, bodyStart)}${front}${content}${oneSection ? addCoverBorder(lastSectXml) : lastSectXml}${docXml.slice(bodyEnd)}`;
 if (!/xmlns:r=/.test(docXml.slice(0, 3000))) docXml = docXml.replace('<w:document ', '<w:document xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" ');
 zip.set('word/document.xml', docXml);
 

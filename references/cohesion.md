@@ -40,6 +40,27 @@ Giới hạn:
 ## Nối đoạn
 
 - Câu đầu đoạn mới nắm lấy câu cuối đoạn cũ, bằng một trong các cách trên.
+- Thử ở mức đoạn: đọc liền câu cuối đoạn trước với câu đầu đoạn sau, bỏ qua mọi câu khác. Hai câu đó đứng cạnh nhau
+  mà như của hai bài khác nhau thì đoạn sau đang rời. Thử cho từng chỗ xuống dòng, không chỉ đoạn đầu.
+- Từ thế ở đầu đoạn ("số liệu này", "chuyện đó") trỏ về thứ gần nhất. Đoạn ngay trước là ví dụ, ẩn dụ hay chuyện bên
+  lề thì gọi lại thứ đang bàn bằng tên.
+- Câu bổ sung cho một đoạn (cách đo thêm cho một nghi vấn, ngoại lệ của một quy tắc) đặt ở cuối chính đoạn đó, không dồn
+  xuống cuối bài cạnh một ý khác. Đoạn cuối chỉ chứa việc của chính nó.
+- Bài vừa để ngỏ một nghi vấn vừa nêu cách chỉnh thì xếp sao cho đoạn sau nắm được đoạn trước. Ví dụ đoạn nghi vấn kết
+  bằng việc cần đo, đoạn chỉnh mở bằng "Trong lúc chưa đo,…" hay "Dù có X hay không thì…".
+- Đoạn cuối nói cách chỉnh thì mở bằng thứ đoạn trước vừa nói (chỗ chưa biết, lý do vừa tìm ra), ví dụ "Chưa biết app
+  cần bao lâu để khởi động nên…", không mở bằng "Còn chỉnh thì…" như một chuyện mới.
+- Việc cần đo, cần kiểm nói một lần. Đoạn trước đã dặn "phải đo X" và đoạn chỉnh mở bằng "Trong lúc chưa đo X" thì các câu
+  sau của đoạn chỉnh không dặn đo X lần nữa ("chừa bao nhiêu thì phải chờ số đo X"). Cần nói mức chỉnh chỉ là thử thì nói
+  thẳng "mức nào lúc này cũng chỉ là điểm thử", không kèm lại lời dặn đo.
+- Văn bản viết hộ để người dùng lưu (ghi chú, sổ tay) không chép lại lời yêu cầu vào thân bài ("nói qua hai hướng",
+  "như bạn hỏi", "theo yêu cầu"). Đọc lại sau một tháng, người đọc không còn biết ai "nói qua" với ai.
+- Đổi sang thứ mới giữa một mục (nhiều máy, nhiều dịch vụ cùng một loại việc) thì mỗi thứ một đoạn, câu đầu đoạn gọi
+  tên thứ mới và nói nó khác thứ trước ("Riêng máy cache01…"). Không để câu về thứ mới đứng cuối đoạn của thứ cũ.
+- "Trong khoảng đó", "lúc đó", "khi ấy" trỏ về mốc gần nhất. Câu trước vừa nêu hai mốc mới mà ý là cả khoảng đã nói ở
+  đoạn trước thì gọi lại khoảng đó bằng chính hai mốc của nó.
+- Trong một câu, một đại từ ("mình", "nó", "anh ấy") chỉ trỏ một người hay một thứ. Kể lại lời người khác mà họ xưng
+  "mình" thì đổi sang cách gọi họ ("bạn", tên), đừng để "mình" trỏ hai người trong cùng câu.
 - Liệt kê nhiều ý ngang hàng thì gắn số thứ tự vào danh từ ("Lý do thứ hai là…"), không để "Thứ hai," đứng trơ.
 - Đổi đề tài nhỏ thì xuống dòng. Câu sau còn đang triển khai câu trước thì không xuống dòng.
 
@@ -88,6 +109,16 @@ Từ chỉ mức chắc chắn, hay đứng đầu câu:
 | Hỏi nhiều ý | "Vậy A liên quan thế nào đến B? Trước hết,… Thứ đến,…" |
 
 Câu đáp trả lời thẳng câu hỏi trước (có, không, là gì), rồi mới tới lý do.
+
+Câu đáp cụt, chỉ một danh từ ("Cron job dọn ổ."), thì câu ngay sau lấy chính danh từ đó làm chủ ngữ và nói nó làm gì,
+vì sao: "Vậy ai xoá tệp? Cron job dọn ổ. Cron job này chạy lúc 2 giờ và xoá mọi tệp cũ hơn bảy ngày trong thư mục tạm."
+Câu sau mà chuyển sang một thứ khác ("Thư mục tạm có giới hạn…") thì người đọc phải tự nối vì sao thứ đó dính tới câu
+đáp, tức là hai câu rời.
+
+Câu triển khai câu đáp thì thêm điều mới, không kết bằng một vế nói lại câu đáp. Sai: "Vì sao ổ vẫn đầy dù đã xoá tệp
+log? Vì app vẫn giữ tệp đó mở, còn `rm` chỉ gỡ tên tệp khỏi thư mục. Ổ chỉ được trả chỗ khi app đóng tệp, và `rm` không
+làm app đóng tệp." Vế "và `rm` không làm app đóng tệp" chỉ nói lại câu đáp, bỏ đi. Cách thử: che câu đáp, vế cuối câu
+sau mà vẫn trả lời được câu hỏi thì nó đang lặp.
 
 ## Đặt mình vào người nghe
 

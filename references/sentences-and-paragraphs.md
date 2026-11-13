@@ -53,6 +53,25 @@ Có ba cách đánh dấu, và không cách nào cần tới dấu gạch ngang.
 Bỏ phần chêm đi thì câu vẫn phải đúng ngữ pháp. Ngoặc đơn hợp với tên gọi khác, dạng đầy đủ của chữ viết tắt, và
 danh sách ví dụ.
 
+Lời chêm đặt ở cuối phần nó giải, không chen giữa động từ và bổ ngữ của động từ đó. Sai: "Muốn biết query nào chậm thì
+bật slow query log, chức năng của MySQL ghi lại query chạy quá lâu, bằng biến `slow_query_log`, rồi đọc tệp đó vài lần
+trong ngày để xem query nào lặp lại." Đọc lần đầu, "bằng biến" dính vào "ghi lại query" chứ không dính vào "bật". Sửa
+bằng cách tách câu: một câu nói bật cái gì và nó là gì, câu sau nói bật bằng gì hay làm gì tiếp. Cụm giải nghĩa
+("tức là…", "tức…") chen giữa chủ ngữ và động từ, giữa danh từ và phần bổ nghĩa của nó, hay đứng ngay trước dấu hai chấm
+mở danh sách cũng tách thành câu riêng đặt trước.
+
+Tân ngữ dài đặt ngay sau động từ, nơi đến đặt sau: "chép liên tục nhật ký giao dịch của database sang NAS", không "chép
+liên tục sang NAS nhật ký giao dịch của database".
+
+Câu dài quá khoảng 40 tiếng mà mang hai đoạn mã, hay có từ ba vế nối bằng dấu phẩy và "rồi", "để", thì tách câu.
+
+Không viết khuôn "X, vì A, còn B, nên X'" với vế "nên" nói lại X. "Nên" chỉ đứng sau vế thật sự dẫn tới nó. Sai: "Số hiện
+có chưa cho biết bao nhiêu người vắng, vì số đăng ký do phòng nhân sự đếm, còn số đến do bảo vệ đếm, nên lấy số này trừ
+số kia không ra số người vắng." Hai người đếm khác nhau không dẫn tới chuyện phép trừ hỏng, và vế "nên" nói lại vế đầu.
+Sửa: "Lấy số đăng ký trừ số người đến không ra số người vắng, vì số người đến có cả người không đăng ký mà vẫn tới." Câu
+giải vì sao một phép tính không ra thì nói thẳng số nào chứa thứ gì mà số kia không có. Cách thử: bỏ vế "vì", đọc liền vế
+ngay trước "nên" với vế "nên"; vế trước không dẫn tới vế sau thì "nên" đang sai.
+
 ## Nhấn mạnh không cần in đậm
 
 - "chính", "chỉ", "ngay cả", "đến" đứng trước từ cần nhấn, ví dụ "Chính thầy hiệu trưởng đã tặng tôi quyển sách này."
@@ -63,6 +82,8 @@ danh sách ví dụ.
 
 - Một đoạn một đề tài nhỏ, khoảng 4 tới 6 câu. Đoạn một câu được, khi câu đó cần đứng riêng.
 - Mỗi đoạn có một câu chủ đề, ngắn và dễ hiểu.
+- Câu phủ định hiển nhiên sau một mốc đã nêu ("lỗi đầu tiên lúc 07:05" rồi "trước 07:00 không có lỗi") thì bỏ.
+- Câu ngay sau câu dẫn số không nói lại số đó bằng chữ ("Ổ chưa lần nào đầy" sau câu vừa nói ổ cao nhất mới dùng 60%). Đi thẳng sang điều số đó kéo theo, hoặc nhập vế "nên" vào chính câu dẫn số.
 
 | Kiểu đoạn | Câu chủ đề ở đâu | Dùng khi |
 |---|---|---|

@@ -30,7 +30,7 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { hasFlag, valueOf, command, commandArg, home, memDir, configDir, managedSource, codexDir, MEMORY_FILES, exists, read, write, slash, quiet, log, yes, shown, useClaude, useCodex, skillTargets, selfCommand, run, git, isRepo, hasUpstream, firstLine, gitNet, timedOut, OFFLINE } from './lib/context.mjs';
+import { hasFlag, valueOf, args, VALUE_FLAGS, KNOWN_FLAGS, command, commandArg, home, memDir, configDir, managedSource, codexDir, MEMORY_FILES, exists, read, write, slash, quiet, log, yes, shown, useClaude, useCodex, skillTargets, selfCommand, run, git, isRepo, hasUpstream, firstLine, gitNet, timedOut, OFFLINE } from './lib/context.mjs';
 import { ghUser, connectRemote, cloneExisting, remoteHasCommits, commitPending, pull, pushIfAhead } from './lib/repo.mjs';
 import { ensureManagedSource, copySkill, updateSkill, readConfig, writeConfig } from './lib/update.mjs';
 import { syncCodex, linkClaude, installClaudeHooks, installSchedule } from './lib/agents.mjs';
@@ -193,6 +193,17 @@ function wireAgents() {
 }
 
 async function main() {
+  // --help, -h: in phần chú thích đầu tệp. Cờ lạ: báo lỗi và thoát, không chạy cài đặt.
+  if (hasFlag('--help') || hasFlag('-h')) {
+    const head = fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1).filter((l) => l.startsWith('//')).map((l) => l.replace(/^\/\/ ?/, ''));
+    console.log(head.join('\n'));
+    return;
+  }
+  const unknown = args.filter((a, i) => a.startsWith('-') && !KNOWN_FLAGS.includes(a) && !VALUE_FLAGS.includes(args[i - 1]));
+  if (unknown.length) {
+    console.error(`Cờ không biết: ${unknown.join(' ')}. Xem cách dùng: node scripts/setup.mjs --help`);
+    process.exit(2);
+  }
   if (command === 'sync') { cmdSync(); return; }
   if (command === 'save') { cmdSave(); return; }
   if (command === 'codex') { if (syncCodex()) log(`  Codex: đã chép bộ nhớ vào ${path.join(codexDir, 'AGENTS.md')}`); return; }

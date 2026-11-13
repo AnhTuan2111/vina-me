@@ -26,13 +26,15 @@ Bộ tài liệu thường gồm:
 ## Trích chữ và xem ảnh
 
 ```bash
+# Trên Windows, Git for Windows kèm pdftotext của xpdf, hay đứng trước trong PATH: chạy "pdftotext -v", không thấy chữ Poppler
+# thì gọi bằng đường dẫn đầy đủ tới bản Poppler (script trong scripts/bid/ tự tìm, lệnh gõ tay thì không).
 pdftotext -layout -enc UTF-8 "<tệp>.pdf" "<tệp>.txt"        # chữ
 pdftoppm -r 80 -png -f <trang> -l <trang> "<tệp>.pdf" out   # ảnh trang để đọc bằng mắt
 pdfinfo "<tệp>.pdf"                                          # số trang, tệp quét thường ghi máy quét ở Creator
 ```
 
-Tệp Word: `node scripts/bid/docx-profile.mjs <tệp.docx>` cho dàn mục và hình thức; muốn đọc chữ thì `bid-check.mjs` dùng chung bộ
-đọc, hoặc mở bằng Word.
+Tệp Word: `node scripts/bid/docx-profile.mjs <tệp.docx>` cho dàn mục và hình thức; muốn đọc chữ thì
+`node scripts/bid/lib/doc-text.mjs <tệp.docx>` (in từng đoạn kèm kiểu, hàng bảng nối ô bằng " | ", cùng bộ đọc của `bid-check`).
 
 Bản chữ trích từ PDF sai ở những chỗ đã gặp thật, nên các chỗ sau phải đọc bằng ảnh trang:
 
@@ -57,6 +59,9 @@ Mọi con số đưa vào hồ sơ (thông số, số lượng, thời hạn, ti
   chỉ cho thầu phụ làm dịch vụ liên quan mà Mẫu 01D ghi "Không", hay giới hạn phần việc, thì BA định giao cho thầu phụ phần
   việc khác (phát triển phần mềm) là rủi ro bị loại: nêu đầu báo cáo (BA có tệp trả lời thì nêu ở dòng của câu trả lời đó trong bảng mở báo cáo), trích đúng điều HSMT, hỏi BA cách xử lý (nhà thầu tự làm,
   liên danh), không tự khuyên kê thầu phụ.
+- Liên danh mà thư mục giấy tờ nhà thầu chỉ có giấy tờ của một thành viên: thông tin thành viên còn lại (tên, mã số doanh nghiệp,
+  người đại diện) lấy từ tệp trả lời của BA hay HSMT; thiếu thì `[cần bổ sung: ...]` và đưa vào câu hỏi cho BA, không lấy từ hồ
+  sơ mẫu.
 - **Tên gói** so giữa quyết định phê duyệt, Chương II, Chương IV, Chương V. Khác một chữ cũng ghi lại; dùng tên trong quyết
   định.
 - **Địa chỉ nhà thầu**: đăng ký kinh doanh cũ có thể ghi phường, quận trước khi sắp xếp đơn vị hành chính; báo cáo tài chính

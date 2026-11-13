@@ -9,6 +9,9 @@ import { fileURLToPath } from 'node:url';
 
 const COMMANDS = ['sync', 'save', 'github', 'remote', 'team', 'codex', 'update', 'check', 'conflict', 'resolve', 'channel'];
 const args = process.argv.slice(2);
+// Cờ setup.mjs nhận; cờ lạ (đoán bừa như "--help" ở bản cũ) thì setup.mjs báo lỗi chứ không rơi xuống nhánh cài đặt.
+const KNOWN_FLAGS = ['--home', '--answers', '--remote', '--github', '--no-copy-skill', '--plain', '--no-schedule', '--real-schedule',
+  '--claude', '--codex', '--quiet', '--help', '-h'];
 const hasFlag = (name) => args.includes(name);
 const valueOf = (name) => {
   const i = args.indexOf(name);
@@ -94,4 +97,4 @@ const NETWORK_ERROR = /could not resolve host|unable to access|failed to connect
 const timedOut = (r) => r.error?.code === 'ETIMEDOUT' || r.signal === 'SIGTERM' || NETWORK_ERROR.test(`${r.stderr ?? ''}`);
 const OFFLINE = 'không kết nối được repo (hết thời gian chờ)';
 
-export { COMMANDS, args, hasFlag, valueOf, VALUE_FLAGS, commandIndex, command, commandArg, realHome, fakeHome, home, skillSrc, templates, memDir, configDir, managedSource, claudeDir, codexDir, claudeSkill, codexSkills, UPSTREAM_URL, START, END, MEMORY_FILES, GITIGNORE, exists, read, write, slash, today, decorate, setDecorate, quiet, log, yes, backupOnce, shown, useClaude, useCodex, skillTargets, skillHome, scriptPath, homeFlag, selfCommand, run, gitIn, git, isRepo, hasUpstream, firstLine, NET_TIMEOUT, gitNet, timedOut, OFFLINE };
+export { COMMANDS, KNOWN_FLAGS, args, hasFlag, valueOf, VALUE_FLAGS, commandIndex, command, commandArg, realHome, fakeHome, home, skillSrc, templates, memDir, configDir, managedSource, claudeDir, codexDir, claudeSkill, codexSkills, UPSTREAM_URL, START, END, MEMORY_FILES, GITIGNORE, exists, read, write, slash, today, decorate, setDecorate, quiet, log, yes, backupOnce, shown, useClaude, useCodex, skillTargets, skillHome, scriptPath, homeFlag, selfCommand, run, gitIn, git, isRepo, hasUpstream, firstLine, NET_TIMEOUT, gitNet, timedOut, OFFLINE };

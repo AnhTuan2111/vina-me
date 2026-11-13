@@ -13,7 +13,15 @@ Quy tắc khi trích nguyên văn:
 
 - Chép đúng từng chữ, kể cả chỗ bản gốc sai. Chỗ sai thì ghi [sic] hoặc thêm một chú thích.
 - Cắt bớt thì đánh dấu […]. Chỉ cắt phần ít quan trọng, không cắt làm đổi nghĩa.
-- Không sửa câu chữ trong lời trích cho hợp giọng của bài.
+- Không sửa câu chữ trong lời trích cho hợp giọng của bài. Ngoại lệ duy nhất là dấu gạch dài, ghi thành gạch nối
+  (`punctuation.md`).
+- Chữ của nguồn nhắc lại ở chỗ khác (chú thích ảnh, tên mục, câu hỏi gửi người nhận) mà để trong ngoặc kép thì cũng là
+  lời trích: giữ chính tả của nguồn, không sửa lỗi gõ.
+- Ngày, số trong nguồn thiếu một phần (ngày không ghi năm, số không ghi đơn vị) thì giữ đúng cách ghi đó ở mọi chỗ nhắc
+  lại, kể cả câu hỏi gửi người nhận: "từ 5/3 như thông báo ghi", không "từ 5/3/2026". Cần phần thiếu thì hỏi phần đó,
+  không tự điền năm hiện tại hay năm của tài liệu khác.
+- Nhắc lại một ý đã viết ở chỗ khác (lời trả trong chat, câu đếm ở mở đầu) thì giữ mức chắc chắn của chỗ gốc. Chỗ
+  gốc viết "trùng", "có thể", "chưa kiểm" thì chỗ nhắc lại cũng vậy, không thành "là", "còn dùng", "đã".
 
 ## Ghi nguồn
 
@@ -45,6 +53,8 @@ Người đọc kiểm độ tin của một văn bản bằng bốn thứ là t
 - Ví dụ lẻ trước, số tổng sau.
 - Soát đơn vị đo.
 - Không dùng con số tu từ ("cao hơn hàng trăm lần") cạnh con số đo được.
+- Số chưa ai đếm thì nói cách lấy đúng như nguồn nói. Nguồn nói bảng X cho số lượt thì không gán thêm số khách cho
+  bảng X; số đó lấy từ đâu mà nguồn không nói thì ghi là chưa rõ cách lấy.
 - Output, log, thông báo lỗi cũng là số liệu, nên dán nguyên văn và ghi nơi chạy, ngày chạy. Chưa chạy thì ghi là kỳ vọng.
 
 ## Hình, bảng, sơ đồ

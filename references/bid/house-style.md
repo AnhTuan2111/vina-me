@@ -75,8 +75,8 @@ skill không chép theo.
 | Loại yêu cầu, Thời gian đáp ứng | 43, 57 |
 | Lớp, Tên lớp, Nhóm học viên, Thời lượng, Thời gian | 7, 25, 19, 32, 17 |
 
-  Tiêu đề cột ngắn mà nhiều tiếng ("Đơn vị tính", "Tổng số ngày") cần khoảng 11-12% để không xuống mỗi dòng một tiếng;
-  `bid-docx` in dòng `SỬA` khi một tiêu đề cột bị xếp như thế.
+  Tỉ lệ trên là điểm bắt đầu. `bid-docx` đo chữ dài nhất của từng cột và in dòng `SỬA` kèm số % cần cho cột đó (tiêu đề
+  xuống mỗi dòng một tiếng, chữ bị ngắt giữa từ); khi số đó khác bảng trên thì theo số `bid-docx` in ra.
 
 ### Hình
 - Rộng 16 cm, căn giữa, không khung; chú thích ngay dưới. Hình là sơ đồ dựng sẵn (kiến trúc, mô hình triển khai).

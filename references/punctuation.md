@@ -31,7 +31,10 @@ Dấu gạch đang làm việc gì thì thay bằng thứ làm được đúng v
 | Nhãn trong sơ đồ ký tự | dấu hai chấm, giữ nguyên bề rộng cột | `lo: giao diện loopback` |
 | Cặp từ ghép "thầy, gạch, trò" | viết liền hoặc dùng "và" | "thầy trò", "mình và bạn" |
 
-Lời trích nguyên văn có dấu gạch dài thì ghi thành gạch nối, không đổi chữ nào khác.
+Lời trích nguyên văn có dấu gạch dài thì ghi thành gạch nối, không đổi chữ nào khác. Đây là ngoại lệ duy nhất của luật
+không đụng lời trích ở `core-rules.md` (mục Khi sửa văn có sẵn) và `citations-data-figures.md` (mục Dẫn lời): chỉ ký tự
+gạch đổi, chữ và các dấu khác giữ nguyên. Soát văn mà chính dấu gạch dài là lỗi đang báo thì tả bằng lời (dấu gạch dài
+giữa "A" và "B") thay vì trích cả câu.
 
 Gạch nối thì dùng cho gạch đầu dòng, lời thoại, liên danh ("Hà Nội - Hải Phòng"), khoảng số, tên phiên âm nhiều
 tiếng ("Pa-ri") và tuỳ chọn của lệnh (`-v`).
@@ -56,6 +59,20 @@ Trong câu văn, viết thành chữ. Ký hiệu chỉ giữ trong code, output 
 | `v.v.`, dấu chấm lửng cuối dãy liệt kê | kể đủ, hoặc "và vài thứ khác" khi thật sự còn |
 
 Dấu chấm lửng chỉ dùng để báo đã cắt bớt trong lời trích hoặc output, ghi `[…]` hoặc `…`.
+
+Dấu so sánh trong câu văn cũng viết thành chữ, và giữ đúng nghĩa: `>` là "trên", "quá", "lớn hơn"; `>=` là "từ… trở
+lên"; `<` là "dưới". "> 5 lỗi" thành "trên 5 lỗi", không thành "từ 5 lỗi".
+
+## Dấu trong con số
+
+Viết mới thì dấu chấm ngăn hàng nghìn, dấu phẩy ngăn phần thập phân: "2.500 lượt/ngày", "3,5 giây". Số phiên bản
+("2.4.1"), số trong code và output giữ nguyên.
+
+Giờ viết một kiểu trong cả văn bản: đã dùng "22h00" thì mọi chỗ "22h00", kể cả khi dữ kiện gốc viết lẫn. Riêng lời trích
+và output giữ như gốc.
+
+Sửa văn có sẵn thì giữ dấu trong con số như gốc, nhất là khi người dùng dặn giữ số liệu. Chỉ khi một con số đọc được hai
+giá trị, vì gốc dùng dấu chấm cho cả hàng nghìn lẫn thập phân, thì hỏi người dùng, không tự đoán.
 
 ## Dấu phẩy
 

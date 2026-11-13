@@ -36,12 +36,15 @@ thì dùng khuôn dựng sẵn theo số đo của hồ sơ mẫu. Không cần 
                   "info": ["**Tên nhà thầu:** ...", "Địa chỉ: ...", "Mã số doanh nghiệp: ...; Điện thoại: ...", "Fax: ...; Thư điện tử: ...", "Người đại diện: ..., <chức danh>"],
                   "body": ["Sau khi nghiên cứu ...", "Cam kết ...", "Chúng tôi hoàn toàn chịu trách nhiệm trước pháp luật về nội dung cam kết nêu trên./."],
                   "signer": "<họ tên>" } },
+    { "sign": { "signers": [{ "title": "ĐẠI DIỆN HỢP PHÁP CỦA\nTHÀNH VIÊN ĐỨNG ĐẦU\nLIÊN DANH", "org": "CÔNG TY ...",
+                              "note": "(thay mặt liên danh; ký, ghi rõ họ tên, đóng dấu)", "name": "<họ tên>" }] } },
     { "pageBreak": true }
   ]
 }
 ```
 
-- `cover`: khuôn có bìa thì đủ số dòng chữ của bìa khuôn, theo thứ tự; sai số dòng thì script in ra các dòng của bìa khuôn
+- `cover`: khuôn có bìa thì đủ số dòng chữ của bìa khuôn, theo thứ tự (dòng nhắc lại tên tài liệu ở đầu thân, sau mục lục, của
+  khuôn tài liệu kỹ thuật cũng tính là một dòng bìa; chạy thử với `"cover": []` để script in đủ các dòng); sai số dòng thì script in ra các dòng của bìa khuôn
   và dừng. Chữ dài hơn bìa khuôn thì script tự bớt khoảng trống để bìa vẫn vừa một trang. Dòng bìa nào của khuôn ghi thông
   tin gói không có (khuôn có "GÓI THẦU SỐ ..." mà HSMT không đánh số gói) thì thay bằng thông tin cùng vai mà gói có: tên tài
   liệu ("THUYẾT MINH ĐỀ XUẤT KỸ THUẬT") ở dòng đó, tên gói kèm số E-TBMT ở dòng tên gói.
@@ -73,6 +76,13 @@ thì dùng khuôn dựng sẵn theo số đo của hồ sơ mẫu. Không cần 
   thường trên trang ngang.
 - `letter.org`: các dòng tên công ty, in đậm hết. Dòng đầu là cơ quan chủ quản (không phải một phần tên công ty) thì thêm
   `"orgParent": true` để dòng đó chữ thường theo Nghị định 30.
+- `letter.signers`: thay cho `signer` khi nhiều người cùng ký (liên danh): mỗi người `title`, `org`, `note`, `name`, mỗi người một
+  cột. Một người thì khối ký ở nửa phải. `sign` là khối ký đứng riêng cuối tài liệu không phải bản cam kết (KT-01), cùng cách ghi.
+  `\n` trong `title`, `org` là xuống dòng.
+- Tài liệu không bìa (bảng đáp ứng, bản dịch, mục lục hồ sơ, bộ cam kết): `"cover": false`, dùng được cả khi có `--template`
+  (bỏ bìa, mục lục của khuôn, giữ định dạng của khuôn), mở bằng `part` mang tên tài liệu.
+- Dấu sao thật (dấu chú thích "8.400 mAh*", "**") viết `\\*` trong chuỗi JSON; dấu `*` trần đi cặp sẽ thành chữ nghiêng, đậm.
+- `***chữ***` là chữ đậm nghiêng (hai đoạn cam kết dưới bảng đáp ứng của Chương V).
 - `letter` mở trang mới; bản cam kết đầu tiên mở section cuối của khuôn (không in số trang, như hồ sơ mẫu). Script ngắt trang
   bằng đoạn có "ngắt trước", nên bản vừa khít trang không sinh trang trắng.
 - Ảnh PNG hoặc JPEG, đường dẫn tương đối với tệp JSON.
