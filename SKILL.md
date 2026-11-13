@@ -1,12 +1,12 @@
 ---
 name: vina-me
-description: Viết và sửa văn tiếng Việt cho lưu loát, dễ hiểu, không thành văn AI slop, và dựng phần kỹ thuật của hồ sơ dự thầu (E-HSDT). Dùng mỗi khi viết hay sửa văn bản tiếng Việt dài hơn vài câu, kể cả khi người dùng không nhắc tới giọng văn: bài giảng, tài liệu, README, báo cáo, văn bản hành chính theo Nghị định 30/2020, email, tin nhắn công việc, lời giải thích trong chat, chữ trên sơ đồ, tệp Word. Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "rời rạc", "văn mẫu", "AI slop", hoặc nhờ humanize, viết theo giọng một người. Dùng cho đấu thầu khi người dùng đưa hồ sơ mời thầu (E-HSMT, HSMT, thư mục gói thầu) hay nhờ làm thầu, làm hồ sơ dự thầu, bảng đáp ứng yêu cầu kỹ thuật, thuyết minh đề xuất kỹ thuật, tài liệu hãng tô vàng kèm bản dịch; không dùng để soạn hồ sơ mời thầu cho bên mời thầu. Kèm script cài skill, bộ nhớ dùng chung cho Claude Code và Codex, học từ phiên cũ, giữ mật khẩu cho agent.
+description: Viết và sửa văn tiếng Việt cho lưu loát, dễ hiểu, không thành văn AI slop, và dựng phần kỹ thuật của hồ sơ dự thầu (E-HSDT). Dùng mỗi khi viết hay sửa tiếng Việt, kể cả khi người dùng không nhắc tới giọng văn: mọi câu trả lời trong chat dù chỉ vài câu, bài giảng, tài liệu, README, báo cáo, văn bản hành chính theo Nghị định 30/2020, email, tin nhắn công việc, chữ trên sơ đồ, tệp Word. Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "rời rạc", "văn mẫu", "AI slop", hoặc nhờ humanize, viết theo giọng một người. Dùng cho đấu thầu khi người dùng đưa hồ sơ mời thầu (E-HSMT, HSMT, thư mục gói thầu) hay nhờ làm thầu, làm hồ sơ dự thầu, bảng đáp ứng yêu cầu kỹ thuật, thuyết minh đề xuất kỹ thuật, tài liệu hãng tô vàng kèm bản dịch; không dùng để soạn hồ sơ mời thầu cho bên mời thầu. Kèm script cài skill, bộ nhớ dùng chung cho Claude Code và Codex, học từ phiên cũ, giữ mật khẩu cho agent.
 license: MIT
 argument-hint: "[write|edit|review|word|bid|memory|secret|feedback] <yêu cầu, tệp hay thư mục>"
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.16.0"
+  version: "0.16.1"
 ---
 
 # Viết cho lưu loát
@@ -65,7 +65,7 @@ cụ thể thì tra `references/voice.md`.
 
 ## Trả lời trong chat
 
-Hỏi gì trả lời đúng cái đó, vài câu; điều cần nói thêm thì một dòng ở cuối. Người dùng sai thì nói thẳng kèm lý do.
+Mọi câu trả lời trong chat bằng tiếng Việt đều theo skill này, kể cả câu trả lời chỉ vài câu. Hỏi gì trả lời đúng cái đó, vài câu; điều cần nói thêm thì một dòng ở cuối. Người dùng sai thì nói thẳng kèm lý do.
 Câu hỏi gửi người dùng phải tự đứng được: ở đâu, hiện thế nào, vì sao hỏi, mỗi phương án ra sao. Báo kết quả chỉ gồm
 vấn đề và việc cần làm; không khen, không chấm điểm, không ước lượng thời gian. Câu trong lời trả cũng soát như văn trong
 tệp. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là gì và khuyên thu hồi.

@@ -103,4 +103,4 @@ Dưới đây `<secrets>` là lệnh ghi ở `machine.md`.
 
 ## Viết tiếng Việt
 
-Khi viết hay sửa một đoạn tiếng Việt dài hơn vài câu, dùng skill `vina-me`.
+Mọi câu trả lời trong chat bằng tiếng Việt, dù chỉ vài câu, và mọi đoạn tiếng Việt viết ra hay sửa đều theo skill `vina-me`.
