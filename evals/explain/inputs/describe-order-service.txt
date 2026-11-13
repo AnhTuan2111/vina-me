@@ -1,0 +1,35 @@
+$ kubectl -n shop-dev describe pod order-service-7c9d6b5f4-x2lkq
+Name:             order-service-7c9d6b5f4-x2lkq
+Namespace:        shop-dev
+Node:             worker-02/10.20.0.12
+Start Time:       Mon, 09 Nov 2026 08:30:11 +0700
+Labels:           app=order-service
+Status:           Running
+Containers:
+  order-service:
+    Image:          registry.example.local/shop/order-service:1.8.3
+    Port:           8080/TCP
+    State:          Running
+      Started:      Tue, 10 Nov 2026 14:52:41 +0700
+    Last State:     Terminated
+      Reason:       OOMKilled
+      Exit Code:    137
+      Started:      Tue, 10 Nov 2026 09:13:05 +0700
+      Finished:     Tue, 10 Nov 2026 14:52:38 +0700
+    Ready:          True
+    Restart Count:  4
+    Limits:
+      cpu:     1
+      memory:  1Gi
+    Requests:
+      cpu:      250m
+      memory:   512Mi
+    Environment:
+      JAVA_TOOL_OPTIONS:       -Xmx1g
+      SPRING_PROFILES_ACTIVE:  dev
+Events:
+  Type    Reason   Age                From     Message
+  ----    ------   ----               ----     -------
+  Normal  Pulled   41m (x5 over 30h)  kubelet  Container image "registry.example.local/shop/order-service:1.8.3" already present on machine
+  Normal  Created  41m (x5 over 30h)  kubelet  Created container order-service
+  Normal  Started  41m (x5 over 30h)  kubelet  Started container order-service

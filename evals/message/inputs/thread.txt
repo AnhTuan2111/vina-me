@@ -1,0 +1,29 @@
+Nhóm Zalo: app kho - nội bộ
+(chép từ Zalo, giữ nguyên)
+
+[13/11/2026 09:12] Huy: nhập kho, xuất kho, kiểm kê e đẩy lên staging rồi nhé. link test https://staging-kho.devteam.example/ tk admin / kho@2026
+[13/11/2026 09:40] Linh: in tem mã vạch thì toang rồi a ơi. máy bên khách là Zebra ZD230, bên mình chỉ có con Xprinter XP-365B để thử. in ra tem lệch lề, quét ko ăn
+[13/11/2026 09:41] Linh: phải có con ZD230 thật mới chỉnh được. có máy thì e cần 3 ngày làm việc
+[13/11/2026 09:44] Linh: mà khách hứa gửi thông số máy in từ hôm họp 05/11, tận 12/11 mới gửi
+[13/11/2026 10:05] Huy: chắc 2 ngày là xong thôi mà
+[13/11/2026 10:07] Khoa: lấy theo Linh, 3 ngày làm việc
+[13/11/2026 16:30] Phong: vậy là xong 3/5 chức năng nhỉ, còn báo cáo tồn kho với in tem
+[14/11/2026 11:20] Huy: báo cáo tồn kho e làm xong từ hôm qua mà quên merge 😅 thứ 2 e merge
+[15/11/2026 21:03] Khoa: staging sập do ổ đĩa đầy (log ko xoay vòng), a dọn xong, bật lại rồi, ko ảnh hưởng lịch
+[16/11/2026 08:45] Huy: merge báo cáo tồn kho lên staging rồi nha
+[16/11/2026 09:02] Huy: hay mình dời UAT sang 20/11 cho đủ 5 cái?
+[16/11/2026 09:10] Khoa: ko tự dời được, để khách chọn
+[16/11/2026 09:18] Khoa: @Phong viết mail cho chị Thu, cc a, đưa 2 phương án:
+A. vẫn UAT 18/11 với 4 chức năng đã xong, in tem mã vạch UAT riêng sau, 3 ngày làm việc kể từ khi bên mình nhận được máy in, vẫn tính trong nghiệm thu đợt 1
+B. dời UAT cả 5 chức năng sang thứ Tư 25/11. B thì thời gian sửa lỗi sau UAT ngắn, dễ trễ mốc nghiệm thu đợt 1 (hợp đồng ghi trước 30/11)
+cần chị Thu chọn trước 17h mai (thứ Ba 17/11) để a kịp báo tester
+[16/11/2026 09:20] Khoa: phương án nào cũng phải mượn khách 1 con ZD230 + 1 cuộn tem đúng loại kho đang dùng, chậm nhất thứ Năm 19/11, vì Linh cần 3 ngày làm việc. gửi về văn phòng, Linh nhận
+[16/11/2026 09:22] Linh: tem 50x25 nhé
+[16/11/2026 09:25] Phong: biên bản họp 05/11 ghi tem 50x30mm mà
+[16/11/2026 09:26] Linh: à đúng rồi 50x30, e nhớ nhầm
+[16/11/2026 09:31] Khoa: xin luôn danh sách thủ kho (họ tên + email) để tạo tk UAT, cần trước 17h mai luôn
+[16/11/2026 09:33] Huy: 6 người đúng ko
+[16/11/2026 09:35] Phong: biên bản ghi 8 thủ kho
+[16/11/2026 09:36] Khoa: 8. link với tk UAT gửi riêng sau khi khách chọn, đừng để link staging trong mail
+[16/11/2026 09:40] Khoa: mail nói thẳng là bên mình chưa có máy để thử, đừng nói kiểu đổ cho khách chậm gửi
+[16/11/2026 09:41] Linh: chị Thu hay đọc mail trên điện thoại, viết ngắn thôi a

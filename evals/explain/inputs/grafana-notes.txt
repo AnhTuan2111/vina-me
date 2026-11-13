@@ -1,0 +1,7 @@
+ghi lại từ dashboard JVM (Micrometer) với dashboard pod, quanh lần restart 14:52 ngày 10/11
+grafana lấy mẫu 30 giây một lần
+
+- heap đã dùng (jvm_memory_used_bytes, area=heap): đỉnh 612 MiB lúc 14:40, lúc 14:51 còn 548 MiB
+- bộ nhớ container (container_memory_working_set_bytes): 14:30 là 870 MiB, 14:51:30 là 1019 MiB, mẫu sau thì pod đã restart
+- kubectl logs --previous: dòng cuối là log request bình thường, không có dòng OutOfMemoryError nào
+- 2 ngày nay restart 4 lần, lần nào describe cũng ghi OOMKilled

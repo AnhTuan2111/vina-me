@@ -1,0 +1,8 @@
+PS C:\Users\hoang.nm\Documents\TanMy\release> node C:\Users\hoang.nm\.claude\skills\vina-me\scripts\lint.mjs .\release-note-v3.4.md
+.\release-note-v3.4.md
+  6 đoạn, 16 câu · 15.3 tiếng mỗi câu · 2.7 câu mỗi đoạn · 37.5% là câu hỏi
+  - gạch dài hoặc gạch vừa: 1 chỗ
+  - chữ in hoa nhấn mạnh: QLĐKHS
+  - 6 đoạn liền nhau cùng mở bằng câu hỏi
+
+3 chỗ cần xem lại. Xong bước này vẫn phải tự đọc hai lượt: người mới, và người bắt văn máy.

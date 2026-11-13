@@ -1,0 +1,41 @@
+ticket_id,date,time,category,caller_phone,note
+HL-20811,10/11/2026,08:16,Không đặt được lịch,09xx xxx 100,bấm Xác nhận báo lỗi E503
+HL-20812,10/11/2026,08:19,Không đặt được lịch,09xx xxx 107,không tải được khung giờ trống
+HL-20813,10/11/2026,08:21,Không đặt được lịch,09xx xxx 114,"app báo không thể đặt lịch, thử 3 lần"
+HL-20814,10/11/2026,08:24,Không đặt được lịch,09xx xxx 121,đặt cho người nhà không được
+HL-20815,10/11/2026,08:26,Không đặt được lịch,09xx xxx 128,web cũng không đặt được
+HL-20816,10/11/2026,08:29,Không đặt được lịch,09xx xxx 135,bấm Xác nhận báo lỗi E503
+HL-20817,10/11/2026,08:33,Không đặt được lịch,09xx xxx 142,không tải được khung giờ trống
+HL-20818,10/11/2026,08:35,Không đặt được lịch,09xx xxx 149,"app báo không thể đặt lịch, thử 3 lần"
+HL-20819,10/11/2026,08:38,Không đặt được lịch,09xx xxx 156,đặt cho người nhà không được
+HL-20820,10/11/2026,08:40,Không đặt được lịch,09xx xxx 163,web cũng không đặt được
+HL-20821,10/11/2026,08:44,Không đặt được lịch,09xx xxx 170,bấm Xác nhận báo lỗi E503
+HL-20822,10/11/2026,08:47,Không đặt được lịch,09xx xxx 177,không tải được khung giờ trống
+HL-20823,10/11/2026,08:49,Không đặt được lịch,09xx xxx 184,"app báo không thể đặt lịch, thử 3 lần"
+HL-20824,10/11/2026,08:53,Không đặt được lịch,09xx xxx 191,đặt cho người nhà không được
+HL-20825,10/11/2026,08:57,Quên mật khẩu,09xx xxx 198,không nhận được mã OTP qua SMS
+HL-20826,10/11/2026,08:58,Không đặt được lịch,09xx xxx 205,web cũng không đặt được
+HL-20827,10/11/2026,09:02,Không đặt được lịch,09xx xxx 212,bấm Xác nhận báo lỗi E503
+HL-20828,10/11/2026,09:04,Không đặt được lịch,09xx xxx 219,không tải được khung giờ trống
+HL-20829,10/11/2026,09:07,Không đặt được lịch,09xx xxx 226,"app báo không thể đặt lịch, thử 3 lần"
+HL-20830,10/11/2026,09:09,Không đặt được lịch,09xx xxx 233,đặt cho người nhà không được
+HL-20831,10/11/2026,09:12,Không đặt được lịch,09xx xxx 240,web cũng không đặt được
+HL-20832,10/11/2026,09:15,Không đặt được lịch,09xx xxx 247,bấm Xác nhận báo lỗi E503
+HL-20833,10/11/2026,09:16,Không đặt được lịch,09xx xxx 254,không tải được khung giờ trống
+HL-20834,10/11/2026,09:18,Không đặt được lịch,09xx xxx 261,"app báo không thể đặt lịch, thử 3 lần"
+HL-20835,10/11/2026,09:21,Không đặt được lịch,09xx xxx 268,đặt cho người nhà không được
+HL-20836,10/11/2026,09:23,Không đặt được lịch,09xx xxx 275,web cũng không đặt được
+HL-20837,10/11/2026,09:25,Không đặt được lịch,09xx xxx 282,bấm Xác nhận báo lỗi E503
+HL-20838,10/11/2026,09:26,Quên mật khẩu,09xx xxx 289,hỏi cách đổi mật khẩu
+HL-20839,10/11/2026,09:27,Không đặt được lịch,09xx xxx 296,không tải được khung giờ trống
+HL-20840,10/11/2026,09:29,Không đặt được lịch,09xx xxx 303,"app báo không thể đặt lịch, thử 3 lần"
+HL-20841,10/11/2026,09:31,Không đặt được lịch,09xx xxx 310,đặt cho người nhà không được
+HL-20842,10/11/2026,09:33,Không đặt được lịch,09xx xxx 317,web cũng không đặt được
+HL-20843,10/11/2026,09:35,Không đặt được lịch,09xx xxx 324,bấm Xác nhận báo lỗi E503
+HL-20844,10/11/2026,09:38,Không đặt được lịch,09xx xxx 331,không tải được khung giờ trống
+HL-20845,10/11/2026,09:41,Không đặt được lịch,09xx xxx 338,"app báo không thể đặt lịch, thử 3 lần"
+HL-20846,10/11/2026,09:43,Không đặt được lịch,09xx xxx 345,đặt cho người nhà không được
+HL-20847,10/11/2026,09:45,Không đặt được lịch,09xx xxx 352,web cũng không đặt được
+HL-20848,10/11/2026,10:05,Không đặt được lịch,09xx xxx 359,"gọi phản ánh lúc sáng không đặt được, giờ đặt được rồi"
+HL-20849,10/11/2026,10:21,Không đặt được lịch,09xx xxx 366,"sáng không đặt được, hỏi có bị mất lịch đã đặt hôm trước không"
+HL-20850,10/11/2026,11:02,Không đặt được lịch,09xx xxx 373,"phản ánh lỗi sáng nay, đã đặt lại được"

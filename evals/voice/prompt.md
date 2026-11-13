@@ -1,0 +1,3 @@
+mình là Hạnh, chủ tiệm cà phê rang Nhà Rang Sương. trong thư mục evals/voice/inputs/ có mấy file: zalo-team-group.txt là nhóm zalo của tiệm, zalo-friend-hoa.txt là chat với bạn mình, page-inbox.txt là tin trả lời khách trên fanpage, blog-2025.md là bài blog cũ của tiệm. đọc hết rồi rút ra giọng của mình, lưu thành 1 file hồ sơ giọng để lần sau còn dùng lại
+
+xong viết giúp mình bài đăng fanpage xin lỗi khách vụ giao trễ đợt cầu đất tuần rồi, số liệu với lý do có trong tin nhắn nhóm hết. viết sao cho khách đọc thấy đúng là mình viết chứ đừng ra cái kiểu văn mẫu xin lỗi trên mạng. mã giảm giá cho đơn sau thì mình chưa chốt bao nhiêu %. khách đọc trên điện thoại nên đừng dài quá

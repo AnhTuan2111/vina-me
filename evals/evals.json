@@ -78,6 +78,129 @@
       "prompt": "viết mục \"Mức độ đáp ứng các yêu cầu về bảo hành\" cho hồ sơ dự thầu. tiêu chí của hồ sơ mời thầu: thời hạn bảo hành theo nhà sản xuất nhưng tối thiểu 12 tháng; đổi trả miễn phí hàng lỗi do nhà sản xuất hoặc nhà thầu; có kế hoạch bảo hành, bảo trì, đáp ứng trong tối đa 48 giờ kể từ khi nhận yêu cầu; cam kết thu hồi hàng không bảo đảm chất lượng. hàng chào: máy chủ hãng bảo hành 36 tháng, máy tính bảng hãng bảo hành 12 tháng. hotline và địa chỉ công ty mình chưa có.",
       "expected_output": "Mỗi ý trong tiêu chí có một mục con hoặc một dòng bảng riêng, tên gần đúng chữ hồ sơ mời thầu; thời hạn bảo hành ghi theo từng hàng (36 tháng, 12 tháng), không thấp hơn 12 tháng; thời gian đáp ứng không quá 48 giờ; có cam kết đổi trả và thu hồi; không xưng hô, chủ ngữ là Nhà thầu; hotline và địa chỉ để chỗ đánh dấu cần xác nhận chứ không bịa; không thêm con số cam kết mà đề không cho (độ khả dụng, RTO); không gạch dài.",
       "files": []
+    },
+    {
+      "id": 14,
+      "prompt": "mình mới chuyển sang làm devops, trước giờ chỉ code java spring boot thôi chứ k8s thì gần như chưa biết gì. app order-service trên cụm dev cứ vài tiếng lại restart 1 lần, describe pod thì thấy OOMKilled exit code 137. mình đã set -Xmx1g bằng đúng limit 1Gi rồi mà vẫn bị, nên mình đoán chắc app bị memory leak heap đầy nên chết\n\noutput describe với mấy số mình ghi lại trên grafana để ở đây:\nevals/explain/inputs/describe-order-service.txt\nevals/explain/inputs/grafana-notes.txt\n\ngiải thích giúp mình vì sao nó bị kill, viết thành 1 file ghi chú md tầm 400-500 chữ để mình lưu vào sổ đọc lại sau. có ví von đời thường thì càng dễ nhớ. còn nên chỉnh gì thì nói qua thôi chưa cần chi tiết",
+      "expected_output": "Đề nhóm explain: vì sao app Java bị OOMKilled dù đã đặt -Xmx bằng limit. Đáp án dữ kiện và bẫy ở evals/explain/scenario.md; chấm theo evals/explain/rubric.md, thang 100 điểm, đạt từ 95.",
+      "files": [
+        "evals/explain/inputs/describe-order-service.txt",
+        "evals/explain/inputs/grafana-notes.txt"
+      ]
+    },
+    {
+      "id": 15,
+      "prompt": "sửa giúp mình đoạn postmortem này cho đỡ giọng AI với, đọc cứ sao sao ấy. để đăng lên wiki của team nên giọng trung tính thôi, số liệu giữ nguyên nha\n\n**Tổng quan sự cố order-api ngày 03/11/2026**\n\nTrong bối cảnh hệ thống ngày càng phức tạp như hiện nay, sự cố ngày 03/11/2026 không chỉ là một lỗi kỹ thuật đơn thuần mà còn là bài học quý giá cho toàn đội. Từ 14:05 đến 14:47, dịch vụ **order-api** đã trả về lỗi 503 cho khoảng 18% request thanh toán — một con số đáng báo động. Đồng thời, độ trễ p95 tăng vọt từ 380ms lên ~4.2s, và 3 trong 6 Pod bị restart liên tục do liveness probe fail. Liveness probe: cơ chế Kubernetes gọi định kỳ để biết container còn sống hay không, nếu fail thì Kubernetes sẽ restart container đó.\n\nVới bản 3.8.0 được deploy lúc 13:58 đã thay đổi kích thước connection pool (HikariCP `maximumPoolSize`) từ 50 -> 20. Ban đầu, team nghi ngờ database bị quá tải. Tuy nhiên, CPU của database lúc đó chỉ ở mức 35%, vì vậy nguyên nhân KHÔNG phải là database quá tải, mà là pool kết nối quá nhỏ. Lúc 14:20, Minh mở dashboard và thấy số kết nối đang dùng trong pool luôn ở mức 20/20. Nhiều khả năng bể kết nối 20 không đủ khi lượng request lúc cao điểm vào khoảng 1.200 request/phút, tuy nhiên điều này chưa được xác nhận bằng load test. Phải chăng chúng ta đã quá chủ quan khi thay đổi cấu hình?\n\nTeam Platform đã tiến hành rollback lúc 14:41 thông qua việc chạy lệnh `kubectl rollout undo deployment/order-api -n shop`. Bộ phận CSKH chuyển lại lời một khách: \"Thanh toán cứ xoay mãi rồi báo lỗi — tôi thử ba lần đều vậy.\" Sau khi rollback lúc 14:44, tỉ lệ lỗi giảm dần và trở về 0 lúc 14:47. Theo đánh giá sơ bộ, sự cố đã gây ảnh hưởng không nhỏ tới doanh thu. Điều này cho thấy tầm quan trọng của việc kiểm soát cấu hình một cách chặt chẽ.\n\nĐể không để lặp lại thiếu xót này, chúng ta cần hành động một cách nhanh chóng, quyết liệt và hiệu quả:\n- **Cấu hình:** Đưa Connection Pool về 50 trong bản 3.8.1 (Minh, hạn 07/11).\n- **Giám sát:** Thêm cảnh báo khi số luồng chờ kết nối > 10 trong 2 phút.\n- **Kiểm thử:** Chạy load test để xác nhận nguyên nhân (chưa có người nhận).\n\nTóm lại, hãy luôn nhớ rằng: một thay đổi nhỏ trong cấu hình có thể dẫn tới hậu quả lớn.",
+      "expected_output": "Đề nhóm rewrite: sửa đoạn postmortem dán vào chat. Đáp án dữ kiện và bẫy ở evals/rewrite/scenario.md; chấm theo evals/rewrite/rubric.md, thang 100 điểm, đạt từ 95.",
+      "files": []
+    },
+    {
+      "id": 16,
+      "prompt": "soát giúp mình file evals/review/inputs/restore-guide.md, đây là hướng dẫn khôi phục db staging mình viết cho mấy bạn dev mới vào team. chỉ ra chỗ nào chưa ổn thôi, đừng sửa vào file nhé vì mình phải gửi anh lead duyệt bản gốc trước. chỗ nào sai nội dung hay làm người ta làm sai thì nói trước, mấy lỗi câu chữ để sau",
+      "expected_output": "Đề nhóm review: soát hướng dẫn khôi phục database mà không sửa. Đáp án dữ kiện và bẫy ở evals/review/scenario.md; chấm theo evals/review/rubric.md, thang 100 điểm, đạt từ 95.",
+      "files": [
+        "evals/review/inputs/restore-guide.md"
+      ]
+    },
+    {
+      "id": 17,
+      "prompt": "đọc giúp mình đoạn chat nhóm ở evals/message/inputs/thread.txt (mình là Phong trong đó). viết cái mail gửi chị Thu bên khách theo đúng cái anh Khoa chốt, cc anh Khoa, có tiêu đề luôn. mình vẫn xưng em với chị Thu như mọi khi. xong viết thêm 1 tin zalo ngắn gửi anh Khoa nhờ anh xem mail trước 15h hôm nay rồi mình gửi, báo luôn tình hình 5 chức năng cho anh. hôm nay thứ 2 16/11",
+      "expected_output": "Đề nhóm message: mail gửi khách và tin Zalo gửi trưởng nhóm từ một đoạn chat lộn xộn. Đáp án dữ kiện và bẫy ở evals/message/scenario.md; chấm theo evals/message/rubric.md, thang 100 điểm, đạt từ 95.",
+      "files": [
+        "evals/message/inputs/thread.txt"
+      ]
+    },
+    {
+      "id": 18,
+      "prompt": "mai mình phải gửi khách bản 1.0 tài liệu cấu hình môi trường dự án aquabill bên cấp nước vân khê. ghi chú nội bộ của team ở evals/client-docs/inputs/internal-notes.md, email anh Đức bên khách góp ý bản 0.9 ở evals/client-docs/inputs/client-email.md, còn mẫu TL-03 bên họ bắt theo ở evals/client-docs/inputs/client-template.md\n\nlàm giúp mình file word đúng mẫu đó, lưu vào thư mục đang làm việc. sơ đồ triển khai mình tự vẽ bằng drawio nên trong file cứ chừa chỗ, viết sẵn chú thích dưới hình là được. còn chữ trên sơ đồ (tên từng khối, nhãn từng mũi tên) thì gửi mình trong chat để mình vẽ theo",
+      "expected_output": "Đề nhóm client-docs: tài liệu cấu hình môi trường gửi khách, kèm chữ cho sơ đồ. Đáp án dữ kiện và bẫy ở evals/client-docs/scenario.md; chấm theo evals/client-docs/rubric.md, thang 100 điểm, đạt từ 95.",
+      "files": [
+        "evals/client-docs/inputs/client-email.md",
+        "evals/client-docs/inputs/client-template.md",
+        "evals/client-docs/inputs/internal-notes.md"
+      ]
+    },
+    {
+      "id": 19,
+      "prompt": "soạn giúp anh cái tờ trình gửi sở nội vụ xin phê duyệt dự toán số hóa tài liệu lưu trữ năm 2027, đúng thể thức nghị định 30, xuất file word để anh trình giám đốc ký\n\nđơn vị: Trung tâm Lưu trữ lịch sử tỉnh Hòa Lâm, cơ quan chủ quản là sở nội vụ tỉnh hòa lâm. viết tắt trung tâm là TTLT, phòng soạn là phòng nghiệp vụ lưu trữ (NVLT)\nsố 7, đề ngày 6/1/2027, địa danh Hòa Lâm\nngười ký: phó giám đốc ths Lê Thị Thu Hằng ký thay giám đốc\ngửi sở nội vụ, đồng gửi sở tài chính để biết\n\ncăn cứ:\n- qđ 2318/QĐ-UBND ngày 9/12/2026 của ubnd tỉnh về giao dự toán thu, chi ngân sách nhà nước năm 2027\n- kế hoạch 145/KH-SNV ngày 15/10/2026 của sở nội vụ, cái kế hoạch về số hóa gì đó anh không nhớ tên đầy đủ\n\ntình hình: kho đang giữ 2,150 mét giá tài liệu, mới số hóa được 18.4%. biên bản kiểm tra kho ngày 26/8/2026 ghi khoảng 30% tài liệu trước năm 1995 bị ố vàng, giòn, mà mỗi lần độc giả xin đọc lại phải lấy bản gốc ra\nnăm 2027 làm 120 mét giá phông UBND tỉnh giai đoạn 1976-1995: chỉnh lý, scan khoảng 360 nghìn trang, biên mục 24 nghìn hồ sơ, thuê chỗ lưu trữ đám mây 12 tháng, cuối năm nghiệm thu. làm xong thì tỷ lệ số hóa lên 24% tức là tăng 5.6%\ntiến độ: quý 1 chỉnh lý, quý 2 với quý 3 scan và biên mục, thuê lưu trữ từ tháng 1, nghiệm thu tháng 11\ndự toán chi tiết ở evals/official/inputs/budget.csv, tổng 1 tỷ 850. ubnd tỉnh đã giao 1.2 tỷ cho việc này trong qđ 2318, phần thiếu thì xin sở trình ubnd bổ sung\nđơn vị làm thì chọn sau theo luật đấu thầu, chưa có\n\nphần sự cần thiết bạn thực tập viết nháp rồi ở evals/official/inputs/intern-draft.txt, lấy ý trong đó, văn thì sửa lại chứ đọc sến quá. số liệu trong đó em ấy chưa kiểm đâu, chỉ dùng số anh ghi ở đây\nkèm phụ lục dự toán với phụ lục tiến độ",
+      "expected_output": "Đề nhóm official: tờ trình xin phê duyệt dự toán số hóa tài liệu lưu trữ. Đáp án dữ kiện và bẫy ở evals/official/scenario.md; chấm theo evals/official/rubric.md, thang 100 điểm, đạt từ 95.",
+      "files": [
+        "evals/official/inputs/budget.csv",
+        "evals/official/inputs/intern-draft.txt"
+      ]
+    },
+    {
+      "id": 20,
+      "prompt": "rà giúp mình web phòng khám Hòa An bản staging, mình lưu lại lúc 9h sáng nay ở evals/report/inputs/site (mở index.html là xem được) so với mấy tài liệu khách gửi trong evals/report/inputs/source, có cả bảng theo dõi tracking-sheet.csv bên BA đang dùng. viết báo cáo rà soát gửi nhóm BA, chỉ báo cáo thôi ko xưng hô gì. chỗ nào web ghi sai so với tài liệu hay web ghi mà tài liệu ko có thì nêu ra, còn thiếu gì thì liệt kê luôn để BA đi hỏi khách. xuất ra file word giúp mình",
+      "expected_output": "Đề nhóm report: rà soát web phòng khám Hòa An so với tài liệu khách gửi. Đáp án dữ kiện và bẫy ở evals/report/scenario.md; chấm theo evals/report/rubric.md, thang 100 điểm, đạt từ 95.",
+      "files": [
+        "evals/report/inputs/site/contact.html",
+        "evals/report/inputs/site/doctors.html",
+        "evals/report/inputs/site/index.html",
+        "evals/report/inputs/site/reveal.js",
+        "evals/report/inputs/site/services.html",
+        "evals/report/inputs/site/style.css",
+        "evals/report/inputs/source/doctors-full-list.md",
+        "evals/report/inputs/source/facade-photo.png",
+        "evals/report/inputs/source/operating-license.txt",
+        "evals/report/inputs/source/price-list-2025-03.csv",
+        "evals/report/inputs/source/price-list-2026-10.csv",
+        "evals/report/inputs/source/tracking-sheet.csv"
+      ]
+    },
+    {
+      "id": 21,
+      "prompt": "viết giúp mình cái báo cáo sự cố app đặt lịch MediBook sáng thứ ba 10/11, gửi ban giám đốc với cả team dự án nên không cần xưng hô gì. tài liệu mình để hết trong evals/word-report/inputs/ : ghi chú trực ca của Quân (oncall-notes.md), log lỗi đầu với cuối (api-errors-excerpt.log), lịch sử cảnh báo (alert-log.txt), diff config (config-diff.txt), số 5xx theo từng 5 phút (grafana-5xx.csv với ảnh grafana-5xx.png), danh sách cuộc gọi hotline hôm đó (hotline-tickets.csv), ảnh chụp app lúc lỗi khách gửi qua zalo (app-error.png). cần rõ lỗi từ mấy giờ tới mấy giờ, ảnh hưởng tới đâu, vì sao, đã xử lý thế nào, việc tiếp theo ai làm hạn khi nào. xuất ra file word giúp mình, font times new roman, có số trang ở chân trang, chèn cái biểu đồ với ảnh chụp app vào",
+      "expected_output": "Đề nhóm word-report: báo cáo sự cố MediBook xuất Word. Đáp án dữ kiện và bẫy ở evals/word-report/scenario.md; chấm theo evals/word-report/rubric.md, thang 100 điểm, đạt từ 95.",
+      "files": [
+        "evals/word-report/inputs/alert-log.txt",
+        "evals/word-report/inputs/api-errors-excerpt.log",
+        "evals/word-report/inputs/app-error.png",
+        "evals/word-report/inputs/config-diff.txt",
+        "evals/word-report/inputs/grafana-5xx.csv",
+        "evals/word-report/inputs/grafana-5xx.png",
+        "evals/word-report/inputs/hotline-tickets.csv",
+        "evals/word-report/inputs/oncall-notes.md"
+      ]
+    },
+    {
+      "id": 22,
+      "prompt": "mình đang kèm 3 bạn thực tập mới vào nhóm, nền java spring boot, linux thì mới học được 3 bài. tuần này tới bài 4 về cổng, lấy luôn vụ lỗi Port 8080 was already in use mà bạn Minh dính hôm thứ 5 tuần trước. viết giúp mình bài giảng ngắn thôi khoảng 1500-2000 chữ, có phần thực hành để các bạn tự làm trên wsl ubuntu như máy các bạn ấy, với 4 câu hỏi kiểm tra kiểu bắt suy luận, có đáp án để mình chấm, đáp án để riêng ở cuối. ghi ra file lesson-04-port.md\n\ntài liệu mình để trong inputs/:\n- inputs/syllabus.md: lộ trình, bài nào dạy gì rồi, bài sau dạy gì\n- inputs/lab-output.txt: output thật Minh chạy hôm đó\n- inputs/session-notes.md: ghi chú buổi hôm đó, mấy câu bạn ấy hỏi với chỗ hiểu sai\n\nbài này sẽ đẩy lên repo github public của nhóm nên ai đọc cũng được. đừng lan sang firewall với docker nhé, mấy cái đó bài sau mới tới",
+      "expected_output": "Đề nhóm teaching: bài giảng về cổng và lỗi \"Port 8080 was already in use\". Đáp án dữ kiện và bẫy ở evals/teaching/scenario.md; chấm theo evals/teaching/rubric.md, thang 100 điểm, đạt từ 95.",
+      "files": [
+        "evals/teaching/inputs/lab-output.txt",
+        "evals/teaching/inputs/session-notes.md",
+        "evals/teaching/inputs/syllabus.md"
+      ]
+    },
+    {
+      "id": 23,
+      "prompt": "mình là Hạnh, chủ tiệm cà phê rang Nhà Rang Sương. trong thư mục evals/voice/inputs/ có mấy file: zalo-team-group.txt là nhóm zalo của tiệm, zalo-friend-hoa.txt là chat với bạn mình, page-inbox.txt là tin trả lời khách trên fanpage, blog-2025.md là bài blog cũ của tiệm. đọc hết rồi rút ra giọng của mình, lưu thành 1 file hồ sơ giọng để lần sau còn dùng lại\n\nxong viết giúp mình bài đăng fanpage xin lỗi khách vụ giao trễ đợt cầu đất tuần rồi, số liệu với lý do có trong tin nhắn nhóm hết. viết sao cho khách đọc thấy đúng là mình viết chứ đừng ra cái kiểu văn mẫu xin lỗi trên mạng. mã giảm giá cho đơn sau thì mình chưa chốt bao nhiêu %. khách đọc trên điện thoại nên đừng dài quá",
+      "expected_output": "Đề nhóm voice: viết theo giọng chủ tiệm từ mẫu tin nhắn. Đáp án dữ kiện và bẫy ở evals/voice/scenario.md; chấm theo evals/voice/rubric.md, thang 100 điểm, đạt từ 95.",
+      "files": [
+        "evals/voice/inputs/blog-2025.md",
+        "evals/voice/inputs/page-inbox.txt",
+        "evals/voice/inputs/zalo-friend-hoa.txt",
+        "evals/voice/inputs/zalo-team-group.txt"
+      ]
+    },
+    {
+      "id": 24,
+      "prompt": "trong agent-memory của mình có cái file .pending-learn, hôm cài mình đồng ý cho học từ mấy phiên cũ mà chưa làm, giờ làm luôn đi. biết là đọc lịch sử thì nội dung bị gửi lên bên model rồi, ok, nhưng bỏ hết phiên của dự án hung-thinh-erp ra cho mình, bên đó có ký NDA. à nhớ luôn giúp 1 cái: báo cáo gửi sếp thì câu đầu tiên phải là kết luận, anh Quân sếp mình chỉ đọc 2 dòng đầu thôi. xong thì soát cả bộ nhớ xem chỗ nào trùng hay sai thì dọn giúp mình\n\nhome của mình trên máy này là evals/memory/work/home, chạy lệnh gì cũng set HOME với USERPROFILE về đó, bỏ biến CLAUDE_CONFIG_DIR với CODEX_HOME đi không nó đọc sang profile khác",
+      "expected_output": "Đề nhóm memory: học từ phiên cũ, ghi một điều, dọn bộ nhớ. Đáp án dữ kiện và bẫy ở evals/memory/scenario.md; chấm theo evals/memory/rubric.md, thang 100 điểm, đạt từ 95.",
+      "files": [
+        "evals/memory/inputs/build-home.mjs"
+      ]
+    },
+    {
+      "id": 25,
+      "prompt": "hôm qua mình nhờ claude viết cái release note bản 3.4.0 gửi bên trung tâm hành chính công theo skill vina-me, file ở evals/feedback/inputs/release-note-v3.4.md. đoạn chat hôm qua mình chép ra evals/feedback/inputs/chat-yesterday.txt, còn output lint mình chạy ở evals/feedback/inputs/lint-output.txt\n\nsáng nay đọc lại thấy ngứa thật sự. gửi khách mà đoạn nào cũng tự hỏi tự trả lời như đi dạy, lại còn xưng mình với bạn, hôm qua chê 1 lần rồi nó sửa xong vẫn y nguyên. cái lint thì bắt lỗi chữ in hoa nhấn mạnh ở QLĐKHS, tên phân hệ người ta đặt thế rồi thì viết thường kiểu gì, còn báo có gạch dài mà mình đọc đi đọc lại có thấy đâu, chắc lint lỗi. ngày cũng sai nữa, cài tối thứ 4 18/11 thì sáng thứ 5 19/11 mới dùng được chứ, nó ghi sáng thứ 4. mà hôm qua chạy chậm kinh khủng\n\nsửa lại giúp mình bản gửi khách, ghi ra file mới release-note-v3.4-fixed.md cạnh file cũ để mình so, chiều nay mình gửi. còn chỗ nào lỗi do skill thì soạn sẵn bản nháp góp ý lên repo vina-me cho tác giả, chưa gửi đâu nhé, để mình đọc đã",
+      "expected_output": "Đề nhóm feedback: sửa thông báo phát hành gửi khách rồi soạn nháp góp ý cho skill. Đáp án dữ kiện và bẫy ở evals/feedback/scenario.md; chấm theo evals/feedback/rubric.md, thang 100 điểm, đạt từ 95.",
+      "files": [
+        "evals/feedback/inputs/chat-yesterday.txt",
+        "evals/feedback/inputs/lint-output.txt",
+        "evals/feedback/inputs/release-note-v3.4.md"
+      ]
     }
   ]
 }

@@ -1,0 +1,25 @@
+bucket_start,service,status_5xx_count
+2026-11-10 08:00,medibook-api,0
+2026-11-10 08:05,medibook-api,0
+2026-11-10 08:10,medibook-api,23
+2026-11-10 08:15,medibook-api,61
+2026-11-10 08:20,medibook-api,74
+2026-11-10 08:25,medibook-api,82
+2026-11-10 08:30,medibook-api,88
+2026-11-10 08:35,medibook-api,91
+2026-11-10 08:40,medibook-api,86
+2026-11-10 08:45,medibook-api,90
+2026-11-10 08:50,medibook-api,57
+2026-11-10 08:55,medibook-api,4
+2026-11-10 09:00,medibook-api,38
+2026-11-10 09:05,medibook-api,79
+2026-11-10 09:10,medibook-api,85
+2026-11-10 09:15,medibook-api,88
+2026-11-10 09:20,medibook-api,84
+2026-11-10 09:25,medibook-api,87
+2026-11-10 09:30,medibook-api,81
+2026-11-10 09:35,medibook-api,62
+2026-11-10 09:40,medibook-api,15
+2026-11-10 09:45,medibook-api,9
+2026-11-10 09:50,medibook-api,0
+2026-11-10 09:55,medibook-api,0
