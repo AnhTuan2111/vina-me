@@ -3,6 +3,27 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.16.0 (13/11/2026)
+
+- Hồ sơ dự thầu dựng đủ bộ tệp kỹ thuật: bảng đáp ứng dẫn đúng trang tài liệu hãng, tài liệu hãng tự tìm, tải và tô vàng đúng
+  chữ được dẫn (`fetch-doc.mjs`, `pdf-highlight.mjs`), bản dịch, thuyết minh, tài liệu phần mềm, tiến độ, bản cam kết, báo cáo
+  cho người duyệt; `package-check.mjs` soát cả bộ. Ba lần thử liền trên một gói thầu thật được người chấm độc lập cho 97, 96, 98
+  trên 100.
+- Các mảng viết (lời giải thích, sửa văn, soát văn, email và tin nhắn, báo cáo rà soát, văn bản hành chính, chữ trên sơ đồ, báo
+  cáo xuất Word, viết theo giọng, góp ý về skill) được chấm lại theo thang 100 và sửa luật, ví dụ, script ở những chỗ người chấm
+  trừ điểm. `lint.mjs` bắt thêm mẫu câu văn máy, `report-docx.mjs` ghi kèm chữ để soát.
+- Thêm `references/storytelling.md`: dẫn dắt người đọc đi một mạch, rút từ ba audio kể chuyện tiếng Việt.
+- Bài giảng viết theo lối dẫn dắt của `storytelling.md`: trước khi viết thì kê mọi chữ người học sẽ gặp (đã dạy, dạy ở đây, tránh),
+  mở bằng câu hỏi của người học, mỗi câu trả lời mở ra câu hỏi sau. Luật chi tiết chuyển sang `references/teaching-checklist.md`
+  để soát. Bảy lần thử bài giảng gần nhất được 89 tới 95 trên 100; bản vá sau sẽ đưa lên mức 95 ổn định.
+- Gọi thẳng một việc bằng `/vina-me write|edit|review|word|bid|memory|secret|feedback`. `SKILL.md` gọn lại, chi tiết cách trả kết
+  quả từng việc chuyển sang `references/core-rules.md`.
+- `setup.mjs` in cách dùng khi gặp `--help`, báo lỗi khi gặp cờ lạ thay vì chạy cài đặt, và không tạo task Task Scheduler thật
+  khi chạy với `--home` giả.
+- Sổ góp ý: trong lúc làm, gặp chỗ skill hướng dẫn sai hay script lỗi thì agent tự ghi một dòng vào sổ trên máy, không đợi
+  người dùng chê; cuối việc hỏi một lần có gửi thành góp ý không. Không có tài khoản GitHub thì gửi tệp sổ cho người cài skill.
+- Mô tả skill nói rõ việc làm hồ sơ dự thầu; chữ "thuận mồm" đổi thành "lưu loát".
+
 ## 0.15.0 (10/11/2026)
 
 - Hồ sơ dự thầu soát kỹ hơn, theo các lỗi người chấm đã trừ điểm ở những lần thử: `bid-check.mjs` bắt lịch nhắc lại ngoài phần

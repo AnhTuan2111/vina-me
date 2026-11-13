@@ -1,10 +1,12 @@
-<img src="assets/banner.svg" alt="vina-me: viết tiếng Việt cho thuận mồm" width="100%">
+<img src="assets/banner.svg" alt="vina-me: viết tiếng Việt cho lưu loát" width="100%">
 
 [![test](https://github.com/AnhTuan2111/vina-me/actions/workflows/test.yml/badge.svg)](https://github.com/AnhTuan2111/vina-me/actions/workflows/test.yml)
 
-vina-me giúp AI agent viết và sửa văn tiếng Việt cho dễ đọc, không có mùi văn máy: bài giảng, tài liệu, báo cáo gửi sếp,
-văn bản hành chính, hồ sơ dự thầu, email, tệp Word. Cài một lần là có thêm bộ nhớ dùng chung cho Claude Code và Codex,
-nên điều đã dặn agent một lần thì không phải dặn lại.
+Bạn nhờ AI viết một đoạn tiếng Việt, đọc lên là nhận ra ngay văn AI slop: câu nào cũng ngắn cũn như gạch đầu dòng, chữ thì
+to tát mà chẳng nói được gì cụ thể, hết đoạn lại chốt thêm một câu tổng kết. vina-me dạy agent viết khác đi, để câu sau nối
+vào câu trước như một người thật đang kể, dù là bài giảng, báo cáo gửi sếp, văn bản hành chính, email hay tệp Word. Cùng cách
+viết ấy, cộng thêm các script dựng tệp Word và soát lỗi, agent còn làm được phần kỹ thuật của hồ sơ dự thầu. Cài một lần là
+có thêm bộ nhớ dùng chung cho Claude Code và Codex, nên điều đã dặn agent một lần thì không phải dặn lại.
 
 ## Cài
 
@@ -28,31 +30,65 @@ Trả lời xong là có:
 
 Cài trên máy thứ hai bằng đúng hai lệnh trên: script thấy repo bộ nhớ đã có thì kéo về, không hỏi lại.
 
+Không quen dòng lệnh thì nhờ Claude Code cài giúp. Mở một phiên Claude Code ở thư mục nào cũng được rồi gõ:
+
+> Cài giúp mình vina-me từ https://github.com/AnhTuan2111/vina-me. Clone repo về rồi làm theo mục "Agent cài thay người dùng" trong references/agent-memory.md.
+
+Claude tự kiểm Node, git, tải vina-me về, hỏi bạn tám câu ngay trong chat rồi cài. Có một chỗ bạn phải tự làm: Claude đưa
+một mã tám ký tự và một link GitHub, bạn mở link, đăng nhập, nhập mã và bấm cho phép, để bộ nhớ lưu được lên repo riêng và góp
+ý gửi được thành issue.
+
 ## Dùng
 
-Mở phiên Claude Code mới, gõ `/vina-me` hoặc cứ nhờ viết, sửa văn tiếng Việt như thường. Thường agent tự gọi các
-script; bạn muốn chạy tay thì đứng trong thư mục `vina-me`:
+Mở phiên Claude Code mới rồi cứ nhờ viết, sửa văn tiếng Việt như thường, agent tự dùng skill. Muốn gọi thẳng một việc thì gõ
+`/vina-me` kèm tên việc:
 
-| Lệnh | Làm gì |
+| Gõ | Làm gì |
 |---|---|
-| `node scripts/lint.mjs <tệp>` | soát văn máy, dấu câu, độ dài câu; thêm `--official` để soát thể thức văn bản hành chính |
-| `node scripts/report-docx.mjs <content.json> <out.docx>` | xuất báo cáo ra Word |
-| `node scripts/bid/bid-docx.mjs <content.json> <out.docx> [--template <mẫu.docx>]` | dựng hồ sơ dự thầu ra Word theo khuôn hồ sơ mẫu của công ty, hoặc khuôn dựng sẵn |
-| `node scripts/bid/bid-check.mjs <HSDX.docx> --hsmt <tệp> --catalog <pdf> --sample <mẫu>` | soát hồ sơ dự thầu: chỗ còn trống, chữ gán sai trang catalog, cam kết tự đặt, chữ của gói cũ |
-| `node scripts/bid/page-check.mjs <HSDX.pdf> <HSDX.docx>` | soát bố cục trang: trang trắng, đề mục cuối trang, bản cam kết tràn trang |
-| `node scripts/secrets.mjs add <tên>` | cất mật khẩu cho agent dùng mà không dán vào chat |
-| `node scripts/setup.mjs check` | soát bộ nhớ: quá dài, ý gần trùng |
+| `/vina-me write <yêu cầu>` | viết mới: lời giải thích, email, tin nhắn, bài giảng, báo cáo |
+| `/vina-me edit <tệp hoặc đoạn dán vào>` | sửa văn có sẵn cho lưu loát, hết văn AI slop, giữ nguyên dữ kiện |
+| `/vina-me review <tệp>` | soát mà không sửa: từng chỗ câu gốc, vấn đề, cách sửa |
+| `/vina-me word <tệp hoặc yêu cầu>` | xuất báo cáo, văn bản hành chính ra Word và PDF |
+| `/vina-me bid <thư mục gói thầu>` | làm phần kỹ thuật của hồ sơ dự thầu |
+| `/vina-me memory` | dựng, soát, dọn bộ nhớ dùng chung |
+| `/vina-me secret <tên>` | cất mật khẩu cho agent dùng mà không dán vào chat |
+| `/vina-me feedback` | gửi các dòng trong sổ góp ý thành issue |
 
 Mật khẩu được mã hoá bằng tài khoản Windows (Keychain trên macOS) nên không lọt vào chat hay lịch sử phiên, nhưng chương
 trình nào chạy bằng tài khoản của bạn, kể cả agent, vẫn giải mã được. Chi tiết về bộ nhớ, đồng bộ, xung đột và cách gỡ ở
 [`references/agent-memory.md`](references/agent-memory.md).
 
+## Hồ sơ dự thầu
+
+Khi một cơ quan nhà nước ở Việt Nam muốn mua thiết bị hay phần mềm, họ đăng một bộ hồ sơ mời thầu lên mạng đấu thầu quốc
+gia, và công ty nào muốn bán thì nộp lại một bộ hồ sơ dự thầu. Phần tốn công nhất của hồ sơ dự thầu thường là phần kỹ thuật.
+Hồ sơ mời thầu có một bảng kê yêu cầu kỹ thuật cho từng thứ cần mua, kiểu máy chủ phải có ít nhất bao nhiêu RAM, bảo hành bao
+lâu, và một bảng tiêu chí để tổ chấm thầu cho điểm. Công ty phải trả lời từng dòng của bảng yêu cầu, câu trả lời nào cũng phải
+chỉ ra được trang nào trong tài liệu của hãng sản xuất ghi thông số đó và tô vàng chỗ ấy cho người chấm thấy, tài liệu tiếng
+Anh thì kèm bản dịch, rồi viết một bản thuyết minh đi lần lượt qua các tiêu chí chấm.
+
+Bạn đưa agent thư mục gói thầu, gồm hồ sơ mời thầu, giấy tờ của công ty, catalog thiết bị nếu có, và một bộ hồ sơ dự thầu cũ
+công ty từng nộp để làm mẫu về hình thức. Agent tự đọc hồ sơ mời thầu để tìm bảng yêu cầu và bảng tiêu chí nằm ở đâu, rồi dựng
+lại đủ bộ tệp kỹ thuật, mỗi tệp một bản Word và một bản PDF xuất bằng Word:
+
+- mục lục;
+- bảng đáp ứng: mỗi dòng yêu cầu một câu trả lời, kèm trang tài liệu hãng chứng minh;
+- tài liệu hãng đã tô vàng đúng chỗ được dẫn, kèm bản dịch;
+- bản thuyết minh theo các tiêu chí chấm, tài liệu kỹ thuật phần mềm, tiến độ, các bản cam kết;
+- báo cáo cho người duyệt hồ sơ.
+
+Thiếu tài liệu hãng thì agent tự tìm trên trang chính thức của hãng, câu tìm chỉ có tên sản phẩm. Thông số nào chưa có tài
+liệu chứng minh, hay điều gì phải để người duyệt quyết, thì agent để dấu `[cần xác nhận: ...]` ngay chỗ đó chứ không tự điền,
+và báo cáo kê lại từng dấu cùng các giấy tờ cần xin thêm. Tài liệu gói thầu không rời máy: agent không gửi chúng lên mạng.
+
 ## Góp ý
 
-Thấy skill viết sai, thiếu một trường hợp hay script lỗi thì cứ chê ngay trong phiên. Agent sẽ hỏi bạn có muốn gửi góp ý
-thành issue ở repo này không, soạn bản nháp cho bạn xem, bạn đồng ý mới gửi. Máy có `gh` đăng nhập thì issue được tạo
-luôn; chưa có thì agent đưa link trang tạo issue đã điền sẵn để bạn đăng nhập GitHub rồi bấm gửi. Issue ở đây ai cũng đọc
-được, nên đừng để tài liệu nội bộ trong bản nháp. Cũng có thể mở issue trực tiếp trên GitHub.
+Bạn không cần nhớ để góp ý. Trong lúc làm, hễ gặp chỗ skill hướng dẫn sai hay script chạy lỗi, agent tự ghi một dòng vào sổ
+góp ý trên máy, chỉ ghi chuyện của skill chứ không chép tài liệu của bạn. Làm xong việc, agent hỏi một câu có gửi các dòng ấy
+thành issue ở repo này không, soạn bản nháp cho bạn xem, bạn đồng ý mới gửi. Máy có `gh` đăng nhập thì issue được tạo luôn;
+chưa có thì agent đưa link trang tạo issue đã điền sẵn. Không dùng GitHub thì gửi tệp sổ cho người đã cài skill cho bạn. Thấy
+skill viết chưa ổn thì cứ chê ngay trong phiên, agent cũng ghi lại như thế. Issue ở đây ai cũng đọc được, nên bản nháp không
+bao giờ mang tài liệu nội bộ.
 
 ## Chỉ cài skill, không cần bộ nhớ
 

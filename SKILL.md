@@ -1,18 +1,19 @@
 ---
 name: vina-me
-description: Viết và sửa văn tiếng Việt cho thuận mồm, dễ hiểu, không có mùi văn máy hay giọng văn mẫu. Dùng mỗi khi viết hay sửa văn bản tiếng Việt dài hơn vài câu, kể cả khi người dùng không nhắc tới giọng văn, ví dụ bài giảng, tài liệu, README, báo cáo, báo cáo lỗi, văn bản hành chính theo Nghị định 30/2020, hồ sơ dự thầu (thuyết minh đề xuất kỹ thuật E-HSDT), email, lời giải thích trong chat, chữ trên sơ đồ, tệp Word. Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "rời rạc", "văn mẫu", hoặc nhờ humanize, viết theo giọng một người. Kèm script cài skill, bộ nhớ dùng chung cho Claude Code và Codex, học từ phiên cũ, giữ mật khẩu cho agent.
+description: Viết và sửa văn tiếng Việt cho lưu loát, dễ hiểu, không thành văn AI slop, và dựng phần kỹ thuật của hồ sơ dự thầu (E-HSDT). Dùng mỗi khi viết hay sửa văn bản tiếng Việt dài hơn vài câu, kể cả khi người dùng không nhắc tới giọng văn: bài giảng, tài liệu, README, báo cáo, văn bản hành chính theo Nghị định 30/2020, email, tin nhắn công việc, lời giải thích trong chat, chữ trên sơ đồ, tệp Word. Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "rời rạc", "văn mẫu", "AI slop", hoặc nhờ humanize, viết theo giọng một người. Dùng cho đấu thầu khi người dùng đưa hồ sơ mời thầu (E-HSMT, HSMT, thư mục gói thầu) hay nhờ làm thầu, làm hồ sơ dự thầu, bảng đáp ứng yêu cầu kỹ thuật, thuyết minh đề xuất kỹ thuật, tài liệu hãng tô vàng kèm bản dịch; không dùng để soạn hồ sơ mời thầu cho bên mời thầu. Kèm script cài skill, bộ nhớ dùng chung cho Claude Code và Codex, học từ phiên cũ, giữ mật khẩu cho agent.
 license: MIT
+argument-hint: "[write|edit|review|word|bid|memory|secret|feedback] <yêu cầu, tệp hay thư mục>"
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.15.0"
+  version: "0.16.0"
 ---
 
-# Viết cho thuận mồm
+# Viết cho lưu loát
 
 Văn dễ đọc là văn có câu sau nối với câu trước, có người viết đặt mình vào người nghe, và chỉ nói điều có thật. Số
 chữ ít hay nhiều không quyết định điều đó. Skill này không có từ cấm, chỉ có những từ và mẫu câu ngoài đời ít ai nói;
-dùng một lần đúng chỗ thì được, dùng thành thói quen thì thành văn máy.
+dùng một lần đúng chỗ thì được, dùng thành thói quen thì thành văn AI slop.
 
 ## Quy trình
 
@@ -21,8 +22,9 @@ dùng một lần đúng chỗ thì được, dùng thành thói quen thì thàn
 3. Chốt tên gọi cho thứ nhắc nhiều lần, chốt xưng hô theo mục Giọng.
 4. Viết theo bảy điều dưới. Văn bản dài hay cần soát kỹ thì đọc bản đầy đủ ở `references/core-rules.md`.
 5. Soát: `node scripts/lint.mjs <tệp>` nếu chạy được lệnh, rồi đọc lại hai lượt, một lượt làm người chưa biết gì, một
-   lượt bắt văn máy theo `references/machine-tells.md`.
-6. Báo lại đã kiểm gì, chưa kiểm gì, chỗ nào chưa chắc.
+   lượt bắt văn máy theo `references/machine-tells.md`. Soát văn của người khác thì chạy lint trên tệp đó và trên chính
+   lời soát; lint bỏ qua lời trích trong ngoặc kép, nên báo nào còn lại trong lời soát là của mình.
+6. Trả kết quả theo bảng Trả kết quả. Việc sửa, kiểm, chạy thì báo đã kiểm gì, chưa kiểm gì, chỗ nào chưa chắc.
 
 ## Bảy điều cốt lõi
 
@@ -53,55 +55,85 @@ ngoặc đơn, nhan đề viết "A: B", khoảng số viết "3-5". Trong câu 
 | Văn bản | Xưng hô và giọng |
 |---|---|
 | Bài giảng, ghi chú, blog, lời giải thích trong chat | "mình, bạn", thân mật có mức |
-| Tài liệu kỹ thuật, hướng dẫn, bản tin | trung tính, ít xưng hô |
-| Báo cáo, kiến nghị, thư công việc | trang trọng, theo cách xưng hô của nơi nhận |
-| Báo cáo gửi cả nhóm, hoặc người nhận dặn "chỉ báo cáo" | không xưng hô, chủ ngữ là vật hoặc trang |
-| Văn bản hành chính nhà nước | không xưng hô, chủ ngữ là cơ quan; thể thức ở `references/official-documents.md` |
+| Tin nhắn công việc gửi sếp, đồng nghiệp | xưng như lúc nói với người đó, giọng nói chuyện |
+| Tài liệu kỹ thuật, hướng dẫn, thông báo gửi khách | trung tính, ít xưng hô |
+| Báo cáo, kiến nghị, thư công việc | trang trọng, theo cách xưng hô của nơi nhận; gửi cả nhóm thì không xưng hô |
+| Văn bản hành chính nhà nước | không xưng hô, chủ ngữ là cơ quan (`references/official-documents.md`) |
 
-Viết theo giọng một người cụ thể thì tra `references/voice.md`.
+Chi tiết từng loại ở `references/document-types.md`. Người dùng chỉ định giọng thì theo lời đó; viết theo giọng một người
+cụ thể thì tra `references/voice.md`.
 
 ## Trả lời trong chat
 
 Hỏi gì trả lời đúng cái đó, vài câu; điều cần nói thêm thì một dòng ở cuối. Người dùng sai thì nói thẳng kèm lý do.
 Câu hỏi gửi người dùng phải tự đứng được: ở đâu, hiện thế nào, vì sao hỏi, mỗi phương án ra sao. Báo kết quả chỉ gồm
-vấn đề và việc cần làm, nói đã kiểm gì bằng cách nào; không khen, không chấm điểm, không ước lượng thời gian.
+vấn đề và việc cần làm; không khen, không chấm điểm, không ước lượng thời gian. Câu trong lời trả cũng soát như văn trong
+tệp. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là gì và khuyên thu hồi.
 
 ## Sửa văn có sẵn
 
 Sửa cấu trúc câu và đoạn trước, thay từ sau; câu đã ổn thì để yên. Giữ nguyên dữ kiện, con số, tên riêng, mức chắc
 chắn, giọng tác giả; không thêm chi tiết; không đụng lời trích, code, output. Người dùng chê một câu thì sửa câu đó và
-hỏi lý do trước khi áp cho cả bài. Không áp skill cho văn bản quy phạm pháp luật, hợp đồng, biểu mẫu, thơ, lời thoại.
+hỏi lý do trước khi áp cho cả bài. Bản cần sửa do agent viết thì đối chiếu với dữ kiện gốc: lời tả không có trong dữ kiện
+thì bỏ, tên riêng người dùng không chê thì giữ và hỏi. Không áp skill cho văn bản quy phạm pháp luật, hợp đồng, biểu mẫu,
+thơ, lời thoại.
 
 ## Trả kết quả
 
 | Việc | Trả gì |
 |---|---|
-| Viết mới | Văn bản, thêm một hai câu về chỗ chưa kiểm hay thiếu dữ kiện |
-| Sửa đoạn được dán vào | Bản đã sửa, rồi tối đa năm dòng nêu thay đổi chính và lý do |
-| Sửa một tệp | Chỉ sửa phần văn, báo số chỗ đã sửa theo loại |
-| Soát mà không sửa | Từng chỗ "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ |
-| Báo cáo lỗi, báo cáo rà soát | Theo `references/review-reports.md` |
-| Hồ sơ dự thầu | Làm đủ tám bước trong `references/bid-proposals.md`: đọc bộ tài liệu, bảng truy vết, dựng Word bằng `scripts/bid/bid-docx.mjs`, soát bằng bốn lệnh |
-| Tệp Word | `scripts/report-docx.mjs`, văn bản hành chính thì `scripts/official-doc-docx.mjs`; xuất PDF xem từng trang trước khi đưa |
+| Viết mới | đường dẫn tuyệt đối của tệp (hay chính văn bản), thêm một hai câu về chỗ chưa kiểm hay thiếu dữ kiện |
+| Sửa đoạn được dán vào | bản đã sửa, rồi tối đa năm dòng nêu thay đổi chính và lý do |
+| Sửa một tệp | chỉ sửa phần văn, báo số chỗ đã sửa theo loại |
+| Soát mà không sửa | từng chỗ "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ |
+| Báo cáo lỗi, báo cáo rà soát | theo `references/review-reports.md` |
+| Hồ sơ dự thầu | làm đủ quy trình trong `references/bid-proposals.md` |
+| Tệp Word | theo `references/docx-export.md`, kèm bản PDF đã xem từng trang |
+| Bộ nhớ, học từ phiên cũ | theo `references/agent-memory.md` |
+
+Chi tiết của từng dòng ở `references/core-rules.md`, mục Lời trả theo từng việc.
+
+## Gọi bằng lệnh
+
+Người dùng gõ `/vina-me <việc> <phần còn lại>` thì chữ đầu là tên việc:
+
+| Gõ | Làm |
+|---|---|
+| `write` | viết mới theo phần còn lại, quy trình ở trên |
+| `edit` | sửa văn có sẵn (tệp hay đoạn dán vào), theo mục Sửa văn có sẵn |
+| `review` | soát mà không sửa, trả theo dòng Soát mà không sửa |
+| `word` | dựng hay xuất tệp Word và PDF (`references/docx-export.md`; văn bản hành chính thêm `references/official-documents.md`) |
+| `bid` | hồ sơ dự thầu từ thư mục gói thầu (`references/bid-proposals.md`) |
+| `memory` | dựng, soát, dọn bộ nhớ dùng chung (`references/agent-memory.md`) |
+| `secret` | cất mật khẩu cho agent (`references/agent-memory.md`, mục Mật khẩu và token) |
+| `feedback` | gửi các dòng trong sổ góp ý thành issue (`references/feedback.md`) |
+
+Chữ đầu không phải một trong các tên trên thì coi cả dòng là một lời nhờ bình thường. Thiếu phần còn lại (gõ `/vina-me
+edit` không kèm tệp) thì hỏi một câu cần gì.
 
 ## Bộ nhớ cho agent
 
 Skill kèm bộ nhớ dùng chung cho các agent ở `~/agent-memory/`. Nếu ngữ cảnh chưa có bộ nhớ người dùng nào, và máy chưa
 có cả `~/agent-memory/AGENTS.md` lẫn `~/agent-memory/.disabled`, thì làm xong việc đang làm rồi hỏi người dùng một lần
 có muốn dựng bộ nhớ không. Đồng ý thì làm theo `references/agent-memory.md`; không thì tạo tệp rỗng
-`~/agent-memory/.disabled` để lần sau khỏi hỏi.
+`~/agent-memory/.disabled` để lần sau khỏi hỏi. Ngữ cảnh đã có CLAUDE.md hay AGENTS.md riêng của người dùng thì tính là
+đã có bộ nhớ. Phiên không xem được thư mục nhà, hay bị dặn không đụng tới nó, thì bỏ bước này. Câu hỏi là một dòng
+riêng ở cuối lời trả, không tính vào giới hạn số câu, và nói theo việc người dùng làm (ví dụ "để lần sau tự nạp hồ sơ
+giọng"), không nói tên công cụ họ không dùng.
 
 ## Góp ý về skill
 
-Người dùng chê chính skill (quy tắc sai hay thiếu, script lỗi) thì làm xong việc rồi hỏi một lần có muốn gửi góp ý
-thành issue trên repo vina-me không; đồng ý thì làm theo `references/feedback.md`.
+Trong lúc làm, gặp chỗ skill hướng dẫn sai, thiếu hay script lỗi thì ghi một dòng vào sổ góp ý (`references/feedback.md`,
+mục Sổ góp ý trong lúc làm), không cần hỏi. Người dùng chê chính skill thì cũng ghi như thế. Làm xong việc thì hỏi một lần
+có muốn gửi các dòng ấy thành issue trên repo vina-me không; đồng ý thì làm theo `references/feedback.md`. Người dùng đã nhờ soạn bản nháp góp ý
+thì soạn luôn, không hỏi lại.
 
 ## Tệp tham khảo
 
 | Tệp | Đọc khi |
 |---|---|
 | `references/core-rules.md` | viết hay sửa văn bản dài, soát kỹ: bảy điều bản đầy đủ, trình bày, sửa văn có sẵn |
-| `references/machine-tells.md` | soát văn máy và văn mẫu |
+| `references/machine-tells.md` | soát văn AI slop và văn mẫu |
 | `references/examples.md` | cần thấy quy tắc chạy trên câu cụ thể |
 | `references/cohesion.md` | văn rời rạc, chọn từ nối |
 | `references/sentences-and-paragraphs.md` | câu ghép, trạng ngữ, đoạn, câu chủ đề |
@@ -110,9 +142,10 @@ thành issue trên repo vina-me không; đồng ý thì làm theo `references/fe
 | `references/word-choice.md` | giải nghĩa thuật ngữ, chọn từ, viết hoa, tên riêng |
 | `references/voice.md` | chọn giọng, viết theo giọng một người |
 | `references/citations-data-figures.md` | lời trích, nguồn, con số, hình, bảng |
-| `references/document-types.md` | giải thích, hướng dẫn, báo cáo, thư, kiến nghị, nghị luận |
+| `references/document-types.md` | giải thích, hướng dẫn, báo cáo, báo cáo sự cố, thư, tin nhắn công việc, thông báo gửi khách, kiến nghị, nghị luận |
 | `references/structure.md` | dàn ý, mở bài, triển khai, kết bài |
-| `references/teaching.md` | bài giảng, tài liệu dạy học, câu hỏi kiểm tra |
+| `references/storytelling.md` | dẫn dắt người đọc đi một mạch: mở bằng câu của người đọc, câu sau móc vào câu trước, tả trước gọi tên sau |
+| `references/teaching.md` | bài giảng, tài liệu dạy học, câu hỏi kiểm tra; soát bằng `references/teaching-checklist.md` |
 | `references/review-reports.md` | báo cáo lỗi, báo cáo đối chiếu với tài liệu gốc |
 | `references/diagrams-and-docs.md` | chữ trên sơ đồ, trang trình chiếu, tài liệu gửi khách, báo cáo trạng thái hệ thống |
 | `references/official-documents.md` | báo cáo, tờ trình, công văn, kế hoạch, biên bản của cơ quan nhà nước |
