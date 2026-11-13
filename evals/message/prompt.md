@@ -1,0 +1,1 @@
+đọc giúp mình đoạn chat nhóm ở evals/message/inputs/thread.txt (mình là Phong trong đó). viết cái mail gửi chị Thu bên khách theo đúng cái anh Khoa chốt, cc anh Khoa, có tiêu đề luôn. mình vẫn xưng em với chị Thu như mọi khi. xong viết thêm 1 tin zalo ngắn gửi anh Khoa nhờ anh xem mail trước 15h hôm nay rồi mình gửi, báo luôn tình hình 5 chức năng cho anh. hôm nay thứ 2 16/11

@@ -1,0 +1,9 @@
+Mã,Hạng mục,Trang trên web,Trạng thái,Tệp,Ghi chú
+A1,Giấy phép hoạt động,Chân trang,Đã nhận,operating-license.txt,
+A2,Bảng giá dịch vụ,Bảng giá,Đã nhận,price-list-2026-10.csv,kèm bảng cũ price-list-2025-03.csv
+A3,Danh sách bác sĩ và chứng chỉ hành nghề,Đội ngũ bác sĩ,Đã nhận,doctors-full-list.md,
+B1,Ảnh mặt tiền phòng khám,Trang chủ,Đã nhận,facade-photo.png,
+B2,Ảnh phòng khám và trang thiết bị,Trang chủ,Chưa nhận,,
+C1,Hotline và email,Đầu trang; Liên hệ; chân trang,Chưa nhận,,
+C2,Tọa độ bản đồ,Liên hệ,Chưa nhận,,
+D1,"Bài giới thiệu (năm thành lập, số liệu, kinh nghiệm bác sĩ)",Trang chủ,Chưa nhận,,

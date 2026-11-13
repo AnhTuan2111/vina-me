@@ -1,0 +1,12 @@
+# medibook-api, môi trường prod, trích từ Loki ngày 10/11/2026, giờ UTC+7
+# lọc: level=ERROR, status>=500. Dưới đây là bản ghi 5xx đầu tiên và cuối cùng của ngày.
+
+2026-11-10T08:12:40.318+07:00 ERROR 1 --- [http-nio-8080-exec-14] c.m.booking.web.SlotController : GET /api/slots?clinicId=2&date=2026-11-10 -> 503
+org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30000ms (total=5, active=5, idle=0, waiting=37)
+
+...
+
+2026-11-10T09:47:05.902+07:00 ERROR 1 --- [http-nio-8080-exec-3] c.m.booking.web.BookingController : POST /api/bookings -> 503
+org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30000ms (total=5, active=5, idle=0, waiting=4)

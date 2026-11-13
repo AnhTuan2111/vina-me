@@ -1,0 +1,52 @@
+# Chạy ngày 05/11/2026 trên laptop công ty, WSL2 Ubuntu 22.04, Spring Boot 3.3.4, Java 21.
+# Tab 2 của Windows Terminal. Tab 1 vẫn đang chạy order-service từ 13:41.
+
+minhtq@abc-dev-02:~/work/abc-erp/order-service$ ./mvnw spring-boot:run
+[INFO] Scanning for projects...
+[INFO] --- spring-boot:3.3.4:run (default-cli) @ order-service ---
+
+  .   ____          _            __ _ _
+ /\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2026-11-05T14:02:11.482+07:00  INFO 5133 --- [order-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-05T14:02:11.903+07:00 ERROR 5133 --- [order-service] [           main] o.s.b.d.LoggingFailureAnalysisReporter   :
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+minhtq@abc-dev-02:~/work/abc-erp/order-service$ lsof -i :8080
+Command 'lsof' not found, but can be installed with:
+sudo apt install lsof
+minhtq@abc-dev-02:~/work/abc-erp/order-service$ ss -ltnp | grep 8080
+LISTEN 0      100                *:8080             *:*    users:(("java",pid=4821,fd=45))
+minhtq@abc-dev-02:~/work/abc-erp/order-service$ ps aux | grep 4821
+minhtq      4821  2.1  9.8 6512340 398112 pts/1  Sl+  13:41   0:38 /usr/lib/jvm/java-21-openjdk-amd64/bin/java -XX:TieredStopAtLevel=1 -cp /home/minhtq/work/abc-erp/order-service/target/classes:... com.abc.erp.order.OrderServiceApplication
+minhtq      5398  0.0  0.0   4024  2048 pts/2  S+   14:05   0:00 grep --color=auto 4821
+minhtq@abc-dev-02:~/work/abc-erp/order-service$ kill 4821
+minhtq@abc-dev-02:~/work/abc-erp/order-service$ ss -ltnp | grep 8080
+minhtq@abc-dev-02:~/work/abc-erp/order-service$ curl localhost:8080/actuator/health
+curl: (7) Failed to connect to localhost port 8080 after 0 ms: Connection refused
+minhtq@abc-dev-02:~/work/abc-erp/order-service$ ./mvnw spring-boot:run
+[INFO] Scanning for projects...
+...
+2026-11-05T14:07:40.118+07:00  INFO 5460 --- [order-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-05T14:07:40.131+07:00  INFO 5460 --- [order-service] [           main] c.a.erp.order.OrderServiceApplication    : Started OrderServiceApplication in 3.412 seconds (process running for 3.709)
+
+# (tab 3)
+minhtq@abc-dev-02:~$ curl localhost:8080/actuator/health
+{"status":"UP"}

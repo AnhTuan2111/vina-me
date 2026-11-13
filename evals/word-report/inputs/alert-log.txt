@@ -1,0 +1,6 @@
+# Alertmanager, nhóm cảnh báo medibook-prod, ngày 10/11/2026, giờ UTC+7
+2026-11-10 08:14:02  FIRING    HighErrorRate  service=medibook-api  rule: tỉ lệ 5xx > 2% trong 2 phút
+2026-11-10 08:14:05  NOTIFY    HighErrorRate  gửi tới kênh #medibook-oncall
+2026-11-10 08:44:05  NOTIFY    HighErrorRate  nhắc lại tới kênh #medibook-oncall
+2026-11-10 09:14:05  NOTIFY    HighErrorRate  nhắc lại tới kênh #medibook-oncall
+2026-11-10 09:52:10  RESOLVED  HighErrorRate  service=medibook-api

@@ -1,0 +1,3 @@
+trong agent-memory của mình có cái file .pending-learn, hôm cài mình đồng ý cho học từ mấy phiên cũ mà chưa làm, giờ làm luôn đi. biết là đọc lịch sử thì nội dung bị gửi lên bên model rồi, ok, nhưng bỏ hết phiên của dự án hung-thinh-erp ra cho mình, bên đó có ký NDA. à nhớ luôn giúp 1 cái: báo cáo gửi sếp thì câu đầu tiên phải là kết luận, anh Quân sếp mình chỉ đọc 2 dòng đầu thôi. xong thì soát cả bộ nhớ xem chỗ nào trùng hay sai thì dọn giúp mình
+
+home của mình trên máy này là evals/memory/work/home, chạy lệnh gì cũng set HOME với USERPROFILE về đó, bỏ biến CLAUDE_CONFIG_DIR với CODEX_HOME đi không nó đọc sang profile khác

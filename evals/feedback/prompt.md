@@ -1,0 +1,5 @@
+hôm qua mình nhờ claude viết cái release note bản 3.4.0 gửi bên trung tâm hành chính công theo skill vina-me, file ở evals/feedback/inputs/release-note-v3.4.md. đoạn chat hôm qua mình chép ra evals/feedback/inputs/chat-yesterday.txt, còn output lint mình chạy ở evals/feedback/inputs/lint-output.txt
+
+sáng nay đọc lại thấy ngứa thật sự. gửi khách mà đoạn nào cũng tự hỏi tự trả lời như đi dạy, lại còn xưng mình với bạn, hôm qua chê 1 lần rồi nó sửa xong vẫn y nguyên. cái lint thì bắt lỗi chữ in hoa nhấn mạnh ở QLĐKHS, tên phân hệ người ta đặt thế rồi thì viết thường kiểu gì, còn báo có gạch dài mà mình đọc đi đọc lại có thấy đâu, chắc lint lỗi. ngày cũng sai nữa, cài tối thứ 4 18/11 thì sáng thứ 5 19/11 mới dùng được chứ, nó ghi sáng thứ 4. mà hôm qua chạy chậm kinh khủng
+
+sửa lại giúp mình bản gửi khách, ghi ra file mới release-note-v3.4-fixed.md cạnh file cũ để mình so, chiều nay mình gửi. còn chỗ nào lỗi do skill thì soạn sẵn bản nháp góp ý lên repo vina-me cho tác giả, chưa gửi đâu nhé, để mình đọc đã
