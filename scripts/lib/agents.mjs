@@ -81,6 +81,12 @@ function installSchedule() {
       ? path.join(home, 'Startup')
       : path.join(process.env.APPDATA ?? path.join(home, 'AppData', 'Roaming'), 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'Startup');
     write(path.join(startup, 'vina-me-sync.vbs'), read(vbs));
+    // Home giả (--home): Task Scheduler là của cả máy thật, không theo home giả, nên không tạo task trừ khi có --real-schedule.
+    // Một agent thử skill từng chạy setup với home tạm và để lại task "vina-me sync" thật trên máy người dùng.
+    if (fakeHome && !hasFlag('--real-schedule')) {
+      log('  lịch tự lưu: home giả, chỉ ghi tệp Startup trong home giả, không tạo task trong Task Scheduler (thêm --real-schedule nếu cần)');
+      return;
+    }
     const task = fakeHome ? `vina-me sync test ${path.basename(home)}` : 'vina-me sync';
     const r = run('schtasks', ['/Create', '/F', '/SC', 'HOURLY', '/MO', '2', '/TN', task, '/TR', `wscript.exe "${vbs}"`]);
     log(r.status === 0

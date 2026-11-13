@@ -46,6 +46,8 @@ function writeMachineFile() {
     '# Máy này', '',
     `Lệnh và đường dẫn trên máy ${os.hostname()}. Script cài đặt sinh ra tệp này, mỗi máy một bản, không đẩy lên repo.`, '',
     `- \`<setup>\`: \`${selfCommand}\``,
+    // Agent từng gõ "<setup> --help" để xem cách dùng: script không có --help nên cài lại cả bộ, kể cả task Windows thật.
+    '  Luôn chạy kèm lệnh con (`check`, `save`, `sync`...). Không có `--help`: chạy trơn hay kèm cờ đoán là cài lại lên máy.',
     `- \`<secrets>\`: \`node "${slash(path.join(skillHome, 'scripts', 'secrets.mjs'))}"\``,
     `- Skill vina-me: \`${shown(skillHome)}\``,
     `- Repo bộ nhớ: ${remote ? `\`${remote}\`` : 'chưa có, bộ nhớ chỉ nằm trên máy này'}.`,
