@@ -46,6 +46,7 @@ Tài liệu kèm theo một văn bản hành chính, ví dụ thuyết minh hay 
 | Tiêu ngữ | in thường, cỡ 13-14, đậm, các cụm nối bằng gạch nối có cách chữ, kẻ ngang dài bằng dòng chữ |
 | Cơ quan chủ quản | in hoa, cỡ 12-13, không đậm |
 | Cơ quan ban hành | in hoa, cỡ 12-13, đậm, kẻ ngang 1/3 tới 1/2 dòng chữ |
+| Tên cơ quan dài | ghi đủ như quyết định thành lập, kể cả địa danh ("TRƯỜNG TRUNG CẤP Y TẾ" / "TỈNH B"), không cắt địa danh cho vừa cột; câu mở gọi tên nào thì phần đầu ghi đủ tên đó. Ngắt dòng giữa hai cụm, thường là trước địa danh; không tách đôi một cụm ("TRUNG CẤP" / "Y TẾ TỈNH B") |
 | Số, ký hiệu | "Số:" cỡ 13; số dưới 10 thêm 0 ở trước; ký hiệu in hoa; gạch chéo giữa số và ký hiệu, gạch nối giữa các nhóm chữ, không cách |
 | Địa danh, ngày | in thường, cỡ 13-14, nghiêng; ngày dưới 10 và tháng 1, 2 thêm 0 ở trước; sau địa danh có dấu phẩy |
 | Tên loại | in hoa, cỡ 13-14, đậm, canh giữa |
@@ -55,6 +56,10 @@ Tài liệu kèm theo một văn bản hành chính, ví dụ thuyết minh hay 
 Ký hiệu viết tắt tên loại (Phụ lục III): QĐ quyết định, CT chỉ thị, QC quy chế, QyĐ quy định, TB thông báo, HD hướng dẫn,
 CTr chương trình, KH kế hoạch, PA phương án, ĐA đề án, DA dự án, BC báo cáo, BB biên bản, TTr tờ trình, HĐ hợp đồng, CĐ
 công điện, GM giấy mời, GGT giấy giới thiệu. Ký hiệu công văn là tên cơ quan cộng tên đơn vị soạn, ví dụ 12/UBND-VX.
+
+Các mẫu ở Phụ lục III chỉ để chỗ ghi trích yếu dưới tên loại, không ghi sẵn chữ "Về việc"; thực tế nhiều cơ quan vẫn viết
+"Về việc..." dưới "TỜ TRÌNH". Cả hai cách đều gặp, nên theo cách cơ quan đó đang dùng; người dùng không nói thì viết thẳng cụm nội dung, như
+trích yếu báo cáo ở mẫu trên.
 
 Trích yếu là "một câu ngắn gọn hoặc một cụm từ phản ánh khái quát nội dung chủ yếu của văn bản". Tên báo cáo phải "rõ
 ràng, ngắn gọn và thể hiện được bao quát nội dung, phạm vi yêu cầu báo cáo" (Nghị định 09/2019, Điều 8).
@@ -67,6 +72,8 @@ ràng, ngắn gọn và thể hiện được bao quát nội dung, phạm vi y�
 - "Nơi nhận:" cỡ 12, nghiêng, đậm, sát lề trái, ngang dòng chức vụ người ký. Danh sách cỡ 11, mỗi nơi một dòng. Dòng cuối
   là "- Lưu: VT, <đơn vị soạn>." Báo cáo, tờ trình gửi cấp trên và công văn có thêm khối "Kính gửi" ở đầu; khi đó dòng đầu
   của Nơi nhận là "- Như trên;".
+- Nơi chỉ nhận để biết (người dùng nói "đồng gửi... để biết") không đứng ở Kính gửi; ghi ở Nơi nhận, có thể kèm "(để biết)":
+  "- Sở B (để biết);". Kính gửi chỉ có nơi phải xem xét, giải quyết (thực tế).
 - Các mẫu trình bày ở Phụ lục III kết thúc phần nội dung bằng "./.". Phần chữ của nghị định không nhắc tới dấu này, nên
   coi là theo mẫu.
 
@@ -90,6 +97,10 @@ Nơi nhận:
 ```
 
 Văn bản gửi một nơi thì "Kính gửi:" và tên nơi nhận nằm trên cùng một dòng. Phần căn cứ viết nghiêng.
+
+Chỗ đặt căn cứ theo loại văn bản (thực tế, theo các mẫu ở Phụ lục III): quyết định không có Kính gửi, căn cứ đứng ngay dưới
+trích yếu; tờ trình, báo cáo, công văn có Kính gửi thì căn cứ đứng sau dòng Kính gửi, trước câu mở. `official-doc-docx.mjs`
+tự đặt theo cách này khi có `recipients`, nên vẫn ghi căn cứ vào `legalBases` (giữ chữ nghiêng), không nhét vào `opening`.
 
 ## Đề mục và đánh số (quy định)
 
@@ -134,6 +145,9 @@ Báo cáo, kế hoạch, đề án chia theo phần, mục, khoản, điểm:
 - Lần đầu ghi đủ tên loại, số, ký hiệu, ngày ban hành, cơ quan ban hành, trích yếu: "Nghị định số 30/2020/NĐ-CP ngày 05
   tháng 3 năm 2020 của Chính phủ về công tác văn thư". Luật và pháp lệnh chỉ ghi tên loại và tên.
 - Các lần sau chỉ ghi tên loại và số, ký hiệu: "Nghị định số 30/2020/NĐ-CP".
+- Người dùng không đưa trích yếu (hay ngày, cơ quan ban hành) của văn bản được viện dẫn thì không tự đặt cho đủ thể thức.
+  Để chỗ đánh dấu ngay trong văn bản, ví dụ "Kế hoạch số 08/KH-SB ngày ... của Sở B về [cần bổ sung trích yếu]", rồi báo
+  người dùng (mục "Dữ kiện thiếu hay lệch").
 
 ## Báo cáo
 
@@ -176,6 +190,43 @@ Nên câu đầu phần số liệu nói kỳ số liệu, ví dụ "số liệu
   "ước tính" cho số chưa chốt; "đạt" cho số đã chốt.
 - Tỷ lệ đổi từ 40% lên 45% là tăng 5 điểm phần trăm, không phải tăng 5%.
 - Đơn vị tính thống nhất trong cả văn bản. Bảng có cột đơn vị hoặc ghi đơn vị ở tên bảng.
+- Số tiền viết thêm bằng chữ thì chữ đầu viết hoa, các chữ viết liền không chen dấu phẩy: "2.350.000.000 đồng (Hai tỷ ba
+  trăm năm mươi triệu đồng)".
+
+### Kiểm phép tính trước khi chép
+
+Bảng dự toán, bảng tổng hợp người dùng đưa (CSV, Excel, lời nhắn) hay có một dòng nhân sai mà dòng tổng cộng lại cộng theo
+dòng sai, nên tổng khớp với số người dùng nhớ và đọc lướt không thấy. Trước khi chép, tính lại:
+
+1. mỗi dòng: số lượng nhân đơn giá bằng thành tiền;
+2. dòng tổng: cộng các dòng bằng tổng;
+3. số suy ra từ tổng: số còn thiếu, số đề nghị bổ sung, tỷ lệ, chênh lệch so với số đã giao.
+
+`official-doc-docx.mjs` tự làm bước 1 và 2 cho mọi bảng và in cảnh báo khi lệch; đọc phần cảnh báo đó, đừng bỏ qua.
+
+Thấy lệch thì chọn một trong hai cách, và áp cho mọi chỗ dùng số đó (ô bảng, câu dẫn của phụ lục, mục kinh phí, mục kiến
+nghị):
+
+- viết số đã tính lại vào văn bản, rồi báo người dùng dòng nào lệch, số cũ là bao nhiêu, số mới là bao nhiêu;
+- hoặc chưa chắc số nào đúng (đơn giá sai hay thành tiền sai) thì đặt chỗ đánh dấu "[cần xác nhận: A hay B đồng]" ở mọi chỗ
+  đó, rồi hỏi người dùng.
+
+Biết ô nào sai bằng cách chia ngược: lấy thành tiền chia cho đơn giá, rồi chia cho số lượng. Không phép chia nào ra số nguyên
+thì gần như chắc ô thành tiền ghi sai, viết số đã tính lại. Một phép chia ra số nguyên thì thừa số kia cũng có thể là ô sai,
+nên đánh dấu cần xác nhận và hỏi. Script in sẵn kết luận này sau mỗi dòng lệch.
+
+Không để số sai ở dạng đã chốt trong văn bản đưa đi ký, kể cả khi đã báo lệch trong chat, vì người ký
+và nơi nhận chỉ đọc văn bản, không đọc chat.
+
+## Dữ kiện thiếu hay lệch
+
+Văn bản hành chính được ký và lưu, nên chỗ nào thiếu dữ kiện (trích yếu văn bản viện dẫn, số biên bản, đơn vị thực hiện
+chưa chọn) thì để chỗ đánh dấu trong ngoặc vuông ngay trong văn bản, "[cần bổ sung: ...]" hay "[cần xác nhận: ...]", và nêu
+từng chỗ trong câu trả lời. Không tự điền cho đủ thể thức, không bỏ trống mà không đánh dấu. Số liệu trong bản nháp của người
+khác mà người dùng dặn không dùng hay chưa kiểm thì bỏ, không chép sang.
+
+Tên hạng mục trong bảng người dùng đưa cũng là dữ kiện của họ. Đổi tên cho khớp một tên ở cả văn bản (mục "Văn phong") thì
+được, nhưng nêu trong câu trả lời tên cũ và tên mới, như với số đã tính lại.
 
 ## Câu mở và câu kết hay gặp (thực tế)
 
@@ -197,6 +248,10 @@ Nên câu đầu phần số liệu nói kỳ số liệu, ví dụ "số liệu
 - Kế hoạch: I. MỤC ĐÍCH, YÊU CẦU (hai khoản Mục đích, Yêu cầu); II. NỘI DUNG (đối tượng, thời gian, địa điểm, việc cụ
   thể); mục kinh phí nếu có; mục tiến độ có ngày; mục TỔ CHỨC THỰC HIỆN ghi đơn vị hoặc người, chức vụ và việc của họ.
 - Tờ trình kèm hồ sơ: I. THÔNG TIN CHUNG; II. DANH MỤC HỒ SƠ GỬI KÈM; III. nội dung đề nghị; rồi kiến nghị.
+- Tờ trình xin phê duyệt dự án, dự toán, kinh phí: sự cần thiết (hiện trạng có số liệu, căn cứ đề nghị); nội dung (khối
+  lượng, tiến độ, đơn vị thực hiện); kinh phí (tổng, nguồn đã có, số còn thiếu); kiến nghị (mỗi việc cấp trên cần làm một
+  khoản). Bảng dự toán, bảng tiến độ để ở phụ lục, thân bài có câu chỉ tới từng phụ lục. Mục nào người dùng không đưa dữ
+  kiện thì không dựng cho đủ khung.
 - Biên bản họp: thời gian, địa điểm, thành phần (chủ trì, thư ký, người dự), nội dung, kết luận, giờ kết thúc. Ghi đúng
   việc đã diễn ra, không suy diễn; lời phát biểu quan trọng ghi nguyên văn, họp thường thì ghi ý chính. Chủ trì và thư ký
   cùng ký.
@@ -237,6 +292,30 @@ Những điều làm ngược lại với các văn bản khác:
 - Câu ngắn, mỗi khoản một việc. Đoạn một câu ở cấp khoản, điểm là bình thường.
 - Chữ viết tắt: lần đầu viết đủ rồi ghi chữ tắt trong ngoặc, ví dụ "Ủy ban nhân dân (UBND)" (thực tế).
 
+Những lỗi câu hay gặp khi sửa bản nháp thành văn hành chính:
+
+| Lỗi | Ví dụ sai | Sửa |
+|---|---|---|
+| Trạng ngữ đầu câu không cùng chủ ngữ với câu chính | "Làm xong việc kiểm kê, tỷ lệ hồ sơ đạt chuẩn tăng lên 90%." (tỷ lệ không làm việc kiểm kê) | "Sau khi hoàn thành việc kiểm kê, tỷ lệ hồ sơ đạt chuẩn sẽ tăng lên 90%." hoặc đổi chủ ngữ thành cơ quan |
+| Khẩu ngữ | "làm xong", "kiểm kê xong" (động từ kèm "xong"), "thì" nối điều kiện, "đưa ra phục vụ", "đưa hồ sơ gốc ra phục vụ" | "hoàn thành", "khi hoàn thành kiểm kê", "khi", "phục vụ khai thác", "dùng hồ sơ gốc để phục vụ khai thác". Cụm có chữ chen giữa vẫn là khẩu ngữ. "thì" sau chủ đề ("Hồ sơ đã nhập máy thì Phòng tra trên phần mềm") viết thành "Đối với hồ sơ đã nhập máy, Phòng tra trên phần mềm" |
+| Hai câu nói hai cách làm trái nhau mà không có từ nối | "Mỗi lần tra cứu, Phòng phải mang hồ sơ giấy ra quầy. Đối với hồ sơ đã nhập máy, Phòng tra trên phần mềm." | Nối bằng "trong khi", "còn": "Mỗi lần tra cứu, Phòng phải dùng hồ sơ giấy, trong khi hồ sơ đã nhập máy được tra trên phần mềm." |
+| Đề nghị đứng rời khỏi hiện trạng | "Phòng học xuống cấp, mùa mưa phải cho học sinh nghỉ. Năm 2027, Trường đề nghị sửa 15 phòng." (không câu nào nói vì sao chọn 15 phòng đó) | Nối bằng "Vì vậy", "nên", và nói phần được đề nghị thuộc phần hiện trạng nào: "Vì vậy, năm 2027 Trường đề nghị sửa 15 phòng học xuống cấp nói trên." |
+| Mốc tiến độ không theo thời gian, các vế lệch kiểu câu | "khảo sát trong quý I; lắp đặt trong quý III; phần mềm được thuê từ tháng 01" (quay lại tháng 01 sau quý III, vế cuối đổi sang bị động) | Xếp các mốc từ sớm tới muộn, mọi vế cùng một kiểu "việc, thời gian": "thuê phần mềm từ tháng 01; khảo sát trong quý I; lắp đặt trong quý III" |
+| Câu mở khoản lặp tiêu đề khoản | "2. Tiến độ" rồi "Tiến độ dự kiến như sau: ..." | Vào thẳng các mốc; phụ lục đã có đủ mốc thì khoản chỉ cần câu dẫn tới phụ lục |
+| Vế giải thích lặp lại động từ | "tăng từ 40% lên 45%, tức là tăng 5 điểm phần trăm" | "tăng từ 40% lên 45% (tăng 5 điểm phần trăm)" |
+| Bị động thiếu "được" | "Phần mềm thuê từ tháng 02" (đọc như phần mềm đi thuê) | "Phần mềm được thuê từ tháng 02" |
+| Vế chêm giải thích nối bằng "là" ở cuối câu | "Đơn vị đề nghị sửa 15 phòng học, là các phòng xuống cấp nói trên." | Tách câu, hoặc đưa vào định ngữ: "15 phòng học xuống cấp nói trên" |
+| Một tên cho cả việc và một bước của việc | gọi cả gói là "đào tạo" mà một bước cũng tên "đào tạo" | Cả gói một tên, bước một tên khác ("tập huấn", "soạn tài liệu"), dùng đúng tên đó ở mọi chỗ, cả trong bảng |
+| Câu dẫn phụ lục thiếu động từ | "Danh mục thiết bị tại Phụ lục I kèm theo Tờ trình này." | "Danh mục thiết bị chi tiết tại Phụ lục I kèm theo Tờ trình này." hoặc "Danh mục thiết bị nêu tại Phụ lục I..." |
+| Liệt kê vào "gồm" một thứ không thuộc nhóm | "Nguồn kinh phí gồm 500.000.000 đồng đã được giao và 300.000.000 đồng còn thiếu, chưa có nguồn." (số chưa có nguồn không phải một nguồn) | Tách câu: "Ủy ban nhân dân huyện đã giao 500.000.000 đồng tại Quyết định số... Số còn thiếu là 300.000.000 đồng, chưa có nguồn." |
+| Mốc so sánh sai | "bổ sung 300.000.000 đồng còn thiếu so với số đã giao" (thiếu là so với tổng dự toán, không phải so với số đã giao) | "bổ sung 300.000.000 đồng còn thiếu ngoài số đã giao tại Quyết định số..." hoặc "còn thiếu so với tổng dự toán" |
+
+Phạm vi phải khớp chữ: "tài liệu giai đoạn 1980-2000" không nằm trọn trong "tài liệu trước năm 2000" vì có năm 2000; viết
+"đến năm 2000" hay "từ năm 2000 trở về trước" cho khớp.
+
+Rút gọn, gộp câu cho vừa trang (mục "Soát", bước 4) thì soát lại bảng trên một lượt nữa với các câu vừa sửa: bỏ câu hay gộp
+đoạn dễ làm mất "Vì vậy" giữa hiện trạng và đề nghị, và câu gộp vội dễ sinh khẩu ngữ, vế lệch kiểu câu.
+
 ## Soát
 
 `scripts/lint.mjs` tự chuyển sang chế độ văn bản hành chính khi tệp có Quốc hiệu, hoặc khi chạy với `--official`. Ở chế
@@ -251,6 +330,48 @@ Những điều làm ngược lại với các văn bản khác:
 
 Script không kiểm được cỡ chữ, lề, phông. Xuất ra Word thì dùng `scripts/official-doc-docx.mjs` (xem `docx-export.md`), rồi
 mở bản PDF xem từng trang.
+
+Các bước khi ra tệp Word:
+
+1. Dựng kèm bản chữ để soát: `node scripts/official-doc-docx.mjs vb.json vb.docx --text vb.txt`, rồi
+   `node scripts/lint.mjs --official vb.txt`. Đừng soát trên chữ rút từ PDF bằng `pdftotext -layout`: cột Nơi nhận dính
+   vào cột chữ ký, lint báo sai dấu cuối dòng.
+2. Đọc cảnh báo phép tính bảng mà script in ra (mục "Kiểm phép tính trước khi chép").
+3. Xuất PDF bằng Word: trên Windows có `pwsh -NoProfile -File scripts/bid/render-pdf.ps1 -OutDir <thư mục> vb.docx`
+   (dùng được cho mọi tệp docx, không riêng hồ sơ dự thầu). Không kèm `-UpdateDocx` thì script mở tệp Word chỉ đọc: PDF có
+   số trang đúng, tệp Word giữ nguyên, Word tự tính lại số trang khi người nhận mở.
+4. Soát khoảng trống trang: `node scripts/official-doc-docx.mjs --check-pdf vb.pdf` (cần `pdftotext` của Poppler). Script
+   báo trang của văn bản chính trống quá 20% ở cuối mà văn bản còn sang trang sau, và trang cuối chỉ có câu kết, khối ký.
+   Lỗi này hay gặp: script giữ đoạn cuối thân bài, câu kết và khối ký cùng một trang, nên khi cả khối không vừa phần còn
+   lại của trang, Word đẩy cả khối sang trang sau. Còn báo thì dồn trang theo thứ tự, mỗi cách xong dựng lại, xuất PDF,
+   chạy lại `--check-pdf`:
+   1. bỏ câu thân bài nhắc lại thứ phụ lục đã có (liệt kê lại các mốc khi đã có phụ lục tiến độ, kể lại từng hạng mục
+      khi đã có bảng dự toán), chỉ giữ câu dẫn tới phụ lục;
+   2. gộp khoản, câu ngắn cùng ý, rồi soát lại các câu vừa gộp theo bảng lỗi câu ở mục "Văn phong";
+   3. đặt `"lineSpacing": 1.1`, rồi `1` (dòng đơn) trong JSON; Phụ lục I cho cách dòng từ dòng đơn tới 1,5 lines;
+   4. đặt `"fontSize": 13` (Phụ lục I cho cỡ 13-14).
+   Không giao văn bản đi ký khi còn báo này. Làm hết bốn cách mà vẫn còn thì nói rõ trong lời trả trang nào còn trống, đã
+   thử những cách nào. Rút gọn một lượt rồi dừng, ghi "chưa dồn được" là chưa xong việc.
+5. Xem từng trang, tìm: khối ký và Nơi nhận rơi sang trang khác câu kết; tiêu đề mục, khoản nằm cuối trang; chữ số hay
+   khoảng số bị ngắt dòng giữa chừng; bảng tràn lề; tên cơ quan bị ngắt giữa cụm hay thiếu địa danh; dòng "(Kèm theo
+   ... của ...)" của phụ lục có đủ tên cơ quan như câu mở. `--check-pdf` chỉ đo khoảng trống, không thay được bước này.
+6. Trả kết quả kèm đường dẫn đầy đủ của cả tệp Word và tệp PDF, số trang, và một câu nói đã xem từng trang PDF, thấy gì: khối
+   ký cùng trang câu kết, bảng không tràn, chỗ đã sửa sau khi xem (hay không phải sửa gì). Người dùng chỉ đọc lời trả, chưa
+   mở tệp, nên câu này là thứ duy nhất cho họ biết bố cục trang đã được xem. Sau đó mỗi chỗ thiếu dữ kiện, số đã tính lại,
+   tên đã đổi một gạch đầu dòng; văn bản đưa đi ký nên các chỗ này đều phải nêu, kể cả khi lời trả dài hơn ba câu.
+
+Tùy chọn của script mà bảng ở `docx-export.md` chưa ghi: bảng có `align` (mỗi cột `"left"`, `"center"`, `"right"`; cột số
+tiền canh phải) và `boldRows` (chỉ số hàng in đậm, `-1` là hàng cuối, cho dòng "Tổng cộng"); mục, khoản, phụ lục có
+`paragraphsAfter` cho đoạn đứng sau danh sách điểm hay bảng (`paragraphs` luôn in trước `points`). Ở gốc JSON: `lineSpacing`
+(cách dòng thân bài, từ `1` tới `1.5`, mặc định `1.2`) và `fontSize` (`13` hay `14`, mặc định `14`), dùng khi dồn trang ở bước 4;
+ngoài khoảng của Phụ lục I thì script báo và dùng mặc định. Script tự giữ đoạn cuối thân bài, câu kết và khối ký cùng một
+trang, và tự giữ khoảng số như "2015-2020" không bị ngắt dòng.
+
+Tên cơ quan ở phần đầu: script ước bề ngang từng dòng, dòng không vừa cột trái thì nới cột trái từ 40% lên 44% bề ngang hay
+hạ cỡ chữ từ 13 xuống 12, vẫn không vừa thì tự ngắt trước địa danh ("tỉnh", "huyện", "xã"...). Script báo khi câu mở gọi
+cơ quan bằng tên dài hơn `agency` (thường là thiếu địa danh) và khi hai dòng ngắt tay bằng `\n` dồn lại vẫn vừa cột (dễ là
+đã tách đôi một cụm). Dòng "(Kèm theo ... của ...)" của phụ lục dùng `agencyFullName` nếu có, không có thì dùng tên đủ tìm
+thấy ở câu mở, rồi mới tới `agency` nối thành một dòng. Đọc các báo cáo đó như cảnh báo phép tính, sửa JSON rồi dựng lại.
 
 ## Nguồn
 

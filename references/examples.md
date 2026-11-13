@@ -228,3 +228,168 @@ Sau, theo thể thức văn bản hành chính:
 Chủ ngữ là đơn vị chứ không phải "bọn mình". "Khoảng", "gần như đủ hết", "mấy chục" thay bằng con số có kỳ số liệu. Số
 viết theo kiểu Việt Nam. Ý đoán "chắc phải hỏi Sở" thành một kiến nghị cụ thể. Ba mục theo khung của Nghị định 09/2019.
 Bản "trước" thiếu con số 19 và 98,5% nên người viết phải đi tra lại; không có dữ kiện thì để trống, không tự điền.
+
+## 18. Một chuỗi việc kéo theo nhiều thuật ngữ
+
+Trước:
+
+> App trả lời chậm thì Nginx hết proxy_read_timeout, trả 504 cho trình duyệt và ghi "upstream timed out" vào error log.
+
+Vấn đề là một câu mang ba thuật ngữ mới (proxy_read_timeout, 504, upstream) mà không cái nào được giải nghĩa.
+
+Sau:
+
+> Vì sao trình duyệt báo 504 dù app vẫn đang chạy? Vì Nginx không chịu đợi app mãi. Nginx chuyển request vào app rồi đợi
+> câu trả lời, mặc định 60 giây, quá thời gian đó thì nó bỏ và tự trả cho trình duyệt mã 504, mã HTTP nghĩa là chỗ đứng
+> giữa đã đợi phía sau quá lâu.
+>
+> Mã 504 ấy thường đi kèm một dòng trong error log của Nginx có chữ `upstream timed out`. Upstream là tên Nginx gọi app
+> đứng sau nó, nên dòng này đọc ra là "app trả lời chậm quá".
+
+Mỗi đoạn một thuật ngữ. Tên cờ `proxy_read_timeout` để tới đoạn nói cách chỉnh, vì chỉ ở đó người đọc mới cần gõ nó;
+trước đó nói bằng lời thường, "đợi câu trả lời, mặc định 60 giây".
+
+## 19. Lời giải nghĩa thành tên thứ hai, một việc ba động từ
+
+Trước:
+
+> Gateway đặt rate limit 100 request mỗi phút cho mỗi khách, tức là hạn mức gọi API. Vượt hạn mức thì gateway chặn
+> request và trả 429. Đặt ngưỡng thấp quá thì gateway drop nhầm cả khách thật.
+
+Vấn đề là rate limit có ba tên (rate limit, hạn mức, ngưỡng), và một việc của gateway có hai động từ (chặn, drop).
+Người đọc tưởng đang có ba thứ và hai việc khác nhau.
+
+Sau:
+
+> Gateway đặt rate limit 100 request mỗi phút cho mỗi khách, tức là mỗi khách được gọi API tối đa 100 lần một phút. Khách
+> vượt rate limit thì gateway từ chối request và trả mã 429. Đặt rate limit thấp quá thì gateway từ chối nhầm cả khách
+> thật.
+
+Lời giải nghĩa "tối đa 100 lần một phút" chỉ dùng một lần; các câu sau quay về chữ rate limit và chữ "từ chối".
+
+## 20. Hai khái niệm dễ lẫn đứng xa nhau
+
+Trước:
+
+> Request không kèm token thì server trả 401. Token lấy ở trang cài đặt tài khoản, mỗi token có hạn riêng, hết hạn thì
+> tạo cái mới. […] Kèm token rồi mà vẫn lỗi thì đó là 403, do tài khoản thiếu quyền.
+
+Vấn đề là hai mã cách nhau cả đoạn, mỗi mã một khuôn câu, nên người đọc không thấy chúng là một cặp để phân biệt.
+
+Sau:
+
+> 401 là server chưa biết bạn là ai, thường vì request không kèm token hay token đã hết hạn, còn 403 là server biết bạn là
+> ai mà tài khoản không có quyền làm việc đó. Gặp 401 thì đi lấy token, gặp 403 thì đi xin quyền.
+
+Phần cách lấy token đi sau cặp này, ở đoạn của nó.
+
+## 21. Ẩn dụ chia rạch ròi thứ bài chưa chia được
+
+Bối cảnh: lệnh `df` báo ổ 100 GB đã dùng 95 GB, cộng các thư mục quen bằng `du` chỉ được 60 GB, và bài đã nói chưa biết
+phần chênh nằm ở đâu.
+
+Trước:
+
+> Giống một cái tủ 100 ngăn đã đầy 95 ngăn. Bạn mở các ngăn quen ra đếm được 60 ngăn đồ của mình, vậy 35 ngăn kia là đồ
+> người khác để vào. Ví von này hết đúng ở chỗ tủ thì có cửa, còn ổ đĩa thì không.
+
+Vấn đề là ẩn dụ gán số và chủ cho phần chênh ("35 ngăn kia là đồ người khác"), đúng điều bài vừa nói là chưa biết. Chỗ
+hết đúng được chọn là một khác biệt vô hại, không chặn được cách suy sai đó.
+
+Sau:
+
+> Chuyện của ổ này giống một cái tủ báo đã đầy, mà mở hết các ngăn quen ra thì vẫn thấy còn trống nhiều. Ví von này
+> hết đúng ở chỗ tủ thật thì đồ chiếm chỗ phải nằm trong một ngăn nào đó, còn ở đây tệp đã xoá mà vẫn có process giữ mở
+> thì vẫn chiếm ổ, `du` không thấy, nên phần chênh có thể không nằm ở thư mục nào cả.
+
+## 22. Lời trả khi giao một văn bản viết mới
+
+Trước:
+
+> Mình viết xong ghi chú ở `deploy-502.md`, khoảng 450 chữ. Lỗi 502 là do app khởi động chậm, không phải do Nginx như bạn
+> đoán. Nginx chỉ chuyển request, còn app mất cả phút mới nhận request nên lần chuyển đầu bị lỗi. Ví von trong ghi chú là
+> quán ăn mở cửa muộn. Đã soát bằng `lint.mjs` (0 chỗ) và đọc lại hai lượt.
+
+Vấn đề là lời trả tóm lại cả ghi chú, nhắc lại ví von, kể việc đã soát và báo số chữ không ai hỏi.
+
+Sau:
+
+> Ghi chú ở `deploy-502.md`. Đoán lỗi ở Nginx là chưa đúng, ghi chú có nói vì sao. Log không ghi giờ app khởi động xong
+> nên chưa biết app cần bao lâu, mức chờ trong ghi chú là điểm thử, phải đo lại.
+
+## 23. Chữ người dùng đã gõ vẫn là thuật ngữ mới, cặp dễ lẫn mở bằng bằng chứng
+
+Bối cảnh: người dùng biết Java, chưa biết Kubernetes, gõ "pod cứ CrashLoopBackOff, liveness probe fail, chắc app lỗi
+code nên crash". Log app không có exception nào.
+
+Trước:
+
+> Mình đoán app lỗi code nên crash. Nhưng app lỗi code thì log có exception, còn log này không có dòng nào như thế.
+>
+> Pod vào `CrashLoopBackOff` vì liveness probe fail, kubelet restart container liên tục và pod lại crash.
+
+Vấn đề là người dùng đã gõ `CrashLoopBackOff` và liveness probe nhưng chưa hiểu, nên cả hai vẫn là thuật ngữ mới, và
+một câu mang ba thuật ngữ (thêm kubelet). Pod và container dùng lẫn cho cùng một thứ bị chạy lại. Exception đứng ở đoạn
+mở làm bằng chứng, còn liveness probe xuất hiện ở đoạn sau với khuôn khác, nên người đọc không thấy hai cách chết là
+một cặp.
+
+Sau:
+
+> Mình đoán app lỗi code nên crash. Nhưng app lỗi code thì log có exception, còn log này không có dòng nào như thế.
+>
+> Vậy ai cho container chạy lại? Kubernetes, vì nó hỏi thăm app định kỳ và app không trả lời kịp. Việc hỏi thăm đó gọi
+> là liveness probe. Exception là lỗi app tự ném ra khi hỏng, còn liveness probe thất bại là Kubernetes thấy app im
+> lặng rồi tự chạy lại container, dù app chưa ném gì.
+>
+> Container bị chạy lại nhiều lần liền thì Kubernetes chờ lâu dần giữa hai lần, và trong lúc chờ nó ghi trạng thái
+> `CrashLoopBackOff`. Trạng thái này chỉ báo container đang bị chạy lại liên tục, không nói lý do.
+
+Mỗi đoạn một thuật ngữ. Kubelet nói bằng lời thường là "Kubernetes", vì người đọc không gặp lại chữ đó. Bài chỉ dùng
+"container" cho thứ bị chạy lại. Câu gọi tên liveness probe viết đủ cặp với exception đã nhắc ở đoạn mở, và việc
+của exception chỉ có một động từ "ném", không chỗ "ném" chỗ "báo". Việc người dùng hỏi tới (container chạy lại) có câu
+nói rõ ai làm.
+
+## 24. Phần cách chỉnh khi người dùng xin "nói qua"
+
+Bối cảnh: tiếp mục 23, bài đã nói chưa đo app cần bao lâu để khởi động xong.
+
+Trước:
+
+> Còn chỉnh thì nói qua: tăng `initialDelaySeconds`, hoặc thêm startup probe với `failureThreshold: 30` và
+> `periodSeconds: 10`, rồi chạy `kubectl describe` xem phần Events.
+
+Vấn đề là người dùng xin "nói qua" mà đoạn đưa ba tên trường cấu hình, một tên tính năng mới và một lệnh, tức năm thuật
+ngữ trong một câu. "Còn chỉnh thì nói qua" mở chuyện mới, không nắm đoạn trước, và chép lời yêu cầu vào ghi chú; đọc lại
+sau thì không rõ ai "nói qua".
+
+Sau:
+
+> Chưa biết app cần bao lâu để khởi động xong nên cũng chưa biết liveness probe phải chờ bao lâu mới bắt đầu hỏi thăm.
+> Đo thời gian khởi động thật của app trước, rồi cho liveness probe chờ lâu hơn số đó, hoặc làm app khởi động nhanh hơn.
+
+Đoạn mở bằng chỗ chưa biết của đoạn trước, nói việc cần làm và lý do bằng lời thường. Tên trường cấu hình để khi người
+dùng hỏi tiếp.
+
+## 25. Ẩn dụ mở không chủ ngữ, chỗ hết đúng nói ngược bài
+
+Bối cảnh: người dùng đã đặt log của app xoay vòng tối đa 5 GB mà ổ 20 GB vẫn đầy. Đoạn trước vừa kể phần ngoài log
+gồm image Docker cũ và journal của hệ thống, và nói chưa đo phần đó lớn bao nhiêu.
+
+Trước:
+
+> Giống tủ lạnh dùng chung: mỗi người chỉ dọn ngăn của mình sao cho ngăn đó tối đa bằng cả tủ. Ngăn chưa đầy mà tủ vẫn
+> có thể chật, vì đồ người khác nằm ngoài ngăn. Ví von này hết đúng ở chỗ tủ mở ra là thấy đồ của ai, còn ổ thì chưa
+> biết phần ngoài log gồm gì.
+
+Vấn đề là câu mở bằng "Giống" mà không có cái gì giống, dấu hai chấm làm khung. Vế so là một luật không ai làm ngoài đời
+(dọn ngăn sao cho bằng cả tủ), nên đọc lần đầu không hiểu. Chỗ hết đúng nói "chưa biết gồm gì" trong khi đoạn trước vừa
+kể nó gồm gì, và bỏ qua chỗ người đọc dễ suy sai nhất: đồ người khác trong tủ thì nằm yên một cỡ.
+
+Sau:
+
+> Chuyện của ổ này giống một tủ lạnh dùng chung: mình dọn ngăn của mình đều đặn mà tủ vẫn chật, vì đồ người khác để ở
+> ngăn khác. Ví von này hết đúng ở chỗ đồ người khác trong tủ thường để yên một cỡ, còn image Docker và journal có thể
+> lớn dần mỗi lần deploy, mà chưa đo nên chưa biết cái nào đang lớn.
+
+Câu mở có chủ ngữ là thứ đang bàn. Vế so là việc người ta làm thật. Chỗ hết đúng nói đúng điều chưa biết (cỡ và xu
+hướng), không nói ngược điều bài đã kể.

@@ -5,11 +5,13 @@
 //
 //   node scripts/learn-from-sessions.mjs                    mọi phiên, ghi ra <thư mục tạm>/vina-me-learn
 //   node scripts/learn-from-sessions.mjs --since 2026-09-01 chỉ phiên từ ngày đó
-//   node scripts/learn-from-sessions.mjs --out <thư mục>    chọn chỗ ghi
+//   node scripts/learn-from-sessions.mjs --out <thư mục>    chọn chỗ ghi; chỉ xoá overview.md, batch-*.md cũ trong đó, tệp
+//                                                           khác (nháp của agent) để nguyên
 //   node scripts/learn-from-sessions.mjs --only project-a --only project-b chỉ phiên có thư mục làm việc chứa một trong các chữ đó
 //   node scripts/learn-from-sessions.mjs --exclude private          bỏ phiên có thư mục làm việc chứa chữ đó (lặp lại được)
 //   node scripts/learn-from-sessions.mjs --user-only        chỉ lời người dùng, bỏ phần tóm gọn của agent
 //   --home <thư mục>   thử trên home khác;  --batch-size <số ký tự>  độ dài mỗi đợt (mặc định 60000)
+//   --help             in cách dùng rồi thoát; cờ lạ hay cờ thiếu giá trị thì báo lỗi và không rút gì
 //
 // Riêng tư: các đợt rút ra nằm trên máy, nhưng khi agent đọc chúng thì nội dung được gửi lên nhà cung cấp mô hình thêm
 // một lần. Dùng --only, --exclude để giữ lại những dự án không muốn gửi.
@@ -28,6 +30,35 @@ import path from 'node:path';
 import { HIDDEN, redact } from './lib/redact.mjs';
 
 const args = process.argv.slice(2);
+
+// Soát cờ trước khi đọc gì: cờ gõ sai mà vẫn chạy thì script rút luôn mọi phiên, kể cả dự án người dùng dặn bỏ, ra thư mục
+// tạm. --help in cách dùng lấy từ chú thích đầu tệp rồi thoát, không rút gì.
+const VALUE_FLAGS = new Set(['--home', '--out', '--since', '--batch-size', '--only', '--exclude']);
+const BOOL_FLAGS = new Set(['--user-only']);
+const usage = () => fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1)
+  .filter((l) => l.startsWith('//')).slice(0, 16).map((l) => l.replace(/^\/\/ ?/, '')).join('\n');
+if (args.includes('--help') || args.includes('-h')) {
+  console.log(usage());
+  process.exit(0);
+}
+const argErrors = [];
+for (let i = 0; i < args.length; i++) {
+  const a = args[i];
+  if (BOOL_FLAGS.has(a)) continue;
+  if (VALUE_FLAGS.has(a)) {
+    if (!args[i + 1] || args[i + 1].startsWith('--')) argErrors.push(`${a} thiếu giá trị`);
+    else i++;
+    continue;
+  }
+  argErrors.push(a.startsWith('-') ? `không biết cờ ${a}` : `không biết tham số ${a}`);
+}
+const sinceArg = args.includes('--since') ? args[args.indexOf('--since') + 1] : undefined;
+if (sinceArg && !sinceArg.startsWith('--') && Number.isNaN(new Date(sinceArg).getTime())) argErrors.push(`--since không phải ngày: ${sinceArg}`);
+if (argErrors.length) {
+  console.error(`Không rút gì, vì: ${argErrors.join('; ')}.\n\n${usage()}`);
+  process.exit(2);
+}
+
 const valueOf = (name) => {
   const i = args.indexOf(name);
   return i >= 0 && args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : undefined;
@@ -76,12 +107,20 @@ function* records(file) {
   }
 }
 
+// redact() chỉ che "mật khẩu là x" khi "là" đứng ngay sau "mật khẩu", nên câu kể "mật khẩu wifi văn phòng là x" lọt. Ở đây
+// cho tối đa bốn chữ chen giữa; vẫn chỉ che khi x có số hay ký tự đặc biệt, để câu thường ("mật khẩu mới là do IT cấp") còn
+// nguyên. Chỉ nhận chữ chỉ mật khẩu, không nhận "khoá", "token", vì "khoá học năm nay là 2026" là câu thường.
+const LOOSE_PASSWORD = /(\b(?:password|passwd|pass|mật khẩu|mat khau)(?:\s+[^\s:=]+){1,4}?\s+(?:là|is)\s+)(?=\S*[\d@#$%^&*!?_])(?!\[ĐÃ ẨN\])\S+/gi;
+function redactLoose(text) {
+  return text.replace(LOOSE_PASSWORD, `$1${HIDDEN}`);
+}
+
 // s là phiên đang đọc: số chỗ đã che cộng vào s.hidden, để chỉ đếm những phiên được giữ lại sau khi lọc.
 function clean(text, s) {
   let t = text.replace(/<system-reminder>[\s\S]*?<\/system-reminder>/g, '').replace(/\r\n/g, '\n').trim();
   if (t.length < 4) return '';
   const before = t.split(HIDDEN).length;
-  t = redact(t);
+  t = redactLoose(redact(t));
   s.hidden += t.split(HIDDEN).length - before;
   if (t.length > MAX_MSG) t = `${t.slice(0, MAX_MSG)}\n[cắt bớt ${t.length - MAX_MSG} ký tự]`;
   return t;
@@ -165,15 +204,20 @@ function readCodex(file) {
   return s;
 }
 
-const sessions = [
+const found = [
   // Cùng một phiên có thể nằm ở cả ~/.claude và $CLAUDE_CONFIG_DIR: gộp theo tên tệp (mã phiên).
   ...[...new Map(claudeRoots.flatMap((r) => walk(r))
     .filter((f) => !f.includes(`${path.sep}subagents${path.sep}`))
     .map((f) => [path.basename(f), f])).values()].map(readClaude),
   ...codexRoots.flatMap((r) => walk(r)).map(readCodex),
-]
-  .filter((s) => s.messages.length && (!since || new Date(s.start) >= since) && wanted(s.cwd))
-  .sort((a, b) => String(a.start).localeCompare(String(b.start)));
+].filter((s) => s.messages.length && (!since || new Date(s.start) >= since));
+const sessions = found.filter((s) => wanted(s.cwd)).sort((a, b) => String(a.start).localeCompare(String(b.start)));
+// Số phiên bị --only, --exclude bỏ ra, đếm theo từng nguồn, để agent báo người dùng đúng con số đã kiểm chứ không đoán.
+const dropped = { 'Claude Code': 0, Codex: 0 };
+for (const s of found) if (!wanted(s.cwd)) dropped[s.agent]++;
+const droppedLine = only.length || exclude.length
+  ? `Đã bỏ ${dropped['Claude Code']} phiên Claude Code, ${dropped.Codex} phiên Codex${exclude.length ? ` có thư mục làm việc chứa: ${exclude.join(', ')}` : ''}${only.length ? `; chỉ giữ phiên có thư mục làm việc chứa: ${only.join(', ')}` : ''}.`
+  : '';
 
 const stamp = (iso) => (iso ? new Date(iso).toLocaleString('sv-SE', { hour12: false }).slice(0, 16) : '?');
 function agentLines(m) {
@@ -187,8 +231,10 @@ const blocks = sessions.map((s) =>
   [`## ${stamp(s.start)} · ${s.agent} · ${s.cwd || 'không rõ thư mục'}`, '',
     ...s.messages.flatMap((m) => [`[${stamp(m.time).slice(11)}] ${m.text.replace(/\n/g, '\n    ')}`, ...agentLines(m)]), ''].join('\n'));
 
-fs.rmSync(outDir, { recursive: true, force: true });
+// Chỉ xoá kết quả của lần chạy trước, không xoá cả thư mục: --out trỏ nhầm vào một thư mục có sẵn thì không mất gì, và tệp
+// nháp agent ghi trong thư mục này vẫn còn khi chạy lại.
 fs.mkdirSync(outDir, { recursive: true });
+for (const f of fs.readdirSync(outDir)) if (f === 'overview.md' || /^batch-\d+\.md$/.test(f)) fs.rmSync(path.join(outDir, f));
 const batches = [];
 let cur = '';
 for (const b of blocks) {
@@ -208,12 +254,20 @@ const hiddenCount = sessions.reduce((n, s) => n + s.hidden, 0);
 const skillUse = {};
 for (const s of sessions) for (const m of s.messages) for (const k of m.skills ?? []) skillUse[k] = (skillUse[k] ?? 0) + 1;
 const skillRows = Object.entries(skillUse).sort((a, b) => b[1] - a[1]).slice(0, 15);
+// Mốc cuối là tin muộn nhất chứ không phải giờ mở phiên cuối: phiên mở 09:00 mà tin cuối 16:10 thì khoảng ngày phải tới
+// 16:10, vì agent chép khoảng này vào dòng thói quen skill.
+const times = sessions.flatMap((s) => [s.start, ...s.messages.map((m) => m.time)]).filter(Boolean);
+const lastTime = times.reduce((a, b) => (new Date(b) > new Date(a) ? b : a), times[0]);
+// Che trong đợt không xoá được bản đã dán: giá trị vẫn nằm trong lịch sử phiên và đã gửi lên nhà cung cấp mô hình. Các lần
+// chấm trước agent chỉ báo "đã che 2 chỗ" mà quên khuyên đổi, nên nhắc ngay ở chỗ agent đọc con số đó.
+const CHANGE_SECRETS = 'Chỗ đã che chỉ ẩn trong đợt; giá trị vẫn nằm trong lịch sử phiên và đã gửi lên nhà cung cấp mô hình từ lúc dán. Khi báo người dùng, gọi tên từng thứ đã che (tìm `[ĐÃ ẨN]` trong đợt, không chép giá trị) và khuyên đổi từng thứ còn dùng được.';
 const summary = [
   '# Tổng quan', '',
   `Rút ngày ${new Date().toLocaleDateString('vi-VN')}. ${sessions.length} phiên, ${total} tin của người dùng, chia ${batches.length} đợt.`,
   `Đã che ${hiddenCount} chỗ trông như mật khẩu, token, khoá. Bộ lọc dựa trên mẫu chữ nên có thể sót.`,
-  only.length || exclude.length ? `Lọc theo thư mục: chỉ lấy ${only.join(', ') || 'mọi thư mục'}; bỏ ${exclude.join(', ') || 'không'}.` : '',
-  sessions.length ? `Từ ${stamp(sessions[0].start)} tới ${stamp(sessions.at(-1).start)}.` : '',
+  ...(hiddenCount ? [CHANGE_SECRETS] : []),
+  droppedLine,
+  sessions.length ? `Từ ${stamp(sessions[0].start)} tới ${stamp(lastTime)}.` : '',
   '', '| Thư mục làm việc | Số tin |', '|---|---|',
   ...Object.entries(byProject).sort((a, b) => b[1] - a[1]).map(([k, v]) => `| ${k} | ${v} |`),
   ...(skillRows.length ? ['', '| Skill agent đã gọi | Số lượt |', '|---|---|', ...skillRows.map(([k, v]) => `| ${k} | ${v} |`)] : []),
@@ -224,4 +278,6 @@ fs.writeFileSync(path.join(outDir, 'overview.md'), summary, 'utf8');
 console.log(`Nguồn Claude Code: ${claudeRoots.join(', ') || 'không có'}`);
 console.log(`Nguồn Codex: ${codexRoots.join(', ') || 'không có'}`);
 console.log(`${sessions.length} phiên, ${total} tin, ${batches.length} đợt, đã che ${hiddenCount} chỗ, ghi ở ${outDir}`);
+if (droppedLine) console.log(droppedLine);
+if (hiddenCount) console.log(CHANGE_SECRETS);
 console.log('Lưu ý: agent đọc các đợt này thì nội dung được gửi lên nhà cung cấp mô hình. Dự án nào không muốn gửi thì chạy lại với --exclude.');

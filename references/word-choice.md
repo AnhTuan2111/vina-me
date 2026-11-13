@@ -7,6 +7,12 @@
 - Không cần thì tránh, còn cần thì giải nghĩa ngay tại lần đầu dùng.
 - Thuật ngữ tiếng Anh giữ nguyên dạng gốc, một cách viết duy nhất trong cả bài (không lúc "Container" lúc "container").
 - Hai thuật ngữ dễ lẫn thì đặt cạnh nhau và nói đúng một điểm khác.
+- Chữ thay cho một thuật ngữ phải chưa dùng cho thứ khác trong bài: "bản" đã là phiên bản (bản 2.4) thì không gọi máy
+  đang chạy là "bản đang chạy". Ghi chú gọi một thứ bằng tên mơ hồ ("bản cũ", "con kia") thì bài dùng tên đã gọi nó ở
+  chỗ khác ("bản 2.3").
+- Sửa văn kỹ thuật có sẵn viết cho team mà tác giả dùng động từ tiếng Anh quen trong nghề ("deploy", "rollback",
+  "restart", "fail") thì giữ như gốc, một dạng suốt bài, không lúc "restart" lúc "khởi động lại". Viết mới cho người
+  ngoài nghề thì dùng từ Việt, hoặc giải nghĩa ở lần đầu.
 
 ## Sáu cách giải nghĩa một từ
 
@@ -25,6 +31,8 @@ Ba yêu cầu:
   chính nó.
 - Định nghĩa nêu đủ các nét làm nó khác thứ cùng loại.
 - Tách từng phần xong phải gom lại thành một nghĩa.
+- Lời giải nghĩa dùng một lần; các câu sau quay về thuật ngữ, không dùng lời giải nghĩa làm tên thứ hai
+  (`core-rules.md` điều 5).
 
 Với người mới thì đưa một câu dùng thật hoặc một vật thật trước, rồi lời giải nghĩa chêm, rồi mới tới định nghĩa
 đủ.
@@ -52,6 +60,8 @@ Nói về tài nguyên thì dùng "hết", "đầy", "tràn". Nói về việc l
 - So sánh thì nói rõ so về mặt nào.
 - Ẩn dụ là so sánh ngầm, dễ bị hiểu rộng hơn ý muốn nói. Tối đa một cái mỗi văn bản, đặt sau lời giải thích bằng lời
   thường, và phải dùng nó để suy ra được một điều.
+- Câu mở ẩn dụ có chủ ngữ là thứ đang bàn, không "Giống…:". Vế so là việc người ta làm thật ngoài đời. Chỗ hết đúng
+  không nói ngược điều bài đã kể (`core-rules.md`, mục Trình bày).
 
 ## Liệt kê và lặp cấu trúc
 
@@ -68,7 +78,9 @@ Nói về tài nguyên thì dùng "hết", "đầy", "tràn". Nói về việc l
 | Tên nước ngoài đọc theo Hán Việt | Như tên Việt | "Lỗ Tấn", "Thái Lan" |
 | Tên công cụ, hãng, sản phẩm | Giữ nguyên dạng gốc | "PostgreSQL", "GitLab" |
 | Danh từ chung | Không viết hoa để nhấn mạnh | "container", không "Container" |
+| Loại tài nguyên Kubernetes (pod, node, deployment) | Bài kể sự việc, báo cáo sự cố: danh từ chung, viết thường như "container". Bài giảng về các đối tượng API thì viết hoa như tên kind cả loạt ("Deployment tạo ReplicaSet, ReplicaSet tạo Pod"). Một bài một kiểu | "2 trong 5 pod bị restart", không "2 trong 5 Pod" cạnh "container" |
 
 ## Chữ viết tắt
 
-Lần đầu viết đủ, kèm chữ viết tắt trong ngoặc đơn. Từ đó dùng chữ viết tắt, một dạng duy nhất.
+Lần đầu viết đủ, kèm chữ viết tắt trong ngoặc đơn. Từ đó dùng chữ viết tắt, một dạng duy nhất. Dữ kiện không cho tên
+đầy đủ thì giữ chữ viết tắt trần, không tự đoán.
