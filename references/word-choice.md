@@ -46,6 +46,8 @@ Với người mới thì đưa một câu dùng thật hoặc một vật thậ
 - Từ nhiều nghĩa thì thêm từ để khoá nghĩa, hoặc đổi sang từ một nghĩa.
 - Nói tường minh. Không để người mới phải đoán ý ngầm.
 - Từ nghề nghiệp, từ lóng buộc phải dùng thì để trong ngoặc kép và chú nghĩa.
+- Viết đủ từ ghép: "tóm tắt", "khai báo", "quản lý", "kiểm tra", không cắt còn "tóm", "khai", "quản", "kiểm". Cắt cho gọn
+  thì câu không ngắn đi bao nhiêu mà người đọc phải đoán chữ bị bỏ. Câu nào cũng đủ chủ ngữ, vị ngữ.
 
 Nói về tài nguyên thì dùng "hết", "đầy", "tràn". Nói về việc làm thì dùng "xem", "thử", "kiểm tra", "sửa", "chạy",
 "tắt", "bật". Nói về lý do thì dùng "lý do", "vì sao".

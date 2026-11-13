@@ -49,6 +49,7 @@ Mở phiên Claude Code mới rồi cứ nhờ viết, sửa văn tiếng Việt
 | `/vina-me write <yêu cầu>` | viết mới: lời giải thích, email, tin nhắn, bài giảng, báo cáo |
 | `/vina-me edit <tệp hoặc đoạn dán vào>` | sửa văn có sẵn cho lưu loát, hết văn AI slop, giữ nguyên dữ kiện |
 | `/vina-me review <tệp>` | soát mà không sửa: từng chỗ câu gốc, vấn đề, cách sửa |
+| `/vina-me score <tệp> [mốc]` | nhờ một agent khác đọc từng câu và chấm điểm; có mốc thì sửa rồi chấm lại tới khi ba lần liền đạt |
 | `/vina-me word <tệp hoặc yêu cầu>` | xuất báo cáo, văn bản hành chính ra Word và PDF |
 | `/vina-me bid <thư mục gói thầu>` | làm phần kỹ thuật của hồ sơ dự thầu |
 | `/vina-me memory` | dựng, soát, dọn bộ nhớ dùng chung |

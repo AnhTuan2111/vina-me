@@ -3,6 +3,14 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.18.0 (14/11/2026)
+
+- Lệnh mới `/vina-me score <tệp> [mốc]`: một agent khác, không thấy quá trình viết, đọc tuần tự từng câu rồi trừ điểm theo ba
+  mức nặng, vừa, nhẹ, trả về điểm và danh sách câu gốc kèm câu thay thế. Có mốc thì sửa rồi chấm lại, ba lần liền từ mốc trở
+  lên mới đạt; mốc mặc định là 90. Cách chấm và cách xử lý khi hai người chấm chê ngược nhau ở `references/scoring.md`.
+- Trước mỗi lần viết hay viết lại văn dài, agent đọc lại skill và tệp tham khảo hợp loại, không viết theo trí nhớ về luật.
+- Viết đủ từ ghép ("tóm tắt", "quản lý"), không cắt còn một tiếng.
+
 ## 0.17.0 (13/11/2026)
 
 - Trong Claude Code, mỗi tin người dùng gửi đi kèm một dòng nhắc agent soát câu trả lời theo vina-me, kể cả câu trả lời chỉ vài
