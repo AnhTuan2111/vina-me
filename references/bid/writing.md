@@ -51,6 +51,8 @@ với HSMT, nên câu ngắn, cụ thể, dùng đúng chữ của HSMT, và đ�
   pháp, bàn giao cũng có `[cần xác nhận]` ngắn ở mỗi chỗ, như lịch.
 - Điều chưa chốt (địa chỉ, nơi chạy Chatbot, model, lịch, cam kết mới) nhắc lại ở chỗ khác, kể cả bản cam kết, thì mỗi chỗ nhắc
   lại có `[cần xác nhận]` ngắn: BA sửa ở một chỗ sẽ sót những chỗ không có dấu.
+- `bid-docx` tô nền vàng mọi chỗ đánh dấu `[cần xác nhận...]`, `[cần bổ sung...]`, `[chưa có chứng minh...]` để BA mở tệp là
+  thấy chỗ phải tự sửa; không tô tay, không đổi cách viết dấu.
 - Chữ trong chỗ đánh dấu ngắn, trung tính, nói cần gì (`[cần xác nhận: vai nhà thầu phụ]`), không ghi lý do bất lợi cho hồ
   sơ ("HSMT chỉ cho thầu phụ làm dịch vụ liên quan"): sót khi nộp là tự khai hồ sơ trái HSMT. Lý do, điều khoản dẫn chứng nằm ở
   báo cáo cho BA.

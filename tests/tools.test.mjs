@@ -599,3 +599,27 @@ test('report-docx: đoạn mở intro trước mục 1, báo mốc giờ có ở
   // Nhan đề, meta, intro không tính; mốc chỉ ở một mục thì không báo.
   assert.doesNotMatch(line, /07:55|10:00/);
 });
+
+test('official-doc-docx và report-docx tô nền vàng chỗ đánh dấu cần xác nhận, cần bổ sung', async () => {
+  const { readZip } = await import('../scripts/bid/lib/zip.mjs');
+  const dir = tmp();
+  const lit = (file) => [...readZip(fs.readFileSync(file)).get('word/document.xml').toString('utf8')
+    .matchAll(/<w:r>(?:(?!<\/w:r>).)*?<w:highlight w:val="yellow"\/>(?:(?!<\/w:r>).)*?<w:t[^>]*>([^<]*)<\/w:t>/g)].map((m) => m[1]);
+  const off = path.join(dir, 'tt.json');
+  fs.writeFileSync(off, JSON.stringify({
+    parentAgency: 'Sở A', agency: 'Trung tâm B', number: '03/TTr-TTB', place: 'Tỉnh A', date: '2027-02-05',
+    docType: 'Tờ trình', subject: 'Về việc mua sắm năm 2027', recipients: ['Sở A'],
+    opening: ['Trung tâm B mua 10 máy, đơn giá [cần xác nhận: 15 hay 16 triệu đồng] mỗi máy.'],
+    closing: ['Kính trình Sở A xem xét.'], archive: 'VT, TTB',
+    signingAuthority: 'Giám đốc', signerTitle: 'Giám đốc', signer: '[cần bổ sung: người ký]',
+  }));
+  const r1 = node('official-doc-docx.mjs', [off, path.join(dir, 'tt.docx')]);
+  assert.equal(r1.status, 0, r1.out);
+  assert.ok(lit(path.join(dir, 'tt.docx')).includes('[cần xác nhận: 15 hay 16 triệu đồng]'));
+  const rep = path.join(dir, 'r.json');
+  fs.writeFileSync(rep, JSON.stringify({ title: 'Báo cáo thử', sections: [{ heading: 'Diễn biến',
+    blocks: ['Lỗi bắt đầu lúc [cần xác nhận: giờ], sau khi cập nhật `config.yml` [Cần bổ sung phiên bản].'] }] }));
+  const r2 = node('report-docx.mjs', [rep, path.join(dir, 'r.docx')]);
+  assert.equal(r2.status, 0, r2.out);
+  assert.deepEqual(lit(path.join(dir, 'r.docx')), ['[cần xác nhận: giờ]', '[Cần bổ sung phiên bản]']);
+});

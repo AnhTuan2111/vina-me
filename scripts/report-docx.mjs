@@ -49,6 +49,9 @@ function imageSize(buf) {
   throw new Error('Chỉ nhận ảnh PNG hoặc JPEG');
 }
 
+// Chỗ đánh dấu "[cần xác nhận: ...]", "[cần bổ sung: ...]" tô nền vàng, để người nhận tệp thấy ngay chỗ phải tự sửa.
+const MARKER = /(\[(?:cần xác nhận|cần bổ sung|chưa có chứng minh)[^\]]*\])/iu;
+const isMarker = (s) => new RegExp(`^${MARKER.source}$`, 'iu').test(s);
 // Tách `mã` trong chữ thành phông đều.
 function runs(text, base = {}) {
   const out = [];
@@ -58,7 +61,11 @@ function runs(text, base = {}) {
     if (part.startsWith('`') && part.endsWith('`')) {
       out.push(new TextRun({ text: part.slice(1, -1), font: MONO, size: 19,
         shading: { type: ShadingType.CLEAR, fill: 'F1EEE8', color: 'auto' } }));
-    } else out.push(new TextRun({ text: part, font: FONT, ...base }));
+    } else {
+      for (const q of part.split(MARKER).filter(Boolean)) {
+        out.push(new TextRun({ text: q, font: FONT, ...base, ...(isMarker(q) ? { highlight: 'yellow' } : {}) }));
+      }
+    }
   }
   return out;
 }

@@ -221,7 +221,8 @@ và nơi nhận chỉ đọc văn bản, không đọc chat.
 ## Dữ kiện thiếu hay lệch
 
 Văn bản hành chính được ký và lưu, nên chỗ nào thiếu dữ kiện (trích yếu văn bản viện dẫn, số biên bản, đơn vị thực hiện
-chưa chọn) thì để chỗ đánh dấu trong ngoặc vuông ngay trong văn bản, "[cần bổ sung: ...]" hay "[cần xác nhận: ...]", và nêu
+chưa chọn) thì để chỗ đánh dấu trong ngoặc vuông ngay trong văn bản, "[cần bổ sung: ...]" hay "[cần xác nhận: ...]" (script xuất Word
+tô nền vàng các chỗ này), và nêu
 từng chỗ trong câu trả lời. Không tự điền cho đủ thể thức, không bỏ trống mà không đánh dấu. Số liệu trong bản nháp của người
 khác mà người dùng dặn không dùng hay chưa kiểm thì bỏ, không chép sang.
 
