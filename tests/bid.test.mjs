@@ -110,6 +110,22 @@ test('bid-docx dính hai chữ cuối của tên phần, mã hiệu có gạch n
   assert.match(doc, /W<\/w:t><w:noBreakHyphen\/><w:t xml:space="preserve">3500/);
 });
 
+test('bid-docx tô nền vàng chỗ đánh dấu chờ BA, để yên chữ quanh nó', () => {
+  const dir = tmp();
+  const json = write(dir, 'c.json', { blocks: [
+    { p: 'Bảo hành 36 tháng [cần xác nhận: gói bảo hành của hãng], hotline **[cần bổ sung]**.' },
+    { table: { columns: ['Yêu cầu', 'Đáp ứng'], rows: [['Cổng 10GbE', '1 cổng [chưa có chứng minh: cổng thứ hai]']] } },
+  ] });
+  const out = path.join(dir, 'out.docx');
+  assert.equal(node('bid/bid-docx.mjs', [json, out]).status, 0);
+  const doc = xml(out, 'word/document.xml');
+  const lit = [...doc.matchAll(/<w:r><w:rPr>((?:(?!<\/w:rPr>).)*)<\/w:rPr><w:t xml:space="preserve">([^<]*)<\/w:t><\/w:r>/g)]
+    .filter((m) => m[1].includes('<w:highlight w:val="yellow"/>')).map((m) => m[2]);
+  assert.deepEqual(lit, ['[cần xác nhận: gói bảo hành của hãng]', '[cần bổ sung]', '[chưa có chứng minh: cổng thứ hai]']);
+  assert.match(doc, /<w:b\/><w:bCs\/>(?:(?!<\/w:rPr>).)*<w:highlight w:val="yellow"\/>(?:(?!<\/w:r>).)*\[cần bổ sung\]/);
+  assert.ok(!/<w:highlight[^>]*\/>(?:(?!<\/w:r>).)*Bảo hành 36 tháng/.test(doc), 'chữ thường không bị tô');
+});
+
 test('bid-docx với khuôn là hồ sơ cũ: giữ khổ trang, bỏ nội dung, ảnh, người sửa và số đếm của hồ sơ cũ', () => {
   const dir = tmp();
   write(dir, 'old.png', png());

@@ -6,7 +6,7 @@ argument-hint: "[write|edit|review|word|bid|memory|secret|feedback] <yêu cầu,
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.16.1"
+  version: "0.16.2"
 ---
 
 # Viết cho lưu loát

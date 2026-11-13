@@ -165,13 +165,17 @@ let recording = true;
 // Gạch nối giữa hai chữ số (khoảng năm "2015-2020", khoảng số "3-5") thành gạch nối không ngắt của Word, để Word không
 // ngắt dòng giữa khoảng, nhất là trong ô bảng hẹp. Chữ vẫn hiện và chép ra là dấu "-".
 const unbroken = (s) => s.split(/(?<=\d)-(?=\d)/).flatMap((x, i) => (i ? [new NoBreakHyphen(), x] : [x]));
+// Chỗ đánh dấu "[cần xác nhận: ...]", "[cần bổ sung: ...]" tô nền vàng, để người nhận tệp thấy ngay chỗ phải tự sửa.
+const MARKER = /(\[(?:cần xác nhận|cần bổ sung|chưa có chứng minh)[^\]]*\])/iu;
+const isMarker = (s) => new RegExp(`^${MARKER.source}$`, 'iu').test(s);
 // Chữ thường; `mã` thành phông đều. Kiểu chữ (đậm, nghiêng) ghi rõ ở mọi đoạn, kể cả khi là chữ thường.
 function runs(text, style = {}) {
   if (recording) plain.push(String(text ?? ''));
   const base = { font: FONT, size: SIZE, bold: false, italics: false, ...style };
-  return String(text ?? '').split(/(`[^`]+`)/).filter(Boolean).map((p) => (p.startsWith('`') && p.endsWith('`')
-    ? new TextRun({ ...base, text: p.slice(1, -1), font: MONO, size: base.size - 4 })
-    : new TextRun({ ...base, children: unbroken(p) })));
+  return String(text ?? '').split(/(`[^`]+`)/).filter(Boolean).flatMap((p) => (p.startsWith('`') && p.endsWith('`')
+    ? [new TextRun({ ...base, text: p.slice(1, -1), font: MONO, size: base.size - 4 })]
+    : p.split(MARKER).filter(Boolean).map((q) => new TextRun({ ...base, children: unbroken(q),
+      ...(isMarker(q) ? { highlight: 'yellow' } : {}) }))));
 }
 // Nhớ lời và tùy chọn của mỗi đoạn, để dựng lại đoạn cuối thân bài với keepNext (xem chỗ câu kết).
 const paraArgs = new WeakMap();

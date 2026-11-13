@@ -339,12 +339,20 @@ function runs(s, rpr = '') {
     const ital = both || (!bold && /^\*[\s\S]+\*$/.test(part));
     const t = (both ? part.slice(3, -3) : bold ? part.slice(2, -2) : ital ? part.slice(1, -1) : part).split(STAR).join('*');
     const props = mergeRpr(rpr, bold ? '<w:b/><w:bCs/>' : '', ital ? '<w:i/><w:iCs/>' : '');
-    // "E-HSMT", "E-HSDT", "E-TBMT": gạch nối không ngắt dòng, để Word không bẻ thành "E-" cuối dòng và "HSMT" dòng sau.
-    // Mã hiệu có gạch nối ("W-3500", "Immortalis-G925", "Wi-Fi") không được gãy ở dấu gạch: dùng gạch nối không ngắt của Word.
-    const body = esc(t).replace(/(^|[^\p{L}])E-(?=[A-ZĐ])/gu, '$1E</w:t><w:noBreakHyphen/><w:t xml:space="preserve">')
-      .replace(/([A-Za-z0-9])-(?=[A-Za-z0-9])/g, '$1</w:t><w:noBreakHyphen/><w:t xml:space="preserve">');
-    return `<w:r>${props ? `<w:rPr>${props}</w:rPr>` : ''}<w:t xml:space="preserve">${body}</w:t></w:r>`;
+    return t.split(MARKER).filter(Boolean).map((piece) => run(piece, isMarker(piece) ? mergeRpr(props, HIGHLIGHT) : props)).join('');
   }).join('');
+}
+// Chỗ đánh dấu chờ BA ("[cần xác nhận: ...]", "[cần bổ sung: ...]", "[chưa có chứng minh: ...]") tô nền vàng, để BA mở tệp
+// là thấy ngay chỗ phải tự sửa.
+const MARKER = /(\[(?:cần xác nhận|cần bổ sung|chưa có chứng minh)[^\]]*\])/iu;
+const isMarker = (s) => new RegExp(`^${MARKER.source}$`, 'iu').test(s);
+const HIGHLIGHT = '<w:highlight w:val="yellow"/>';
+function run(t, props) {
+  // "E-HSMT", "E-HSDT", "E-TBMT": gạch nối không ngắt dòng, để Word không bẻ thành "E-" cuối dòng và "HSMT" dòng sau.
+  // Mã hiệu có gạch nối ("W-3500", "Immortalis-G925", "Wi-Fi") không được gãy ở dấu gạch: dùng gạch nối không ngắt của Word.
+  const body = esc(t).replace(/(^|[^\p{L}])E-(?=[A-ZĐ])/gu, '$1E</w:t><w:noBreakHyphen/><w:t xml:space="preserve">')
+    .replace(/([A-Za-z0-9])-(?=[A-Za-z0-9])/g, '$1</w:t><w:noBreakHyphen/><w:t xml:space="preserve">');
+  return `<w:r>${props ? `<w:rPr>${props}</w:rPr>` : ''}<w:t xml:space="preserve">${body}</w:t></w:r>`;
 }
 function para(content, f, extraPpr = '', extraRpr = '') {
   const ppr = mergePpr(f?.ppr ?? '', extraPpr);

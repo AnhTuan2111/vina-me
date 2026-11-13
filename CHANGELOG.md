@@ -3,6 +3,11 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.16.2 (13/11/2026)
+
+- Tệp Word dựng bằng `bid-docx.mjs`, `official-doc-docx.mjs`, `report-docx.mjs` tô nền vàng mọi chỗ đánh dấu `[cần xác nhận...]`,
+  `[cần bổ sung...]`, `[chưa có chứng minh...]`, để người nhận tệp (BA, người duyệt) mở ra là thấy ngay chỗ phải tự sửa.
+
 ## 0.16.1 (13/11/2026)
 
 - Agent dùng skill cho mọi câu trả lời trong chat bằng tiếng Việt, kể cả câu trả lời chỉ vài câu, không chỉ khi viết văn dài.
