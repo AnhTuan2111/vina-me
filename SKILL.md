@@ -2,11 +2,11 @@
 name: vina-me
 description: Viết và sửa văn tiếng Việt cho lưu loát, dễ hiểu, không thành văn AI slop, và dựng phần kỹ thuật của hồ sơ dự thầu (E-HSDT). Dùng mỗi khi viết hay sửa tiếng Việt, kể cả khi người dùng không nhắc tới giọng văn: mọi câu trả lời trong chat dù chỉ vài câu, bài giảng, tài liệu, README, báo cáo, văn bản hành chính theo Nghị định 30/2020, email, tin nhắn công việc, chữ trên sơ đồ, tệp Word. Dùng ngay khi người dùng chê văn "đọc là biết AI viết", "máy móc", "rời rạc", "văn mẫu", "AI slop", hoặc nhờ humanize, viết theo giọng một người. Dùng cho đấu thầu khi người dùng đưa hồ sơ mời thầu (E-HSMT, HSMT, thư mục gói thầu) hay nhờ làm thầu, làm hồ sơ dự thầu, bảng đáp ứng yêu cầu kỹ thuật, thuyết minh đề xuất kỹ thuật, tài liệu hãng tô vàng kèm bản dịch; không dùng để soạn hồ sơ mời thầu cho bên mời thầu. Kèm script cài skill, bộ nhớ dùng chung cho Claude Code và Codex, học từ phiên cũ, giữ mật khẩu cho agent.
 license: MIT
-argument-hint: "[write|edit|review|word|bid|memory|secret|feedback] <yêu cầu, tệp hay thư mục>"
+argument-hint: "[write|edit|review|score|word|bid|memory|secret|feedback] <yêu cầu, tệp hay thư mục>"
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.17.0"
+  version: "0.18.0"
 ---
 
 # Viết cho lưu loát
@@ -20,10 +20,13 @@ dùng một lần đúng chỗ thì được, dùng thành thói quen thì thàn
 1. Xác định viết cho ai, để làm gì, người đọc đã biết gì; loại văn bản và một mục đích chính (`references/document-types.md`).
 2. Chọn một cách sắp thông tin (thời gian, nhân quả, mức quan trọng, so sánh) và giữ suốt bài (`references/structure.md`).
 3. Chốt tên gọi cho thứ nhắc nhiều lần, chốt xưng hô theo mục Giọng.
-4. Viết theo bảy điều dưới. Văn bản dài hay cần soát kỹ thì đọc bản đầy đủ ở `references/core-rules.md`.
+4. Viết theo bảy điều dưới. Văn bản dài hay cần soát kỹ thì đọc bản đầy đủ ở `references/core-rules.md`. Trước mỗi lần
+   viết hay viết lại văn dài thì đọc lại skill và tệp tham khảo hợp loại, kể cả khi đầu phiên đã đọc; viết theo trí nhớ
+   thì giữ được luật câu chữ nhưng hay rơi mất cách dựng bài, nên bài ra kể lể.
 5. Soát: `node scripts/lint.mjs <tệp>` nếu chạy được lệnh, rồi đọc lại hai lượt, một lượt làm người chưa biết gì, một
    lượt bắt văn máy theo `references/machine-tells.md`. Soát văn của người khác thì chạy lint trên tệp đó và trên chính
-   lời soát; lint bỏ qua lời trích trong ngoặc kép, nên báo nào còn lại trong lời soát là của mình.
+   lời soát; lint bỏ qua lời trích trong ngoặc kép, nên báo nào còn lại trong lời soát là của mình. Bài dài hay người
+   dùng muốn có điểm thì nhờ một agent khác chấm theo `references/scoring.md`.
 6. Trả kết quả theo bảng Trả kết quả. Việc sửa, kiểm, chạy thì báo đã kiểm gì, chưa kiểm gì, chỗ nào chưa chắc.
 
 ## Bảy điều cốt lõi
@@ -102,6 +105,7 @@ Người dùng gõ `/vina-me <việc> <phần còn lại>` thì chữ đầu là
 | `write` | viết mới theo phần còn lại, quy trình ở trên |
 | `edit` | sửa văn có sẵn (tệp hay đoạn dán vào), theo mục Sửa văn có sẵn |
 | `review` | soát mà không sửa, trả theo dòng Soát mà không sửa |
+| `score` | chấm điểm một bài, đọc tuần tự từng câu, trừ theo thang ở `references/scoring.md`; kèm mốc thì sửa rồi chấm lại tới khi đạt |
 | `word` | dựng hay xuất tệp Word và PDF (`references/docx-export.md`; văn bản hành chính thêm `references/official-documents.md`) |
 | `bid` | hồ sơ dự thầu từ thư mục gói thầu (`references/bid-proposals.md`) |
 | `memory` | dựng, soát, dọn bộ nhớ dùng chung (`references/agent-memory.md`) |
@@ -147,6 +151,7 @@ thì soạn luôn, không hỏi lại.
 | `references/storytelling.md` | dẫn dắt người đọc đi một mạch: mở bằng câu của người đọc, câu sau móc vào câu trước, tả trước gọi tên sau |
 | `references/teaching.md` | bài giảng, tài liệu dạy học, câu hỏi kiểm tra; soát bằng `references/teaching-checklist.md` |
 | `references/review-reports.md` | báo cáo lỗi, báo cáo đối chiếu với tài liệu gốc |
+| `references/scoring.md` | chấm điểm một bài, tìm chỗ văn AI slop theo từng câu, vòng sửa rồi chấm lại |
 | `references/diagrams-and-docs.md` | chữ trên sơ đồ, trang trình chiếu, tài liệu gửi khách, báo cáo trạng thái hệ thống |
 | `references/official-documents.md` | báo cáo, tờ trình, công văn, kế hoạch, biên bản của cơ quan nhà nước |
 | `references/bid-proposals.md` | hồ sơ dự thầu: quy trình, việc cấm; chi tiết từng bước ở `references/bid/` |
