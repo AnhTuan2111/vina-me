@@ -623,3 +623,10 @@ test('official-doc-docx và report-docx tô nền vàng chỗ đánh dấu cần
   assert.equal(r2.status, 0, r2.out);
   assert.deepEqual(lit(path.join(dir, 'r.docx')), ['[cần xác nhận: giờ]', '[Cần bổ sung phiên bản]']);
 });
+
+test('remind.mjs in một dòng nhắc dùng vina-me cho hook UserPromptSubmit', () => {
+  const r = node('remind.mjs', []);
+  assert.equal(r.status, 0, r.out);
+  assert.match(r.stdout, /vina-me/);
+  assert.equal(r.stdout.trim().split('\n').length, 1);
+});

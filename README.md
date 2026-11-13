@@ -26,6 +26,7 @@ Trả lời xong là có:
 - skill trong Claude Code và Codex, agent nào có trên máy thì cài cho agent đó;
 - bộ nhớ ở `~/agent-memory/`: agent đọc ở đầu mỗi phiên, tự ghi khi bạn sửa hay khen một cách làm;
 - repo GitHub riêng tư cho bộ nhớ nếu bạn chọn, tự lưu khi mở và đóng phiên, khi đăng nhập máy và mỗi 2 giờ;
+- trong Claude Code, mỗi tin bạn gửi đi kèm một dòng nhắc agent soát câu trả lời theo vina-me, kể cả câu trả lời ngắn;
 - vina-me tự lên bản phát hành mới nhất.
 
 Cài trên máy thứ hai bằng đúng hai lệnh trên: script thấy repo bộ nhớ đã có thì kéo về, không hỏi lại.
@@ -93,6 +94,8 @@ bao giờ mang tài liệu nội bộ.
 ## Chỉ cài skill, không cần bộ nhớ
 
 - Claude Code: `git clone https://github.com/AnhTuan2111/vina-me.git ~/.claude/skills/vina-me`, cập nhật bằng `git pull`.
+  Muốn agent nhớ dùng skill ở mọi lượt chat thì thêm một hook `UserPromptSubmit` vào settings.json của Claude Code. Hook đó
+  chạy lệnh `node ~/.claude/skills/vina-me/scripts/remind.mjs`.
 - Claude trên web, ứng dụng desktop: tải zip, đổi thư mục bên trong thành `vina-me`, nén lại rồi tải lên ở mục Skills.
 - Agent khác có Agent Skills: chép thư mục `vina-me` (có `SKILL.md` ngay bên trong) vào thư mục skill của agent.
 - AI không có skill: dán `SKILL.md` vào phần chỉ dẫn hệ thống. Còn chỗ thì dán thêm ba tệp core-rules.md, machine-tells.md và

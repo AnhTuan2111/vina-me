@@ -33,6 +33,7 @@ test('cài máy A rồi máy B kéo đúng bộ nhớ về, machine.md không l�
   const hooks = JSON.parse(read(path.join(a, '.claude', 'settings.json'))).hooks;
   assert.ok(hooks.SessionStart[0].hooks[0].command.includes('sync'));
   assert.ok(hooks.SessionEnd[0].hooks[0].command.includes('sync --quiet'));
+  assert.ok(hooks.UserPromptSubmit[0].hooks[0].command.includes('remind.mjs'));
   assert.match(read(path.join(a, '.codex', 'AGENTS.md')), /vina-me memory: start[\s\S]*Gọi là: Lan[\s\S]*vina-me memory: end/);
 });
 
@@ -43,6 +44,27 @@ test('chạy cài lại không sinh dòng, hook hay khối trùng', () => {
   const r = node('setup.mjs', ['--home', a, '--remote', remote, '--no-schedule']);
   assert.equal(r.status, 0, r.out);
   assert.deepEqual(files.map(read), before);
+});
+
+test('sync thêm hook nhắc dùng vina-me một lần cho máy cài bản cũ, không thêm lại khi người dùng đã gỡ', () => {
+  const { a } = twoMachines();
+  const settings = path.join(a, '.claude', 'settings.json');
+  const config = path.join(a, '.config', 'vina-me', 'config.json');
+  const drop = () => {
+    const s = JSON.parse(read(settings)); delete s.hooks.UserPromptSubmit;
+    fs.writeFileSync(settings, JSON.stringify(s, null, 2));
+  };
+  // Máy cài trước bản có hook nhắc: settings.json không có hook đó, cấu hình chưa có dấu remindHook.
+  drop();
+  const c = JSON.parse(read(config)); delete c.remindHook; fs.writeFileSync(config, JSON.stringify(c));
+  const r1 = node('setup.mjs', ['--home', a, 'sync']);
+  assert.match(r1.stdout, /hook nhắc dùng vina-me/);
+  assert.ok(JSON.parse(read(settings)).hooks.UserPromptSubmit[0].hooks[0].command.includes('remind.mjs'));
+  assert.equal(JSON.parse(read(settings)).hooks.SessionStart.length, 1);
+  // Người dùng tự gỡ hook nhắc: các lần sync sau không thêm lại, không in gì.
+  drop();
+  assert.equal(node('setup.mjs', ['--home', a, 'sync']).stdout.trim(), '');
+  assert.equal(JSON.parse(read(settings)).hooks.UserPromptSubmit, undefined);
 });
 
 test('sync gom thay đổi thành một commit, máy kia kéo về và in đúng tệp đổi', () => {

@@ -70,6 +70,18 @@ function cmdSync() {
       const updated = updateSkill();
       if (updated) { report.push(updated); logLines.push(updated); }
     } catch (e) { logLines.push(`cập nhật vina-me lỗi: ${e.message}`); }
+    // Máy cài trước khi có hook nhắc dùng vina-me: thêm riêng hook đó ở lần sync đầu tiên sau khi cập nhật, rồi ghi dấu
+    // vào cấu hình để không bao giờ thêm lại, kể cả khi người dùng tự gỡ hook.
+    try {
+      const conf = readConfig();
+      if (useClaude && !conf.remindHook) {
+        if (installClaudeHooks({ silent: true, events: ['UserPromptSubmit'] })) {
+          report.push('Đã thêm hook nhắc dùng vina-me ở mỗi tin vào settings.json của Claude Code; hook có hiệu lực từ phiên sau.');
+          logLines.push('thêm hook UserPromptSubmit');
+        }
+        writeConfig({ ...readConfig(), remindHook: true });
+      }
+    } catch (e) { logLines.push(`thêm hook lỗi: ${e.message}`); }
     if (exists(path.join(memDir, 'AGENTS.md'))) {
       try {
         const committed = commitPending();
@@ -187,6 +199,7 @@ function wireAgents() {
   if (useClaude) {
     linkClaude();
     installClaudeHooks();
+    writeConfig({ ...readConfig(), remindHook: true });
   }
   if (useCodex && syncCodex()) log(`  Codex: đã chép bộ nhớ vào ${path.join(codexDir, 'AGENTS.md')}`);
   installSchedule();
