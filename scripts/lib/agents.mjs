@@ -2,7 +2,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { hasFlag, command, fakeHome, home, memDir, configDir, claudeDir, codexDir, START, END, exists, read, write, quiet, log, backupOnce, shown, scriptPath, homeFlag, selfCommand, run, firstLine } from './context.mjs';
+import { hasFlag, command, fakeHome, home, memDir, configDir, claudeDir, codexDir, START, END, exists, read, write, quiet, log, backupOnce, shown, slash, scriptPath, homeFlag, selfCommand, run, firstLine } from './context.mjs';
 
 // Bản chép cho Codex: tệp cửa vào bỏ các dòng @, rồi nối nội dung các tệp kia vào sau.
 function codexBlock() {
@@ -43,30 +43,41 @@ function linkClaude() {
   log(`  Claude Code: thêm dòng ${line} vào ${file}`);
 }
 
-// Hook của Claude Code: SessionStart chạy sync và chữ in ra được đưa vào ngữ cảnh của phiên; SessionEnd lưu nốt thay đổi.
-function installClaudeHooks() {
+// Hook của Claude Code: SessionStart chạy sync và chữ in ra được đưa vào ngữ cảnh của phiên; SessionEnd lưu nốt thay đổi;
+// UserPromptSubmit chạy remind.mjs ở mỗi tin người dùng gửi, nhắc agent soát lời trả lời theo vina-me.
+// silent: không in gì; events: chỉ thêm các hook này (sync dùng để thêm riêng hook nhắc). Trả về true khi vừa thêm hook.
+function installClaudeHooks({ silent = false, events } = {}) {
+  const say = silent ? () => {} : log;
   const file = path.join(claudeDir, 'settings.json');
   let cfg = {};
   if (exists(file)) {
     try { cfg = JSON.parse(read(file)); } catch {
-      log(`  Claude Code: không đọc được ${file} (không phải JSON chuẩn), nên chưa thêm hook. Tự thêm hook SessionStart chạy:`);
-      log(`  ${selfCommand} sync`);
-      return;
+      say(`  Claude Code: không đọc được ${file} (không phải JSON chuẩn), nên chưa thêm hook. Tự thêm hook SessionStart chạy:`);
+      say(`  ${selfCommand} sync`);
+      return false;
     }
   }
-  const ours = (h) => String(h.command ?? '').includes('setup.mjs') && /\bsync\b/.test(String(h.command));
+  const remind = `node "${slash(path.join(path.dirname(scriptPath), 'remind.mjs'))}"`;
+  const isSync = (h) => String(h.command ?? '').includes('setup.mjs') && /\bsync\b/.test(String(h.command));
+  const isRemind = (h) => String(h.command ?? '').includes('remind.mjs');
   cfg.hooks ??= {};
-  let changed = false;
-  for (const [event, matcher, cmd] of [['SessionStart', 'startup', `${selfCommand} sync`], ['SessionEnd', undefined, `${selfCommand} sync --quiet`]]) {
+  const added = [];
+  for (const [event, matcher, cmd, ours, timeout] of [
+    ['SessionStart', 'startup', `${selfCommand} sync`, isSync, 60],
+    ['SessionEnd', undefined, `${selfCommand} sync --quiet`, isSync, 60],
+    ['UserPromptSubmit', undefined, remind, isRemind, 10],
+  ]) {
+    if (events && !events.includes(event)) continue;
     cfg.hooks[event] ??= [];
     if (cfg.hooks[event].some((g) => (g.hooks ?? []).some(ours))) continue;
-    cfg.hooks[event].push({ ...(matcher ? { matcher } : {}), hooks: [{ type: 'command', command: cmd, timeout: 60 }] });
-    changed = true;
+    cfg.hooks[event].push({ ...(matcher ? { matcher } : {}), hooks: [{ type: 'command', command: cmd, timeout }] });
+    added.push(event);
   }
-  if (!changed) { log(`  Claude Code: ${file} đã có hook tự lưu bộ nhớ`); return; }
+  if (!added.length) { say(`  Claude Code: ${file} đã có hook tự lưu bộ nhớ và hook nhắc dùng vina-me`); return false; }
   backupOnce(file);
   write(file, JSON.stringify(cfg, null, 2) + '\n');
-  log(`  Claude Code: thêm hook tự lưu bộ nhớ khi mở và đóng phiên vào ${file}`);
+  say(`  Claude Code: thêm hook ${added.join(', ')} vào ${file} (tự lưu bộ nhớ khi mở, đóng phiên; nhắc dùng vina-me ở mỗi tin)`);
+  return true;
 }
 
 // Lịch tự lưu: lúc đăng nhập máy và mỗi 2 giờ. Windows chạy qua wscript để không bật cửa sổ đen.

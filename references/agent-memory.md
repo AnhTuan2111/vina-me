@@ -90,6 +90,11 @@ Script hỏi tám câu (gọi là gì, vai trò, hay viết cho ai, trả lời 
 3. nếu người dùng muốn lưu lên GitHub: tạo repo riêng tư `<tài khoản GitHub>/agent-memory` bằng `gh`, commit và đẩy lên;
 4. sinh `machine.md`, nối bộ nhớ vào từng agent, cài hook và lịch tự lưu (bỏ lịch bằng `--no-schedule`).
 
+Ngoài hai hook tự lưu, Claude Code còn được cài hook `UserPromptSubmit`. Mỗi lần người dùng gửi một tin, hook chạy
+`scripts/remind.mjs`, in một dòng nhắc agent soát lời trả lời theo vina-me, và Claude Code chèn dòng đó vào ngữ cảnh của lượt
+ấy. Lý do là nội dung `SKILL.md` chỉ được nạp một lần lúc gọi skill, phiên dài thì bị tóm gọn, nên agent dễ quên áp luật cho
+câu trả lời ngắn. Máy cài từ bản trước được `sync` thêm hook này một lần sau khi cập nhật; người dùng tự gỡ thì không thêm lại.
+
 Lưu lên GitHub cần `gh` đã đăng nhập (`gh auth login`, chạy một lần). Chưa đăng nhập thì script vẫn dựng bộ nhớ trên máy và
 nói lệnh để đưa lên sau: `<setup> github`. Muốn dùng repo khác (GitLab của công ty chẳng hạn) thì tạo repo trống rồi chạy
 `<setup> remote <url git>`.
@@ -158,7 +163,8 @@ Người dùng không muốn có bộ nhớ thì tạo tệp rỗng `~/agent-mem
 - Đội đổi luật chung: `<setup> team <tệp luật>`. Lần `sync` sau sẽ lưu lên repo.
 - Mật khẩu lưu bằng `secrets.mjs` không theo repo: mã hoá bằng tài khoản của từng máy, nên máy mới phải lưu lại.
 - Gỡ:
-  - xoá dòng `@~/agent-memory/AGENTS.md` trong `CLAUDE.md` và hai hook có `setup.mjs` trong `settings.json`;
+  - xoá dòng `@~/agent-memory/AGENTS.md` trong `CLAUDE.md`, hai hook có `setup.mjs` và hook có `remind.mjs` trong
+    `settings.json`;
   - xoá khối giữa hai dòng đánh dấu trong `~/.codex/AGENTS.md`;
   - Windows: xoá `vina-me-sync.vbs` trong thư mục Startup, chạy `schtasks /Delete /TN "vina-me sync" /F` (cài với `--home`
     thì Startup là `<home>/Startup` và task tên "vina-me sync test <tên thư mục home>"); macOS, Linux: xoá hai dòng có
