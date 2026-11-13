@@ -5,14 +5,16 @@ dòng đầu của mục là dòng được in ra khi cập nhật.
 
 ## 0.16.2 (13/11/2026)
 
-- Tệp Word dựng bằng `bid-docx.mjs`, `official-doc-docx.mjs`, `report-docx.mjs` tô nền vàng mọi chỗ đánh dấu `[cần xác nhận...]`,
-  `[cần bổ sung...]`, `[chưa có chứng minh...]`, để người nhận tệp (BA, người duyệt) mở ra là thấy ngay chỗ phải tự sửa.
+- Trong tệp Word do skill dựng, các chỗ đánh dấu chờ người duyệt như `[cần xác nhận: ...]` được tô nền vàng, nên BA hay người
+  duyệt mở tệp ra là thấy ngay chỗ phải tự sửa. Việc tô áp cho hồ sơ dự thầu, văn bản hành chính và báo cáo xuất Word, với cả
+  dấu `[cần bổ sung...]` và `[chưa có chứng minh...]`.
 
 ## 0.16.1 (13/11/2026)
 
-- Agent dùng skill cho mọi câu trả lời trong chat bằng tiếng Việt, kể cả câu trả lời chỉ vài câu, không chỉ khi viết văn dài.
-  Máy đã cài trước bản này giữ tệp `AGENTS.md` cũ: sửa dòng trong mục "Viết tiếng Việt" thành "Mọi câu trả lời trong chat bằng
-  tiếng Việt, dù chỉ vài câu, và mọi đoạn tiếng Việt viết ra hay sửa đều theo skill `vina-me`."
+- Agent dùng skill cho mọi câu trả lời trong chat bằng tiếng Việt, kể cả câu trả lời chỉ vài câu; trước đây skill chỉ được gọi
+  khi viết đoạn dài hơn vài câu. Máy cài trước bản này vẫn giữ tệp `AGENTS.md` cũ, vì lúc cập nhật script không ghi đè tệp đó.
+  Muốn agent đọc luật mới ngay từ bộ nhớ thì sửa dòng trong mục "Viết tiếng Việt" thành: "Mọi câu trả lời trong chat bằng tiếng
+  Việt, dù chỉ vài câu, và mọi đoạn tiếng Việt viết ra hay sửa đều theo skill `vina-me`."
 
 ## 0.16.0 (13/11/2026)
 
