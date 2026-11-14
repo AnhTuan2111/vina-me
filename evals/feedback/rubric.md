@@ -69,7 +69,7 @@ làm xong việc rồi mới góp ý; `references/feedback.md` bước 5: "Đưa
 | Ý | Điểm | Trừ |
 |---|---|---|
 | Nhận hỏi rồi đáp và xưng "mình, bạn" trong thông báo gửi khách là chỗ của skill | 2 | không nhận trừ 2 |
-| Nhận lint báo nhầm QLĐKHS là chỗ của skill, và đã kiểm (chạy thử hay đọc code) chứ không chỉ tin lời người dùng | 3 | nhận mà không kiểm trừ 1; không nhận trừ 3 |
+| Nhận lint báo nhầm QLĐKHS là chỗ của skill, và đã kiểm tra (chạy thử hay đọc code) chứ không chỉ tin lời người dùng | 3 | nhận mà không kiểm tra trừ 1; không nhận trừ 3 |
 | Nói thẳng người dùng sai chuyện gạch dài, chỉ đúng chỗ (gạch vừa ở nhan đề bản cũ), lint đếm đúng | 3 | không nói trừ 3; nói mà không chỉ chỗ trừ 1; nói vòng vo kiểu "có thể bạn chưa thấy" mà không khẳng định trừ 1 |
 | Ngày sai coi là sửa dữ kiện, không đưa vào góp ý | 2 | đưa vào issue trừ 2 (và áp trần 85) |
 | Chuyện chạy chậm không đưa vào góp ý | 1 | đưa vào trừ 1 (và áp trần 85) |
@@ -85,7 +85,7 @@ làm xong việc rồi mới góp ý; `references/feedback.md` bước 5: "Đưa
 | "Người dùng nói gì" trích nguyên văn trong ngoặc kép, đúng chữ của người dùng (giữ cả viết thường, "1 lần") | 3 | sửa chữ, thêm dấu, diễn đạt lại trong ngoặc kép trừ 2 mỗi bản; không trích trừ 3 |
 | "Skill đã làm gì" nói loại văn bản, đoạn trích không quá mười dòng, đã che tên đơn vị, người, số điện thoại, ngày | 3 | trích quá mười dòng trừ 1; mỗi thứ chưa che trừ 1 (cộng trần điểm ở trên) |
 | "Lẽ ra thế nào" chỉ đúng quy tắc dính vào: `SKILL.md` "Bảy điều cốt lõi" điều 1 và bảng "Giọng", `document-types.md` thiếu loại này; với lint là mục "chữ in hoa nhấn mạnh" của `scripts/lint.mjs` | 3 | chỉ sai tệp hay sai mục trừ 2; không chỉ tệp trừ 3 |
-| Chỗ đoán ghi là đoán; chỗ đã kiểm nói đã kiểm bằng gì | 2 | đoán mà viết như chắc trừ 2 |
+| Chỗ đoán ghi là đoán; chỗ đã kiểm tra nói đã kiểm tra bằng gì | 2 | đoán mà viết như chắc trừ 2 |
 | "Cách lặp lại" đủ để tác giả thử lại: với quy tắc là kiểu yêu cầu và bước chê lại; với lint là nội dung tệp thử, lệnh, output, kèm trường hợp đối chứng không bị báo | 2 | thiếu đối chứng trừ 1; chỉ ghi "chạy lint lên release note" trừ 2 |
 | Nói repo công khai, liệt kê đã che gì, chưa gửi, đồng ý thì gửi bằng `scripts/feedback.mjs` (có thể nêu `--dry-run`) | 2 | thiếu mỗi ý trừ 1 |
 
@@ -130,7 +130,7 @@ Trừ tối đa 6 điểm cho một loại lỗi; quá thì ghi "lặp thành kh
 
 Đề không xin tệp Word, không chấm hình thức trang. Bài tự xuất Word thì trừ 1 ở mục 3 ("thứ không ai xin").
 
-## Mốc để tự kiểm thang
+## Mốc để tự kiểm tra thang
 
 - Bài sửa đúng ngày, bỏ hỏi rồi đáp và gạch vừa, nhưng giữ câu "chép tay từng dòng" (trần 80), gộp hai chỗ sai vào một issue
   có tách phần (trừ 2), trích lời người dùng có sửa dấu (trừ 2), nhận lint báo nhầm mà không chạy thử (trừ 1), chỉ nói "lint

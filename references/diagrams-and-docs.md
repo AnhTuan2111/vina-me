@@ -31,7 +31,7 @@ liệu cấu hình gửi khách, báo cáo trạng thái hệ thống. Chữ ở
   sau động từ, trong ngoặc: "HTTPS 443" thành "open web app (HTTPS 443)", "Keycloak :8443" thành "log in (8443)". Một
   nhãn một việc; luồng phụ (cổng 80 chỉ để chuyển sang 443) thì một mũi tên riêng hoặc để trong bảng, không nhồi vào
   ngoặc của nhãn chính.
-- Nhãn mang dữ kiện như tài liệu: cổng, giao thức, giờ chạy mà nguồn không ghi thì không đưa lên nhãn. Chỗ còn phải kiểm
+- Nhãn mang dữ kiện như tài liệu: cổng, giao thức, giờ chạy mà nguồn không ghi thì không đưa lên nhãn. Chỗ còn phải kiểm tra
   thì ghi rõ trên nhãn bằng ngôn ngữ của nhãn ("forward requests (port TBD)") và báo người dùng.
 - Chữ trong bài nhắc tới thứ gì thì sơ đồ phải có thứ đó. Bài nói "so tệp YAML với bản trên cụm" thì sơ đồ phải có cả
   hai phía của phép so.
@@ -131,10 +131,10 @@ Tài liệu này đi thẳng tới khách, nên một ô đoán sai là một l�
   nào bật thì "cần bổ sung" tô vàng. Ô dấu hiệu chỉ ghi điều người trực thấy được (cảnh báo nào, lỗi gì trên màn hình),
   ảnh hưởng tới hệ thống không đặt vào đó.
 - Mỗi chỗ ghi từ suy luận (giao thức theo phần mềm, dấu hiệu theo danh sách cảnh báo, chiều kết nối đã sửa) có một dòng
-  trong chat. Kể đủ mọi chỗ, không kể một nửa, vì người dùng chỉ kiểm lại những chỗ được báo.
+  trong chat. Kể đủ mọi chỗ, không kể một nửa, vì người dùng chỉ kiểm tra lại những chỗ được báo.
 - Người thực hiện, bên chịu trách nhiệm ghi chữ nguồn dùng ("quản trị viên"). Nguồn không nói ai làm thì để ô "cần
   bổ sung", không gán "Bên A", "Bên B" hay tên người.
-- Hai nguồn ghi khác nhau (ghi chú một số, tệp cấu hình một số khác) thì không tự chọn: ô ghi cả hai kèm "cần kiểm", tô
+- Hai nguồn ghi khác nhau (ghi chú một số, tệp cấu hình một số khác) thì không tự chọn: ô ghi cả hai kèm "cần kiểm tra", tô
   vàng. Nguồn mới hơn của khách (email góp ý) thắng ghi chú cũ; thứ khách đã chốt thì không còn ở mục chờ.
 - Ghi chú sai kỹ thuật (chiều kết nối ngược, tên phần mềm nhầm) thì ghi theo kỹ thuật và nói trong chat đã sửa gì,
   vì sao.
@@ -145,11 +145,11 @@ Tài liệu này đi thẳng tới khách, nên một ô đoán sai là một l�
 
 ### Trả tài liệu gửi khách trong chat
 
-Chat chỉ gồm: đường dẫn tệp; từng ô tô vàng (mục nào, ô nào, vì sao chưa điền được, ai kiểm được); chỗ đã ghi khác nguồn
-và lý do; mọi chỗ ghi từ suy luận; chữ sơ đồ nếu người dùng xin; đã kiểm gì, chưa kiểm gì. Không kể lại tệp có những mục
+Chat chỉ gồm: đường dẫn tệp; từng ô tô vàng (mục nào, ô nào, vì sao chưa điền được, ai kiểm tra được); chỗ đã ghi khác nguồn
+và lý do; mọi chỗ ghi từ suy luận; chữ sơ đồ nếu người dùng xin; đã kiểm tra gì, chưa kiểm tra gì. Không kể lại tệp có những mục
 nào, đã theo chỗ sửa nào của khách, đã bỏ những thứ nội bộ nào: người dùng mở tệp là thấy.
 
-Dòng ô tô vàng nào cũng đủ bốn thứ kể trên, kể cả "ai kiểm được" (người quản trị máy đó, bên khách, người đã viết ghi
+Dòng ô tô vàng nào cũng đủ bốn thứ kể trên, kể cả "ai kiểm tra được" (người quản trị máy đó, bên khách, người đã viết ghi
 chú). Lý do chưa điền được dùng lời nguồn ("ghi chú ghi chưa hỏi lại bản nào"), không thêm điều nguồn không nói, như tên
 một bản phần mềm nguồn không nhắc. Tên máy, đường dẫn, tên miền nhắc trong chat đặt trong backtick, chép từ nguồn chứ
 không gõ lại, rồi so từng ký tự với tệp Word: đường dẫn mạng `\\máy\thư mục` mở bằng hai dấu `\`, mất một dấu là thành

@@ -90,7 +90,7 @@ Văn bản gửi cơ quan nhà nước thì theo thể thức riêng, xem mục 
 - Báo cáo đã có bảng việc tiếp theo thì không viết đoạn cuối kể lại bảng. Chỗ hở thấy được mà nguồn chưa có việc nào thì
   nói với người dùng trong lời trả để họ quyết, không tự thêm lời bàn vào báo cáo.
 
-## Kiểm sau khi xuất
+## Kiểm tra sau khi xuất
 
 1. Soát chữ trước khi đưa: dựng kèm `--text report.md` rồi chạy `node scripts/lint.mjs report.md`. Tệp này có cả chữ
    trong bảng, chú thích, dòng nguồn; đọc lại nó hai lượt như văn thường. Lint không bắt được mấy chỗ báo cáo có mốc giờ
@@ -139,7 +139,7 @@ Cấu trúc JSON:
 {
   "font": "Times New Roman",
   "title": "Báo cáo rà soát nội dung trang X",
-  "meta": "Kiểm ngày 06/11/2026 trên bản đang chạy, đối chiếu với tài liệu A, B. Khung đỏ đánh dấu chỗ được nêu.",
+  "meta": "Kiểm tra ngày 06/11/2026 trên bản đang chạy, đối chiếu với tài liệu A, B. Khung đỏ đánh dấu chỗ được nêu.",
   "sections": [
     {
       "heading": "Tài liệu đã nhận",
@@ -197,7 +197,7 @@ thì theo mẫu. Dựng kèm `--text` rồi chạy `lint.mjs`; xuất PDF bằng
 Word) và xem từng trang trước khi đưa; văn bản hành chính chạy thêm `official-doc-docx.mjs --check-pdf`.
 
 Đưa đường dẫn tệp Word, tệp PDF đã xuất và số trang, và nói luôn trong câu đó đã xuất PDF bằng gì, đã xem từng trang và
-kiểm gì trên trang: "Báo cáo ở `…/report.docx`, bản PDF xuất bằng Word ở `…/report.pdf`, 3 trang; đã xem từng trang: chân
+kiểm tra gì trên trang: "Báo cáo ở `…/report.docx`, bản PDF xuất bằng Word ở `…/report.pdf`, 3 trang; đã xem từng trang: chân
 trang có số trang, hai ảnh nằm gọn cùng chú thích, bảng sang trang có lặp hàng tiêu đề." Ghi việc xem trang trong ghi chú
 riêng mà không nói trong lời trả thì người dùng không biết đã có ai xem bản in. Thêm một hai câu về dữ kiện còn thiếu hay
 chỗ các nguồn lệch nhau mà người dùng cần biết trước khi gửi. Yêu cầu nào làm khác mặc định của script (phông, cắt ảnh, vẽ

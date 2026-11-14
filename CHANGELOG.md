@@ -3,6 +3,11 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.19.2 (14/11/2026)
+
+- Chữ "kiểm" đứng lẻ (sửa, kiểm, chạy; chưa kiểm) nằm khắp SKILL.md và `references/`, nên agent viết theo. Đã đổi hết thành
+  "kiểm tra", và `scripts/lint.mjs` báo chữ "kiểm" lẻ; "kiểm" chỉ đi trong từ ghép như kiểm thử, kiểm kê.
+
 ## 0.19.1 (14/11/2026)
 
 - Thêm luật cứng vào đầu SKILL.md: viết bất cứ thứ gì có tiếng Việt, kể cả câu chat vài chữ, thì luôn gọi skill trước khi viết.

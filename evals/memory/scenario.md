@@ -32,7 +32,7 @@ Home giả gồm:
   trích nguyên văn kèm ngày, ý mới ngược ý cũ thì giữ ý mới và ghi đã đổi.
 - Đọc kết quả `<setup> check` như người hiểu chuyện: biết chỗ nó báo nhầm, không bịa ngày cho đủ luật.
 - Giữ bí mật khi bộ lọc của script sót (`scripts/lib/redact.mjs` không che "mật khẩu wifi văn phòng là ...").
-- Câu trả lời cuối theo mục "Trả lời trong chat" của `SKILL.md`: vấn đề và việc cần làm, nói đã kiểm gì, không khen, không
+- Câu trả lời cuối theo mục "Trả lời trong chat" của `SKILL.md`: vấn đề và việc cần làm, nói đã kiểm tra gì, không khen, không
   tổng kết. Bản nháp dài là phần việc chính, phần lời bao quanh nó phải ngắn.
 
 ## Kết quả script lúc ra đề

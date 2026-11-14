@@ -15,5 +15,5 @@ tiến độ: quý 1 chỉnh lý, quý 2 với quý 3 scan và biên mục, thu�
 dự toán chi tiết ở evals/official/inputs/budget.csv, tổng 1 tỷ 850. ubnd tỉnh đã giao 1.2 tỷ cho việc này trong qđ 2318, phần thiếu thì xin sở trình ubnd bổ sung
 đơn vị làm thì chọn sau theo luật đấu thầu, chưa có
 
-phần sự cần thiết bạn thực tập viết nháp rồi ở evals/official/inputs/intern-draft.txt, lấy ý trong đó, văn thì sửa lại chứ đọc sến quá. số liệu trong đó em ấy chưa kiểm đâu, chỉ dùng số anh ghi ở đây
+phần sự cần thiết bạn thực tập viết nháp rồi ở evals/official/inputs/intern-draft.txt, lấy ý trong đó, văn thì sửa lại chứ đọc sến quá. số liệu trong đó em ấy chưa kiểm tra đâu, chỉ dùng số anh ghi ở đây
 kèm phụ lục dự toán với phụ lục tiến độ

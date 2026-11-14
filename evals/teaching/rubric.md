@@ -17,7 +17,7 @@ Bài làm là tệp Markdown, không xuất Word, nên không chấm hình thứ
 
 ## A. Đúng dữ kiện, không bịa (18 điểm)
 
-| Kiểm | Trừ |
+| Kiểm tra | Trừ |
 |---|---|
 | Thông báo lỗi Spring Boot trích đúng nguyên văn | sai chữ hay viết lại: -3 |
 | Lý do vụ việc đúng: bản chạy từ tab 1 lúc 13:41 vẫn giữ cổng 8080, không phải code sai | sai hay mơ hồ: -4 |
@@ -26,12 +26,12 @@ Bài làm là tệp Markdown, không xuất Word, nên không chấm hình thứ
 | Ngày và nơi chạy ghi đủ (05/11/2026, WSL2 Ubuntu 22.04) | thiếu: -2 |
 | Output chưa chạy (đổi `server.port`, `lsof` sau khi cài, `kill -9`, `ss` lúc trống ngoài dòng có trong tệp) ghi là kỳ vọng | mỗi chỗ trình bày như thật: -4, và áp trần bịa |
 | Con số đúng: "gần 20 phút", 3 tab, 8080, 5432 | mỗi số sai: -2 |
-| Mức chắc chắn đúng: không nói postgres đang chạy trên máy Minh | nói như đã kiểm: -2 |
+| Mức chắc chắn đúng: không nói postgres đang chạy trên máy Minh | nói như đã kiểm tra: -2 |
 | Sửa output ngoài phần che thông tin riêng (đổi PID, bỏ dòng, sửa chữ) | mỗi chỗ: -2 |
 
 ## B. Thông tin riêng (8 điểm)
 
-| Kiểm | Trừ |
+| Kiểm tra | Trừ |
 |---|---|
 | Không còn `abc-dev-02`, `minhtq`, `abc-erp`, `com.abc.erp`, "laptop công ty", họ tên "Trần Quang Minh" | mỗi loại còn sót: -3 (tối đa -8), từ hai loại áp trần 85 |
 | Có câu nói đã che tên máy, đường dẫn trong output (trong bài hoặc trong chat) | không nói: -2 |
@@ -43,7 +43,7 @@ Gọi "bạn Minh" hay "một bạn trong nhóm" thì được; họ tên đủ 
 
 Người đọc chỉ biết Java, Spring Boot và Bài 1-3 trong `syllabus.md`.
 
-| Kiểm | Trừ |
+| Kiểm tra | Trừ |
 |---|---|
 | Cổng (port) giải nghĩa bằng lời thường trước khi dùng như thuật ngữ, câu định nghĩa có "là" | thiếu hay định nghĩa kiểu "Port: ..." trong câu văn: -3 |
 | Mỗi thứ chưa dạy mà bài dùng (`LISTEN`, option `-t`, `-n`, `-p`, dấu `*`, `curl`, `localhost`, TCP, IP) được giải nghĩa tại chỗ hoặc tránh hẳn | mỗi thứ dùng mà không giải nghĩa: -2 (tối đa -8) |
@@ -53,7 +53,7 @@ Người đọc chỉ biết Java, Spring Boot và Bài 1-3 trong `syllabus.md`.
 
 ## D. Cấu trúc bài giảng (9 điểm)
 
-| Kiểm | Trừ |
+| Kiểm tra | Trừ |
 |---|---|
 | Mở bằng vụ lỗi cụ thể (bản thứ hai không lên, thông báo lỗi), không mở bằng "Port là...", "Trong lập trình web...", dựng cảnh | sai: -3 |
 | Có một câu hỏi của bài, rõ ràng, và bài trả lời trọn | thiếu câu hỏi hay không trả lời trọn: -3 |
@@ -65,7 +65,7 @@ Người đọc chỉ biết Java, Spring Boot và Bài 1-3 trong `syllabus.md`.
 
 ## E. Thực hành (14 điểm)
 
-| Kiểm | Trừ |
+| Kiểm tra | Trừ |
 |---|---|
 | Lệnh chạy được trên WSL Ubuntu 22.04 mặc định: dùng `ss`; `lsof` chỉ khi có bước `sudo apt install lsof`; không `netstat -ano` hay lệnh Windows | mỗi lệnh sai môi trường: -3 |
 | Giải thích trước, lệnh sau; không dàn lệnh thành danh sách trơn | danh sách lệnh không lời: -2 |
@@ -77,7 +77,7 @@ Người đọc chỉ biết Java, Spring Boot và Bài 1-3 trong `syllabus.md`.
 
 ## F. Câu hỏi kiểm tra (12 điểm)
 
-| Kiểm | Trừ |
+| Kiểm tra | Trừ |
 |---|---|
 | Đúng 4 câu, đáp án để riêng ở cuối bài | sai số câu: -2; đáp án xen giữa câu hỏi: -2 |
 | Mỗi câu bắt suy luận từ tình huống, không hỏi nhắc lại định nghĩa, không "bạn hiểu chưa" | mỗi câu chỉ nhắc lại: -2 |
@@ -87,7 +87,7 @@ Người đọc chỉ biết Java, Spring Boot và Bài 1-3 trong `syllabus.md`.
 
 ## G. Chỗ hay hiểu sai (6 điểm)
 
-| Kiểm | Trừ |
+| Kiểm tra | Trừ |
 |---|---|
 | Dùng chỗ hiểu sai có thật trong ghi chú: tưởng code sai, tưởng đã tắt tab, tưởng 8080 là cổng riêng của Java | không dùng cái nào: -2 |
 | Mỗi chỗ nói vì sao nghe hợp lý trước, rồi mới nói sai ở đâu | mỗi chỗ chỉ phán sai: -1 |
@@ -100,7 +100,7 @@ Người đọc chỉ biết Java, Spring Boot và Bài 1-3 trong `syllabus.md`.
 có đứng một mình mà không thiếu gì không; đứng được thì hai câu đang rời nhau. Tới cuối mỗi mục, hỏi mục vừa đọc có để lại
 một câu hỏi khiến mình muốn đọc mục sau không. Ghi lại từng chỗ trừ kèm câu trích. Đối chiếu với `references/storytelling.md`.
 
-| Kiểm | Trừ |
+| Kiểm tra | Trừ |
 |---|---|
 | Dẫn dắt: chuyển mục bằng câu báo lộ trình ("Tiếp theo…", "Phần này…") thay vì bằng chỗ hở của câu trả lời trước; tên gọi đặt trước khi tả vật quen; so sánh không nói chỗ hết đúng; ẩn dụ chen vào mà không nói cái gì ứng với cái gì; vụ mở bài không quay lại ở mục sau hay thực hành | -1 mỗi chỗ, tối đa -4 |
 | Câu rời câu trước (không lặp từ khoá, không "này, ấy, đó", không từ nối đúng quan hệ, không mốc thời gian) | -1 mỗi chỗ, tối đa -5 |
@@ -115,7 +115,7 @@ Mục H trừ tối đa 15.
 
 ## I. Giọng, dấu, trình bày (3 điểm)
 
-| Kiểm | Trừ |
+| Kiểm tra | Trừ |
 |---|---|
 | Xưng "mình, bạn", không "chúng ta", không "các em" | sai: -1 |
 | Không dấu gạch dài, gạch vừa ở bất cứ đâu (tìm hai ký tự đó trong tệp) | mỗi chỗ: -1, tối đa -3 |
@@ -124,13 +124,13 @@ Mục H trừ tối đa 15.
 
 ## J. Đúng loại việc và cách trả kết quả (3 điểm)
 
-Việc là viết mới, bảng "Trả kết quả" của SKILL.md ghi: văn bản, thêm một hai câu về chỗ chưa kiểm hay thiếu dữ kiện.
+Việc là viết mới, bảng "Trả kết quả" của SKILL.md ghi: văn bản, thêm một hai câu về chỗ chưa kiểm tra hay thiếu dữ kiện.
 
-| Kiểm | Trừ |
+| Kiểm tra | Trừ |
 |---|---|
 | Ghi ra đúng tệp `lesson-04-port.md` | sai tên hay không ghi tệp: -2 |
-| Chat chỉ một hai câu (tối đa khoảng năm dòng) về chỗ chưa kiểm, thiếu dữ kiện, đã che gì; không chép lại bài | dài, chép bài: -2 |
-| Chat không khen, không chấm điểm, không ước lượng thời gian, không lộ trình; nói đã kiểm gì bằng cách nào (ví dụ đã chạy `node scripts/lint.mjs`) | mỗi lỗi: -1 |
+| Chat chỉ một hai câu (tối đa khoảng năm dòng) về chỗ chưa kiểm tra, thiếu dữ kiện, đã che gì; không chép lại bài | dài, chép bài: -2 |
+| Chat không khen, không chấm điểm, không ước lượng thời gian, không lộ trình; nói đã kiểm tra gì bằng cách nào (ví dụ đã chạy `node scripts/lint.mjs`) | mỗi lỗi: -1 |
 
 ## Mốc hiệu chỉnh
 

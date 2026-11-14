@@ -98,7 +98,7 @@ email nhận chưa có (đưa sang mục 9). Grafana chỉ mở cho dải 10.20.
 
 - Chữ cho sơ đồ: tên từng khối (web01, app01, app02, db01, db02, mon01, NAS `nas-vk01`, người dùng, dải quản trị), nhãn từng
   mũi tên nói việc xảy ra, tiếng Anh giữ suốt hoặc một ngôn ngữ giữ suốt.
-- Một hai câu về chỗ chưa kiểm hay thiếu: cổng 8080 hay 8443, hệ điều hành db02, người thực hiện ở mục 8 (nếu để trống), đã
+- Một hai câu về chỗ chưa kiểm tra hay thiếu: cổng 8080 hay 8443, hệ điều hành db02, người thực hiện ở mục 8 (nếu để trống), đã
   xem PDF từng trang chưa.
 
 ## Điều bài không được bịa

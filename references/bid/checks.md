@@ -36,7 +36,7 @@ pdftoppm -r 60 -png HSDX.pdf pages/p
   - Đưa mọi chương hồ sơ có dẫn (I, II, IV, V, VI, VII, Mục 3) vào `--hsmt`, thiếu chương thì thời hạn đúng bị nêu nhầm.
   - BA có tệp trả lời thì thêm `--ba <tệp>` (vẫn giữ đủ các `--hsmt`): số BA đã chốt (số lớp, số buổi, tần suất) không bị nêu là cam
     kết tự đặt, và chỗ đánh dấu đứng ngay sau điều BA đã chốt ("Giao ngày 22 [cần xác nhận]") bị nêu để bỏ dấu.
-  - Chữ chép nguyên văn HSMT (cột yêu cầu) không bị nêu thiếu số 0, thiếu chữ kèm thời hạn hay ghi mức ≥; còn bị nêu thì kiểm lại xem có chép sai chữ HSMT.
+  - Chữ chép nguyên văn HSMT (cột yêu cầu) không bị nêu thiếu số 0, thiếu chữ kèm thời hạn hay ghi mức ≥; còn bị nêu thì kiểm tra lại xem có chép sai chữ HSMT.
 - `package-check` không còn `LỖI`: mã nào dẫn cũng có tệp, mục và trang được dẫn có thật, KT-00 kê đủ, trang tài liệu hãng
   được dẫn ở bất cứ tệp nào (cả thuyết minh) đã được tô vàng và có trong bản dịch.
 - `pdf-highlight` không còn `LỖI` (chữ cần tô không thấy trên trang) và không còn `XEM` (chữ có nhiều lần mà chưa chỉ lần nào,
@@ -98,7 +98,7 @@ các lần thử), dùng tìm chữ trong `content.json` cho từng từ khóa:
    lần tự đặt ("hai người nâng máy") cũng là cam kết mới, đánh dấu.
 6. Dẫn điều khoản đúng nguồn của từng con số (48 giờ là Mục 3 Chương III, 02 ngày sửa chữa là E-ĐKCT 23.5).
 7. Thông tin lấy từ tên tệp chứ không từ nội dung tài liệu (số E-TBMT trong tên tệp quyết định) thì đánh dấu.
-8. Báo cáo: mỗi câu "đã đánh dấu ở X", "không đánh dấu ở Y" kiểm lại trong tệp Word bằng tìm chữ; không ghi thông số theo trí
+8. Báo cáo: mỗi câu "đã đánh dấu ở X", "không đánh dấu ở Y" kiểm tra lại trong tệp Word bằng tìm chữ; không ghi thông số theo trí
    nhớ. Tài liệu không tải được thì ghi đúng link đã thử và lỗi (lấy từ dòng LỖI trong `sources.md`), không viết chung "trả 403/404".
    Chỉ viết "không lấy được" khi đã tìm bằng tên model và mở trang hỗ trợ của hãng (`package.md`, mục Tải); link tự ghép trả 404
    không đủ để kết luận. Tài liệu hãng có giá bán: chép đủ các dòng `XEM ... có giá bán` của `package-check`, không kê theo trí nhớ.
@@ -114,7 +114,7 @@ Gửi kèm tệp Word và PDF:
    Ngay sau là bảng **Giấy tờ phải xin trước khi nộp** (`package.md`): thông số, dòng KT-01, xin ai, giấy gì, giấy phải ghi chữ
    gì. Mọi chỗ đánh dấu về hàng hóa (thông số, xuất xứ, năm sản xuất, gói bảo hành, ký mã hiệu) đều có dòng trong bảng này; lập
    bảng từ các dòng `LỖI Còn để trống` của `bid-check` trên mọi tệp của bộ (KT-01, thuyết minh, bộ cam kết: thời hạn bảo hành của hãng hay
-   chỉ được đánh dấu ở phần bảo hành), không theo trí nhớ. Kèm bảng tài liệu đã tự tải (mã, link, ngày tải) để BA kiểm lại nguồn.
+   chỉ được đánh dấu ở phần bảo hành), không theo trí nhớ. Kèm bảng tài liệu đã tự tải (mã, link, ngày tải) để BA kiểm tra lại nguồn.
 2. Danh sách chỗ đánh dấu, gom theo mục như dòng `ĐẾM` của `bid-check` (số chỗ từng mục khớp), mỗi mục ghi cần gì.
 3. Danh sách cam kết mới do nhà thầu tự đặt (thời hạn, tần suất, số buổi, số lớp) chờ BA duyệt.
 4. Câu hỏi bắt buộc khi có: vai của đơn vị đứng tên trong hồ sơ mẫu mà khác nhà thầu (`reading.md`); model, catalog của

@@ -36,9 +36,9 @@ Không hỏi khi người dùng chỉ sửa dữ kiện, con số, ý của bài
 lỗi), hay khi họ đã từ chối gửi chuyện đó trong phiên này.
 
 Một tin nhắn hay trộn nhiều lời chê, nên tách từng lời ra xét riêng. Lời nào trúng một quy tắc hay một script thì vào góp
-ý. Lời nào do người dùng hiểu nhầm skill, ví dụ tưởng `lint.mjs` báo sai trong khi nó đếm đúng, thì kiểm lại rồi nói thẳng
+ý. Lời nào do người dùng hiểu nhầm skill, ví dụ tưởng `lint.mjs` báo sai trong khi nó đếm đúng, thì kiểm tra lại rồi nói thẳng
 họ nhầm ở đâu (dòng nào, ký tự nào), và không đưa chuyện đó vào issue, kể cả dưới dạng một đề xuất phụ. Trước khi nói script
-lỗi, chạy thử nó trên một tệp nhỏ hoặc đọc đoạn code bắt lỗi ấy; chưa kiểm thì chỉ được ghi là đoán.
+lỗi, chạy thử nó trên một tệp nhỏ hoặc đọc đoạn code bắt lỗi ấy; chưa kiểm tra thì chỉ được ghi là đoán.
 
 Trong lời trả lời, các lời chê không do skill gom vào một đoạn, mở bằng một câu nói luôn có mấy chỗ và chúng không do skill,
 ví dụ "Ba chỗ còn lại không do skill, nên không vào góp ý:", rồi mỗi chỗ một câu: lời chê nào, do đâu, đã làm gì. Câu nào đưa
@@ -90,8 +90,8 @@ chỉ mất hai giây, nên ...", để người đọc che câu trước đi v�
      nguyên cả câu hay cả ô bảng trong ngoặc kép, kèm số dòng; không tóm, không cắt bớt danh sách trong ô. Chữ hay rơi khi
      cắt là chữ giới hạn phạm vi (ô "Dùng cho" ghi ba loại mà chỉ chép hai), mà lập luận của bản nháp thường dựa vào phạm
      vi ấy; tác giả mở tệp thấy ô dài hơn lời dẫn sẽ không tin phần còn lại. Trước khi đề xuất thêm một chữ vào quy tắc,
-     đọc lại cả câu, cả ô xem chữ ấy đã có chưa; có rồi thì đề xuất đưa nó lên chỗ agent đã đọc nhầm. Chỗ đã kiểm thì nói
-     kiểm bằng gì (đã chạy thử, đã đọc đoạn code nào); đoán thì ghi là đoán, cách sửa tự nghĩ ra thì ghi là đề xuất. Đề
+     đọc lại cả câu, cả ô xem chữ ấy đã có chưa; có rồi thì đề xuất đưa nó lên chỗ agent đã đọc nhầm. Chỗ đã kiểm tra thì nói
+     kiểm tra bằng gì (đã chạy thử, đã đọc đoạn code nào); đoán thì ghi là đoán, cách sửa tự nghĩ ra thì ghi là đề xuất. Đề
      xuất sửa script mà kèm ví dụ "sửa xong thì chữ này qua, chữ kia vẫn bị bắt" thì ví dụ phải đi qua chính script: chép script ra
      thư mục tạm, sửa bản chép, chạy nó trên tệp thử, rồi mới ghi kết quả. Thử riêng một biểu thức bằng `node -e` thì bỏ qua
      các bước lọc khác của script (độ dài tối thiểu, vùng được dò, khối code bị bỏ qua), nên một chữ quá ngắn mà script
@@ -123,7 +123,7 @@ chỉ mất hai giây, nên ...", để người đọc che câu trước đi v�
    Ngay sau một danh sách, gọi lại các mục bằng tên ("điều 1 và bảng "Giọng""), không gọi "hai chỗ ấy", "những chỗ trên",
    nhất là khi danh sách có nhiều mục hơn số mình định nói. Thuật lại yêu cầu của người dùng thì giữ chữ chỉ ý muốn của họ
    ("nên", "phải", "cần"): "theo người dùng, thông báo nên viết như ..."; bỏ chữ ấy thì câu đọc thành tả việc đã xảy ra.
-   Lời chê không do skill mà chưa kiểm được lý do (chạy chậm, mạng chậm) thì nói là đoán, không nói chắc nó do đâu.
+   Lời chê không do skill mà chưa kiểm tra được lý do (chạy chậm, mạng chậm) thì nói là đoán, không nói chắc nó do đâu.
 6. Ghi thân bài ra một tệp tạm, rồi chạy từ thư mục skill:
 
    ```

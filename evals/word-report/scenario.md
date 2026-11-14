@@ -56,7 +56,7 @@ Lời yêu cầu nằm ở `prompt.md`, tệp vào ở `inputs/`. Mọi tên ng�
 
 | Việc | Người làm | Hạn, tình trạng |
 |---|---|---|
-| Thêm bước kiểm config prod vào pipeline (giá trị pool khác 50 thì fail) | Quân | trước 17/11 |
+| Thêm bước kiểm tra config prod vào pipeline (giá trị pool khác 50 thì fail) | Quân | trước 17/11 |
 | Gọi lại cho khách đã gọi hotline | chị Trang | trước 12/11; sáng 11/11 chị Trang nói đã gọi được 30 người |
 | Thêm cảnh báo khi pool dùng quá 90% | chưa ai nhận | chưa có hạn |
 | Dời giờ deploy prod sang sau 21h | anh Vinh trình anh Phong | chưa hẹn ngày |

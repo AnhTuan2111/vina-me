@@ -34,13 +34,13 @@ Bài làm gồm tệp ghi chú (`output.md`) và lời trả trong chat (chép v
 
 ## C. Đúng loại việc, đúng cách trả kết quả (8)
 
-Việc này là "Viết mới" trong bảng Trả kết quả của `SKILL.md`: trả văn bản, thêm một hai câu về chỗ chưa kiểm hay thiếu dữ
+Việc này là "Viết mới" trong bảng Trả kết quả của `SKILL.md`: trả văn bản, thêm một hai câu về chỗ chưa kiểm tra hay thiếu dữ
 kiện.
 
 | Ý | Tối đa | Trừ |
 |---|---|---|
 | Ra một tệp ghi chú `.md` như người dùng xin, lời trả trong chat chỉ gồm đường dẫn tệp và một hai câu | 4 | không có tệp: -4; lời trả dài quá ba câu, tóm lại bài vừa viết, liệt kê việc đã làm, khen, mời làm thêm nhiều thứ: -3; có chấm điểm hay ước lượng thời gian: -2 |
-| Một hai câu nói chỗ thiếu dữ kiện hay chưa kiểm (ví dụ chưa biết phần ngoài heap bao nhiêu, chưa biết bản JDK, chưa đo) | 4 | thiếu: -4; có nhưng chung chung, không nêu thứ cụ thể: -2 |
+| Một hai câu nói chỗ thiếu dữ kiện hay chưa kiểm tra (ví dụ chưa biết phần ngoài heap bao nhiêu, chưa biết bản JDK, chưa đo) | 4 | thiếu: -4; có nhưng chung chung, không nêu thứ cụ thể: -2 |
 
 ## D. Độ lưu loát, đọc tuần tự từng câu (26)
 

@@ -72,13 +72,13 @@ Luật nguồn: `references/diagrams-and-docs.md`, mục "Sơ đồ". Chấm ph�
 ## D. Đúng loại việc và cách trả kết quả: 10 điểm
 
 Luật nguồn: bảng "Trả kết quả" và mục "Trả lời trong chat" của `SKILL.md`. Đây là việc viết mới ra tệp Word: dựng tệp, xuất
-PDF, xem từng trang trước khi đưa, rồi trả tệp cộng một hai câu về chỗ chưa kiểm hay thiếu dữ kiện.
+PDF, xem từng trang trước khi đưa, rồi trả tệp cộng một hai câu về chỗ chưa kiểm tra hay thiếu dữ kiện.
 
 | Lỗi | Trừ |
 |---|---|
 | Không có tệp `.docx` | 10 (và mục F được 0) |
 | Không xuất PDF và xem từng trang (không có bằng chứng trong `notes.md` hay chat) | 4 |
-| Không nói đã kiểm gì, chưa kiểm gì, chỗ nào thiếu dữ kiện | 3 |
+| Không nói đã kiểm tra gì, chưa kiểm tra gì, chỗ nào thiếu dữ kiện | 3 |
 | Lời chat lặp lại nội dung tệp, khen, chấm điểm, ước lượng thời gian, kể lể từng bước đã làm | 2 mỗi loại, tối đa 4 |
 | Câu hỏi gửi người dùng không tự đứng được (không nói ở đâu, hiện thế nào, mỗi phương án ra sao) | 2 |
 | Không chạy `scripts/lint.mjs` hay không nói đã soát văn bằng cách nào | 1 |
@@ -101,7 +101,7 @@ PDF, xem từng trang trước khi đưa, rồi trả tệp cộng một hai câ
 ## F. Hình thức trang Word: 15 điểm
 
 Luật nguồn: phần "Quy định trình bày" của mẫu TL-03 (thắng quy ước Arial 11 của `references/docx-export.md` vì luật "có mẫu
-của bên nhận thì theo đúng mẫu"), và mục "Kiểm sau khi xuất" của `references/docx-export.md`. Chấm trên ảnh trang PDF.
+của bên nhận thì theo đúng mẫu"), và mục "Kiểm tra sau khi xuất" của `references/docx-export.md`. Chấm trên ảnh trang PDF.
 
 | Lỗi | Trừ |
 |---|---|

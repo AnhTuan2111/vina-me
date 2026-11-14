@@ -101,7 +101,7 @@ Hình dung người đọc chỉ biết nền sẵn có của họ và những g
   "chỉ lấy một loại X", "in bằng số chứ không đổi sang tên" khi người đọc chưa biết X có nhiều loại hay có tên. Giải luôn
   ý đó bằng một ví dụ, hoặc thôi giải từng tham số và nói cả lệnh in ra gì. Tham số viết gộp (`-xyz`) không cần gọi tên
   từng chữ cái, nhưng mỗi ý trong lời giải vẫn tính như trên.
-- Đoạn kể một chuỗi lệnh (tắt, kiểm lại, gọi thử) hay gom nhiều thứ mới vào một đoạn: mỗi lệnh mới, đường dẫn mới, thông
+- Đoạn kể một chuỗi lệnh (tắt, kiểm tra lại, gọi thử) hay gom nhiều thứ mới vào một đoạn: mỗi lệnh mới, đường dẫn mới, thông
   báo lỗi mới đều tính là một thuật ngữ. Có từ hai thì tách đoạn, mỗi đoạn một thứ mới, đoạn sau mở bằng chữ nối về đoạn
   trước ("Còn phần đứng sau tên lệnh là…", "Lệnh đó báo lỗi vì…"). Lệnh gọi thử hay kéo theo cả ba thứ: tên lệnh, đường
   dẫn nó gọi tới, câu lỗi nó in. Lời giải trong một bước thực hành cũng tính như một đoạn: bước giải từ hai thứ mới thì
@@ -289,7 +289,7 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
 - Câu hỏi mà hai cách xử lý đều nghe được (tắt thứ này hay đổi cấu hình thứ kia) thì đề cho đủ dữ kiện để loại cách đáp án
   không chọn, hoặc đáp án nói vì sao không chọn cách ấy; thiếu thì người học chọn cách kia mà đáp án không chấm được.
 - Viết xong đáp án thì đọc lại từng vế như người chấm: vế đó có đúng với chính tình huống câu hỏi không, có chọi với câu
-  luật đáp án vừa dẫn không. Gộp hai thứ vào một chủ ngữ ("cả hai đều…") thì kiểm vế đó đúng với cả hai.
+  luật đáp án vừa dẫn không. Gộp hai thứ vào một chủ ngữ ("cả hai đều…") thì kiểm tra vế đó đúng với cả hai.
 - Bộ câu hỏi viết sẵn trong bài thì đáp án để riêng ở cuối bài. Mỗi đáp án nêu kết luận trước, rồi lý do bằng đúng tên bài
   đã dùng cho mỗi thứ, không thêm chữ mới. Câu hỏi về thứ người dùng dặn tránh hay đã hẹn "lúc khác" thì không ra.
 - Trả lời đúng thì xác nhận ngắn rồi đi tiếp. Trả lời sai thì tìm đúng chỗ hiểu sai và giảng lại chỗ đó.
@@ -369,16 +369,16 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
   là dữ kiện kỹ thuật, không phải suy luận từ output. Framework thường tạo xong các lớp của người học rồi mới mở kết nối, đọc
   tệp, nên "app dừng trước khi code kịp chạy" dễ sai. Không chắc thứ tự thì chỉ nói điều output cho thấy ("log không dòng nào
   nhắc tới lớp ấy").
-- Ghi chú hay đề ghi một dữ kiện là chưa kiểm (một app có chạy trên máy người học không, nó giữ số nào trên máy đó) thì câu
+- Ghi chú hay đề ghi một dữ kiện là chưa kiểm tra (một app có chạy trên máy người học không, nó giữ số nào trên máy đó) thì câu
   trong bài giữ lời rào ("mặc định", "nếu có chạy"), kể cả khi câu đó trả lời một câu hỏi mà người hỏi coi điều ấy là có
   sẵn. Không viết thì hiện tại về máy người học như đã thấy ("X giữ cổng Y"). Sửa câu cho gọn, cho đỡ chữ thì không bỏ lời
   rào; bỏ được thì bỏ cả câu.
 - Tên app, service, đường dẫn API không chứa tên công ty hay tên người thì giữ. Lời ghi chú của tệp vào về nơi làm (máy
   công ty, máy ở nhà) không đưa vào câu ghi nơi chạy; nơi chạy chỉ là hệ điều hành và phiên bản.
-- Bài dựa vào một dữ kiện kỹ thuật lấy từ hiểu biết sẵn mà lần này không mở được nguồn để kiểm thì không bịa mục nguồn;
-  lời trả nêu dữ kiện đó là chưa kiểm nguồn. Dữ kiện chỉ kiểm được trên một máy khác phiên bản (không đưa output đó vào
-  bài) thì lời trả nói đã kiểm trên phiên bản nào. Tên cột lấy từ hiểu biết sẵn vì `grep` đã lọc mất dòng tiêu đề cũng là
-  dữ kiện chưa kiểm: phần thực hành có bước chạy lệnh không lọc để người học tự thấy dòng tiêu đề, còn lời trả nói gộp
+- Bài dựa vào một dữ kiện kỹ thuật lấy từ hiểu biết sẵn mà lần này không mở được nguồn để kiểm tra thì không bịa mục nguồn;
+  lời trả nêu dữ kiện đó là chưa kiểm tra nguồn. Dữ kiện chỉ kiểm tra được trên một máy khác phiên bản (không đưa output đó vào
+  bài) thì lời trả nói đã kiểm tra trên phiên bản nào. Tên cột lấy từ hiểu biết sẵn vì `grep` đã lọc mất dòng tiêu đề cũng là
+  dữ kiện chưa kiểm tra: phần thực hành có bước chạy lệnh không lọc để người học tự thấy dòng tiêu đề, còn lời trả nói gộp
   "tên cột lấy từ hiểu biết sẵn", không kể từng tên. Bài gọi cột theo hình dạng giá trị (ngoại lệ ở mục Bài thực hành) và không
   nêu tên cột nào thì không có dữ kiện này, không cần bước chạy không lọc.
 - Output có thông tin riêng thì che đúng phần riêng, còn lại giữ nguyên chữ. Phần riêng thường gặp: dấu nhắc lệnh có tên user và
@@ -413,13 +413,13 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
   đường dẫn bài mà nằm chung câu ấy là ba đoạn mã một câu, phạm điều về đoạn mã của `references/core-rules.md`. Viết xong thì
   chạy `node scripts/lint.mjs -` với lời trả qua stdin; còn chỗ nào nó báo thì tách câu.
 - Lời trả chỉ gồm đường dẫn tệp cộng nhiều nhất ba câu: đã che hay ẩn danh gì, output nào là kỳ vọng hay chạy ở máy khác, đã
-  đối chiếu dữ kiện nào với tệp vào nào (output, câu trích lời, ngày), còn gì chưa kiểm. Theo mục "Trả lời trong chat" của
-  `references/core-rules.md`: nửa câu đối chiếu là nói dữ kiện đã kiểm với nguồn, không phải kể đã chạy lint hay đọc lại
+  đối chiếu dữ kiện nào với tệp vào nào (output, câu trích lời, ngày), còn gì chưa kiểm tra. Theo mục "Trả lời trong chat" của
+  `references/core-rules.md`: nửa câu đối chiếu là nói dữ kiện đã kiểm tra với nguồn, không phải kể đã chạy lint hay đọc lại
   mấy lượt.
 - Bài dựng từ tệp vào (output, ghi chú buổi học) thì lời trả luôn có nửa câu đối chiếu đó, gọi tên tệp ("output, giờ và
   lời trích khớp `<tệp output>`, `<tệp ghi chú>`"). Vế này không bị bỏ khi hết chỗ: người dùng dựa vào nó để biết bài không
   bịa. Phần còn lại không đủ chỗ trong giới hạn câu thì ưu tiên theo thứ tự: chỗ che và ẩn danh, output kỳ vọng hay chạy ở
-  máy khác, dữ kiện chưa kiểm nguồn và ngoại lệ của câu luật, rồi mới tới câu hỏi đã bỏ.
+  máy khác, dữ kiện chưa kiểm tra nguồn và ngoại lệ của câu luật, rồi mới tới câu hỏi đã bỏ.
 - Giới hạn tính cả độ dài chứ không riêng số câu: cả lời trả khoảng 100 chữ, không câu nào quá 40 chữ, không liệt kê
   trong ngoặc. Danh sách ưu tiên dài hơn chỗ thì bỏ mục ưu tiên thấp, không nhồi bằng dấu chấm phẩy và ngoặc lồng; mỗi
   mục nói gộp ("đã che tên user, tên công ty", "tên cột lấy từ hiểu biết sẵn", "câu luật có ngoại lệ cần cấu hình
@@ -431,7 +431,7 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
 
 ## Soát trước khi giao
 
-Đọc tuần tự từ đầu, từng câu, rồi kiểm thêm. Sáu chỗ hay vấp nhất, soát trước: đoạn nào dạy quá một thứ mới (kể cả bước chuẩn bị
+Đọc tuần tự từ đầu, từng câu, rồi kiểm tra thêm. Sáu chỗ hay vấp nhất, soát trước: đoạn nào dạy quá một thứ mới (kể cả bước chuẩn bị
 ở đầu thực hành); thứ nào có hai tên; câu nào nói lại câu trước hay một kết luận đã có, hay đứng rời không bám câu trước; đoạn
 nào chen giữa hai đoạn đang nối nhau; khối output nào lệch tệp vào hay có […] đặt sai chỗ; câu hỏi kiểm tra nào lộ đáp án.
 
@@ -479,7 +479,7 @@ nào chen giữa hai đoạn đang nối nhau; khối output nào lệch tệp v
   đoạn giảng thứ nó dựa vào.
 - Mỗi câu kể về người thật (họ từng làm gì, nói lúc nào, nghĩ gì): tìm câu đó trong ghi chú; không có thì viết thành điều
   chung hay bỏ.
-- Mỗi dữ kiện ghi chú hay đề đánh dấu "chưa kiểm", "chưa thử": tìm câu tương ứng trong bài; câu đó có lời rào ("mặc định",
+- Mỗi dữ kiện ghi chú hay đề đánh dấu "chưa kiểm tra", "chưa thử": tìm câu tương ứng trong bài; câu đó có lời rào ("mặc định",
   "nếu có chạy") hay ghi kỳ vọng không. Soát lại sau mỗi lần rút câu cho gọn. Mỗi con số ghi chú kèm chữ rào ("gần",
   "khoảng"): tìm con số ấy trong cả bài, lần nào cũng phải còn chữ rào, nhất là ở đoạn trả lời cuối và đáp án.
 - Bước dọn của phần thực hành: mọi thứ các bước trước (kể cả bước chuẩn bị) đã thêm, xoá, sửa trong project đều được

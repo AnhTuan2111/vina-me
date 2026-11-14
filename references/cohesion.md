@@ -50,7 +50,7 @@ Giới hạn:
   bằng việc cần đo, đoạn chỉnh mở bằng "Trong lúc chưa đo,…" hay "Dù có X hay không thì…".
 - Đoạn cuối nói cách chỉnh thì mở bằng thứ đoạn trước vừa nói (chỗ chưa biết, lý do vừa tìm ra), ví dụ "Chưa biết app
   cần bao lâu để khởi động nên…", không mở bằng "Còn chỉnh thì…" như một chuyện mới.
-- Việc cần đo, cần kiểm nói một lần. Đoạn trước đã dặn "phải đo X" và đoạn chỉnh mở bằng "Trong lúc chưa đo X" thì các câu
+- Việc cần đo, cần kiểm tra nói một lần. Đoạn trước đã dặn "phải đo X" và đoạn chỉnh mở bằng "Trong lúc chưa đo X" thì các câu
   sau của đoạn chỉnh không dặn đo X lần nữa ("chừa bao nhiêu thì phải chờ số đo X"). Cần nói mức chỉnh chỉ là thử thì nói
   thẳng "mức nào lúc này cũng chỉ là điểm thử", không kèm lại lời dặn đo.
 - Văn bản viết hộ để người dùng lưu (ghi chú, sổ tay) không chép lại lời yêu cầu vào thân bài ("nói qua hai hướng",

@@ -193,7 +193,7 @@ Nên câu đầu phần số liệu nói kỳ số liệu, ví dụ "số liệu
 - Số tiền viết thêm bằng chữ thì chữ đầu viết hoa, các chữ viết liền không chen dấu phẩy: "2.350.000.000 đồng (Hai tỷ ba
   trăm năm mươi triệu đồng)".
 
-### Kiểm phép tính trước khi chép
+### Kiểm tra phép tính trước khi chép
 
 Bảng dự toán, bảng tổng hợp người dùng đưa (CSV, Excel, lời nhắn) hay có một dòng nhân sai mà dòng tổng cộng lại cộng theo
 dòng sai, nên tổng khớp với số người dùng nhớ và đọc lướt không thấy. Trước khi chép, tính lại:
@@ -224,7 +224,7 @@ Văn bản hành chính được ký và lưu, nên chỗ nào thiếu dữ ki�
 chưa chọn) thì để chỗ đánh dấu trong ngoặc vuông ngay trong văn bản, "[cần bổ sung: ...]" hay "[cần xác nhận: ...]" (script xuất Word
 tô nền vàng các chỗ này), và nêu
 từng chỗ trong câu trả lời. Không tự điền cho đủ thể thức, không bỏ trống mà không đánh dấu. Số liệu trong bản nháp của người
-khác mà người dùng dặn không dùng hay chưa kiểm thì bỏ, không chép sang.
+khác mà người dùng dặn không dùng hay chưa kiểm tra thì bỏ, không chép sang.
 
 Tên hạng mục trong bảng người dùng đưa cũng là dữ kiện của họ. Đổi tên cho khớp một tên ở cả văn bản (mục "Văn phong") thì
 được, nhưng nêu trong câu trả lời tên cũ và tên mới, như với số đã tính lại.
@@ -329,7 +329,7 @@ Rút gọn, gộp câu cho vừa trang (mục "Soát", bước 4) thì soát l�
 - khối Kính gửi, Nơi nhận, Căn cứ sai dấu cuối dòng; có Kính gửi mà Nơi nhận thiếu "Như trên";
 - viện dẫn viết hoa "Khoản", "Điểm" hoặc viết thường "điều" sau khoản, điểm.
 
-Script không kiểm được cỡ chữ, lề, phông. Xuất ra Word thì dùng `scripts/official-doc-docx.mjs` (xem `docx-export.md`), rồi
+Script không kiểm tra được cỡ chữ, lề, phông. Xuất ra Word thì dùng `scripts/official-doc-docx.mjs` (xem `docx-export.md`), rồi
 mở bản PDF xem từng trang.
 
 Các bước khi ra tệp Word:
@@ -337,7 +337,7 @@ Các bước khi ra tệp Word:
 1. Dựng kèm bản chữ để soát: `node scripts/official-doc-docx.mjs vb.json vb.docx --text vb.txt`, rồi
    `node scripts/lint.mjs --official vb.txt`. Đừng soát trên chữ rút từ PDF bằng `pdftotext -layout`: cột Nơi nhận dính
    vào cột chữ ký, lint báo sai dấu cuối dòng.
-2. Đọc cảnh báo phép tính bảng mà script in ra (mục "Kiểm phép tính trước khi chép").
+2. Đọc cảnh báo phép tính bảng mà script in ra (mục "Kiểm tra phép tính trước khi chép").
 3. Xuất PDF bằng Word: trên Windows có `pwsh -NoProfile -File scripts/bid/render-pdf.ps1 -OutDir <thư mục> vb.docx`
    (dùng được cho mọi tệp docx, không riêng hồ sơ dự thầu). Không kèm `-UpdateDocx` thì script mở tệp Word chỉ đọc: PDF có
    số trang đúng, tệp Word giữ nguyên, Word tự tính lại số trang khi người nhận mở.

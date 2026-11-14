@@ -16,7 +16,7 @@ người, máy, đường dẫn đều giả.
 - Đổi giọng giữa hai người nhận trong cùng một lượt: mail cho khách trang trọng vừa phải, em và chị; Zalo cho trưởng nhóm ngắn,
   em và anh, được nói chuyện nội bộ.
 - Ràng buộc độ dài có trong dữ kiện chứ không ở lời yêu cầu: Linh dặn "chị Thu hay đọc mail trên điện thoại, viết ngắn thôi".
-- Cách trả kết quả theo bảng "Trả kết quả" của `SKILL.md`, dòng Viết mới: "Văn bản, thêm một hai câu về chỗ chưa kiểm hay
+- Cách trả kết quả theo bảng "Trả kết quả" của `SKILL.md`, dòng Viết mới: "Văn bản, thêm một hai câu về chỗ chưa kiểm tra hay
   thiếu dữ kiện".
 
 ## Đáp án dữ kiện
@@ -67,7 +67,7 @@ Chuyện staging sập không cần nhắc (anh Khoa tự dọn), nhắc thì kh
 
 ### Phần nói thêm với người dùng
 
-Một hai câu về chỗ thiếu dữ kiện hay chưa kiểm, ví dụ: chưa có email của chị Thu và anh Khoa, chưa có chữ ký đầy đủ (họ tên,
+Một hai câu về chỗ thiếu dữ kiện hay chưa kiểm tra, ví dụ: chưa có email của chị Thu và anh Khoa, chưa có chữ ký đầy đủ (họ tên,
 chức danh, số điện thoại), địa chỉ văn phòng để chị Thu gửi máy in lấy theo chat là chị đã biết. Không giải thích lại cách viết,
 không tự khen bài, không chấm điểm.
 
