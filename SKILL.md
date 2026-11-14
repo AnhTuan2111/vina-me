@@ -6,7 +6,7 @@ argument-hint: "[write|edit|review|score|word|bid|memory|secret|feedback] <yêu 
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.18.0"
+  version: "0.18.1"
 ---
 
 # Viết cho lưu loát
@@ -40,7 +40,8 @@ dùng một lần đúng chỗ thì được, dùng thành thói quen thì thàn
    đều; không rút câu cho vừa một mốc số chữ.
 4. Hình trước, tên và định nghĩa sau. Bắt đầu từ vật người đọc đã thấy, kể nó làm gì, rồi mới gọi tên. Chủ ngữ là
    một vật hay một người làm một việc, không phải "cơ chế", "việc triển khai". Câu định nghĩa có "là".
-5. Một thứ một tên, mỗi đoạn tối đa một thuật ngữ mới, giải nghĩa ngay lần đầu dùng (`references/word-choice.md`).
+5. Một thứ một tên, mỗi đoạn tối đa một thuật ngữ mới, giải nghĩa ngay lần đầu dùng. Thuật ngữ có tên chuẩn tiếng Anh
+   thì giữ nguyên, không dịch (option, không "cờ") (`references/word-choice.md`).
 6. Nói thật. Không bịa trải nghiệm, cảm xúc, con số, ví dụ. Chỉ dùng dữ kiện người dùng đưa; thiếu thì hỏi hoặc
    ghi là thiếu. Nói đúng mức chắc chắn. Không khen, không phán xét người đọc (`references/citations-data-figures.md`).
 7. Dùng chữ người ta vẫn nói ngoài đời. Thử: giải thích cho người ngồi cạnh thì có nói chữ đó không. Tránh "không

@@ -5,14 +5,17 @@
 - Một khái niệm một thuật ngữ. Không đổi tên cho đỡ lặp.
 - Thuật ngữ không mang cảm xúc. Không gắn tính từ khen chê vào nó.
 - Không cần thì tránh, còn cần thì giải nghĩa ngay tại lần đầu dùng.
-- Thuật ngữ tiếng Anh giữ nguyên dạng gốc, một cách viết duy nhất trong cả bài (không lúc "Container" lúc "container").
+- Thuật ngữ có tên chuẩn tiếng Anh thì giữ nguyên tiếng Anh, không dịch, kể cả khi đã có chữ Việt quen: viết option, không
+  "cờ"; layer, không "tầng"; packet, domain, browser, certificate, path, version, exit code, status code, prompt. Nó
+  viết thế nào ở nguồn gốc thì để yên thế, một cách viết duy nhất trong cả bài (không lúc "Container" lúc "container").
+  Lần đầu dùng thì giải nghĩa bằng lời thường. Chữ đời thường không phải thuật ngữ (máy, tệp, thư mục, lệnh, ổ đĩa) thì
+  vẫn viết tiếng Việt.
 - Hai thuật ngữ dễ lẫn thì đặt cạnh nhau và nói đúng một điểm khác.
 - Chữ thay cho một thuật ngữ phải chưa dùng cho thứ khác trong bài: "bản" đã là phiên bản (bản 2.4) thì không gọi máy
   đang chạy là "bản đang chạy". Ghi chú gọi một thứ bằng tên mơ hồ ("bản cũ", "con kia") thì bài dùng tên đã gọi nó ở
   chỗ khác ("bản 2.3").
-- Sửa văn kỹ thuật có sẵn viết cho team mà tác giả dùng động từ tiếng Anh quen trong nghề ("deploy", "rollback",
-  "restart", "fail") thì giữ như gốc, một dạng suốt bài, không lúc "restart" lúc "khởi động lại". Viết mới cho người
-  ngoài nghề thì dùng từ Việt, hoặc giải nghĩa ở lần đầu.
+- Động từ tiếng Anh quen trong nghề ("deploy", "rollback", "restart") cũng giữ như gốc, một dạng suốt bài, không lúc
+  "restart" lúc "khởi động lại". Viết cho người ngoài nghề thì giải nghĩa ở lần đầu, không dịch.
 
 ## Sáu cách giải nghĩa một từ
 

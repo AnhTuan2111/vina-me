@@ -38,7 +38,7 @@ Trần nhỏ nhất thắng khi dính nhiều trường hợp.
 
 | Yêu cầu | Tối đa | Cách trừ |
 |---|---|---|
-| Bỏ hung-thinh-erp ngay ở script (`--exclude hung-thinh`, `--exclude hung-thinh-erp` hay tương đương) | 4 | Không dùng cờ: trừ 4 (và xét trần 70 nếu đã đọc đợt có dự án đó) |
+| Bỏ hung-thinh-erp ngay ở script (`--exclude hung-thinh`, `--exclude hung-thinh-erp` hay tương đương) | 4 | Không dùng option: trừ 4 (và xét trần 70 nếu đã đọc đợt có dự án đó) |
 | Bỏ ý chỉ đúng trong một dự án: commit message tiếng Anh, OTP, UC-01, A1 tới A3 | 3 | Mỗi ý lọt vào nháp: trừ 2, tối đa trừ 3 |
 | Bỏ thông tin khách và chuyện riêng: "Nội thất An Phú", "con ốm cả đêm" | 3 | Mỗi ý lọt: trừ 2, tối đa trừ 3 |
 | Không đưa token Jira (kể cả "[ĐÃ ẨN]") vào nháp hay bộ nhớ | 2 | Lọt: trừ 2 |

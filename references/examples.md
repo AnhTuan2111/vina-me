@@ -246,7 +246,7 @@ Sau:
 > Mã 504 ấy thường đi kèm một dòng trong error log của Nginx có chữ `upstream timed out`. Upstream là tên Nginx gọi app
 > đứng sau nó, nên dòng này đọc ra là "app trả lời chậm quá".
 
-Mỗi đoạn một thuật ngữ. Tên cờ `proxy_read_timeout` để tới đoạn nói cách chỉnh, vì chỉ ở đó người đọc mới cần gõ nó;
+Mỗi đoạn một thuật ngữ. Tên option `proxy_read_timeout` để tới đoạn nói cách chỉnh, vì chỉ ở đó người đọc mới cần gõ nó;
 trước đó nói bằng lời thường, "đợi câu trả lời, mặc định 60 giây".
 
 ## 19. Lời giải nghĩa thành tên thứ hai, một việc ba động từ

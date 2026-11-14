@@ -15,7 +15,7 @@
 //   node scripts/setup.mjs conflict              sync báo không gộp được: in phần khác nhau giữa bản máy này và bản trên repo
 //   node scripts/setup.mjs resolve mine|theirs   giữ bản máy này ở chỗ đụng nhau, hoặc lấy bản trên repo (sao lưu bản cũ)
 //
-// Cờ: --home <thư mục> để thử trên home giả, --no-copy-skill để không chép skill, --plain để hỏi trơn không màu,
+// Option: --home <thư mục> để thử trên home giả, --no-copy-skill để không chép skill, --plain để hỏi trơn không màu,
 // --no-schedule để không cài lịch tự lưu, --claude hoặc --codex để nối vào agent đó dù chưa thấy thư mục cấu hình của nó.
 // Khi cài có thể kèm --github [tên repo] hoặc --remote <url>.
 //
@@ -206,7 +206,7 @@ function wireAgents() {
 }
 
 async function main() {
-  // --help, -h: in phần chú thích đầu tệp. Cờ lạ: báo lỗi và thoát, không chạy cài đặt.
+  // --help, -h: in phần chú thích đầu tệp. Option lạ: báo lỗi và thoát, không chạy cài đặt.
   if (hasFlag('--help') || hasFlag('-h')) {
     const head = fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1).filter((l) => l.startsWith('//')).map((l) => l.replace(/^\/\/ ?/, ''));
     console.log(head.join('\n'));
@@ -214,7 +214,7 @@ async function main() {
   }
   const unknown = args.filter((a, i) => a.startsWith('-') && !KNOWN_FLAGS.includes(a) && !VALUE_FLAGS.includes(args[i - 1]));
   if (unknown.length) {
-    console.error(`Cờ không biết: ${unknown.join(' ')}. Xem cách dùng: node scripts/setup.mjs --help`);
+    console.error(`Option không biết: ${unknown.join(' ')}. Xem cách dùng: node scripts/setup.mjs --help`);
     process.exit(2);
   }
   if (command === 'sync') { cmdSync(); return; }

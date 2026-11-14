@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 
 const COMMANDS = ['sync', 'save', 'github', 'remote', 'team', 'codex', 'update', 'check', 'conflict', 'resolve', 'channel'];
 const args = process.argv.slice(2);
-// Cờ setup.mjs nhận; cờ lạ (đoán bừa như "--help" ở bản cũ) thì setup.mjs báo lỗi chứ không rơi xuống nhánh cài đặt.
+// Option setup.mjs nhận; option lạ (đoán bừa như "--help" ở bản cũ) thì setup.mjs báo lỗi chứ không rơi xuống nhánh cài đặt.
 const KNOWN_FLAGS = ['--home', '--answers', '--remote', '--github', '--no-copy-skill', '--plain', '--no-schedule', '--real-schedule',
   '--claude', '--codex', '--quiet', '--help', '-h'];
 const hasFlag = (name) => args.includes(name);
@@ -17,7 +17,7 @@ const valueOf = (name) => {
   const i = args.indexOf(name);
   return i >= 0 && args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : undefined;
 };
-// Lệnh con đứng ở đâu cũng được (hook ghi "--home <thư mục> sync"), miễn không phải giá trị của một cờ.
+// Lệnh con đứng ở đâu cũng được (hook ghi "--home <thư mục> sync"), miễn không phải giá trị của một option.
 const VALUE_FLAGS = ['--home', '--answers', '--remote', '--github'];
 const commandIndex = args.findIndex((a, i) => COMMANDS.includes(a) && !VALUE_FLAGS.includes(args[i - 1]));
 const command = commandIndex >= 0 ? args[commandIndex] : null;

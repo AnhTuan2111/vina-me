@@ -3,6 +3,12 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.18.1 (14/11/2026)
+
+- Thuật ngữ có tên chuẩn tiếng Anh giữ nguyên, không dịch sang tiếng Việt, kể cả chữ đã có từ Việt quen: option, không
+  "cờ"; layer, không "tầng"; packet, domain, certificate. Chữ đời thường không phải thuật ngữ (máy, tệp, lệnh) vẫn viết
+  tiếng Việt.
+
 ## 0.18.0 (14/11/2026)
 
 - Lệnh mới `/vina-me score <tệp> [mốc]`: một agent khác, không thấy quá trình viết, đọc tuần tự từng câu rồi trừ điểm theo ba

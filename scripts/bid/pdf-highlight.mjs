@@ -17,7 +17,7 @@
 // Tệp gốc giữ nguyên: script chép sang tệp mới rồi ghi thêm một lần cập nhật (incremental update) gồm các chú thích
 // Highlight kèm hình hiển thị, nên chữ, liên kết, chữ ký số cũ của hãng không bị đụng tới và mọi trình đọc PDF đều thấy.
 // Chữ không tìm thấy trên trang thì báo LỖI và thoát mã 1: hoặc trang dẫn sai, hoặc chữ gán cho hãng không có thật.
-// Cần pdftotext của Poppler (tọa độ từng chữ, cờ -bbox-layout). Không cần cài gói npm.
+// Cần pdftotext của Poppler (tọa độ từng chữ, option -bbox-layout). Không cần cài gói npm.
 import fs from 'node:fs';
 import zlib from 'node:zlib';
 import { execFileSync } from 'node:child_process';

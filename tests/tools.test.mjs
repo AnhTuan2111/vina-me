@@ -81,7 +81,7 @@ test('learn-from-sessions báo số phiên đã bỏ theo từng nguồn, chạy
   assert.match(kept.stdout, /Đã bỏ 1 phiên Claude Code, 0 phiên Codex; chỉ giữ phiên có thư mục làm việc chứa: beta\./);
 });
 
-test('learn-from-sessions gặp cờ lạ hay --help thì không rút gì', () => {
+test('learn-from-sessions gặp option lạ hay --help thì không rút gì', () => {
   const home = tmp();
   fakeSessions(home);
   const out = path.join(home, 'out');

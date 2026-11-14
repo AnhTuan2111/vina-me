@@ -37,8 +37,8 @@ Hình dung người đọc chỉ biết nền sẵn có của họ và những g
   một câu hỏi chờ mục đó trả lời.
 - Người dùng dặn "đừng lan sang X, bài sau mới tới" là dặn người viết. Không chép lời dặn đó vào bài thành câu hẹn, và
   không nhắc X ở đâu trong bài, kể cả trong câu hỏi kiểm tra và đáp án.
-- Phần sau nhắc lại phần trước, gọi đúng tên phần trước đã dùng, rồi đào sâu thêm. Kể cả từ chung của bài trước (tham
-  số, đường dẫn, câu lệnh, dấu `|`): bài trước dạy "tham số" thì bài này không viết "đối số", "cờ", "tùy chọn"; bài trước
+- Phần sau nhắc lại phần trước, gọi đúng tên phần trước đã dùng, rồi đào sâu thêm. Kể cả từ chung của bài trước (option,
+  path, câu lệnh, dấu `|`): bài trước dạy "option" thì bài này không viết "tham số", "cờ", "tùy chọn"; bài trước
   dạy "dấu `|` (pipe)" thì không viết "ống lệnh", "đường ống", dù các chữ đó hay dùng thay nhau. Thứ bài trước chưa đặt tên
   mà bài này phải gọi nhiều lần (cả một dòng có dấu `|`) thì gọi bằng chữ đã có ("dòng lệnh", "lệnh có dấu `|`") hay bằng
   chính nó trong dấu mã, không đặt tên mới. Luật trong tệp này dùng một chữ nào thì người viết vẫn gọi theo chữ bài trước
@@ -488,8 +488,9 @@ nào chen giữa hai đoạn đang nối nhau; khối output nào lệch tệp v
 - Lời trả: đường dẫn tệp đứng riêng dòng đầu; có nửa câu đối chiếu gọi tên tệp vào; đếm chữ (khoảng 100), câu dài nhất (không quá
   40 chữ), đếm đoạn mã mỗi câu (không quá hai, dấu che `$`, `[…]` cũng tính), không ngoặc liệt kê. Chạy `lint.mjs -` trên lời
   trả.
-- Tên bài trước đã dạy cho từ chung (tham số, câu lệnh, đường dẫn, dấu `|`): bài này có dùng chữ khác cho cùng thứ không.
-  Tìm "cờ", "đối số", "tùy chọn", "ống" trong bài; chữ nào bài trước không dạy thì đổi về chữ bài trước dạy.
+- Tên bài trước đã dạy cho từ chung (option, câu lệnh, path, dấu `|`): bài này có dùng chữ khác cho cùng thứ không.
+  Tìm "cờ", "đối số", "tùy chọn", "ống" trong bài; thuật ngữ có tên tiếng Anh thì về tên tiếng Anh, còn lại đổi về chữ bài
+  trước dạy.
 - Mỗi câu hỏi kiểm tra, làm cho cả bộ: đáp án có nằm gần nguyên ở một câu thân bài hay một dòng bảng tra không; tình
   huống có trùng một câu ví dụ ("kiểu", "chẳng hạn") của thân bài không. Ghi cạnh mỗi đáp án các ý nó dẫn nằm ở đoạn nào
   của thân bài; mọi ý nằm trong một đoạn là dò lại. Soát lại bước này sau mỗi lần sửa thân bài cho gọn.
