@@ -93,7 +93,7 @@ Theo thứ tự:
 
 1. Thông tin có đúng không? Con số, tên, lời trích có nguồn không?
 2. Có thiếu ý chính nào không? Phần kết có trả lời câu hỏi của bài không? Phần người dùng chỉ xin "nói qua" có
-   đang đưa cờ, lệnh, tên công cụ không?
+   đang đưa option, lệnh, tên công cụ không?
 3. Các phần có nối với nhau không? Có chỗ nào chọi nhau không?
 4. Thuật ngữ nào dùng trước khi giải nghĩa? Liệt kê thuật ngữ mới của từng đoạn, tính cả chữ người dùng đã gõ mà
    chưa hiểu và tên trong lời khuyên: đoạn nào từ hai trở lên? Thứ nào có hai tên, kể cả lời giải nghĩa bị dùng lại

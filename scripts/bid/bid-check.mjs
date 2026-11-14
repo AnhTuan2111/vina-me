@@ -2,7 +2,7 @@
 // Soát bản nháp hồ sơ dự thầu (thuyết minh đề xuất kỹ thuật, tài liệu kỹ thuật) trước khi giao cho BA.
 // Dùng: node bid-check.mjs <bản nháp.docx|.md|.txt> [--hsmt <tệp>]... [--sample <tệp>]... [--tlkt <tệp>]
 //                           [--tlkt-name "Tài liệu kỹ thuật"] [--term "tên cũ"]... [--catalog <catalog.pdf>]
-//   --hsmt    chữ của hồ sơ mời thầu (.txt trích từ PDF, .docx); nhiều tệp thì lặp cờ
+//   --hsmt    chữ của hồ sơ mời thầu (.txt trích từ PDF, .docx); nhiều tệp thì lặp option
 //   --sample  hồ sơ đã nộp dùng làm bản đối chứng; tìm tên riêng, mã của gói cũ còn sót trong bản nháp
 //   --tlkt    tài liệu kỹ thuật mà bản nháp dẫn tới ("thuyết minh chi tiết tại mục 10.7 của Tài liệu kỹ thuật")
 //   --term    chữ chắc chắn thuộc gói cũ (tên tỉnh, tên sản phẩm cũ), tìm thêm ngoài phần tự đoán

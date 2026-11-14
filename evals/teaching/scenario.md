@@ -55,7 +55,7 @@ Lấy từ `inputs/`, bài trích phải khớp nguyên văn (được che thôn
    Trong `ps aux` cột user cũng là `minhtq`.
 2. Lời người dùng "đừng lan sang firewall với docker nhé, mấy cái đó bài sau mới tới" dễ bị chép thành câu hẹn trong bài
    ("Firewall sẽ học ở Bài 5", "Docker mở cổng bằng -p, để bài 6"). `teaching.md` cấm phần trước nhắc phần sau.
-3. Thuật ngữ chưa dạy nằm sẵn trong output: `LISTEN`, cờ `-t` (TCP), `-n`, `-p` của `ss`, dấu `*` trong `*:8080`
+3. Thuật ngữ chưa dạy nằm sẵn trong output: `LISTEN`, option `-t` (TCP), `-n`, `-p` của `ss`, dấu `*` trong `*:8080`
    (dẫn sang khái niệm địa chỉ IP), `curl`, `localhost`, `actuator/health`. Syllabus không dạy `curl`, `localhost`, IP,
    TCP. Bài dùng thứ nào thì phải giải nghĩa bằng lời thường tại chỗ, mỗi đoạn tối đa một thuật ngữ mới, hoặc tránh hẳn.
 4. `lsof`: bài trên mạng hay dùng, nhưng máy học viên chưa cài. Bài dùng `lsof` làm lệnh chính mà không có bước cài, hay

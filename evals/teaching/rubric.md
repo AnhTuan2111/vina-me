@@ -46,7 +46,7 @@ Người đọc chỉ biết Java, Spring Boot và Bài 1-3 trong `syllabus.md`.
 | Kiểm | Trừ |
 |---|---|
 | Cổng (port) giải nghĩa bằng lời thường trước khi dùng như thuật ngữ, câu định nghĩa có "là" | thiếu hay định nghĩa kiểu "Port: ..." trong câu văn: -3 |
-| Mỗi thứ chưa dạy mà bài dùng (`LISTEN`, cờ `-t`, `-n`, `-p`, dấu `*`, `curl`, `localhost`, TCP, IP) được giải nghĩa tại chỗ hoặc tránh hẳn | mỗi thứ dùng mà không giải nghĩa: -2 (tối đa -8) |
+| Mỗi thứ chưa dạy mà bài dùng (`LISTEN`, option `-t`, `-n`, `-p`, dấu `*`, `curl`, `localhost`, TCP, IP) được giải nghĩa tại chỗ hoặc tránh hẳn | mỗi thứ dùng mà không giải nghĩa: -2 (tối đa -8) |
 | Một đoạn tối đa một thuật ngữ mới | mỗi đoạn có từ hai thuật ngữ mới: -2 |
 | Không nhắc bài sau: không "Bài 5", "bài 6", "sẽ học", "để sau", "lúc khác", "firewall sẽ...", "Docker sẽ..." | mỗi câu: -5, áp trần 90 |
 | Gọi lại bài trước đúng tên đã dùng (process, PID, `kill`, pipe, `grep`) | đổi tên hay giảng lại từ đầu như chưa học: -1 mỗi chỗ |
@@ -69,7 +69,7 @@ Người đọc chỉ biết Java, Spring Boot và Bài 1-3 trong `syllabus.md`.
 |---|---|
 | Lệnh chạy được trên WSL Ubuntu 22.04 mặc định: dùng `ss`; `lsof` chỉ khi có bước `sudo apt install lsof`; không `netstat -ano` hay lệnh Windows | mỗi lệnh sai môi trường: -3 |
 | Giải thích trước, lệnh sau; không dàn lệnh thành danh sách trơn | danh sách lệnh không lời: -2 |
-| Mỗi lệnh, cờ lạ được giải nghĩa ngay chỗ gõ | mỗi lệnh lạ không giải nghĩa: -1 (tính chung với C nếu là cùng một chữ thì chỉ trừ một lần) |
+| Mỗi lệnh, option lạ được giải nghĩa ngay chỗ gõ | mỗi lệnh lạ không giải nghĩa: -1 (tính chung với C nếu là cùng một chữ thì chỉ trừ một lần) |
 | Có bước cố tình gây lỗi (chạy bản thứ hai khi bản đầu còn chạy) rồi tự sửa | thiếu: -4 |
 | Output thật ghi ngày, nơi chạy; output chưa chạy ghi kỳ vọng | thiếu ghi: -2 (trùng A thì chỉ trừ ở A) |
 | Bảng tra triệu chứng ra lý do, mỗi dòng nói ai viết ra thông báo (Spring Boot, curl, bash hay Ubuntu khi thiếu lệnh) | thiếu bảng: -3; có bảng mà thiếu cột hay câu "ai viết ra": -2; gán sai người viết: -1 mỗi dòng |

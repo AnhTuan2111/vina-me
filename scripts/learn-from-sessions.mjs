@@ -11,7 +11,7 @@
 //   node scripts/learn-from-sessions.mjs --exclude private          bỏ phiên có thư mục làm việc chứa chữ đó (lặp lại được)
 //   node scripts/learn-from-sessions.mjs --user-only        chỉ lời người dùng, bỏ phần tóm gọn của agent
 //   --home <thư mục>   thử trên home khác;  --batch-size <số ký tự>  độ dài mỗi đợt (mặc định 60000)
-//   --help             in cách dùng rồi thoát; cờ lạ hay cờ thiếu giá trị thì báo lỗi và không rút gì
+//   --help             in cách dùng rồi thoát; option lạ hay option thiếu giá trị thì báo lỗi và không rút gì
 //
 // Riêng tư: các đợt rút ra nằm trên máy, nhưng khi agent đọc chúng thì nội dung được gửi lên nhà cung cấp mô hình thêm
 // một lần. Dùng --only, --exclude để giữ lại những dự án không muốn gửi.
@@ -31,7 +31,7 @@ import { HIDDEN, redact } from './lib/redact.mjs';
 
 const args = process.argv.slice(2);
 
-// Soát cờ trước khi đọc gì: cờ gõ sai mà vẫn chạy thì script rút luôn mọi phiên, kể cả dự án người dùng dặn bỏ, ra thư mục
+// Soát option trước khi đọc gì: option gõ sai mà vẫn chạy thì script rút luôn mọi phiên, kể cả dự án người dùng dặn bỏ, ra thư mục
 // tạm. --help in cách dùng lấy từ chú thích đầu tệp rồi thoát, không rút gì.
 const VALUE_FLAGS = new Set(['--home', '--out', '--since', '--batch-size', '--only', '--exclude']);
 const BOOL_FLAGS = new Set(['--user-only']);
@@ -50,7 +50,7 @@ for (let i = 0; i < args.length; i++) {
     else i++;
     continue;
   }
-  argErrors.push(a.startsWith('-') ? `không biết cờ ${a}` : `không biết tham số ${a}`);
+  argErrors.push(a.startsWith('-') ? `không biết option ${a}` : `không biết tham số ${a}`);
 }
 const sinceArg = args.includes('--since') ? args[args.indexOf('--since') + 1] : undefined;
 if (sinceArg && !sinceArg.startsWith('--') && Number.isNaN(new Date(sinceArg).getTime())) argErrors.push(`--since không phải ngày: ${sinceArg}`);

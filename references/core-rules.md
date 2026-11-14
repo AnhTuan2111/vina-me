@@ -78,10 +78,12 @@ liền.
 
 - Một khái niệm một tên trong cả văn bản. Từ thường thì đổi được cho đỡ lặp. Thuật ngữ thì chỉ lặp lại hoặc thay
   bằng "nó", "cái này".
+- Thuật ngữ có tên chuẩn tiếng Anh thì giữ nguyên, không dịch sang tiếng Việt (option, không "option"; layer, không
+  "tầng"); nó viết thế nào thì để yên thế (`word-choice.md`).
 - Một đoạn tối đa một thuật ngữ mới. Giải nghĩa nó ngay trong câu dùng nó lần đầu, giữa hai dấu phẩy hoặc trong ngoặc
   đơn. Từ dùng để giải nghĩa phải quen hơn từ được giải nghĩa.
 - Chữ viết tắt phải có chỗ giải. Thuật ngữ tiếng Anh giữ nguyên, một dạng viết duy nhất.
-- Một câu không mang quá hai đoạn mã hay ký hiệu. Cụm cờ viết gộp (`-ltnp`) tính là một. Tách câu cho đủ luật này thì
+- Một câu không mang quá hai đoạn mã hay ký hiệu. Cụm option viết gộp (`-ltnp`) tính là một. Tách câu cho đủ luật này thì
   mỗi câu vẫn giữ vế nhân quả của nó, không bỏ "nên", "tức" cho câu ngắn lại.
 
 Lời giải nghĩa không được thành tên thứ hai. Giải "cache là chỗ giữ sẵn kết quả" xong thì những câu sau vẫn gọi là
@@ -97,10 +99,10 @@ biểu đồ, tên màn hình người dùng ghi lại ("dashboard upstream", "b
 thuật ngữ mới, nên gọi bằng thứ nó đo ("biểu đồ thời gian trả lời của app").
 
 Thuật ngữ mới là mọi từ người đọc chưa biết, tính theo điều đã chốt ở bước "người đọc đã biết gì": tên thành phần (node,
-pod), tên trạng thái, tên tín hiệu, mã số (exit code), tên cờ, tên metric. Kể ví dụ cho một nhóm thì tối đa ba thứ, và
+pod), tên trạng thái, tên tín hiệu, mã số (exit code), tên option, tên metric. Kể ví dụ cho một nhóm thì tối đa ba thứ, và
 câu phải nói chúng thuộc nhóm nào. Chữ người dùng đã gõ hay đã thấy trong output mà chưa hiểu (họ chép lại tên trạng
 thái, mã lỗi, tên cấu hình rồi hỏi vì sao) vẫn là thuật ngữ mới, vẫn tính vào luật một đoạn một thuật ngữ. Tên công cụ,
-lệnh, cờ, tính năng nêu trong lời khuyên cũng là thuật ngữ mới. Thuật ngữ nào bài không cần thì đừng nhắc, kể cả khi
+lệnh, option, tính năng nêu trong lời khuyên cũng là thuật ngữ mới. Thuật ngữ nào bài không cần thì đừng nhắc, kể cả khi
 người dùng đã gõ nó: thay bằng chữ đã chọn ở trên. Chữ người dùng tự dùng đúng trong lời hỏi và thuộc mảng họ đã biết
 (transaction, `@Transactional` với người code Spring) thì tính là đã biết. Tên tự đặt ghép từ chữ đã biết, đọc là ra nghĩa ("phần
 ngoài thư mục log") không tính là thuật ngữ mới, nhưng đặt rồi thì nó là tên duy nhất của thứ đó.
@@ -120,14 +122,14 @@ trạng thái D. Gặp chuỗi như thế thì:
   ("số request lỗi mỗi phút trên dashboard"). Giữ tên khi người đọc phải tự đi tìm đúng ô đó, và khi giữ thì nó là thuật ngữ
   mới của đoạn.
 - Người dùng chỉ xin "nói qua", "sơ sơ" phần cách chỉnh thì phần đó nói việc cần làm và lý do bằng lời thường ("đo
-  xem app khởi động mất bao lâu rồi mới đặt mức chờ"), không đưa cờ, lệnh, tên công cụ, tên trường cấu hình. Người dùng hỏi tiếp
+  xem app khởi động mất bao lâu rồi mới đặt mức chờ"), không đưa option, lệnh, tên công cụ, tên trường cấu hình. Người dùng hỏi tiếp
   mới đưa. Ví dụ ở `references/examples.md`, mục 24.
 
 Soát xong bản nháp thì liệt kê thuật ngữ mới của từng đoạn, kể cả chữ người dùng đã gõ và tên trong lời khuyên. Đoạn nào
 có từ hai trở lên thì tách hoặc nói một cái bằng lời thường. Rồi liệt kê mọi chữ đã dùng cho mỗi thứ quan trọng (danh từ
 lẫn động từ), thứ nào có hai chữ thì gộp về một. Ví dụ ở `references/examples.md`, mục 18, 19 và 23.
 
-Tên tham số, cờ dòng lệnh, tên lớp lỗi, tên metric, tên trạng thái, tên trường chép từ output (kiểu `Last State`),
+Tên tham số, option dòng lệnh, tên lớp lỗi, tên metric, tên trạng thái, tên trường chép từ output (kiểu `Last State`),
 nhãn có dấu "=" thì đặt trong dấu mã, cả bài một kiểu, và mỗi cái tính là một đoạn mã trong luật hai đoạn mã một câu.
 Câu cần nhắc ba cái trở lên thì tách câu.
 

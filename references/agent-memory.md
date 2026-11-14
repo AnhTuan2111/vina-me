@@ -25,7 +25,7 @@ Claude Code ở `~/.claude`, máy kia chỉ có Codex. Mẫu của các tệp n�
   thêm vào đó dòng `@~/agent-memory/AGENTS.md`, và `AGENTS.md` lại có bốn dòng `@`, nên Claude nạp đủ năm tệp.
 - **Codex** đọc `~/.codex/AGENTS.md` (hoặc `$CODEX_HOME/AGENTS.md`) ở mọi phiên nhưng không có cú pháp `@`. Script chép cả bộ
   nhớ vào tệp đó, giữa hai dòng đánh dấu "vina-me memory: start" và "vina-me memory: end", và chép lại mỗi lần `sync` chạy.
-  Codex có hook riêng nhưng phải bật cờ thử nghiệm và tin cậy hook, nên script chưa dùng; `machine.md` dặn Codex chạy
+  Codex có hook riêng nhưng phải bật flag thử nghiệm và tin cậy hook, nên script chưa dùng; `machine.md` dặn Codex chạy
   `<setup> sync` ở đầu phiên.
 - **Agent khác**: trỏ tệp chỉ dẫn toàn cục của nó tới `~/agent-memory/AGENTS.md`, hoặc chép nội dung các tệp vào đó.
 
@@ -132,7 +132,7 @@ làm. Mỗi bước xong thì báo một câu ngắn bằng lời thường, kh�
 6. **Kiểm và báo.** Chạy `node ~/vina-me/scripts/setup.mjs check`. Báo người dùng: bộ nhớ nằm ở đâu, có repo chưa, đã nối vào
    agent nào, và phải mở phiên mới thì agent mới đọc skill và bộ nhớ.
 
-Cần xem script nhận lệnh con và cờ nào thì chạy `node ~/vina-me/scripts/setup.mjs --help`.
+Cần xem script nhận lệnh con và option nào thì chạy `node ~/vina-me/scripts/setup.mjs --help`.
 
 Máy không có Node thì dựng tay: chép ba tệp trong `memory-template/` vào `~/agent-memory/` (đổi `AGENTS.template.md` thành
 `AGENTS.md`, thay `{{DATE}}` bằng ngày hôm nay), viết `user.md` từ câu trả lời và `machine.md` theo bảng trên, rồi thêm dòng
@@ -144,7 +144,7 @@ Người dùng không muốn có bộ nhớ thì tạo tệp rỗng `~/agent-mem
 
 - Sau khi cài, `<setup>` chỉ chạy kèm một lệnh con đã ghi trong tài liệu này hay `machine.md` (`check`, `save`, `sync`,
   `conflict`, `resolve`...). Chạy trơn không kèm lệnh con là cài lại từ đầu: chép skill, sửa `CLAUDE.md`, thêm hook vào
-  `settings.json` và tạo lịch tự lưu. Xem lệnh con và cờ bằng `--help`; cờ lạ thì script báo lỗi và dừng, không cài gì. Chạy
+  `settings.json` và tạo lịch tự lưu. Xem lệnh con và option bằng `--help`; option lạ thì script báo lỗi và dừng, không cài gì. Chạy
   với `--home` giả thì script không tạo task trong Task Scheduler thật (trừ khi thêm `--real-schedule`). Lỡ cài lại khi người
   dùng không nhờ thì nói ngay ở câu đầu, gỡ theo gạch "Gỡ" dưới đây (tìm tên task bằng
   `schtasks /Query /FO LIST | findstr /I vina`), rồi kiểm lại đã hết.
@@ -187,12 +187,12 @@ phiên trước. Agent làm việc này một lần, khi người dùng đồng 
    ghi), `agent trả lời` (đoạn đầu câu trả lời cuối), `skill` (skill agent đã gọi). `overview.md` có bảng skill dùng nhiều.
    Chỉ muốn lời người dùng thì thêm `--user-only`.
    Chỉ muốn từ một ngày thì thêm `--since 2026-09-01`. Chỉ lấy vài dự án thì `--only <chữ trong đường dẫn>`, bỏ dự án
-   thì `--exclude <chữ trong đường dẫn>`; hai cờ lặp lại được. Bỏ dự án ngay ở cờ, đừng rút hết rồi lọc tay, vì đọc đợt là đã
+   thì `--exclude <chữ trong đường dẫn>`; hai option lặp lại được. Bỏ dự án ngay ở option, đừng rút hết rồi lọc tay, vì đọc đợt là đã
    gửi lên nhà cung cấp mô hình. Script báo số chỗ đã che và số phiên đã bỏ theo từng nguồn (Claude Code, Codex).
    `machine.md` ghi `<setup>` kèm `--home` thì truyền đúng `--home` đó cho script; không có `--home` mà máy có biến
    `CLAUDE_CONFIG_DIR`, `CODEX_HOME` thì script đọc cả hai thư mục ấy. `--out` chọn thư mục ra; script chỉ xoá
-   `overview.md`, `batch-*.md` cũ trong đó, tệp khác để nguyên. Cờ xem ở `--help` (chỉ in cách dùng, không rút gì), đừng chạy
-   thử với cờ đoán; lần chạy nào cũng kèm `--home` (nếu `machine.md` có) và mọi `--exclude` người dùng đã nói. Gõ sai cờ thì
+   `overview.md`, `batch-*.md` cũ trong đó, tệp khác để nguyên. Option xem ở `--help` (chỉ in cách dùng, không rút gì), đừng chạy
+   thử với option đoán; lần chạy nào cũng kèm `--home` (nếu `machine.md` có) và mọi `--exclude` người dùng đã nói. Gõ sai option thì
    script báo lỗi và không rút gì. `--help` chỉ có ở script này: `<setup>` không có nó, và gõ `<setup> --help` là cài lại cả
    bộ lên máy (gạch đầu của mục "Việc sau khi cài").
 3. Đọc `overview.md`, rồi từng đợt theo thứ tự. Sau mỗi đợt, ghi các ý tìm được vào một tệp nháp trong cùng thư mục tạm,

@@ -12,7 +12,7 @@
 //   - --expect: chữ thông số phải có trong tệp đã lưu (ví dụ "Dimensity 9400+"); thiếu thì báo LỖI, thoát mã 1.
 //   - --sources: ghi thêm một dòng vào bảng nguồn (ngày tải, đường dẫn, tệp, cách lấy, số trang, SHA-256).
 //   - --hide-price: ẩn khối giá bán (lớp, id có chữ "price", chữ ngắn dạng "$1,234", "AUD 5.000", "12.990.000 ₫"); hồ sơ kỹ thuật
-//     không mang giá. Không có cờ này mà bản in có giá thì script nhắc.
+//     không mang giá. Không có option này mà bản in có giá thì script nhắc.
 //   - Trang in ra là trang báo lỗi ("404", "Page Not Found", "Không tìm thấy trang") thì báo LỖI, không giữ tệp.
 // Chỉ lấy từ trang của hãng (dell.com, samsung.com, intel.com...). Đường dẫn gửi đi chỉ chứa tên sản phẩm, không chứa
 // tên gói thầu, chủ đầu tư hay nhà thầu. Trang trả 401, 403, 429 là chặn tải tự động: không vượt, BA tải tay.

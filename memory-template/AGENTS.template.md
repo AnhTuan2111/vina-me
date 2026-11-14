@@ -75,7 +75,7 @@ dù phiên bị tắt ngang. Người dùng bảo lưu ngay thì chạy `<setup>
 `<setup> resolve mine` hay `<setup> resolve theirs`. Không tự chọn thay người dùng, không ép đẩy.
 
 `<setup>` luôn chạy kèm một lệnh con ghi ở tệp này (`check`, `save`, `sync`, `conflict`, `resolve`). Nó không có `--help`:
-chạy trơn hay kèm cờ đoán là cài lại skill, hook và lịch tự lưu lên máy người dùng, kể cả task trong Task Scheduler của
+chạy trơn hay kèm option đoán là cài lại skill, hook và lịch tự lưu lên máy người dùng, kể cả task trong Task Scheduler của
 Windows. Cần lệnh khác thì đọc phần chú thích đầu tệp `scripts/setup.mjs`, đừng chạy thử.
 
 ## Học từ phiên cũ
