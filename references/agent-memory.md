@@ -129,6 +129,8 @@ làm. Mỗi bước xong thì báo một câu ngắn bằng lời thường, kh�
    `3` đủ chi tiết), `avoid`, `teamRules` (đường dẫn tệp luật của đội), `learnFromSessions` và `github` (`y` hoặc `n`). Tuỳ
    chọn: `repo` (tên repo, mặc định `agent-memory`), `remote` (url git), `pullFromGithub` (`y`/`n`, khi đã có repo từ máy
    khác). Chạy `node ~/vina-me/scripts/setup.mjs --answers <tệp JSON>`, rồi xoá tệp tạm.
+   Trên Windows còn một cách: chạy `node ~/vina-me/scripts/setup.mjs` không kèm `--answers`, script tự mở cửa sổ PowerShell
+   riêng cho người dùng trả lời rồi chờ cửa sổ đóng. Báo người dùng trước là sắp có cửa sổ hiện lên; khi đó bỏ bước 4.
 6. **Kiểm và báo.** Chạy `node ~/vina-me/scripts/setup.mjs check`. Báo người dùng: bộ nhớ nằm ở đâu, có repo chưa, đã nối vào
    agent nào, và phải mở phiên mới thì agent mới đọc skill và bộ nhớ.
 

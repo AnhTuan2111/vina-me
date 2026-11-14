@@ -3,6 +3,7 @@
 import path from 'node:path';
 import readline from 'node:readline/promises';
 import { emitKeypressEvents } from 'node:readline';
+import { spawnSync } from 'node:child_process';
 import { hasFlag, valueOf, home, read, slash, setDecorate, log } from './context.mjs';
 
 const LENGTHS = {
@@ -147,8 +148,42 @@ function finish(text) {
 }
 
 const answersFile = valueOf('--answers') ? JSON.parse(read(path.resolve(valueOf('--answers')))) : null;
+
+// Agent chạy script qua công cụ không có TTY nên không hỏi được. Trên Windows thì mở một cửa sổ PowerShell riêng, chạy lại
+// đúng lệnh này trong đó để người dùng tự trả lời, chờ cửa sổ đóng rồi thoát theo mã thoát của nó. Biến VINA_ME_WINDOW chặn
+// cửa sổ con mở tiếp cửa sổ khác; CI và --no-window giữ cách cũ (nhắc dùng --answers). macOS, Linux chưa làm.
+const psQuote = (s) => `'${String(s).replace(/'/g, "''")}'`;
+const encodePs = (script) => Buffer.from(script, 'utf16le').toString('base64');
+function windowScript(argv = process.argv, cwd = process.cwd()) {
+  return [
+    '$Host.UI.RawUI.WindowTitle = "vina-me: cài đặt"',
+    '$env:VINA_ME_WINDOW = "1"',
+    `Set-Location -LiteralPath ${psQuote(cwd)}`,
+    `& ${argv.map(psQuote).join(' ')}`,
+    '$code = $LASTEXITCODE',
+    'if ($code -ne 0) { Write-Host ""; Read-Host "Có lỗi ở trên. Bấm Enter để đóng cửa sổ" | Out-Null } else { Start-Sleep -Seconds 3 }',
+    'exit $code',
+  ].join('\n');
+}
+function canOpenWindow() {
+  return process.platform === 'win32' && !process.env.VINA_ME_WINDOW && !process.env.CI && !hasFlag('--no-window');
+}
+function runInOwnWindow() {
+  const ps = spawnSync('pwsh', ['-NoProfile', '-Command', 'exit 0']).status === 0 ? 'pwsh' : 'powershell.exe';
+  const outer = [
+    `$w = Start-Process -FilePath ${psQuote(ps)} -ArgumentList '-NoProfile','-EncodedCommand',${psQuote(encodePs(windowScript()))} -Wait -PassThru`,
+    'exit $w.ExitCode',
+  ].join('\n');
+  console.log('Đã mở một cửa sổ PowerShell riêng để người dùng trả lời các câu hỏi cài đặt. Đang chờ cửa sổ đó đóng...');
+  const r = spawnSync(ps, ['-NoProfile', '-NonInteractive', '-EncodedCommand', encodePs(outer)], { stdio: ['ignore', 'inherit', 'inherit'] });
+  const code = r.status ?? 1;
+  console.log(code === 0 ? 'Cửa sổ cài đặt đã xong. Mở một phiên agent mới để nó đọc bộ nhớ.' : `Cửa sổ cài đặt thoát với mã ${code}; xem lỗi người dùng thấy trong cửa sổ đó.`);
+  process.exit(code);
+}
+
 function requireTty() {
   if (answersFile || process.stdin.isTTY) return;
+  if (canOpenWindow()) runInOwnWindow();
   console.error('Không hỏi được vì không chạy trong cửa sổ dòng lệnh. Ghi câu trả lời vào một tệp JSON có các khoá');
   console.error(`${QUESTIONS.map((q) => q.key).join(', ')} rồi chạy lại với --answers <tệp>.`);
   process.exit(1);
@@ -166,4 +201,4 @@ async function getAnswers() {
 
 function closePrompt() { lineReader?.close(); }
 
-export { LENGTHS, YES_NO, QUESTIONS, pretty, out, CSI, fg, bg, bold, dim, COL, paint, segments, exitOnCtrlC, rawOn, rawOff, inputLine, inputChoice, askPretty, lineReader, askPlain, ask, banner, finish, answersFile, requireTty, getAnswers, closePrompt };
+export { LENGTHS, YES_NO, QUESTIONS, pretty, out, CSI, fg, bg, bold, dim, COL, paint, segments, exitOnCtrlC, rawOn, rawOff, inputLine, inputChoice, askPretty, lineReader, askPlain, ask, banner, finish, answersFile, windowScript, canOpenWindow, requireTty, getAnswers, closePrompt };
