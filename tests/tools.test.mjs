@@ -630,3 +630,18 @@ test('remind.mjs in một dòng nhắc dùng vina-me cho hook UserPromptSubmit',
   assert.match(r.stdout, /vina-me/);
   assert.equal(r.stdout.trim().split('\n').length, 1);
 });
+
+test('prompt.mjs: lệnh chạy trong cửa sổ riêng giữ nguyên tham số, cửa sổ con không mở thêm cửa sổ', async () => {
+  const { spawnSync } = await import('node:child_process');
+  const code = "import('./scripts/lib/prompt.mjs').then((m) => console.log(JSON.stringify({ " +
+    "script: m.windowScript(['C:/Program Files/nodejs/node.exe', 'C:/vina me/scripts/setup.mjs', '--home', \"C:/it's\"], 'C:/a b'), " +
+    "open: m.canOpenWindow() })))";
+  const r = spawnSync(process.execPath, ['--input-type=module', '-e', code], { cwd: ROOT, encoding: 'utf8', env: { ...process.env, VINA_ME_WINDOW: '1' } });
+  assert.equal(r.status, 0, r.stderr);
+  const { script, open } = JSON.parse(r.stdout);
+  assert.equal(open, false);
+  assert.match(script, /\$env:VINA_ME_WINDOW = "1"/);
+  assert.match(script, /Set-Location -LiteralPath 'C:\/a b'/);
+  assert.match(script, /& 'C:\/Program Files\/nodejs\/node\.exe' 'C:\/vina me\/scripts\/setup\.mjs' '--home' 'C:\/it''s'/);
+  assert.match(script, /exit \$code/);
+});

@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 const COMMANDS = ['sync', 'save', 'github', 'remote', 'team', 'codex', 'update', 'check', 'conflict', 'resolve', 'channel'];
 const args = process.argv.slice(2);
 // Option setup.mjs nhận; option lạ (đoán bừa như "--help" ở bản cũ) thì setup.mjs báo lỗi chứ không rơi xuống nhánh cài đặt.
-const KNOWN_FLAGS = ['--home', '--answers', '--remote', '--github', '--no-copy-skill', '--plain', '--no-schedule', '--real-schedule',
+const KNOWN_FLAGS = ['--home', '--answers', '--remote', '--github', '--no-copy-skill', '--plain', '--no-window', '--no-schedule', '--real-schedule',
   '--claude', '--codex', '--quiet', '--help', '-h'];
 const hasFlag = (name) => args.includes(name);
 const valueOf = (name) => {

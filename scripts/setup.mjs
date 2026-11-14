@@ -16,6 +16,7 @@
 //   node scripts/setup.mjs resolve mine|theirs   giữ bản máy này ở chỗ đụng nhau, hoặc lấy bản trên repo (sao lưu bản cũ)
 //
 // Option: --home <thư mục> để thử trên home giả, --no-copy-skill để không chép skill, --plain để hỏi trơn không màu,
+// --no-window để không mở cửa sổ riêng khi chạy không có TTY (Windows mặc định mở cửa sổ PowerShell cho người dùng trả lời),
 // --no-schedule để không cài lịch tự lưu, --claude hoặc --codex để nối vào agent đó dù chưa thấy thư mục cấu hình của nó.
 // Khi cài có thể kèm --github [tên repo] hoặc --remote <url>.
 //

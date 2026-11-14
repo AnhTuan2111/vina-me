@@ -3,6 +3,12 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.19.0 (14/11/2026)
+
+- Agent chạy `setup.mjs` thay người dùng trên Windows mà không kèm `--answers` thì script mở một cửa sổ PowerShell riêng để
+  người dùng tự trả lời tám câu, chờ cửa sổ đóng rồi báo lại cho agent cài xong hay lỗi. Không muốn mở cửa sổ thì thêm
+  `--no-window`; macOS và Linux vẫn nhắc ghi câu trả lời vào tệp như cũ.
+
 ## 0.18.1 (14/11/2026)
 
 - Thuật ngữ có tên chuẩn tiếng Anh giữ nguyên, không dịch sang tiếng Việt, kể cả chữ đã có từ Việt quen: option, không
