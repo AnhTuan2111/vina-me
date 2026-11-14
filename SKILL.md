@@ -6,7 +6,7 @@ argument-hint: "[write|edit|review|score|word|bid|memory|secret|feedback] <yêu 
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.19.1"
+  version: "0.19.2"
 ---
 
 # Viết cho lưu loát
@@ -31,7 +31,7 @@ không bỏ qua với lý do đây chỉ là một dòng ngắn.
    lượt bắt văn máy theo `references/machine-tells.md`. Soát văn của người khác thì chạy lint trên tệp đó và trên chính
    lời soát; lint bỏ qua lời trích trong ngoặc kép, nên báo nào còn lại trong lời soát là của mình. Bài dài hay người
    dùng muốn có điểm thì nhờ một agent khác chấm theo `references/scoring.md`.
-6. Trả kết quả theo bảng Trả kết quả. Việc sửa, kiểm, chạy thì báo đã kiểm gì, chưa kiểm gì, chỗ nào chưa chắc.
+6. Trả kết quả theo bảng Trả kết quả. Việc sửa, kiểm tra, chạy thì báo đã kiểm tra gì, chưa kiểm tra gì, chỗ nào chưa chắc.
 
 ## Bảy điều cốt lõi
 
@@ -90,7 +90,7 @@ thơ, lời thoại.
 
 | Việc | Trả gì |
 |---|---|
-| Viết mới | đường dẫn tuyệt đối của tệp (hay chính văn bản), thêm một hai câu về chỗ chưa kiểm hay thiếu dữ kiện |
+| Viết mới | đường dẫn tuyệt đối của tệp (hay chính văn bản), thêm một hai câu về chỗ chưa kiểm tra hay thiếu dữ kiện |
 | Sửa đoạn được dán vào | bản đã sửa, rồi tối đa năm dòng nêu thay đổi chính và lý do |
 | Sửa một tệp | chỉ sửa phần văn, báo số chỗ đã sửa theo loại |
 | Soát mà không sửa | từng chỗ "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ |

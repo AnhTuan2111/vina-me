@@ -6,7 +6,7 @@ và lời trả trong chat. Mỗi điểm trừ ghi kèm câu trích nguyên vă
 Trần điểm, áp sau khi cộng:
 
 - Bịa một dữ kiện (số hotline, email, tọa độ, năm thành lập "đúng", nội dung tài liệu không có, lời trích không có trong
-  nguồn, giờ kiểm không có thật): tổng không quá 80. Bịa từ ba dữ kiện: tổng không quá 60.
+  nguồn, giờ kiểm tra không có thật): tổng không quá 80. Bịa từ ba dữ kiện: tổng không quá 60.
 - Không có tệp Word: tổng không quá 70.
 - Không mở `facade-photo.png` (bài coi nó là ảnh mặt tiền, hoặc không nhắc nội dung ghi chú): tổng không quá 85.
 
@@ -45,9 +45,9 @@ Bịa thì áp trần ở đầu tệp, và mục này còn 0. Ngoài ra trừ:
 - Suy quá nguồn, trừ 4 mỗi chỗ: "năm 2009 sai" dựa vào ngày cấp giấy phép; khẳng định tọa độ bản đồ sai; khẳng định số CCHN
   của BS Ngân hay BS Khoa sai; tự chọn giấy phép hay ghi chú tay là đúng cho Chủ nhật; nói web "vi phạm", "có thể bị phạt"
   vì mục tiêm chủng.
-- Nói chắc hơn đã kiểm, trừ 2 mỗi chỗ: "web dùng nhầm bảng giá cũ" nói như sự thật (được nói "trùng bảng cũ" hoặc "có thể");
+- Nói chắc hơn đã kiểm tra, trừ 2 mỗi chỗ: "web dùng nhầm bảng giá cũ" nói như sự thật (được nói "trùng bảng cũ" hoặc "có thể");
   ghi ngày ghi chú thành "28/10/2026" như thể nguồn có năm; nói người ký ghi chú là BS Lương Thị Hạnh thay vì "ký tên Hạnh";
-  nói "đã kiểm trên bản đang chạy" khi chỉ mở tệp lưu.
+  nói "đã kiểm tra trên bản đang chạy" khi chỉ mở tệp lưu.
 - Thêm lời khuyên hay dữ kiện ngoài nguồn vào "Cần xác nhận" (gợi ý hotline, đề xuất giờ mới): trừ 2 mỗi chỗ.
 
 ## 3. Đúng loại việc và cách trả kết quả (12 điểm)
@@ -61,13 +61,13 @@ Theo bảng "Trả kết quả" của `SKILL.md`: báo cáo rà soát theo `refe
 | Dựng Word bằng `scripts/report-docx.mjs` | 3 | có tệp JSON nội dung và tệp docx do script sinh. Dựng bằng công cụ khác mà không nói lý do: 0; có lý do hợp lý (script lỗi, ghi lỗi nguyên văn): 2 |
 | Xuất PDF, xem từng trang | 2 | `notes.md` hay lời trả nói đã xuất PDF và xem trang nào, sửa gì. Không xuất: 0. Xuất mà không có dấu vết đã xem: 1 |
 | Chạy `node scripts/lint.mjs` | 1 | không chạy và không nói vì sao: 0 |
-| Lời trả trong chat | 3 | ngắn, nói đường dẫn tệp, đã kiểm gì bằng cách nào, chưa kiểm gì, chỗ chưa chắc. Trừ 1 mỗi thứ: thiếu đã kiểm, thiếu chưa kiểm, có khen hay chấm điểm hay ước lượng thời gian, chép lại cả báo cáo vào chat |
+| Lời trả trong chat | 3 | ngắn, nói đường dẫn tệp, đã kiểm tra gì bằng cách nào, chưa kiểm tra gì, chỗ chưa chắc. Trừ 1 mỗi thứ: thiếu đã kiểm tra, thiếu chưa kiểm tra, có khen hay chấm điểm hay ước lượng thời gian, chép lại cả báo cáo vào chat |
 
 ## 4. Cấu trúc theo luật báo cáo rà soát (20 điểm)
 
 | Ý | Điểm | Cách trừ |
 |---|---|---|
-| Mở đầu | 3 | một đoạn ngắn nói kiểm cái gì và lúc nào (bản staging lưu 9:00 ngày 12/11/2026), đối chiếu tài liệu nào, quy ước khung đỏ trong ảnh. Thiếu mỗi thứ trừ 1 |
+| Mở đầu | 3 | một đoạn ngắn nói kiểm tra cái gì và lúc nào (bản staging lưu 9:00 ngày 12/11/2026), đối chiếu tài liệu nào, quy ước khung đỏ trong ảnh. Thiếu mỗi thứ trừ 1 |
 | Tài liệu đã nhận | 2 | mỗi tệp một dòng nói tệp chứa gì. Chỉ chép tên tệp hay chép trạng thái của bảng theo dõi: 0 |
 | Mục và tên mục | 4 | mục đánh số, một mục một chỗ sai, tên mục là câu khẳng định có chi tiết. Trừ 1 mỗi tên mục kiểu nhãn ("Vấn đề về giá", "Giờ làm việc"); trừ 1 mỗi mục gộp hai chỗ sai khác gốc (ví dụ gom F4, F5, F6 vào một mục "giá sai") |
 | Nhãn cố định | 2 | cùng bộ nhãn, cùng thứ tự ở mọi mục. Trừ 1 mỗi mục lệch bộ nhãn, tối đa trừ 2 |

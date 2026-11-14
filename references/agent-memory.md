@@ -55,7 +55,7 @@ lần chạy ghi một dòng vào `~/.config/vina-me/sync.log`, giữ 200 dòng 
 ## Tự cập nhật vina-me
 
 Khi cài, script giữ một bản clone của vina-me ở `~/.config/vina-me/source` (chép từ thư mục đã clone, hoặc clone lại từ
-GitHub nếu tải zip). Mỗi lần `sync` chạy (tối đa 6 giờ kiểm một lần), nó lấy tag phát hành `vX.Y.Z` mới nhất; có bản mới thì
+GitHub nếu tải zip). Mỗi lần `sync` chạy (tối đa 6 giờ kiểm tra một lần), nó lấy tag phát hành `vX.Y.Z` mới nhất; có bản mới thì
 chép sang mọi thư mục skill đã cài và in một dòng "vina-me vừa được cập nhật lên vX.Y.Z" kèm dòng đầu của mục đó trong
 `CHANGELOG.md`. Commit mới trên `main` chưa gắn tag thì máy người dùng chưa nhận. Cập nhật ngay: `<setup> update`.
 
@@ -121,7 +121,7 @@ làm. Mỗi bước xong thì báo một câu ngắn bằng lời thường, kh�
    thì cài (`winget install GitHub.cli`, `brew install gh`). Chưa đăng nhập thì chạy
    `gh auth login --hostname github.com --git-protocol https --web` ở chế độ chạy nền: lệnh in một mã tám ký tự rồi đứng chờ.
    Đưa người dùng mã đó và link `https://github.com/login/device`, bảo họ mở link, đăng nhập GitHub, nhập mã, bấm cho phép.
-   Lệnh tự xong khi họ cho phép; kiểm lại bằng `gh auth status`. Người dùng không có tài khoản GitHub thì bỏ bước này và trả
+   Lệnh tự xong khi họ cho phép; kiểm tra lại bằng `gh auth status`. Người dùng không có tài khoản GitHub thì bỏ bước này và trả
    lời `n` ở câu GitHub.
 4. **Tám câu hỏi.** Hỏi người dùng tám câu ở trên ngay trong chat, gộp vào một tin, câu nào cũng kèm gợi ý như script hỏi.
    Câu nào người dùng bỏ trống thì để trống.
@@ -131,7 +131,7 @@ làm. Mỗi bước xong thì báo một câu ngắn bằng lời thường, kh�
    khác). Chạy `node ~/vina-me/scripts/setup.mjs --answers <tệp JSON>`, rồi xoá tệp tạm.
    Trên Windows còn một cách: chạy `node ~/vina-me/scripts/setup.mjs` không kèm `--answers`, script tự mở cửa sổ PowerShell
    riêng cho người dùng trả lời rồi chờ cửa sổ đóng. Báo người dùng trước là sắp có cửa sổ hiện lên; khi đó bỏ bước 4.
-6. **Kiểm và báo.** Chạy `node ~/vina-me/scripts/setup.mjs check`. Báo người dùng: bộ nhớ nằm ở đâu, có repo chưa, đã nối vào
+6. **Kiểm tra và báo.** Chạy `node ~/vina-me/scripts/setup.mjs check`. Báo người dùng: bộ nhớ nằm ở đâu, có repo chưa, đã nối vào
    agent nào, và phải mở phiên mới thì agent mới đọc skill và bộ nhớ.
 
 Cần xem script nhận lệnh con và option nào thì chạy `node ~/vina-me/scripts/setup.mjs --help`.
@@ -149,7 +149,7 @@ Người dùng không muốn có bộ nhớ thì tạo tệp rỗng `~/agent-mem
   `settings.json` và tạo lịch tự lưu. Xem lệnh con và option bằng `--help`; option lạ thì script báo lỗi và dừng, không cài gì. Chạy
   với `--home` giả thì script không tạo task trong Task Scheduler thật (trừ khi thêm `--real-schedule`). Lỡ cài lại khi người
   dùng không nhờ thì nói ngay ở câu đầu, gỡ theo gạch "Gỡ" dưới đây (tìm tên task bằng
-  `schtasks /Query /FO LIST | findstr /I vina`), rồi kiểm lại đã hết.
+  `schtasks /Query /FO LIST | findstr /I vina`), rồi kiểm tra lại đã hết.
 - `sync` báo "không gộp được": máy khác đã sửa cùng chỗ. Bản trên máy vẫn còn, chưa đẩy. Agent chạy `<setup> conflict` để
   in phần khác nhau, hỏi người dùng giữ bản nào, rồi `<setup> resolve mine` (giữ bản máy này ở chỗ đụng nhau, phần không
   đụng vẫn gộp bản trên repo) hoặc `<setup> resolve theirs` (lấy bản trên repo; bản cũ của máy này sao lưu ở
@@ -161,7 +161,7 @@ Người dùng không muốn có bộ nhớ thì tạo tệp rỗng `~/agent-mem
   dựng bộ nhớ hay ngày hôm nay vào cho hết báo. Lệnh chỉ đọc dòng đầu của mỗi gạch đầu dòng, nên viết mỗi gạch đầu dòng liền
   trên một dòng, đừng gập ngày xuống dòng sau.
 - Mất mạng: các lượt kéo, đẩy chờ tối đa 15 giây rồi bỏ qua; đầu phiên agent chỉ thấy một dòng báo, lần sync sau thử lại.
-  vina-me được kiểm bản mới tối đa 6 giờ một lần; muốn kiểm ngay thì `<setup> update`.
+  vina-me được kiểm tra bản mới tối đa 6 giờ một lần; muốn kiểm tra ngay thì `<setup> update`.
 - Đội đổi luật chung: `<setup> team <tệp luật>`. Lần `sync` sau sẽ lưu lên repo.
 - Mật khẩu lưu bằng `secrets.mjs` không theo repo: mã hoá bằng tài khoản của từng máy, nên máy mới phải lưu lại.
 - Gỡ:
@@ -253,11 +253,11 @@ phiên trước. Agent làm việc này một lần, khi người dùng đồng 
    đọc. Người dùng duyệt, sửa, bỏ từng ý.
 
    Ngoài nháp chỉ nói điều người dùng cần biết hay cần làm: bí mật bị lọt, câu hỏi cần trả lời, điều đã ghi ngay, kết quả
-   `<setup> check`. Không liệt kê lại các ý đã bỏ, nhất là chuyện riêng. Con số đã kiểm (số phiên, số tin, số chỗ đã che, số
+   `<setup> check`. Không liệt kê lại các ý đã bỏ, nhất là chuyện riêng. Con số đã kiểm tra (số phiên, số tin, số chỗ đã che, số
    phiên đã bỏ ở từng nguồn) lấy đúng như script in ra, không đoán thêm. Kể đủ việc còn lại sau khi duyệt: ghi vào bộ nhớ,
    chạy `<setup> save`, xoá thư mục tạm và tệp `.pending-learn`. Có lần chạy lỡ rút dự án người dùng dặn bỏ thì nói ngay ở
    câu đầu, đừng mở bằng câu khẳng định đã bỏ từ đầu. Đừng dựng vế "chứ không ..." để bác một điều chưa ai nói ("dòng này
-   đi ngược dòng cũ chứ không bổ sung cho nó"); điều đã kiểm thì nói cách kiểm (đọc hết đợt, chạy lệnh gì), đừng nối nó bằng
+   đi ngược dòng cũ chứ không bổ sung cho nó"); điều đã kiểm tra thì nói cách kiểm tra (đọc hết đợt, chạy lệnh gì), đừng nối nó bằng
    "nên" vào một việc khác, vì người đọc sẽ hiểu thành suy luận.
 
    Phần lời ngoài nháp viết liền thành câu thường, như nói với người ngồi cạnh: không in đậm nhãn đầu đoạn, không mở đoạn

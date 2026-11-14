@@ -263,6 +263,8 @@ function lint(file, forceOfficial) {
   if (emphasis.size) notes.push(`chữ nhấn thừa: ${[...emphasis].map(([w, n]) => (n > 1 ? `${w} (${n})` : w)).join(', ')}; bỏ khi câu không mất nghĩa (machine-tells.md, bảng D)`);
   const typos = TYPOS.filter((t) => lower.includes(t));
   if (typos.length) report.push(`lỗi chính tả hay gặp: ${typos.join(', ')} (common-errors.md, Lỗi dùng từ)`);
+  const loneKiem = (prose.match(/(?<![\p{L}])kiểm(?![\p{L}])(?!\s+(?:tra|thử|kê|soát|định|duyệt|chứng|nghiệm))/giu) || []).length;
+  if (loneKiem) report.push(`"kiểm" đứng lẻ ${loneKiem} lần: chỉ dùng trong từ ghép (kiểm thử, kiểm kê), còn lại viết "kiểm tra"`);
   const wrapUps = (prose.match(/(^|\n)\s*(Nhớ gọn|Nói ngắn gọn|Nói tóm lại|Tóm gọn lại|Chốt lại)[:,]/g) || []).length;
   if (wrapUps) report.push(`câu chốt kiểu "Nhớ gọn:": ${wrapUps} lần (hết ý thì dừng)`);
 

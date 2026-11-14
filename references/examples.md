@@ -60,7 +60,7 @@ Sau:
 > Dùng điện thoại trong một giờ trước khi ngủ làm bạn ngủ muộn hơn. Màn hình phát ánh sáng xanh, và ánh sáng đó làm
 > cơ thể chậm tiết ra chất gây buồn ngủ.
 
-(Câu sau chỉ viết được khi kiểm được nguồn cho hai điều đó.)
+(Câu sau chỉ viết được khi kiểm tra được nguồn cho hai điều đó.)
 
 ## 5. Đối lập giả và câu châm ngôn
 
@@ -140,7 +140,7 @@ Sau:
 > Ở đó việc thi cử rất được coi trọng. Ngày thi, người ta cấm làm ồn quanh điểm thi, chặn bớt đường, và hoãn cả giờ
 > máy bay cất cánh trong lúc thí sinh làm bài nghe.
 
-(Chỉ viết được khi ba việc đó kiểm được.)
+(Chỉ viết được khi ba việc đó kiểm tra được.)
 
 ## 12. Lời hứa về phần sau
 

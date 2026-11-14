@@ -1,6 +1,6 @@
 # Thang điểm nhóm word-report: báo cáo sự cố MediBook xuất Word
 
-Tổng 100 điểm, đạt từ 95. Đáp án dữ kiện ở `scenario.md`. Người chấm mở tệp `.docx` (đọc chữ, kiểm phông và cấu trúc bằng
+Tổng 100 điểm, đạt từ 95. Đáp án dữ kiện ở `scenario.md`. Người chấm mở tệp `.docx` (đọc chữ, kiểm tra phông và cấu trúc bằng
 cách giải nén `word/document.xml`, `word/styles.xml`, `word/footer*.xml`), xuất PDF bằng Word theo khóa ở `evals/README.md` rồi xem
 ảnh từng trang, và đọc lời trả trong chat (`notes.md` của lần chạy). Mỗi điểm trừ ghi kèm câu trích nguyên văn hoặc số
 trang PDF. Một lỗi chỉ trừ ở một mục, mục nặng nhất.
@@ -42,7 +42,7 @@ Mục này không âm.
 | Không xưng hô, chủ ngữ là hệ thống, việc, người theo vai trò; không đổ lỗi, không mỉa | 3 | có "chúng tôi", "mình", "chúng ta": trừ 1 mỗi kiểu; nêu tên người như người gây lỗi, có "quên", "sơ suất", "thiếu cẩn thận": trừ 2; còn câu mỉa giờ deploy: trừ 2 |
 | Dựng bằng `scripts/report-docx.mjs` (bản chép có sửa cũng được), không tự viết một bộ dựng khác bỏ quy ước của skill | 2 | dựng bằng công cụ khác (pandoc, python-docx, Word COM soạn tay): trừ 2 |
 | Đã xuất PDF và xem từng trang trước khi đưa, nói ra trong lời trả | 2 | không xuất PDF: trừ 2; xuất mà không nói đã xem gì: trừ 1 |
-| Lời trả trong chat: đường dẫn tệp `.docx` (và PDF nếu có), một hai câu về chỗ thiếu dữ kiện hay chưa kiểm (số khách, số lượt đặt hỏng, kết quả gọi lại sau 11/11), nói đã làm phông và số trang thế nào | 3 | thiếu đường dẫn: trừ 1; không nêu chỗ thiếu dữ kiện: trừ 1; không nói cách xử lý phông và số trang khi script không có: trừ 1; lời trả dài quá mười dòng, có khen, chấm điểm, ước lượng thời gian: trừ 1 |
+| Lời trả trong chat: đường dẫn tệp `.docx` (và PDF nếu có), một hai câu về chỗ thiếu dữ kiện hay chưa kiểm tra (số khách, số lượt đặt hỏng, kết quả gọi lại sau 11/11), nói đã làm phông và số trang thế nào | 3 | thiếu đường dẫn: trừ 1; không nêu chỗ thiếu dữ kiện: trừ 1; không nói cách xử lý phông và số trang khi script không có: trừ 1; lời trả dài quá mười dòng, có khen, chấm điểm, ước lượng thời gian: trừ 1 |
 
 Không có đoạn kết chung chung, đoạn "bài học kinh nghiệm" tự nghĩ ra, lời khuyên ngoài nguồn: có thì trừ ở mục 3.
 

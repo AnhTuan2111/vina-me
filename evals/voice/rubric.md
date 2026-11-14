@@ -74,7 +74,7 @@ Loại việc là "Viết mới" trong bảng "Trả kết quả" của `SKILL.m
 |---|---|---|
 | 3 | Hồ sơ lưu thành tệp Markdown riêng, chat chỉ đường dẫn tuyệt đối | không có đường dẫn: -1; chép lại cả hồ sơ vào chat: -2 |
 | 2 | Bài đăng đưa trọn trong chat hoặc trong tệp có đường dẫn, sẵn để dán lên page (không lẫn ghi chú vào giữa bài) | ghi chú lẫn trong bài: -2 |
-| 3 | Một hai câu về chỗ thiếu dữ kiện: phần trăm mã giảm chưa chốt và bài đã để thế nào; nói đã kiểm gì (đọc đủ bốn tệp, chạy `lint.mjs` hay chưa) | không nhắc phần trăm: -2; không nói đã kiểm gì: -1 |
+| 3 | Một hai câu về chỗ thiếu dữ kiện: phần trăm mã giảm chưa chốt và bài đã để thế nào; nói đã kiểm tra gì (đọc đủ bốn tệp, chạy `lint.mjs` hay chưa) | không nhắc phần trăm: -2; không nói đã kiểm tra gì: -1 |
 | 2 | Hỏi Hạnh đọc thử, chỉ chỗ chưa giống giọng mình để sửa hồ sơ | không hỏi: -2 |
 
 Trừ thêm trong mục này: lời chat dài quá 10 dòng, có đoạn tự khen, bảng chấm điểm, ước lượng thời gian, đề mục in đậm cho câu

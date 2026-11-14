@@ -104,7 +104,7 @@ Một chữ ở cột trái xuất hiện một lần, đúng chỗ thì để. 
 | "Các nghiên cứu chỉ ra rằng…" không nêu nghiên cứu nào | Nêu nguồn, hoặc bỏ |
 | Con số tròn không nguồn; con số tu từ ("cao hơn hàng trăm lần") | Số đo được, kèm nguồn và thời điểm |
 | Output trình bày như thật mà chưa chạy | Ghi "kỳ vọng" |
-| Câu nào cũng chắc như nhau | Nói rõ chỗ chưa kiểm, chỗ đang đoán |
+| Câu nào cũng chắc như nhau | Nói rõ chỗ chưa kiểm tra, chỗ đang đoán |
 | Nguyên nhân và giải pháp chung chung, dùng được cho mọi vấn đề | Nguyên nhân của đúng việc này; giải pháp rút từ nguyên nhân đó |
 | Một ví dụ dùng cho mọi ý | Ví dụ dính trực tiếp tới ý đang nói |
 | Kiến thức thêm không phục vụ điều đang nói | Bỏ, hoặc dời sang phần đọc thêm |

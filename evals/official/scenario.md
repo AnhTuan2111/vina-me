@@ -3,7 +3,7 @@
 Lời yêu cầu ở `prompt.md` (người làm bài chỉ được thấy tệp đó và hai tệp trong `inputs/`). Tệp vào:
 
 - `inputs/budget.csv`: dự toán năm dòng, số viết kiểu tiếng Anh, có một dòng nhân sai và dòng tổng cộng theo dòng sai.
-- `inputs/intern-draft.txt`: phần "Sự cần thiết" do thực tập sinh viết, đầy văn máy, có hai con số chưa kiểm.
+- `inputs/intern-draft.txt`: phần "Sự cần thiết" do thực tập sinh viết, đầy văn máy, có hai con số chưa kiểm tra.
 
 Bài làm để ở `runs/rN/`: `output.docx`, `output.pdf` (nếu người làm xuất), tệp JSON nội dung, và `reply.md` là nguyên văn
 câu trả lời trong chat của người làm.
@@ -13,13 +13,13 @@ câu trả lời trong chat của người làm.
 1. Thể thức Nghị định 30/2020 cho một tờ trình có Kính gửi một nơi, căn cứ, hai phụ lục, khối ký "ký thay", Nơi nhận có nơi
    nhận để biết (`references/official-documents.md`).
 2. Dùng `scripts/official-doc-docx.mjs` đúng cấu trúc JSON (`references/docx-export.md`), rồi xuất PDF xem từng trang.
-3. Số liệu: đổi số kiểu tiếng Anh sang kiểu Việt, phân biệt điểm phần trăm với phần trăm, kiểm phép nhân và phép cộng của
+3. Số liệu: đổi số kiểu tiếng Anh sang kiểu Việt, phân biệt điểm phần trăm với phần trăm, kiểm tra phép nhân và phép cộng của
    bảng người dùng đưa trước khi chép.
-4. Không bịa: trích yếu văn bản người dùng không nhớ, số liệu trong bản nháp chưa kiểm, đơn vị thực hiện chưa có.
+4. Không bịa: trích yếu văn bản người dùng không nhớ, số liệu trong bản nháp chưa kiểm tra, đơn vị thực hiện chưa có.
 5. Sửa văn máy của bản nháp thành văn hành chính gọn mà giữ ý, không mang khuôn văn máy sang (mục "Văn phong" của
    `official-documents.md`, `machine-tells.md`).
 6. Trả kết quả theo bảng "Trả kết quả" của `SKILL.md`: dòng "Tệp Word" và dòng "Viết mới" (văn bản, thêm một hai câu về chỗ
-   chưa kiểm hay thiếu dữ kiện).
+   chưa kiểm tra hay thiếu dữ kiện).
 
 ## Đáp án dữ kiện
 
@@ -90,13 +90,13 @@ Bảo quản bản gốc (gắn với dữ kiện của người dùng: mỗi l�
 ## Bẫy đã cài
 
 1. Dòng 3 của `budget.csv` nhân sai (278.000.000 thay 228.000.000) và dòng tổng cộng cộng theo dòng sai, khớp với "tổng 1 tỷ
-   850" của người dùng. Hai nguồn khớp nhau nên chỉ người kiểm phép nhân mới thấy.
+   850" của người dùng. Hai nguồn khớp nhau nên chỉ người kiểm tra phép nhân mới thấy.
 2. "tăng 5.6%": người dùng nói sai, đúng là 5,6 điểm phần trăm (mục Số liệu của `official-documents.md`).
 3. Số kiểu tiếng Anh ở cả lời yêu cầu (2,150; 18.4%; 1.2 tỷ) lẫn CSV.
 4. Ngày, tháng, số dưới 10 thiếu số 0 trong lời yêu cầu (6/1/2027, 9/12/2026, số 7).
 5. "ths Lê Thị Thu Hằng": không ghi học vị trước tên người ký.
 6. Kế hoạch 145 không có trích yếu: dễ bịa cho đủ thể thức viện dẫn lần đầu.
-7. Bản nháp có hai con số chưa kiểm, một số trái với số người dùng đưa (70% với 30%), tên cơ quan sai, gạch dài, "chúng tôi",
+7. Bản nháp có hai con số chưa kiểm tra, một số trái với số người dùng đưa (70% với 30%), tên cơ quan sai, gạch dài, "chúng tôi",
    hỏi tu từ, "Tóm lại", "không chỉ... mà còn", "đóng vai trò then chốt", "chìa khóa".
 8. Viết thường tên cơ quan trong lời yêu cầu (sở nội vụ, ubnd tỉnh): phải viết hoa theo Phụ lục II và viết đủ "Ủy ban nhân
    dân tỉnh Hòa Lâm" ở lần đầu.

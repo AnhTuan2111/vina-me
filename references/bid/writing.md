@@ -65,7 +65,7 @@ với HSMT, nên câu ngắn, cụ thể, dùng đúng chữ của HSMT, và đ�
 
 - Lần đầu ghi đủ: loại, số, ngày, cơ quan ban hành, trích yếu khi cần ("Nghị định số 85/2016/NĐ-CP ngày 01/7/2016 của Chính
   phủ về bảo đảm an toàn hệ thống thông tin theo cấp độ"). Lần sau ghi số hiệu.
-- Chỉ dẫn văn bản có trong HSMT, quyết định phê duyệt, hồ sơ mẫu hoặc BA đưa. Không tự thêm văn bản không kiểm được nguồn.
+- Chỉ dẫn văn bản có trong HSMT, quyết định phê duyệt, hồ sơ mẫu hoặc BA đưa. Không tự thêm văn bản không kiểm tra được nguồn.
 - Hồ sơ mẫu ghi văn bản nào đã được văn bản khác thay thế ("Nhà thầu đề xuất áp dụng Nghị định số 331/2026/NĐ-CP ... là văn bản
   đang có hiệu lực thay thế Nghị định số 85/2016/NĐ-CP") thì dẫn văn bản cũ phải kèm câu thay thế đó, hoặc đánh dấu
   `[cần xác nhận: hiệu lực của văn bản]`. Không dẫn văn bản cũ một mình. `bid-check --sample` soát các cặp thay thế của mẫu.

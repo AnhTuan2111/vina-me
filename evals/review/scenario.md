@@ -5,7 +5,7 @@
 Ở `prompt.md`. Tệp vào: `inputs/restore-guide.md` (376 chữ, Markdown, hai khối code bash). Dữ kiện giả: app ClinicBook,
 máy `db-staging-01`, bucket `clinicbook-backup`, role `report_reader`, kênh #staging.
 
-SHA-256 của tệp vào lúc ra đề, để người chấm kiểm bài làm có sửa tệp hay không:
+SHA-256 của tệp vào lúc ra đề, để người chấm kiểm tra bài làm có sửa tệp hay không:
 `126b4cebb1734bfef85955bb787568e53b870fe4e5a8a4bc24447e1b7ac21536`
 
 ## Đề thử điều gì của skill
@@ -51,7 +51,7 @@ Xếp từ nặng tới nhẹ như người dùng dặn. Câu gốc trích nguy�
    7 hay 14.
 2. "Mỗi đêm" chọi với giờ chạy. Đoạn đó nói cron chạy 2h sáng giờ UTC, tức 9h sáng ở Việt Nam, nên với người đọc ở Việt Nam
    backup không chạy "mỗi đêm". Cách sửa: "Mỗi ngày" hoặc ghi thẳng giờ. Phép đổi 2h UTC ra 9h giờ Việt Nam là đúng (UTC+7).
-3. Lời dặn kiểm tên máy đứng sai chỗ. "Lưu ý: KHÔNG chạy bước 3 trên production. Hãy kiểm tra kỹ tên máy trước khi gõ
+3. Lời dặn kiểm tra tên máy đứng sai chỗ. "Lưu ý: KHÔNG chạy bước 3 trên production. Hãy kiểm tra kỹ tên máy trước khi gõ
    lệnh." đặt sau Bước 4, tức là sau lệnh `dropdb` đã chạy; người làm theo thứ tự sẽ đọc thấy nó khi đã xoá xong. Chính
    câu sau trong tệp cũng nói việc này "lẽ ra phải được làm trước khi tải backup". Cách sửa: đưa thành một bước trước Bước
    1 (hoặc ít nhất ngay trước Bước 3).
@@ -100,7 +100,7 @@ Xếp từ nặng tới nhẹ như người dùng dặn. Câu gốc trích nguy�
 - Không chọn 7 hay 14 ngày làm số đúng.
 - Không khẳng định bản dump là của production hay của staging.
 - Không đặt tên màn cụ thể cho Bước 4, không viết lệnh `CREATE ROLE` kèm quyền như thể đó là cấu hình thật của hệ thống
-  (đưa ví dụ lệnh và nói rõ là ví dụ, chưa kiểm, thì được).
+  (đưa ví dụ lệnh và nói rõ là ví dụ, chưa kiểm tra, thì được).
 - Không thêm dữ kiện về lịch backup, dung lượng, số người dùng, tên người duyệt.
 
 ## Bẫy đã cài

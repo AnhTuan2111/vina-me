@@ -2,7 +2,7 @@
 
 Trước khi viết, chọn một mục đích chính. Lẫn mục đích là lẫn giọng.
 
-| Mục đích | Loại | Đơn vị tổ chức | Người đọc kiểm bằng gì |
+| Mục đích | Loại | Đơn vị tổ chức | Người đọc kiểm tra bằng gì |
 |---|---|---|---|
 | Cung cấp thông tin, giải thích | văn bản thông tin, thuyết minh, tài liệu kỹ thuật | thông tin chính, đề mục, câu chủ đề | nguồn có tin được không, thông tin có đúng không |
 | Thuyết phục | nghị luận, bài thuyết phục, kiến nghị | luận điểm, lí lẽ, bằng chứng | luận điểm rõ không, bằng chứng đủ và đáng tin không, lập luận chặt không |
@@ -83,7 +83,7 @@ việc tiếp theo và ai làm. Báo cáo sự cố (cả postmortem):
 - Giờ bắt đầu, giờ hết lỗi lấy từ log hay số đo. Nguồn lệch nhau thì nêu cả hai.
 - Số lượt lỗi khác số người bị ảnh hưởng. Chưa có số người thì nói chưa có, và cách lấy đúng như nguồn nói.
 - Không quy lỗi cho người. Lời đoán trong nguồn ("chắc quên", "sơ ý") không đưa vào, kể cả khi ghi là đoán; nêu sự
-  việc kiểm được. Không câu hỏi tu từ trách nhóm.
+  việc kiểm tra được. Không câu hỏi tu từ trách nhóm.
 - Gọi người theo chức danh khi nguồn có; nguồn chỉ có tên thì tên kèm vai trò trong sự việc ("An, người trực ca"), và
   hỏi chức danh trong lời trả.
 - Việc tiếp theo giữ người nhận và hạn như nguồn; việc chưa có người nhận thì ghi "chưa có người nhận", không tự điền.
@@ -176,7 +176,7 @@ Thông báo phát hành, thông báo bảo trì, thư xin lỗi hay bài đăng 
 - So sánh thì so trên cùng một tiêu chí.
 - Mở bài làm ba việc là nêu vấn đề, nói vì sao đáng bàn, nêu ý kiến của mình.
 - Kết ngắn. Không kêu gọi, không hứa.
-- Tự kiểm bằng ba câu hỏi là chứng minh điều gì, bằng cách nào, dùng cái gì để chứng minh.
+- Tự kiểm tra bằng ba câu hỏi là chứng minh điều gì, bằng cách nào, dùng cái gì để chứng minh.
 
 ## Giới thiệu một cuốn sách, một sản phẩm, một nơi chốn
 

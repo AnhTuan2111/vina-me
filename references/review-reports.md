@@ -1,24 +1,24 @@
 # Báo cáo rà soát và báo cáo lỗi
 
 Loại này ghi lại những chỗ sai, chỗ lệch giữa một sản phẩm (trang web, ứng dụng, tài liệu) và nguồn gốc của nó (tài
-liệu khách gửi, quyết định, đặc tả), để người nhận sửa hoặc xác nhận. Người đọc kiểm báo cáo bằng một câu hỏi: mở
+liệu khách gửi, quyết định, đặc tả), để người nhận sửa hoặc xác nhận. Người đọc kiểm tra báo cáo bằng một câu hỏi: mở
 đúng chỗ đó ra thì có thấy đúng như báo cáo nói không. Mọi quy tắc dưới đây phục vụ câu hỏi ấy.
 
 ## Trước khi viết
 
 - Đọc hết nguồn trước khi viết dòng đầu. Tài liệu scan thì vẫn mở ra xem từng trang. Đừng tin tên tệp hay trạng thái
   ghi trong bảng theo dõi: một tệp tên "truyền thuyết" có thể là hai trang nhận xét viết tay.
-- Kiểm lại trên bản mới nhất ngay trước khi gửi. Sản phẩm đang được sửa thì ghi giờ kiểm.
-- Người dùng chỉ đưa bản lưu (tệp tải về, thư mục chép từ máy chủ) thì kiểm trên bản đó, ghi ở mở đầu là bản lưu lúc nào, và
-  nói trong lời trả là chưa kiểm bản sau giờ đó. Không viết "bản đang chạy" cho bản lưu.
-- Chỗ nào kiểm lại thấy không phải lỗi thì bỏ khỏi báo cáo. Đã gửi danh sách cho ai đó rồi thì giữ số, ghi "không phải
+- Kiểm tra lại trên bản mới nhất ngay trước khi gửi. Sản phẩm đang được sửa thì ghi giờ kiểm tra.
+- Người dùng chỉ đưa bản lưu (tệp tải về, thư mục chép từ máy chủ) thì kiểm tra trên bản đó, ghi ở mở đầu là bản lưu lúc nào, và
+  nói trong lời trả là chưa kiểm tra bản sau giờ đó. Không viết "bản đang chạy" cho bản lưu.
+- Chỗ nào kiểm tra lại thấy không phải lỗi thì bỏ khỏi báo cáo. Đã gửi danh sách cho ai đó rồi thì giữ số, ghi "không phải
   lỗi" kèm lý do một câu.
 
 ## Mở đầu
 
 Một đoạn ngắn nói ba thứ:
 
-- kiểm cái gì, lúc nào (ngày, giờ, bản nào);
+- kiểm tra cái gì, lúc nào (ngày, giờ, bản nào);
 - đối chiếu với nguồn nào;
 - quy ước trong ảnh, ví dụ "khung đỏ đánh dấu chỗ được nêu".
 
@@ -28,7 +28,7 @@ chưa có nguồn, và nếu có thì bao nhiêu chỗ sản phẩm thiếu thô
 Khối lặp ở mọi trang (thanh trên cùng, chân trang, menu) đặt tên ở đây, một lần, rồi giữ tên đó ở tên mục, thân mục và
 chú thích ảnh.
 
-Xuất Word bằng `scripts/report-docx.mjs` thì một dòng ngắn kiểm gì, lúc nào, đối chiếu với gì để ở `meta` như ví dụ trong
+Xuất Word bằng `scripts/report-docx.mjs` thì một dòng ngắn kiểm tra gì, lúc nào, đối chiếu với gì để ở `meta` như ví dụ trong
 `references/docx-export.md`; câu đếm và tên khối lặp để ở `intro`, vì `meta` in chữ nhỏ màu xám như dòng phụ.
 
 Sau đó, nếu báo cáo dựa trên tài liệu người khác gửi, liệt kê mỗi tệp chứa gì, mỗi tệp một dòng. Người nhận thường chỉ
@@ -65,7 +65,7 @@ Thân mục dùng nhãn cố định, cùng thứ tự ở mọi mục. Chọn b
 
 - "Trên site" và "Chỗ bị" nói đúng vị trí: trang nào, khối nào, dòng nào. Người nhận phải tìm ra trong một lần.
 - "Thấy lại" là các bước hoặc lệnh làm ra lỗi, kèm kết quả thật (mã trả về, thông báo lỗi nguyên văn).
-- "Đoán lý do" nói tới tệp, dòng, cấu hình cụ thể. Chưa kiểm được thì nói vì sao chưa kiểm được.
+- "Đoán lý do" nói tới tệp, dòng, cấu hình cụ thể. Chưa kiểm tra được thì nói vì sao chưa kiểm tra được.
 - "Cần xác nhận" là một câu hỏi người nhận trả lời được, không phải lời khuyên chung. Câu hỏi chỉ dùng dữ kiện có trong
   nguồn: không thêm năm, giờ, số mà nguồn không ghi, không gợi ý giá trị mới. Câu hỏi hỏi điều người nhận phải quyết (ô
   nên ghi gì, có giữ chữ ấy không), không hỏi lại điều sản phẩm đang ghi mà báo cáo đã trích.
@@ -84,7 +84,7 @@ Thân mục dùng nhãn cố định, cùng thứ tự ở mọi mục. Chọn b
 - Nói chỗ trích nằm ở đâu: trang mấy, mục nào, dòng nào của bảng theo dõi. Bảng theo dõi có mã hạng mục thì gọi bằng mã
   ("hạng mục E3"). Số dòng của một tệp chữ là số dòng trình soạn thảo hiện, tính cả dòng tên cột; luật không tính dòng tên
   cột chỉ dùng khi đếm có bao nhiêu hạng mục, bao nhiêu người.
-- Mức chắc chắn đúng như đã kiểm: "đã thử", "suy từ code, chưa xem log", "chữ số viết tay, đọc giống 57 hoặc 58".
+- Mức chắc chắn đúng như đã kiểm tra: "đã thử", "suy từ code, chưa xem log", "chữ số viết tay, đọc giống 57 hoặc 58".
   Thấy hai thứ trùng nhau thì nói trùng ("số trên site trùng báo cáo năm trước"), không nói lý do như đã biết ("site còn
   lấy báo cáo năm trước"); muốn nói lý do thì nói là đoán.
 - Ngày, số trong nguồn thiếu một phần (không ghi năm, không ghi đơn vị) thì giữ nguyên cách ghi ở mọi chỗ, kể cả câu
@@ -190,7 +190,7 @@ gì, kèm mã dòng của bảng theo dõi nếu có.
 
 ## Lời trả trong chat
 
-Lời trả gồm đường dẫn tệp (Word, PDF), số trang, đã kiểm gì bằng cách nào, chưa kiểm gì, chỗ nào chưa chắc. Không kể lại
+Lời trả gồm đường dẫn tệp (Word, PDF), số trang, đã kiểm tra gì bằng cách nào, chưa kiểm tra gì, chỗ nào chưa chắc. Không kể lại
 các mục; cần nhắc một mục thì giữ đúng mức chắc chắn của mục đó. Mỗi câu tả bài nộp phải đúng với bản đã xuất: đếm rồi
 mới nói ("ảnh hai phía ở 6 trên 14 mục, các mục còn lại nguồn là tệp chữ, trích kèm số dòng"), không viết "mỗi chỗ",
 "mọi ảnh" khi chưa đếm.

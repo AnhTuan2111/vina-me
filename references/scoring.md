@@ -29,7 +29,7 @@ không tính là chấm. Ở mỗi câu, người chấm tự hỏi:
   "tóm tắt", "quản" thay "quản lý").
 - Câu có nói sai sự thật, con số có lệch với chỗ khác trong bài không.
 
-Output lệnh, code và lời trích nguyên văn thì không chấm văn, chỉ kiểm có khớp với lời kể quanh nó không.
+Output lệnh, code và lời trích nguyên văn thì không chấm văn, chỉ kiểm tra có khớp với lời kể quanh nó không.
 
 ## Thang điểm
 

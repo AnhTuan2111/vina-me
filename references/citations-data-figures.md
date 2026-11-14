@@ -21,7 +21,7 @@ Quy tắc khi trích nguyên văn:
   lại, kể cả câu hỏi gửi người nhận: "từ 5/3 như thông báo ghi", không "từ 5/3/2026". Cần phần thiếu thì hỏi phần đó,
   không tự điền năm hiện tại hay năm của tài liệu khác.
 - Nhắc lại một ý đã viết ở chỗ khác (lời trả trong chat, câu đếm ở mở đầu) thì giữ mức chắc chắn của chỗ gốc. Chỗ
-  gốc viết "trùng", "có thể", "chưa kiểm" thì chỗ nhắc lại cũng vậy, không thành "là", "còn dùng", "đã".
+  gốc viết "trùng", "có thể", "chưa kiểm tra" thì chỗ nhắc lại cũng vậy, không thành "là", "còn dùng", "đã".
 
 ## Ghi nguồn
 
@@ -31,11 +31,11 @@ Quy tắc khi trích nguyên văn:
   mục cuối bài.
 - Một nguồn ghi đủ thì có tác giả hoặc tổ chức, tên tài liệu, nơi xuất bản và năm. Nguồn trên mạng kèm ngày đọc.
 - Cả bài một kiểu ghi nguồn.
-- Chỉ dẫn tới nguồn chắc chắn tồn tại và kiểm được. Không viết "các nghiên cứu cho thấy" khi không nêu được nghiên
+- Chỉ dẫn tới nguồn chắc chắn tồn tại và kiểm tra được. Không viết "các nghiên cứu cho thấy" khi không nêu được nghiên
   cứu nào.
 - Ưu tiên nguồn chính thức như văn bản chuẩn, tài liệu của chính dự án, cơ quan có thẩm quyền.
 
-Người đọc kiểm độ tin của một văn bản bằng bốn thứ là tác giả hoặc tổ chức, thời điểm, nguồn trích, và việc đối chiếu
+Người đọc kiểm tra độ tin của một văn bản bằng bốn thứ là tác giả hoặc tổ chức, thời điểm, nguồn trích, và việc đối chiếu
 được với nguồn khác. Có nhiều số liệu chưa đủ để được tin.
 
 ## Chú thích

@@ -156,8 +156,8 @@ Sáu cách giải nghĩa một từ nằm ở `references/word-choice.md`.
 - Văn gửi người ngoài còn chỗ chưa chốt thì viết câu nói rõ chỗ đó chưa chốt, không để ô trống kiểu "[__]".
 - Ghi chú viết hộ để người dùng lưu thì "mình" là chủ ghi chú, tức người dùng, và chỉ dùng cho việc họ đã kể là đã làm,
   đã đoán. Lời trả trong chat thì "mình" là người viết.
-- Con số, năm, tên chuẩn, lời trích chỉ viết khi kiểm được nguồn. Con số đi kèm thứ để so và thời điểm đo.
-- Nói đúng mức chắc chắn. "Tất cả", "luôn luôn", "chắc chắn" chỉ dùng khi không có ngoại lệ. Chưa kiểm thì "có lẽ",
+- Con số, năm, tên chuẩn, lời trích chỉ viết khi kiểm tra được nguồn. Con số đi kèm thứ để so và thời điểm đo.
+- Nói đúng mức chắc chắn. "Tất cả", "luôn luôn", "chắc chắn" chỉ dùng khi không có ngoại lệ. Chưa kiểm tra thì "có lẽ",
   "hình như". Ý riêng thì "theo mình".
 - Output chưa chạy thật thì ghi là kỳ vọng. Trích nguyên văn thì để trong ngoặc kép, cắt bớt thì đánh dấu […].
 - Không khen, không phán xét người đọc. Viết "rất dễ nghĩ là…", không viết "người mới hay…".
@@ -254,9 +254,9 @@ Bảng thay thế đầy đủ nằm ở `references/punctuation.md`.
   phải hỏi, mỗi phương án trông ra sao. Không dùng mã nội bộ mà người dùng chưa thấy bao giờ.
 - Báo kết quả công việc thì chỉ gồm vấn đề cụ thể và việc cần làm. Không đoạn khen, không mục "điểm tốt", không bảng
   chấm điểm, không ước lượng thời gian kiểu "1-2 ngày", không lộ trình nhiều tuần.
-- Báo kết quả một việc sửa, kiểm, chạy thì nói đã kiểm gì, bằng cách nào; chưa kiểm gì; chỗ nào là đoán.
+- Báo kết quả một việc sửa, kiểm tra, chạy thì nói đã kiểm tra gì, bằng cách nào; chưa kiểm tra gì; chỗ nào là đoán.
 - Giao một văn bản vừa viết mới (ghi chú, bài, thư) thì lời trả chỉ gồm đường dẫn tệp hay chính văn bản, cộng một hai
-  câu nêu chỗ thiếu dữ kiện hay chưa kiểm, gọi đúng thứ cụ thể. Không tóm lại văn bản, không nhắc lại số liệu trong đó,
+  câu nêu chỗ thiếu dữ kiện hay chưa kiểm tra, gọi đúng thứ cụ thể. Không tóm lại văn bản, không nhắc lại số liệu trong đó,
   không kể đã chạy lint hay đọc lại mấy lượt, không báo số chữ khi không ai hỏi. Người dùng đoán sai thì một câu nói sai
   ở đâu là đủ, lý do để trong văn bản. Cả lời trả không quá ba câu, khoảng 100 chữ, không câu nào quá 40 chữ. Ví dụ ở
   `references/examples.md`, mục 22.
@@ -274,7 +274,7 @@ Bảng thay thế đầy đủ nằm ở `references/punctuation.md`.
 
 Bảng Trả kết quả trong SKILL.md là bản gọn; đây là bản đủ.
 
-- **Viết mới.** Đường dẫn tuyệt đối trọn của từng tệp (hay chính văn bản), thêm một hai câu về chỗ chưa kiểm hay thiếu
+- **Viết mới.** Đường dẫn tuyệt đối trọn của từng tệp (hay chính văn bản), thêm một hai câu về chỗ chưa kiểm tra hay thiếu
   dữ kiện. Không tóm lại văn bản, không kể việc đã soát, không kể lại chỗ người dùng đã tự chốt; cả lời trả không quá ba
   câu (mục Trả lời trong chat ở trên). Tài liệu gửi khách thì theo `references/diagrams-and-docs.md`.
 - **Sửa đoạn được dán vào.** Bản đã sửa, rồi tối đa năm dòng nêu thay đổi chính và lý do. Chỗ vênh hay đọc được hai cách
@@ -285,7 +285,7 @@ Bảng Trả kết quả trong SKILL.md là bản gọn; đây là bản đủ.
   mục một chỗ, không gộp bằng "thêm nữa"; chỗ thiếu thì câu gốc là câu liền trước nơi cần thêm, ghi "thiếu, thêm sau câu
   …". Gom nhiều câu vào một mục thì gọi đúng tên lỗi của từng câu (`references/common-errors.md`). Lời soát dùng đúng tên
   mình vừa đề xuất. Nói script báo mấy chỗ, nhận chỗ nào, bỏ chỗ nào và vì sao. Người dùng dặn không sửa tệp thì nói việc
-  mình làm là "tính lại", "kiểm lại".
+  mình làm là "tính lại", "kiểm tra lại".
 - **Báo cáo lỗi, báo cáo rà soát.** Theo `references/review-reports.md`, cả mục Lời trả trong chat của tệp đó.
 - **Báo cáo sự cố, báo cáo công việc.** Theo `references/document-types.md`; xuất Word thì thêm `references/docx-export.md`.
 - **Hồ sơ dự thầu.** Làm đủ quy trình trong `references/bid-proposals.md`: đọc bộ tài liệu, bảng truy vết, tìm và tô vàng

@@ -13,7 +13,7 @@ chắc không bỏ sót; BA dùng nó để biết còn phải đi lấy tài li
   KT-2.18" vào một dòng); số dòng của mỗi hạng mục bằng số dòng thông số của Chương V.
 - Yêu cầu nhiều ý ("Tối thiểu 8 nhân, tiến trình ≤ 4nm (hoặc ...)") tách dòng con KT-2.04a, KT-2.04b, mỗi ý một chứng minh.
 - **Mức**: cơ bản (không đạt là loại), chấp nhận được, để biết.
-- **Mục đáp ứng**: số mục trong dàn mục; điền sau bước 4, kiểm lại sau bước 6.
+- **Mục đáp ứng**: số mục trong dàn mục; điền sau bước 4, kiểm tra lại sau bước 6.
 - **Chứng minh**: tài liệu, trang, mục; với phần mềm là mục của tài liệu kỹ thuật hoặc bản cam kết.
 - **Trạng thái**: đáp ứng, tốt hơn, tương đương (ghi nội hàm), chưa có chứng minh, không đáp ứng, cần BA quyết.
 

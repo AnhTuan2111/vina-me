@@ -88,6 +88,6 @@ chiếm đóng".
 - So sánh kéo quá tay hay nói ngược ý ("hiếm như lá mùa thu", trong khi lá mùa thu rụng đầy); so sánh nào cũng nói luôn chỗ nó
   hết đúng bằng "chỉ khác là".
 - Ẩn dụ chen vào văn thường mà không nói cái gì ứng với cái gì ("người đang gõ cửa" thay cho "máy đang ssh vào máy chủ").
-- Chữ cụt người ta không nói ("kiểm chữ ký"; người ta nói "kiểm tra chữ ký").
+- Chữ cụt người ta không nói ("kiểm tra chữ ký"; người ta nói "kiểm tra chữ ký").
 - Chặt bài thành mẩu ghi chép: nhồi trích dẫn ngắn kèm mốc thời gian vào giữa câu, đoạn nào cũng chốt một câu. Người đọc thấy khô
   và đứt, dù từng câu đều đúng.

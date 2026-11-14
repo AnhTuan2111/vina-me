@@ -35,7 +35,7 @@ Không quen dòng lệnh thì nhờ Claude Code cài giúp. Mở một phiên Cl
 
 > Cài giúp mình vina-me từ https://github.com/AnhTuan2111/vina-me. Clone repo về rồi làm theo mục "Agent cài thay người dùng" trong references/agent-memory.md.
 
-Claude tự kiểm Node, git, tải vina-me về, hỏi bạn tám câu ngay trong chat rồi cài. Có một chỗ bạn phải tự làm: Claude đưa
+Claude tự kiểm tra Node, git, tải vina-me về, hỏi bạn tám câu ngay trong chat rồi cài. Có một chỗ bạn phải tự làm: Claude đưa
 một mã tám ký tự và một link GitHub, bạn mở link, đăng nhập, nhập mã và bấm cho phép, để bộ nhớ lưu được lên repo riêng và góp
 ý gửi được thành issue.
 

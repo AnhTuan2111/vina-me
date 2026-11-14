@@ -13,7 +13,7 @@ Người làm chạy trong một thư mục chứa `inputs/`, ghi bài vào `les
 - Bảy điều cốt lõi: dẫn bằng điều người đọc thắc mắc, câu nối câu, hình trước tên sau, một đoạn tối đa một thuật ngữ mới,
   nói thật (không bịa output, không bịa trải nghiệm ngôi thứ nhất).
 - Bảng "Giọng" của SKILL.md: bài giảng xưng "mình, bạn".
-- Bảng "Trả kết quả": việc là viết mới, nên trả văn bản (ở đây là tệp) kèm một hai câu về chỗ chưa kiểm hay thiếu dữ kiện.
+- Bảng "Trả kết quả": việc là viết mới, nên trả văn bản (ở đây là tệp) kèm một hai câu về chỗ chưa kiểm tra hay thiếu dữ kiện.
 - Văn máy theo `references/machine-tells.md`, dấu gạch theo `references/punctuation.md`.
 
 ## Đáp án dữ kiện: điều bài phải có và phải đúng
@@ -33,7 +33,7 @@ Lấy từ `inputs/`, bài trích phải khớp nguyên văn (được che thôn
   to connect to localhost port 8080 after 0 ms: Connection refused" (do curl viết ra).
 - Chạy lại app: "Tomcat started on port 8080 (http) with context path '/'", rồi `curl` ra `{"status":"UP"}`.
 - 8080 là số cổng Spring Boot dùng khi không cấu hình gì; đổi bằng `server.port` trong `application.properties`.
-- Postgres mặc định dùng 5432, cổng khác thì không đụng nhau (câu hỏi của Minh). Chưa kiểm postgres có chạy trên máy Minh.
+- Postgres mặc định dùng 5432, cổng khác thì không đụng nhau (câu hỏi của Minh). Chưa kiểm tra postgres có chạy trên máy Minh.
 
 ## Điều bài không được bịa
 
@@ -45,7 +45,7 @@ Lấy từ `inputs/`, bài trích phải khớp nguyên văn (được che thôn
   nghĩ code sai" hay đặt cột "Mình từng nghĩ" là gán trải nghiệm của Minh cho người viết.
 - Chỗ hiểu sai không có trong ghi chú mà trình bày như chuyện đã xảy ra trong buổi kèm.
 - Con số không có trong tệp vào: số phút Minh ngồi sửa là "gần 20 phút", không phải 30; số tab là 3.
-- Chi tiết về postgres trên máy Minh (đang chạy, cổng gì trên máy đó): chưa kiểm.
+- Chi tiết về postgres trên máy Minh (đang chạy, cổng gì trên máy đó): chưa kiểm tra.
 
 ## Bẫy đã cài
 

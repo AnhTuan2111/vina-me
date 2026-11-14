@@ -16,7 +16,7 @@ registry, con số đều là dữ kiện giả.
 - Người dùng xin "ví von đời thường": skill cho tối đa một ẩn dụ, đặt sau lời thường, nói chỗ nó hết đúng
   (`core-rules.md` mục Trình bày, `word-choice.md` mục So sánh và ẩn dụ).
 - Ghi chú ngắn thì viết liền, không chia đề mục, không in đậm nhãn (`core-rules.md` mục Trình bày, `machine-tells.md` mục E).
-- Cách trả kết quả của việc "Viết mới" trong bảng Trả kết quả của `SKILL.md`: văn bản, thêm một hai câu về chỗ chưa kiểm
+- Cách trả kết quả của việc "Viết mới" trong bảng Trả kết quả của `SKILL.md`: văn bản, thêm một hai câu về chỗ chưa kiểm tra
   hay thiếu dữ kiện.
 
 ## Đáp án dữ kiện
@@ -51,7 +51,7 @@ registry, con số đều là dữ kiện giả.
 - Kết luận chắc chắn rằng có hay không có rò bộ nhớ ngoài heap. Dữ kiện chỉ loại được "heap đầy", chưa loại được rò ở
   ngoài heap.
 - Dòng log, sự kiện, metric không có trong tệp vào; trải nghiệm ngôi thứ nhất ("hồi trước mình cũng bị").
-- Nguồn hay số liệu chung không kiểm được ("theo khảo sát, 70% app Java…").
+- Nguồn hay số liệu chung không kiểm tra được ("theo khảo sát, 70% app Java…").
 
 ## Bẫy đã cài
 

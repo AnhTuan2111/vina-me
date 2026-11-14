@@ -51,14 +51,14 @@ Mục này trừ thêm ngoài trần điểm ở trên.
 
 ## 3. Đúng loại việc và cách trả kết quả: 10 điểm
 
-Bảng "Trả kết quả" của `SKILL.md`, dòng Viết mới: "Văn bản, thêm một hai câu về chỗ chưa kiểm hay thiếu dữ kiện".
+Bảng "Trả kết quả" của `SKILL.md`, dòng Viết mới: "Văn bản, thêm một hai câu về chỗ chưa kiểm tra hay thiếu dữ kiện".
 
 | Ý | Điểm | Trừ |
 |---|---|---|
 | Đưa hai văn bản hoàn chỉnh, chép đi gửi được ngay, tách rõ mail với Zalo | 3 | văn bản còn chữ kiểu "[nội dung]" ở chỗ có dữ kiện trừ 2; trộn hai văn bản trừ 2 |
 | Mail có dòng Tiêu đề và dòng Cc anh Khoa | 2 | thiếu mỗi dòng trừ 1 |
 | Tiêu đề nói đúng việc và việc cần chị làm, không giật gân, không quá khoảng 15 tiếng | 1 | tiêu đề chung chung ("Cập nhật tiến độ dự án") trừ 1 |
-| Có một hai câu nêu chỗ thiếu dữ kiện hay chưa kiểm, cụ thể (email người nhận, chữ ký, địa chỉ văn phòng) | 2 | không có trừ 2; có nhưng chung chung ("anh chỉnh lại nếu cần") trừ 1 |
+| Có một hai câu nêu chỗ thiếu dữ kiện hay chưa kiểm tra, cụ thể (email người nhận, chữ ký, địa chỉ văn phòng) | 2 | không có trừ 2; có nhưng chung chung ("anh chỉnh lại nếu cần") trừ 1 |
 | Không thêm thứ không ai xin: giải thích cách viết, bảng so sánh, tự chấm, ba bản cho chọn, tệp Word | 2 | mỗi thứ trừ 1; quá ba câu bình luận ngoài văn bản trừ 1 |
 
 ## 4. Luật thư và tin nhắn (`references/document-types.md`, mục Thư và email công việc): 20 điểm
@@ -105,7 +105,7 @@ Trừ tối đa 8 điểm cho một loại lỗi; quá thì ghi "lặp thành kh
 
 Đề không xin tệp Word. Bài tự xuất Word thì trừ ở mục 3 ("thứ không ai xin"), không chấm hình thức trang.
 
-## Mốc để tự kiểm thang
+## Mốc để tự kiểm tra thang
 
 - Bài đủ dữ kiện, không bịa, nhưng mở bằng "Em gửi chị cập nhật tình hình", chia hai đề mục in đậm, kết "Rất mong nhận được
   phản hồi sớm của chị", tách hạn khỏi lý do ở hai yêu cầu, thân mail khoảng 280 tiếng, ba câu văn mẫu, hai câu rời: khoảng 80.

@@ -102,8 +102,8 @@ Issue về script, ví dụ tiêu đề "lint.mjs báo viết tắt tiếng Vi�
   viết thường kiểu gì".
 - Skill đã làm gì: dòng output `- chữ in hoa nhấn mạnh: QLĐKHS`, không kèm đường dẫn máy.
 - Lẽ ra thế nào: chữ viết tắt toàn in hoa không phải nhấn mạnh; mục "chữ in hoa nhấn mạnh" của `scripts/lint.mjs` chỉ bỏ qua
-  chữ toàn ASCII nên chữ viết tắt có Đ hay chữ có dấu bị bắt. Nếu agent đã chạy thử hoặc đọc code thì nói là đã kiểm; chưa
-  kiểm thì ghi là đoán. Cách sửa đề xuất ghi là đề xuất.
+  chữ toàn ASCII nên chữ viết tắt có Đ hay chữ có dấu bị bắt. Nếu agent đã chạy thử hoặc đọc code thì nói là đã kiểm tra; chưa
+  kiểm tra thì ghi là đoán. Cách sửa đề xuất ghi là đề xuất.
 - Cách lặp lại: một tệp một câu có "QLĐKHS" (hoặc một viết tắt tự đặt có Đ, từ năm chữ cái), lệnh `node scripts/lint.mjs
   <tệp>`, output thấy được; so với "QLDKHS" không bị báo. Có phiên bản skill (0.15.0) hoặc để script tự thêm.
 

@@ -15,7 +15,7 @@ Mục "Viết theo giọng một người cụ thể" của `references/voice.md
 4. Viết đoạn thử rồi đưa chính người đó chấm, hỏi chỗ nào chưa giống.
 
 Cộng thêm luật chung của skill: chỉ dùng dữ kiện được đưa (điều 6), không văn mẫu (điều 7, `machine-tells.md`), bảng "Trả
-kết quả" dòng "Viết mới" (văn bản, thêm một hai câu về chỗ chưa kiểm hay thiếu dữ kiện).
+kết quả" dòng "Viết mới" (văn bản, thêm một hai câu về chỗ chưa kiểm tra hay thiếu dữ kiện).
 
 ## Đáp án dữ kiện cho bài đăng
 

@@ -93,13 +93,13 @@ trước, lý do sau, bằng đúng tên bài đã dùng.
 Chỉ kể điều ghi chú và tệp vào có: người thật làm gì, nói gì, theo thứ tự nào; không thêm điều họ nghĩ hay lý do họ làm mà ghi
 chú không ghi ("bạn ấy không cần nó nữa"), cần lý do thì viết thành điều chung. Tài liệu công khai không mang họ tên đủ, tên máy,
 tên công ty: che đúng phần riêng trong output, giữ số hiệu, giờ, chữ lỗi, và một câu nói đã che gì; lời dặn đọc lướt phần output
-bài không giảng là câu riêng, không nối vào câu che bằng "và". Dữ kiện chưa kiểm thì giữ lời rào, con số ghi chú kèm chữ rào
+bài không giảng là câu riêng, không nối vào câu che bằng "và". Dữ kiện chưa kiểm tra thì giữ lời rào, con số ghi chú kèm chữ rào
 ("gần", "khoảng") giữ chữ ấy ở mọi lần nhắc lại. Công cụ nào có nhược điểm thì nói ra.
 
 ## Giao bài
 
 Lời trả gồm đường dẫn tệp, đứng riêng một dòng, rồi nhiều nhất ba câu: đã che hay ẩn danh gì, output nào là kỳ vọng, đã đối chiếu
-dữ kiện nào với tệp vào nào, còn gì chưa kiểm. Mỗi câu nhiều nhất hai đoạn mã hay ký hiệu, dấu che (`$`, `[…]`) cũng tính, nên
+dữ kiện nào với tệp vào nào, còn gì chưa kiểm tra. Mỗi câu nhiều nhất hai đoạn mã hay ký hiệu, dấu che (`$`, `[…]`) cũng tính, nên
 chỗ che nói bằng lời ("che dấu nhắc lệnh và tên riêng"), không chép lại dấu che. Không tóm lại bài, không báo số chữ khi không ai
 hỏi.
 

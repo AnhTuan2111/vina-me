@@ -11,7 +11,7 @@ Lời yêu cầu nằm ở `prompt.md`. Mọi dữ kiện là giả: phòng khá
   kèm mã dòng, ảnh hai phía có khung đỏ, không đoạn kết, không khen.
 - `references/citations-data-figures.md`: trích đúng từng chữ, nói đúng mức chắc chắn, không suy quá nguồn.
 - Bảng "Trả kết quả" của `SKILL.md`: báo cáo rà soát theo `review-reports.md`, tệp Word dựng bằng `scripts/report-docx.mjs`,
-  xuất PDF xem từng trang trước khi đưa; lời trả trong chat nói đã kiểm gì, chưa kiểm gì.
+  xuất PDF xem từng trang trước khi đưa; lời trả trong chat nói đã kiểm tra gì, chưa kiểm tra gì.
 - Giọng: người dùng dặn "chỉ báo cáo thôi ko xưng hô gì", báo cáo gửi cả nhóm BA, nên không xưng hô, chủ ngữ là vật hay
   trang.
 
@@ -88,8 +88,8 @@ và không bị gọi là sai.
   trong phạm vi chuyên môn ghi ở giấy phép.
 - Không viết ngày ghi chú thành "28/10/2026" như thể nguồn ghi năm; không khẳng định người ký là BS Lương Thị Hạnh, chỉ
   được nói ghi chú ký "Hạnh".
-- Không khẳng định web lấy nhầm bảng giá cũ như một sự thật đã kiểm; được nói giá trùng bảng cũ, hoặc đoán có nói là đoán.
-- Không thêm giờ kiểm khác 9:00 ngày 12/11/2026 cho bản staging (được ghi thêm giờ mở tệp để chụp ảnh nếu nói rõ).
+- Không khẳng định web lấy nhầm bảng giá cũ như một sự thật đã kiểm tra; được nói giá trùng bảng cũ, hoặc đoán có nói là đoán.
+- Không thêm giờ kiểm tra khác 9:00 ngày 12/11/2026 cho bản staging (được ghi thêm giờ mở tệp để chụp ảnh nếu nói rõ).
 
 ## Bẫy đã cài
 

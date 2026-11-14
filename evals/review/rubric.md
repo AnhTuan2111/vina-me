@@ -9,7 +9,7 @@ Bài trung bình (bắt hết chỗ script báo, thêm vài lỗi câu dễ th�
 |---|---|
 | Sửa vào `inputs/restore-guide.md` (SHA-256 khác `126b4ceb…1536`) | 70 |
 | Bịa một dữ kiện: chọn 7 hay 14 ngày làm số đúng; khẳng định bản dump là của production hay staging; đặt tên màn cho Bước 4; đưa lệnh tạo role kèm quyền như cấu hình thật; thêm bất kỳ con số, giờ, tên người nào tệp không có | 80 |
-| Bỏ sót cả hai chỗ 7/14 ngày và lời dặn kiểm tên máy đứng sai chỗ | 80 |
+| Bỏ sót cả hai chỗ 7/14 ngày và lời dặn kiểm tra tên máy đứng sai chỗ | 80 |
 | Bỏ sót một trong hai chỗ trên | 90 |
 | Viết lại cả tệp thay cho danh sách soát (dán cả bài đã sửa vào chat) | 85 |
 
@@ -21,7 +21,7 @@ Trần nhỏ nhất thắng khi dính nhiều trường hợp.
 |---|---|---|
 | 1. Giữ backup 7 ngày và 14 ngày | 8 | Không nêu: trừ 8. Nêu mà chỉ trích một câu: trừ 3. Cách sửa không nói phải hỏi tác giả hay xem cấu hình bucket: trừ 2 |
 | 2. "Mỗi đêm" chọi với 9h sáng giờ Việt Nam | 6 | Không nêu: trừ 6. Nêu nhưng đổ lỗi cho phép đổi giờ: trừ 6 và tính thêm bắt nhầm ở mục D |
-| 3. Lời dặn kiểm tên máy đứng sau Bước 4 | 6 | Không nêu: trừ 6. Chỉ chê chữ "KHÔNG", "Hãy" mà không nói vị trí làm người đọc xoá xong mới thấy lời dặn: trừ 6. Nêu vị trí mà cách sửa không chỉ chỗ đặt mới: trừ 2 |
+| 3. Lời dặn kiểm tra tên máy đứng sau Bước 4 | 6 | Không nêu: trừ 6. Chỉ chê chữ "KHÔNG", "Hãy" mà không nói vị trí làm người đọc xoá xong mới thấy lời dặn: trừ 6. Nêu vị trí mà cách sửa không chỉ chỗ đặt mới: trừ 2 |
 | 4. Không rõ bản dump lấy từ database nào | 5 | Không nêu: trừ 5. Nêu mà không nói vì sao quan trọng (nạp dữ liệu nào vào staging): trừ 2 |
 
 ## B. Lỗi câu, từ, liên kết: 25 điểm
@@ -55,7 +55,7 @@ Dấu `&` trong câu văn ở đoạn kết tính trong chỗ 10; bài nêu riê
 | Bắt lỗi đánh số Bước 1 tới Bước 4, hay bắt "Rất dễ nghĩ là…" | 3 mỗi chỗ |
 | Cách sửa đổi ý, đổi mức chắc chắn của tác giả (ví dụ biến "thường gặp" thành "luôn gặp") | 3 mỗi chỗ |
 | Một mục soát mà câu gốc không có trong tệp (trích sai, trích bịa) | 4 mỗi mục |
-| Cách sửa đưa dữ kiện mới không đánh dấu là đề xuất hay ví dụ chưa kiểm | 3 mỗi chỗ (bịa dữ kiện hệ thống thì xét trần 80) |
+| Cách sửa đưa dữ kiện mới không đánh dấu là đề xuất hay ví dụ chưa kiểm tra | 3 mỗi chỗ (bịa dữ kiện hệ thống thì xét trần 80) |
 
 Mục này không xuống dưới 0.
 
@@ -68,7 +68,7 @@ Theo dòng "Soát mà không sửa" trong bảng Trả kết quả của `SKILL.
 | Mỗi mục đủ ba phần: câu gốc trích nguyên văn trong ngoặc kép, vấn đề, cách sửa cụ thể | 4 | Mỗi mục thiếu một phần: trừ 1, tối đa trừ 4. Cách sửa chung chung ("viết lại cho rõ", "xem lại") tính như thiếu |
 | Xếp nặng tới nhẹ, nội dung trước câu chữ như người dùng dặn | 4 | Một lỗi dấu, chữ in hoa hay văn mẫu đứng trên một lỗi nội dung: trừ 2 mỗi lần, tối đa trừ 4 |
 | Không viết lại cả bài, không tạo tệp bản sửa khi không ai yêu cầu | 2 | Vi phạm: trừ 2 (dán cả bài đã sửa thì xét thêm trần 85) |
-| Nói đã kiểm gì, bằng cách nào (chạy `lint.mjs` hay không, kết quả dùng thế nào), chỗ nào chưa chắc | 2 | Không nói: trừ 2. Nói đã chạy script mà bài không có dấu vết chạy: trừ 2 |
+| Nói đã kiểm tra gì, bằng cách nào (chạy `lint.mjs` hay không, kết quả dùng thế nào), chỗ nào chưa chắc | 2 | Không nói: trừ 2. Nói đã chạy script mà bài không có dấu vết chạy: trừ 2 |
 
 ## F. Độ lưu loát của chính lời soát: 15 điểm
 
