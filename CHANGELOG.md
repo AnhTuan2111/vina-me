@@ -3,6 +3,11 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.19.1 (14/11/2026)
+
+- Thêm luật cứng vào đầu SKILL.md: viết bất cứ thứ gì có tiếng Việt, kể cả câu chat vài chữ, thì luôn gọi skill trước khi viết.
+  Dòng nhắc của hook mỗi lượt cũng đổi thành lệnh gọi skill, không chỉ nhắc áp luật.
+
 ## 0.19.0 (14/11/2026)
 
 - Agent chạy `setup.mjs` thay người dùng trên Windows mà không kèm `--answers` thì script mở một cửa sổ PowerShell riêng để

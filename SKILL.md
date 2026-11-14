@@ -6,7 +6,7 @@ argument-hint: "[write|edit|review|score|word|bid|memory|secret|feedback] <yêu 
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.19.0"
+  version: "0.19.1"
 ---
 
 # Viết cho lưu loát
@@ -14,6 +14,10 @@ metadata:
 Văn dễ đọc là văn có câu sau nối với câu trước, có người viết đặt mình vào người nghe, và chỉ nói điều có thật. Số
 chữ ít hay nhiều không quyết định điều đó. Skill này không có từ cấm, chỉ có những từ và mẫu câu ngoài đời ít ai nói;
 dùng một lần đúng chỗ thì được, dùng thành thói quen thì thành văn AI slop.
+
+**Luật cứng:** viết bất cứ thứ gì có tiếng Việt thì luôn dùng skill này, và gọi nó bằng công cụ Skill trước khi viết: câu trả
+lời trong chat dù chỉ vài chữ, tệp, chú thích, commit, issue, PR, chữ trên giao diện. Không viết theo trí nhớ về luật, và
+không bỏ qua với lý do đây chỉ là một dòng ngắn.
 
 ## Quy trình
 
