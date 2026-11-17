@@ -6,7 +6,7 @@ argument-hint: "[write|edit|review|score|word|bid|memory|secret|feedback] <yêu 
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.19.2"
+  version: "0.20.0"
 ---
 
 # Viết cho lưu loát
@@ -29,8 +29,8 @@ không bỏ qua với lý do đây chỉ là một dòng ngắn.
    thì giữ được luật câu chữ nhưng hay rơi mất cách dựng bài, nên bài ra kể lể.
 5. Soát: `node scripts/lint.mjs <tệp>` nếu chạy được lệnh, rồi đọc lại hai lượt, một lượt làm người chưa biết gì, một
    lượt bắt văn máy theo `references/machine-tells.md`. Soát văn của người khác thì chạy lint trên tệp đó và trên chính
-   lời soát; lint bỏ qua lời trích trong ngoặc kép, nên báo nào còn lại trong lời soát là của mình. Bài dài hay người
-   dùng muốn có điểm thì nhờ một agent khác chấm theo `references/scoring.md`.
+   lời soát; lint bỏ qua lời trích trong ngoặc kép, nên báo nào còn lại trong lời soát là của mình. Người dùng muốn có
+   điểm thì chấm theo `references/scoring.md`.
 6. Trả kết quả theo bảng Trả kết quả. Việc sửa, kiểm tra, chạy thì báo đã kiểm tra gì, chưa kiểm tra gì, chỗ nào chưa chắc.
 
 ## Bảy điều cốt lõi
@@ -110,7 +110,7 @@ Người dùng gõ `/vina-me <việc> <phần còn lại>` thì chữ đầu là
 | `write` | viết mới theo phần còn lại, quy trình ở trên |
 | `edit` | sửa văn có sẵn (tệp hay đoạn dán vào), theo mục Sửa văn có sẵn |
 | `review` | soát mà không sửa, trả theo dòng Soát mà không sửa |
-| `score` | chấm điểm một bài, đọc tuần tự từng câu, trừ theo thang ở `references/scoring.md`; kèm mốc thì sửa rồi chấm lại tới khi đạt |
+| `score` | chấm điểm một bài, đọc tuần tự từng câu, trừ theo thang ở `references/scoring.md`, trả điểm và danh sách câu rồi dừng; nhờ agent khác chấm hay sửa rồi chấm lại chỉ làm khi người dùng nói rõ |
 | `word` | dựng hay xuất tệp Word và PDF (`references/docx-export.md`; văn bản hành chính thêm `references/official-documents.md`) |
 | `bid` | hồ sơ dự thầu từ thư mục gói thầu (`references/bid-proposals.md`) |
 | `memory` | dựng, soát, dọn bộ nhớ dùng chung (`references/agent-memory.md`) |
@@ -156,7 +156,7 @@ thì soạn luôn, không hỏi lại.
 | `references/storytelling.md` | dẫn dắt người đọc đi một mạch: mở bằng câu của người đọc, câu sau móc vào câu trước, tả trước gọi tên sau |
 | `references/teaching.md` | bài giảng, tài liệu dạy học, câu hỏi kiểm tra; soát bằng `references/teaching-checklist.md` |
 | `references/review-reports.md` | báo cáo lỗi, báo cáo đối chiếu với tài liệu gốc |
-| `references/scoring.md` | chấm điểm một bài, tìm chỗ văn AI slop theo từng câu, vòng sửa rồi chấm lại |
+| `references/scoring.md` | chấm điểm một bài, tìm chỗ văn AI slop theo từng câu; nhờ agent khác chấm, sửa rồi chấm lại khi người dùng nhờ |
 | `references/diagrams-and-docs.md` | chữ trên sơ đồ, trang trình chiếu, tài liệu gửi khách, báo cáo trạng thái hệ thống |
 | `references/official-documents.md` | báo cáo, tờ trình, công văn, kế hoạch, biên bản của cơ quan nhà nước |
 | `references/bid-proposals.md` | hồ sơ dự thầu: quy trình, việc cấm; chi tiết từng bước ở `references/bid/` |

@@ -3,6 +3,13 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.20.0 (17/11/2026)
+
+- Lệnh `/vina-me score <tệp>` giờ chỉ chấm: agent đang chạy lệnh đọc từng câu, trả điểm và danh sách câu rồi dừng, không gọi
+  agent khác, không sửa rồi chấm lại, vì gọi nhầm lệnh là tốn nhiều token. Muốn agent khác chấm hay sửa tới một mốc điểm thì
+  nói rõ trong lời nhờ; cách làm vẫn ở `references/scoring.md`.
+- Viết xong bài dài, agent không tự nhờ agent khác chấm nữa, chỉ chấm khi người dùng muốn có điểm.
+
 ## 0.19.2 (14/11/2026)
 
 - Chữ "kiểm" đứng lẻ (sửa, kiểm, chạy; chưa kiểm) nằm khắp SKILL.md và `references/`, nên agent viết theo. Đã đổi hết thành
