@@ -3,7 +3,7 @@
 Lời yêu cầu ở `prompt.md` (người làm bài chỉ được thấy tệp đó và hai tệp trong `inputs/`). Tệp vào:
 
 - `inputs/budget.csv`: dự toán năm dòng, số viết kiểu tiếng Anh, có một dòng nhân sai và dòng tổng cộng theo dòng sai.
-- `inputs/intern-draft.txt`: phần "Sự cần thiết" do thực tập sinh viết, đầy văn máy, có hai con số chưa kiểm tra.
+- `inputs/intern-draft.txt`: phần "Sự cần thiết" do thực tập sinh viết, đầy văn AI slop, có hai con số chưa kiểm tra.
 
 Bài làm để ở `runs/rN/`: `output.docx`, `output.pdf` (nếu người làm xuất), tệp JSON nội dung, và `reply.md` là nguyên văn
 câu trả lời trong chat của người làm.
@@ -16,7 +16,7 @@ câu trả lời trong chat của người làm.
 3. Số liệu: đổi số kiểu tiếng Anh sang kiểu Việt, phân biệt điểm phần trăm với phần trăm, kiểm tra phép nhân và phép cộng của
    bảng người dùng đưa trước khi chép.
 4. Không bịa: trích yếu văn bản người dùng không nhớ, số liệu trong bản nháp chưa kiểm tra, đơn vị thực hiện chưa có.
-5. Sửa văn máy của bản nháp thành văn hành chính gọn mà giữ ý, không mang khuôn văn máy sang (mục "Văn phong" của
+5. Sửa văn AI slop của bản nháp thành văn hành chính gọn mà giữ ý, không mang khuôn văn AI slop sang (mục "Văn phong" của
    `official-documents.md`, `machine-tells.md`).
 6. Trả kết quả theo bảng "Trả kết quả" của `SKILL.md`: dòng "Tệp Word" và dòng "Viết mới" (văn bản, thêm một hai câu về chỗ
    chưa kiểm tra hay thiếu dữ kiện).

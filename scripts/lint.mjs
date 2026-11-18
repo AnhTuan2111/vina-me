@@ -265,6 +265,8 @@ function lint(file, forceOfficial) {
   if (typos.length) report.push(`lỗi chính tả hay gặp: ${typos.join(', ')} (common-errors.md, Lỗi dùng từ)`);
   const loneKiem = (prose.match(/(?<![\p{L}])kiểm(?![\p{L}])(?!\s+(?:tra|thử|kê|soát|định|duyệt|chứng|nghiệm))/giu) || []).length;
   if (loneKiem) report.push(`"kiểm" đứng lẻ ${loneKiem} lần: chỉ dùng trong từ ghép (kiểm thử, kiểm kê), còn lại viết "kiểm tra"`);
+  const slopWord = (prose.match(/(?<![\p{L}])văn máy(?![\p{L}])/giu) || []).length;
+  if (slopWord) report.push(`"văn máy" ${slopWord} lần: ngoài đời không ai nói thế, viết "văn AI slop"`);
   const wrapUps = (prose.match(/(^|\n)\s*(Nhớ gọn|Nói ngắn gọn|Nói tóm lại|Tóm gọn lại|Chốt lại)[:,]/g) || []).length;
   if (wrapUps) report.push(`câu chốt kiểu "Nhớ gọn:": ${wrapUps} lần (hết ý thì dừng)`);
 
@@ -469,5 +471,5 @@ if (docx.length) {
 }
 let total = 0;
 for (const f of files) { console.log(f); total += lint(f, forceOfficial); }
-console.log(`\n${total} chỗ cần xem lại. Xong bước này vẫn phải tự đọc hai lượt: người mới, và người bắt văn máy.`);
+console.log(`\n${total} chỗ cần xem lại. Xong bước này vẫn phải tự đọc hai lượt: người mới, và người bắt văn AI slop.`);
 console.log('Soát văn của người khác thì ghi trong lời trả: script báo mấy chỗ, nhận chỗ nào, bỏ chỗ nào và vì sao.');

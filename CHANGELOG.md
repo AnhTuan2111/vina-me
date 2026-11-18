@@ -3,6 +3,11 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.20.1 (18/11/2026)
+
+- Chữ "văn máy" nằm khắp SKILL.md, `references/` và evals, nên agent viết theo, trong khi ngoài đời không ai nói thế. Đã đổi
+  hết thành "văn AI slop", và `scripts/lint.mjs` báo khi gặp chữ "văn máy".
+
 ## 0.20.0 (17/11/2026)
 
 - Lệnh `/vina-me score <tệp>` giờ chỉ chấm: agent đang chạy lệnh đọc từng câu, trả điểm và danh sách câu rồi dừng, không gọi
@@ -69,7 +74,7 @@ dòng đầu của mục là dòng được in ra khi cập nhật.
   trên 100.
 - Các mảng viết (lời giải thích, sửa văn, soát văn, email và tin nhắn, báo cáo rà soát, văn bản hành chính, chữ trên sơ đồ, báo
   cáo xuất Word, viết theo giọng, góp ý về skill) được chấm lại theo thang 100 và sửa luật, ví dụ, script ở những chỗ người chấm
-  trừ điểm. `lint.mjs` bắt thêm mẫu câu văn máy, `report-docx.mjs` ghi kèm chữ để soát.
+  trừ điểm. `lint.mjs` bắt thêm mẫu câu văn AI slop, `report-docx.mjs` ghi kèm chữ để soát.
 - Thêm `references/storytelling.md`: dẫn dắt người đọc đi một mạch, rút từ ba audio kể chuyện tiếng Việt.
 - Bài giảng viết theo lối dẫn dắt của `storytelling.md`: trước khi viết thì kê mọi chữ người học sẽ gặp (đã dạy, dạy ở đây, tránh),
   mở bằng câu hỏi của người học, mỗi câu trả lời mở ra câu hỏi sau. Luật chi tiết chuyển sang `references/teaching-checklist.md`

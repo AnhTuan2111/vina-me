@@ -83,7 +83,7 @@ khoá, "này, đó, ấy", từ nối đúng quan hệ, mốc thời gian)? Ghi 
 | Câu rời, không bám vào câu trước, hay đổi đề tài không có câu chuyển | 2 |
 | Hai ý nhân quả, điều kiện bị chặt làm hai câu cụt, hay một chuỗi câu cụt cùng khuôn | 2 |
 | Văn mẫu, câu xã giao rỗng: "Em xin phép thông báo", "Rất mong nhận được sự thông cảm", "nhằm đảm bảo chất lượng tốt nhất", "để quá trình nghiệm thu diễn ra suôn sẻ" | 2 |
-| Từ văn máy theo `references/machine-tells.md` mục D: đồng thời, bên cạnh đó, qua đó, do đó, đóng vai trò, tiến hành, thực hiện việc, nhằm, tối ưu, liền mạch | 1 |
+| Từ văn AI slop theo `references/machine-tells.md` mục D: đồng thời, bên cạnh đó, qua đó, do đó, đóng vai trò, tiến hành, thực hiện việc, nhằm, tối ưu, liền mạch | 1 |
 | Liệt kê cho đủ, "một là, hai là", bộ ba cho đủ vần, dãy từ gần nghĩa | 2 |
 | Câu chốt cuối đoạn hay cuối mail tóm lại điều vừa nói ("Như vậy, …", "Tóm lại, …") | 3 |
 | Chữ nhấn thừa: "thật sự", "chính là", "đúng", "rất", "vô cùng", "hoàn toàn" dùng để nhấn | 1 |

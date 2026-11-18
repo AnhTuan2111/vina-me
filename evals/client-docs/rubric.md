@@ -83,7 +83,7 @@ PDF, xem từng trang trước khi đưa, rồi trả tệp cộng một hai câ
 | Câu hỏi gửi người dùng không tự đứng được (không nói ở đâu, hiện thế nào, mỗi phương án ra sao) | 2 |
 | Không chạy `scripts/lint.mjs` hay không nói đã soát văn bằng cách nào | 1 |
 
-## E. Độ lưu loát, văn máy: 15 điểm
+## E. Độ lưu loát, văn AI slop: 15 điểm
 
 Áp cho mọi câu văn trong tệp (mục 6, 7, 8, chú thích, ô bảng viết thành câu) và trong chat. Đọc tuần tự từng câu.
 

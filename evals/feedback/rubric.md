@@ -108,7 +108,7 @@ dòng output trong bản nháp không chấm lưu loát.
 | Câu rời, không bám vào câu trước, đổi đề tài không có câu chuyển | 2 |
 | Ý nhân quả, điều kiện chặt làm hai câu cụt; chuỗi câu cụt cùng khuôn | 2 |
 | Văn mẫu, câu rỗng: "nhằm nâng cao trải nghiệm người dùng", "mang lại sự tiện lợi", "Rất mong nhận được sự hợp tác" | 2 |
-| Từ văn máy theo `references/machine-tells.md`: đồng thời, bên cạnh đó, qua đó, do đó, đóng vai trò, tiến hành, thực hiện việc, nhằm, tối ưu, liền mạch | 1 |
+| Từ văn AI slop theo `references/machine-tells.md`: đồng thời, bên cạnh đó, qua đó, do đó, đóng vai trò, tiến hành, thực hiện việc, nhằm, tối ưu, liền mạch | 1 |
 | Liệt kê cho đủ, "một là, hai là", bộ ba cho đủ vần, dãy từ gần nghĩa | 2 |
 | Câu chốt cuối đoạn hay cuối bài tóm lại điều vừa nói ("Như vậy, …", "Tóm lại, …") | 3 |
 | Chữ nhấn thừa: "thật sự", "chính là", "đúng", "rất", "hoàn toàn" dùng để nhấn | 1 |

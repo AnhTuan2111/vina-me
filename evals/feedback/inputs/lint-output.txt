@@ -5,4 +5,4 @@ PS C:\Users\hoang.nm\Documents\TanMy\release> node C:\Users\hoang.nm\.claude\ski
   - chữ in hoa nhấn mạnh: QLĐKHS
   - 6 đoạn liền nhau cùng mở bằng câu hỏi
 
-3 chỗ cần xem lại. Xong bước này vẫn phải tự đọc hai lượt: người mới, và người bắt văn máy.
+3 chỗ cần xem lại. Xong bước này vẫn phải tự đọc hai lượt: người mới, và người bắt văn AI slop.

@@ -81,7 +81,7 @@ trên câu trước không; không quét cả bài một lần rồi chấm. Ghi
 | Lỗi | Trừ |
 |---|---|
 | Dấu gạch dài hay gạch vừa ở bất cứ đâu (câu trả lời, nháp, dòng bộ nhớ) | 5 lần đầu, 2 mỗi lần sau |
-| Cụm văn máy: "đóng vai trò", "điều quan trọng là", "chúng ta", "Hãy…", "nhìn chung", "thật ra", "về bản chất", "đáng chú ý", "không chỉ… mà còn", "không phải X mà là Y" khi chưa ai nói X, và các cụm cùng loại trong `machine-tells.md` | 2 mỗi cụm |
+| Cụm văn AI slop: "đóng vai trò", "điều quan trọng là", "chúng ta", "Hãy…", "nhìn chung", "thật ra", "về bản chất", "đáng chú ý", "không chỉ… mà còn", "không phải X mà là Y" khi chưa ai nói X, và các cụm cùng loại trong `machine-tells.md` | 2 mỗi cụm |
 | Câu chốt cuối đoạn hay cuối bài ("Tóm lại", "Vậy là bộ nhớ đã gọn gàng", "Như vậy…") | 2 mỗi câu |
 | Liệt kê "một là, hai là", "thứ nhất, thứ hai" cho đủ; mọi dòng mở bằng nhãn in đậm; bộ ba cho đủ vần | 2 |
 | Chữ nhấn thừa: "rất", "thật sự", "chính là", "hoàn toàn", "đúng là" khi bỏ đi câu không mất nghĩa | 1 mỗi chữ, tối đa trừ 3 |

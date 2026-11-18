@@ -107,7 +107,7 @@ Theo thứ tự:
    hay đoạn ngay trước đã sang ý khác (số liệu, chỗ chưa biết)? Câu mở ẩn dụ có chủ ngữ không, vế so có phải việc người
    ta làm thật không, chỗ hết đúng có nói ngược câu bài vừa viết không? Câu nào nghiêng kết luận ngược lời rào ngay trước
    nó? Lý do bài đưa cho một phép trừ không ra có nói số nào chứa thứ gì không, hay chỉ nói hai số do hai bên đo?
-7. Có dấu hiệu văn máy, văn mẫu nào lặp thành khuôn không?
+7. Có dấu hiệu văn AI slop, văn mẫu nào lặp thành khuôn không?
 8. Câu nào phải đọc hai lần mới hiểu? Câu nào quá khoảng 40 tiếng, mang hai đoạn mã, hay có lời chêm chen giữa động
    từ và bổ ngữ của nó? Vế cuối câu nào chỉ nói lại câu đáp ngay trước? Câu nào theo khuôn "X, vì A, còn B, nên X'"?
 9. Chính tả, dấu câu.
