@@ -74,7 +74,7 @@ ngay trước "nên" với vế "nên"; vế trước không dẫn tới vế sa
 
 ## Nhấn mạnh không cần in đậm
 
-- "chính", "chỉ", "ngay cả", "đến" đứng trước từ cần nhấn, ví dụ "Chính thầy hiệu trưởng đã tặng tôi quyển sách này."
+- Đặt trợ từ "chỉ", "ngay cả", "chính" trước từ cần nhấn. Khi nào giữ, khi nào bỏ thì xem `function-words.md`, mục Trợ từ.
 - Đưa ý cần nhấn lên đầu câu.
 - Cho ý đó một câu ngắn riêng.
 

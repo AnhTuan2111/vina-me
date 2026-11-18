@@ -3,6 +3,13 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.21.0 (18/11/2026)
+
+- Thêm `references/function-words.md` về các từ nhỏ: phó từ ("đã", "sẽ", "được", "bị", "có thể", "chưa"), lượng từ ("các",
+  "những", "mọi", "mỗi", "từng"), chỉ từ, quan hệ từ, trợ từ và tình thái từ. Tiếng Việt báo thời, số nhiều, bị động bằng
+  các từ này chứ không đổi hình dạng của từ như tiếng Anh, nên văn dịch sát hay thừa "đã được", "các", "của… của", "việc".
+  Tệp nêu khi nào bỏ, khi nào phải giữ, kèm ví dụ văn kỹ thuật, theo phần Tiếng Việt của sách Ngữ văn 6 tới 11.
+
 ## 0.20.1 (18/11/2026)
 
 - Chữ "văn máy" nằm khắp SKILL.md, `references/` và evals, nên agent viết theo, trong khi ngoài đời không ai nói thế. Đã đổi
