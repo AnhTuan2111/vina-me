@@ -1,4 +1,4 @@
-# Dấu hiệu văn máy và văn mẫu
+# Dấu hiệu văn AI slop và văn mẫu
 
 Một dấu hiệu đơn lẻ chưa phải là lỗi. Sửa khi nó lặp thành khuôn. Sửa ở đây là viết lại câu cho đúng điều muốn nói.
 Thay một từ bằng từ đồng nghĩa thì chưa phải là sửa.

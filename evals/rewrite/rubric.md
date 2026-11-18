@@ -75,10 +75,10 @@ Chấm theo bảng số câu đã ghi ở bước 3. Văn máy cụ thể chấm
 | Lời khách đặt chen giữa hai mốc giờ làm đứt mạch kể mà không có câu dẫn | 2 |
 | Viết lại câu 14:20 (câu đã ổn) thành câu kém hơn | 2 |
 
-## D. Hết văn máy, văn mẫu: 18 điểm
+## D. Hết văn AI slop, văn mẫu: 18 điểm
 
 Mỗi dấu hiệu dưới đây còn sót từ gốc, hay mới xuất hiện trong bản sửa, trừ theo bảng. Dấu hiệu mới do bài tự thêm trừ gấp
-đôi, vì sửa văn mà sinh văn máy mới là lỗi nặng hơn sót.
+đôi, vì sửa văn mà sinh văn AI slop mới là lỗi nặng hơn sót.
 
 | Dấu hiệu | Trừ |
 |---|---|
@@ -117,7 +117,7 @@ Luật ở `machine-tells.md`, `common-errors.md`, `word-choice.md`, `punctuatio
 
 | Tổng | Bài trông thế nào |
 |---|---|
-| 95-100 | Đủ D1 tới D17 đúng mức chắc chắn, nêu chỗ vênh giờ rollback, không gạch dài, mạch câu liền, không văn máy cũ hay mới, đúng cách trả kết quả |
+| 95-100 | Đủ D1 tới D17 đúng mức chắc chắn, nêu chỗ vênh giờ rollback, không gạch dài, mạch câu liền, không văn AI slop cũ hay mới, đúng cách trả kết quả |
 | khoảng 80 | Bỏ hết lời độn và ký hiệu, nhưng lặng lẽ chọn một giờ rollback hoặc không nêu chỗ vênh, còn hai tên cho pool, vài chỗ câu rời hay chặt cụt, danh sách thay đổi dài hơn năm dòng |
 | dưới 70 | Bịa con số hay người nhận việc, nói chắc nguyên nhân, còn gạch dài, hoặc chỉ thay từ đồng nghĩa |
 

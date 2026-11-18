@@ -106,6 +106,6 @@ Bảng "Trả kết quả" của `SKILL.md`: việc này là "Viết mới" ra "
 
 ## Mốc tham khảo
 
-Bài trung bình thường chép tổng 1,85 tỷ từ CSV (trừ 12 và 4 ở mục A), sót một hai chỗ văn máy từ bản nháp và một câu chốt
+Bài trung bình thường chép tổng 1,85 tỷ từ CSV (trừ 12 và 4 ở mục A), sót một hai chỗ văn AI slop từ bản nháp và một câu chốt
 (trừ khoảng 6 ở mục D), một lỗi hình thức trang (trừ 2 ở mục C), tổng khoảng 76-82. Bài đạt 95 phải bắt được sai số dự toán,
 không bịa trích yếu, đúng thể thức gần như trọn và văn không còn khuôn của bản nháp.

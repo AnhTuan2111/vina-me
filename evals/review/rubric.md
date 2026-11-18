@@ -31,7 +31,7 @@ Trần nhỏ nhất thắng khi dính nhiều trường hợp.
 | 5. "Với bản dump này đã chứa…" thiếu chủ ngữ | 5 | Không nêu: trừ 5. Gọi sai tên lỗi (ví dụ "câu dài", "lủng củng") mà không nói thiếu chủ ngữ: trừ 3 |
 | 6. "Tuy nhiên, nó mất khoảng 15 phút." | 6 | Mỗi lỗi bỏ sót (từ nối sai quan hệ; "nó" trỏ không rõ): trừ 3 |
 | 7. database, CSDL, DB: một thứ ba tên | 5 | Không nêu: trừ 5. Chỉ nêu hai trong ba tên: trừ 2 |
-| 8. "kịp thời" chọi "lẽ ra" | 4 | Không nêu: trừ 4. Nêu như lỗi văn máy hay câu dài chứ không nói hai ý chọi nhau: trừ 2 |
+| 8. "kịp thời" chọi "lẽ ra" | 4 | Không nêu: trừ 4. Nêu như lỗi văn AI slop hay câu dài chứ không nói hai ý chọi nhau: trừ 2 |
 | 9. Mở bài "Trong thời đại…", "đóng vai trò" | 2 | Không nêu: trừ 2 |
 | 10. Đoạn kết "không chỉ… mà còn", bộ ba, "Tóm lại", "chính là chìa khoá" | 3 | Không nêu: trừ 3. Đề xuất giữ đoạn và chỉ thay từ: trừ 2 |
 
@@ -78,7 +78,7 @@ bài một lần rồi chấm. Ghi từng chỗ trừ kèm câu trích.
 | Lỗi | Trừ |
 |---|---|
 | Dấu gạch dài hay gạch vừa ở bất cứ đâu trong bài (kể cả trong bảng, trong cách sửa đề xuất) | 5 lần đầu, 2 mỗi lần sau |
-| Cụm văn máy trong lời của người soát: "đóng vai trò", "điều quan trọng nhất là", "chúng ta", "Hãy…", "nhìn chung", "thật ra", "về bản chất", "đáng chú ý" và các cụm cùng loại trong `machine-tells.md` | 2 mỗi cụm |
+| Cụm văn AI slop trong lời của người soát: "đóng vai trò", "điều quan trọng nhất là", "chúng ta", "Hãy…", "nhìn chung", "thật ra", "về bản chất", "đáng chú ý" và các cụm cùng loại trong `machine-tells.md` | 2 mỗi cụm |
 | Câu chốt cuối đoạn hay cuối bài ("Tóm lại", "Nhìn chung tài liệu khá ổn", "Sửa xong các điểm trên là tài liệu sẽ…") | 2 mỗi câu |
 | Khen tài liệu hay khen tác giả, mục "điểm tốt", chấm điểm tài liệu, ước lượng thời gian sửa | 3 mỗi chỗ |
 | Liệt kê "một là, hai là", "thứ nhất, thứ hai" cho đủ, hay mọi dòng mở bằng nhãn in đậm ngoài ba nhãn câu gốc, vấn đề, cách sửa | 2 |

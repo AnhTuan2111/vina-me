@@ -9,7 +9,7 @@ việc đó trong lời nhờ; cách làm từng việc ở hai mục cuối t�
 
 ## Ai chấm
 
-Agent đang chạy lệnh tự chấm, ngay trong phiên hiện tại. Trước khi chấm, agent đọc `SKILL.md` và tệp về văn máy
+Agent đang chạy lệnh tự chấm, ngay trong phiên hiện tại. Trước khi chấm, agent đọc `SKILL.md` và tệp về văn AI slop
 `references/machine-tells.md`. Agent đọc thêm tệp về nối câu `references/cohesion.md` và tệp về dẫn dắt
 `references/storytelling.md`. Bài giảng thì đọc thêm `references/teaching.md`. Người dùng có hồ sơ giọng riêng thì đọc cả tệp ấy.
 
@@ -35,7 +35,7 @@ Bắt đầu từ 100. Mỗi chỗ chỉ trừ một lần, ở mức nặng nh�
 | Mức | Trừ | Gồm |
 |---|---|---|
 | Nặng | 3 | câu tối nghĩa hay đọc hiểu sai được; dùng thứ người đọc chưa biết mà câu cần nó để hiểu; sai sự thật, mâu thuẫn trong bài; hai câu liền nhau đứt mạch hẳn |
-| Vừa | 1 | câu nối lỏng; đoạn có hơn một thuật ngữ mới; chữ nhấn thừa; dấu hiệu văn máy; câu dài tới mức phải đọc lại; ẩn dụ không nói cái gì ứng với cái gì; một thứ gọi hai tên; từ ghép bị cắt |
+| Vừa | 1 | câu nối lỏng; đoạn có hơn một thuật ngữ mới; chữ nhấn thừa; dấu hiệu văn AI slop; câu dài tới mức phải đọc lại; ẩn dụ không nói cái gì ứng với cái gì; một thứ gọi hai tên; từ ghép bị cắt |
 | Nhẹ | 0,5 | chữ kém tự nhiên, ngoài đời ít ai nói vậy; dấu câu, chính tả |
 
 Điểm cuối là 100 trừ tổng các chỗ, và phải khớp với danh sách. Loại văn bản có luật riêng (bài giảng cấm hẹn bài sau, văn
