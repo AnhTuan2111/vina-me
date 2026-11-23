@@ -57,7 +57,7 @@ Mọi con số đưa vào hồ sơ (thông số, số lượng, thời hạn, ti
   phát triển), ai ký, tài liệu kỹ thuật sản phẩm đứng tên ai.
 - **Nhà thầu phụ**: đọc điều về nhà thầu phụ ở Chương I (E-CDNT, thường mục 27) và E-BDL, Mẫu 01D (dịch vụ liên quan). HSMT
   chỉ cho thầu phụ làm dịch vụ liên quan mà Mẫu 01D ghi "Không", hay giới hạn phần việc, thì BA định giao cho thầu phụ phần
-  việc khác (phát triển phần mềm) là rủi ro bị loại: nêu đầu báo cáo (BA có tệp trả lời thì nêu ở dòng của câu trả lời đó trong bảng mở báo cáo), trích đúng điều HSMT, hỏi BA cách xử lý (nhà thầu tự làm,
+  việc khác (phát triển phần mềm) là rủi ro bị loại: nêu đầu báo cáo (BA có tệp trả lời thì nêu ở dòng của câu trả lời đó trong bảng mở báo cáo), trích nguyên văn điều HSMT, hỏi BA cách xử lý (nhà thầu tự làm,
   liên danh), không tự khuyên kê thầu phụ.
 - Liên danh mà thư mục giấy tờ nhà thầu chỉ có giấy tờ của một thành viên: thông tin thành viên còn lại (tên, mã số doanh nghiệp,
   người đại diện) lấy từ tệp trả lời của BA hay HSMT; thiếu thì `[cần bổ sung: ...]` và đưa vào câu hỏi cho BA, không lấy từ hồ

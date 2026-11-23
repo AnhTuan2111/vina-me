@@ -14,20 +14,22 @@ Hỏng ở bước 1 hoặc 2 thì thêm từ nối không cứu được.
 - Các câu đứng theo một trình tự, có thể là thời gian, nhân quả, từ đặc điểm tới điều nó kéo theo, hoặc từ khái
   quát tới cụ thể.
 - Trong một câu, các hành động đứng theo thứ tự xảy ra.
-- Hai câu, hai đoạn không được chọi nhau. Gỡ bằng cách nói đúng mức ("đối với một số người", "thường thì").
+- Hai câu, hai đoạn không được chọi nhau. Hai nhận định chọi nhau thì thu hẹp phạm vi ("đối với một số người", "thường
+  thì"). Hai dữ kiện chọi nhau (giờ, số đo) thì giữ cả hai và hỏi, không làm mềm số liệu (`common-errors.md`, dòng Hai dữ
+  kiện vênh nhau).
 
-## Bốn cách nối câu
+## Các phép liên kết câu
 
 | Cách | Làm thế nào | Ví dụ |
 |---|---|---|
-| Lặp | Nhắc lại từ khoá của câu trước, ở đầu câu sau | "Bash tìm trong biến PATH. PATH là một danh sách thư mục." |
-| Thế | Danh từ gốc kèm "này, ấy, đó"; hoặc "nó, họ" khi chỉ có một thứ để trỏ | "Tôi vừa mua một chiếc bút mới. Chiếc bút này viết rất đều mực." |
-| Thế cả ý | "Điều đó", "việc ấy", "như thế", "vậy" kéo cả câu trước sang | "Cả bọn đã thấm mệt. Nhưng điều đó không làm chúng tôi bỏ cuộc." |
-| Nối | Từ nối đúng quan hệ, thường ở đầu câu | "Mẹ đã sang nhà ngoại. Vì vậy chúng tôi tự nấu cơm." |
+| Phép lặp từ ngữ | Nhắc lại từ khoá của câu trước, ở đầu câu sau | "Bash tìm trong biến PATH. PATH là một danh sách thư mục." |
+| Phép thế | Danh từ gốc kèm "này, ấy, đó"; hoặc "nó, họ" khi chỉ có một thứ để trỏ | "Tôi vừa mua một chiếc bút mới. Chiếc bút này viết rất đều mực." |
+| Phép thế, thế cả ý | "Điều đó", "việc ấy", "như thế", "vậy" kéo cả câu trước sang | "Cả bọn đã thấm mệt. Nhưng điều đó không làm chúng tôi bỏ cuộc." |
+| Phép nối | Từ nối đúng quan hệ, thường ở đầu câu | "Mẹ đã sang nhà ngoại. Vì vậy chúng tôi tự nấu cơm." |
 
 Thêm hai cách không dùng từ nối:
 
-- Mốc thời gian, nơi chốn ở đầu câu, ví dụ "Trước kia,… Ngày nay,…", "Tại bảo tàng,…".
+- Trạng ngữ chỉ thời gian, nơi chốn ở đầu câu, ví dụ "Trước kia,… Ngày nay,…", "Tại bảo tàng,…".
 - Đưa phần đã biết lên đầu câu, phần mới để cuối câu.
 
 Giới hạn:
@@ -42,7 +44,7 @@ Giới hạn:
 - Câu đầu đoạn mới nắm lấy câu cuối đoạn cũ, bằng một trong các cách trên.
 - Thử ở mức đoạn: đọc liền câu cuối đoạn trước với câu đầu đoạn sau, bỏ qua mọi câu khác. Hai câu đó đứng cạnh nhau
   mà như của hai bài khác nhau thì đoạn sau đang rời. Thử cho từng chỗ xuống dòng, không chỉ đoạn đầu.
-- Từ thế ở đầu đoạn ("số liệu này", "chuyện đó") trỏ về thứ gần nhất. Đoạn ngay trước là ví dụ, ẩn dụ hay chuyện bên
+- Từ thế ở đầu đoạn ("số liệu này", "chuyện đó") trỏ về thứ gần nhất. Đoạn ngay trước là ví dụ, phép so sánh hay chuyện bên
   lề thì gọi lại thứ đang bàn bằng tên.
 - Câu bổ sung cho một đoạn (cách đo thêm cho một nghi vấn, ngoại lệ của một quy tắc) đặt ở cuối chính đoạn đó, không dồn
   xuống cuối bài cạnh một ý khác. Đoạn cuối chỉ chứa việc của chính nó.
@@ -78,8 +80,12 @@ Xác định quan hệ trước, chọn từ sau.
 | Lựa chọn | hay, hoặc, hay là | |
 | Mục đích | để, nhằm | |
 | Thời gian, trình tự | khi, lúc, trước khi, sau khi; vừa… đã; chưa… đã | trước hết, đầu tiên, sau đó, tiếp theo, cuối cùng |
-| Hai việc đi đôi | vừa… vừa; bao nhiêu… bấy nhiêu; đâu… đó | |
+| Đồng thời, hô ứng | vừa… vừa; bao nhiêu… bấy nhiêu; đâu… đó | |
 | Kết luận | | vậy, như vậy, vậy là |
+
+Các từ ở cột đầu câu sau dùng được trong một đoạn. Không mở các đoạn liền nhau bằng chúng ("Trước hết,", "Hơn nữa,",
+"Cuối cùng,"); đầu đoạn thì nối bằng từ khoá của đoạn trước ("Lý do thứ nhất là ổ đầy…", "Ổ đầy còn kéo theo…"), như
+`machine-tells.md`, mục E.
 | Nêu ví dụ | | ví dụ, giả sử, kiểu như, chẳng hạn |
 
 Thành phần tình thái ("chắc chắn", "có lẽ", "theo mình") cũng hay đứng đầu câu. Chọn mức nào và đặt ở đâu thì xem
@@ -102,8 +108,8 @@ Thành phần tình thái ("chắc chắn", "có lẽ", "theo mình") cũng hay 
 | Hỏi lý do | "Vì sao không đảo được? Vì bước sau chạy ở bên trong bước trước." |
 | Hỏi định nghĩa, đáp bằng cách lặp chủ ngữ | "Vậy lỗi command not found nghĩa là gì? Nghĩa là không thư mục nào trong PATH có file mang tên đó." |
 | Hỏi thay người đọc sau một điều nghe lạ | "Spring Boot tự nhận request được, vậy đặt thêm một reverse proxy phía trước để làm gì?" |
-| Hỏi để chuyển trường hợp | "Còn nếu hỏi một tên miền không tồn tại thì sao?" |
-| Hỏi nhiều ý | "Vậy A liên quan thế nào đến B? Trước hết,… Thứ đến,…" |
+| Hỏi để chuyển trường hợp | "Còn nếu hỏi một domain không tồn tại thì sao?" |
+| Hỏi nhiều ý | "Vậy A liên quan thế nào đến B? Có hai chỗ dính nhau. Chỗ thứ nhất là…, chỗ thứ hai là…" |
 
 Câu đáp trả lời thẳng câu hỏi trước (có, không, là gì), rồi mới tới lý do.
 
@@ -122,4 +128,4 @@ sau mà vẫn trả lời được câu hỏi thì nó đang lặp.
 - Nói trước sắp làm gì và vì sao, ví dụ "Muốn tìm lỗi ở X thì trước hết phải biết Y."
 - Sau một điều nghe lạ thì hỏi thay họ rồi đáp.
 - Hết một chặng dài thì gom lại, ví dụ "Tới đây đã có…, và lúc này mới…".
-- Giải nghĩa chêm ngay trong câu, không dừng lại viết một câu định nghĩa cụt.
+- Giải nghĩa ngay trong câu bằng thành phần phụ chú, không dừng lại viết một câu định nghĩa cụt.

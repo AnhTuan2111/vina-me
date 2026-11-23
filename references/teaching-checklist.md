@@ -12,7 +12,7 @@ bị cắt thì đọc tiếp từ dòng bị cắt.
 Hình dung người đọc chỉ biết nền sẵn có của họ và những gì các phần trước đã dạy.
 
 - Không dùng một thuật ngữ trước khi giới thiệu nó. Lần đầu xuất hiện thì giải nghĩa ngay bằng một hai câu lời thường,
-  hoặc thay hẳn bằng lời thường nếu đoạn văn không thật sự cần nó.
+  hoặc thay hẳn bằng lời thường nếu đoạn văn không cần nó.
 - Thuật ngữ chính của bài hay nằm sẵn trong vụ mở bài (thông báo lỗi có chữ đó, người dùng gọi bài bằng chữ đó), nên dễ
   bị dùng từ câu hỏi của bài và mục đọc lỗi, trước câu định nghĩa nằm mãi ở mục sau. Trước câu định nghĩa, chữ đó chỉ
   được nằm trong lời trích, dấu mã hay nhan đề; câu văn nói bằng lời thường ("con số trong câu báo lỗi", "cái tệp app
@@ -37,7 +37,7 @@ Hình dung người đọc chỉ biết nền sẵn có của họ và những g
   một câu hỏi chờ mục đó trả lời.
 - Người dùng dặn "đừng lan sang X, bài sau mới tới" là dặn người viết. Không chép lời dặn đó vào bài thành câu hẹn, và
   không nhắc X ở đâu trong bài, kể cả trong câu hỏi kiểm tra và đáp án.
-- Phần sau nhắc lại phần trước, gọi đúng tên phần trước đã dùng, rồi đào sâu thêm. Kể cả từ chung của bài trước (option,
+- Phần sau nhắc lại phần trước, gọi lại tên phần trước đã dùng, rồi đào sâu thêm. Kể cả từ chung của bài trước (option,
   path, câu lệnh, dấu `|`): bài trước dạy "option" thì bài này không viết "tham số", "cờ", "tùy chọn"; bài trước
   dạy "dấu `|` (pipe)" thì không viết "ống lệnh", "đường ống", dù các chữ đó hay dùng thay nhau. Thứ bài trước chưa đặt tên
   mà bài này phải gọi nhiều lần (cả một dòng có dấu `|`) thì gọi bằng chữ đã có ("dòng lệnh", "lệnh có dấu `|`") hay bằng
@@ -57,10 +57,10 @@ Hình dung người đọc chỉ biết nền sẵn có của họ và những g
   dạng khác với dạng bài vừa giảng (cùng một ý mà hai cách viết, hai ký hiệu) thì nói ngay dưới khối output là hai dạng cùng
   nghĩa, hoặc chọn output khác.
 - Dòng lệnh trong khối output (dòng có dấu nhắc) cũng là chữ người đọc phải đọc, và câu đọc lướt chung "chữ nào bài không
-  nhắc tới thì cứ đọc lướt" không che nó. Phần nào sau tên lệnh bài không giảng (một đường dẫn sau tên miền và cổng, một tham
+  nhắc tới thì cứ đọc lướt" không che nó. Phần nào sau tên lệnh bài không giảng (một đường dẫn sau domain và cổng, một tham
   số lạ, một tên tệp) thì nửa câu nói nó là gì, hoặc nói bài chỉ cần phần nào của dòng lệnh đó. Gọi phần ấy bằng chữ bài
-  trước đã dạy (thường là "tham số"), hoặc bằng chính nó ("phần `-o json`"), không đặt chữ mới.
-- Giải nghĩa một chữ trong output thì đặt ở chỗ bài dùng tới chữ đó, hoặc trong đoạn đọc khối output ấy, mở bằng chữ nối
+  trước đã dạy (thường là "option"), hoặc bằng chính nó ("phần `-o json`"), không đặt chữ mới.
+- Giải nghĩa một chữ trong output thì đặt ở chỗ bài dùng tới chữ đó, hoặc trong đoạn đọc khối output ấy, mở bằng từ nối
   về câu trước. Không để một đoạn "còn chữ X trong log là…" chen giữa hai ý đang nối nhau (giữa đoạn đọc lỗi và đoạn kể chỗ
   hiểu sai): đoạn chen đứng rời, và đoạn sau mất chỗ bám. Chữ, số trong output mà bài chỉ dùng ở một mục sau (một mã số
   in trong log để đem so với mã số một lệnh khác in ra) thì giải nghĩa ở đoạn so đó, không ở đoạn đọc khối output đầu.
@@ -95,14 +95,14 @@ Hình dung người đọc chỉ biết nền sẵn có của họ và những g
   thực hành và đáp án. Giữ một động từ cũng không có nghĩa dùng nó cho mọi việc: việc xin mà chưa được ("muốn giữ", "xin
   giữ") khác việc đã giữ. Câu nói về thứ chưa lấy được (bản chạy sau, bản bị từ chối) dùng chữ bài đã đặt cho việc xin,
   không viết "cả hai đều giữ" khi luật bài vừa dạy nói chỉ một thứ giữ được.
-- Giải nghĩa tham số của một lệnh (kiểu `-a`, `-ltnp`) thì nói việc nó làm bằng chữ người đọc đã có, thấy được trong output
+- Giải nghĩa option của một lệnh (kiểu `-a`, `-ltnp`) thì nói việc nó làm bằng chữ người đọc đã có, thấy được trong output
   họ sắp đọc.
   Lời giải mà mở ra một ý mới thì ý mới đó cũng là thuật ngữ: "`ls -a` in cả tệp ẩn" khi bài chưa nói tệp ẩn là gì,
   "chỉ lấy một loại X", "in bằng số chứ không đổi sang tên" khi người đọc chưa biết X có nhiều loại hay có tên. Giải luôn
-  ý đó bằng một ví dụ, hoặc thôi giải từng tham số và nói cả lệnh in ra gì. Tham số viết gộp (`-xyz`) không cần gọi tên
+  ý đó bằng một ví dụ, hoặc thôi giải từng option và nói cả lệnh in ra gì. Option viết gộp (`-xyz`) không cần gọi tên
   từng chữ cái, nhưng mỗi ý trong lời giải vẫn tính như trên.
 - Đoạn kể một chuỗi lệnh (tắt, kiểm tra lại, gọi thử) hay gom nhiều thứ mới vào một đoạn: mỗi lệnh mới, đường dẫn mới, thông
-  báo lỗi mới đều tính là một thuật ngữ. Có từ hai thì tách đoạn, mỗi đoạn một thứ mới, đoạn sau mở bằng chữ nối về đoạn
+  báo lỗi mới đều tính là một thuật ngữ. Có từ hai thì tách đoạn, mỗi đoạn một thứ mới, đoạn sau mở bằng từ nối về đoạn
   trước ("Còn phần đứng sau tên lệnh là…", "Lệnh đó báo lỗi vì…"). Lệnh gọi thử hay kéo theo cả ba thứ: tên lệnh, đường
   dẫn nó gọi tới, câu lỗi nó in. Lời giải trong một bước thực hành cũng tính như một đoạn: bước giải từ hai thứ mới thì
   tách thành hai đoạn trong bước, hoặc đổi cách làm để khỏi cần thứ mới (xem mục Bài thực hành).
@@ -119,7 +119,7 @@ Hình dung người đọc chỉ biết nền sẵn có của họ và những g
 - Mỗi phần mở bằng một câu tự nhiên nối với câu hỏi nó trả lời. Mỗi phần mở một kiểu. Mục thực hành cũng vậy: không mở bằng
   "Phần này…", "Mục này…", "Ở phần này bạn sẽ…", "Tiếp theo…". Câu hở mở một mục tìm kiếm ("vậy thứ nào đang chặn?") được đáp ở
   cuối mục, sau các bước tìm, miễn đoạn nào trong mục cũng đi thêm một bước tới đáp án và câu đáp gọi lại đủ tên vật câu hở hỏi.
-- Câu hở cuối một đoạn chỉ hở khi các câu trước nó chưa trả lời. Chữ so sánh hay lấp sẵn chỗ hở: "cùng", "vẫn", "lại", "cũng"
+- Câu hở cuối một đoạn chỉ hở khi các câu trước nó chưa trả lời. Những chữ gắn thứ đang hỏng vào một vật đã kể hay lấp sẵn chỗ hở: "cùng", "vẫn", "lại", "cũng"
   gắn thứ đang hỏng vào một vật đã kể ("lần chạy này đặt cùng tên với container hôm qua, nên bị từ chối" rồi hỏi "container nào
   đang mang tên ấy?"). Câu ấy đã chỉ ra thủ phạm, lại coi như đã biết điều mục sau phải cho thấy (container hôm qua còn đó).
   Kể việc hỏng bằng chính nó ("bị từ chối vì tên `web` đã có container mang"); vật bị nghi chỉ vào bài ở chỗ output chỉ ra nó.
@@ -131,7 +131,7 @@ Hình dung người đọc chỉ biết nền sẵn có của họ và những g
   đầu", "như đã hỏi ở trên". Đề mục của phần trả lời nói luôn câu trả lời hay việc đang làm, không viết "Trả lời câu hỏi…".
 
 Một khái niệm phải được hiểu trọn: vì sao cần nó, nó là gì (tên chuẩn, nguồn nếu có), nó chạy ra sao, một ví dụ thật có
-lệnh và output, giới hạn và ngoại lệ. Đó là những thứ phải có, không phải thứ tự bắt buộc. Khái niệm nào cũng đi đúng một
+lệnh và output, giới hạn và ngoại lệ. Đó là những thứ phải có, không phải thứ tự bắt buộc. Khái niệm nào cũng đi chung một
 nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu là đủ.
 
 ## Thứ gì cũng phải có chỗ dùng
@@ -164,7 +164,7 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
 - Lệnh chạy được trên đúng môi trường của người học. Bài cần thứ người học có thể chưa có (một project mẫu, một gói chưa
   cài) thì đầu phần thực hành nói cần gì và lấy ở đâu. Cấu hình riêng của project có thể làm kết quả khác kỳ vọng thì một
   câu ở đúng bước đó, không chỉ báo trong lời trả. Chỗ hay gặp nhất: bước sửa tệp cấu hình hay mã nguồn trong lúc một bản
-  khác của cùng project đang chạy, vì công cụ tự khởi động lại khi tệp đổi (chế độ dev của framework, nodemon) làm bản
+  khác của cùng project đang chạy, vì công cụ tự restart khi tệp đổi (chế độ dev của framework, nodemon) làm bản
   đang chạy đổi theo. Phần thực hành cho dùng project của người học thay project mẫu thì càng phải có câu này. Cách gỡ
   phải làm từ trước khi chạy bước đầu (bỏ một gói, tắt một chế độ trước khi bản đầu tiên chạy) thì là bước 1 của danh sách
   đánh số, lời cảnh báo ở gạch dưới là đoạn đầu của bước ấy; không để nó trong đoạn văn trước các bước, vì người làm theo
@@ -172,13 +172,13 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
   Thêm bước thì đánh lại số mọi chỗ trỏ tới bước, cả câu trong phần giảng trỏ sang thực hành.
 - Mức tối thiểu của câu đó là hiện tượng và việc cần làm, cộng một vế gộp nói công cụ chạy lại app khi nào (ở mức người học
   thấy được: mỗi lần lưu tệp, mỗi lần project được build lại). Nói thêm cơ chế (công cụ canh thư mục nào, lệnh nào chép tệp
-  vào đó) là tùy chọn; đã nói thì phải đúng như dưới đây, và mỗi cơ chế là một thứ mới. Phần vì sao, khi có, nói đúng thứ
+  vào đó) là tùy chọn; đã nói thì phải khớp với phần dưới đây, và mỗi cơ chế là một thứ mới. Phần vì sao, khi có, nói rõ thứ
   làm công cụ chạy lại và lúc nào, vì mỗi công cụ canh một chỗ khác nhau: nodemon canh tệp nguồn, nên
   lưu tệp là chạy lại; Spring Boot DevTools canh thư mục build trên classpath (`target/classes`), nên lưu tệp nguồn chưa
   làm gì, phải có một lần build (lệnh chạy app ở terminal khác, IDE tự build) chép tệp mới vào đó thì bản đang chạy mới
   chạy lại. Vế "nên" phải theo được từ đúng thứ vừa nói ở vế trước. Không chắc công cụ canh gì thì chỉ nói "bản đang chạy
   có thể tự chạy lại", không đoán lúc. Công cụ đó giữ thêm thứ gì (DevTools giữ thêm một cổng cho LiveReload) thì kỳ vọng
-  ở bước sau phải tính tới nó, hoặc lọc theo đúng giá trị bài đang xét thay vì theo tên process.
+  ở bước sau phải tính tới nó, hoặc lọc theo giá trị bài đang xét thay vì theo tên process.
 - Câu cảnh báo này là đoạn đầu của bước chuẩn bị, đi theo thứ tự: người học sẽ thấy gì nếu bỏ qua (bản đang chạy tự chạy lại,
   bước nào báo lỗi gì), rồi vì sao, rồi việc cần làm. Việc cần làm ("tạm bỏ khối dependency đó") không đứng trước lý do.
   Phần vì sao mà cần hai cơ chế của công cụ (nó canh thư mục nào, lệnh nào chép tệp vào thư mục ấy) là hai thứ mới: tách
@@ -205,7 +205,7 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
   của Windows hay của IDE thường mặc định PowerShell chứ không phải WSL), và lệnh gõ nhầm shell thì không chạy hay chạy ra
   thứ khác. Bước sau "mở như bước N" thì bước N phải nói đủ.
 - Giải thích trước, lệnh theo sau. Không liệt kê lệnh.
-- Mỗi lệnh lạ được giải nghĩa ngay tại chỗ gõ. Lệnh dọn đường cũng tính: tạo thư mục, chuyển thư mục, tham số của chúng,
+- Mỗi lệnh lạ được giải nghĩa ngay tại chỗ gõ. Lệnh dọn đường cũng tính: tạo thư mục, chuyển thư mục, option của chúng,
   ký hiệu như `~`. Chưa dạy thì giải nghĩa nửa câu, hoặc bỏ lệnh đó (chạy ngay ở thư mục đang đứng).
 - Bước dọn đường (lấy một project mẫu, thêm một dòng vào tệp cấu hình) làm bằng cách kéo ít chữ mới nhất. Xét theo nền người
   đọc mang sẵn cộng những gì các bài trước đã dạy: đề hay ghi chú tả người đọc biết gì, dùng công cụ nào hằng ngày thì đọc
@@ -213,7 +213,8 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
   vẫn dùng, không dùng lệnh ghi vào tệp (`echo … >>`, `sed -i`). Họ đã biết tạo project trên trang khởi tạo hay trong IDE
   thì bảo tạo theo cách đó, hoặc dùng project họ đang có, không dùng một dòng lệnh tải rồi giải nén. Lệnh dọn đường không
   thay được mà kéo từ hai thứ mới thì mỗi thứ một đoạn, như mọi đoạn khác của bài.
-- Mỗi bài thực hành có một bước cố tình gây lỗi rồi tự sửa.
+- Mỗi bài thực hành có một bước cố tình gây lại vụ mở bài rồi tự sửa, trên bản thử khi gây lại thật thì mất dữ liệu
+  (`teaching.md`, mục Thực hành).
 - Một bước bắt người học đối chiếu nhiều chỗ thì mỗi chỗ là một câu ghép: thấy gì, nên suy ra gì ("dung lượng còn trống ít hơn
   số ghi ở bước 2, tức tệp vừa tạo đã chiếm chỗ"). Không xếp ba câu cụt cùng khuôn "X khác Y", "Z khớp W" mà không câu nào nói
   khớp thì sao. Luật hai đoạn mã một câu bắt tách câu thì tách, nhưng mỗi câu tách ra vẫn giữ vế "nên", "tức" của nó; bớt đoạn
@@ -224,7 +225,7 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
   của nó; lệnh phụ đặt sau câu đối chiếu, hay thành bước riêng (đánh lại số mọi chỗ trỏ tới bước). Trong bước có từ hai output,
   mỗi lần chỉ "dòng đầu", "dòng cuối" thì gọi kèm lệnh ("dòng đầu `df -h | grep` in ra"). Câu nói tên cột đứng sau câu nói người
   học cần tìm gì ở cột đó, không đứng trước.
-- Output đã chạy thật thì ghi ngày và nơi chạy. Nơi chạy là hệ điều hành và phiên bản, cộng phiên bản công cụ chính, lấy đúng như
+- Output đã chạy thật thì ghi ngày và nơi chạy. Nơi chạy là hệ điều hành và phiên bản, cộng phiên bản công cụ chính, lấy nguyên như
   tệp vào hay ghi chú ghi. Ghi một lần, ngay trước khối output đầu tiên của lần chạy đó; có ngày mà thiếu máy là thiếu. Nơi chạy
   đứng thành câu riêng, hay vế riêng ở cuối câu dẫn khối ("…, và lệnh báo lỗi. Máy hôm đó chạy Ubuntu 24.04, Git 2.43:"), không
   chen giữa câu kể vụ, nhất là trước vế kể chỗ hỏng. Câu mở bài không mở bằng hai mốc liền (thứ, ngày, giờ): giữ mốc mạch kể cần
@@ -250,7 +251,7 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
   loại và tên cột mang chữ chưa dạy (`Local Address`, `Peer`) thì gọi theo hình dạng giá trị ("cụm có dấu `@`", "phần đứng
   sau `size=`"), cùng một cách gọi ở thân bài, thực hành và đáp án. Khi đó không cần thêm bước chạy lệnh không lọc chỉ để
   lấy tên cột, và lời trả không phải nói tên cột lấy từ đâu.
-- Cột nào đã có tên ở thân bài thì phần thực hành, câu hỏi và đáp án gọi đúng tên ấy. Ở thực hành giá trị trên máy người
+- Cột nào đã có tên ở thân bài thì phần thực hành, câu hỏi và đáp án gọi bằng tên ấy. Ở thực hành giá trị trên máy người
   học sẽ khác, nên đừng đổi sang tên theo loại giá trị cho gọn.
 - Bài kể một sự cố hay có bước gây lỗi thì có bảng tra từ triệu chứng ra lý do, mỗi dòng nói rõ ai viết ra thông báo đó
   (app, công cụ nào, hay hệ điều hành báo thiếu lệnh). Triệu chứng là một lệnh không in gì thì ô đó ghi lệnh nào không in
@@ -262,8 +263,9 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
 
 - Hỏi để người học phải suy luận. Không hỏi "bạn hiểu chưa".
 - Câu hỏi có đáp án đúng sai rõ ràng.
-- Đáp án chỉ dựa vào những gì đã dạy. Trước khi hỏi thì viết sẵn đáp án, liệt kê mọi khái niệm đáp án dùng, đối chiếu từng
-  cái với phần đã dạy. Thiếu một cái thì bỏ câu hỏi đó.
+- Đáp án chỉ dựa vào những gì đã dạy. Trước khi hỏi thì viết sẵn đáp án, liệt kê mọi khái niệm, mọi hành vi và quan hệ nhân
+  quả đáp án cần (A làm B mất), tìm từng cái trong thân bài. Có cái thân bài chưa kể, hay chữ thân bài chỉ nhắc qua, thì
+  bỏ câu hỏi đó. Ví dụ câu sai, câu sửa ở `teaching.md`, mục Câu hỏi kiểm tra.
 - Viết xong mỗi câu thì tìm đáp án của nó trong thân bài và bảng tra. Có một câu hay một dòng bảng nói gần nguyên đáp án
   thì câu hỏi chỉ bắt dò lại, dù tình huống kể khác đi. Đổi để đáp án phải ghép hai điều đã dạy ở hai chỗ khác nhau, hay
   đưa tình huống mà không dòng bảng nào khớp thẳng; không đổi được thì thay câu khác. Ý chỉ nằm ở một câu phụ hay một dòng
@@ -290,13 +292,14 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
   không chọn, hoặc đáp án nói vì sao không chọn cách ấy; thiếu thì người học chọn cách kia mà đáp án không chấm được.
 - Viết xong đáp án thì đọc lại từng vế như người chấm: vế đó có đúng với chính tình huống câu hỏi không, có chọi với câu
   luật đáp án vừa dẫn không. Gộp hai thứ vào một chủ ngữ ("cả hai đều…") thì kiểm tra vế đó đúng với cả hai.
-- Bộ câu hỏi viết sẵn trong bài thì đáp án để riêng ở cuối bài. Mỗi đáp án nêu kết luận trước, rồi lý do bằng đúng tên bài
+- Bộ câu hỏi viết sẵn trong bài thì đáp án để riêng ở cuối bài. Mỗi đáp án nêu kết luận trước, rồi lý do bằng tên bài
   đã dùng cho mỗi thứ, không thêm chữ mới. Câu hỏi về thứ người dùng dặn tránh hay đã hẹn "lúc khác" thì không ra.
-- Trả lời đúng thì xác nhận ngắn rồi đi tiếp. Trả lời sai thì tìm đúng chỗ hiểu sai và giảng lại chỗ đó.
+- Trả lời đúng thì xác nhận ngắn rồi đi tiếp. Trả lời sai thì tìm ra chỗ hiểu sai và giảng lại chỗ đó.
 
 ## Chỗ hay hiểu sai
 
-- Nói vì sao cách nghĩ đó nghe hợp lý, rồi mới nói nó sai ở đâu. Câu ngay sau cách nghĩ sai là lý do nó nghe hợp lý;
+- Luật này cho bài giảng. Trả lời trong chat cho người vừa đoán sai thì theo `core-rules.md` điều 1 (câu thứ hai là
+  "Nhưng"). Nói vì sao cách nghĩ đó nghe hợp lý, rồi mới nói nó sai ở đâu. Câu ngay sau cách nghĩ sai là lý do nó nghe hợp lý;
   câu phán sai ("Không phải.", "Nhưng…") đứng sau câu đó, không đứng trước. Lý do nghe hợp lý thường là thứ người đó
   thấy lúc ấy: màn hình hiện gì, lỗi hiện ra ngay sau việc gì. Thứ đó phải có trong ghi chú hay output. Ghi chú không có
   thì viết lý do thành điều chung, ai làm theo cách ấy cũng thấy vậy, không gán cho người thật một chuyện cũ ("bạn ấy
@@ -307,7 +310,7 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
   kèm (số cửa sổ đang mở, giờ chạy) chỉ nối bằng "vì" khi nó là lý do thật của vế trước; không thì nối bằng "và" hay đặt
   câu riêng.
 - Nhiều chỗ hiểu sai hay câu hỏi của cùng một người thì đặt mỗi chỗ ở đoạn bài đang giảng tới thứ nó đụng (chỗ nghĩ sai về lỗi
-  đặt ngay sau đoạn đọc lỗi, câu hỏi về một con số đặt sau câu giảng con số đó), mở bằng chữ nối về câu trước. Không xếp chúng
+  đặt ngay sau đoạn đọc lỗi, câu hỏi về một con số đặt sau câu giảng con số đó), mở bằng từ nối về câu trước. Không xếp chúng
   liền nhau thành chuỗi đoạn cùng mở bằng tên người ("X tưởng", "X còn hỏi", "X hỏi thêm"). Hai chỗ đứng gần nhau thì đổi cách
   mở (một chỗ mở bằng câu trích, một chỗ mở bằng việc người đó làm) và đổi chữ dẫn lý do, không cùng "nghe hợp lý, vì… Nhưng…".
   Cả bài cũng không để ba chỗ cùng khung "[Nghĩ vậy, Hỏi vậy, Câu ấy] cũng [dễ hiểu, có lý, phải], vì": đổi tính từ mà giữ
@@ -326,10 +329,10 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
   do nghe hợp lý cộng một câu trỏ về chỗ output đã cho thấy, không suy lại kết luận đoạn đọc output vừa nói.
 - Câu lý do có từ hai vế thì thử từng vế như trên. Vế tả cảnh lúc ấy (màn hình hiện gì, danh sách còn gì) hay mang điều
   thật mà không lộ ra như một kết luận: "vì `docker ps` không còn dòng nào của container ấy, chỉ `docker ps -a` còn" nói container
-  vẫn còn, đúng điều đoạn đọc output sắp gỡ, lại làm lý do yếu đi (danh sách kia còn thì sao lại tưởng đã xoá). Giữ vế tả thứ
+  vẫn còn, mà đó là điều đoạn đọc output sắp gỡ, lại làm lý do yếu đi (danh sách kia còn thì sao lại tưởng đã xoá). Giữ vế tả thứ
   người đó nhìn vào, bỏ vế kia.
 - Đoạn chỗ hiểu sai chen vào giữa câu hở của một mục ("Vậy commit nào đã làm hỏng build?") và đoạn tìm tiếp thì đoạn tìm tiếp
-  mở bằng chữ nối về câu hở ("Để tìm commit ấy, bạn ấy…", "Còn commit làm hỏng thì…"), không mở bằng lời kể trơn ("Bạn ấy tra
+  mở bằng từ nối về câu hở ("Để tìm commit ấy, bạn ấy…", "Còn commit làm hỏng thì…"), không mở bằng lời kể trơn ("Bạn ấy tra
   mạng thấy lệnh X…"). Cách thử: che cả đoạn chỗ hiểu sai, đoạn tìm tiếp phải bám được vào câu hở; rồi che câu hở, đoạn tìm
   tiếp không được đứng một mình như một chuyện mới.
 - Đoạn đọc lỗi đã gỡ chỗ hiểu sai (lỗi không nằm ở chỗ người đó đang sửa) thì gỡ một lần, ở câu đưa bằng chứng. Vế đuôi câu kế
@@ -346,13 +349,14 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
 
 - Sơ đồ chữ thẳng cột. Không vẽ khung bọc trọn cả sơ đồ.
 - Chú thích hình nói hình chứng minh điều gì cho bài.
-- Truyện tranh, hình vui thì phải nói đúng điều mục đó đang giảng. Chú thích kể lại nội dung, và nói truyện nói quá
+- Truyện tranh, hình vui thì phải nói điều mục đó đang giảng. Chú thích kể lại nội dung, và nói truyện nói quá
   hay bỏ qua điều gì.
 - Lời trong ảnh không đọc được ở cỡ hiển thị thì trích thành chữ thật kèm nguồn.
 
 ## Trung thực
 
-- Công cụ nào có nhược điểm thì nói ra.
+- Công cụ bài khuyên dùng mà có cái giá với việc người học đang làm thì nói cái giá đó ngay ở câu khuyên (`teaching.md`,
+  mục Trung thực).
 - Thông tin riêng của người học (nơi làm việc, tên máy, địa chỉ thật) không đưa vào tài liệu công khai.
 - Người thật khác trong chuyện mở bài (học viên, đồng nghiệp) thì không ghi họ tên đủ trong tài liệu công khai. Gọi bằng
   tên gọi người dùng đã dùng; người dùng dặn ẩn danh thì "một bạn trong nhóm". Báo người dùng trong lời trả.
@@ -403,7 +407,7 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
   văn giữa hai khối không phải nói đã bỏ lệnh nào; chỉ nói ("bạn ấy còn xoá thư mục `build`, bài bỏ đoạn đó") khi lệnh bị
   bỏ đổi điều khối sau cho thấy (nó sửa tệp, tắt hay bật một thứ), vì không nói thì người đọc làm lại theo khối sẽ ra kết quả
   khác. Lệnh bị bỏ chỉ đọc mà không đổi gì (gọi thử, xem trạng thái) thì kể thẳng việc tiếp theo. Không nhắc lệnh bị bỏ bằng
-  chữ giấu tên ("một lệnh", "một công cụ", "một cách khác"): hoặc gọi đúng tên một lần kèm việc đã xảy ra ("bạn ấy thử
+  chữ giấu tên ("một lệnh", "một công cụ", "một cách khác"): hoặc gọi tên một lần kèm việc đã xảy ra ("bạn ấy thử
   `tree`, máy báo chưa cài lệnh đó"), hoặc không nhắc. Câu nói đã bỏ đoạn nào ("…, bài bỏ đoạn đó") dùng nhiều nhất một lần
   trong bài, ở chỗ khối output bị tách; chỗ khác kể thẳng việc người trong vụ làm tiếp.
 
@@ -423,7 +427,7 @@ nhịp thì bài đọc thành khuôn. Khái niệm nhỏ thì một hai câu l�
 - Giới hạn tính cả độ dài chứ không riêng số câu: cả lời trả khoảng 100 chữ, không câu nào quá 40 chữ, không liệt kê
   trong ngoặc. Danh sách ưu tiên dài hơn chỗ thì bỏ mục ưu tiên thấp, không nhồi bằng dấu chấm phẩy và ngoặc lồng; mỗi
   mục nói gộp ("đã che tên user, tên công ty", "tên cột lấy từ hiểu biết sẵn", "câu luật có ngoại lệ cần cấu hình
-  riêng"), không kể từng tên cột, từng tùy chọn, từng ngoại lệ.
+  riêng"), không kể từng tên cột, từng option, từng ngoại lệ.
 - Dấu che, dấu cắt và ký hiệu (`$`, `[…]`, `...`, `|`) trong lời trả cũng tính là đoạn mã hay ký hiệu, dù `lint.mjs` không
   đếm chúng. Nói chỗ che bằng lời ("che dấu nhắc lệnh, tên user và tên công ty trong output, gộp dấu cắt về một dấu"), không
   chép lại các dấu ấy.
@@ -451,7 +455,7 @@ nào chen giữa hai đoạn đang nối nhau; khối output nào lệch tệp v
   cả dòng lệnh có dấu nhắc, từng phần sau tên lệnh: phần nào chưa có lời thì thêm nửa câu.
 - Câu định nghĩa và câu luật cả bài dựa vào: tìm "thường ngày", "như trong bài này", "với app như"; có thì bỏ lời rào,
   ngoại lệ chuyển vào lời trả.
-- Mỗi lời giải tham số: có chữ nào nói thứ đó "có loại", "có tên", "có chế độ" mà bài chưa giảng không.
+- Mỗi lời giải option: có chữ nào nói thứ đó "có loại", "có tên", "có chế độ" mà bài chưa giảng không.
 - Mỗi chỗ chỉ vào cột, dòng của output: đếm lại trên output; output có hai cột cùng loại thì gọi bằng tên tiêu đề; thân bài,
   thực hành, đáp án gọi cùng một tên. Giá trị nhiều phần (`host:cổng`) hay tên cột có chữ chưa dạy mà câu văn nhắc tới: cùng
   câu có nói phần còn lại bài không cần không.
@@ -470,7 +474,7 @@ nào chen giữa hai đoạn đang nối nhau; khối output nào lệch tệp v
   ký hiệu mới trong đó; quá một thì tách đoạn. Lệnh dọn đường nào thay được bằng việc người đọc đã quen làm (mở tệp bằng
   IDE, tạo project theo cách họ vẫn tạo) thì thay.
 - Mỗi bước mở terminal hay tab mới: nói shell nào. Mỗi bước sửa tệp của project hay chạy lại app: có câu nói cấu hình
-  riêng nào có thể làm kết quả khác kỳ vọng, câu đó nói đúng lúc công cụ chạy lại, và kỳ vọng ở các bước sau có tính tới
+  riêng nào có thể làm kết quả khác kỳ vọng, câu đó nói rõ lúc công cụ chạy lại, và kỳ vọng ở các bước sau có tính tới
   thứ công cụ đó giữ thêm.
 - Bài có từ hai cách xử lý: có câu nói khi nào chọn cách nào, áp vào vụ mở bài; bảng tra không có "quyết định X hay Y"
   trơn. Đặt câu chọn cách cạnh câu mở cách sau và đoạn kể cách đầu: vế điều kiện nào đã có ở câu mở cách sau, vế lý do nào
@@ -491,6 +495,8 @@ nào chen giữa hai đoạn đang nối nhau; khối output nào lệch tệp v
 - Tên bài trước đã dạy cho từ chung (option, câu lệnh, path, dấu `|`): bài này có dùng chữ khác cho cùng thứ không.
   Tìm "cờ", "đối số", "tùy chọn", "ống" trong bài; thuật ngữ có tên tiếng Anh thì về tên tiếng Anh, còn lại đổi về chữ bài
   trước dạy.
+- Mỗi câu hỏi kiểm tra: che thân bài trừ đoạn vừa giảng, câu hỏi còn trả lời được không; cần đoán điều thân bài chưa kể
+  thì đổi câu.
 - Mỗi câu hỏi kiểm tra, làm cho cả bộ: đáp án có nằm gần nguyên ở một câu thân bài hay một dòng bảng tra không; tình
   huống có trùng một câu ví dụ ("kiểu", "chẳng hạn") của thân bài không. Ghi cạnh mỗi đáp án các ý nó dẫn nằm ở đoạn nào
   của thân bài; mọi ý nằm trong một đoạn là dò lại. Soát lại bước này sau mỗi lần sửa thân bài cho gọn.
@@ -503,7 +509,7 @@ nào chen giữa hai đoạn đang nối nhau; khối output nào lệch tệp v
   lên trước đoạn đọc output. Câu lý do nghe hợp lý: che mọi thứ sau nó, người đọc đã biết điều thật chưa; rồi thì bỏ dữ kiện
   lộ ra điều ấy. Kết luận gỡ (lỗi không ở chỗ người đó tưởng): đếm số lần nó được nói trong đoạn gỡ và câu hỏi của bài ngay
   sau; quá một lần thì giữ lần ở câu đưa bằng chứng. Đoạn ngay sau đoạn chỗ hiểu sai: che đoạn chỗ hiểu sai, nó có bám được
-  vào câu hở của mục không; không thì mở bằng chữ nối về câu hở.
+  vào câu hở của mục không; không thì mở bằng từ nối về câu hở.
 - Mỗi câu hỏi kiểm tra: che đáp án, đọc riêng câu hỏi; vế nào chỉ có việc để làm khi đã chọn một đáp án thì gộp lại. Câu hỏi gọi
   sẵn từng kết cục ("cái nào…, cái nào…") thì hỏi chung ("mỗi cái ra sao").
 - Mỗi câu mở đoạn đọc output: có hẹn số chỗ, vị trí sẽ đọc không; có thì đếm lại với đoạn, lệch thì bỏ câu hẹn. Mỗi đoạn mở
@@ -512,8 +518,8 @@ nào chen giữa hai đoạn đang nối nhau; khối output nào lệch tệp v
 - Mỗi câu hở cuối đoạn: che nó, đọc các câu trước; đã đoán ra đáp án chưa. Tìm "cùng", "vẫn", "lại", "cũng" trong đoạn ấy;
   chữ nào gắn thứ đang hỏng vào vật bị nghi thì bỏ.
 - Tìm "tức", "tức là" trong cả bài: quá ba lần thì phần lớn đổi sang câu ghép "nên", "vì", hay để câu sau tự nói điều suy ra;
-  "tức" hợp nhất khi neo một con số, một chữ lạ vào thứ quen (`references/storytelling.md`). Đọc thành tiếng câu có hai trợ từ
-  chồng nhau ("cần đã", "phải đã", "sẽ đã"): người ta không nói vậy, viết lại ("phải bỏ từ trước", "đã bỏ ở bước 1").
+  "tức" hợp nhất khi neo một con số, một chữ lạ vào thứ quen (`references/storytelling.md`). Đọc thành tiếng câu có động từ tình thái
+  hay phó từ chỉ thời gian chồng lên "đã" ("cần đã", "phải đã", "sẽ đã"): người ta không nói vậy, viết lại ("phải bỏ từ trước", "đã bỏ ở bước 1").
 - Đề mục và câu nào gọi câu hỏi bằng vị trí ("đầu bài", "ở trên") thì viết lại bằng nội dung.
 - Mỗi câu nhắc một vật bằng chữ chung ("một lệnh", "một công cụ", "một cách"): câu đó hay câu sau có gọi tên nó không; không thì
   gọi tên hay bỏ câu. Tìm "bài bỏ": quá một lần thì giữ một, ở chỗ khối output bị tách.

@@ -38,7 +38,7 @@ Văn bản gửi cơ quan nhà nước thì theo thể thức riêng, xem mục 
   c. Chữ số của thân bài 11pt in ra cao khoảng 2,5 mm; nhãn trục biểu đồ được nhỏ hơn một chút nhưng không dưới khoảng 2 mm.
 - Biểu đồ, ảnh chụp màn hình người dùng đưa và bảo chèn: chèn đúng ảnh đó. Chữ in ra quá nhỏ thì trước hết cắt bỏ vùng không
   nói tới (thanh menu, chú giải thừa, khoảng thời gian ngoài đợt đang kể) cho ảnh in to hơn. Cắt rồi vẫn nhỏ mà có số liệu gốc
-  của chính biểu đồ đó (tệp CSV xuất từ cùng bảng điều khiển) thì vẽ lại từ số liệu ấy, giữ đúng từng số; chú thích nói vẽ
+  của chính biểu đồ đó (tệp CSV xuất từ cùng bảng điều khiển) thì vẽ lại từ số liệu ấy, giữ nguyên từng số; chú thích nói vẽ
   lại từ số liệu nào, và mọi thứ thêm vào không có trong ảnh gốc (vạch mốc giờ) lấy từ nguồn nào. Báo cáo gửi lãnh đạo thì
   chú thích gọi loại nguồn ("số liệu của hệ thống giám sát"), tên tệp để ở lời trả. Lời trả nói một câu vì sao vẽ lại. Không có số liệu gốc thì giữ ảnh và nói trong lời trả rằng chữ trong ảnh nhỏ.
 - Câu dẫn tới ảnh chỉ nói điều thấy được trong ảnh hay có nguồn. Giờ hiện trên màn hình chụp là giờ trên máy lúc chụp,
@@ -71,21 +71,24 @@ Văn bản gửi cơ quan nhà nước thì theo thể thức riêng, xem mục 
   cả khi ghi rõ là lời đoán: nó vẫn là câu quy lỗi cho một người. Giữ sự việc có nguồn (lời ghi kèm lần sửa cấu hình, giờ
   phát hành) để người đọc tự kết luận. Cũng vậy với phép tính khoảng chờ đặt cạnh tên người ("An bắt đầu xem lỗi, 17 phút
   sau cảnh báo"): ghi giờ của từng việc ở bảng mốc là đủ.
-- Gọi người theo chức danh khi nguồn có. Nguồn chỉ có tên kèm "anh", "chị" thì bỏ "anh", "chị", ghi tên kèm vai trò trong
-  sự việc ("An, người trực ca"), và hỏi người dùng chức danh trong lời trả.
-- Từ của quy trình nội bộ (đóng bản, merge, tag, chốt bản, lên prod, deploy, rollback, pipeline, pod) gửi lãnh đạo thì
-  thay bằng lời thường ở mọi chỗ, thân bài cũng như bảng: "trước khi phát hành bản 2.4" thay cho "trước khi đóng bản 2.4";
-  deploy là "cập nhật lên hệ thống chính thức", rollback là "quay lại bản 2.3", pipeline là "quy trình phát hành tự động".
+- Gọi người theo `document-types.md`, mục Báo cáo: chức danh khi nguồn có; nguồn chỉ có tên kèm "anh", "chị" thì bỏ
+  "anh", "chị", ghi tên kèm vai trò trong sự việc ("An, người trực ca"). Viết mới thì hỏi chức danh trong lời trả; sửa
+  văn có sẵn thì giữ cách gọi của gốc và không hỏi.
+- Từ của quy trình nội bộ (đóng bản, merge, tag, chốt bản, lên prod, deploy, rollback, pipeline, pod) trong báo cáo gửi
+  lãnh đạo không làm kỹ thuật: người đọc không gặp lại chữ đó thì tả việc bằng lời thường ở mọi chỗ, thân bài cũng như
+  bảng, không đặt tên: "Lúc 07:00 nhóm cập nhật bản 2.4 lên hệ thống chính thức, 07:40 đưa hệ thống quay lại bản 2.3".
+  Không dịch một chữ sang một chữ Việt ("triển khai", "hoàn tác"), vì chữ dịch thành tên thứ hai của thuật ngữ
+  (`word-choice.md`, mục Thuật ngữ). Người đọc sẽ gặp lại chữ đó thì giữ nó và giải nghĩa ở lần đầu.
   Chữ thay phải chưa dùng cho thứ khác trong bài: "bản" đã là phiên bản (bản 2.4) thì pod không gọi "bản đang chạy" mà gọi
   "máy chủ chạy `pay-api`" hay "phiên chạy của `pay-api`".
-- Ghi chú gọi một thứ bằng tên mơ hồ ("bản cũ", "cấu hình trước", "con kia") thì báo cáo dùng đúng tên đã gọi ở chỗ khác
+- Ghi chú gọi một thứ bằng tên mơ hồ ("bản cũ", "cấu hình trước", "con kia") thì báo cáo dùng tên đã gọi ở chỗ khác
   ("bản 2.3"), không chép tên mơ hồ vào bảng.
 - Mỗi sự việc (cập nhật bản, khởi động lại, quay lại bản cũ, lỗi còn sau khi sửa) kể một lần, ở bảng diễn biến hay đoạn
   diễn biến. Mục nói thời gian lỗi chỉ nêu khoảng lỗi, độ dài và hai mốc đó lấy từ đâu; đoạn sau bảng diễn biến chỉ thêm
   điều bảng không nói được (vì sao lần sửa đầu không ăn thua, điều chưa rõ), không kể lại các dòng của bảng. Câu tóm cả
   sự việc thì để ở đoạn mở (`intro`), trước mục 1. Script in ra những mốc giờ có ở từ hai mục trở lên; xem từng mốc trong
   danh sách đó.
-- Số liệu chưa có thì nói cách lấy đúng như nguồn nói. Nguồn nói "đếm trong bảng `order_attempts` thì ra số lượt thanh toán
+- Số liệu chưa có thì nói cách lấy như nguồn nói. Nguồn nói "đếm trong bảng `order_attempts` thì ra số lượt thanh toán
   hỏng" thì không viết thêm rằng bảng đó cho cả số khách; số khách lấy từ đâu mà nguồn không nói thì ghi là chưa rõ cách lấy.
 - Báo cáo đã có bảng việc tiếp theo thì không viết đoạn cuối kể lại bảng. Chỗ hở thấy được mà nguồn chưa có việc nào thì
   nói với người dùng trong lời trả để họ quyết, không tự thêm lời bàn vào báo cáo.
@@ -125,7 +128,7 @@ Văn bản gửi cơ quan nhà nước thì theo thể thức riêng, xem mục 
 
 ## Script dựng sẵn
 
-`scripts/report-docx.mjs` đọc một tệp JSON và dựng tệp docx theo đúng các quy ước trên. Cần Node 18 trở lên và npm.
+`scripts/report-docx.mjs` đọc một tệp JSON và dựng tệp docx theo các quy ước trên. Cần Node 18 trở lên và npm.
 Lần chạy đầu, script tự cài thư viện `docx` vào `~/.cache/vina-me` (đổi chỗ bằng biến `VINA_ME_CACHE`); máy đã có `docx`
 qua `NODE_PATH` thì dùng luôn bản đó.
 
@@ -171,7 +174,7 @@ Cấu trúc JSON:
 - `font` (mặc định Arial) là phông cả tệp. Số trang "Trang x / y" giữa chân trang bật sẵn; `"pageNumbers": false` thì bỏ.
 - Một phần có thể có `paragraphs` (đoạn văn thường), `blocks`, `tables`, `bullets`, `items`, theo thứ tự đó. Một mục có thể
   có `paragraphs`, `blocks`, `fields`, `tables`, `images`.
-- `blocks` giữ đúng thứ tự viết, để đặt ảnh, bảng, đoạn log giữa các đoạn văn của một phần mà không phải tách mục con
+- `blocks` giữ nguyên thứ tự viết, để đặt ảnh, bảng, đoạn log giữa các đoạn văn của một phần mà không phải tách mục con
   (đoạn dẫn, ảnh, đoạn đọc ảnh). Mỗi khối là một chuỗi (đoạn văn), hoặc `{ "table": {…} }`, `{ "image": {…} }`,
   `{ "bullets": [ … ] }`, `{ "code": "dòng 1\ndòng 2" }` (log, cấu hình trích nguyên văn, phông đều, cả khối một trang).
 
@@ -215,7 +218,7 @@ không ghi chức danh của Lan và Bình; bạn gửi thì mình thêm."
 
 - Viết từ phía người nhận: mở bằng những gì họ đã gửi và sẽ dùng ở đâu, rồi mới tới phần còn thiếu.
 - Mỗi yêu cầu nói cần gì (số lượng, định dạng), vì sao (người xem sẽ thấy gì ở chuyên mục đó), và đã có phần nào.
-- Dùng đúng cách phân mức, cách đặt tên tệp mà bên nhận đã đặt ra trong tài liệu của họ.
+- Dùng cách phân mức, cách đặt tên tệp mà bên nhận đã đặt ra trong tài liệu của họ.
 - Không đưa lỗi nội bộ của bên làm vào văn bản gửi khách; việc cần khách làm thì viết thành yêu cầu.
 - Thứ khách phải điền thì đưa bảng mẫu có sẵn cột; thứ mình đã soạn nháp thì đưa bản nháp để khách chỉ việc duyệt.
 

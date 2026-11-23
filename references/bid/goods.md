@@ -6,7 +6,7 @@ kỹ thuật của E-HSMT; Đáp ứng kỹ thuật của hàng hóa dự thầu
 
 ## Cách điền
 
-- Mỗi hạng mục một bảng (hoặc một nhóm hàng trong bảng), mở bằng đề mục mang đúng tên hạng mục trong HSMT, kể cả lỗi chính tả
+- Mỗi hạng mục một bảng (hoặc một nhóm hàng trong bảng), mở bằng đề mục mang nguyên tên hạng mục trong HSMT, kể cả lỗi chính tả
   của HSMT.
 - Hàng đầu (hàng nhóm, đậm): hãng, model, xuất xứ, năm sản xuất, số lượng theo Mẫu 01A.
 - Cột yêu cầu: chép theo ảnh trang của Chương V, mỗi thông số một hàng, giữ ký hiệu ≥ ≤.
@@ -25,8 +25,8 @@ kỹ thuật của E-HSMT; Đáp ứng kỹ thuật của hàng hóa dự thầu
 - Cột tham chiếu: mã tài liệu, trang, mục hoặc bảng ("KT-02A, tr. 16 (bảng 9)"; số bảng, số hình để trong ngoặc, hai bảng thì
   "(bảng 9, bảng 10)": bid-check và package-check đọc "tr. 19, bảng 9, 10" là một trang, số sau "bảng" là số bảng). Dùng số trang của tệp PDF (`bid-check
   --catalog KT-02A=<tệp>` soát theo số đó); trang in khác trang tệp thì nói rõ ở bảng mã đầu KT-01. Trang nào được dẫn thì trang
-  đó có chỗ tô vàng đúng chữ được trích (`package.md`, mục Tô vàng).
-- Câu nói tài liệu hãng ghi gì phải trích đúng chữ của trang được dẫn, trong ngoặc kép: KT-02A ghi "Tower", "Platinum". Trích
+  đó có chỗ tô vàng chữ được trích (`package.md`, mục Tô vàng).
+- Câu nói tài liệu hãng ghi gì phải trích nguyên văn chữ của trang được dẫn, trong ngoặc kép: KT-02A ghi "Tower", "Platinum". Trích
   chữ mang con số đáp ứng ("512 GB/1 TB", không chỉ "PCIe NVMe Gen4 x4"), lấy ở đúng trường có nhãn khớp yêu cầu: cổng kết nối
   lấy ở trường "Cổng đa năng" hay "Interface", không lấy ở trường "Earjack" dù cùng chữ "USB Type-C"; trường có nhãn thì trích kèm
   nhãn ("Cổng đa năng (USB Type-C)"). Trích trọn cụm, không cắt giữa cụm danh từ ("enhanced 3nm processor", không dừng ở
@@ -43,7 +43,7 @@ kỹ thuật của E-HSMT; Đáp ứng kỹ thuật của hàng hóa dự thầu
   thiếu. Ô chỉ có dấu mà không ghi gì là bỏ trống chứng cứ đang có; và thông số vào bảng giấy tờ phải xin trong
   báo cáo. Không ghi "đáp ứng", không chép lại câu yêu cầu làm câu đáp ứng ("Hỗ trợ quản trị, giám sát phần cứng từ xa" đáp cho
   chính câu đó), không dẫn "xác nhận của Nhà sản xuất khi Chủ đầu tư yêu cầu".
-- Chứng nhận, tiêu chuẩn (80 Plus, Energy Star, TPM 2.0, ISO) phải có đúng tên trên trang dẫn. Catalog chỉ ghi "Platinum" thì
+- Chứng nhận, tiêu chuẩn (80 Plus, Energy Star, TPM 2.0, ISO) phải có nguyên tên đó trên trang dẫn. Catalog chỉ ghi "Platinum" thì
   chưa chứng minh "80 Plus Platinum": ghi "Catalog ghi "Platinum"" kèm `[chưa có chứng minh: chứng nhận 80 Plus]`, không ghi "tốt hơn".
 - HSMT đòi hình ảnh sản phẩm (Mục 3, Chương V) thì mỗi thiết bị có một hình: cắt ảnh máy từ trang catalog (`pdftoppm -f N -l N`,
   cắt bằng công cụ ảnh có sẵn) và đặt bằng khối `figure`, chú thích dẫn trang catalog; cắt sát thân máy, bỏ đường chú thích (không tẩy, vẽ đè lên ảnh của hãng; đường chú dẫn chạy ngang thân máy thì chọn ảnh khác
@@ -57,10 +57,10 @@ kỹ thuật của E-HSMT; Đáp ứng kỹ thuật của hàng hóa dự thầu
 - Tài liệu hãng ghi hai mức cho một thông số (pin 8.400 mAh "điển hình", định mức tối thiểu 8.160 mAh): ô đáp ứng ghi mức hãng
   công bố kèm chữ "điển hình" như hãng viết; báo cáo cho BA nêu rủi ro mức tối thiểu thấp hơn yêu cầu.
 - Trang cấu hình đặt hàng (dell.com/shop) có tùy chọn kèm mã ràng buộc ("RAID 1 ... F1" chỉ đi với một loại vỏ, bộ nguồn): trích
-  đúng tên tùy chọn như trang ghi, và ô đáp ứng nêu cấu hình chào gồm cả tùy chọn mà ràng buộc đòi (vỏ, bộ nguồn), dẫn trang của
+  tên tùy chọn như trang ghi, và ô đáp ứng nêu cấu hình chào gồm cả tùy chọn mà ràng buộc đòi (vỏ, bộ nguồn), dẫn trang của
   từng tùy chọn; trang không nói rõ ràng buộc thì đánh dấu `[cần xác nhận: tùy chọn đi kèm]`.
 - Ô tham chiếu dẫn nhiều trang của một tài liệu: "KT-02A, tr. 19, 30" hoặc "KT-02A, tr. 30 (bảng 25); tr. 19 (bảng 10)".
-- Gọi giá trị bằng đúng nhãn in trên trang: "PCIe NVMe Gen4 x4" nằm ở cột "Interface type" thì là giao tiếp, không gọi là "loại
+- Gọi giá trị bằng nhãn in trên trang: "PCIe NVMe Gen4 x4" nằm ở cột "Interface type" thì là giao tiếp, không gọi là "loại
   ổ"; trích kèm ô định danh của hàng (tên ổ, mã tùy chọn) để người chấm biết hàng nào. Giá trị trích khác cấu hình chào (trang ghi
   Gen4, ổ chào Gen5) thì không dùng chữ đó làm chứng minh.
 - Bảng có tiêu đề cột (bảng ổ đĩa: "Storage type", "Interface type", "Capacity"; bảng nguồn: "Option two"; chính sách bảo hành:
@@ -102,7 +102,7 @@ kỹ thuật của E-HSMT; Đáp ứng kỹ thuật của hàng hóa dự thầu
 ## Vật tư, phụ tùng thay thế
 
 HSMT mua sắm hàng hóa thường có điều về vật tư, phụ tùng thay thế (E-CDNT 15.10 mẫu thông dụng): nhà thầu phải cung cấp danh
-mục, giá, nhà cung cấp của vật tư, phụ tùng cần cho vận hành trong thời gian quy định. Đọc đúng chữ của điều đó trong HSMT và
+mục, giá, nhà cung cấp của vật tư, phụ tùng cần cho vận hành trong thời gian quy định. Đọc nguyên văn điều đó trong HSMT và
 viết thành mục riêng (thường trong phần bảo hành, bảo trì), theo đúng mức HSMT đòi: HSMT ghi "phải cung cấp" thì không viết
 thành "nếu Chủ đầu tư yêu cầu". Chưa có danh mục, giá thì để `[cần bổ sung: danh mục, giá vật tư phụ tùng]`.
 
@@ -111,7 +111,7 @@ thành "nếu Chủ đầu tư yêu cầu". Chưa có danh mục, giá thì đ�
 - Bảng kê sai khác, danh mục tài liệu, Mẫu 10B, bản cam kết nhắc lại thông số nào thì giữ đúng trạng thái của dòng đó ở bảng đáp
   ứng: dòng đã đánh dấu chưa có chứng minh thì chỗ nhắc lại cũng đánh dấu, không viết "Đáp ứng theo cấu hình đặt hàng". `bid-check`
   báo câu vừa nói tài liệu chưa ghi vừa ghi "đáp ứng". Một dòng chỉ một trạng thái ở mọi chỗ: dòng còn dấu thì không kê "tốt hơn".
-- Bảng kê sai khác là lời kê khai của nhà thầu với Chủ đầu tư (E-CDNT 15.9): chỉ kê chỗ hàng chào thật sự khác yêu cầu và nhà
+- Bảng kê sai khác là lời kê khai của nhà thầu với Chủ đầu tư (E-CDNT 15.9): chỉ kê chỗ hàng chào khác yêu cầu và nhà
   thầu chấp nhận khác (thông số thấp hơn, thiếu một chức năng). Dòng đáp ứng tương đương theo nội hàm của Chương V (máy dạng tháp
   cho yêu cầu Tower Server) là đáp ứng, không phải sai khác; dòng đang chờ giấy tờ cũng không phải sai khác. Không có gì khác thì
   ghi một câu "Hàng hóa chào thầu không có nội dung sai khác, ngoại lệ so với yêu cầu của Chương V." Không viết thành danh sách
@@ -125,7 +125,7 @@ thành "nếu Chủ đầu tư yêu cầu". Chưa có danh mục, giá thì đ�
 - Mẫu 10B cho hạng mục phần mềm do nhà thầu hay đơn vị phát triển làm ra: ký mã hiệu là tên phần mềm (kèm phiên bản nếu có),
   hãng là đơn vị phát triển, xuất xứ theo nơi phát triển, năm là năm bàn giao; mỗi ô đó đánh dấu `[cần xác nhận]` khi BA chưa
   chốt. Hạng mục dịch vụ (triển khai, đào tạo, bảo hành) ghi tên dịch vụ, đơn vị thực hiện, các cột ký mã hiệu, xuất xứ, năm
-  sản xuất ghi đúng chữ ghi chú của Mẫu 10B trong HSMT (thường là "không có"; thiếu ký mã hiệu, xuất xứ thì hồ sơ không được xem
+  sản xuất ghi nguyên văn ghi chú của Mẫu 10B trong HSMT (thường là "không có"; thiếu ký mã hiệu, xuất xứ thì hồ sơ không được xem
   xét, nên đọc kỹ ghi chú đó). Hỏi BA cách điền trên hệ thống nếu HSMT có hướng dẫn khác.
 
 ## Sau bảng

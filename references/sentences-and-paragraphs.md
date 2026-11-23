@@ -17,17 +17,21 @@ Hai ý có quan hệ thì gom vào một câu. Có bốn cách nối vế.
 
 | Cách | Ví dụ |
 |---|---|
-| Cặp từ nối | "Vì trời mưa nên đường ngập." |
-| Một từ nối | "Trời mưa nên đường ngập." |
-| Cặp hô ứng | "Trời càng mưa, đường càng ngập." |
+| Cặp quan hệ từ | "Vì trời mưa nên đường ngập." |
+| Một quan hệ từ | "Trời mưa nên đường ngập." |
+| Cặp từ hô ứng | "Trời càng mưa, đường càng ngập." |
 | Dấu câu | "Tôi nghỉ học, Lan cũng thế." |
 
 - Đã mở cặp thì đóng cặp. Có "chẳng những" thì phải có "mà còn".
 - Hai vế cùng một loại thứ. Sai: "Bên cạnh việc cách tân thi ca, ông còn là một chiến sĩ." (vế đầu là việc làm, vế sau
   là con người).
 - Hai việc cùng một chủ thể có thể gọn thành câu đơn có trạng ngữ, ví dụ "Vì học giỏi, tôi được thưởng."
-- Câu nhiều tầng thì dấu chấm phẩy ngăn các vế lớn, dấu phẩy ngăn các ý nhỏ.
-- Tách một ý thành câu riêng chỉ khi muốn nhấn nó.
+- Gộp hai vế mà vế sau bỏ chủ ngữ thì vế sau mượn chủ ngữ của vế trước. Chủ ngữ ấy không làm được việc ở vế sau thì
+  phải nói chủ ngữ riêng. Sai: "Bản 2.3 thêm cache cho trang tìm kiếm, chưa đo lại độ trễ." (bản phần mềm không tự đo). Sửa:
+  "Bản 2.3 thêm cache cho trang tìm kiếm, nhưng nhóm chưa đo lại độ trễ sau đó."
+- Câu ghép có cấu tạo phức tạp thì dấu chấm phẩy ngăn các vế lớn, dấu phẩy ngăn các ý nhỏ.
+- Ngoài những chỗ phải tách (câu quá khoảng 40 tiếng, câu mang từ ba đoạn mã trở lên, `core-rules.md` điều 5), ý có
+  quan hệ thì giữ trong một câu; tách một ý thành câu riêng chỉ khi muốn nhấn nó.
 
 ## Trạng ngữ
 
@@ -40,7 +44,7 @@ Hai ý có quan hệ thì gom vào một câu. Có bốn cách nối vế.
 | "Thơ Tản Đà sau Cách mạng vẫn còn gợi cảm." | "Sau Cách mạng, thơ Tản Đà vẫn còn gợi cảm." |
 | "Liên hoan phim Busan ở Việt Nam không được giới thiệu rộng rãi." | "Ở Việt Nam, Liên hoan phim Busan không được giới thiệu rộng rãi." |
 
-## Lời giải nghĩa chêm trong câu
+## Thành phần phụ chú
 
 Có ba cách đánh dấu, và không cách nào cần tới dấu gạch ngang.
 
@@ -50,10 +54,10 @@ Có ba cách đánh dấu, và không cách nào cần tới dấu gạch ngang.
 | Trong ngoặc đơn | "Sông Bạch Đằng (còn gọi là sông Rừng) là con sông…" |
 | Sau dấu hai chấm, ở cuối câu | "Ông bố vẫn mải mê với những con số: ông đang phải kiểm tra sổ sách." |
 
-Bỏ phần chêm đi thì câu vẫn phải đúng ngữ pháp. Ngoặc đơn hợp với tên gọi khác, dạng đầy đủ của chữ viết tắt, và
+Bỏ thành phần phụ chú đi thì câu vẫn phải đúng ngữ pháp. Ngoặc đơn hợp với tên gọi khác, dạng đầy đủ của chữ viết tắt, và
 danh sách ví dụ.
 
-Lời chêm đặt ở cuối phần nó giải, không chen giữa động từ và bổ ngữ của động từ đó. Sai: "Muốn biết query nào chậm thì
+Thành phần phụ chú đặt ở cuối phần nó giải, không chen giữa động từ và bổ ngữ của động từ đó. Sai: "Muốn biết query nào chậm thì
 bật slow query log, chức năng của MySQL ghi lại query chạy quá lâu, bằng biến `slow_query_log`, rồi đọc tệp đó vài lần
 trong ngày để xem query nào lặp lại." Đọc lần đầu, "bằng biến" dính vào "ghi lại query" chứ không dính vào "bật". Sửa
 bằng cách tách câu: một câu nói bật cái gì và nó là gì, câu sau nói bật bằng gì hay làm gì tiếp. Cụm giải nghĩa
@@ -63,9 +67,10 @@ mở danh sách cũng tách thành câu riêng đặt trước.
 Tân ngữ dài đặt ngay sau động từ, nơi đến đặt sau: "chép liên tục nhật ký giao dịch của database sang NAS", không "chép
 liên tục sang NAS nhật ký giao dịch của database".
 
-Câu dài quá khoảng 40 tiếng mà mang hai đoạn mã, hay có từ ba vế nối bằng dấu phẩy và "rồi", "để", thì tách câu.
+Câu quá khoảng 40 tiếng thì tách, dù có mã hay không; câu mang từ ba đoạn mã trở lên cũng tách (`core-rules.md` điều
+5). Câu có từ ba vế nối bằng dấu phẩy và "rồi", "để" thì tách luôn.
 
-Không viết khuôn "X, vì A, còn B, nên X'" với vế "nên" nói lại X. "Nên" chỉ đứng sau vế thật sự dẫn tới nó. Sai: "Số hiện
+Không viết khuôn "X, vì A, còn B, nên X'" với vế "nên" nói lại X. "Nên" chỉ đứng sau vế dẫn tới nó. Sai: "Số hiện
 có chưa cho biết bao nhiêu người vắng, vì số đăng ký do phòng nhân sự đếm, còn số đến do bảo vệ đếm, nên lấy số này trừ
 số kia không ra số người vắng." Hai người đếm khác nhau không dẫn tới chuyện phép trừ hỏng, và vế "nên" nói lại vế đầu.
 Sửa: "Lấy số đăng ký trừ số người đến không ra số người vắng, vì số người đến có cả người không đăng ký mà vẫn tới." Câu
@@ -81,16 +86,16 @@ ngay trước "nên" với vế "nên"; vế trước không dẫn tới vế sa
 ## Đoạn
 
 - Một đoạn một đề tài nhỏ, khoảng 4 tới 6 câu. Đoạn một câu được, khi câu đó cần đứng riêng.
-- Mỗi đoạn có một câu chủ đề, ngắn và dễ hiểu.
+- Mỗi đoạn, trừ đoạn song hành chỉ để liệt kê, có một câu chủ đề ngắn và dễ hiểu.
 - Câu phủ định hiển nhiên sau một mốc đã nêu ("lỗi đầu tiên lúc 07:05" rồi "trước 07:00 không có lỗi") thì bỏ.
 - Câu ngay sau câu dẫn số không nói lại số đó bằng chữ ("Ổ chưa lần nào đầy" sau câu vừa nói ổ cao nhất mới dùng 60%). Đi thẳng sang điều số đó kéo theo, hoặc nhập vế "nên" vào chính câu dẫn số.
 
 | Kiểu đoạn | Câu chủ đề ở đâu | Dùng khi |
 |---|---|---|
 | Diễn dịch | Đầu đoạn | người đọc cần kết luận ngay |
-| Quy nạp | Cuối đoạn, mở bằng "Như vậy", "Vậy là" | dẫn người đọc từ hình cụ thể tới định nghĩa |
-| Phối hợp | Đầu và cuối; câu cuối phải nói thêm được điều mới, không lặp lại câu đầu | đoạn dài, cần gom lại |
-| Song song | Không có | chỉ để liệt kê |
+| Quy nạp | Cuối đoạn, mở bằng "Như vậy", "Vậy là"; câu đó phải nói ra điều chưa có trong đoạn (định nghĩa, kết luận), như "Vậy là app không trả 504; Nginx tự trả mã đó khi app im quá 60 giây.", không phải "Như vậy, Nginx đóng vai trò quan trọng" | dẫn người đọc từ hình cụ thể tới định nghĩa |
+| Tổng phân hợp | Đầu và cuối; câu cuối phải nói thêm được điều mới, không lặp lại câu đầu | đoạn dài, cần gom lại |
+| Song hành | Không có | chỉ để liệt kê |
 
 Đổi kiểu đoạn giữa các đoạn để bài không cùng một khuôn.
 

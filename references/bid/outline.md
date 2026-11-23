@@ -3,8 +3,8 @@
 ## Nguyên tắc
 
 - Phần lớn (A, B, C…) là các tiêu chí tổng quát trong mục Tiêu chuẩn đánh giá về kỹ thuật của HSMT đang làm: đủ số tiêu chí,
-  đúng thứ tự, tên giữ nguyên chữ của HSMT.
-- Dưới mỗi phần lớn, mỗi ý HSMT kể ra trong điều kiện đạt có một mục con riêng, tên gần đúng chữ HSMT. Ví dụ tiêu chí "Giải
+  giữ thứ tự, tên giữ nguyên chữ của HSMT.
+- Dưới mỗi phần lớn, mỗi ý HSMT kể ra trong điều kiện đạt có một mục con riêng, tên sát chữ HSMT. Ví dụ tiêu chí "Giải
   pháp kỹ thuật, biện pháp tổ chức cung cấp, lắp đặt, bảo hành, bảo trì hàng hóa" kể "biện pháp phòng cháy, chữa cháy; biện
   pháp bảo đảm vệ sinh môi trường, an toàn lao động; đào tạo hướng dẫn sử dụng, chuyển giao công nghệ" thì mỗi biện pháp một
   mục, kể cả khi gói chỉ có phần mềm.
@@ -20,7 +20,7 @@
 | 2. Giải pháp kỹ thuật, biện pháp tổ chức cung cấp, lắp đặt, bảo hành, bảo trì | giải pháp kỹ thuật (tóm tắt kiến trúc, mô hình triển khai, dẫn sang mục thuyết minh ở phần A); nguyên tắc; tổ chức nhân sự; vận chuyển, giao nhận, lắp đặt thiết bị; cài đặt, cấu hình phần mềm; phòng cháy, chữa cháy; vệ sinh môi trường, an toàn lao động; đào tạo hướng dẫn sử dụng, chuyển giao công nghệ; bảo hành, bảo trì (biện pháp tổ chức: đầu mối, quy trình, nhân sự, phụ tùng; chi tiết thời hạn để ở tiêu chí bảo hành); nghiệm thu, bàn giao; tính hợp lý và hiệu quả kinh tế |
 | 3. Tiến độ cung cấp hàng hóa | thời gian thực hiện và mốc tính; bảng tiến độ tóm tắt; bảng tiến độ theo ngày (trang ngang); biện pháp bảo đảm tiến độ |
 | 4. Mức đáp ứng yêu cầu về bảo hành | thời hạn theo từng hạng mục; phạm vi; đầu mối tiếp nhận; quy trình và thời gian đáp ứng; đổi trả hàng lỗi; thu hồi hàng (đổi trả và thu hồi là hai ý riêng của tiêu chí, mỗi ý một mục con); bảo trì định kỳ; hỗ trợ sau bảo hành |
-| 5. Uy tín nhà thầu qua việc tham dự thầu | cam kết theo đúng chữ HSMT (số hợp đồng chậm tiến độ, bỏ dở) |
+| 5. Uy tín nhà thầu qua việc tham dự thầu | cam kết theo nguyên văn HSMT (số hợp đồng chậm tiến độ, bỏ dở) |
 
 HSMT có tiêu chí khác (kết quả thực hiện hợp đồng, điều kiện thương mại, tác động môi trường…) thì làm theo HSMT.
 

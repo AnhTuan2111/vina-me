@@ -4,10 +4,13 @@
 
 | | Thân mật | Trung tính | Trang trọng |
 |---|---|---|---|
-| Dùng cho | bài giảng, ghi chú, blog, tin nhắn, lời giải thích trong chat | tài liệu kỹ thuật, sách hướng dẫn, bản tin | báo cáo, đơn từ, kiến nghị, thư cho đối tác, phát biểu |
+| Dùng cho | bài giảng, ghi chú, blog, tin nhắn với bạn bè, lời giải thích trong chat | tài liệu kỹ thuật, sách hướng dẫn, bản tin | báo cáo, đơn từ, kiến nghị, thư cho đối tác, phát biểu |
 | Xưng hô | mình, bạn | ít xưng hô; "bạn" khi cần gọi người đọc | theo nơi nhận: tôi, em, anh, chị, quý công ty |
-| Từ ngữ | đời thường, gần gũi | từ toàn dân, thuật ngữ đúng | chuẩn mực; không tiếng lóng, từ thông tục |
+| Từ ngữ | đời thường, gần gũi | từ toàn dân, thuật ngữ đúng | chuẩn mực; không biệt ngữ xã hội, từ thông tục |
 | Kiểu câu | câu ngắn xen dài; có câu rút gọn | câu đủ thành phần | câu đủ thành phần; ít câu rút gọn |
+
+Tin nhắn công việc gửi sếp, đồng nghiệp thì theo `document-types.md`, mục Tin nhắn công việc: "Em deploy lại lúc 14h, anh
+duyệt giúp em trước giờ đó ạ", không "Mình deploy lại lúc 14h nhé bạn".
 | Rủi ro | suồng sã | khô | xa cách, mất tự nhiên |
 
 Chọn mức theo người nhận và mục đích. Không lẫn hai mức trong một văn bản.
@@ -19,7 +22,7 @@ thì giữ chuẩn.
 
 | Lấy của tiếng nói | Không lấy |
 |---|---|
-| từ toàn dân, đời thường | tiếng lóng, từ địa phương |
+| từ toàn dân, đời thường | biệt ngữ xã hội, từ ngữ địa phương |
 | từ nối thường: vì, nên, mà, chứ, thì | từ đưa đẩy, thán từ rải cho có |
 | câu ngắn xen câu dài | câu tỉnh lược tới mức mất chủ ngữ |
 | hỏi rồi đáp | câu rườm, trùng lặp do không gọt |
@@ -28,7 +31,7 @@ thì giữ chuẩn.
 Bảng này cho văn của chính người viết. Viết theo giọng một người cụ thể thì chọn chữ theo hồ sơ của họ, xem mục "Dùng
 hồ sơ" bên dưới.
 
-Chữ viết không có ngữ điệu, nét mặt, cử chỉ. Bù lại bằng dấu câu, từ nhấn ("chính", "chỉ"), hình, bảng, sơ đồ, và
+Chữ viết không có ngữ điệu, nét mặt, cử chỉ. Bù lại bằng dấu câu, trợ từ ("chính", "chỉ"), hình, bảng, sơ đồ, và
 bằng cách nói thành lời điều mà khi nói mình dựa vào nhấn giọng.
 
 Người đọc đọc lại được nhiều lần, nên văn viết phải chịu được đọc kỹ, tức là các đoạn không chọi nhau và một thứ
@@ -44,14 +47,16 @@ Dùng khi người dùng muốn văn đời thường mà vẫn chính xác, và
 | nêu ví dụ | giả sử, kiểu, ví dụ | chẳng hạn như, cụ thể là |
 | đưa lựa chọn | hay là, hoặc là, "1 là… 2 là…" | một mặt… mặt khác |
 | chỗ, phần | chỗ, đoạn, vụ, cái, thứ | nội dung, khía cạnh |
-| đúng, sai | đúng, sai, ổn, chốt | hợp lý (chỉ khi thật sự đánh giá) |
+| đúng, sai | đúng, sai, ổn, chốt | hợp lý (chỉ khi đang đánh giá) |
 | lý do | lý do, vì sao | nguyên nhân gốc rễ |
 | tài nguyên | hết, đầy, tràn | cạn |
 
 Cách nói:
 
-- Nói lý do rồi tới việc kéo theo, nối bằng từ thường. Không câu mở, không câu tóm.
-- Nói thẳng chỗ chưa biết: "mình không rõ", "hình như", "chắc là".
+- Nói lý do rồi tới việc kéo theo, nối bằng từ thường. Không câu rào đón ở đầu ("Câu hỏi hay đấy, để mình giải thích nhé."), không câu tóm
+  ở cuối.
+- Nói thẳng chỗ chưa biết: "mình không rõ", hay một từ phỏng đoán chọn theo mức ở `word-choice.md`, mục Thành phần
+  tình thái.
 - Sai thì nói là sai và sửa, không giấu.
 - Sửa người khác bằng số liệu, không bằng nhận xét.
 - Hỏi xác nhận "đúng không?", "nhỉ?" tối đa một hai chỗ mỗi phần, và phải là câu hỏi thật.
@@ -68,7 +73,7 @@ Dựng hồ sơ giọng từ những gì người đó tự gõ khi không trau 
    hay để cấm (kiểu "đừng ghi 'theo quy định hiện hành'") cũng không tính là chữ họ dùng. Mẫu ít hơn vài trăm tin thì
    vẫn dựng, ghi số tin ở đầu hồ sơ và nói rõ mẫu nhỏ nên chỗ nào còn chưa chắc.
 2. Với mỗi ý hay gặp (nối lập luận, nêu ví dụ, nói đúng sai, nêu lý do), đếm họ dùng chữ nào, đếm theo chữ đứng riêng
-   trên đúng những tin đã giữ ở bước 1. Ghi cả chữ họ không dùng, kèm "0 lần".
+   chỉ trên những tin đã giữ ở bước 1. Ghi cả chữ họ không dùng, kèm "0 lần".
 3. Chép nguyên văn vài câu cho từng thói quen: cách giải thích, cách nói chưa biết, cách tự sửa, cách sửa người khác.
 4. Viết một đoạn thử, đưa chính họ chấm, hỏi chỗ nào chưa giống. Sửa hồ sơ. Lặp lại.
 
@@ -111,7 +116,7 @@ Ghi từng mục:
 - Ô nào trong bảng "Từ hay dùng" cũng có số lần, kể cả ô 0, ví dụ dòng `| tự xưng, gọi xưởng | "xưởng" 12, "anh" 8 |
   "chúng tôi" 0, "công ty" 0 |`. Dòng tự xưng và dòng cuối câu là hai chỗ văn mẫu hay chen vào nhất ("chúng tôi", "Quý
   khách", "shop", "nhé", "ạ" lặp mỗi câu), nên ở hai dòng đó đếm cả chữ người đó dùng lẫn chữ văn mẫu hay dùng.
-- Một chữ chỉ xếp vào một dòng, theo đúng quan hệ nó nối: "nên" là nối kết quả, không phải nêu lý do.
+- Một chữ chỉ xếp vào một dòng, theo quan hệ nó nối: "nên" là nối kết quả, không phải nêu lý do.
 - Mục "Phản ứng thật" chỉ giữ câu nói cảm giác của chính người đó (ngại, mệt, vui, xấu hổ). Lời dặn, lời cấm ("đừng
   viết kiểu…") đưa vào "Không bao giờ làm" hay "Cách nói", vì mục "Phản ứng thật" là kho cảm xúc được phép dùng khi viết.
 - Mục "Không bao giờ làm" không suy ra từ văn người khác mà người đó chỉ dán lại hay chuyển tiếp. Họ dán một bài để khen
@@ -125,15 +130,15 @@ Dùng hồ sơ:
 - Hồ sơ cho biết chọn chữ nào. Nó không cho phép bịa việc người đó chưa làm hay cảm xúc họ chưa có.
 - Lấy cách nối ý và cách chọn chữ. Không chép lỗi gõ, viết tắt của văn nói.
 - Hồ sơ riêng đè lên bảng "Giọng thân mật mặc định": chữ người đó không dùng (0 lần) thì không đưa vào, kể cả khi bảng
-  mặc định xếp nó vào cột Dùng. Văn bản đứng tên người đó thì giữ chữ họ dùng nhiều với đúng nhóm người nghe ấy, kể cả
+  mặc định xếp nó vào cột Dùng. Văn bản đứng tên người đó thì giữ chữ họ dùng nhiều với nhóm người nghe ấy, kể cả
   chữ của một vùng; chữ họ chỉ dùng với bạn thân thì không mang sang văn gửi người ngoài.
-- Chọn tầng giọng theo người nhận văn bản. Văn gửi khách hay người ngoài lấy đúng cột "với khách" trong bảng Xưng hô,
+- Chọn tầng giọng theo người nhận văn bản. Văn gửi khách hay người ngoài lấy cột "với khách" trong bảng Xưng hô,
   không lấy xưng hô với bạn hay với cấp dưới, và giữ một cách xưng suốt bài.
 - Hồ sơ lệch với ngữ cảnh (giọng thân mật, văn bản là báo cáo) thì giữ cách lập luận và độ thẳng thắn, đổi xưng hô.
-- Cảm xúc trong bài chỉ lấy từ mục "Phản ứng thật đã ghi lại", giữ đúng ý và chữ chính. Câu đó nói với người nghe khác
+- Cảm xúc trong bài chỉ lấy từ mục "Phản ứng thật đã ghi lại", giữ nguyên ý và chữ chính. Câu đó nói với người nghe khác
   thì chỉ đổi xưng hô ("tui" thành "mình"), viết đủ chữ viết tắt, bỏ biểu tượng gõ tay; không phóng to, không thêm
   cảm xúc mới.
-- Một con số người đó chưa chốt thì tìm trong mẫu câu họ đã nói cho đúng tình huống ấy (kiểu "còn tính, chốt rồi báo")
+- Một con số người đó chưa chốt thì tìm trong mẫu câu họ đã nói cho tình huống ấy (kiểu "còn tính, chốt rồi báo")
   và đặt thẳng vào bài, để bài dán đi được ngay. Không để ô trống kiểu "[__]" trong văn gửi người ngoài. Mẫu không có
   câu nào như vậy thì viết câu nói rõ là chưa chốt, rồi báo trong chat.
 - Văn gửi người ngoài mà nhắc tên người trong nội bộ thì nói vai của họ một lần ("bạn Lan trực quầy"), hoặc bỏ tên.

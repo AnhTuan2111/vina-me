@@ -52,7 +52,7 @@ thì dùng khuôn dựng sẵn theo số đo của hồ sơ mẫu. Không cần 
   không tự đổi chữ của HSMT.
 - `part` là phần lớn (sang trang mới); `doc` là tài liệu con (sang trang mới, trừ khi ngay sau `part`); `h1`, `h2`, `h3` tự ghi
   số vào chữ, script không đánh số.
-- Viết chữ đề mục đúng như khuôn gõ, không tự viết hoa: khuôn mẫu gõ phần lớn và đề mục cấp 1 chữ thường ("A. Yêu cầu kỹ thuật
+- Viết chữ đề mục như khuôn gõ, không tự viết hoa: khuôn mẫu gõ phần lớn và đề mục cấp 1 chữ thường ("A. Yêu cầu kỹ thuật
   của hàng hóa", "1. Giới thiệu phần mềm"), kiểu đoạn tự hiện chữ hoa trên trang, còn mục lục giữ chữ thường. Tài liệu con
   cũng viết chữ thường ("I. Bảng đáp ứng yêu cầu kỹ thuật hàng hóa"): với `tocStyle` mặc định, khuôn mẫu gõ chữ hoa tài liệu
   con thì script cho kiểu đoạn tự in hoa. `bid-docx` cảnh báo đề mục gõ hoa ở loại đoạn tự in hoa.

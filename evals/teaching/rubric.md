@@ -104,7 +104,7 @@ một câu hỏi khiến mình muốn đọc mục sau không. Ghi lại từng 
 |---|---|
 | Dẫn dắt: chuyển mục bằng câu báo lộ trình ("Tiếp theo…", "Phần này…") thay vì bằng chỗ hở của câu trả lời trước; tên gọi đặt trước khi tả vật quen; so sánh không nói chỗ hết đúng; ẩn dụ chen vào mà không nói cái gì ứng với cái gì; vụ mở bài không quay lại ở mục sau hay thực hành | -1 mỗi chỗ, tối đa -4 |
 | Câu rời câu trước (không lặp từ khoá, không "này, ấy, đó", không từ nối đúng quan hệ, không mốc thời gian) | -1 mỗi chỗ, tối đa -5 |
-| Văn máy, văn mẫu: "Hãy", "chúng ta", "đóng vai trò", "hành trình", "không chỉ... mà còn", "không phải X mà là Y" khi chưa ai nói X, bộ ba cho đủ vần, mở bằng dựng cảnh, "Trong thế giới...", câu hỏi tu từ, hỏi dồn | -1 mỗi chỗ, tối đa -5 |
+| Văn AI slop, văn mẫu: "Hãy", "chúng ta", "đóng vai trò", "hành trình", "không chỉ... mà còn", "không phải X mà là Y" khi chưa ai nói X, bộ ba cho đủ vần, mở bằng dựng cảnh, "Trong thế giới...", câu hỏi tu từ, hỏi dồn | -1 mỗi chỗ, tối đa -5 |
 | Liệt kê "một là, hai là", "Trước hết, Bên cạnh đó, Ngoài ra, Cuối cùng" cho đủ | -1 mỗi chỗ |
 | Câu chốt cuối đoạn ("Điều này giúp...", "Nhớ gọn:", "Nói ngắn gọn:", câu tóm lặp ý vừa nói) | -1 mỗi chỗ |
 | Chữ nhấn thừa ("chính là", "thật sự", "đúng là", "cực kỳ", "hoàn toàn") | -1 mỗi chỗ, tối đa -3 |

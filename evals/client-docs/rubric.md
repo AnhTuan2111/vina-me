@@ -90,7 +90,7 @@ PDF, xem từng trang trước khi đưa, rồi trả tệp cộng một hai câ
 | Lỗi | Trừ |
 |---|---|
 | Câu sau không dựa trên câu trước: đổi đề tài không có từ nối, che câu trước thì câu sau đứng riêng được trong khi hai ý có quan hệ | 1 mỗi chỗ, tối đa 5 |
-| Văn máy, văn mẫu: "đóng vai trò", "đảm bảo tính...", "nhằm mục đích", "giải pháp toàn diện", "Hãy", "chúng ta", "không chỉ... mà còn", bộ ba cho đủ, mở mục bằng "Mục này trình bày..." hay "Tài liệu này nhằm..." | 1 mỗi chỗ, tối đa 5 |
+| Văn AI slop, văn mẫu: "đóng vai trò", "đảm bảo tính...", "nhằm mục đích", "giải pháp toàn diện", "Hãy", "chúng ta", "không chỉ... mà còn", bộ ba cho đủ, mở mục bằng "Mục này trình bày..." hay "Tài liệu này nhằm..." | 1 mỗi chỗ, tối đa 5 |
 | Liệt kê "một là, hai là", hay chặt một chuỗi nhân quả (hỏng thì làm gì, rồi sao) thành gạch đầu dòng cụt | 1 mỗi chỗ, tối đa 3 |
 | Câu chốt cuối đoạn hay cuối mục ("Nhờ vậy hệ thống luôn sẵn sàng", "Như vậy dữ liệu được bảo vệ an toàn") | 2 mỗi chỗ |
 | Chữ nhấn thừa ("rất", "hoàn toàn", "luôn luôn", "chính là", "đúng"), in đậm để nhấn trong thân | 1 mỗi chỗ, tối đa 3 |

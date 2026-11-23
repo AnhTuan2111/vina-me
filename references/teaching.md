@@ -12,13 +12,13 @@ thấy nó lạ. Nên trước khi viết câu đầu tiên, kê ra giấy nháp
 của lệnh, ký hiệu (`*`, `~`, `:`), chữ tiếng Anh trong output và thông báo lỗi, tên cột, động từ đi kèm thuật ngữ chính ("cấp" bộ
 nhớ, "ghi" log). Cạnh mỗi thứ ghi một trong ba chữ:
 
-- **đã dạy**: có trong nền người học hay các bài trước (đề, lộ trình, ghi chú buổi học nói rõ); bài gọi đúng tên bài trước đã
+- **đã dạy**: có trong nền người học hay các bài trước (đề, lộ trình, ghi chú buổi học nói rõ); bài gọi lại tên bài trước đã
   dùng, không đổi sang chữ gần nghĩa;
 - **dạy ở đây**: bài giảng nó, và ghi luôn nó được giải nghĩa ở đoạn nào, bằng vật quen gì;
 - **tránh**: bài không cần nó thì thay bằng lời thường, hay chọn lệnh, output khác không có nó.
 
 Thứ nào chưa xếp được vào một trong ba thì chưa viết. Khi viết, lần đầu một thứ "dạy ở đây" vào câu văn thì câu đó (hoặc câu liền
-trước, trong cùng đoạn) giải nghĩa nó. Mỗi đoạn dạy nhiều nhất một thứ mới; đoạn nào cần hai thì tách. Tên gọi đã chọn giữ nguyên
+trước, trong cùng đoạn) giải nghĩa nó, theo cách đặt lời giải nghĩa ở `core-rules.md` điều 5. Mỗi đoạn dạy nhiều nhất một thứ mới; đoạn nào cần hai thì tách. Tên gọi đã chọn giữ nguyên
 tới cuối bài, kể cả trong thực hành, câu hỏi, đáp án và đề mục. Chữ mô tả dùng trước lúc đặt tên cũng theo luật này: đã gọi "một
 cái nhãn" rồi mới nói "cái nhãn ấy gọi là nhánh" thì từ đó chỉ nói "nhánh", không quay về "nhãn", nhất là ở đoạn cấu hình, cách
 xử lý cuối bài ("đặt nhãn khác"). Câu văn trích output thì chỉ trích phần bài dùng. Viết xong, đối chiếu bài với bảng kê.
@@ -36,9 +36,9 @@ lần lượt hai cách", hay câu đếm "đã có hai cách" rồi "Cách th�
 Cách đầu kể bằng việc người trong vụ đã làm, cách sau mở bằng chỗ cách đầu không dùng được ("Nhưng nhánh ấy còn người khác đang
 dùng thì sao?") hay bằng câu hỏi thật của người học. Câu hỏi của bài gọi bằng nội dung, không bằng số hay vị trí; vật nào được
 nhắc thì gọi tên, không để "một lệnh", "một công cụ" treo đó. Câu hỏi thật của người học đem vào giữa bài thì mở bằng việc ("Hôm
-đó bạn ấy cũng hỏi:"), không bằng câu nói về mạch bài ("Câu ấy dẫn tới chỗ…"). Đoạn tìm tiếp mở bằng chữ nối về câu hở ("Để tìm
-commit ấy, bạn ấy…"), nhất là khi có đoạn chen giữa. Câu hở chỉ hở khi các câu trước chưa nói sẵn đáp án, kể cả qua một chữ so
-sánh ("cùng", "vẫn", "lại"): "lần chạy này đặt cùng tên với container hôm qua" đã trả lời "container nào đang mang tên ấy?", lại
+đó bạn ấy cũng hỏi:"), không bằng câu nói về mạch bài ("Câu ấy dẫn tới chỗ…"). Đoạn tìm tiếp mở bằng từ nối về câu hở ("Để tìm
+commit ấy, bạn ấy…"), nhất là khi có đoạn chen giữa. Câu hở chỉ hở khi các câu trước chưa nói sẵn đáp án, kể cả qua những chữ
+gắn thứ đang hỏng vào một vật đã kể ("cùng", "vẫn", "lại", "cũng"): "lần chạy này đặt cùng tên với container hôm qua" đã trả lời "container nào đang mang tên ấy?", lại
 coi như đã biết container hôm qua còn đó. Kể việc hỏng bằng chính nó ("tên `web` đã có container mang").
 
 **Vật quen đi trước, tên gọi đi sau.** Tả thứ đó làm gì bằng một vật người học đã có trong tay (một `HashMap` trong bean, một
@@ -60,8 +60,9 @@ thật: câu kế không thêm vế đuôi nói lại điều ấy, câu hỏi c
 để người học thấy các mảnh dính vào nhau. Bài kết bằng câu trả lời trọn cho câu hỏi của bài, đặt ở đoạn cuối phần giảng, trước
 thực hành và câu hỏi kiểm tra; không "Tóm lại", không câu châm ngôn, không hẹn bài sau, không nhắc thứ người dùng dặn tránh.
 
-Câu nối câu như trong `references/storytelling.md`: chữ nhỏ giữa câu ("lại", "thì", "mà", "cứ… thì… lại"), danh từ nhắc lại kèm
-"ấy, đó, này" thay cho "nó", "điều này". Một kết luận nói một lần, ở chỗ bằng chứng cho ra nó, rồi đoạn sau dựa vào nó mà đi
+Câu nối câu như trong `references/storytelling.md`: hư từ giữa câu ("lại", "thì", "mà", "cứ… thì… lại"), câu trước có từ hai danh từ
+thì nhắc lại danh từ kèm "ấy, đó, này" ("Container `web` dùng image `nginx:1.25`. Container ấy báo lỗi lúc khởi động."),
+câu trước chỉ có một danh từ thì "nó" được. Một kết luận nói một lần, ở chỗ bằng chứng cho ra nó, rồi đoạn sau dựa vào nó mà đi
 tiếp. Hai đoạn đang nối nhau (cách xử lý sau và câu chọn cách) đứng liền; câu hỏi phụ đặt ngay sau đoạn giảng thứ nó dựa vào.
 Nhịp không đều: chỗ khó viết chậm, nhiều ví dụ; chỗ chỉ nối thì đi nhanh.
 
@@ -73,8 +74,10 @@ thực hành, không tính khối output, bảng tra, câu hỏi và đáp án (
 
 ## Thực hành
 
-Lệnh chạy được trên đúng môi trường của người học, giải thích trước rồi lệnh theo sau, mỗi lệnh và tham số lạ giải nghĩa ngay chỗ
-gõ. Có một bước cố tình gây lại đúng vụ mở bài rồi tự sửa. Bài đưa từ hai cách xử lý thì một câu nói khi nào chọn cách nào, áp
+Lệnh chạy được trên đúng môi trường của người học, giải thích trước rồi lệnh theo sau, mỗi lệnh và option lạ giải nghĩa ngay chỗ
+gõ. Có một bước cố tình gây lại vụ mở bài rồi tự sửa. Gây lại mà mất dữ liệu hay đụng
+máy thật thì gây trên một bản thử (container, thư mục tạm) và nói rõ là bản thử: "Chạy `docker run --name pg-test
+postgres:16`, rồi xoá thư mục dữ liệu bên trong container `pg-test`", không "Xoá thư mục `/var/lib/postgresql`". Bài đưa từ hai cách xử lý thì một câu nói khi nào chọn cách nào, áp
 vào chính vụ mở bài: lý do nằm ở câu ấy (đoạn kể cách đầu chỉ kể việc người trong vụ làm), điều kiện đã mở cách sau thì câu ấy
 không nói lại. Bài kể một sự cố thì có bảng tra từ triệu chứng ra lý do, mỗi dòng nói ai in ra thông báo đó. Việc chuẩn bị phải
 làm trước (bỏ một dependency, tắt một chế độ) là bước 1, lý do nằm ngay trong bước ấy; bước sau cần nó thì không nhắc lại. Bước
@@ -84,9 +87,13 @@ ghi là kỳ vọng.
 ## Câu hỏi kiểm tra
 
 Hỏi để người học phải suy luận từ một tình huống mới, ghép ít nhất hai điều đã dạy ở hai chỗ khác nhau của bài; không hỏi lại một
-câu thân bài đã nói gần nguyên. Viết đáp án trước, kê mọi khái niệm đáp án dùng và đối chiếu với bảng kê chữ: có thứ chưa dạy thì
-bỏ câu. Đề tả output bằng lời thì nói đủ số dòng và mỗi dòng là gì, hay dán khối output. Đáp án để riêng ở cuối bài, kết luận
-trước, lý do sau, bằng đúng tên bài đã dùng.
+câu thân bài đã nói gần nguyên. Viết đáp án trước, kê mọi khái niệm, mọi hành vi và quan hệ nhân quả đáp án dùng, đối chiếu với bảng kê chữ
+và thân bài: có thứ chưa dạy, hay chữ bài chỉ nhắc qua mà chưa giải nghĩa, thì bỏ câu. Tình huống mới là đổi dữ kiện (ảnh
+khác, số khác), không đổi cách hệ thống chạy. Sai (bài vừa giảng bước detection của OCR): "Ảnh có con dấu đỏ đè lên dòng
+chữ thì detection ra sao? Nếu thiếu dòng thì có nên fine-tune không?" Sửa: "Bài đã kể detection bỏ sót dòng chữ quá mờ.
+Một ảnh scan có dòng cuối mờ hẳn thì phần chữ đọc ra thiếu gì, vì sao?" Câu sai bắt đoán việc bài chưa kể và dùng chữ bài
+chỉ nhắc qua, tức là đánh đố. Đề tả output bằng lời thì nói đủ số dòng và mỗi dòng là gì, hay dán khối output. Đáp án để riêng ở cuối bài, kết luận
+trước, lý do sau, bằng tên bài đã dùng.
 
 ## Trung thực
 
@@ -94,7 +101,9 @@ Chỉ kể điều ghi chú và tệp vào có: người thật làm gì, nói g
 chú không ghi ("bạn ấy không cần nó nữa"), cần lý do thì viết thành điều chung. Tài liệu công khai không mang họ tên đủ, tên máy,
 tên công ty: che đúng phần riêng trong output, giữ số hiệu, giờ, chữ lỗi, và một câu nói đã che gì; lời dặn đọc lướt phần output
 bài không giảng là câu riêng, không nối vào câu che bằng "và". Dữ kiện chưa kiểm tra thì giữ lời rào, con số ghi chú kèm chữ rào
-("gần", "khoảng") giữ chữ ấy ở mọi lần nhắc lại. Công cụ nào có nhược điểm thì nói ra.
+("gần", "khoảng") giữ chữ ấy ở mọi lần nhắc lại. Công cụ bài khuyên dùng mà có cái giá với việc người học đang làm (xoá thêm thứ
+khác, chậm, cần quyền cao) thì nói cái giá đó ngay ở câu khuyên: "`docker system prune -a` xoá cả image không có
+container nào đang chạy, nên lần chạy sau phải tải lại image đó", không "lệnh này có nhược điểm nhất định".
 
 ## Giao bài
 

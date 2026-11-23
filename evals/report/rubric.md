@@ -104,7 +104,7 @@ này còn đứng một mình được không. Không quét cả bài một lúc
 | Xưng hô trong báo cáo ("mình", "chúng tôi", "em", "bạn", "anh chị", "quý khách") | 3 mỗi chỗ |
 | Dấu gạch dài hay gạch vừa ở bất cứ đâu (thân, tên mục, bảng, chú thích ảnh, tên tệp, lời trả chat) | 3 mỗi chỗ |
 | Tiếng Việt không dấu | 3 |
-| Văn máy: "đóng vai trò", "không chỉ… mà còn…", "không phải X mà là Y" khi chưa ai nói X, "Hãy…", "Lưu ý rằng", "Đáng chú ý", "Nhìn chung", "Tóm lại", bộ ba cho đủ vần, chủ ngữ là "việc…", "cơ chế…", câu bị động danh từ hoá kiểu "việc cập nhật được thực hiện" | 2 mỗi chỗ |
+| Văn AI slop: "đóng vai trò", "không chỉ… mà còn…", "không phải X mà là Y" khi chưa ai nói X, "Hãy…", "Lưu ý rằng", "Đáng chú ý", "Nhìn chung", "Tóm lại", bộ ba cho đủ vần, chủ ngữ là "việc…", "cơ chế…", câu bị động danh từ hoá kiểu "việc cập nhật được thực hiện" | 2 mỗi chỗ |
 | Văn mẫu: câu mở rào đón ("Báo cáo này nhằm…", "Nhằm đảm bảo chất lượng…"), câu kết khuôn | 2 mỗi chỗ |
 | Liệt kê "một là, hai là", "thứ nhất, thứ hai" cho đủ | 2 mỗi chỗ |
 | Câu chốt cuối đoạn hay cuối mục nhắc lại điều vừa nói ("Như vậy, web cần sửa…") | 2 mỗi chỗ |

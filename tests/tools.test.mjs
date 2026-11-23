@@ -159,21 +159,21 @@ test('lint đếm độ dài câu theo tiếng', () => {
   assert.match(node('lint.mjs', [file]).stdout, /tiếng mỗi câu/);
 });
 
-test('lint đếm tiếng cả tệp, bắt ẩn dụ "Giống…:", câu ba đoạn mã, mũi tên ASCII, chỗ trống, chữ nhấn thừa, lỗi chính tả, chữ "văn máy"; tha dòng tên in hoa', () => {
+test('lint đếm tiếng cả tệp, bắt phép so sánh "Giống…:", câu ba đoạn mã, mũi tên ASCII, chỗ trống, chữ nhấn thừa, lỗi chính tả, chữ "văn máy"; tha dòng tên in hoa', () => {
   const dir = tmp();
   const file = path.join(dir, 'note.md');
   fs.writeFileSync(file, [
     '# Ghi chú dọn ổ', '',
     'HƯỚNG DẪN VẬN HÀNH', '',
-    'Giống một cái kho: hàng nào cũng chiếm chỗ. Cron job chạy -> dọn thư mục tạm khi có > 3 tệp cũ, giữ [__] ngày. Bản mới thật sự nhẹ hơn, thiếu xót một bước. Bài này còn nhiều văn máy. Chạy `df`, rồi `du`, rồi `lsof` để thấy phần chênh.', '',
+    'Giống một cái kho: hàng nào cũng chiếm chỗ. Cron job chạy -> dọn thư mục tạm khi có > 3 tệp cũ, giữ [__] ngày. Bản mới thật sự nhẹ hơn, đúng như dự kiến, thiếu xót một bước. Bài này còn nhiều văn máy. Chạy `df`, rồi `du`, rồi `lsof` để thấy phần chênh.', '',
     '```bash', 'df -h -> /tmp/out', '```', '',
   ].join('\n'));
   const out = node('lint.mjs', [file]).stdout;
   assert.match(out, /tiếng, không tính nhan đề, đề mục, bảng, khối code; bỏ cả đoạn mã trong dòng thì/);
-  assert.match(out, /câu mở ẩn dụ bằng "Giống…:"/);
+  assert.match(out, /câu mở phép so sánh bằng "Giống…:"/);
   assert.match(out, /1 câu mang từ ba đoạn mã trở lên/);
   assert.match(out, /mũi tên "->" \(1\), dấu so sánh trước con số \(1\), chỗ trống chưa điền \(1\)/);
-  assert.match(out, /· chữ nhấn thừa: thật sự/);
+  assert.match(out, /· chữ nhấn thừa: thật sự, đúng như/);
   assert.match(out, /lỗi chính tả hay gặp: thiếu xót/);
   assert.match(out, /"văn máy" 1 lần: ngoài đời không ai nói thế, viết "văn AI slop"/);
   assert.doesNotMatch(out, /chữ in hoa nhấn mạnh/);

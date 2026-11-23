@@ -6,14 +6,14 @@ argument-hint: "[write|edit|review|score|word|bid|memory|secret|feedback] <yêu 
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.22.0"
+  version: "0.22.1"
 ---
 
 # Viết cho lưu loát
 
 Văn dễ đọc là văn có câu sau nối với câu trước, có người viết đặt mình vào người nghe, và chỉ nói điều có thật. Số
 chữ ít hay nhiều không quyết định điều đó. Skill này không có từ cấm, chỉ có những từ và mẫu câu ngoài đời ít ai nói;
-dùng một lần đúng chỗ thì được, dùng thành thói quen thì thành văn AI slop.
+dùng một lần, ở chỗ cần nó, thì được, dùng thành thói quen thì thành văn AI slop.
 
 **Luật cứng:** viết bất cứ thứ gì có tiếng Việt thì luôn dùng skill này, và gọi nó bằng công cụ Skill trước khi viết: câu trả
 lời trong chat dù chỉ vài chữ, tệp, chú thích, commit, issue, PR, chữ trên giao diện. Không viết theo trí nhớ về luật, và
@@ -38,24 +38,24 @@ không bỏ qua với lý do đây chỉ là một dòng ngắn.
 1. Dẫn bằng điều người đọc đang thắc mắc. Bài giảng, giải thích thì hỏi rồi đáp ngay câu sau; không hỏi tu từ,
    không hỏi dồn. Báo cáo, thư công việc thì câu đầu nói ngay đang bàn gì, câu hai là một thứ cụ thể.
 2. Mạch lạc rồi mới nối câu. Cả đoạn một đề tài, một trình tự. Câu sau nối câu trước bằng lặp từ khoá, "này, ấy,
-   đó", từ nối đúng quan hệ (`references/cohesion.md`) hoặc mốc thời gian. Che câu trước mà câu sau vẫn đứng một mình
+   đó", từ nối đúng quan hệ (`references/cohesion.md`) hoặc trạng ngữ chỉ thời gian. Che câu trước mà câu sau vẫn đứng một mình
    được thì hai câu đang rời nhau.
-3. Ý có quan hệ thì viết thành một câu: vì… nên, nếu… thì, tuy… nhưng. Câu 20 tới 30 tiếng không sao; nhịp không
-   đều; không rút câu cho vừa một mốc số chữ.
+3. Ý có quan hệ thì viết thành một câu: vì… nên, nếu… thì, tuy… nhưng. Câu 20 tới 30 tiếng không sao; câu dài ngắn
+   xen nhau; không rút câu cho vừa một mốc số chữ.
 4. Hình trước, tên và định nghĩa sau. Bắt đầu từ vật người đọc đã thấy, kể nó làm gì, rồi mới gọi tên. Chủ ngữ là
    một vật hay một người làm một việc, không phải "cơ chế", "việc triển khai". Câu định nghĩa có "là".
 5. Một thứ một tên, mỗi đoạn tối đa một thuật ngữ mới, giải nghĩa ngay lần đầu dùng. Thuật ngữ có tên chuẩn tiếng Anh
    thì giữ nguyên, không dịch (option, không "cờ") (`references/word-choice.md`).
-6. Nói thật. Không bịa trải nghiệm, cảm xúc, con số, ví dụ. Chỉ dùng dữ kiện người dùng đưa; thiếu thì hỏi hoặc
-   ghi là thiếu. Nói đúng mức chắc chắn. Không khen, không phán xét người đọc (`references/citations-data-figures.md`).
+6. Nói thật. Không bịa trải nghiệm, cảm xúc, con số, ví dụ. Chỉ dùng dữ kiện người dùng đưa; thiếu mà câu không
+   viết được thì nói rõ là chưa có và hỏi một câu, thiếu chi tiết chỉ làm bài đầy hơn thì không hỏi. Nói đúng mức chắc chắn. Không khen, không phán xét người đọc (`references/citations-data-figures.md`).
 7. Dùng chữ người ta vẫn nói ngoài đời. Thử: giải thích cho người ngồi cạnh thì có nói chữ đó không. Tránh "không
    phải X mà là Y" khi chưa ai nói X, "không chỉ… mà còn…", bộ ba cho đủ vần, mở bằng dựng cảnh, kết bằng "Tóm lại",
    câu châm ngôn; "Hãy…", "hành trình", "đóng vai trò", "chúng ta"; mọi phần cùng một khuôn.
 
 ## Dấu gạch và ký hiệu
 
-Không dùng dấu gạch dài, gạch vừa ở bất cứ đâu (cả nhan đề, bảng, code, commit, chat); chêm lời thì dùng dấu phẩy hay
-ngoặc đơn, nhan đề viết "A: B", khoảng số viết "3-5". Trong câu văn không dùng mũi tên, dấu tick, emoji, số khoanh tròn,
+Không dùng dấu gạch dài, gạch vừa ở bất cứ đâu (cả nhan đề, bảng, code, commit, chat); thành phần phụ chú thì đặt giữa
+hai dấu phẩy hay trong ngoặc đơn, nhan đề viết "A: B", khoảng số viết "3-5". Trong câu văn không dùng mũi tên, dấu tick, emoji, số khoanh tròn,
 `~`, `&`, `=`; không in hoa cả chữ để nhấn. Bảng thay thế ở `references/punctuation.md`.
 
 ## Giọng
@@ -65,7 +65,7 @@ ngoặc đơn, nhan đề viết "A: B", khoảng số viết "3-5". Trong câu 
 | Bài giảng, ghi chú, blog, lời giải thích trong chat | "mình, bạn", thân mật có mức |
 | Tin nhắn công việc gửi sếp, đồng nghiệp | xưng như lúc nói với người đó, giọng nói chuyện |
 | Tài liệu kỹ thuật, hướng dẫn, thông báo gửi khách | trung tính, ít xưng hô |
-| Báo cáo, kiến nghị, thư công việc | trang trọng, theo cách xưng hô của nơi nhận; gửi cả nhóm thì không xưng hô |
+| Báo cáo, kiến nghị, thư công việc | trang trọng, theo cách xưng hô của nơi nhận; gửi cả nhóm thì không xưng hô; báo qua Zalo, Slack thì theo dòng tin nhắn công việc |
 | Văn bản hành chính nhà nước | không xưng hô, chủ ngữ là cơ quan (`references/official-documents.md`) |
 
 Chi tiết từng loại ở `references/document-types.md`. Người dùng chỉ định giọng thì theo lời đó; viết theo giọng một người
@@ -73,7 +73,7 @@ cụ thể thì tra `references/voice.md`.
 
 ## Trả lời trong chat
 
-Mọi câu trả lời trong chat bằng tiếng Việt đều theo skill này, kể cả câu trả lời chỉ vài câu. Hỏi gì trả lời đúng cái đó, vài câu; điều cần nói thêm thì một dòng ở cuối. Người dùng sai thì nói thẳng kèm lý do.
+Mọi câu trả lời trong chat bằng tiếng Việt đều theo skill này, kể cả câu trả lời chỉ vài câu. Hỏi gì trả lời cái đó, vài câu; điều cần nói thêm thì một dòng ở cuối. Người dùng sai thì nói thẳng kèm lý do.
 Câu hỏi gửi người dùng phải tự đứng được: ở đâu, hiện thế nào, vì sao hỏi, mỗi phương án ra sao. Báo kết quả chỉ gồm
 vấn đề và việc cần làm; không khen, không chấm điểm, không ước lượng thời gian. Câu trong lời trả cũng soát như văn trong
 tệp. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là gì và khuyên thu hồi.
@@ -83,7 +83,7 @@ tệp. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là 
 Sửa cấu trúc câu và đoạn trước, thay từ sau; câu đã ổn thì để yên. Giữ nguyên dữ kiện, con số, tên riêng, mức chắc
 chắn, giọng tác giả; không thêm chi tiết; không đụng lời trích, code, output. Người dùng chê một câu thì sửa câu đó và
 hỏi lý do trước khi áp cho cả bài. Bản cần sửa do agent viết thì đối chiếu với dữ kiện gốc: lời tả không có trong dữ kiện
-thì bỏ, tên riêng người dùng không chê thì giữ và hỏi. Không áp skill cho văn bản quy phạm pháp luật, hợp đồng, biểu mẫu,
+thì bỏ; tên riêng agent tự đặt mà dữ kiện gốc không có thì giữ và hỏi một câu (tên nào, ở đâu, giữ hay bỏ). Không áp skill cho văn bản quy phạm pháp luật, hợp đồng, biểu mẫu,
 thơ, lời thoại.
 
 ## Trả kết quả
@@ -91,7 +91,7 @@ thơ, lời thoại.
 | Việc | Trả gì |
 |---|---|
 | Viết mới | đường dẫn tuyệt đối của tệp (hay chính văn bản), thêm một hai câu về chỗ chưa kiểm tra hay thiếu dữ kiện |
-| Sửa đoạn được dán vào | bản đã sửa, rồi tối đa năm dòng nêu thay đổi chính và lý do |
+| Sửa đoạn được dán vào | bản đã sửa, rồi tối đa năm dòng, mỗi dòng một thay đổi kèm lý do |
 | Sửa một tệp | chỉ sửa phần văn, báo số chỗ đã sửa theo loại |
 | Soát mà không sửa | từng chỗ "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ |
 | Báo cáo lỗi, báo cáo rà soát | theo `references/review-reports.md` |
@@ -134,8 +134,8 @@ giọng"), không nói tên công cụ họ không dùng.
 
 Trong lúc làm, gặp chỗ skill hướng dẫn sai, thiếu hay script lỗi thì ghi một dòng vào sổ góp ý (`references/feedback.md`,
 mục Sổ góp ý trong lúc làm), không cần hỏi. Người dùng chê chính skill thì cũng ghi như thế. Làm xong việc thì hỏi một lần
-có muốn gửi các dòng ấy thành issue trên repo vina-me không; đồng ý thì làm theo `references/feedback.md`. Người dùng đã nhờ soạn bản nháp góp ý
-thì soạn luôn, không hỏi lại.
+có muốn gửi các dòng ấy thành issue trên repo vina-me không; đồng ý thì làm theo `references/feedback.md`. Câu hỏi này là một dòng riêng ở cuối lời
+trả, như câu hỏi về bộ nhớ. Người dùng đã nhờ soạn bản nháp góp ý thì soạn luôn, không hỏi lại.
 
 ## Tệp tham khảo
 

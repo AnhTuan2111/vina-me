@@ -60,16 +60,9 @@ chỉ mất hai giây, nên ...", để người đọc che câu trước đi v�
    Lời chê nằm ở chỗ skill chưa có loại văn bản ấy thì bản sửa không dựa được vào skill, nên tự hỏi người nhận mở văn bản ra
    cần biết gì trước, rồi đặt điều đó vào câu đầu: thư mời họp thì họp gì, lúc nào, ở đâu; thông báo đổi giá thì giá mới áp
    từ ngày nào. Việc phía người viết làm (cài đặt, tạm dừng, chuẩn bị) và lý do của nó đi sau. Bản sửa vẫn theo mọi luật khác
-   của skill, đọc lại từng câu như bất kỳ bản sửa nào. Văn bản gửi người nhận kiểu này hay dính hai mẫu dịch sát, nên soát
-   riêng:
-   - Đuôi "với N thay đổi (nêu) dưới đây" treo sau câu đầu: tách thành câu riêng. "Từ ngày 01/12, cửa hàng áp dụng bảng giá
-     mới với ba thay đổi nêu dưới đây." viết thành "Từ ngày 01/12, cửa hàng áp dụng bảng giá mới. Bảng giá này có ba thay
-     đổi:".
-   - Câu bị động không nói ai làm ("X được chọn", "được đặt", "được cài", "được dời"): cho vật chịu việc làm chủ ngữ và bỏ
-     "được", hoặc nói ai làm. "Cuộc họp được dời sang 14h vì phòng bận." viết thành "Cuộc họp dời sang 14h vì phòng
-     bận."; "Mức giảm này được đặt theo đề nghị của hội khách hàng." viết thành "Mức giảm này theo đề nghị của hội khách hàng.".
-   Viết xong, tìm chữ "được" và "với" trong bản sửa rồi xét từng chỗ theo hai mẫu trên, vì đọc lướt cả bài thì mắt bỏ qua
-   chúng.
+   của skill, đọc lại từng câu như bất kỳ bản sửa nào. Văn bản gửi người nhận kiểu này hay dính hai mẫu dịch sát
+   (đuôi "với N thay đổi", bị động không nói ai làm); soát theo `document-types.md`, mục Thông báo gửi khách, bài đăng công
+   khai.
 2. Người dùng chưa nhắc tới góp ý thì hỏi một câu, nói rõ repo công khai: "Chỗ này có vẻ do quy tắc của skill. Mình gửi
    góp ý lên repo vina-me để tác giả sửa nhé? Issue ở repo công khai nên ai cũng đọc được, mình sẽ cho bạn xem bản nháp
    trước." Không đồng ý thì thôi.
@@ -98,7 +91,7 @@ chỉ mất hai giây, nên ...", để người đọc che câu trước đi v�
      không bao giờ bắt sẽ hiện ra như "vẫn bị báo". Soát từng ví dụ có lọt các điều kiện đó không; không chạy qua script được
      thì ghi rõ chỉ mới thử riêng đoạn nào. Câu khái quát chưa đếm (kiểu "chữ viết tắt thường chỉ có ...") thì ghi là đoán
      hoặc bỏ. Lời chê về một loại văn bản skill chưa nói tới thì ngoài quy tắc đã bị áp nhầm, nêu cả hai chỗ loại ấy lẽ ra
-     phải có: bảng loại văn bản ở `references/document-types.md` (bước 1 của "Cách viết" trong `SKILL.md` dựa vào tệp này để
+     phải có: bảng loại văn bản ở `references/document-types.md` (bước 1 của mục Quy trình trong `SKILL.md` dựa vào tệp này để
      chọn loại) và bảng "Giọng" của `SKILL.md`. Nói đã tìm tên loại ấy ở hai chỗ đó mà không thấy, rồi viết đề xuất cho từng
      tệp; chỉ đề xuất sửa quy tắc bị áp nhầm thì tác giả vá được một câu mà loại văn bản ấy vẫn không có chỗ.
    - **Cách lặp lại**: với quy tắc, yêu cầu kiểu gì thì ra lỗi, chê lại thế nào mà lỗi vẫn còn. Với script, nội dung tệp

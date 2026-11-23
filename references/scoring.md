@@ -38,8 +38,18 @@ Bắt đầu từ 100. Mỗi chỗ chỉ trừ một lần, ở mức nặng nh�
 | Vừa | 1 | câu nối lỏng; đoạn có hơn một thuật ngữ mới; chữ nhấn thừa; dấu hiệu văn AI slop; câu dài tới mức phải đọc lại; ẩn dụ không nói cái gì ứng với cái gì; một thứ gọi hai tên; từ ghép bị cắt |
 | Nhẹ | 0,5 | chữ kém tự nhiên, ngoài đời ít ai nói vậy; dấu câu, chính tả |
 
-Điểm cuối là 100 trừ tổng các chỗ, và phải khớp với danh sách. Loại văn bản có luật riêng (bài giảng cấm hẹn bài sau, văn
-bản hành chính theo thể thức) thì phạm luật ấy tính là nặng.
+Ranh giới giữa các mức:
+
+- Đứt mạch hẳn (nặng): "Ổ `/data` đầy 93% lúc 19:57. Team đã họp với khách sáng thứ Hai." Câu sau không dính gì tới câu
+  trước.
+- Nối lỏng (vừa): "Ổ `/data` đầy 93% lúc 19:57. Log của app chiếm 60 GB." Cùng đề tài nhưng không có chữ nối; sửa thành
+  "Trong số đó, log của app chiếm 60 GB."
+- Chữ hay cụm có trong `machine-tells.md` tính mức vừa ("Redis đóng vai trò bộ nhớ đệm"); chữ kém tự nhiên khác tính mức
+  nhẹ ("app tiến hành khởi động", sửa thành "app khởi động").
+
+Điểm cuối là 100 trừ tổng các chỗ, và phải khớp với danh sách. Một số luật riêng của loại văn bản tính là nặng: bài giảng
+hẹn bài sau, dùng chữ chưa dạy mà câu cần, câu hỏi kiểm tra lộ đáp án hay bắt đoán điều chưa kể; văn bản hành chính sai
+thể thức ở phần đầu, phần cuối. Luật riêng khác tính theo bảng trên.
 
 ## Lời trả của người chấm
 

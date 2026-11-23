@@ -6,7 +6,7 @@ Mỗi cặp minh hoạ một quy tắc. Đọc để thấy cách sửa, không 
 
 Trước:
 
-> Định nghĩa dùng được thì nhìn theo đường đi của gói tin: hai máy cùng mạng khi gói tin đi từ máy này tới máy kia mà
+> Định nghĩa dùng được thì nhìn theo đường đi của packet: hai máy cùng mạng khi packet đi từ máy này tới máy kia mà
 > không phải qua router nào.
 
 Vấn đề là người đọc chưa có hình nào trong đầu, chủ ngữ là một cụm trừu tượng, và dấu hai chấm bị dùng làm khung
@@ -18,9 +18,9 @@ Sau:
 > của bạn nối vào nó bằng sóng WiFi, điện thoại cũng vậy, còn máy bàn thì có thể cắm cáp vào một cổng ở mặt sau của
 > nó. Ba máy đó cùng mạng với nhau, vì cả ba cùng nối vào một cục phát WiFi.
 
-Rồi vài đoạn sau, khi đã kể gói tin đi qua router ra sao:
+Rồi vài đoạn sau, khi đã kể packet đi qua router ra sao:
 
-> Tới đây thì nói lại được "cùng mạng" cho chính xác. Hai máy cùng mạng khi gói tin đi từ máy này sang máy kia mà
+> Tới đây thì nói lại được "cùng mạng" cho chính xác. Hai máy cùng mạng khi packet đi từ máy này sang máy kia mà
 > không phải đi qua router.
 
 ## 2. Câu cụt rời nhau
@@ -33,7 +33,7 @@ Vấn đề là không câu nào nhắc tới câu trước.
 
 Sau:
 
-> Trình duyệt đã biết phải tìm địa chỉ của api.example.com, nhưng tìm ở đâu? Máy người dùng không tự biết câu trả
+> Browser đã biết phải tìm địa chỉ của api.example.com, nhưng tìm ở đâu? Máy người dùng không tự biết câu trả
 > lời, nên nó phải hỏi DNS. Hệ điều hành gửi câu hỏi tới một server DNS đã được cài sẵn cho nó, thường là cục phát WiFi
 > trong nhà hoặc một server của nhà mạng. Server DNS đó hoặc trả lời luôn, hoặc đi hỏi tiếp giúp rồi mới trả lời.
 
@@ -45,7 +45,7 @@ Trước:
 
 Sau:
 
-> Giả sử sếp nhắn đúng một câu: "Web không vào được em ơi." Không có ảnh chụp, không có mã lỗi, không biết hỏng từ lúc
+> Giả sử sếp chỉ nhắn một câu: "Web không vào được em ơi." Không có ảnh chụp, không có mã lỗi, không biết hỏng từ lúc
 > nào. Nhận được tin như thế thì bắt đầu tìm từ đâu?
 
 ## 4. Mở bằng bối cảnh thời đại
@@ -114,8 +114,8 @@ Trước:
 
 Sau:
 
-> Đưa app lên cụm bằng gì? Bằng một Deployment, tức một bản khai nói "muốn có ba bản app đang chạy". Cụm giữ đủ số bản
-> đó, bản nào chết thì nó thay bản khác vào.
+> Đưa app lên cluster bằng gì? Bằng một Deployment, tức một tệp YAML nói "muốn có ba bản sao app đang chạy". Cluster giữ
+> đủ ba bản sao, bản sao nào chết thì nó chạy bản sao khác thay vào.
 
 Các tên còn lại để tới những đoạn sau, mỗi đoạn một tên.
 
@@ -161,7 +161,7 @@ Trước:
 Sau:
 
 > Router khác switch ở hai chỗ. Thứ nhất, switch nằm trong một mạng, còn router đứng giữa hai mạng. Thứ hai, switch
-> chỉ đọc địa chỉ MAC trên lớp vỏ, còn router mở lớp vỏ ra và đọc địa chỉ IP bên trong để biết gói tin cần sang mạng
+> chỉ đọc địa chỉ MAC trên lớp vỏ, còn router mở lớp vỏ ra và đọc địa chỉ IP bên trong để biết packet cần sang mạng
 > nào.
 
 ## 14. Trải nghiệm bịa
@@ -176,8 +176,8 @@ Sau, nếu không có chuyện đó:
 
 Sau, nếu có một lần đoán sai thật đã được ghi lại:
 
-> Có lần mình đoán một website hết chứng chỉ đúng thứ Hai là do tình cờ. Không tình cờ đâu, vì hạn là ngày cấp cộng
-> 90 ngày.
+> Có lần mình đoán certificate của một website hết hạn vào thứ Hai là do tình cờ. Không tình cờ đâu, vì hạn là ngày
+> cấp cộng 90 ngày.
 
 ## 15. Kết bằng lời kêu gọi
 
@@ -199,7 +199,7 @@ Trước:
 Sau:
 
 > Chào anh, tối qua lúc 22h em deploy bản 2.4.1 lên production thì bị lỗi, trang đăng nhập trả 502 trong khoảng 12
-> phút. Em đã quay lại bản 2.4.0 lúc 22h15. Lý do là bản mới cần một biến môi trường mà production chưa có. Em sẽ bổ
+> phút. Em đã rollback về bản 2.4.0 lúc 22h15. Lý do là bản mới cần một biến môi trường mà production chưa có. Em sẽ bổ
 > sung và deploy lại lúc 14h hôm nay, anh duyệt giúp em trước giờ đó.
 
 ## 17. Báo cáo gửi cơ quan nhà nước
@@ -227,20 +227,20 @@ Sau, theo thể thức văn bản hành chính:
 
 Chủ ngữ là đơn vị chứ không phải "bọn mình". "Khoảng", "gần như đủ hết", "mấy chục" thay bằng con số có kỳ số liệu. Số
 viết theo kiểu Việt Nam. Ý đoán "chắc phải hỏi Sở" thành một kiến nghị cụ thể. Ba mục theo khung của Nghị định 09/2019.
-Bản "trước" thiếu con số 19 và 98,5% nên người viết phải đi tra lại; không có dữ kiện thì để trống, không tự điền.
+Bản "trước" thiếu con số 19 và 98,5% nên người viết phải đi tra lại; không có dữ kiện thì viết câu nói rõ chưa có số, không tự điền, không để ô trống.
 
 ## 18. Một chuỗi việc kéo theo nhiều thuật ngữ
 
 Trước:
 
-> App trả lời chậm thì Nginx hết proxy_read_timeout, trả 504 cho trình duyệt và ghi "upstream timed out" vào error log.
+> App trả lời chậm thì Nginx hết proxy_read_timeout, trả 504 cho browser và ghi "upstream timed out" vào error log.
 
 Vấn đề là một câu mang ba thuật ngữ mới (proxy_read_timeout, 504, upstream) mà không cái nào được giải nghĩa.
 
 Sau:
 
-> Vì sao trình duyệt báo 504 dù app vẫn đang chạy? Vì Nginx không chịu đợi app mãi. Nginx chuyển request vào app rồi đợi
-> câu trả lời, mặc định 60 giây, quá thời gian đó thì nó bỏ và tự trả cho trình duyệt mã 504, mã HTTP nghĩa là chỗ đứng
+> Vì sao browser báo 504 dù app vẫn đang chạy? Vì Nginx không chịu đợi app mãi. Nginx chuyển request vào app rồi đợi
+> câu trả lời, mặc định 60 giây, quá thời gian đó thì nó bỏ và tự trả cho browser mã 504, mã HTTP nghĩa là chỗ đứng
 > giữa đã đợi phía sau quá lâu.
 >
 > Mã 504 ấy thường đi kèm một dòng trong error log của Nginx có chữ `upstream timed out`. Upstream là tên Nginx gọi app
@@ -293,7 +293,7 @@ Trước:
 > Giống một cái tủ 100 ngăn đã đầy 95 ngăn. Bạn mở các ngăn quen ra đếm được 60 ngăn đồ của mình, vậy 35 ngăn kia là đồ
 > người khác để vào. Ví von này hết đúng ở chỗ tủ thì có cửa, còn ổ đĩa thì không.
 
-Vấn đề là ẩn dụ gán số và chủ cho phần chênh ("35 ngăn kia là đồ người khác"), đúng điều bài vừa nói là chưa biết. Chỗ
+Vấn đề là phép so sánh gán số và chủ cho phần chênh ("35 ngăn kia là đồ người khác"), mà đó là điều bài vừa nói là chưa biết. Chỗ
 hết đúng được chọn là một khác biệt vô hại, không chặn được cách suy sai đó.
 
 Sau:
@@ -391,5 +391,5 @@ Sau:
 > ngăn khác. Ví von này hết đúng ở chỗ đồ người khác trong tủ thường để yên một cỡ, còn image Docker và journal có thể
 > lớn dần mỗi lần deploy, mà chưa đo nên chưa biết cái nào đang lớn.
 
-Câu mở có chủ ngữ là thứ đang bàn. Vế so là việc người ta làm thật. Chỗ hết đúng nói đúng điều chưa biết (cỡ và xu
+Câu mở có chủ ngữ là thứ đang bàn. Vế so là việc người ta làm thật. Chỗ hết đúng nói ra điều chưa biết (cỡ và xu
 hướng), không nói ngược điều bài đã kể.
