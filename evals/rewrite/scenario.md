@@ -5,7 +5,7 @@ namespace shop, người tên Minh, team Platform, bộ phận CSKH không gắn
 
 ## Đề thử điều gì của skill
 
-Đề nặng hơn eval số 2 trong `skill/evals/evals.json` ở bốn chỗ:
+Đề nặng hơn eval số 2 trong `skill/evals/evals.json` ở năm chỗ:
 
 1. Đoạn gốc có nhiều dữ kiện (giờ, phần trăm, độ trễ, số pod, phiên bản, lệnh, hạn) xen với lời độn không có dữ kiện,
    nên phải bỏ lời độn mà không rơi dữ kiện nào. Thử mục "Sửa văn có sẵn" của SKILL.md và `core-rules.md` mục "Khi sửa
@@ -17,6 +17,11 @@ namespace shop, người tên Minh, team Platform, bộ phận CSKH không gắn
    cùng luật ở `punctuation.md`: gạch dài trong lời trích ghi thành gạch nối, không đổi chữ nào khác.
 4. Có bẫy sửa quá tay: một câu bác bỏ hợp lệ ("không phải database quá tải") vì ý bị bác đã được nói ngay trước, và một
    câu đã ổn (câu 14:20). Thử mục G "Sửa quá tay" của `machine-tells.md` và luật "câu đã ổn thì để yên".
+
+5. Có ba bẫy về thành phần tình thái (`word-choice.md`, mục Thành phần tình thái): dòng tóm tắt đầu bài nói chắc nguyên nhân trong
+   khi thân bài nói "nhiều khả năng"; câu "chắc có lẽ" chồng hai thành phần tình thái; và câu khuyến mãi gồm một ý đã biết
+   (khuyến mãi bắt đầu lúc 14:00) với một ý đang đoán (request tăng vì khuyến mãi), nên thành phần tình thái phải đứng trước
+   ý đoán chứ không phủ lên cả câu.
 
 Ngoài ra thử luật riêng của mảng: một thứ một tên (`word-choice.md`), lỗi chính tả và câu thiếu chủ ngữ
 (`common-errors.md`), ký hiệu trong câu văn (`punctuation.md`), các dấu hiệu ở bảng A tới F của `machine-tells.md`, và cách trả
@@ -45,6 +50,8 @@ Bài phải giữ đủ, đúng giá trị và đúng mức chắc chắn:
 | D15 | Việc tiếp: đưa pool về 50 trong bản 3.8.1, Minh làm, hạn 07/11 |
 | D16 | Việc tiếp: thêm cảnh báo khi số luồng chờ kết nối quá 10 (lớn hơn 10, không phải "từ 10") trong 2 phút |
 | D17 | Việc tiếp: chạy load test để xác nhận nguyên nhân, chưa có người nhận |
+| D18 | Chương trình khuyến mãi bắt đầu lúc 14:00 (gốc nói như điều đã biết) |
+| D19 | Lượng request tăng có lẽ vì khuyến mãi: một thành phần tình thái, mức "có lẽ" (gốc chồng "chắc có lẽ", lấy mức thấp hơn) |
 
 Ba việc ở D15 tới D17 là việc sắp làm, không được viết như đã làm xong.
 
@@ -55,6 +62,9 @@ Ba việc ở D15 tới D17 là việc sắp làm, không được viết như �
   xong, nhưng đó là đoán, không được viết thành dữ kiện).
 - Không viết nguyên nhân thành điều đã chắc ("nguyên nhân là pool quá nhỏ") ở bất cứ câu nào. Gốc có câu nói chắc, nhưng
   ngay sau đó gốc nói chưa xác nhận; bản sửa phải theo mức "nhiều khả năng", hoặc nêu chỗ lệch cho người dùng.
+- Không giữ dòng "Nguyên nhân gốc: bản 3.8.0 giảm connection pool…" ở mức chắc. Bỏ dòng đó, hoặc viết lại theo mức
+  "nhiều khả năng" của thân bài, hoặc nêu chỗ lệch với người dùng.
+- Không viết "request tăng vì khuyến mãi" thành điều đã chắc, cũng không đẩy giờ bắt đầu khuyến mãi thành điều đang đoán.
 - Không thêm con số doanh thu, số đơn hàng, số khách bị ảnh hưởng.
 - Không thêm người nhận cho việc load test, không thêm hạn cho việc cảnh báo và load test.
 - Không thêm giải thích kỹ thuật mà gốc không có (ví dụ vì sao pool 20 thì nghẽn, mỗi request giữ kết nối bao lâu, thời
@@ -84,8 +94,11 @@ kết "Tóm lại, hãy luôn nhớ rằng…".
 | Hai chấm làm khung định nghĩa | "Liveness probe: cơ chế…" | Viết thành câu có "là", giữ đủ nghĩa | Bỏ hẳn lời giải nghĩa; hoặc giữ khuôn hai chấm |
 | Bác bỏ hợp lệ | "Ban đầu, team nghi… Tuy nhiên, CPU… 35%" | Giữ ý bác bỏ, chỉ bỏ in hoa | Xoá vì tưởng là khuôn "không phải X mà là Y" |
 | Câu đã ổn | "Lúc 14:20, Minh mở dashboard…" | Để gần như nguyên | Viết lại kiểu văn hoa hơn |
+| Tóm tắt chắc hơn thân bài | dòng "Nguyên nhân gốc:" dưới nhan đề | Bỏ, hoặc hạ xuống "nhiều khả năng" | Giữ nguyên vì nó chỉ là một dòng tóm tắt |
+| Chồng thành phần tình thái | "chắc có lẽ lượng request tăng" | Giữ một từ, mức "có lẽ" | Giữ cả hai, hoặc chỉ giữ "chắc" làm mức cao lên |
+| Thành phần tình thái phủ cả câu | câu khuyến mãi | "Khuyến mãi bắt đầu lúc 14:00, có lẽ vì thế lượng request tăng" | "Có lẽ khuyến mãi bắt đầu lúc 14:00 nên…", hay bỏ hẳn chữ phỏng đoán |
 | Xưng "chúng ta" | đoạn hai, đoạn bốn | Không xưng hô, chủ ngữ là team Platform, đúng chủ thể | Đổi sang "mình", "bạn", "chúng tôi" |
 | Danh sách việc có nhãn in đậm | đoạn bốn | Giữ danh sách (ba việc có người, hạn thật) nhưng bỏ nhãn in đậm, hoặc viết thành câu | Giữ "**Cấu hình:**" |
-| Văn máy mới | cả bài | Không thêm | Thêm câu tóm, "đáng chú ý", "chính là", câu chốt mới |
+| Văn AI slop mới | cả bài | Không thêm | Thêm câu tóm, "đáng chú ý", "chính là", câu chốt mới |
 | Sửa quá tay | cả bài | Câu ghép có quan hệ nhân quả | Chặt thành chuỗi câu cụt mỗi câu một giờ |
 | Cách trả kết quả | cuối bài | Bản sửa, rồi tối đa năm dòng thay đổi chính kèm lý do, một dòng hỏi về giờ rollback | Mở bằng "Dưới đây là…", danh sách mười dòng, bảng chấm điểm, ghi ra tệp khi không được nhờ |

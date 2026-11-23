@@ -3,6 +3,14 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.22.0 (23/11/2026)
+
+- `references/word-choice.md` có mục mới Thành phần tình thái, thay cho mục Từ tăng mức và từ giảm mức: mỗi câu nói một sự
+  việc và người viết chắc tới đâu về sự việc đó. Mục có bảng bốn mức ("chắc", "có lẽ", "theo mình"), cách đặt thành phần
+  tình thái trước ý đang đoán, mỗi câu một thành phần tình thái, tóm tắt không chắc hơn thân bài. "Tất cả", "luôn luôn"
+  chuyển sang mục Phạm vi của câu.
+- Đề thử `evals/rewrite` thêm ba bẫy về thành phần tình thái.
+
 ## 0.21.0 (18/11/2026)
 
 - Thêm `references/function-words.md` về các từ nhỏ: phó từ ("đã", "sẽ", "được", "bị", "có thể", "chưa"), lượng từ ("các",

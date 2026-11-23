@@ -55,10 +55,43 @@ Với người mới thì đưa một câu dùng thật hoặc một vật thậ
 Nói về tài nguyên thì dùng "hết", "đầy", "tràn". Nói về việc làm thì dùng "xem", "thử", "kiểm tra", "sửa", "chạy",
 "tắt", "bật". Nói về lý do thì dùng "lý do", "vì sao".
 
-## Từ tăng mức và từ giảm mức
+## Thành phần tình thái
 
-- Tăng: tất cả, mọi, luôn luôn, chắc chắn, rõ ràng. Chỉ dùng khi không có ngoại lệ.
-- Giảm: thường thì, phần lớn, ít khi, không mấy, có lẽ, hình như.
+Mỗi câu nói hai thứ: một sự việc (ổ đầy, request bị chặn), và người viết chắc tới đâu về sự việc đó. Sách Ngữ văn 11 gọi
+phần thứ hai là nghĩa tình thái; những chữ nói ra nó, như "chắc", "có lẽ", sách lớp 9 gọi là thành phần tình thái. Cùng
+một sự việc mà khác thành phần tình thái thì người đọc làm việc khác: đọc "ổ đầy" thì họ dọn ổ ngay, đọc "có lẽ ổ
+đầy" thì họ kiểm tra lại trước đã.
+
+| Mức | Từ | Dùng khi |
+|---|---|---|
+| Chắc chắn | để câu trơn; "chắc chắn", "rõ là" chỉ khi người đọc đang có lý do để nghi | đã kiểm tra: có log, có số đo, đã chạy lại |
+| Phỏng đoán cao | "chắc", "hẳn là" | có dấu hiệu mạnh nhưng chưa kiểm tra |
+| Phỏng đoán thấp | "có lẽ", "hình như", "có vẻ" | mới có một dấu hiệu, hay đang đoán |
+| Ý riêng | "theo mình", "theo tôi" | đánh giá, đề xuất; không dùng cho sự việc đã kiểm tra |
+
+Câu trơn, không có thành phần tình thái, đọc thành chắc chắn. Vì thế điều chưa kiểm tra phải mang một từ phỏng đoán,
+hoặc ghi rõ "chưa kiểm tra". Ngược lại, thêm "chắc chắn" vào câu đã chắc chỉ là chữ nhấn thừa.
+
+Cách đặt thành phần tình thái:
+
+- Đặt ở đầu câu ("Có lẽ ổ đã đầy.") hay ngay trước vị ngữ ("Ổ có lẽ đã đầy."). Từ đó áp cho cả phần đứng sau nó.
+- Câu có một ý đã kiểm tra và một ý đang đoán thì đặt từ phỏng đoán ngay trước ý đoán: "Ổ đầy, có lẽ vì log tăng sau bản
+  2.4." Ổ đầy là việc đã thấy, còn lý do thì mới đoán.
+- Một câu một thành phần tình thái. "Có lẽ hình như", "chắc có lẽ" chồng hai mức, người đọc không biết người viết chắc
+  tới đâu.
+- Mọi câu nói về cùng một việc giữ cùng một mức, kể cả câu tóm tắt ở đầu báo cáo: thân bài ghi "có lẽ" thì tóm tắt không
+  được viết "Nguyên nhân là ổ đầy" (`common-errors.md`, dòng Hai câu lệch mức chắc chắn).
+
+Tình thái từ ("ạ", "nhé", "nhỉ") là loại khác: chúng nói quan hệ với người đọc chứ không nói mức chắc chắn. Xem
+`function-words.md`, mục Tình thái từ.
+
+## Phạm vi của câu
+
+Thành phần tình thái nói người viết chắc tới đâu, còn phạm vi nói sự việc đúng cho bao nhiêu trường hợp.
+
+- Lượng từ chỉ toàn thể ("tất cả", "mọi") và phó từ "luôn luôn", "không bao giờ" nói sự việc đúng cho mọi trường hợp.
+  Chỉ dùng khi không có ngoại lệ.
+- "Thường thì", "phần lớn", "ít khi", "không mấy" thu hẹp lại, dùng khi có ngoại lệ.
 
 ## So sánh và ẩn dụ
 

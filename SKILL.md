@@ -6,7 +6,7 @@ argument-hint: "[write|edit|review|score|word|bid|memory|secret|feedback] <yêu 
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.21.0"
+  version: "0.22.0"
 ---
 
 # Viết cho lưu loát
@@ -149,7 +149,7 @@ thì soạn luôn, không hỏi lại.
 | `references/sentences-and-paragraphs.md` | câu ghép, trạng ngữ, đoạn, câu chủ đề |
 | `references/common-errors.md` | lỗi câu, lỗi đoạn, lỗi dùng từ |
 | `references/punctuation.md` | dấu gạch, ký hiệu, dấu câu |
-| `references/word-choice.md` | giải nghĩa thuật ngữ, chọn từ, viết hoa, tên riêng |
+| `references/word-choice.md` | giải nghĩa thuật ngữ, chọn từ, thành phần tình thái, viết hoa, tên riêng |
 | `references/voice.md` | chọn giọng, viết theo giọng một người |
 | `references/citations-data-figures.md` | lời trích, nguồn, con số, hình, bảng |
 | `references/document-types.md` | giải thích, hướng dẫn, báo cáo, báo cáo sự cố, thư, tin nhắn công việc, thông báo gửi khách, kiến nghị, nghị luận |
