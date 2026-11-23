@@ -40,6 +40,7 @@ Thang 100 điểm, đạt từ 95. Đáp án dữ kiện D1 tới D10 và bẫy 
 | T5: câu kết bằng "cho" (hay một hư từ khác) còn nguyên | 5 |
 | T6: thứ tự giờ vẫn lộn, hay một đoạn trộn hai đề tài làm người đọc lẫn mốc | 5 |
 | Gộp câu mà vế sau mượn chủ ngữ không làm được việc đó | 2 mỗi chỗ |
+| Gộp hai việc dưới một trạng ngữ chỉ giờ đầu câu, làm việc không có giờ trong gốc mang luôn mốc giờ ấy ("Lúc 02:10, Lan nhận cảnh báo… và xoá log…") | 2 |
 | Chặt thêm câu cụt hay để nguyên chuỗi câu cụt ở chỗ khác ngoài T1 tới T3 | 3 mỗi chuỗi |
 
 ## C. Độ lưu loát, đọc tuần tự từng câu: 20 điểm

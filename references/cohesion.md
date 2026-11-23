@@ -55,7 +55,10 @@ Nhiều khi không cần thêm từ nối, chỉ cần đổi kiểu câu (sách
 | Câu có trạng ngữ chỉ tình huống | Gộp hai câu liền nhau cùng một chủ thể | "Tuấn đọc xong log. Tuấn mở ticket cho nhóm database." | "Đọc xong log, Tuấn mở ticket cho nhóm database." |
 
 Câu bị động vẫn phải nói ai làm khi việc đó là chỗ người đọc cần biết (`core-rules.md`, điều 5). Gộp bằng trạng ngữ chỉ
-tình huống thì chỉ gộp khi hai việc nối tiếp nhau trong gốc; không thêm "nên", "vì" mà gốc không nói.
+tình huống thì chỉ gộp khi hai việc nối tiếp nhau trong gốc; không thêm "nên", "vì" mà gốc không nói. Hai câu liền nhau
+cùng một chủ thể thì gộp, đừng chỉ đưa mốc giờ lên đầu câu thứ nhất rồi để câu thứ hai lặp lại chủ ngữ. Gốc chỉ ghi giờ
+cho một việc thì đặt mốc giờ cạnh việc đó, không để trạng ngữ đầu câu phủ cả hai: "Nhận tin nhắn của khách lúc 09:00,
+Tuấn mở ticket", không "Lúc 09:00, Tuấn nhận tin nhắn của khách và mở ticket" (gốc không nói ticket mở lúc 09:00).
 
 ## Nối đoạn
 
