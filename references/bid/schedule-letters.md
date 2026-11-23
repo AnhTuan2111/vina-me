@@ -5,7 +5,7 @@
 - Thời gian thực hiện lấy từ HSMT; ghi rõ ngày 1 tính từ đâu (ngày ký hợp đồng hay ngày hợp đồng có hiệu lực) theo chữ của
   HSMT. Mốc giao hàng sớm nhất, muộn nhất theo Mẫu 01A.
 - Bảng tiến độ tóm tắt (bảng thường, trang dọc): STT | Nội dung công việc | Đơn vị tính | Khối lượng | Tổng số ngày | Kết quả /
-  Ghi chú (7/20/12/19/14/28). Nhóm A cung cấp hàng hóa (từng hạng mục, khối lượng theo Mẫu 01A); nhóm B theo hạng mục triển khai, đào tạo (chỉ gọi "dịch vụ liên quan" khi Mẫu 01D có).
+  Ghi chú (tỉ lệ cột ở `house-style.md`, bảng tỉ lệ cột; `bid-docx` báo `SỬA` thì theo số nó in ra). Nhóm A cung cấp hàng hóa (từng hạng mục, khối lượng theo Mẫu 01A); nhóm B theo hạng mục triển khai, đào tạo (chỉ gọi "dịch vụ liên quan" khi Mẫu 01D có).
 - Mọi câu nói thời điểm ở phần khác (đặt hàng, giao, lắp, đào tạo, nghiệm thu) lấy đúng "ngày N" của bảng tiến độ; không viết
   "ngay sau khi ký hợp đồng" khi bảng bắt đầu việc đó từ ngày 3.
 - Lịch từng việc trong thời gian HSMT cho là đề xuất của nhà thầu: đánh dấu `[cần xác nhận: lịch tiến độ do nhà thầu đề xuất]`

@@ -50,6 +50,9 @@ liền.
 - Hai ý có quan hệ nhân quả, điều kiện, nhượng bộ thì cho vào một câu ghép: vì… nên, nếu… thì, tuy… nhưng, phải… thì…
   mới.
 - Đã mở cặp thì đóng cặp. Hai vế nói về cùng một loại thứ.
+- Vế sau bỏ chủ ngữ thì mượn chủ ngữ của vế trước. Chủ ngữ ấy không làm được việc ở vế sau thì nói chủ ngữ riêng: "Bản
+  2.3 thêm cache cho trang tìm kiếm, nhưng nhóm chưa đo lại độ trễ", không "Bản 2.3 thêm cache cho trang tìm kiếm, chưa đo
+  lại độ trễ" (bản phần mềm không tự đo). Gộp hai câu khi sửa văn hay sinh ra lỗi này nhất.
 - Câu 20 tới 30 tiếng không sao, miễn khớp nối rõ. Câu cụt dùng để nói kết quả của một bước kiểm tra ("Log app sạch."), không dùng để tóm hay răn.
 - Câu dài ngắn xen nhau. Đoạn một câu chỉ dùng khi câu đó là kết quả hay bước ngoặt cần đứng riêng; báo cáo, hướng dẫn
   không chèn đoạn một câu cho có nhịp.
