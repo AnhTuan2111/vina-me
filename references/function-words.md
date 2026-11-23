@@ -36,7 +36,9 @@ cần "được": "Tệp này dùng để lưu cấu hình", không phải "Tệ
 xem thêm `machine-tells.md` mục B.
 
 "Được" đi với việc có lợi hay trung tính cho chủ ngữ, "bị" đi với việc thiệt cho chủ ngữ. "Tài khoản được khoá sau năm lần
-nhập sai" sai sắc thái, vì người dùng chịu thiệt, nên viết "tài khoản bị khoá".
+nhập sai" sai sắc thái, vì người dùng chịu thiệt, nên viết "tài khoản bị khoá". Việc hệ thống làm theo lịch hay theo thiết kế (xoá
+bản cũ, đóng phiên hết hạn) không thiệt cho ai, nên thường bỏ cả "được" lẫn "bị": "Phiên đăng nhập hết hạn sau 30 phút thì
+tự đóng", không "bị đóng".
 
 Giữ "được" khi bỏ đi thì chủ ngữ đọc thành người làm việc đó. "Phần mềm thuê từ tháng 02" đọc như phần mềm đi thuê, nên phải
 viết "Phần mềm được thuê từ tháng 02" (`official-documents.md`). Bị động cũng dùng được có chủ ý, để giữ thứ đang bàn ở đầu

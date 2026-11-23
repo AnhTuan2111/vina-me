@@ -232,7 +232,11 @@ Những dấu hiệu gặp nhiều nhất, bảng đầy đủ ở `references/m
 - Giữ nguyên dữ kiện, con số, tên riêng, mức chắc chắn, ý của tác giả. Không thêm chi tiết, ví dụ, nguồn. Đoạn gốc
   thiếu chi tiết thật mà bản sửa cần chi tiết đó mới viết được thì nói với người dùng là thiếu, không tự điền. Dữ kiện
   vênh nhau thì giữ như gốc và hỏi, không gỡ theo cách đọc của mình (`references/common-errors.md`, dòng Hai dữ kiện
-  vênh nhau).
+  vênh nhau). Gốc tự lệch mức chắc chắn (một câu nói chắc, câu khác nói chưa xác nhận) thì theo mức thấp hơn ở mọi câu,
+  vì chính tác giả đã nói là chưa chắc (`references/common-errors.md`, dòng Hai câu lệch mức chắc chắn).
+- Gộp hay viết lại câu thì không thêm quan hệ trước sau, nhân quả mà gốc không nói: gốc kể hai lệnh rời nhau thì không
+  viết "cài xong rồi chạy lệnh kia". Dời một lời trích sang chỗ khác thì có câu dẫn nối nó vào mạch kể (nó minh hoạ ảnh
+  hưởng nào). Chữ in đậm giữa câu văn của gốc thì bỏ.
 - Không đụng lời trích nguyên văn, output, code, đường dẫn, tên lệnh.
 - Giữ giọng của tác giả. Chỉ đổi xưng hô khi được yêu cầu.
 
@@ -296,10 +300,11 @@ Bảng Trả kết quả trong SKILL.md là bản gọn; đây là bản đủ.
   dữ kiện. Không tóm lại văn bản, không kể việc đã soát (nói dữ kiện nào đã đối chiếu với nguồn thì không tính là kể
   việc soát), không kể lại chỗ người dùng đã tự chốt; cả lời trả không quá ba
   câu (mục Trả lời trong chat ở trên). Tài liệu gửi khách thì theo `references/diagrams-and-docs.md`.
-- **Sửa đoạn được dán vào.** Bản đã sửa, rồi tối đa năm dòng nêu thay đổi chính. Mỗi dòng một thay đổi kèm lý do của nó
+- **Sửa đoạn được dán vào.** Bản đã sửa đặt ngay đầu lời trả, không câu dẫn ("Bản sửa đây:", "Dưới đây là bản đã sửa"),
+  rồi tối đa năm dòng nêu thay đổi chính. Mỗi dòng một thay đổi kèm lý do của nó
   ("bỏ câu hỏi tu từ vì nó không đưa dữ kiện nào"); dòng chỉ kể đã sửa gì mà không nói vì sao thì chưa đủ. Chỗ vênh hay
-  đọc được hai cách mà bản sửa phải chọn một mới viết được thì thêm một dòng hỏi ở cuối, ngoài năm dòng: câu nào ghi gì,
-  cách hiểu có thể. Không hỏi thêm chi tiết gốc không có (chức danh của một người, một con số) để bài đầy hơn; chỗ gốc
+  đọc được hai cách mà bản sửa phải chọn một mới viết được thì thêm một dòng hỏi ở cuối, ngoài năm dòng: một câu hỏi, câu nào ghi
+  gì, cách hiểu có thể. Chỗ cần hỏi nhiều hơn một thì hỏi chỗ bản sửa phải chọn mà không chọn được. Không hỏi thêm chi tiết gốc không có (chức danh của một người, một con số) để bài đầy hơn; chỗ gốc
   thiếu mà bản sửa giữ như gốc thì không hỏi.
 - **Sửa một tệp.** Chỉ sửa phần văn, báo số chỗ đã sửa theo loại, kiểu "6 câu hỏi rồi đáp, 7 chỗ xưng hô, 1 dấu gạch".
 - **Soát mà không sửa.** Từng chỗ "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ, theo thứ tự người dùng dặn nếu có. Mỗi
