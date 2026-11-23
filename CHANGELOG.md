@@ -11,6 +11,8 @@ dòng đầu của mục là dòng được in ra khi cập nhật.
   nhận không biết đó là lỗi.
 - Đề thử `evals/review` cài thêm một câu lạc đề kèm suy luận không theo được và một câu phán xét người đọc; thang chấm có
   mục mới cho phương châm hội thoại.
+- Lời soát mà không sửa: lỗi làm người đọc hiểu sai giờ, ngày, con số xếp trên lỗi câu chữ; nhắc lại chỗ khác bằng vài
+  chữ của câu gốc, không bằng số mục tự đặt; không đưa dữ kiện ngoài tệp để bác câu gốc.
 
 ## 0.22.2 (23/11/2026)
 
