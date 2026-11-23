@@ -12,7 +12,7 @@ pwsh -NoProfile -File scripts/bid/render-pdf.ps1 -OutDir work/sample <mẫu.docx
 pdftoppm -r 60 -png <mẫu.pdf> page                 # ảnh từng trang
 ```
 
-Xem ảnh đủ sáu loại trang: bìa, mục lục, trang mở phần lớn, trang thân bài có gạch đầu dòng, trang bảng, trang tiến độ, trang
+Xem ảnh đủ bảy loại trang: bìa, mục lục, trang mở phần lớn, trang thân bài có gạch đầu dòng, trang bảng, trang tiến độ, trang
 cam kết. Ghi vào `02-sample.md` những gì đo được, theo các mục dưới.
 
 ## Hồ sơ mẫu của công ty (thuyết minh đề xuất kỹ thuật, 68 trang), đo ngày 09/11/2026
@@ -82,7 +82,7 @@ skill không chép theo.
 - Rộng 16 cm, căn giữa, không khung; chú thích ngay dưới. Hình là sơ đồ dựng sẵn (kiến trúc, mô hình triển khai).
 
 ### Tiến độ và cam kết
-Xem `schedule-letters.md`; `bid-docx.mjs` có sẵn khối `gantt` và `letter` dựng đúng các số đo đó.
+Xem `schedule-letters.md`; `bid-docx.mjs` có sẵn khối `gantt` và `letter` dựng theo các số đo đó.
 
 ### Tài liệu kỹ thuật sản phẩm (54 trang) khác thuyết minh ở
 - một section, lề dưới 1 cm; bìa: tên công ty phát triển đậm cỡ 14 trên cùng, tên tài liệu đậm cỡ 16 cách trên 6,35 cm, dòng

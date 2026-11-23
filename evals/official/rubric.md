@@ -81,7 +81,7 @@ khối Căn cứ, Kính gửi, câu mở, câu kết theo khuôn không bị coi
 | Lỗi | Trừ |
 |---|---|
 | Ở phần lời văn (sự cần thiết, kiến nghị), câu sau không dựa trên câu trước, đứng rời thành ý mới mà không có từ nối (mỗi chỗ) | 2, tối đa 6 |
-| Văn máy mang từ bản nháp hay tự sinh: "trong bối cảnh", "không chỉ... mà còn", "đóng vai trò then chốt", "chìa khóa", "khổng lồ", "mạnh mẽ", "góp phần quan trọng", "có thể nói", "hướng tới", câu khẩu hiệu không có dữ kiện (mỗi chỗ) | 2, tối đa 6 |
+| Văn AI slop mang từ bản nháp hay tự sinh: "trong bối cảnh", "không chỉ... mà còn", "đóng vai trò then chốt", "chìa khóa", "khổng lồ", "mạnh mẽ", "góp phần quan trọng", "có thể nói", "hướng tới", câu khẩu hiệu không có dữ kiện (mỗi chỗ) | 2, tối đa 6 |
 | Câu chốt cuối đoạn nhắc lại điều vừa nói ("Do đó, việc ... là hết sức cần thiết và cấp bách", "Tóm lại...") quá một lần trong cả văn bản; lần đầu được giữ nếu nó theo sau dữ kiện | 2 mỗi lần thừa |
 | Liệt kê cho đủ: bộ ba tính từ ("nhanh chóng, thuận tiện, hiệu quả"), "một là, hai là", các điểm lợi ích chung chung không gắn dữ kiện nào của đề (mỗi chỗ) | 2, tối đa 4 |
 | Chữ nhấn thừa: "rất", "hết sức", "vô cùng", "thực sự", "nghiêm trọng" khi đề không nói mức đó (mỗi chỗ) | 1, tối đa 3 |

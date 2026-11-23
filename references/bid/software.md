@@ -18,7 +18,7 @@ chức năng HSMT liệt kê với thuyết minh, nên đi theo đúng danh sác
 
 - Công nghệ, kiến trúc là đề xuất của nhà thầu: viết rõ ràng nhưng chỉ những gì nhà thầu làm được; stack cụ thể (ngôn ngữ, cơ sở
   dữ liệu, mô hình AI) lấy từ tài liệu kỹ thuật hoặc BA, không có thì viết ở mức thành phần ("máy chủ ứng dụng", "cơ sở dữ liệu
-  quan hệ", "mô hình ngôn ngữ chạy tại máy chủ của Chủ đầu tư") và đánh dấu `[cần xác nhận: công nghệ cụ thể]` một lần ở đầu mục.
+  quan hệ", "mô hình ngôn ngữ chạy tại máy chủ của Chủ đầu tư") và đánh dấu `[cần xác nhận: công nghệ cụ thể]` ở câu đầu mục; mỗi chỗ khác trong hồ sơ nhắc lại công nghệ ấy có `[cần xác nhận]` ngắn (`writing.md`), như "PostgreSQL 16 [cần xác nhận] mã hoá dữ liệu khi lưu".
 - Gói có mua máy chủ thì mô hình triển khai đặt phần mềm lên chính máy chủ đã chào, nêu thông số đã chào; có thiết bị đầu cuối
   (máy tính bảng) thì nêu ứng dụng chạy trên thiết bị đó.
 - Kết nối, đồng bộ, IPv6, xác thực theo đúng yêu cầu HSMT; không thêm kết nối HSMT không nói.
@@ -28,9 +28,9 @@ chức năng HSMT liệt kê với thuyết minh, nên đi theo đúng danh sác
 - Tính năng Chương V không đòi (dùng ngoại tuyến, đồng bộ khi mất mạng, thông báo đẩy) không tự hứa; đề xuất thêm thì đánh dấu
   như cam kết mới.
 - Chi tiết kỹ thuật cụ thể (giao thức, cách lưu mật khẩu, khóa tài khoản, giao diện chạy ở đâu, mã hóa) chỉ viết khi HSMT hay BA
-  nêu; nhà thầu đề xuất thêm thì đánh dấu `[cần xác nhận: đề xuất của nhà thầu]` một lần ở đầu mục. Điều gì báo cáo bảo "nên hỏi
+  nêu; nhà thầu đề xuất thêm thì đánh dấu `[cần xác nhận: đề xuất của nhà thầu]` ở câu đầu mục, và `[cần xác nhận]` ngắn ở mỗi chỗ khác nhắc lại đề xuất ấy. Điều gì báo cáo bảo "nên hỏi
   đơn vị phát triển" thì trong hồ sơ cũng phải có chỗ đánh dấu.
-- BA đã nêu công nghệ thì viết đúng chữ BA. Dù BA nêu hay chưa, không suy thêm cách chạy (mô hình chạy trên CPU hay GPU, Chủ
+- BA đã nêu công nghệ thì giữ nguyên chữ BA dùng. Dù BA nêu hay chưa, không suy thêm cách chạy (mô hình chạy trên CPU hay GPU, Chủ
   đầu tư lắp thêm phần cứng, "còn khe PCIe cho GPU rời khi cần", phần mềm nào đặt trên ổ nào, số luồng, bản phát hành): mỗi chi tiết thêm là một cam kết BA chưa duyệt, và câu đẩy việc sang
   Chủ đầu tư (tự lắp, tự mua) là bất lợi cho hồ sơ.
 

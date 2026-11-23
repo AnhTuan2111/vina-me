@@ -1,16 +1,16 @@
-# Từ nhỏ: phó từ, lượng từ, chỉ từ, quan hệ từ, trợ từ, tình thái từ
+# Hư từ, chỉ từ và đại từ
 
-Tiếng Anh đổi hình dạng của từ để báo thời, báo số nhiều, báo bị động: "do" thành "did", "user" thành "users", "is done".
+Tiếng Anh biến đổi hình thái của từ để báo thời, báo số nhiều, báo bị động: "do" thành "did", "user" thành "users", "is done".
 Tiếng Việt không làm thế. "Làm" ở hôm qua hay ngày mai vẫn là "làm", một máy hay mười máy vẫn là "máy". Thời gian, số
-lượng và quan hệ giữa các thứ trong câu nằm ở trật tự từ và ở những từ nhỏ đứng quanh từ chính, như "đã", "các", "được",
-"của". Sách Ngữ văn 11 gọi đó là đặc điểm của ngôn ngữ đơn lập.
+lượng và quan hệ giữa các thứ trong câu nằm ở trật tự từ và ở hư từ, tức những từ không tự gọi tên sự vật hay hoạt động mà
+đứng quanh từ chính để thêm ý, như "đã", "các", "được", "của". Sách Ngữ văn 11 gọi đó là đặc điểm của ngôn ngữ đơn lập.
 
-Vì thế văn dịch sát tiếng Anh hay thừa từ nhỏ, và văn AI slop mắc cùng lỗi đó: mỗi hình thái tiếng Anh thành một từ
+Vì thế văn dịch sát tiếng Anh hay thừa hư từ, và văn AI slop mắc cùng lỗi đó: mỗi hình thái tiếng Anh thành một từ
 tiếng Việt. "Was deployed" thành "đã được triển khai", "the users" thành "các người dùng", "the configuration of the
 proxy" thành "việc cấu hình của proxy". Câu vẫn đúng ngữ pháp nhưng nặng, và người đọc nghe ra giọng dịch.
 
-Cách thử dùng cho cả tệp: bỏ từ nhỏ đi rồi đọc lại câu. Nghĩa không đổi thì bỏ. Nghĩa đổi, hay câu đọc được hai cách, thì
-giữ. Từ nhỏ đúng ở rất nhiều câu, nên xét từng chỗ chứ không xoá hàng loạt.
+Cách thử dùng cho cả tệp: bỏ hư từ đi rồi đọc lại câu. Nghĩa không đổi thì bỏ. Nghĩa đổi, hay câu đọc được hai cách, thì
+giữ. Hư từ đúng ở rất nhiều câu, nên xét từng chỗ chứ không xoá hàng loạt.
 
 ## Phó từ
 
@@ -23,7 +23,7 @@ Câu có mốc thời gian ("lúc 09:10", "hôm qua"), hay câu trước đã đ
 
 | Câu dịch sát | Sửa |
 |---|---|
-| "Lúc 09:10, dịch vụ đã bị dừng và đã được chạy lại sau 5 phút." | "Lúc 09:10, dịch vụ dừng, 5 phút sau thì chạy lại." |
+| "Lúc 09:10, dịch vụ đã bị dừng và đã được chạy lại sau 5 phút." | "Lúc 09:10 dịch vụ dừng, 5 phút sau systemd restart nó." (log không ghi ai restart thì "5 phút sau dịch vụ chạy trở lại; log không ghi ai restart") |
 | "Lệnh này sẽ tạo một thư mục mới." (dịch "will create") | "Lệnh này tạo một thư mục mới." |
 
 Giữ "đã" khi cần tách việc xong rồi khỏi việc chưa làm, nhất là trong danh sách việc: "đã sửa cấu hình, chưa restart".
@@ -36,7 +36,9 @@ cần "được": "Tệp này dùng để lưu cấu hình", không phải "Tệ
 xem thêm `machine-tells.md` mục B.
 
 "Được" đi với việc có lợi hay trung tính cho chủ ngữ, "bị" đi với việc thiệt cho chủ ngữ. "Tài khoản được khoá sau năm lần
-nhập sai" sai sắc thái, vì người dùng chịu thiệt, nên viết "tài khoản bị khoá".
+nhập sai" sai sắc thái, vì người dùng chịu thiệt, nên viết "tài khoản bị khoá". Việc hệ thống làm theo lịch hay theo thiết kế (xoá
+bản cũ, đóng phiên hết hạn) không thiệt cho ai, nên thường bỏ cả "được" lẫn "bị": "Phiên đăng nhập hết hạn sau 30 phút thì
+tự đóng", không "bị đóng".
 
 Giữ "được" khi bỏ đi thì chủ ngữ đọc thành người làm việc đó. "Phần mềm thuê từ tháng 02" đọc như phần mềm đi thuê, nên phải
 viết "Phần mềm được thuê từ tháng 02" (`official-documents.md`). Bị động cũng dùng được có chủ ý, để giữ thứ đang bàn ở đầu
@@ -51,8 +53,8 @@ câu (`sentences-and-paragraphs.md`, mục Câu).
 | "Bạn có thể dùng lệnh `df -h` để xem dung lượng ổ." | "Xem dung lượng ổ bằng lệnh `df -h`." |
 | "Tệp log có thể được mở bằng trình soạn thảo bất kỳ." | "Trình soạn thảo nào cũng mở được tệp log." |
 
-Giữ "có thể" khi nói một việc chưa chắc xảy ra: "ổ có thể đầy trong tuần này". Đó là từ chỉ mức chắc chắn, không phải chữ
-dịch thừa.
+Giữ "có thể" khi nói một việc chưa chắc xảy ra: "ổ có thể đầy trong tuần này". Đó là thành phần tình thái
+(`word-choice.md`, mục Thành phần tình thái), không phải chữ dịch thừa.
 
 ### "không", "chưa", "chẳng"
 
@@ -73,7 +75,7 @@ nó.
 
 ## Lượng từ: "các", "những", "mọi", "mỗi", "từng"
 
-Danh từ tiếng Việt không đổi hình dạng khi chỉ nhiều thứ, nên không cần lượng từ để báo số nhiều. "Các", "những" không
+Danh từ tiếng Việt không biến đổi hình thái khi chỉ nhiều thứ, nên không cần lượng từ để báo số nhiều. "Các", "những" không
 dùng để dịch "the" hay đuôi "-s". Câu nói chung về một loại thì để danh từ trơn: "Người dùng phải đăng nhập trước", không
 phải "Các người dùng phải đăng nhập trước".
 
@@ -81,7 +83,7 @@ Khi cần lượng từ thì chọn theo ý:
 
 | Từ | Nghĩa | Ví dụ |
 |---|---|---|
-| các | toàn bộ một tập đã xác định | "các máy trong cụm" |
+| các | toàn bộ một tập đã xác định | "các node trong cluster" |
 | những | một phần của tập, hoặc nhấn là nhiều | "những máy còn chạy bản cũ" |
 | mọi | cả tập, không trừ cái nào | "mọi request đều qua proxy" |
 | mỗi | từng cái tách riêng, thường đi với một số lượng | "mỗi request mất 200 ms" |
@@ -93,7 +95,7 @@ Liệt kê nhiều danh từ thì không lặp lượng từ trước mỗi danh
 ## Chỉ từ và đại từ
 
 "Này" trỏ thứ vừa nói, ở gần; "đó", "ấy" trỏ thứ đã nhắc trước, hay trỏ cả một ý. "Nó" chỉ trỏ được một thứ, nên câu
-trước có hai danh từ thì lặp tên. Cách dùng các từ này để nối câu nằm ở `cohesion.md`, mục Bốn cách nối câu.
+trước có hai danh từ thì lặp tên. Cách dùng các từ này để nối câu nằm ở `cohesion.md`, mục Các phép liên kết câu.
 
 Văn dịch đặt "nó", "điều này" ở chỗ tiếng Anh có "it", "this". Tiếng Việt thường lặp danh từ kèm "này", hoặc bỏ hẳn chủ ngữ
 khi câu trước đã rõ. "Điều này giúp…" mở đầu câu tóm cuối đoạn là dấu hiệu văn AI slop (`machine-tells.md` mục B).
@@ -136,7 +138,7 @@ Trợ từ đứng trước từ ngữ để nhấn, hoặc để nói người 
 - "Chỉ", "ngay cả" thu hẹp hay mở rộng phạm vi, bỏ đi thì nghĩa đổi, nên giữ: "chỉ máy A bị lỗi", "ngay cả máy mới cũng bị".
 - "Chính" giữ khi câu đang tách một người, một thứ ra khỏi những thứ người đọc có thể nghĩ tới: "Chính bản vá hôm qua làm
   hỏng đăng nhập, không phải cấu hình mạng." Nó chỉ để nhấn thì bỏ, cũng như "đúng", "chính là" (`machine-tells.md` mục D).
-- "Những", "có" đứng trước số nói người viết thấy nhiều hay ít: "mất những ba giờ" là chê lâu, "chỉ có hai lỗi" là thấy ít.
+- "Những", "có" đứng trước số nói người viết thấy nhiều hay ít: "mất những ba giờ" là nhấn rằng lâu, "chỉ có hai lỗi" là thấy ít.
   Báo cáo nêu số trơn ("mất ba giờ") để người đọc tự đánh giá.
 
 ## Tình thái từ
@@ -151,10 +153,12 @@ người đọc, ăn với cột Giọng của `SKILL.md`.
 | nhỉ | hỏi để người kia đồng ý với mình | "Lỗi này giống hôm trước nhỉ." |
 | mà, cơ | cãi lại, nũng; trong tin nhắn công việc nghe như trách | "Em gửi rồi mà." |
 
-Một câu một tình thái từ là đủ. Rải "nhé", "ạ" ở mọi câu thành giọng dỗ dành, là một kiểu văn mẫu (`voice.md`). Tài liệu
+Một tin nhắn thường chỉ một tình thái từ, đặt ở câu nhờ hay câu chào. Sai: "Em gửi anh bản sửa ạ. Lỗi do thiếu biến môi
+trường ạ. Em deploy lại lúc 14h ạ." Sửa: "Lỗi do production thiếu một biến môi trường. Em deploy lại lúc 14h, anh duyệt
+giúp em trước giờ đó ạ." Rải "nhé", "ạ" ở mọi câu thành giọng dỗ dành, là một kiểu văn mẫu (`voice.md`). Tài liệu
 trung tính, báo cáo, văn bản hành chính không dùng tình thái từ.
 
 ## Soát
 
-Đọc lướt cả bài thì mắt trượt qua từ nhỏ. Tìm lần lượt từng chữ trong bài (grep hay Ctrl+F): "đã được", "được", "các",
+Đọc lướt cả bài thì mắt trượt qua hư từ. Tìm lần lượt từng chữ trong bài (grep hay Ctrl+F): "đã được", "được", "các",
 "của", "việc", "sự", "có thể", "sẽ". Xét từng chỗ bằng cách thử ở đầu tệp: bỏ từ đi, nghĩa không đổi thì bỏ.

@@ -14,7 +14,7 @@ Người làm chạy trong một thư mục chứa `inputs/`, ghi bài vào `les
   nói thật (không bịa output, không bịa trải nghiệm ngôi thứ nhất).
 - Bảng "Giọng" của SKILL.md: bài giảng xưng "mình, bạn".
 - Bảng "Trả kết quả": việc là viết mới, nên trả văn bản (ở đây là tệp) kèm một hai câu về chỗ chưa kiểm tra hay thiếu dữ kiện.
-- Văn máy theo `references/machine-tells.md`, dấu gạch theo `references/punctuation.md`.
+- Văn AI slop theo `references/machine-tells.md`, dấu gạch theo `references/punctuation.md`.
 
 ## Đáp án dữ kiện: điều bài phải có và phải đúng
 

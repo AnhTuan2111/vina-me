@@ -15,9 +15,11 @@ Làm đủ các bước, theo thứ tự. Mỗi bước có tệp kết quả tr
 1. **Đọc bộ tài liệu như người đọc thật** (`references/bid/reading.md`). Kiểm kê từng tệp; trích chữ; xem ảnh từng trang của
    bảng yêu cầu, biểu phạm vi, tệp quét; đối chiếu chéo giữa các tệp. Kết quả `00-reading.md`: thông tin gói, nhà thầu
    (lấy từ giấy tờ nhà thầu, không lấy từ hồ sơ cũ), phạm vi và số lượng, tiêu chí đánh giá, điều kiện hợp đồng, chỗ HSMT
-   tự lệch, chỗ bản chữ trích sai. BA có gửi tệp trả lời, ghi chú (vai các công ty, địa chỉ dùng, công nghệ, model) thì đó là
-   nguồn cao nhất cho điều BA chốt: ghi nguồn "BA, <ngày>", dùng đúng chữ BA, không thêm chi tiết BA không nêu, và chỉ bỏ đánh
-   dấu ở đúng chỗ BA đã trả lời; điều BA nói "chưa có" thì vẫn đánh dấu.
+   tự lệch, chỗ bản chữ trích sai. BA (người giao việc làm hồ sơ và nắm thông tin gói thầu, thường là nhân viên kinh doanh hay phân tích
+   nghiệp vụ; mọi câu hỏi, mọi chỗ đánh dấu đều chờ người này trả lời) có gửi tệp trả lời, ghi chú (vai các công ty, địa chỉ
+   dùng, công nghệ, model) thì đó là
+   nguồn cao nhất cho điều BA chốt: ghi nguồn "BA, <ngày>", giữ nguyên chữ BA dùng, không thêm chi tiết BA không nêu, và chỉ bỏ đánh
+   dấu ở chỗ BA đã trả lời; điều BA nói "chưa có" thì vẫn đánh dấu.
 2. **Bảng truy vết** (`references/bid/traceability.md`): mỗi yêu cầu một dòng, nguồn, mức, mục sẽ đáp ứng, tài liệu chứng minh,
    trạng thái. Kết quả `01-traceability.md`.
 2b. **Tài liệu hãng** (`references/bid/package.md`): với mỗi thiết bị, lấy tài liệu BA gửi; thiếu thông số hay thiếu cả tài liệu thì
@@ -29,7 +31,7 @@ Làm đủ các bước, theo thứ tự. Mỗi bước có tệp kết quả tr
    dùng số đo, dàn mục, câu mẫu đã ghi trong `house-style.md`, `outline.md`, `writing.md`; bước 6 bỏ `--template` để dựng bằng
    khuôn dựng sẵn (mang số đo của hồ sơ mẫu).
 4. **Dàn mục** (`references/bid/outline.md`, `references/bid/package.md`): danh sách tệp KT-00 tới tệp cuối và mã của từng tệp; thuyết
-   minh có phần lớn theo đúng tên, thứ tự tiêu chí của HSMT đang làm; đối chiếu với dàn mục của mẫu, ghi chỗ thêm, bớt, đổi. Kết
+   minh có phần lớn theo tên, thứ tự tiêu chí của HSMT đang làm; đối chiếu với dàn mục của mẫu, ghi chỗ thêm, bớt, đổi. Kết
    quả `03-outline.md`.
 5. **Viết nội dung**, mỗi tệp một `content-<mã>.json`, theo `references/bid/writing.md`, `references/bid/goods.md` (bảng đáp ứng),
    `references/bid/package.md` (bộ tệp, bản dịch, liên danh), `references/bid/software.md` (phần mềm), `references/bid/schedule-letters.md`
@@ -45,7 +47,7 @@ Làm đủ các bước, theo thứ tự. Mỗi bước có tệp kết quả tr
      kết nằm ở tệp riêng);
    - xuất PDF bằng Word (`scripts/bid/render-pdf.ps1 -UpdateDocx HSDX.docx`: mục lục cập nhật vào cả tệp Word giao BA),
      `page-check.mjs` không còn lỗi bố cục;
-   - đặt ảnh trang của bản dựng cạnh trang mẫu cùng loại (bìa, mục lục, mở phần, bảng, tiến độ, cam kết) và sửa tới khi giống;
+   - đặt ảnh trang của bản dựng cạnh trang mẫu cùng loại (bìa, mục lục, mở phần, thân bài, bảng, tiến độ, cam kết) và sửa tới khi giống;
    - đi lại bảng truy vết;
    - soát cuối như người chấm: đi từng dạng lỗi trong mục "Soát cuối như người chấm" của `references/bid/checks.md`.
 8. **Báo lại BA** (mục Báo lại trong `references/bid/checks.md`).

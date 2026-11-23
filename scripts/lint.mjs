@@ -25,7 +25,7 @@ const RARE_PHRASES = [
 ];
 // Chữ nhấn thừa (machine-tells.md, bảng D): bỏ khi câu không mất nghĩa. "đúng" chỉ bắt khi đứng trước chữ chỉ lượng, chỗ,
 // thời điểm, vì "đúng" nghĩa là không sai thì vẫn giữ.
-const EMPHASIS = /(?<![\p{L}])(thật sự|bằng đúng|chính là|hoàn toàn|đúng (?:các|những|hai|ba|bốn|năm|lúc|thời điểm|chỗ|dòng|chữ|điều))(?![\p{L}])/giu;
+const EMPHASIS = /(?<![\p{L}])(thật sự|bằng đúng|chính là|hoàn toàn|đúng (?:các|những|hai|ba|bốn|năm|lúc|thời điểm|chỗ|dòng|chữ|điều|như|tên))(?![\p{L}])/giu;
 // Lỗi chính tả hay gặp (common-errors.md, Lỗi dùng từ).
 const TYPOS = ['thiếu xót', 'sáng lạng', 'xán lạng', 'đọc giả', 'chuẩn đoán'];
 const SENTENCE_OPENERS = ['Hãy ', 'Tóm lại', 'Nhìn chung', 'Có thể nói', 'Không thể phủ nhận', 'Thiết nghĩ'];
@@ -342,7 +342,7 @@ function lint(file, forceOfficial) {
       if (/^(Với|Qua|Đối với|Thông qua|Bằng việc|Nhờ có)\s/.test(c) && !/,| thì /.test(c) && c.split(' ').length >= 5) noSubject.push(c.slice(0, 50));
     }
   }
-  // Câu quá dài, ẩn dụ mở bằng "Giống…:", khuôn "vì … còn … nên" (core-rules.md mục Trình bày, sentences-and-paragraphs.md).
+  // Câu quá dài, phép so sánh mở bằng "Giống…:", khuôn "vì … còn … nên" (core-rules.md mục Trình bày, sentences-and-paragraphs.md).
   const longOnes = [], likeColon = [], whyElseSo = [];
   for (const d of [...blocks, ...items]) {
     for (const c of d.split(/(?<=[.!?…])\s+/)) {
@@ -352,7 +352,7 @@ function lint(file, forceOfficial) {
       if (/(?<![\p{L}])vì\s.+(?<![\p{L}])còn\s.+(?<![\p{L}])nên\s/u.test(c)) whyElseSo.push(`"${c.slice(0, 60)}…"`);
     }
   }
-  if (likeColon.length) report.push(`câu mở ẩn dụ bằng "Giống…:" không chủ ngữ: ${likeColon.slice(0, 3).join(', ')}; chủ ngữ là thứ đang bàn ("Chuyện của X giống…")`);
+  if (likeColon.length) report.push(`câu mở phép so sánh bằng "Giống…:" không chủ ngữ: ${likeColon.slice(0, 3).join(', ')}; chủ ngữ là thứ đang bàn ("Chuyện của X giống…")`);
   if (longOnes.length) notes.push(`câu quá 40 tiếng: ${longOnes.slice(0, 3).join(', ')}`);
   if (whyElseSo.length) notes.push(`câu có "vì … còn … nên": ${whyElseSo.slice(0, 3).join(', ')}; bỏ vế "vì" rồi đọc lại, vế trước "nên" phải dẫn tới vế sau`);
   // Câu mang từ ba đoạn mã trở lên, và số tiếng của cả tệp (core-rules.md điều 5 và mục Trình bày). Đếm trên Markdown gốc,

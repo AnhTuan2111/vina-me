@@ -1,16 +1,21 @@
-# Từ ngữ
+# Chọn từ và thuật ngữ
 
 ## Thuật ngữ
 
 - Một khái niệm một thuật ngữ. Không đổi tên cho đỡ lặp.
-- Thuật ngữ không mang cảm xúc. Không gắn tính từ khen chê vào nó.
-- Không cần thì tránh, còn cần thì giải nghĩa ngay tại lần đầu dùng.
+- Thuật ngữ không mang cảm xúc, nhất là trong báo cáo, tài liệu, tin nhắn công việc: không gắn tính từ khen chê vào nó.
+  Sai: "Con Redis cùi bắp này lại sập." Sửa: "Redis dừng lúc 09:12 vì hết RAM, lần thứ hai trong tuần." Tính từ khen chê
+  không cho người đọc thêm gì để xử lý, và trong báo cáo đọc như đổ lỗi.
+- Thuật ngữ cần khi người đọc sẽ gặp lại chữ đó trong log, trên dashboard, trong lệnh phải gõ (`core-rules.md`, điều 5);
+  cần thì giải nghĩa ngay tại lần đầu dùng, không cần thì nói bằng lời thường. Sai (tin gửi sếp): "Pod bị OOMKilled do
+  vượt memory limit của cgroup." Sửa: "App bị Kubernetes tắt vì dùng quá mức RAM cho phép; em đang nâng mức đó lên 1 GB."
+  Sếp không gõ lệnh, không đọc cgroup; thứ sếp cần là hỏng gì và đang làm gì.
 - Thuật ngữ có tên chuẩn tiếng Anh thì giữ nguyên tiếng Anh, không dịch, kể cả khi đã có chữ Việt quen: viết option, không
-  "cờ"; layer, không "tầng"; packet, domain, browser, certificate, path, version, exit code, status code, prompt. Nó
+  "cờ"; layer, không "tầng"; packet, domain, browser, certificate, cluster, exit code, status code, prompt. Nó
   viết thế nào ở nguồn gốc thì để yên thế, một cách viết duy nhất trong cả bài (không lúc "Container" lúc "container").
-  Lần đầu dùng thì giải nghĩa bằng lời thường. Chữ đời thường không phải thuật ngữ (máy, tệp, thư mục, lệnh, ổ đĩa) thì
-  vẫn viết tiếng Việt.
-- Hai thuật ngữ dễ lẫn thì đặt cạnh nhau và nói đúng một điểm khác.
+  Lần đầu dùng thì giải nghĩa bằng lời thường. Chữ đời thường không phải thuật ngữ (máy, tệp, thư mục, lệnh, ổ đĩa,
+  đường dẫn, "bản 2.4" cho số phiên bản) thì vẫn viết tiếng Việt.
+- Hai thuật ngữ dễ lẫn thì đặt cạnh nhau và chỉ nói điểm khác liên quan tới việc người đọc đang làm, thường là một.
 - Chữ thay cho một thuật ngữ phải chưa dùng cho thứ khác trong bài: "bản" đã là phiên bản (bản 2.4) thì không gọi máy
   đang chạy là "bản đang chạy". Ghi chú gọi một thứ bằng tên mơ hồ ("bản cũ", "con kia") thì bài dùng tên đã gọi nó ở
   chỗ khác ("bản 2.3").
@@ -28,7 +33,7 @@
 | Tách từng phần rồi gom lại | Giải từng tiếng, rồi nói nghĩa cả từ | "di là để lại, sản là của cải; di sản là của cải người trước để lại" |
 | Phân tích kèm chỗ dùng | Nói nghĩa, nói nó dùng ở đâu, khác từ gần nghĩa chỗ nào | "kiêu căng là tự cho mình hơn mà khinh người; kiêu hãnh là tự hào về giá trị của mình" |
 
-Ba yêu cầu:
+Bốn yêu cầu:
 
 - Từ dùng để giải nghĩa phải dễ hơn từ được giải nghĩa. Không giải một từ lạ bằng một từ lạ khác, không giải bằng
   chính nó.
@@ -37,19 +42,25 @@ Ba yêu cầu:
 - Lời giải nghĩa dùng một lần; các câu sau quay về thuật ngữ, không dùng lời giải nghĩa làm tên thứ hai
   (`core-rules.md` điều 5).
 
-Với người mới thì đưa một câu dùng thật hoặc một vật thật trước, rồi lời giải nghĩa chêm, rồi mới tới định nghĩa
+Với người mới thì đưa một câu dùng thật hoặc một vật thật trước, rồi lời giải nghĩa đặt làm thành phần phụ chú, rồi mới tới định nghĩa
 đủ.
 
 ## Chọn từ
 
-- Từ toàn dân trước, từ địa phương và tiếng lóng thì không.
-- Có từ thuần Việt nói cùng ý thì dùng nó, còn từ Hán Việt để dành cho thuật ngữ và giọng trang trọng.
+- Từ toàn dân trước; từ ngữ địa phương và biệt ngữ xã hội thì không.
+- Từ Hán Việt người ta ít nói ngoài đời thì thay bằng từ thường: "Tiến hành thẩm định cấu hình trước khi triển khai"
+  viết thành "Xem lại cấu hình trước khi deploy". Từ Hán Việt ai cũng nói (hệ thống, kiểm tra, dịch vụ) và thuật ngữ thì
+  giữ. Phép thử là người ngồi cạnh: không ai nói "thẩm định cấu hình" khi nói chuyện.
 - Động từ phải đi được với chủ ngữ. Các vế ngang hàng cùng một lớp từ.
-- Chọn giữa các từ gần nghĩa theo sắc thái, ví dụ "chăm sóc" vườn cây, không "săn sóc"; "đốn" cây, không "cắt".
-- Từ nhiều nghĩa thì thêm từ để khoá nghĩa, hoặc đổi sang từ một nghĩa.
-- Nói tường minh. Không để người mới phải đoán ý ngầm.
-- Từ nghề nghiệp, từ lóng buộc phải dùng thì để trong ngoặc kép và chú nghĩa.
-- Viết đủ từ ghép: "tóm tắt", "khai báo", "quản lý", "kiểm tra", không cắt còn "tóm", "khai", "quản", "kiểm tra". Cắt cho gọn
+- Chọn giữa các từ gần nghĩa theo sắc thái, ví dụ "chăm sóc" vườn cây, không "săn sóc"; "đốn" cây, không "cắt"; "dọn bớt tệp trong /var", không "xoá ổ /var" (đọc thành format cả ổ).
+- Từ nhiều nghĩa thì thêm từ để khoá nghĩa, hoặc đổi sang từ một nghĩa: "Giữ hai bản sao lưu gần nhất trên máy chủ",
+  không "Giữ hai bản trên máy chủ" (hai bản sao lưu hay hai phiên bản app?).
+- Nói tường minh. Không để người mới phải đoán hàm ý: "Trang đăng nhập lại trả 502 lúc 09:10, giống lỗi ngày 21/11",
+  không "Cái vụ hôm trước lại bị rồi anh".
+- Biệt ngữ xã hội ở đây là tiếng lóng của một nhóm ("toang", "out trình"); buộc phải dùng thì để trong ngoặc kép và chú
+  nghĩa. Từ chuyên môn của nghề (deploy, rollback, restart) là thuật ngữ, theo mục Thuật ngữ, không để ngoặc kép: "Em
+  deploy lại lúc 14h", không 'Em "deploy" lại lúc 14h'; "Bản 2.4 lỗi trang đăng nhập", không "Bản 2.4 toang rồi".
+- Viết đủ từ ghép: "tóm tắt", "khai báo", "quản lý", "kiểm tra", không cắt còn "tóm", "khai", "quản", "kiểm". Cắt cho gọn
   thì câu không ngắn đi bao nhiêu mà người đọc phải đoán chữ bị bỏ. Câu nào cũng đủ chủ ngữ, vị ngữ.
 
 Nói về tài nguyên thì dùng "hết", "đầy", "tràn". Nói về việc làm thì dùng "xem", "thử", "kiểm tra", "sửa", "chạy",
@@ -95,17 +106,19 @@ Thành phần tình thái nói người viết chắc tới đâu, còn phạm v
 
 ## So sánh và ẩn dụ
 
+- So sánh có từ so sánh ("giống", "như"); ẩn dụ là so sánh ngầm, bỏ từ so sánh. Luật về số lượng, chỗ đặt, chỗ hết
+  đúng ở `core-rules.md` áp cho cả hai.
 - So sánh thì nói rõ so về mặt nào.
 - Ẩn dụ là so sánh ngầm, dễ bị hiểu rộng hơn ý muốn nói. Tối đa một cái mỗi văn bản, đặt sau lời giải thích bằng lời
   thường, và phải dùng nó để suy ra được một điều.
-- Câu mở ẩn dụ có chủ ngữ là thứ đang bàn, không "Giống…:". Vế so là việc người ta làm thật ngoài đời. Chỗ hết đúng
+- Câu mở phép so sánh có chủ ngữ là thứ đang bàn, không "Giống…:". Vế so là việc người ta làm thật ngoài đời. Chỗ hết đúng
   không nói ngược điều bài đã kể (`core-rules.md`, mục Trình bày).
 
-## Liệt kê và lặp cấu trúc
+## Liệt kê và lặp cú pháp
 
 - Các mục cùng loại, cùng cấp.
-- Có tăng tiến thì xếp đúng thứ tự.
-- Các ý song song viết cùng một khuôn câu.
+- Có tăng tiến thì xếp theo thứ tự tăng dần.
+- Các ý ngang hàng viết theo cùng một kiểu câu (phép lặp cú pháp).
 
 ## Viết hoa và tên riêng
 
@@ -116,7 +129,7 @@ Thành phần tình thái nói người viết chắc tới đâu, còn phạm v
 | Tên nước ngoài đọc theo Hán Việt | Như tên Việt | "Lỗ Tấn", "Thái Lan" |
 | Tên công cụ, hãng, sản phẩm | Giữ nguyên dạng gốc | "PostgreSQL", "GitLab" |
 | Danh từ chung | Không viết hoa để nhấn mạnh | "container", không "Container" |
-| Loại tài nguyên Kubernetes (pod, node, deployment) | Bài kể sự việc, báo cáo sự cố: danh từ chung, viết thường như "container". Bài giảng về các đối tượng API thì viết hoa như tên kind cả loạt ("Deployment tạo ReplicaSet, ReplicaSet tạo Pod"). Một bài một kiểu | "2 trong 5 pod bị restart", không "2 trong 5 Pod" cạnh "container" |
+| Loại tài nguyên Kubernetes (pod, node, deployment) | Bài kể sự việc, báo cáo sự cố: danh từ chung, viết thường như "container". Bài giảng về các đối tượng API thì viết hoa như tên kind cả loạt ("Deployment giữ đủ số Pod đã khai"). Một bài một kiểu | "2 trong 5 pod bị restart", không "2 trong 5 Pod" cạnh "container" |
 
 ## Chữ viết tắt
 

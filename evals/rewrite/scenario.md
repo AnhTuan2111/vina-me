@@ -61,9 +61,9 @@ Ba việc ở D15 tới D17 là việc sắp làm, không được viết như �
   vênh, hoặc tốt nhất là nêu chỗ vênh và hỏi người dùng giờ nào đúng (có thể 14:41 là lúc chạy lệnh, 14:44 là lúc rollout
   xong, nhưng đó là đoán, không được viết thành dữ kiện).
 - Không viết nguyên nhân thành điều đã chắc ("nguyên nhân là pool quá nhỏ") ở bất cứ câu nào. Gốc có câu nói chắc, nhưng
-  ngay sau đó gốc nói chưa xác nhận; bản sửa phải theo mức "nhiều khả năng", hoặc nêu chỗ lệch cho người dùng.
+  ngay sau đó gốc nói chưa xác nhận; bản sửa phải theo mức "nhiều khả năng" ở mọi câu; nêu thêm chỗ lệch cho người dùng thì tốt, nhưng nêu chỗ lệch mà vẫn để câu nói chắc trong bản sửa thì vẫn tính là nói chắc.
 - Không giữ dòng "Nguyên nhân gốc: bản 3.8.0 giảm connection pool…" ở mức chắc. Bỏ dòng đó, hoặc viết lại theo mức
-  "nhiều khả năng" của thân bài, hoặc nêu chỗ lệch với người dùng.
+  "nhiều khả năng" của thân bài; nêu chỗ lệch với người dùng mà vẫn giữ dòng đó ở mức chắc thì chưa đạt.
 - Không viết "request tăng vì khuyến mãi" thành điều đã chắc, cũng không đẩy giờ bắt đầu khuyến mãi thành điều đang đoán.
 - Không thêm con số doanh thu, số đơn hàng, số khách bị ảnh hưởng.
 - Không thêm người nhận cho việc load test, không thêm hạn cho việc cảnh báo và load test.

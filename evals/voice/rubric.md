@@ -59,7 +59,7 @@ liệu tra nên chỉ soát mục D ở phần văn xuôi của nó, mức trừ
 | Câu rời, không dựa vào câu trước, ở chỗ đang kể một mạch | -2 mỗi câu |
 | Hai ý nhân quả hay điều kiện bị chặt thành hai câu cụt | -1 mỗi chỗ |
 | Văn mẫu xin lỗi: "sự bất tiện", "sự cố ngoài ý muốn", "rất mong nhận được sự thông cảm", "một lần nữa", "cảm ơn sự đồng hành", "thành thật", "chân thành", "luôn lắng nghe", "trân trọng" | -3 mỗi cụm |
-| Văn máy theo `machine-tells.md`: mở bằng dựng cảnh hay câu xin lỗi chung chung trước khi nói việc gì, "không chỉ... mà còn...", bộ ba cho đủ vần, "hành trình", "đóng vai trò", "Hãy..." | -3 mỗi chỗ |
+| Văn AI slop theo `machine-tells.md`: mở bằng dựng cảnh hay câu xin lỗi chung chung trước khi nói việc gì, "không chỉ... mà còn...", bộ ba cho đủ vần, "hành trình", "đóng vai trò", "Hãy..." | -3 mỗi chỗ |
 | Liệt kê "một là, hai là", "thứ nhất, thứ hai", "trước hết, bên cạnh đó, cuối cùng" cho đủ | -3 |
 | Câu chốt cuối đoạn hay cuối bài ("Đó là bài học lớn...", "Tiệm sẽ cố gắng hơn nữa để...", "Cảm ơn bạn đã luôn tin yêu") | -3 mỗi câu |
 | Chữ nhấn thừa: "thật sự", "chính là", "vô cùng", "hết sức", "đúng là" dùng để nhấn | -1 mỗi chữ |

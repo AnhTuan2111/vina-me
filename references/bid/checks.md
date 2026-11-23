@@ -2,7 +2,7 @@
 
 ## Soát bằng lệnh
 
-Chạy cả bốn lệnh sau mỗi lần dựng lại. Thư mục đầu vào BA gửi là chỉ đọc: PDF, ảnh trang của hồ sơ mẫu cũng ghi ra thư mục
+Chạy mọi lệnh dưới đây, theo thứ tự, sau mỗi lần dựng lại. Thư mục đầu vào BA gửi là chỉ đọc: PDF, ảnh trang của hồ sơ mẫu cũng ghi ra thư mục
 làm việc (`-OutDir`).
 
 ```bash
@@ -52,7 +52,7 @@ pdftoppm -r 60 -png HSDX.pdf pages/p
 - `bid-check` có `XEM Đoạn dẫn <mã> tr. N cho "<chữ>" nhưng trang đó chưa tô chữ này` (thuyết minh dẫn "IP68 (KT-03B, tr. 4)"):
   tô chữ đó trên trang, hoặc dẫn trang có chữ.
 - `package-check` có `XEM Bản dịch <mã>, cột "Bản gốc" có chữ không có trên trang gốc`: bỏ chữ tự viết khỏi cột bản gốc (ghi
-  chú để ở cột tiếng Việt), hoặc chép lại đúng chữ của trang.
+  chú để ở cột tiếng Việt), hoặc chép lại nguyên văn chữ của trang.
 - `bid-check --catalog` có `XEM Dấu "[chưa có chứng minh: ...]" nhưng <mã> tr. N có "<từ>"`: đọc trang đó, có chứng minh thì trích,
   tô, bỏ dấu; không có thì ghi vào báo cáo trang đó nói gì khác.
 - `bid-docx` in dòng `SỬA` khi dựng (đề mục gõ sẵn chữ hoa, bảng thiếu câu mở, cột bảng quá hẹp): sửa hết trong `content.json`.
@@ -74,7 +74,7 @@ pdftoppm -r 60 -png HSDX.pdf pages/p
 ## Soát nội dung
 
 - Đi bảng truy vết: dòng nào cũng có mục đáp ứng có thật trong tệp.
-- Đủ tiêu chí của Mục 3, đúng thứ tự, đúng tên; mỗi ý trong điều kiện đạt có chỗ đáp ứng.
+- Đủ tiêu chí của Mục 3, giữ thứ tự và tên của HSMT; mỗi ý trong điều kiện đạt có chỗ đáp ứng.
 - Nhà thầu đúng theo giấy tờ; tên gói theo quyết định; số lượng theo Mẫu 01A; các thời hạn nhất quán (`schedule-letters.md`).
 - Bảng thiết bị: mỗi hàng ghi "đáp ứng" có trang tài liệu hãng thật ghi thông số đó, trang đó đã tô vàng; thông số chỉ có lời
   cam kết của nhà thầu (bảo hành dài hơn chuẩn hãng, 24/7) có đánh dấu (`goods.md`).
@@ -122,14 +122,14 @@ Gửi kèm tệp Word và PDF:
    BA đã chốt (giữ model, giải trình tương đương) thì không hỏi lại, chỉ nêu rủi ro còn lại và tài liệu còn thiếu.
 5. Chỗ HSMT tự lệch, bản chữ trích sai, và cách hồ sơ đã xử lý.
 6. Tiêu chí mới mà hồ sơ mẫu không có, và mục đã thêm.
-   Giả định chưa chốt (nhà thầu tự làm phần mềm, nơi chạy Chatbot, lịch) xuất hiện ở bảng nhân sự, giải pháp, tiến độ, bản cam
+   Mấy luật dưới đây áp cho các danh sách 2, 3, 4 ở trên, không riêng mục 6. Giả định chưa chốt (nhà thầu tự làm phần mềm, nơi chạy Chatbot, lịch) xuất hiện ở bảng nhân sự, giải pháp, tiến độ, bản cam
    kết thì mỗi chỗ có `[cần xác nhận]` ngắn; soát bằng cách tìm từ khóa của từng chỗ đánh dấu trong cả hồ sơ.
-   Danh sách cam kết mới trong báo cáo khớp đúng các chỗ đánh dấu cam kết mới trong hồ sơ, không thêm điều hồ sơ không đánh dấu.
+   Danh sách cam kết mới trong báo cáo khớp với các chỗ đánh dấu cam kết mới trong hồ sơ, không thêm điều hồ sơ không đánh dấu.
    Báo cáo không đưa thông số của hàng chưa có catalog theo trí nhớ hay "hiểu biết chung": ghi "chưa có catalog, chưa đánh giá
    được" và việc cần làm.
    Lập danh sách đó từ các dòng `LỖI Còn để trống` mà bid-check in ra (mỗi dòng có mục và chữ đánh dấu), không viết theo trí
    nhớ; câu "đã đánh dấu" trong báo cáo phải đúng với tệp Word.
    Điều nào báo cáo xếp vào cam kết mới hay việc BA phải quyết (vai thầu phụ, ai làm phần mềm, thiết bị dự phòng, cho mượn
-   thiết bị) thì trong thân hồ sơ cũng có chỗ đánh dấu ở đúng câu đó; câu khẳng định thẳng mà BA chưa chốt là lỗi.
+   thiết bị) thì trong thân hồ sơ cũng có chỗ đánh dấu ở câu đó; câu khẳng định thẳng mà BA chưa chốt là lỗi.
 7. Đã soát gì bằng lệnh nào: kết quả `docx-profile --compare` (chép nguyên văn các dòng lệch, không tự diễn giải), `page-check`, số dòng `LỖI` và `XEM` của `bid-check` sau khi xử
    lý; chưa soát gì.

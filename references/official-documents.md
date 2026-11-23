@@ -146,7 +146,7 @@ Báo cáo, kế hoạch, đề án chia theo phần, mục, khoản, điểm:
   tháng 3 năm 2020 của Chính phủ về công tác văn thư". Luật và pháp lệnh chỉ ghi tên loại và tên.
 - Các lần sau chỉ ghi tên loại và số, ký hiệu: "Nghị định số 30/2020/NĐ-CP".
 - Người dùng không đưa trích yếu (hay ngày, cơ quan ban hành) của văn bản được viện dẫn thì không tự đặt cho đủ thể thức.
-  Để chỗ đánh dấu ngay trong văn bản, ví dụ "Kế hoạch số 08/KH-SB ngày ... của Sở B về [cần bổ sung trích yếu]", rồi báo
+  Để chỗ đánh dấu ngay trong văn bản, ví dụ "Kế hoạch số 08/KH-SB ngày ... của Sở B về [cần bổ sung: trích yếu]", rồi báo
   người dùng (mục "Dữ kiện thiếu hay lệch").
 
 ## Báo cáo
@@ -288,7 +288,9 @@ Những điều làm ngược lại với các văn bản khác:
 
 - Khuôn mẫu là bắt buộc. Các khối Căn cứ, Kính gửi, Nơi nhận, câu mở và câu kết ở trên dùng nguyên văn.
 - Không xưng "mình, bạn", không xưng "tôi" (trừ đơn từ cá nhân). Chủ ngữ là cơ quan, đơn vị: "Sở Tài chính báo cáo...".
-- Không hỏi rồi đáp, không ẩn dụ, không từ cảm thán.
+- Không hỏi rồi đáp, không phép so sánh hay ẩn dụ, không từ cảm thán.
+- "Thì" không đứng một mình sau chủ đề hay sau vế điều kiện không có "nếu" (khẩu ngữ, xem bảng lỗi câu); cặp "Nếu…,
+  thì…" vẫn dùng được.
 - Đề mục in hoa ở cấp mục là quy định, không phải in hoa để nhấn.
 - Câu ngắn, mỗi khoản một việc. Đoạn một câu ở cấp khoản, điểm là bình thường.
 - Chữ viết tắt: lần đầu viết đủ rồi ghi chữ tắt trong ngoặc, ví dụ "Ủy ban nhân dân (UBND)" (thực tế).
@@ -297,17 +299,17 @@ Những lỗi câu hay gặp khi sửa bản nháp thành văn hành chính:
 
 | Lỗi | Ví dụ sai | Sửa |
 |---|---|---|
-| Trạng ngữ đầu câu không cùng chủ ngữ với câu chính | "Làm xong việc kiểm kê, tỷ lệ hồ sơ đạt chuẩn tăng lên 90%." (tỷ lệ không làm việc kiểm kê) | "Sau khi hoàn thành việc kiểm kê, tỷ lệ hồ sơ đạt chuẩn sẽ tăng lên 90%." hoặc đổi chủ ngữ thành cơ quan |
-| Khẩu ngữ | "làm xong", "kiểm kê xong" (động từ kèm "xong"), "thì" nối điều kiện, "đưa ra phục vụ", "đưa hồ sơ gốc ra phục vụ" | "hoàn thành", "khi hoàn thành kiểm kê", "khi", "phục vụ khai thác", "dùng hồ sơ gốc để phục vụ khai thác". Cụm có chữ chen giữa vẫn là khẩu ngữ. "thì" sau chủ đề ("Hồ sơ đã nhập máy thì Phòng tra trên phần mềm") viết thành "Đối với hồ sơ đã nhập máy, Phòng tra trên phần mềm" |
+| Trạng ngữ đầu câu không cùng chủ ngữ với câu chính | "Làm xong việc kiểm kê, tỷ lệ hồ sơ đạt chuẩn tăng lên 90%." (tỷ lệ không làm việc kiểm kê) | "Sau khi Phòng hoàn thành kiểm kê, tỷ lệ hồ sơ đạt chuẩn tăng lên 90%." hoặc "Phòng hoàn thành kiểm kê, nhờ đó tỷ lệ hồ sơ đạt chuẩn tăng lên 90%." |
+| Khẩu ngữ | "làm xong", "kiểm kê xong" (động từ kèm "xong"), "thì" nối điều kiện, "đưa ra phục vụ", "đưa hồ sơ gốc ra phục vụ" | "hoàn thành", "khi hoàn thành kiểm kê", "khi", "phục vụ khai thác", "dùng hồ sơ gốc để phục vụ khai thác". Cụm có chữ chen giữa vẫn là khẩu ngữ. "thì" sau chủ đề ("Hồ sơ đã nhập máy thì Phòng tra trên phần mềm") viết thành "Đối với hồ sơ đã nhập máy, Phòng tra trên phần mềm". Câu đủ cặp "Nếu…, thì…" vẫn dùng được ("Nếu hồ sơ chưa đủ thì Phòng trả lại cho người nộp"); khẩu ngữ là "thì" đứng một mình sau chủ đề hay sau vế điều kiện không có "nếu" |
 | Hai câu nói hai cách làm trái nhau mà không có từ nối | "Mỗi lần tra cứu, Phòng phải mang hồ sơ giấy ra quầy. Đối với hồ sơ đã nhập máy, Phòng tra trên phần mềm." | Nối bằng "trong khi", "còn": "Mỗi lần tra cứu, Phòng phải dùng hồ sơ giấy, trong khi hồ sơ đã nhập máy được tra trên phần mềm." |
 | Đề nghị đứng rời khỏi hiện trạng | "Phòng học xuống cấp, mùa mưa phải cho học sinh nghỉ. Năm 2027, Trường đề nghị sửa 15 phòng." (không câu nào nói vì sao chọn 15 phòng đó) | Nối bằng "Vì vậy", "nên", và nói phần được đề nghị thuộc phần hiện trạng nào: "Vì vậy, năm 2027 Trường đề nghị sửa 15 phòng học xuống cấp nói trên." |
 | Mốc tiến độ không theo thời gian, các vế lệch kiểu câu | "khảo sát trong quý I; lắp đặt trong quý III; phần mềm được thuê từ tháng 01" (quay lại tháng 01 sau quý III, vế cuối đổi sang bị động) | Xếp các mốc từ sớm tới muộn, mọi vế cùng một kiểu "việc, thời gian": "thuê phần mềm từ tháng 01; khảo sát trong quý I; lắp đặt trong quý III" |
 | Câu mở khoản lặp tiêu đề khoản | "2. Tiến độ" rồi "Tiến độ dự kiến như sau: ..." | Vào thẳng các mốc; phụ lục đã có đủ mốc thì khoản chỉ cần câu dẫn tới phụ lục |
-| Vế giải thích lặp lại động từ | "tăng từ 40% lên 45%, tức là tăng 5 điểm phần trăm" | "tăng từ 40% lên 45% (tăng 5 điểm phần trăm)" |
+| Vế giải thích lặp lại động từ | "tăng từ 40% lên 45%, tức là tăng 5 điểm phần trăm" | "tăng từ 40% lên 45% (5 điểm phần trăm)" |
 | Bị động thiếu "được" | "Phần mềm thuê từ tháng 02" (đọc như phần mềm đi thuê) | "Phần mềm được thuê từ tháng 02" |
-| Vế chêm giải thích nối bằng "là" ở cuối câu | "Đơn vị đề nghị sửa 15 phòng học, là các phòng xuống cấp nói trên." | Tách câu, hoặc đưa vào định ngữ: "15 phòng học xuống cấp nói trên" |
-| Một tên cho cả việc và một bước của việc | gọi cả gói là "đào tạo" mà một bước cũng tên "đào tạo" | Cả gói một tên, bước một tên khác ("tập huấn", "soạn tài liệu"), dùng đúng tên đó ở mọi chỗ, cả trong bảng |
-| Câu dẫn phụ lục thiếu động từ | "Danh mục thiết bị tại Phụ lục I kèm theo Tờ trình này." | "Danh mục thiết bị chi tiết tại Phụ lục I kèm theo Tờ trình này." hoặc "Danh mục thiết bị nêu tại Phụ lục I..." |
+| Thành phần phụ chú nối bằng "là" ở cuối câu | "Đơn vị đề nghị sửa 15 phòng học, là các phòng xuống cấp nói trên." | Tách câu, hoặc đưa vào định ngữ: "15 phòng học xuống cấp nói trên" |
+| Một tên cho cả việc và một bước của việc | gọi cả gói là "đào tạo" mà một bước cũng tên "đào tạo" | Cả gói một tên, bước một tên khác ("tập huấn", "soạn tài liệu"), dùng tên đó ở mọi chỗ, cả trong bảng |
+| Câu dẫn phụ lục thiếu động từ | "Danh mục thiết bị tại Phụ lục I kèm theo Tờ trình này." | "Danh mục thiết bị nêu tại Phụ lục I kèm theo Tờ trình này." |
 | Liệt kê vào "gồm" một thứ không thuộc nhóm | "Nguồn kinh phí gồm 500.000.000 đồng đã được giao và 300.000.000 đồng còn thiếu, chưa có nguồn." (số chưa có nguồn không phải một nguồn) | Tách câu: "Ủy ban nhân dân huyện đã giao 500.000.000 đồng tại Quyết định số... Số còn thiếu là 300.000.000 đồng, chưa có nguồn." |
 | Mốc so sánh sai | "bổ sung 300.000.000 đồng còn thiếu so với số đã giao" (thiếu là so với tổng dự toán, không phải so với số đã giao) | "bổ sung 300.000.000 đồng còn thiếu ngoài số đã giao tại Quyết định số..." hoặc "còn thiếu so với tổng dự toán" |
 

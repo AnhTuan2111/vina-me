@@ -3,6 +3,26 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.22.1 (23/11/2026)
+
+- Skill tự đặt tên đời thường cho nhiều thứ đã có thuật ngữ trong sách Tiếng Việt và Ngữ văn. Đã đổi sang thuật ngữ: hư từ
+  (thay "từ nhỏ", "chữ nhỏ"), thành phần phụ chú (thay "lời chêm"), phép liên kết câu (thay "Bốn cách nối câu"), trạng ngữ
+  chỉ thời gian, tổng phân hợp và song hành, cặp quan hệ từ, câu ghép có cấu tạo phức tạp, câu cầu khiến, hàm ý, lặp cú
+  pháp, biệt ngữ xã hội, dẫn chứng. Câu có chữ "giống" nay gọi là phép so sánh; ẩn dụ là so sánh ngầm, theo cùng luật.
+- Bỏ hơn trăm chỗ skill tự dùng "đúng" để nhấn ("đúng chỗ", "đúng như", "đúng chữ"), và "thật sự" để nhấn. `lint.mjs` báo
+  thêm "đúng như", "đúng tên".
+- Sửa nốt chữ "Văn máy" viết hoa còn sót trong evals.
+- Thêm đề thử `evals/function-words` cho `references/function-words.md`.
+- Rà cả skill tìm luật mơ hồ, chữ hỏng và hai tệp dạy ngược nhau (129 chỗ), sửa một lượt: luật mơ hồ có thêm khi nào áp,
+  câu sai và câu sửa; chỗ dạy ngược nhau chốt một luật (hỏi khi thiếu dữ kiện, câu bị động không chủ thể, đặt lời giải
+  nghĩa, thuật ngữ gửi lãnh đạo, câu thứ hai sau cách đoán sai, mốc tách câu); văn của skill thôi tự dịch packet, browser,
+  domain, certificate, restart, rollback, cluster.
+- `word-choice.md` đổi nhan đề thành Chọn từ và thuật ngữ.
+- Sửa theo kết quả chạy đề thử: sửa văn có sẵn mà gốc tự lệch mức chắc chắn thì theo mức thấp hơn ở mọi câu; bản sửa
+  đặt ngay đầu lời trả, không câu dẫn, cuối chỉ một câu hỏi; không thêm "rồi", "nên" mà gốc không nói; gạch dài trong
+  lời trích đổi thành gạch nối; lời trích của người ngoài có câu dẫn; việc rời nhau viết thành danh sách; việc hệ thống
+  làm theo lịch không dùng "bị".
+
 ## 0.22.0 (23/11/2026)
 
 - `references/word-choice.md` có mục mới Thành phần tình thái, thay cho mục Từ tăng mức và từ giảm mức: mỗi câu nói một sự
@@ -13,9 +33,9 @@ dòng đầu của mục là dòng được in ra khi cập nhật.
 
 ## 0.21.0 (18/11/2026)
 
-- Thêm `references/function-words.md` về các từ nhỏ: phó từ ("đã", "sẽ", "được", "bị", "có thể", "chưa"), lượng từ ("các",
-  "những", "mọi", "mỗi", "từng"), chỉ từ, quan hệ từ, trợ từ và tình thái từ. Tiếng Việt báo thời, số nhiều, bị động bằng
-  các từ này chứ không đổi hình dạng của từ như tiếng Anh, nên văn dịch sát hay thừa "đã được", "các", "của… của", "việc".
+- Thêm `references/function-words.md` về hư từ, chỉ từ và đại từ: phó từ ("đã", "sẽ", "được", "bị", "có thể",
+  "chưa"), lượng từ ("các", "những", "mọi", "mỗi", "từng"), chỉ từ, quan hệ từ, trợ từ và tình thái từ. Tiếng Việt báo thời, số nhiều, bị động bằng
+  các từ này chứ không biến đổi hình thái của từ như tiếng Anh, nên văn dịch sát hay thừa "đã được", "các", "của… của", "việc".
   Tệp nêu khi nào bỏ, khi nào phải giữ, kèm ví dụ văn kỹ thuật, theo phần Tiếng Việt của sách Ngữ văn 6 tới 11.
 
 ## 0.20.1 (18/11/2026)

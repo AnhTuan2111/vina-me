@@ -195,8 +195,8 @@ phiên trước. Agent làm việc này một lần, khi người dùng đồng 
    `CLAUDE_CONFIG_DIR`, `CODEX_HOME` thì script đọc cả hai thư mục ấy. `--out` chọn thư mục ra; script chỉ xoá
    `overview.md`, `batch-*.md` cũ trong đó, tệp khác để nguyên. Option xem ở `--help` (chỉ in cách dùng, không rút gì), đừng chạy
    thử với option đoán; lần chạy nào cũng kèm `--home` (nếu `machine.md` có) và mọi `--exclude` người dùng đã nói. Gõ sai option thì
-   script báo lỗi và không rút gì. `--help` chỉ có ở script này: `<setup>` không có nó, và gõ `<setup> --help` là cài lại cả
-   bộ lên máy (gạch đầu của mục "Việc sau khi cài").
+   script báo lỗi và không rút gì. `<setup> --help` cũng chỉ in cách dùng (từ bản 0.16.0); máy còn bản cũ hơn thì gõ nó
+   là cài lại cả bộ, nên xem phiên bản trong `SKILL.md` trước.
 3. Đọc `overview.md`, rồi từng đợt theo thứ tự. Sau mỗi đợt, ghi các ý tìm được vào một tệp nháp trong cùng thư mục tạm,
    không ghi thẳng vào bộ nhớ. Tìm năm loại:
    - người dùng sửa cách làm: "đừng", "sao lại", "không phải thế", "lần sau", "tôi bảo rồi";
@@ -238,7 +238,9 @@ phiên trước. Agent làm việc này một lần, khi người dùng đồng 
    bạn dặn "từ giờ so sánh thì viết thành đoạn". Mình đã để dòng thay trong nháp; nếu dòng cũ mới là ý sau cùng thì bạn bỏ ý
    đó đi." Ý về sau này ("từ tháng sau", "sắp chuyển") ghi đúng là dự định kèm mốc, không ghi như đã xảy ra. Xếp từng ý vào
    `user.md` hay `memory.md` theo bảng trong `AGENTS.md`; luật về một loại tài liệu không gắn làm lý do cho dòng về cách trả
-   lời trong chat, dù cùng một chữ.
+   lời trong chat, dù cùng một chữ. Sai: "- Trả lời trong chat thì ngắn, vì tài liệu gửi sếp càng ngắn càng tốt". Sửa: hai
+   dòng riêng, "- Tài liệu gửi sếp càng ngắn càng tốt (…)" và "- Trả lời trong chat vài câu (…)", mỗi dòng kèm lời người
+   dùng nói về chính nó.
 6. Đưa người dùng bản nháp ngay trong câu trả lời, chia hai phần theo tệp (`user.md`, `memory.md`). Mỗi ý viết đúng
    dòng sẽ ghi vào tệp: luật, rồi lý do, lời trích nguyên văn trong ngoặc kép kèm ngày; ý sửa một dòng cũ thì chép dòng cũ
    rồi viết dòng sau khi sửa, không chỉ ghi "thêm lý do". Dòng thay ý cũ chỉ gồm luật, lý do, lời trích mới kèm ngày, và
@@ -254,7 +256,7 @@ phiên trước. Agent làm việc này một lần, khi người dùng đồng 
 
    Ngoài nháp chỉ nói điều người dùng cần biết hay cần làm: bí mật bị lọt, câu hỏi cần trả lời, điều đã ghi ngay, kết quả
    `<setup> check`. Không liệt kê lại các ý đã bỏ, nhất là chuyện riêng. Con số đã kiểm tra (số phiên, số tin, số chỗ đã che, số
-   phiên đã bỏ ở từng nguồn) lấy đúng như script in ra, không đoán thêm. Kể đủ việc còn lại sau khi duyệt: ghi vào bộ nhớ,
+   phiên đã bỏ ở từng nguồn) lấy nguyên như script in ra, không đoán thêm. Kể đủ việc còn lại sau khi duyệt: ghi vào bộ nhớ,
    chạy `<setup> save`, xoá thư mục tạm và tệp `.pending-learn`. Có lần chạy lỡ rút dự án người dùng dặn bỏ thì nói ngay ở
    câu đầu, đừng mở bằng câu khẳng định đã bỏ từ đầu. Đừng dựng vế "chứ không ..." để bác một điều chưa ai nói ("dòng này
    đi ngược dòng cũ chứ không bổ sung cho nó"); điều đã kiểm tra thì nói cách kiểm tra (đọc hết đợt, chạy lệnh gì), đừng nối nó bằng

@@ -2,7 +2,7 @@
 
 ## Tiến độ
 
-- Thời gian thực hiện lấy từ HSMT; ghi rõ ngày 1 tính từ đâu (ngày ký hợp đồng hay ngày hợp đồng có hiệu lực) theo đúng chữ của
+- Thời gian thực hiện lấy từ HSMT; ghi rõ ngày 1 tính từ đâu (ngày ký hợp đồng hay ngày hợp đồng có hiệu lực) theo chữ của
   HSMT. Mốc giao hàng sớm nhất, muộn nhất theo Mẫu 01A.
 - Bảng tiến độ tóm tắt (bảng thường, trang dọc): STT | Nội dung công việc | Đơn vị tính | Khối lượng | Tổng số ngày | Kết quả /
   Ghi chú (7/20/12/19/14/28). Nhóm A cung cấp hàng hóa (từng hạng mục, khối lượng theo Mẫu 01A); nhóm B theo hạng mục triển khai, đào tạo (chỉ gọi "dịch vụ liên quan" khi Mẫu 01D có).
@@ -18,12 +18,12 @@
   kể cả trong bảng; câu có cả mốc đã chốt và mốc chưa chốt thì đặt dấu ngay sau mốc chưa chốt. Không đặt dấu trần
   `[cần xác nhận]` vào từng ô của bảng tiến độ, cũng không lặp một dấu có nội dung ("[cần xác nhận: lịch]") ở nhiều ô: lịch
   nằm trong bảng thì đặt một dấu ở câu mở bảng; `bid-check` nêu dấu lặp ở quá hai ô. Số sẽ điền vào biểu mẫu trên hệ thống (số ngày nhà thầu đề xuất ở Mẫu 10A, Mẫu 01A)
-  có dấu ngay tại ô, viết `[cần xác nhận: điền Mẫu 10A]` (ghi đúng tên mẫu), vì BA chép ô đó sang webform; `bid-check` không tính
+  có dấu ngay tại ô, viết `[cần xác nhận: điền Mẫu 10A]` (ghi tên mẫu), vì BA chép ô đó sang webform; `bid-check` không tính
   các dấu này là dấu lặp hay dấu trần.
 - Tên hàng nhóm trong bảng tiến độ theo đúng HSMT: Mẫu 01D ghi không có dịch vụ liên quan thì không có nhóm "dịch vụ liên quan"
   (ghi "CUNG CẤP HÀNG HÓA", "TRIỂN KHAI, ĐÀO TẠO" theo hạng mục).
 - Phần tiến độ kết bằng bảng theo ngày thì câu cam kết kết phần đặt trong `outro` của khối `gantt`.
-- Bảng tiến độ theo ngày chia nhóm và đặt tên nhóm đúng như bảng tiến độ tóm tắt (cùng hạng mục, cùng việc trong nhóm). Cột "Tổng
+- Bảng tiến độ theo ngày chia nhóm và đặt tên nhóm như bảng tiến độ tóm tắt (cùng hạng mục, cùng việc trong nhóm). Cột "Tổng
   số ngày" của bảng tóm tắt bằng số ngày từ ngày đầu tới ngày cuối của các việc thuộc hạng mục đó trong bảng theo ngày; soát
   lại bằng cách cộng từng dòng trước khi giao.
 - Bảng tiến độ theo ngày: khối `gantt` của `bid-docx.mjs` (trang ngang, mỗi bảng 10 ngày, đủ số bảng cho thời gian thực hiện).
@@ -38,7 +38,7 @@
   ("Cán bộ phần mềm") hoặc ghi vai trò ở chú thích dưới bảng. Bảng tràn thì `page-check.mjs` báo trang ngang gần
   trắng; bớt chữ hoặc gộp việc nhỏ, không bỏ việc HSMT đòi. Gói nhiều hạng mục (từ 5 trở lên) thì mỗi hạng mục chỉ một hàng
   `group: 1` rồi tới các việc, bỏ hàng `group: 2` khi nhóm trùng hạng mục; việc của các hạng mục chạy cùng ngày (giao máy chủ và
-  giao máy tính bảng) gộp một hàng ghi rõ cả hai. Bảng tóm tắt theo đúng các hàng nhóm đó.
+  giao máy tính bảng) gộp một hàng ghi rõ cả hai. Bảng tóm tắt theo các hàng nhóm đó.
   Hàng `group: 1` là nhóm lớn (nền xanh đậm chữ trắng), `group: 2` là nhóm việc (nền xanh nhạt), hàng việc có `from`, `to`,
   `owner`. Người thực hiện trùng tên vị trí trong bảng tổ chức nhân sự. Việc sau không bắt đầu trước việc nó phụ thuộc; tổng
   không vượt thời gian thực hiện; số ngày ở bảng tóm tắt khớp bảng theo ngày.
@@ -63,7 +63,7 @@
 Khối `letter` của `bid-docx.mjs` dựng đúng hình thức hồ sơ mẫu (đầu trang hai cột, quốc hiệu, tên văn bản, kính gửi, thông tin
 nhà thầu, thân, khối ký). Mỗi bản một trang, đặt cuối hồ sơ.
 
-- Mỗi con số, mốc trong bản cam kết lấy đúng như bảng tương ứng trong thân (thời hạn bảo hành từng hạng mục, thời gian đáp ứng,
+- Mỗi con số, mốc trong bản cam kết khớp với bảng tương ứng trong thân (thời hạn bảo hành từng hạng mục, thời gian đáp ứng,
   tiến độ); bảng còn đánh dấu chờ thì bản cam kết cũng đánh dấu, không tự ghi một con số khác.
 - Bộ bản cam kết thường cần (theo điều kiện đạt của Mục 3 và tài liệu Chương II, V đòi): tiến độ cung cấp; đáp ứng yêu cầu kỹ
   thuật của hàng hóa (kể cả hàng mới 100%, năm sản xuất, xuất xứ); bảo hành; đào tạo, hướng dẫn sử dụng; uy tín nhà thầu (số hợp
@@ -79,7 +79,7 @@ nhà thầu, thân, khối ký). Mỗi bản một trang, đặt cuối hồ sơ
 - `org`: tên nhà thầu ngắt thành 2-3 dòng ngắn, dòng đầu là loại hình ("CÔNG TY CỔ PHẦN"), các dòng sau đậm.
 - `info`: "**Tên nhà thầu:** ...", địa chỉ trụ sở, mã số doanh nghiệp, điện thoại, fax, thư điện tử, người đại diện và chức
   danh, tất cả lấy từ giấy tờ nhà thầu. Giấy tờ không có thư điện tử thì vẫn giữ dòng: "Thư điện tử: [cần bổ sung]".
-- Mỗi bản vừa một trang A4: thông tin nhà thầu 5 dòng (gộp fax và thư điện tử một dòng), thân 2-4 câu cam kết ngắn ngoài câu mở
+- Mỗi bản vừa một trang A4: thông tin nhà thầu 5 dòng (gộp mã số doanh nghiệp với điện thoại, fax với thư điện tử), như ví dụ ở `docx-json.md`, thân 2-4 câu cam kết ngắn ngoài câu mở
   và câu kết, mỗi câu dẫn một mục HSMT. Nội dung nhiều (bảo hành, đổi trả, thu hồi) thì tách hai bản theo từng ý chứ không nén
   câu. Dài hơn thì `page-check.mjs` báo trang không mở bằng quốc hiệu; bớt chữ chứ không thu cỡ chữ.
 - `body`: câu mở "Sau khi nghiên cứu E-HSMT gói thầu: <tên gói> do <chủ đầu tư> làm Chủ đầu tư, chúng tôi cam kết như sau:", các

@@ -2,7 +2,11 @@
 
 Loại này ghi lại những chỗ sai, chỗ lệch giữa một sản phẩm (trang web, ứng dụng, tài liệu) và nguồn gốc của nó (tài
 liệu khách gửi, quyết định, đặc tả), để người nhận sửa hoặc xác nhận. Người đọc kiểm tra báo cáo bằng một câu hỏi: mở
-đúng chỗ đó ra thì có thấy đúng như báo cáo nói không. Mọi quy tắc dưới đây phục vụ câu hỏi ấy.
+chỗ đó ra thì có thấy như báo cáo nói không. Mọi quy tắc dưới đây phục vụ câu hỏi ấy.
+
+Tệp này cho báo cáo có từ hai mục trở lên, giao thành tệp. Báo một lỗi qua tin nhắn thì theo `document-types.md`, mục Tin
+nhắn công việc, và nói ba thứ (chỗ bị, cách thấy lại, đoán lý do) thành câu văn: "Anh ơi, trang `/orders` bấm Lưu thì trả
+500 từ 09:00 ạ. Log ghi timeout ở câu truy vấn bảng `orders`, em đoán thiếu index cột `created_at`, em đang kiểm tra."
 
 ## Trước khi viết
 
@@ -22,8 +26,10 @@ Một đoạn ngắn nói ba thứ:
 - đối chiếu với nguồn nào;
 - quy ước trong ảnh, ví dụ "khung đỏ đánh dấu chỗ được nêu".
 
-Báo cáo dài (khoảng mười mục trở lên) thì đoạn này thêm được một câu đếm: bao nhiêu chỗ ghi khác nguồn, bao nhiêu chỗ
-chưa có nguồn, và nếu có thì bao nhiêu chỗ sản phẩm thiếu thông tin mà tài liệu gốc có. Ba số cộng lại bằng số mục. Câu đếm thay cho phần tóm tắt và kết luận của báo cáo đủ khung; không thêm đoạn nào khác.
+Báo cáo dài (khoảng mười mục trở lên) thì đoạn này thêm được một câu đếm, chia theo nhóm có
+thật trong báo cáo (ghi khác nguồn, chưa có nguồn, sản phẩm thiếu thông tin mà tài liệu gốc có, lỗi chính tả, chức năng
+hỏng); các số cộng lại bằng số mục: "Báo cáo có 12 mục: 7 chỗ ghi khác nguồn, 3 chỗ chưa có nguồn, 2 lỗi chính tả." Câu
+đếm thay cho phần tóm tắt và kết luận của báo cáo đủ khung; ngoài nó, mở đầu không có đoạn tóm tắt hay kết luận nào.
 
 Khối lặp ở mọi trang (thanh trên cùng, chân trang, menu) đặt tên ở đây, một lần, rồi giữ tên đó ở tên mục, thân mục và
 chú thích ảnh.
@@ -45,6 +51,10 @@ còn thiếu…", không để tới phần thiếu mới nói. Con số trong d
   2. Thông tin còn thiếu mà người dùng cần để hiểu nhóm trên (cột ghi chú, điều kiện đi kèm giá).
   3. Thông tin về người phụ trách (tên, chức danh, số chứng chỉ) và lời giới thiệu, con số quảng bá.
   4. Lỗi trình bày, rồi lỗi chính tả. Lỗi chính tả luôn là các mục cuối của phần.
+
+  Báo lỗi cho người sửa code thì xếp theo nhóm khác: mất hay sai dữ liệu, lộ thông tin; chức năng không dùng được; sai
+  kết quả mà vẫn dùng được; chậm; giao diện, chính tả. "API `/users` trả cả cột `password_hash`" đứng trước "nút Xuất
+  Excel lệch 2 px", vì người sửa làm theo thứ tự mục.
 
   Trong một nhóm thì thứ tự linh động. Chỗ nghi ngờ thì hỏi: người dùng đọc sai chỗ này thì đi nhầm, trả nhầm tiền, gọi
   nhầm số không; có thì đưa lên nhóm đầu.
@@ -84,7 +94,7 @@ Thân mục dùng nhãn cố định, cùng thứ tự ở mọi mục. Chọn b
 - Nói chỗ trích nằm ở đâu: trang mấy, mục nào, dòng nào của bảng theo dõi. Bảng theo dõi có mã hạng mục thì gọi bằng mã
   ("hạng mục E3"). Số dòng của một tệp chữ là số dòng trình soạn thảo hiện, tính cả dòng tên cột; luật không tính dòng tên
   cột chỉ dùng khi đếm có bao nhiêu hạng mục, bao nhiêu người.
-- Mức chắc chắn đúng như đã kiểm tra: "đã thử", "suy từ code, chưa xem log", "chữ số viết tay, đọc giống 57 hoặc 58".
+- Mức chắc chắn khớp với việc đã kiểm tra: "đã thử", "suy từ code, chưa xem log", "chữ số viết tay, đọc giống 57 hoặc 58".
   Thấy hai thứ trùng nhau thì nói trùng ("số trên site trùng báo cáo năm trước"), không nói lý do như đã biết ("site còn
   lấy báo cáo năm trước"); muốn nói lý do thì nói là đoán.
 - Ngày, số trong nguồn thiếu một phần (không ghi năm, không ghi đơn vị) thì giữ nguyên cách ghi ở mọi chỗ, kể cả câu
@@ -100,7 +110,8 @@ Thân mục dùng nhãn cố định, cùng thứ tự ở mọi mục. Chọn b
     cho những quận nào?". Không hỏi "ghi phí thế nào", "thu ở quận nào" như thể việc thu phí đã chốt.
   - Phần thiếu không liệt kê thứ chỉ cần khi một bên đúng như thể đã chốt; viết "nếu áp dụng email thì còn thiếu…".
   - Lời trả trong chat chỉ nói "không chọn hộ" khi tên mục, câu hỏi và phần thiếu đều đã giữ cả hai bên.
-- Lời đánh giá kiểu "nói quá" phải kèm câu bị đánh giá và lý do: không nguồn nào có ý đó.
+- Lời đánh giá kiểu "nói quá" phải kèm câu bị đánh giá và lý do cụ thể, ví dụ không tài liệu gốc nào có ý đó, hay con số
+  lệch với tệp nào: "Câu 'Hơn 50 kỹ sư hàng đầu' ghi quá: danh sách nhân sự (`nhan-su.csv`) có 23 người."
 - Câu quảng bá có cả con số lẫn chữ khen ("Hơn 50 kỹ sư hàng đầu", "đơn vị uy tín nhất") thì nói cả hai phần, không dừng ở
   con số: con số lệch bao nhiêu so với tệp nào, và chữ khen thì không tài liệu nào có. Câu hỏi đi kèm hỏi cả hai: "Ô này
   nên ghi bao nhiêu kỹ sư, và có giữ chữ "hàng đầu" không?"
@@ -112,7 +123,7 @@ Thân mục dùng nhãn cố định, cùng thứ tự ở mọi mục. Chọn b
 - Mỗi điểm có ảnh của hai phía nếu có thể: sản phẩm đang ghi gì, và nguồn gốc ghi gì. Nguồn là ảnh, scan, PDF thì luôn
   cắt ảnh phía nguồn. Nguồn là tệp chữ (`.txt`, `.csv`, `.md`) thì hoặc dựng trang có số dòng rồi chụp vài dòng quanh
   dòng được nêu, hoặc chỉ trích kèm tên tệp và số dòng; không chụp nguyên tệp.
-- Khung đỏ đóng đúng câu hoặc ô được nêu, không đóng cả trang. Cắt ảnh sát vùng đó, chừa đủ chữ xung quanh để biết
+- Khung đỏ chỉ đóng câu hoặc ô được nêu, không đóng cả trang. Cắt ảnh sát vùng đó, chừa đủ chữ xung quanh để biết
   nó nằm ở đâu.
 - Khung đỏ bao hết chữ được trích, kể cả khi chữ nằm ở hai dòng hay hai khối (con số to và dòng chữ nhỏ bên dưới). Khung
   chỉ đóng được một phần thì trích đúng phần trong khung.
@@ -174,7 +185,7 @@ gì, kèm mã dòng của bảng theo dõi nếu có.
    Với mọi câu có "(ảnh ở mục N)", mở ảnh mục N, đặt lời trích cạnh từng khung: chữ nào nằm ngoài khung, kể cả chữ nằm giữa
    hai khung của hai mục, thì cắt lời trích cho bằng khung hoặc vẽ thêm khung.
 3. Mỗi khung đỏ có câu trong báo cáo nói về nó.
-4. Đọc lần lượt tên các mục, xem nhóm có đúng thứ tự nặng tới nhẹ ở trên không, lỗi chính tả có nằm cuối không. Tên mục của
+4. Đọc lần lượt tên các mục, xem nhóm có xếp theo thứ tự nặng tới nhẹ ở trên không, lỗi chính tả có nằm cuối không. Tên mục của
    chỗ hai tài liệu gốc nói khác nhau có nêu đủ hai tài liệu, có nói sản phẩm khớp bên nào không; câu hỏi của mục đó có
    nêu đủ hai phương án không.
 5. Tìm mọi chữ gọi sản phẩm (web, site, trang, ứng dụng) và khối lặp; mỗi thứ chỉ còn một tên.
@@ -190,7 +201,7 @@ gì, kèm mã dòng của bảng theo dõi nếu có.
 
 ## Lời trả trong chat
 
-Lời trả gồm đường dẫn tệp (Word, PDF), số trang, đã kiểm tra gì bằng cách nào, chưa kiểm tra gì, chỗ nào chưa chắc. Không kể lại
-các mục; cần nhắc một mục thì giữ đúng mức chắc chắn của mục đó. Mỗi câu tả bài nộp phải đúng với bản đã xuất: đếm rồi
+Lời trả gồm đường dẫn tệp (Word, PDF), số trang, đã kiểm tra gì bằng cách nào, chưa kiểm tra gì, chỗ nào chưa chắc, cả lời trả không quá khoảng tám dòng (như
+`docx-export.md`, mục Lời trả kèm tệp). Không kể lại các mục; cần nhắc một mục thì giữ đúng mức chắc chắn của mục đó. Mỗi câu tả bài nộp phải đúng với bản đã xuất: đếm rồi
 mới nói ("ảnh hai phía ở 6 trên 14 mục, các mục còn lại nguồn là tệp chữ, trích kèm số dòng"), không viết "mỗi chỗ",
 "mọi ảnh" khi chưa đếm.

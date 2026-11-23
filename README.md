@@ -29,7 +29,7 @@ Trả lời xong là có:
 - trong Claude Code, mỗi tin bạn gửi đi kèm một dòng nhắc agent soát câu trả lời theo vina-me, kể cả câu trả lời ngắn;
 - vina-me tự lên bản phát hành mới nhất.
 
-Cài trên máy thứ hai bằng đúng hai lệnh trên: script thấy repo bộ nhớ đã có thì kéo về, không hỏi lại.
+Cài trên máy thứ hai bằng hai lệnh trên: script thấy repo bộ nhớ đã có thì kéo về, không hỏi lại.
 
 Không quen dòng lệnh thì nhờ Claude Code cài giúp. Mở một phiên Claude Code ở thư mục nào cũng được rồi gõ:
 
@@ -75,7 +75,7 @@ lại đủ bộ tệp kỹ thuật, mỗi tệp một bản Word và một bả
 
 - mục lục;
 - bảng đáp ứng: mỗi dòng yêu cầu một câu trả lời, kèm trang tài liệu hãng chứng minh;
-- tài liệu hãng đã tô vàng đúng chỗ được dẫn, kèm bản dịch;
+- tài liệu hãng đã tô vàng chỗ được dẫn, kèm bản dịch;
 - bản thuyết minh theo các tiêu chí chấm, tài liệu kỹ thuật phần mềm, tiến độ, các bản cam kết;
 - báo cáo cho người duyệt hồ sơ.
 

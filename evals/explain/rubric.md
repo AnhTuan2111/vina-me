@@ -76,7 +76,7 @@ Bắt đầu 26, trừ dần, thấp nhất 0:
 | Mỗi đoạn tối đa một thuật ngữ mới, giải nghĩa ngay lần đầu bằng từ dễ hơn. Người đọc đã biết: Java, Spring Boot, heap, `-Xmx`, `OutOfMemoryError`, GC, thread. Thuật ngữ mới: limit, OOMKilled, OOM killer, cgroup, SIGKILL, exit code, metaspace, committed… Danh sách ví dụ bộ nhớ ngoài heap được miễn giải từng tên nếu câu đã nói chúng là bộ nhớ ngoài heap và kể tối đa ba tên | 4 | -1 mỗi thuật ngữ dùng mà không giải nghĩa; -1 mỗi đoạn có từ hai thuật ngữ mới; -1 nếu danh sách ngoài heap quá ba tên |
 | Một thứ một tên: limit của container, OOMKilled, container và pod không dùng lẫn cho nhau; thuật ngữ tiếng Anh một cách viết | 2 | -1 mỗi tên thừa |
 | OOMKilled và `OutOfMemoryError` định nghĩa thành cặp, cùng khuôn câu, nối bằng "còn" | 2 | không phân biệt: -2; có phân biệt nhưng không thành cặp: -1 |
-| Ẩn dụ: đúng một, đặt sau lời giải thích bằng lời thường, dùng để suy ra được một điều, nói chỗ nó hết đúng | 2 | không có ẩn dụ dù người dùng xin: -1; từ hai ẩn dụ, phép so sánh trở lên: -2; mở bài bằng ẩn dụ: -2; thiếu chỗ hết đúng: -1 |
+| Phép so sánh hay ẩn dụ: chỉ một, đặt sau lời giải thích bằng lời thường, dùng để suy ra được một điều, nói chỗ nó hết đúng | 2 | không có ẩn dụ dù người dùng xin: -1; từ hai ẩn dụ, phép so sánh trở lên: -2; mở bài bằng ẩn dụ: -2; thiếu chỗ hết đúng: -1 |
 | Ghi chú viết liền: không đề mục, không in đậm nhãn, phần giải thích không viết thành gạch đầu dòng (một khối code trích describe hay số liệu thì được); kết bằng kết quả cuối hoặc việc cần chỉnh, không câu chốt | 2 | có đề mục hay in đậm nhãn: -2; gạch đầu dòng cho phần giải thích: -1 |
 | Độ dài phần văn (trừ khối code, đếm theo tiếng) 380-550 | 1 | 330-379 hay 551-650: -0,5; ngoài khoảng đó: -1 |
 

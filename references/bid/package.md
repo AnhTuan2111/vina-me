@@ -13,7 +13,7 @@ Mã đặt theo thứ tự hàng hóa trong Biểu phạm vi cung cấp (Mẫu 0
 | KT-01 | Bảng đáp ứng yêu cầu kỹ thuật hàng hóa (Word) | đúng mẫu ở mục 1.2.1 Chương V, mọi hạng mục, ký cuối bảng |
 | KT-02, KT-03… | một mã cho mỗi thiết bị | KT-0nA, KT-0nB… là tài liệu gốc của hãng đã tô vàng (PDF); KT-0n là bản dịch tiếng Việt (Word) khi tài liệu gốc tiếng nước ngoài |
 | KT-0n tiếp theo | Tài liệu kỹ thuật sản phẩm phần mềm (Word) | khi gói có hạng mục phần mềm (`outline.md`, mục Tài liệu kỹ thuật sản phẩm) |
-| kế tiếp | Thuyết minh đề xuất kỹ thuật (Word) | năm phần theo năm tiêu chí Mục 3 (`outline.md`) |
+| kế tiếp | Thuyết minh đề xuất kỹ thuật (Word) | các phần lớn theo tiêu chí Mục 3 của HSMT đang làm (`outline.md`) |
 | cuối | Bộ bản cam kết (Word) | mỗi bản một trang (`schedule-letters.md`) |
 
 Mỗi tệp Word dựng từ một `content-<mã>.json` riêng bằng `bid-docx.mjs`, cùng `--template` là hồ sơ mẫu (khổ trang, phông, kiểu
@@ -37,11 +37,11 @@ Dựng đúng mẫu của Chương V, không đổi tên cột, không bỏ hàn
    tham chiếu (mã, tên tài liệu của hãng, phiên bản, ngày lấy; tài liệu BA gửi thì ghi nguồn bằng lời của hồ sơ, như "catalog của hãng nộp kèm E-HSDT",
    không ghi "BA cung cấp": thân hồ sơ không nói với BA, `bid-check` báo lỗi chữ đó). Link dài không đặt trong ô bảng (Word ngắt giữa chữ): kê ngay dưới
    bảng mã thành danh sách "KT-03A: <link>, tải ngày ...".
-2. Bảng bốn cột đúng chữ mẫu: STT; Yêu cầu kỹ thuật của Hồ sơ mời thầu; Đáp ứng kỹ thuật của Hồ sơ dự thầu; Tài liệu kỹ thuật
-   tham chiếu trong E-HSDT. Hàng thứ hai là (1) (2) (3) (4) như mẫu. Mỗi hạng mục một hàng nhóm (tên hạng mục đúng chữ HSMT,
+2. Bảng bốn cột, tên cột chép nguyên văn mẫu: STT; Yêu cầu kỹ thuật của Hồ sơ mời thầu; Đáp ứng kỹ thuật của Hồ sơ dự thầu; Tài liệu kỹ thuật
+   tham chiếu trong E-HSDT. Hàng thứ hai là (1) (2) (3) (4) như mẫu. Mỗi hạng mục một hàng nhóm (tên hạng mục chép nguyên văn HSMT,
    số lượng; hàng chào: hãng, model, ký mã hiệu, năm sản xuất), rồi mỗi thông số một hàng (`goods.md`). Hạng mục phần mềm, dịch
    vụ cũng một hàng mỗi chức năng, dẫn KT-04 hay thuyết minh.
-3. Hai hàng cuối đúng chữ mẫu: "Tiêu chí đáp ứng tương đương hoặc tốt hơn" (kê số dòng tốt hơn; dòng tương đương thì ghi theo
+3. Hai hàng cuối chép nguyên văn mẫu: "Tiêu chí đáp ứng tương đương hoặc tốt hơn" (kê số dòng tốt hơn; dòng tương đương thì ghi theo
    nội hàm tương đương nào của Chương V và dòng nào chứng minh) và "Tiêu chí gây hạn chế nhà thầu (không được xem xét và đánh
    giá)" (kê dòng nào chỉ một hãng đáp ứng kèm tài liệu chứng minh, không có thì "Không có").
 4. Hai đoạn cam kết dưới bảng chép nguyên văn Chương V ("Nhà thầu cam kết những nội dung kê khai nêu trên là chính xác...",
@@ -54,14 +54,14 @@ Hai đoạn cam kết đó là lý do không được viết "đáp ứng" khi c
 
 **Tìm.** Thứ tự ưu tiên: tài liệu BA gửi; tệp PDF chính thức của hãng (datasheet, spec sheet, "Setup and Specifications", hướng
 dẫn sử dụng, chính sách bảo hành); trang thông số chính thức của hãng (cả trang tại Việt Nam, đỡ phải dịch); trang cấu hình đặt
-hàng trên cửa hàng của chính hãng (dell.com/shop kê từng tùy chọn: RDIMM ECC, ổ, card, gói bảo hành; dẫn và tô đúng dòng tùy
+hàng trên cửa hàng của chính hãng (dell.com/shop kê từng tùy chọn: RDIMM ECC, ổ, card, gói bảo hành; dẫn và tô dòng tùy
 chọn được chào, không dẫn phần "Selected" của cấu hình mặc định hay giá, và nói rõ ở bảng mã đó là trang cấu hình; khối "Tech
 Specs" mang một giá trị cho mỗi mục (một bộ xử lý, một dung lượng RAM, một gói bảo hành) là cấu hình mặc định, không phải cấu
 hình chào: không dẫn, không trích, không tô chữ trong khối đó, kể cả dòng bảo hành, vì nó có thể là gói khác gói chào, như
 "Basic ... Onsite Support After Remote Diagnosis" khi chào ProSupport; khối kê nhiều lựa chọn cho mỗi mục là danh sách tùy chọn,
-dẫn được, trích đúng dòng tùy chọn được chào); bảng thông số trong thông
+dẫn được, trích dòng tùy chọn được chào); bảng thông số trong thông
 cáo báo chí trên trang tin của hãng (news.samsung.com); tài liệu của hãng linh kiện cho thông số của linh kiện (chip, GPU, card
-mạng), dùng khi tài liệu thiết bị đã nêu đúng tên linh kiện đó: trang của Samsung ghi "Dimensity 9400+", trang MediaTek ghi tiến
+mạng), dùng khi tài liệu thiết bị đã nêu tên linh kiện đó: trang của Samsung ghi "Dimensity 9400+", trang MediaTek ghi tiến
 trình và GPU, trang Arm ghi Vulkan. Một thông số tìm ở mọi nguồn trên rồi mới kết luận chưa có chứng minh: cùng một thông số có
 lần tìm được ở spec sheet, có lần chỉ ở trang cấu hình. Hướng dẫn sử dụng, datasheet hay nằm sau nút tải dựng bằng JavaScript:
 `fetch-doc` in trang sản phẩm hay trang hỗ trợ của hãng sẽ kê các link PDF có trên trang (trang hỗ trợ của Dell hiện chuyển
@@ -111,7 +111,7 @@ có thì thông số đó chưa có chứng minh. Trang trả lỗi chặn tải
 giấy tờ phải xin, BA tải tay. Danh mục tài liệu ở KT-00, KT-01 ghi link và ngày tải theo `sources.md`.
 
 **Tô vàng.** Mỗi tài liệu gốc một tệp `marks-<mã>.json`: mỗi dòng bảng đáp ứng dẫn trang nào thì trang đó có ít nhất một chỗ tô,
-đúng chữ được trích trong ô đáp ứng. Trang chỉ được dẫn ở chú thích hình (ảnh sản phẩm cắt từ trang đó: "Hình 1: ... (KT-02A,
+là chữ được trích trong ô đáp ứng. Trang chỉ được dẫn ở chú thích hình (ảnh sản phẩm cắt từ trang đó: "Hình 1: ... (KT-02A,
 tr. 7)") không chứng minh thông số, nên không tô và không dịch; đừng tô một câu không liên quan cho đủ luật. Chữ trên nền tối
 (ô tiêu đề cột chữ trắng nền đen) thì vạch tô không thấy khi in: `pdf-highlight` tự vẽ khung vàng quanh chữ đó và in dòng `GHI`;
 xem ảnh trang cho chắc khung hiện. Bảng ma trận dấu tích thì chọn ô bằng `"near": "<nhãn hàng>", "col": "<tiêu đề cột>"`
@@ -132,7 +132,7 @@ Bảng có nhãn ở hàng tiêu đề cột (bảng bộ xử lý: cột "Cores
 nhiều máy (thông số Tab S11 Ultra cạnh Tab S11) thì luôn tô ô đầu cột của máy chào, vì đó là chỗ duy nhất cho biết giá trị thuộc
 máy nào; trang cấu hình có nhãn nhóm viết hoa ("PROCESSOR OPTIONS", "STORAGE CONTROLLERS", "WARRANTY") thì tô nhãn nhóm của dòng
 được trích, và xem ảnh trang cho chắc chỗ tô nằm ở ô nhãn chứ không ở chữ trùng giữa câu bên cạnh. Chữ neo đỡ phải đoán `nth` (trang in từ web có chữ ẩn trùng chữ hiện); vẫn xem ảnh trang
-sau khi tô cho đúng chỗ. `bid-check --highlight` báo khi con số của chữ trích chưa được tô, và khi một chỗ tô không ứng với chữ trích nào
+sau khi tô để chắc chỗ tô nằm ở chữ được trích. `bid-check --highlight` báo khi con số của chữ trích chưa được tô, và khi một chỗ tô không ứng với chữ trích nào
 (bỏ khỏi marks, hoặc trích chữ đó ở dòng nó chứng minh). `node scripts/bid/pdf-highlight.mjs tl/KT-02A-goc.pdf marks-KT-02A.json "KT-02A ....pdf"`; chữ
 không thấy là LỖI (trang dẫn sai, hoặc chữ không có thật). Xem ảnh các trang đã tô (`pdftoppm -f N -l N`). Tệp BA gửi đã tô sẵn
 thì `pdf-highlight.mjs --list` để biết trang nào đã tô.
@@ -141,7 +141,7 @@ thì `pdf-highlight.mjs --list` để biết trang nào đã tô.
 sơ (KT-01, thuyết minh, bản cam kết), không chỉ dòng được tô. Trang chỉ thuyết minh dẫn (yêu cầu điện, khối lượng máy cho phần
 lắp đặt) cũng dịch và tô chữ được trích, như trang KT-01 dẫn. Một thiết bị có nhiều tài liệu gốc (KT-02A, KT-02B, KT-02C) thì một bản dịch KT-02 chung: đề mục cấp 1 cho từng tài liệu
 ("KT-02A: <tên tài liệu>"), cấp 2 cho từng trang ("Trang N: <tên bảng trên trang>"). Dấu chú thích của trang (*, **, †) giữ đủ ở
-cả hai cột, cạnh đúng chữ nó gắn; trong `content.json` viết dấu sao thật là `\\*` (không thì `bid-docx` hiểu cặp sao là chữ đậm,
+cả hai cột, cạnh chữ nó gắn; trong `content.json` viết dấu sao thật là `\\*` (không thì `bid-docx` hiểu cặp sao là chữ đậm,
 nghiêng và nuốt mất dấu). Mỗi trang một bảng hai cột "Bản gốc (tiếng
 Anh) | Bản dịch tiếng Việt" (`bid-check` bỏ qua cột bản gốc), dòng được tô in đậm cả hai cột. Cột bản gốc chỉ chép chữ có trên
 trang: không thêm chữ của người dịch ("Highlighted line: ...", "every line", "(hidden when printed)", "(continued on the next
@@ -175,7 +175,7 @@ in `XEM Dấu "[chưa có chứng minh: ...]" nhưng KT-03A tr. 8 có "aluminum"
   để coi là đã xong: Mục 3 đòi tài liệu chứng minh nộp cùng hồ sơ, `bid-check` báo LỖI cả ba kiểu.
 - Trong báo cáo cho BA: bảng **Giấy tờ phải xin trước khi nộp**, mỗi dòng: thông số, dòng KT-01, xin ai (hãng, nhà phân phối được
   ủy quyền), giấy gì (datasheet của linh kiện, thư xác nhận cấu hình, giấy chứng nhận 80 Plus, xác nhận gói bảo hành), giấy phải
-  ghi đúng chữ gì. Có giấy rồi thì giấy đó thành một tài liệu KT-0nC, tô vàng, dẫn trang như mọi tài liệu hãng.
+  ghi nguyên văn chữ gì. Có giấy rồi thì giấy đó thành một tài liệu KT-0nC, tô vàng, dẫn trang như mọi tài liệu hãng.
 - Linh kiện thêm vào cấu hình (card mạng cho đủ 2 × 10GbE) là một hàng hóa con: có hãng, model, tài liệu hãng riêng, tô vàng
   riêng; chưa có model thì `[cần xác nhận: model card mạng]`.
 

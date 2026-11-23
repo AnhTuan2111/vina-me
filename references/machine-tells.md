@@ -1,6 +1,6 @@
 # Dấu hiệu văn AI slop và văn mẫu
 
-Một dấu hiệu đơn lẻ chưa phải là lỗi. Sửa khi nó lặp thành khuôn. Sửa ở đây là viết lại câu cho đúng điều muốn nói.
+Một dấu hiệu đơn lẻ chưa phải là lỗi. Sửa khi nó lặp thành khuôn. Sửa ở đây là viết lại câu để nói ra điều muốn nói.
 Thay một từ bằng từ đồng nghĩa thì chưa phải là sửa.
 
 Muốn thử một câu thì tự hỏi, nếu nói chuyện này với một người ngồi cạnh, mình có nói ra câu đó không?
@@ -13,10 +13,10 @@ Muốn thử một câu thì tự hỏi, nếu nói chuyện này với một ng
 | Mũi tên, `~`, `&`, `=`, `vs` trong câu văn | Viết thành chữ |
 | Dấu hai chấm làm khung cho định nghĩa | Hai câu, câu sau lặp từ khoá của câu trước |
 | Dấu hai chấm nhét lời giải thích vào cuối câu, lặp ở nhiều câu (từ khoảng ba chỗ trong văn bản dưới 800 tiếng là thành khuôn) | "vì", "nên", "tức là", hoặc tách câu |
-| Chữ in hoa để nhấn | Bỏ. Đưa ý đó lên đầu câu, cho nó một câu riêng, hoặc dùng "chính", "chỉ", "ngay cả" |
+| Chữ in hoa để nhấn | Bỏ. Đưa ý đó lên đầu câu, cho nó một câu riêng, hoặc dùng "chỉ", "ngay cả" khi chữ đó thu hẹp hay mở rộng phạm vi; "chính" chỉ khi tách một thứ khỏi thứ người đọc đang nghĩ tới (`function-words.md`, mục Trợ từ) |
 | Emoji, dấu tick, số khoanh tròn | Bỏ, hoặc viết thành chữ |
 | In đậm rải khắp đoạn | Chỉ in đậm thuật ngữ ở lần đầu xuất hiện |
-| Ngoặc kép quanh từ dùng đúng nghĩa thường | Bỏ ngoặc kép |
+| Ngoặc kép quanh từ dùng với nghĩa thường | Bỏ ngoặc kép |
 
 ## B. Mẫu câu
 
@@ -24,7 +24,7 @@ Muốn thử một câu thì tự hỏi, nếu nói chuyện này với một ng
 |---|---|
 | "Không phải X, mà là Y" khi chưa ai nói X | Nói thẳng Y. Câu bác bỏ chỉ đứng sau ý kiến bị bác |
 | "Không chỉ… mà còn…" với vế sau là lời khen chung | Giữ vế có thông tin, bỏ vế kia |
-| Bộ ba cho đủ vần ("nhanh, gọn, hiệu quả") | Giữ đúng số ý có thật |
+| Bộ ba cho đủ vần ("nhanh, gọn, hiệu quả") | Giữ số ý có thật |
 | Dãy từ gần nghĩa ("hệ luỵ, hậu quả, tác hại") | Một từ, kèm một con số hoặc một trường hợp |
 | Câu châm ngôn khép đoạn | Bỏ |
 | Câu tóm ở cuối mỗi đoạn ("Điều này giúp…") | Bỏ. Chỉ gom lại sau một chặng dài |
@@ -35,9 +35,9 @@ Muốn thử một câu thì tự hỏi, nếu nói chuyện này với một ng
 | Khen người đọc, khen câu hỏi | Bỏ, trả lời luôn |
 | Phán xét một nhóm người ("người mới hay…") | "Rất dễ nghĩ…", "Cách nghĩ này nghe hợp lý vì…, nhưng…" |
 | Phủ định kép ("không thể không") | Viết dạng khẳng định |
-| Mở ẩn dụ bằng "Giống…:" không chủ ngữ, dấu hai chấm làm khung | Chủ ngữ là thứ đang bàn: "Chuyện của ổ này giống…" (`core-rules.md`, mục Trình bày) |
+| Mở phép so sánh bằng "Giống…:" không chủ ngữ, dấu hai chấm làm khung | Chủ ngữ là thứ đang bàn: "Chuyện của ổ này giống…" (`core-rules.md`, mục Trình bày) |
 | "X, vì A, còn B, nên X'" với vế "nên" nói lại X | Bỏ vế nói lại; "nên" chỉ đứng sau vế dẫn tới nó (`sentences-and-paragraphs.md`) |
-| Bị động không chủ thể trong văn trung tính ("X được chọn vì đây là…", "lỗi đếm sai đã được sửa") | Vật chịu việc làm chủ ngữ mà bỏ "được", hoặc nói ai làm: "đặt X vào… vì", "hết đếm sai" |
+| Bị động không chủ thể trong văn trung tính ("X được chọn vì đây là…", "lỗi đếm sai đã được sửa") | Nói ai làm: "Nhóm đặt X vào… vì", "Bản 2.4.2 sửa lỗi đếm sai" |
 | Đuôi dịch sát "…, với N thay đổi sau", "…, với N mục dưới đây" | Tách câu: "Bản này có N thay đổi:" |
 
 ## C. Mở bài và kết bài
@@ -57,13 +57,15 @@ Muốn thử một câu thì tự hỏi, nếu nói chuyện này với một ng
 
 ## D. Từ và cụm từ
 
-Một chữ ở cột trái xuất hiện một lần, đúng chỗ thì để. Sửa khi nó lặp, hoặc khi chữ ở cột phải nói được đúng ý đó.
+Một chữ ở cột trái được để khi chữ ở cột phải không nói được ý đó mà không mất nghĩa: "Hai pod restart đồng thời lúc
+09:12" giữ "đồng thời" vì hai việc xảy ra cùng lúc thật; "Em sửa config, đồng thời cập nhật tài liệu" thì viết "Em sửa
+config rồi cập nhật tài liệu". Riêng "đúng" để nhấn, "chúng ta", "hành trình" thì gặp là sửa.
 
 | Ít gặp ngoài đời | Ngoài đời hay nói |
 |---|---|
 | do đó, hệ quả là, bởi vậy, nói cách khác | nên, vì vậy, tức là |
 | thật ra, thực chất, về bản chất | bỏ, hoặc nói thẳng điều đó |
-| hành trình, bức tranh, chìa khoá, bài toán | gọi đúng tên thứ đang nói |
+| hành trình, bức tranh, chìa khoá, bài toán | gọi tên thứ đang nói |
 | điều quan trọng nhất là, điều đáng chú ý là | bỏ khung, nói luôn |
 | đóng vai trò, mang tính, có tính chất | "là", "làm việc gì" |
 | thông qua việc, thực hiện việc, tiến hành | động từ trực tiếp |
@@ -71,16 +73,16 @@ Một chữ ở cột trái xuất hiện một lần, đúng chỗ thì để. 
 | thiết nghĩ, đã đến lúc, chung tay, nhức nhối | bỏ |
 | chữ nhấn thừa: "đúng" để nhấn ("đúng dòng này", "mở đúng các cổng", "tới đúng thời điểm", "bằng đúng số"), chính là, thật sự, hoàn toàn | bỏ khi câu không mất nghĩa; giữ "đúng" khi nghĩa là không sai |
 | cạn (với tài nguyên) | hết, đầy, tràn |
-| chúng ta | bạn, mình, hoặc đúng chủ thể |
+| chúng ta | bạn, mình, hoặc tên chủ thể |
 | sâu sắc, mạnh mẽ, toàn diện, liền mạch, tối ưu | một con số hoặc một việc cụ thể |
-| cơ chế, hệ quả, phạm vi, khía cạnh, yếu tố | chỗ, đoạn, thứ, lý do; giữ khi đúng là thuật ngữ |
+| cơ chế, hệ quả, phạm vi, khía cạnh, yếu tố | chỗ, đoạn, thứ, lý do; giữ khi nó là thuật ngữ ("biến khai báo trong hàm chỉ có phạm vi trong hàm đó"). Sai: "Phạm vi ảnh hưởng của sự cố bao gồm nhiều khía cạnh." Sửa: "Sự cố làm 3 trong 5 pod restart và chặn đăng nhập 12 phút." |
 | từ Hán Việt cổ hoặc ít dùng | từ thuần Việt cùng nghĩa |
 
 ## E. Cấu trúc
 
 | Dấu hiệu | Sửa |
 |---|---|
-| Mọi phần cùng một khuôn: mở, thân, khối chốt, câu dẫn | Mỗi phần mở một kiểu. Khối chốt chỉ khi có kết luận đáng ghim |
+| Mọi phần cùng một khuôn: mở, thân, khối chốt (đoạn in đậm hay đóng khung ở cuối mục), câu dẫn | Mỗi phần mở một kiểu. Khối chốt chỉ khi có kết luận đáng ghim. Áp cho các mục, các đoạn văn xuôi của bài giảng, lời giải thích; không áp cho các mục trong một danh sách, các bước hướng dẫn, bảng, văn bản hành chính |
 | Đoạn nào cũng ba câu, dài bằng nhau | Để nhịp tự nhiên |
 | Dãy từ nối cố định đầu đoạn: Trước hết, Bên cạnh đó, Hơn nữa, Ngoài ra, Cuối cùng | Nối bằng từ khoá của đoạn trước; gắn số thứ tự vào danh từ ("Lý do thứ hai…") |
 | Bài nào cũng đủ thực trạng, nguyên nhân, hậu quả, giải pháp, dài bằng nhau | Chỉ viết phần có điều để nói |
@@ -89,10 +91,10 @@ Một chữ ở cột trái xuất hiện một lần, đúng chỗ thì để. 
 | Đề mục cho phần chỉ có một hai câu | Gộp vào đoạn trên |
 | Toàn bảng và gạch đầu dòng, không có mạch kể | Kể bằng lời trước, bảng để tóm |
 | Ghi chú, email, câu trả lời ngắn mà chia đề mục và in đậm nhãn | Viết liền. Khối nháp, bảng dài nằm trong câu trả lời được có tiêu đề; phần lời quanh nó thì không |
-| Độ sâu đều tăm tắp | Dừng lâu ở chỗ khó, lướt chỗ dễ và nói rõ là lướt |
+| Độ sâu đều tăm tắp | Dừng lâu ở chỗ khó, lướt chỗ dễ và nói rõ là lướt: "Cài Docker như bài 03, phần này không nhắc lại. Chỗ cần dừng là volume, vì xoá container thì dữ liệu mất theo." |
 | Đánh số mọi thứ rồi gọi lại bằng số ("điều kiện 2") | Gọi bằng tên. Chỉ đánh số các bước làm theo thứ tự |
-| Nhan đề, đề mục giật gân, chơi chữ | Nói đúng nội dung |
-| Phép so sánh vừa khít ở mọi mục | Tối đa một ẩn dụ cho cả văn bản |
+| Nhan đề, đề mục giật gân, chơi chữ | Nói nội dung |
+| Phép so sánh vừa khít ở mọi mục | Tối đa một phép so sánh hay ẩn dụ cho cả văn bản |
 
 ## F. Nội dung
 
@@ -105,7 +107,7 @@ Một chữ ở cột trái xuất hiện một lần, đúng chỗ thì để. 
 | Con số tròn không nguồn; con số tu từ ("cao hơn hàng trăm lần") | Số đo được, kèm nguồn và thời điểm |
 | Output trình bày như thật mà chưa chạy | Ghi "kỳ vọng" |
 | Câu nào cũng chắc như nhau | Nói rõ chỗ chưa kiểm tra, chỗ đang đoán |
-| Nguyên nhân và giải pháp chung chung, dùng được cho mọi vấn đề | Nguyên nhân của đúng việc này; giải pháp rút từ nguyên nhân đó |
+| Nguyên nhân và giải pháp chung chung, dùng được cho mọi vấn đề | Nguyên nhân của việc này; giải pháp rút từ nguyên nhân đó |
 | Một ví dụ dùng cho mọi ý | Ví dụ dính trực tiếp tới ý đang nói |
 | Kiến thức thêm không phục vụ điều đang nói | Bỏ, hoặc dời sang phần đọc thêm |
 | Lời hứa về phần sau ("sẽ nói kỹ ở chương 7") | Chốt tới đâu thì dừng ở đó |
@@ -120,6 +122,6 @@ Một chữ ở cột trái xuất hiện một lần, đúng chỗ thì để. 
 | Giọng thân mật trong báo cáo, thư công việc | Đổi theo bảng giọng |
 | Bỏ định nghĩa chuẩn và nguồn cho đời thường | Giữ định nghĩa và nguồn, chỉ đổi cách nói |
 | Đổi tên thuật ngữ cho đỡ lặp | Giữ một tên |
-| Dời câu sang đoạn khác cho gọn, câu ngay sau chỗ dời phải trỏ qua mấy câu mới về chỗ dựa ("Cũng trong lúc đó" đứng sau hai câu nói chuyện khác) | Dời cả cụm dữ kiện cùng loại đi cùng nhau, hoặc để yên. Các số đo cùng một khung giờ (tỉ lệ lỗi, độ trễ, số máy khởi động lại) là một cụm, giữ liền; câu không có mốc giờ (lời dẫn, lời trích, đánh giá ảnh hưởng) không chen vào giữa cụm mà đứng sau cả cụm. Dời xong thì đọc câu ngay sau chỗ dời: nó phải dựa được vào câu ngay trước. Tìm mọi "cùng lúc đó", "trong cùng khoảng thời gian", "khi đó" ở đầu câu và đọc câu ngay trước nó: câu ấy phải có mốc giờ cho cụm đó trỏ về, không thì đưa câu về sát mốc giờ hoặc mở câu bằng chính mốc giờ ("Từ 09:00, độ trễ…"). Ví dụ ở dòng "Thiếu mối nối trong văn kỹ thuật" của `common-errors.md` |
+| Dời câu sang đoạn khác cho gọn, câu ngay sau chỗ dời phải trỏ qua mấy câu mới về chỗ dựa ("Cũng trong lúc đó" đứng sau hai câu nói chuyện khác) | Dời cả cụm dữ kiện cùng loại đi cùng nhau, hoặc để yên. Các số đo cùng một khung giờ (tỉ lệ lỗi, độ trễ, số máy restart) là một cụm, giữ liền; câu không có mốc giờ (lời dẫn, lời trích, đánh giá ảnh hưởng) không chen vào giữa cụm mà đứng sau cả cụm. Dời xong thì đọc câu ngay sau chỗ dời: nó phải dựa được vào câu ngay trước. Tìm mọi "cùng lúc đó", "trong cùng khoảng thời gian", "khi đó" ở đầu câu và đọc câu ngay trước nó: câu ấy phải có mốc giờ cho cụm đó trỏ về, không thì đưa câu về sát mốc giờ hoặc mở câu bằng chính mốc giờ ("Từ 09:00, độ trễ…"). Ví dụ ở dòng "Thiếu phép liên kết trong văn kỹ thuật: cụm "cùng lúc đó" trỏ qua câu không có mốc giờ" của `common-errors.md` |
 | Viết lại các câu quanh một câu gốc mở việc điều tra ("Ban đầu", "Lúc đầu nhóm nghi…") mà để yên câu đó, trong khi trước nó không còn câu nào nói đang tìm lý do | Đọc câu mở mỗi đoạn sau khi sắp lại. "Lúc đầu" phải có việc làm mốc; thêm câu dẫn ("Khi tìm lý do, lúc đầu…") |
 | Gỡ chỗ vênh trong gốc bằng cách đọc của mình, gắn một giờ hay một con số sang sự việc khác | Giữ giá trị và sự việc như gốc, hỏi người dùng bằng câu hỏi nêu câu nào ghi gì và cách hiểu khiến cả hai cùng đúng, không bảo người dùng "xem giá trị nào đúng thì sửa". Xem dòng "Hai dữ kiện vênh nhau" ở `common-errors.md` |

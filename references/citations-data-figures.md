@@ -6,18 +6,18 @@
 |---|---|---|
 | Là gì | chép nguyên văn | diễn lại bằng lời mình, không đổi ý |
 | Dấu hiệu | dấu hai chấm rồi ngoặc kép | "rằng", "là", không ngoặc kép |
-| Dùng khi | cần đúng từng chữ: định nghĩa chuẩn, thông báo lỗi, lời nói của một người | cần lời dẫn chảy cùng câu văn |
+| Dùng khi | cần nguyên văn từng chữ: định nghĩa chuẩn, thông báo lỗi, lời nói của một người | cần lời dẫn chảy cùng câu văn |
 | Nguồn | phải ghi | vẫn phải ghi |
 
 Quy tắc khi trích nguyên văn:
 
-- Chép đúng từng chữ, kể cả chỗ bản gốc sai. Chỗ sai thì ghi [sic] hoặc thêm một chú thích.
+- Chép nguyên văn từng chữ, kể cả chỗ bản gốc sai. Chỗ sai thì ghi [sic] hoặc thêm một chú thích.
 - Cắt bớt thì đánh dấu […]. Chỉ cắt phần ít quan trọng, không cắt làm đổi nghĩa.
 - Không sửa câu chữ trong lời trích cho hợp giọng của bài. Ngoại lệ duy nhất là dấu gạch dài, ghi thành gạch nối
   (`punctuation.md`).
 - Chữ của nguồn nhắc lại ở chỗ khác (chú thích ảnh, tên mục, câu hỏi gửi người nhận) mà để trong ngoặc kép thì cũng là
   lời trích: giữ chính tả của nguồn, không sửa lỗi gõ.
-- Ngày, số trong nguồn thiếu một phần (ngày không ghi năm, số không ghi đơn vị) thì giữ đúng cách ghi đó ở mọi chỗ nhắc
+- Ngày, số trong nguồn thiếu một phần (ngày không ghi năm, số không ghi đơn vị) thì giữ nguyên cách ghi đó ở mọi chỗ nhắc
   lại, kể cả câu hỏi gửi người nhận: "từ 5/3 như thông báo ghi", không "từ 5/3/2026". Cần phần thiếu thì hỏi phần đó,
   không tự điền năm hiện tại hay năm của tài liệu khác.
 - Nhắc lại một ý đã viết ở chỗ khác (lời trả trong chat, câu đếm ở mở đầu) thì giữ mức chắc chắn của chỗ gốc. Chỗ
@@ -26,7 +26,9 @@ Quy tắc khi trích nguyên văn:
 ## Ghi nguồn
 
 - Phải ghi nguồn cho ý tưởng, thông tin, con số, định nghĩa và cách diễn đạt riêng lấy của người khác.
-- Kiến thức phổ quát thì không cần ghi nguồn.
+- Kiến thức phổ quát thì không cần ghi nguồn. Phổ quát là điều sách nhập môn nào cũng ghi và không có số đo: "404 nghĩa
+  là server không tìm thấy trang". Con số, ngày, hành vi của một bản phần mềm cụ thể thì ghi nguồn: "PostgreSQL 16 bỏ
+  option X" cần release notes.
 - Ghi nguồn ngay tại chỗ dùng. Nguồn đặt được ở ba chỗ là ngay sau lời trích, ở chú thích cuối trang, hoặc ở danh
   mục cuối bài.
 - Một nguồn ghi đủ thì có tác giả hoặc tổ chức, tên tài liệu, nơi xuất bản và năm. Nguồn trên mạng kèm ngày đọc.
@@ -47,13 +49,14 @@ Người đọc kiểm tra độ tin của một văn bản bằng bốn thứ l
 ## Số liệu
 
 - Con số đi liền với thứ nó đo, ví dụ "hơn 400.000 người", "khoảng 22 tới 26 m".
-- Kèm một thứ để so, ví dụ "…chiếm gần 31% dân số cả tỉnh", "lớn hơn khoảng 14% so với lúc ở xa".
+- Số dùng để đánh giá tốt hay xấu thì kèm một thứ để so ("Độ trễ trung bình là 800 ms, hôm qua cùng giờ là 200 ms"), ví dụ "…chiếm gần 31% dân số cả tỉnh", "lớn hơn khoảng 14% so với lúc ở xa".
 - Kèm thời điểm đo, và nói nó là đo thật hay ước tính.
 - Số lớn làm tròn thì nói rõ "khoảng", "hơn", "gần".
-- Ví dụ lẻ trước, số tổng sau.
+- Bài giảng, lời giải thích thì ví dụ lẻ trước, số tổng sau. Báo cáo thì số tổng trước, ví dụ sau: "Từ 09:00 tới 09:30
+  có 37 giao dịch thanh toán lỗi, ví dụ đơn 1042 lúc 09:05."
 - Soát đơn vị đo.
 - Không dùng con số tu từ ("cao hơn hàng trăm lần") cạnh con số đo được.
-- Số chưa ai đếm thì nói cách lấy đúng như nguồn nói. Nguồn nói bảng X cho số lượt thì không gán thêm số khách cho
+- Số chưa ai đếm thì nói cách lấy như nguồn nói. Nguồn nói bảng X cho số lượt thì không gán thêm số khách cho
   bảng X; số đó lấy từ đâu mà nguồn không nói thì ghi là chưa rõ cách lấy.
 - Output, log, thông báo lỗi cũng là số liệu, nên dán nguyên văn và ghi nơi chạy, ngày chạy. Chưa chạy thì ghi là kỳ vọng.
 
@@ -72,7 +75,7 @@ Chọn dạng theo việc:
 Bốn yêu cầu:
 
 1. Hình dính trực tiếp tới một ý đang nói. Không ý nào cần nó thì bỏ.
-2. Đặt đúng chỗ ý đó xuất hiện.
+2. Đặt ngay chỗ ý đó xuất hiện.
 3. Trong đoạn văn có câu trỏ tới hình.
 4. Có chú thích nói hình cho thấy gì, kèm nguồn nếu lấy của người khác.
 
@@ -82,4 +85,4 @@ Thêm:
 - Chú thích nói hình chứng minh điều gì cho bài. Tả hình thôi thì chưa đủ.
 - Đọc một biểu đồ thành lời theo ba bước: trong hình có gì, nhìn thấy điều gì, rút ra điều gì.
 - Bảng tóm ý thì ngắn, 3 tới 6 dòng. Bảng dài chỉ để tra.
-- Nhan đề nói đúng nội dung chính. Đề mục làm nổi thông tin chính. Đề mục dạng câu hỏi thì đoạn dưới đáp ngay.
+- Nhan đề nói nội dung chính. Đề mục làm nổi thông tin chính. Đề mục dạng câu hỏi thì đoạn dưới đáp ngay.

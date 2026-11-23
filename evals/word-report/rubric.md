@@ -56,7 +56,7 @@ cả bài một lúc rồi cho điểm chung.
 |---|---|
 | Hai câu liền nhau rời nhau, câu sau không dựa gì vào câu trước | 1 |
 | Ý nhân quả, điều kiện bị chặt thành câu cụt thay vì một câu "vì… nên", "nếu… thì" | 1 |
-| Văn máy theo `references/machine-tells.md`: "đóng vai trò", "không chỉ… mà còn", "không phải X mà là Y" khi chưa ai nói X, bộ ba cho đủ vần, "Hãy…", "hành trình", "chúng ta", "việc triển khai được thực hiện" | 1,5 |
+| Văn AI slop theo `references/machine-tells.md`: "đóng vai trò", "không chỉ… mà còn", "không phải X mà là Y" khi chưa ai nói X, bộ ba cho đủ vần, "Hãy…", "hành trình", "chúng ta", "việc triển khai được thực hiện" | 1,5 |
 | Văn mẫu báo cáo: "Báo cáo này nhằm…", "Nhìn chung", "Có thể thấy", "Qua sự cố này…", "đảm bảo tính ổn định của hệ thống" | 1,5 |
 | Liệt kê "một là, hai là", "thứ nhất, thứ hai" cho đủ, hay gạch đầu dòng chia nhỏ một chuỗi nhân quả lẽ ra viết liền | 1,5 |
 | Câu chốt cuối đoạn nhắc lại điều đoạn vừa nói, câu châm ngôn, "Tóm lại" | 1,5 |

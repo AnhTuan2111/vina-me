@@ -1,7 +1,7 @@
 # Sơ đồ, trang trình chiếu, tài liệu kỹ thuật
 
 Phần này gom cách viết chữ cho những thứ không phải văn xuôi: sơ đồ luồng, sơ đồ triển khai, trang trình chiếu, tài
-liệu cấu hình gửi khách, báo cáo trạng thái hệ thống. Chữ ở đây ít, nên mỗi chữ phải đúng chỗ.
+liệu cấu hình gửi khách, báo cáo trạng thái hệ thống. Chữ ở đây ít, nên chữ nào cũng phải có việc của nó.
 
 ## Sơ đồ
 
@@ -10,8 +10,10 @@ liệu cấu hình gửi khách, báo cáo trạng thái hệ thống. Chữ ở
 - Mỗi khối chỉ ghi tên. Cấu hình, phiên bản, mô tả dài để trong tài liệu đi kèm hoặc trong bảng dưới sơ đồ. Dòng phụ
   dưới tên khối là thứ đầu tiên nên bỏ khi sơ đồ rối. Khối người dùng, dải mạng cũng vậy: "Users", "Admins", không
   "Users (LAN, VPN)", "Admins (10.0.5.0/24)"; dải IP, loại mạng để trong bảng cổng.
-- Chọn một ngôn ngữ cho nhãn và giữ suốt sơ đồ. Sơ đồ kỹ thuật thường để nhãn bằng tên gốc tiếng Anh của phần mềm, máy,
-  giao thức, vì đó là chữ sẽ gặp trên màn hình thật; tiêu đề và chú thích thì tiếng Việt.
+- Chọn một ngôn ngữ cho nhãn và giữ suốt sơ đồ. Sơ đồ triển khai, sơ đồ luồng mạng để nhãn bằng tên gốc tiếng Anh của
+  phần mềm, máy, giao thức, vì đó là chữ sẽ gặp trên màn hình thật. Sơ đồ quy trình công việc cho người không làm kỹ thuật
+  để nhãn tiếng Việt ("gửi hồ sơ", "duyệt", không "submit request", "approve"); tên phần mềm, tên máy vẫn giữ như gốc
+  ("Keycloak"). Tiêu đề và chú thích thì tiếng Việt.
 - Một thứ một tên trên mọi nhãn, và khớp tên trong tài liệu đi kèm. Một luồng đã gọi "sync" ở nhãn này thì nhãn khác
   không gọi "replicate"; một việc làm trên hai mũi tên thì hai nhãn dùng cùng chữ. Động từ trên nhãn dùng lại tên tài liệu
   đã gọi luồng đó: tài liệu viết "LDAP sync" thì nhãn là "sync users (LDAPS 636)", không đặt động từ mới như "pull
@@ -21,7 +23,7 @@ liệu cấu hình gửi khách, báo cáo trạng thái hệ thống. Chữ ở
   tên hai đầu. Không để mũi tên cắt nhau; cắt thì sắp lại vị trí các khối trước khi nghĩ tới đường vòng.
 - Một mũi tên một thứ nhận. Một khối gửi tới năm máy thì vẽ năm mũi tên, xếp khối gửi ở một cạnh và các máy nhận thành
   một hàng để mũi tên toả ra không cắt nhau. Không gom các máy vào một khung bao chỉ để trỏ một mũi tên rồi ghi trong nhãn
-  máy nào nhận gì; khung bao chỉ dùng khi nó là một thứ thật (một mạng, một cụm).
+  máy nào nhận gì; khung bao chỉ dùng khi nó là một thứ thật (một mạng, một cluster).
 - Sơ đồ triển khai đi kèm bảng cổng thì chiều mũi tên là chiều mở kết nối, khớp cột Từ, Đến của bảng, và chú giải nói
   điều đó. Chiều mở kết nối có thể ngược chiều dữ liệu chạy: máy giám sát mở kết nối để kéo số đo về, máy dự phòng mở kết
   nối để kéo dữ liệu từ máy chính. Chiều do mũi tên và chú giải nói; nhãn vẫn giữ tên tài liệu gọi luồng đó, không đổi
@@ -33,7 +35,7 @@ liệu cấu hình gửi khách, báo cáo trạng thái hệ thống. Chữ ở
   ngoặc của nhãn chính.
 - Nhãn mang dữ kiện như tài liệu: cổng, giao thức, giờ chạy mà nguồn không ghi thì không đưa lên nhãn. Chỗ còn phải kiểm tra
   thì ghi rõ trên nhãn bằng ngôn ngữ của nhãn ("forward requests (port TBD)") và báo người dùng.
-- Chữ trong bài nhắc tới thứ gì thì sơ đồ phải có thứ đó. Bài nói "so tệp YAML với bản trên cụm" thì sơ đồ phải có cả
+- Chữ trong bài nhắc tới thứ gì thì sơ đồ phải có thứ đó. Bài nói "so tệp YAML với bản trên cluster" thì sơ đồ phải có cả
   hai phía của phép so.
 - Ô nào là một phần mềm thật thì dùng logo chính thức hoặc ảnh chụp giao diện thật. Không dùng biểu tượng chung chung
   cho có hình. Ảnh lấy của người khác thì ghi nguồn.
@@ -53,7 +55,7 @@ Người dùng tự vẽ (draw.io, Visio) và chỉ xin chữ thì đưa ba th�
 - Chú giải: mỗi loại nét là loại luồng nào, chiều mũi tên là chiều gì.
 
 Tài liệu Word chừa chỗ cho hình thì để một khung trống bằng cỡ hình sẽ dán, chú thích ngay dưới khung dạng "Hình 1.
-<câu nói sơ đồ cho thấy gì>", ví dụ "Hình 1. Đường đi của một lượt đăng nhập từ trình duyệt qua Keycloak tới ứng dụng";
+<câu nói sơ đồ cho thấy gì>", ví dụ "Hình 1. Đường đi của một lượt đăng nhập từ browser qua Keycloak tới ứng dụng";
 không chỉ ghi "Sơ đồ triển khai". Khung và chú thích giữ cùng trang.
 
 ## Trang trình chiếu
@@ -71,7 +73,7 @@ không chỉ ghi "Sơ đồ triển khai". Khung và chú thích giữ cùng tra
   skill, kể cả Arial 11, lề 2 cm của `references/docx-export.md` và `scripts/report-docx.mjs`. Script không đặt được thì
   tự dựng hoặc sửa tệp sau khi dựng, rồi soát trên ảnh trang PDF: không còn phông nào ngoài phông mẫu (`pdffonts`), đề
   mục không nằm cuối trang, và không tên định danh nào gãy dòng giữa ô. Tên định danh là mọi chuỗi người đọc sẽ gõ lại hay
-  tìm trên máy: tên máy, tên container, tên dịch vụ, IP, phiên bản, đường dẫn, tên miền, kể cả khi nó nằm trong ngoặc sau
+  tìm trên máy: tên máy, tên container, tên dịch vụ, IP, phiên bản, đường dẫn, domain, kể cả khi nó nằm trong ngoặc sau
   một chữ khác ("Ứng dụng (container shop-api)"). Word ngắt dòng ở dấu gạch nối, nên tên có "-" hay gãy nhất: nới cột
   đó, bớt cột đang thừa chỗ (cột phiên bản ngắn), hoặc thay "-" trong tên bằng gạch nối không ngắt của Word
   (`NoBreakHyphen` của thư viện `docx`; hàm `unbroken` trong `scripts/official-doc-docx.mjs` làm việc này cho gạch nối
@@ -138,8 +140,9 @@ Tài liệu này đi thẳng tới khách, nên một ô đoán sai là một l�
   vàng. Nguồn mới hơn của khách (email góp ý) thắng ghi chú cũ; thứ khách đã chốt thì không còn ở mục chờ.
 - Ghi chú sai kỹ thuật (chiều kết nối ngược, tên phần mềm nhầm) thì ghi theo kỹ thuật và nói trong chat đã sửa gì,
   vì sao.
-- Cột mẫu đòi mà nguồn không cho (cột hạn khi khách chỉ hẹn "sau ngày X") thì chép nguyên lời nguồn hoặc để trống, không
-  đổi thành một ngày.
+- Cột mẫu đòi mà nguồn không cho (cột hạn khi khách chỉ hẹn "sau ngày X") thì chép nguyên lời nguồn ("sau ngày nghiệm thu
+  giai đoạn 1"), không đổi thành một ngày; nguồn không có lời nào thì ghi "cần bổ sung" và tô vàng như ô dữ kiện khác. Ô
+  trống tới tay khách đọc như bên mình quên điền.
 - Ô tô vàng là việc của bên mình phải làm xong trước khi gửi; chỗ chờ khách mới vào mục cuối. Mỗi ô tô vàng có một dòng
   trong chat, và chat có nói thì ô trong tệp vẫn phải tô: hai thứ không thay nhau.
 
@@ -151,7 +154,7 @@ nào, đã theo chỗ sửa nào của khách, đã bỏ những thứ nội b�
 
 Dòng ô tô vàng nào cũng đủ bốn thứ kể trên, kể cả "ai kiểm tra được" (người quản trị máy đó, bên khách, người đã viết ghi
 chú). Lý do chưa điền được dùng lời nguồn ("ghi chú ghi chưa hỏi lại bản nào"), không thêm điều nguồn không nói, như tên
-một bản phần mềm nguồn không nhắc. Tên máy, đường dẫn, tên miền nhắc trong chat đặt trong backtick, chép từ nguồn chứ
+một bản phần mềm nguồn không nhắc. Tên máy, đường dẫn, domain nhắc trong chat đặt trong backtick, chép từ nguồn chứ
 không gõ lại, rồi so từng ký tự với tệp Word: đường dẫn mạng `\\máy\thư mục` mở bằng hai dấu `\`, mất một dấu là thành
 đường dẫn khác.
 
@@ -171,5 +174,5 @@ Loại này trả lời "giờ nó đang thế nào". Người đọc cần quy�
 
 - Người đọc chưa biết dự án thì giải thích dự án làm gì, cho ai, gồm những khối lớn nào, trước khi vào chi tiết một khối.
 - Mỗi lần một khối, nói cơ chế chính (khối đó làm gì, vì sao cần, luồng chính đi qua nó), chưa đi vào từng dòng cấu hình.
-- Các dòng thuộc cùng một cơ chế thì giảng trong cùng một lần, theo đúng thứ tự luồng chạy, gọi tên cụ thể (máy nào,
-  tên miền nào, dòng nào). Ít hơn không có nghĩa là dễ hiểu hơn.
+- Các dòng thuộc cùng một cơ chế thì giảng trong cùng một lần, theo thứ tự luồng chạy, gọi tên cụ thể (máy nào,
+  domain nào, dòng nào). Ít hơn không có nghĩa là dễ hiểu hơn.

@@ -14,7 +14,7 @@ Có ba ký tự trông gần giống nhau. Chỉ dùng ký tự thứ nhất.
 danh sách nguồn, mục ghi công ảnh, ghi chú trong code, sơ đồ vẽ bằng ký tự, phần mô tả của tệp, commit message và
 câu trả lời trong chat.
 
-Dấu gạch đang làm việc gì thì thay bằng thứ làm được đúng việc đó:
+Dấu gạch đang làm việc gì thì thay bằng thứ làm được việc đó:
 
 | Dấu gạch đang làm việc gì | Thay bằng | Ví dụ |
 |---|---|---|
@@ -56,11 +56,11 @@ Trong câu văn, viết thành chữ. Ký hiệu chỉ giữ trong code, output 
 | `=` giữa hai vế | "là", "tức là" |
 | `+` giữa hai thứ | "và", "cộng" |
 | `vs` | "so với" |
-| `v.v.`, dấu chấm lửng cuối dãy liệt kê | kể đủ, hoặc "và vài thứ khác" khi thật sự còn |
+| `v.v.`, dấu chấm lửng cuối dãy liệt kê | kể đủ, hoặc "và vài thứ khác" khi còn thứ chưa kể |
 
 Dấu chấm lửng chỉ dùng để báo đã cắt bớt trong lời trích hoặc output, ghi `[…]` hoặc `…`.
 
-Dấu so sánh trong câu văn cũng viết thành chữ, và giữ đúng nghĩa: `>` là "trên", "quá", "lớn hơn"; `>=` là "từ… trở
+Dấu so sánh trong câu văn cũng viết thành chữ, và không đổi nghĩa: `>` là "trên", "quá", "lớn hơn"; `>=` là "từ… trở
 lên"; `<` là "dưới". "> 5 lỗi" thành "trên 5 lỗi", không thành "từ 5 lỗi".
 
 ## Dấu trong con số
@@ -78,7 +78,7 @@ giá trị, vì gốc dùng dấu chấm cho cả hàng nghìn lẫn thập phâ
 
 - Ngăn trạng ngữ đầu câu với phần còn lại.
 - Nối hai vế câu ghép khi không dùng từ nối.
-- Bọc lời giải nghĩa chêm giữa câu, hai dấu ở hai đầu.
+- Bọc thành phần phụ chú giữa câu, hai dấu ở hai đầu.
 - Gỡ câu hai nghĩa, đặt ở ranh giới giữa hai thành phần.
 
 ## Dấu hai chấm
@@ -86,12 +86,13 @@ giá trị, vì gốc dùng dấu chấm cho cả hàng nghìn lẫn thập phâ
 Dấu hai chấm có bốn việc. Nó đứng trước lời trích, trước một danh sách, trước vế giải thích cho vế đứng trước, và
 trước lời giải nghĩa ở cuối câu.
 
-Hai việc sau thì không để câu nào cũng có. Nhiều câu liền cùng có dấu hai chấm thì đổi bớt sang "vì", "tức là", hoặc
-tách câu. Không viết định nghĩa theo khuôn "Tên: lời giải thích" trong câu văn.
+Hai việc sau thì không để câu nào cũng có: từ khoảng ba chỗ trong văn bản dưới 800 tiếng là thành khuôn
+(`machine-tells.md`, bảng A), đổi bớt sang "vì", "tức là", hoặc tách câu. Sai: "Pod restart: probe hết giờ. Ổ đầy: log
+không xoay vòng." Sửa: "Pod restart vì probe hết giờ, còn ổ đầy vì log không xoay vòng." Không viết định nghĩa theo khuôn "Tên: lời giải thích" trong câu văn.
 
 ## Dấu chấm phẩy
 
-- Ngăn các vế lớn của một câu ghép nhiều tầng.
+- Ngăn các vế lớn của một câu ghép có cấu tạo phức tạp.
 - Ngăn các mục của một dãy liệt kê khi trong mỗi mục đã có dấu phẩy.
 
 ## Ngoặc đơn
@@ -101,7 +102,7 @@ nghĩa của một từ lạ.
 
 ## Ngoặc kép
 
-Dùng cho lời trích nguyên văn, tên tác phẩm, và từ dùng với nghĩa đặc biệt. Từ dùng đúng nghĩa thường thì không để
+Dùng cho lời trích nguyên văn, tên tác phẩm, và từ dùng với nghĩa đặc biệt. Từ dùng với nghĩa thường thì không để
 trong ngoặc kép.
 
 ## Dấu chấm than, chấm hỏi
@@ -111,5 +112,5 @@ trong ngoặc kép.
 
 ## Nhấn mạnh
 
-Không viết in hoa cả chữ để nhấn. Không in đậm rải khắp đoạn. Nhấn bằng "chính", "chỉ", "ngay cả", bằng cách đưa ý lên
+Không viết in hoa cả chữ để nhấn. Không in đậm rải khắp đoạn. Nhấn bằng trợ từ "chỉ", "ngay cả" (`function-words.md`, mục Trợ từ), bằng cách đưa ý lên
 đầu câu, hoặc bằng một câu ngắn riêng.
