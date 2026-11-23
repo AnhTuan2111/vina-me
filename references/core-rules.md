@@ -329,7 +329,12 @@ Bảng Trả kết quả trong SKILL.md là bản gọn; đây là bản đủ.
   gì, cách hiểu có thể. Chỗ cần hỏi nhiều hơn một thì hỏi chỗ bản sửa phải chọn mà không chọn được. Không hỏi thêm chi tiết gốc không có (chức danh của một người, một con số) để bài đầy hơn; chỗ gốc
   thiếu mà bản sửa giữ như gốc thì không hỏi.
 - **Sửa một tệp.** Chỉ sửa phần văn, báo số chỗ đã sửa theo loại, kiểu "6 câu hỏi rồi đáp, 7 chỗ xưng hô, 1 dấu gạch".
-- **Soát mà không sửa.** Từng chỗ "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ, theo thứ tự người dùng dặn nếu có. Mỗi
+- **Soát mà không sửa.** Từng chỗ "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ, theo thứ tự người dùng dặn nếu có. Lỗi
+  làm người đọc hiểu sai giờ, ngày, con số (chữ chỉ buổi lệch với giờ ghi bên cạnh, hai số chọi nhau) là lỗi nội dung,
+  xếp trên mọi lỗi câu chữ. Nhắc lại một chỗ khác trong lời soát thì gọi bằng vài chữ của câu gốc ("lời dặn kiểm tra tên
+  máy"), không bằng số mục tự đặt ("như mục 1"), vì người đọc phải lật lại mới biết mục 1 là gì. Câu gốc lạc đề hay sai
+  thì chỉ ra và đề nghị bỏ hay hỏi tác giả; không đưa dữ kiện ngoài tệp (năm, tên, số) để bác nó, vì dữ kiện ấy cũng chưa
+  kiểm tra. Mỗi
   mục một chỗ, không gộp bằng "thêm nữa"; chỗ thiếu thì câu gốc là câu liền trước nơi cần thêm, ghi "thiếu, thêm sau câu
   …". Gom nhiều câu vào một mục thì gọi tên lỗi của từng câu (`references/common-errors.md`). Lời soát dùng lại tên
   mình vừa đề xuất. Nói script báo mấy chỗ, nhận chỗ nào, bỏ chỗ nào và vì sao. Người dùng dặn không sửa tệp thì nói việc
