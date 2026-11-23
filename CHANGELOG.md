@@ -3,6 +3,15 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.23.0 (23/11/2026)
+
+- Soát theo năm phương châm hội thoại của sách Ngữ văn 9 (lượng, chất, quan hệ, cách thức, lịch sự): `core-rules.md` có mục
+  mới gồm năm câu hỏi, mỗi câu kèm câu sai và câu sửa; bước Soát của `SKILL.md` và mục Cách đọc của `scoring.md` dẫn sang.
+- `review-reports.md`, mục Giọng: chỉ lỗi thì nói giảm chữ chê ("chưa khớp", "cần sửa"), nhưng không giảm tới mức người
+  nhận không biết đó là lỗi.
+- Đề thử `evals/review` cài thêm một câu lạc đề kèm suy luận không theo được và một câu phán xét người đọc; thang chấm có
+  mục mới cho phương châm hội thoại.
+
 ## 0.22.2 (23/11/2026)
 
 - Luật vế sau mượn chủ ngữ của vế trước ("Bản 2.3 thêm cache…, chưa đo lại độ trễ") có thêm ở `core-rules.md` điều 3 và mục

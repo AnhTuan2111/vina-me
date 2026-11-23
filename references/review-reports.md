@@ -175,6 +175,10 @@ gì, kèm mã dòng của bảng theo dõi nếu có.
   cho một trong hai.
 - Câu so hai bên không cần chữ nhấn: "bằng số trên site", không "bằng đúng số trên site"; "tệp chứa gì", không "tệp thật
   sự chứa gì".
+- Chỉ lỗi bằng sự việc và cách sửa, nói giảm chữ chê: "chưa khớp", "cần sửa", không "cẩu thả", "sai bét", "vô lý".
+  Nói giảm vừa đủ để người nhận không mất mặt, không tới mức họ không biết đó là lỗi: lỗi làm người đọc làm sai thì
+  viết thẳng "cần sửa trước khi gửi", không "có lẽ nên cân nhắc xem lại" (`core-rules.md`, mục Soát theo năm phương châm
+  hội thoại).
 - Không có đoạn khen, phần "điểm tốt", bảng chấm điểm, thanh điểm, ma trận ưu tiên, ước lượng thời gian sửa.
 - Không có đoạn kết chung chung. Hết mục cuối là hết. Cần người nhận làm gì thì đã nằm ở "Cần xác nhận".
 

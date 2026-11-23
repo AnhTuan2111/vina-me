@@ -6,7 +6,7 @@ argument-hint: "[write|edit|review|score|word|bid|memory|secret|feedback] <yêu 
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.22.2"
+  version: "0.23.0"
 ---
 
 # Viết cho lưu loát
@@ -28,7 +28,8 @@ không bỏ qua với lý do đây chỉ là một dòng ngắn.
    viết hay viết lại văn dài thì đọc lại skill và tệp tham khảo hợp loại, kể cả khi đầu phiên đã đọc; viết theo trí nhớ
    thì giữ được luật câu chữ nhưng hay rơi mất cách dựng bài, nên bài ra kể lể.
 5. Soát: `node scripts/lint.mjs <tệp>` nếu chạy được lệnh, rồi đọc lại hai lượt, một lượt làm người chưa biết gì, một
-   lượt bắt văn AI slop theo `references/machine-tells.md`. Soát văn của người khác thì chạy lint trên tệp đó và trên chính
+   lượt bắt văn AI slop theo `references/machine-tells.md`, kèm năm câu hỏi theo phương châm hội thoại (lượng, chất,
+   quan hệ, cách thức, lịch sự; `references/core-rules.md`). Soát văn của người khác thì chạy lint trên tệp đó và trên chính
    lời soát; lint bỏ qua lời trích trong ngoặc kép, nên báo nào còn lại trong lời soát là của mình. Người dùng muốn có
    điểm thì chấm theo `references/scoring.md`.
 6. Trả kết quả theo bảng Trả kết quả. Việc sửa, kiểm tra, chạy thì báo đã kiểm tra gì, chưa kiểm tra gì, chỗ nào chưa chắc.

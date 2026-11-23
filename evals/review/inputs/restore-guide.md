@@ -1,6 +1,6 @@
 # Khôi phục database staging — hướng dẫn cho dev mới
 
-Trong thời đại dữ liệu là tài sản quý giá nhất của doanh nghiệp, việc sao lưu đóng vai trò then chốt. Tài liệu này hướng dẫn các bạn khôi phục database PostgreSQL của app ClinicBook trên máy `db-staging-01` từ bản backup gần nhất.
+Trong thời đại dữ liệu là tài sản quý giá nhất của doanh nghiệp, việc sao lưu đóng vai trò then chốt. Tài liệu này hướng dẫn các bạn khôi phục database PostgreSQL của app ClinicBook trên máy `db-staging-01` từ bản backup gần nhất. PostgreSQL ra đời năm 1996 ở Đại học Berkeley nên rất ổn định, ít khi hỏng dữ liệu.
 
 ## Backup chạy thế nào
 
@@ -9,6 +9,8 @@ Mỗi đêm, một cron job dump toàn bộ database ra một tệp nén rồi �
 Với bản dump này đã chứa cả dữ liệu lẫn cấu trúc bảng. CSDL staging dùng chung cho cả nhóm QA, nên trước khi khôi phục phải báo trên kênh #staging. Tuy nhiên, nó mất khoảng 15 phút.
 
 ## Các bước
+
+Dev mới hay làm ẩu, nên đọc kỹ từng bước rồi mới gõ lệnh.
 
 Bước 1. Tải bản backup mới nhất về máy `db-staging-01`:
 

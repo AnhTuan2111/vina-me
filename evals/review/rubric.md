@@ -7,7 +7,7 @@ Bài trung bình (bắt hết chỗ script báo, thêm vài lỗi câu dễ th�
 
 | Trường hợp | Tổng không quá |
 |---|---|
-| Sửa vào `inputs/restore-guide.md` (SHA-256 khác `126b4ceb…1536`) | 70 |
+| Sửa vào `inputs/restore-guide.md` (SHA-256 khác `fa416516…f228`) | 70 |
 | Bịa một dữ kiện: chọn 7 hay 14 ngày làm số đúng; khẳng định bản dump là của production hay staging; đặt tên màn cho Bước 4; đưa lệnh tạo role kèm quyền như cấu hình thật; thêm bất kỳ con số, giờ, tên người nào tệp không có | 80 |
 | Bỏ sót cả hai chỗ 7/14 ngày và lời dặn kiểm tra tên máy đứng sai chỗ | 80 |
 | Bỏ sót một trong hai chỗ trên | 90 |
@@ -45,7 +45,7 @@ Trần nhỏ nhất thắng khi dính nhiều trường hợp.
 
 Dấu `&` trong câu văn ở đoạn kết tính trong chỗ 10; bài nêu riêng thì không cộng thêm.
 
-## D. Không bắt nhầm, không bịa trong cách sửa: 15 điểm
+## D. Không bắt nhầm, không bịa trong cách sửa: 10 điểm
 
 | Lỗi | Trừ |
 |---|---|
@@ -70,7 +70,7 @@ Theo dòng "Soát mà không sửa" trong bảng Trả kết quả của `SKILL.
 | Không viết lại cả bài, không tạo tệp bản sửa khi không ai yêu cầu | 2 | Vi phạm: trừ 2 (dán cả bài đã sửa thì xét thêm trần 85) |
 | Nói đã kiểm tra gì, bằng cách nào (chạy `lint.mjs` hay không, kết quả dùng thế nào), chỗ nào chưa chắc | 2 | Không nói: trừ 2. Nói đã chạy script mà bài không có dấu vết chạy: trừ 2 |
 
-## F. Độ lưu loát của chính lời soát: 15 điểm
+## F. Độ lưu loát của chính lời soát: 10 điểm
 
 Người chấm đọc tuần tự từng câu của bài làm, từng chữ, xem câu sau có nối đuôi và dựa trên câu trước không; không quét cả
 bài một lần rồi chấm. Ghi từng chỗ trừ kèm câu trích.
@@ -90,6 +90,16 @@ bài một lần rồi chấm. Ghi từng chỗ trừ kèm câu trích.
 
 Mục này không xuống dưới 0.
 
+## H. Phương châm hội thoại: 10 điểm
+
+Theo `references/core-rules.md`, mục Soát theo năm phương châm hội thoại, và `references/review-reports.md`, mục Giọng.
+
+| Chỗ | Tối đa | Cách trừ |
+|---|---|---|
+| 14. Câu PostgreSQL lạc đề, suy luận không theo được | 3 | Không nêu: trừ 3. Chỉ nói "thừa" mà không nói lạc đề hay vế "nên" không theo được: trừ 1. Sửa bằng một mốc lịch sử khác: trừ 2 |
+| 15. Câu phán xét "Dev mới hay làm ẩu" | 3 | Không nêu: trừ 3. Đề xuất bỏ cả lời dặn đọc kỹ mà không giữ lời dặn: trừ 1 |
+| Lời soát của chính bài giữ lịch sự mà vẫn nói rõ lỗi | 4 | Chữ chê nặng với tài liệu của người dùng ("cẩu thả", "sai bét", "vô lý", "tệ"): trừ 2 mỗi chữ. Lỗi ở mục A viết thành gợi ý nhẹ ("có lẽ nên cân nhắc", "có thể xem lại") khiến người đọc không biết phải sửa: trừ 2 mỗi chỗ. Mục này không xuống dưới 0 |
+
 ## G. Hình thức trang Word
 
 Đề không có tệp Word, không xuất PDF; mục này không áp dụng. Bài làm tự xuất Word khi không ai yêu cầu thì trừ 2 ở mục E,
@@ -97,4 +107,4 @@ dòng "không tạo tệp bản sửa".
 
 ## Ghi điểm
 
-`grade.md` ghi: điểm từng mục A tới F, từng chỗ trừ kèm câu trích, trần đã áp (nếu có), tổng cuối, và bài có đạt 95 không.
+`grade.md` ghi: điểm từng mục A tới F và H, từng chỗ trừ kèm câu trích, trần đã áp (nếu có), tổng cuối, và bài có đạt 95 không.
