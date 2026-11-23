@@ -1,12 +1,12 @@
 # Thang chấm nhóm rewrite
 
-Thang 100 điểm, đạt từ 95. Đáp án dữ kiện (mã D1 tới D17) và danh sách bẫy ở `scenario.md`. Đề không có tệp Word nên
+Thang 100 điểm, đạt từ 95. Đáp án dữ kiện (mã D1 tới D19) và danh sách bẫy ở `scenario.md`. Đề không có tệp Word nên
 không chấm hình thức trang.
 
 ## Cách chấm
 
 1. Đọc `scenario.md` trước, rồi mới đọc bài.
-2. Dò dữ kiện: đi từng mã D1 tới D17, tìm câu tương ứng trong bài, ghi "có, đúng", "thiếu", "đổi" kèm câu trích.
+2. Dò dữ kiện: đi từng mã D1 tới D19, tìm câu tương ứng trong bài, ghi "có, đúng", "thiếu", "đổi" kèm câu trích.
 3. Đọc độ lưu loát tuần tự: đánh số từng câu của bản sửa (S1, S2…), đọc từng câu, che câu trước đi rồi hỏi câu này có nối
    và dựa trên câu trước không (lặp từ khoá, "này, ấy, đó", từ nối đúng quan hệ, mốc thời gian). Không quét cả bài rồi
    chấm theo cảm giác. Ghi mọi chỗ đứt kèm số câu.
@@ -22,7 +22,7 @@ Trần áp sau khi cộng, lấy trần thấp nhất:
 |---|---|
 | Bịa một dữ kiện (xem danh sách "Điều bài không được bịa" ở `scenario.md`) | 80 |
 | Bịa từ hai dữ kiện | 70 |
-| Viết nguyên nhân thành điều đã chắc ở bất cứ câu nào | 85 |
+| Viết nguyên nhân thành điều đã chắc ở bất cứ câu nào, kể cả dòng "Nguyên nhân gốc:" dưới nhan đề | 85 |
 | Còn ký tự gạch dài hay gạch vừa ở bất cứ đâu trong câu trả lời | 90 |
 | Không trả bản sửa (chỉ hỏi lại, hoặc chỉ soát) | 30 |
 
@@ -30,7 +30,9 @@ Trần áp sau khi cộng, lấy trần thấp nhất:
 
 | Lỗi | Trừ |
 |---|---|
-| Thiếu một dữ kiện trong D1 tới D17 | 4 mỗi dữ kiện |
+| Thiếu một dữ kiện trong D1 tới D19 | 4 mỗi dữ kiện |
+| Giữ "chắc có lẽ" (hai thành phần tình thái chồng nhau), hoặc chỉ giữ "chắc" làm mức phỏng đoán cao lên | 3 |
+| Thành phần tình thái đặt sai chỗ: giờ bắt đầu khuyến mãi thành điều đang đoán, hoặc "request tăng vì khuyến mãi" thành điều chắc | 3 |
 | Đổi giá trị một dữ kiện (số, giờ, phiên bản, tên, "quá 10" thành "từ 10", 50 và 20 đảo chỗ) | 5 mỗi chỗ |
 | Bỏ chữ "khoảng" của 18%, 4.2s hay 1.200 request/phút | 2 mỗi chỗ |
 | Bỏ "theo đánh giá sơ bộ" hoặc nói ảnh hưởng doanh thu chắc hơn gốc | 3 |
@@ -60,7 +62,7 @@ dòng nêu thay đổi chính và lý do. Câu hỏi về chỗ vênh được t
 
 ## C. Độ lưu loát, đọc tuần tự từng câu: 30 điểm
 
-Chấm theo bảng số câu đã ghi ở bước 3. Văn máy cụ thể chấm ở mục D, ở đây chấm mạch câu.
+Chấm theo bảng số câu đã ghi ở bước 3. Văn AI slop cụ thể chấm ở mục D, ở đây chấm mạch câu.
 
 | Lỗi | Trừ |
 |---|---|
@@ -117,9 +119,9 @@ Luật ở `machine-tells.md`, `common-errors.md`, `word-choice.md`, `punctuatio
 
 | Tổng | Bài trông thế nào |
 |---|---|
-| 95-100 | Đủ D1 tới D17 đúng mức chắc chắn, nêu chỗ vênh giờ rollback, không gạch dài, mạch câu liền, không văn AI slop cũ hay mới, đúng cách trả kết quả |
-| khoảng 80 | Bỏ hết lời độn và ký hiệu, nhưng lặng lẽ chọn một giờ rollback hoặc không nêu chỗ vênh, còn hai tên cho pool, vài chỗ câu rời hay chặt cụt, danh sách thay đổi dài hơn năm dòng |
+| 95-100 | Đủ D1 tới D19 đúng mức chắc chắn, nêu chỗ vênh giờ rollback, không gạch dài, mạch câu liền, không văn AI slop cũ hay mới, đúng cách trả kết quả |
+| khoảng 80 | Giữ dòng "Nguyên nhân gốc:", hoặc bỏ hết lời độn và ký hiệu nhưng lặng lẽ chọn một giờ rollback hoặc không nêu chỗ vênh, còn hai tên cho pool, vài chỗ câu rời hay chặt cụt, danh sách thay đổi dài hơn năm dòng |
 | dưới 70 | Bịa con số hay người nhận việc, nói chắc nguyên nhân, còn gạch dài, hoặc chỉ thay từ đồng nghĩa |
 
-Ghi `grade.md`: điểm từng mục, mọi điểm trừ kèm câu trích, bảng dò D1 tới D17, bảng số câu S1, S2… với chỗ đứt, trần đã áp,
+Ghi `grade.md`: điểm từng mục, mọi điểm trừ kèm câu trích, bảng dò D1 tới D19, bảng số câu S1, S2… với chỗ đứt, trần đã áp,
 tổng, đạt hay chưa.

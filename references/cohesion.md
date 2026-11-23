@@ -82,11 +82,8 @@ Xác định quan hệ trước, chọn từ sau.
 | Kết luận | | vậy, như vậy, vậy là |
 | Nêu ví dụ | | ví dụ, giả sử, kiểu như, chẳng hạn |
 
-Từ chỉ mức chắc chắn, hay đứng đầu câu:
-
-- Chắc: chắc chắn, chắc hẳn.
-- Chưa chắc: có lẽ, hình như, có vẻ như, dường như.
-- Ý riêng: theo mình, theo tôi.
+Thành phần tình thái ("chắc chắn", "có lẽ", "theo mình") cũng hay đứng đầu câu. Chọn mức nào và đặt ở đâu thì xem
+`word-choice.md`, mục Thành phần tình thái.
 
 ## Lỗi dùng từ nối
 
