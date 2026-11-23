@@ -657,6 +657,22 @@ Bản đã sửa đặt ngay đầu lời trả, không câu dẫn ("Bản sửa
 nêu thay đổi chính, mỗi dòng một thay đổi kèm lý do của nó ("bỏ câu hỏi tu từ vì nó không đưa dữ kiện nào"); dòng chỉ kể
 đã sửa gì mà không nói vì sao thì chưa đủ.
 
+Thay đổi nhiều hơn năm thì chọn năm thay đổi người đọc dễ thấy nhất: đổi nghĩa, đổi mức chắc chắn, gộp hay sắp lại câu. Sửa
+dấu và ký hiệu (gạch dài, mũi tên, in đậm, chữ in hoa) không cần dòng riêng. Có nêu thì gom vào một dòng cuối với một lý
+do chung ("bỏ in đậm và chữ in hoa vì ghi chú ngắn đọc liền là đủ"). Dòng nào cũng kể một việc đã làm. Những việc cố ý
+không làm, như không thêm "vì" gốc không nói, không chiếm dòng riêng. Lời trích trong dòng thay đổi chép nguyên chữ của gốc,
+kể cả chữ hoa chữ thường.
+
+Sai:
+
+- Ký hiệu đổi thành chữ, bỏ chữ in hoa, nhãn in đậm, gạch dài.
+- Không thêm "nên" giữa việc nâng bản Java và việc build chậm.
+
+Sửa:
+
+- Gộp hai câu cùng mở bằng "Nhóm mobile" thành một câu, vì hai việc liền nhau của cùng một nhóm.
+- Bỏ in đậm, chữ in hoa và mũi tên, vì ghi chú ngắn đọc liền là đủ, không cần nhấn.
+
 Chỗ vênh hay đọc được hai cách mà bản sửa phải chọn một mới viết được thì thêm một dòng hỏi ở cuối, ngoài năm dòng: một
 câu hỏi, nói câu nào ghi gì và cách hiểu có thể. Chỗ cần hỏi nhiều hơn một thì hỏi chỗ bản sửa phải chọn mà không chọn
 được. Không hỏi thêm chi tiết gốc không có (chức danh của một người, một con số) để bài đầy hơn; chỗ gốc thiếu mà bản sửa

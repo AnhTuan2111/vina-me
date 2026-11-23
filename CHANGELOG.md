@@ -7,6 +7,8 @@ dòng đầu của mục là dòng được in ra khi cập nhật.
 
 - Viết lại `core-rules.md` cho người đọc được: mỗi luật là một mục con có số (1.1, 4.2...), gồm một đoạn nói luật và lúc
   nào dùng, một câu sai, một câu sửa và lý do. Luật giữ nguyên, chỉ đổi cách viết.
+- Danh sách thay đổi khi sửa đoạn được dán vào: có hơn năm thay đổi thì chọn năm thay đổi đáng nói nhất, chỗ sửa dấu và
+  ký hiệu gom một dòng với một lý do chung, không dành dòng cho việc cố ý không làm.
 - Mục Không làm đổi thành Phạm vi của skill, viết thành đoạn văn; danh sách việc có lời trả riêng tách thành danh sách.
 
 ## 0.24.0 (23/11/2026)
