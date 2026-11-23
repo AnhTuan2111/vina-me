@@ -64,6 +64,8 @@ Giới hạn:
 - Trong một câu, một đại từ ("mình", "nó", "anh ấy") chỉ trỏ một người hay một thứ. Kể lại lời người khác mà họ xưng
   "mình" thì đổi sang cách gọi họ ("bạn", tên), đừng để "mình" trỏ hai người trong cùng câu.
 - Liệt kê nhiều ý ngang hàng thì gắn số thứ tự vào danh từ ("Lý do thứ hai là…"), không để "Thứ hai," đứng trơ.
+- Nhiều việc rời nhau, không có quan hệ thời gian hay nhân quả (mục "Tình trạng" kể một lỗi đã sửa, một ổ sắp đầy, một
+  giấy phép), thì viết thành danh sách gạch đầu dòng, không ép thành đoạn văn bằng từ nối giả.
 - Đổi đề tài nhỏ thì xuống dòng. Câu sau còn đang triển khai câu trước thì không xuống dòng.
 
 ## Từ nối theo quan hệ

@@ -81,7 +81,8 @@ tệp. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là 
 ## Sửa văn có sẵn
 
 Sửa cấu trúc câu và đoạn trước, thay từ sau; câu đã ổn thì để yên. Giữ nguyên dữ kiện, con số, tên riêng, mức chắc
-chắn, giọng tác giả; không thêm chi tiết; không đụng lời trích, code, output. Người dùng chê một câu thì sửa câu đó và
+chắn, giọng tác giả; không thêm chi tiết; không đụng lời trích, code, output (riêng gạch dài trong lời
+trích thì đổi thành gạch nối). Người dùng chê một câu thì sửa câu đó và
 hỏi lý do trước khi áp cho cả bài. Bản cần sửa do agent viết thì đối chiếu với dữ kiện gốc: lời tả không có trong dữ kiện
 thì bỏ; tên riêng agent tự đặt mà dữ kiện gốc không có thì giữ và hỏi một câu (tên nào, ở đâu, giữ hay bỏ). Không áp skill cho văn bản quy phạm pháp luật, hợp đồng, biểu mẫu,
 thơ, lời thoại.

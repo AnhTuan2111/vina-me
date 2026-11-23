@@ -235,9 +235,11 @@ Những dấu hiệu gặp nhiều nhất, bảng đầy đủ ở `references/m
   vênh nhau). Gốc tự lệch mức chắc chắn (một câu nói chắc, câu khác nói chưa xác nhận) thì theo mức thấp hơn ở mọi câu,
   vì chính tác giả đã nói là chưa chắc (`references/common-errors.md`, dòng Hai câu lệch mức chắc chắn).
 - Gộp hay viết lại câu thì không thêm quan hệ trước sau, nhân quả mà gốc không nói: gốc kể hai lệnh rời nhau thì không
-  viết "cài xong rồi chạy lệnh kia". Dời một lời trích sang chỗ khác thì có câu dẫn nối nó vào mạch kể (nó minh hoạ ảnh
-  hưởng nào). Chữ in đậm giữa câu văn của gốc thì bỏ.
-- Không đụng lời trích nguyên văn, output, code, đường dẫn, tên lệnh.
+  viết "cài xong rồi chạy lệnh kia". Lời trích của người ngoài (khách, người dùng) đứng ở đâu cũng có câu dẫn
+  nối nó vào mạch kể, nói nó minh hoạ ảnh hưởng nào: "Phía khách, thanh toán treo rồi báo lỗi; CSKH chuyển lại lời một
+  khách: …", không đặt lời trích ngay sau một câu nói chuyện khác. Chữ in đậm giữa câu văn của gốc thì bỏ.
+- Không đụng lời trích nguyên văn, output, code, đường dẫn, tên lệnh. Riêng dấu gạch dài, gạch vừa trong lời trích thì đổi
+  thành gạch nối, chữ giữ nguyên ("báo lỗi - tôi thử ba lần"), như `punctuation.md`; luật bỏ gạch dài áp cả cho lời trích.
 - Giữ giọng của tác giả. Chỉ đổi xưng hô khi được yêu cầu.
 
 ## Không làm
