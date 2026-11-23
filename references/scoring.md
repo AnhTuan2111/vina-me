@@ -25,6 +25,9 @@ không tính là chấm. Ở mỗi câu, người chấm tự hỏi:
 - Câu có dấu hiệu trong `machine-tells.md` không, có chữ nhấn thừa không, có từ ghép bị cắt còn một tiếng không ("tóm" thay
   "tóm tắt", "quản" thay "quản lý").
 - Câu có nói sai sự thật, con số có lệch với chỗ khác trong bài không.
+- Hết bài thì hỏi thêm năm câu theo phương châm hội thoại ở `core-rules.md`: bài thiếu hay thừa so với điều người đọc
+  cần (lượng), có điều nào viết chắc mà chưa có bằng chứng (chất), có đoạn nào lạc đề (quan hệ), có chỗ nào mơ hồ
+  (cách thức), xưng hô và lời chỉ lỗi có hợp người đọc (lịch sự). Mỗi chỗ phạm trừ theo mức của lỗi cụ thể ở bảng dưới.
 
 Output lệnh, code và lời trích nguyên văn thì không chấm văn, chỉ kiểm tra có khớp với lời kể quanh nó không.
 

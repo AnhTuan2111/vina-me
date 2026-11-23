@@ -245,6 +245,23 @@ Những dấu hiệu gặp nhiều nhất, bảng đầy đủ ở `references/m
   thành gạch nối, chữ giữ nguyên ("báo lỗi - tôi thử ba lần"), như `punctuation.md`; luật bỏ gạch dài áp cả cho lời trích.
 - Giữ giọng của tác giả. Chỉ đổi xưng hô khi được yêu cầu.
 
+## Soát theo năm phương châm hội thoại
+
+Sách Ngữ văn 9 dạy năm phương châm hội thoại: về lượng, về chất, quan hệ, cách thức, lịch sự. Viết xong thì đọc lại bài
+bằng năm câu hỏi ứng với năm phương châm ấy. Các luật ở trên đã nói từng phần; năm câu hỏi gom chúng lại để soát một lượt.
+
+| Phương châm | Câu hỏi khi soát | Sai | Sửa |
+|---|---|---|---|
+| Về lượng | Bài có thiếu điều người đọc cần, hay thừa điều họ không hỏi? | Báo sự cố mà không nói ảnh hưởng tới ai; hoặc hỏi "pod lên chưa?" mà đáp ba đoạn giảng readiness probe | Thêm "khách không thanh toán được từ 09:00 tới 09:30"; đáp "Lên rồi, 3/3 pod Running từ 09:20" |
+| Về chất | Mỗi điều đã có bằng chứng chưa, hay đang đoán mà viết như chắc? | "Nguyên nhân là ổ đầy." khi chưa xem dung lượng ổ | "Có lẽ ổ đầy, chưa kiểm tra lại" (`word-choice.md`, mục Thành phần tình thái) |
+| Quan hệ | Mỗi đoạn, mỗi câu có phục vụ câu hỏi của người đọc không? | Hướng dẫn cài Nginx mà chen "Nginx do một kỹ sư Nga viết năm 2004 nên chạy rất nhẹ" | Bỏ câu đó; nó lạc đề, và vế "nên" không theo được |
+| Cách thức | Có câu nào hiểu được hai cách, có từ nào mơ hồ, có lời khuyên nào chung chung? | "Viết lại đoạn này cho rõ hơn" | "Đoạn 2 có 'nó' trỏ được cả app lẫn database; gọi tên 'database'" |
+| Lịch sự | Xưng hô, tình thái từ có hợp quan hệ với người đọc? Lời chỉ lỗi có giữ thể diện người nhận mà vẫn nói rõ là lỗi? | "Khách hàng thường không đọc kỹ"; "Tài liệu viết cẩu thả" | Bỏ câu phán xét nhóm người; "Mục 3 ghi port 8080, mục 5 ghi 8081, cần sửa về một số" |
+
+Các phương châm có lúc nhường nhau, nhưng lịch sự không được che mất chất: lời chỉ lỗi nói giảm (nói giảm nói tránh) cho
+bớt nặng thì được, nói giảm tới mức người nhận không biết đó là lỗi thì không. Lỗi làm người đọc xoá nhầm dữ liệu không
+viết thành "có lẽ nên cân nhắc xem lại".
+
 ## Không làm
 
 - Không áp skill cho văn bản quy phạm pháp luật, hợp đồng, biểu mẫu, thơ, lời thoại. Văn bản hành chính nhà nước thì
@@ -312,7 +329,12 @@ Bảng Trả kết quả trong SKILL.md là bản gọn; đây là bản đủ.
   gì, cách hiểu có thể. Chỗ cần hỏi nhiều hơn một thì hỏi chỗ bản sửa phải chọn mà không chọn được. Không hỏi thêm chi tiết gốc không có (chức danh của một người, một con số) để bài đầy hơn; chỗ gốc
   thiếu mà bản sửa giữ như gốc thì không hỏi.
 - **Sửa một tệp.** Chỉ sửa phần văn, báo số chỗ đã sửa theo loại, kiểu "6 câu hỏi rồi đáp, 7 chỗ xưng hô, 1 dấu gạch".
-- **Soát mà không sửa.** Từng chỗ "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ, theo thứ tự người dùng dặn nếu có. Mỗi
+- **Soát mà không sửa.** Từng chỗ "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ, theo thứ tự người dùng dặn nếu có. Lỗi
+  làm người đọc hiểu sai giờ, ngày, con số (chữ chỉ buổi lệch với giờ ghi bên cạnh, hai số chọi nhau) là lỗi nội dung,
+  xếp trên mọi lỗi câu chữ. Nhắc lại một chỗ khác trong lời soát thì gọi bằng vài chữ của câu gốc ("lời dặn kiểm tra tên
+  máy"), không bằng số mục tự đặt ("như mục 1"), vì người đọc phải lật lại mới biết mục 1 là gì. Câu gốc lạc đề hay sai
+  thì chỉ ra và đề nghị bỏ hay hỏi tác giả; không đưa dữ kiện ngoài tệp (năm, tên, số) để bác nó, vì dữ kiện ấy cũng chưa
+  kiểm tra. Mỗi
   mục một chỗ, không gộp bằng "thêm nữa"; chỗ thiếu thì câu gốc là câu liền trước nơi cần thêm, ghi "thiếu, thêm sau câu
   …". Gom nhiều câu vào một mục thì gọi tên lỗi của từng câu (`references/common-errors.md`). Lời soát dùng lại tên
   mình vừa đề xuất. Nói script báo mấy chỗ, nhận chỗ nào, bỏ chỗ nào và vì sao. Người dùng dặn không sửa tệp thì nói việc

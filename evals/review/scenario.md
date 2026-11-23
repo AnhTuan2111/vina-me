@@ -2,42 +2,37 @@
 
 ## Lời yêu cầu
 
-Ở `prompt.md`. Tệp vào: `inputs/restore-guide.md` (376 chữ, Markdown, hai khối code bash). Dữ kiện giả: app ClinicBook,
+Ở `prompt.md`. Tệp vào: `inputs/restore-guide.md` (362 tiếng, Markdown, hai khối code bash). Dữ kiện giả: app ClinicBook,
 máy `db-staging-01`, bucket `clinicbook-backup`, role `report_reader`, kênh #staging.
 
 SHA-256 của tệp vào lúc ra đề, để người chấm kiểm tra bài làm có sửa tệp hay không:
-`126b4cebb1734bfef85955bb787568e53b870fe4e5a8a4bc24447e1b7ac21536`
+`fa41651643caa074d338e4afc5ae3b5559d7bb40232951386bad22447a0df228`
 
 ## Đề thử điều gì của skill
 
 - Đúng loại việc "Soát mà không sửa" trong bảng Trả kết quả của `SKILL.md`: từng chỗ "câu gốc, vấn đề, cách sửa", từ
   nặng tới nhẹ, không viết lại cả bài, không đụng vào tệp. Người dùng còn dặn thêm thứ tự: nội dung sai và chỗ làm người
   đọc làm sai lên trước, lỗi câu chữ sau.
-- Có đọc tuần tự từng câu như người đọc thật hay chỉ chép lại kết quả của `scripts/lint.mjs`. Script bắt được tám chỗ bề
-  mặt; phần lớn chỗ nặng nằm ngoài tầm của nó.
+- Có đọc tuần tự từng câu như người đọc thật hay chỉ chép lại kết quả của `scripts/lint.mjs`. Script bắt được mười ba chỗ;
+  những chỗ nặng nhất và hai chỗ phạm phương châm hội thoại nằm ngoài tầm của nó.
 - Có biết khi nào kết quả của script là báo nhầm (luật "không phải X mà là Y" được giữ khi sửa một cách hiểu có thật).
 - Có giữ được luật "nói thật" khi soát: gặp hai con số chọi nhau thì hỏi tác giả, không tự chọn một số; không bịa cách sửa
   dựa trên dữ kiện tệp không có.
 - Không bắt nhầm ký hiệu trong code (skill chỉ cấm `~`, `&` trong câu văn).
+- Năm câu hỏi theo phương châm hội thoại (`references/core-rules.md`, mục Soát theo năm phương châm hội thoại). Tệp có một
+  câu lạc đề kèm suy luận không theo được (phương châm quan hệ, về chất) và một câu phán xét dev mới (phương châm lịch
+  sự). Lời soát của chính bài cũng phải giữ lịch sự mà vẫn nói rõ là lỗi: nói giảm chữ chê, không nói giảm tới mức lỗi
+  làm người đọc xoá nhầm dữ liệu thành lời gợi ý nhẹ (`references/review-reports.md`, mục Giọng).
 
 ## Kết quả lint lúc ra đề
 
-`node scripts/lint.mjs inputs/restore-guide.md` in ra tám dòng:
+`node scripts/lint.mjs inputs/restore-guide.md` (bản 0.22.2) báo mười ba chỗ: gạch dài ở nhan đề; "đóng vai trò", "không
+chỉ", "chìa khoá", "then chốt"; "Hãy"; "Tóm lại"; "KHÔNG" in hoa; dấu `&`; mở bài "Trong thời đại…"; câu mở bằng "Với";
+database, CSDL, DB; "Mỗi đêm" với "9h sáng"; "kịp thời" với "lẽ ra"; giữ 7 ngày với giữ 14 ngày. Nó cũng ghi chú câu "không
+phải … mà là" thường là chỗ được giữ.
 
-```
-gạch dài hoặc gạch vừa: 1 chỗ
-cụm ít gặp ngoài đời, đang dày: đóng vai trò, không chỉ
-câu mở bằng "Hãy": 1 lần
-câu mở bằng "Tóm lại": 1 lần
-"không phải … mà là": 1 lần (chỉ giữ khi sửa một chỗ hiểu sai có thật)
-chữ in hoa nhấn mạnh: KHÔNG
-ký hiệu trong câu văn, viết thành chữ: dấu & (1)
-kết bằng lời kêu gọi hoặc "Tóm lại": hết ý thì dừng, hoặc quay về câu mở
-```
-
-Script không bắt được: câu mở "Trong thời đại dữ liệu là…" (khuôn của nó đòi chữ "hiện nay", "hiện đại"), "chính là chìa
-khoá", câu thiếu chủ ngữ mở bằng "Với", từ nối sai quan hệ, đại từ trỏ không rõ, một thứ ba tên, hai ý chọi nhau, và mọi
-lỗi nội dung.
+Script không bắt được: lời dặn kiểm tra tên máy đứng sau lệnh xoá, bản dump lấy từ database nào, "Tuy nhiên" sai quan hệ,
+"nó" trỏ không rõ, câu PostgreSQL lạc đề và câu phán xét dev mới.
 
 ## Đáp án: chỗ bài phải chỉ ra
 
@@ -79,6 +74,15 @@ Xếp từ nặng tới nhẹ như người dùng dặn. Câu gốc trích nguy�
     vần, dấu `&` trong câu văn, "Tóm lại", "chính là" nhấn thừa, ẩn dụ "chìa khoá", câu khẳng định ý nghĩa dùng cho bài
     nào cũng được. Sửa: bỏ cả đoạn, hướng dẫn hết ở mục Khi có lỗi là dừng.
 
+### Phương châm hội thoại
+
+14. "PostgreSQL ra đời năm 1996 ở Đại học Berkeley nên rất ổn định, ít khi hỏng dữ liệu." Lạc đề với việc khôi phục
+    (phương châm quan hệ); vế "nên" không theo được, vì năm và nơi ra đời không làm phần mềm ổn định; "ít khi hỏng dữ liệu"
+    là khẳng định không có bằng chứng, lại đi ngược lý do tài liệu tồn tại (phương châm về chất). Sửa: bỏ câu.
+15. "Dev mới hay làm ẩu, nên đọc kỹ từng bước rồi mới gõ lệnh." Phán xét cả nhóm người đọc của chính tài liệu (phương châm
+    lịch sự; `machine-tells.md` bảng B, dòng Phán xét một nhóm người). Sửa: giữ lời dặn, bỏ phần phán xét, nói lý do thật:
+    "Đọc hết các bước rồi mới gõ lệnh, vì Bước 3 xoá database."
+
 ### Dấu và ký hiệu
 
 11. Gạch dài ở nhan đề: "Khôi phục database staging — hướng dẫn cho dev mới". Sửa: "Khôi phục database staging: hướng
@@ -102,9 +106,13 @@ Xếp từ nặng tới nhẹ như người dùng dặn. Câu gốc trích nguy�
 - Không đặt tên màn cụ thể cho Bước 4, không viết lệnh `CREATE ROLE` kèm quyền như thể đó là cấu hình thật của hệ thống
   (đưa ví dụ lệnh và nói rõ là ví dụ, chưa kiểm tra, thì được).
 - Không thêm dữ kiện về lịch backup, dung lượng, số người dùng, tên người duyệt.
+- Không sửa câu PostgreSQL bằng một mốc lịch sử khác; chỉ cần chỉ ra câu lạc đề và bỏ đi.
 
 ## Bẫy đã cài
 
+- Lời soát nói giảm quá tay: lỗi 7 và 14 ngày hay lời dặn đứng sau lệnh xoá mà chỉ viết "có lẽ nên cân nhắc xem lại" là
+  làm mất tính chất lỗi. Lời soát dùng chữ chê nặng ("cẩu thả", "sai bét", "vô lý") với tài liệu của chính người dùng cũng
+  là phạm phương châm lịch sự.
 - Ký hiệu trong code: `~` và `&&` nằm trong hai khối code bash. Skill chỉ cấm chúng trong câu văn; script cũng bỏ qua code.
   Bắt chúng là bắt nhầm.
 - "Lịch thật không phải 2h sáng giờ Việt Nam mà là 2h sáng giờ UTC…": script báo khuôn "không phải … mà là", nhưng câu
