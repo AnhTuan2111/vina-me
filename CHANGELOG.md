@@ -3,6 +3,17 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.24.0 (23/11/2026)
+
+- `cohesion.md` gọi tên hai lớp liên kết của sách Ngữ văn 9 (liên kết nội dung, liên kết hình thức), thêm phép đồng nghĩa,
+  trái nghĩa và phép liên tưởng, và có mục mới Chọn kiểu câu để nối: câu bị động giữ thứ đang bàn ở đầu câu, khởi ngữ
+  "Còn X thì…" để chuyển sang thứ thứ hai, trạng ngữ chỉ tình huống để gộp hai câu cùng chủ thể.
+- `sentences-and-paragraphs.md` có mục Trật tự từ: bốn việc trật tự từ làm, trong đó câu kết bằng hư từ hay dồn thanh trắc
+  thì đọc vấp.
+- Gộp hai câu cùng chủ thể thì gộp thật, không chỉ đưa mốc giờ lên đầu; gốc chỉ ghi giờ cho một việc thì mốc giờ đứng
+  cạnh việc đó, không để trạng ngữ đầu câu phủ cả hai việc.
+- Thêm đề thử `evals/cohesion`: ghi chú bàn giao ca trực viết toàn câu cụt, cài bẫy cho từng kiểu nối.
+
 ## 0.23.0 (23/11/2026)
 
 - Soát theo năm phương châm hội thoại của sách Ngữ văn 9 (lượng, chất, quan hệ, cách thức, lịch sự): `core-rules.md` có mục

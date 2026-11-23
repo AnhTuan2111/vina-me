@@ -6,7 +6,9 @@
 2. Nó đứng đúng thứ tự chưa?
 3. Nó nối với câu trước bằng gì?
 
-Hỏng ở bước 1 hoặc 2 thì thêm từ nối không cứu được.
+Hỏng ở bước 1 hoặc 2 thì thêm từ nối không cứu được. Sách Ngữ văn 9 gọi hai bước đầu là liên kết nội dung, gồm liên
+kết chủ đề (câu nào cũng phục vụ đề tài chung) và liên kết lô-gíc (câu đứng theo trình tự hợp lý). Bước ba là liên kết
+hình thức, tức các phép liên kết ở mục dưới.
 
 ## Mạch lạc
 
@@ -26,6 +28,8 @@ Hỏng ở bước 1 hoặc 2 thì thêm từ nối không cứu được.
 | Phép thế | Danh từ gốc kèm "này, ấy, đó"; hoặc "nó, họ" khi chỉ có một thứ để trỏ | "Tôi vừa mua một chiếc bút mới. Chiếc bút này viết rất đều mực." |
 | Phép thế, thế cả ý | "Điều đó", "việc ấy", "như thế", "vậy" kéo cả câu trước sang | "Cả bọn đã thấm mệt. Nhưng điều đó không làm chúng tôi bỏ cuộc." |
 | Phép nối | Từ nối đúng quan hệ, thường ở đầu câu | "Mẹ đã sang nhà ngoại. Vì vậy chúng tôi tự nấu cơm." |
+| Phép đồng nghĩa, trái nghĩa | Câu sau dùng từ cùng nghĩa hay trái nghĩa với một từ của câu trước | "Lúc 09:00 hàng đợi còn trống. Tới 09:30 nó đã đầy." |
+| Phép liên tưởng | Câu sau nhắc một bộ phận, một thứ đi kèm với thứ câu trước vừa nói | "Phòng máy nóng bất thường. Quạt của tủ rack số 3 không quay." |
 
 Thêm hai cách không dùng từ nối:
 
@@ -36,8 +40,25 @@ Giới hạn:
 
 - Lặp vừa phải. Lặp nguyên một cụm trong cùng một câu mà không để nối thì thay bằng "nó".
 - Từ thay thế phải rõ nó chỉ cái gì. Câu trước có hai danh từ thì lặp lại tên.
-- Thuật ngữ thì chỉ lặp hoặc thế bằng đại từ, không đổi sang từ đồng nghĩa.
+- Thuật ngữ thì chỉ lặp hoặc thế bằng đại từ, không đổi sang từ đồng nghĩa. Phép đồng nghĩa dùng cho từ thường, hợp
+  với văn kể và bài giảng.
 - Từ nối chỉ dùng khi quan hệ có thật. Không mở ba đoạn liền bằng cùng một từ.
+
+## Chọn kiểu câu để nối
+
+Nhiều khi không cần thêm từ nối, chỉ cần đổi kiểu câu (sách Ngữ văn 11, bài Thực hành về sử dụng một số kiểu câu).
+
+| Kiểu câu | Dùng khi | Câu rời | Câu nối |
+|---|---|---|---|
+| Câu bị động | Giữ thứ đang bàn ở đầu các câu liền nhau | "Bản 2.4 ra hôm thứ Hai. Nhóm QA thử bản này hai ngày rồi mới duyệt." | "Bản 2.4 ra hôm thứ Hai. Bản này được nhóm QA thử hai ngày rồi mới duyệt." |
+| Câu có khởi ngữ "Còn X thì…" | Chuyển sang thứ thứ hai cùng loại, đặt nó cạnh thứ thứ nhất | "Máy cache-1 đã khởi động xong. Máy cache-2 chưa khởi động xong." | "Máy cache-1 đã khởi động xong. Còn cache-2 thì chưa." |
+| Câu có trạng ngữ chỉ tình huống | Gộp hai câu liền nhau cùng một chủ thể | "Tuấn đọc xong log. Tuấn mở ticket cho nhóm database." | "Đọc xong log, Tuấn mở ticket cho nhóm database." |
+
+Câu bị động vẫn phải nói ai làm khi việc đó là chỗ người đọc cần biết (`core-rules.md`, điều 5). Gộp bằng trạng ngữ chỉ
+tình huống thì chỉ gộp khi hai việc nối tiếp nhau trong gốc; không thêm "nên", "vì" mà gốc không nói. Hai câu liền nhau
+cùng một chủ thể thì gộp, đừng chỉ đưa mốc giờ lên đầu câu thứ nhất rồi để câu thứ hai lặp lại chủ ngữ. Gốc chỉ ghi giờ
+cho một việc thì đặt mốc giờ cạnh việc đó, không để trạng ngữ đầu câu phủ cả hai: "Nhận tin nhắn của khách lúc 09:00,
+Tuấn mở ticket", không "Lúc 09:00, Tuấn nhận tin nhắn của khách và mở ticket" (gốc không nói ticket mở lúc 09:00).
 
 ## Nối đoạn
 

@@ -11,6 +11,18 @@
 - Chủ động hay bị động là chọn thứ muốn nhấn. Thứ đang nói tới thì đặt làm chủ ngữ.
 - Viết dạng khẳng định khi được. "Phải dời đổi", không phải "không thể không dời đổi".
 
+## Trật tự từ
+
+Một câu có nhiều cách sắp từ, mỗi cách cho một hiệu quả (sách Ngữ văn 8, 11). Trật tự từ dùng để:
+
+- Theo thứ tự của sự việc: việc trước nói trước, thứ quan trọng nói trước.
+- Nhấn mạnh: đưa thứ cần nhấn lên đầu câu ("Ổ /data, chứ không phải ổ hệ điều hành, đã đầy").
+- Nối với câu trước: phần đã biết lên đầu câu, phần mới để cuối (`cohesion.md`).
+- Giữ câu đọc êm: câu hay vế kết bằng một hư từ ("của", "với", "cho", "tới") thì đọc vấp, đổi trật tự để câu kết bằng
+  thực từ. Sai: "Đây là máy chủ mà nhóm đang đợi quyền truy cập vào." Sửa: "Nhóm đang đợi quyền truy
+  cập vào máy chủ này." Cuối câu
+  dồn ba bốn tiếng cùng thanh trắc ("bị chiếm hết sạch") cũng đọc vấp; bỏ chữ thừa hay đổi chữ.
+
 ## Câu ghép
 
 Hai ý có quan hệ thì gom vào một câu. Có bốn cách nối vế.
