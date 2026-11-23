@@ -18,6 +18,10 @@ dòng đầu của mục là dòng được in ra khi cập nhật.
   nghĩa, thuật ngữ gửi lãnh đạo, câu thứ hai sau cách đoán sai, mốc tách câu); văn của skill thôi tự dịch packet, browser,
   domain, certificate, restart, rollback, cluster.
 - `word-choice.md` đổi nhan đề thành Chọn từ và thuật ngữ.
+- Sửa theo kết quả chạy đề thử: sửa văn có sẵn mà gốc tự lệch mức chắc chắn thì theo mức thấp hơn ở mọi câu; bản sửa
+  đặt ngay đầu lời trả, không câu dẫn, cuối chỉ một câu hỏi; không thêm "rồi", "nên" mà gốc không nói; gạch dài trong
+  lời trích đổi thành gạch nối; lời trích của người ngoài có câu dẫn; việc rời nhau viết thành danh sách; việc hệ thống
+  làm theo lịch không dùng "bị".
 
 ## 0.22.0 (23/11/2026)
 
