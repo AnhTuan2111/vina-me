@@ -10,6 +10,8 @@ dòng đầu của mục là dòng được in ra khi cập nhật.
   "Còn X thì…" để chuyển sang thứ thứ hai, trạng ngữ chỉ tình huống để gộp hai câu cùng chủ thể.
 - `sentences-and-paragraphs.md` có mục Trật tự từ: bốn việc trật tự từ làm, trong đó câu kết bằng hư từ hay dồn thanh trắc
   thì đọc vấp.
+- Gộp hai câu cùng chủ thể thì gộp thật, không chỉ đưa mốc giờ lên đầu; gốc chỉ ghi giờ cho một việc thì mốc giờ đứng
+  cạnh việc đó, không để trạng ngữ đầu câu phủ cả hai việc.
 - Thêm đề thử `evals/cohesion`: ghi chú bàn giao ca trực viết toàn câu cụt, cài bẫy cho từng kiểu nối.
 
 ## 0.23.0 (23/11/2026)
