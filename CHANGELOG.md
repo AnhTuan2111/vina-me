@@ -3,6 +3,14 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.22.2 (23/11/2026)
+
+- Luật vế sau mượn chủ ngữ của vế trước ("Bản 2.3 thêm cache…, chưa đo lại độ trễ") có thêm ở `core-rules.md` điều 3 và mục
+  Soát của `function-words.md`, vì agent sửa văn không mở `sentences-and-paragraphs.md` nên đề thử vẫn mắc lỗi này.
+- Bảng tiến độ tóm tắt và bảng lớp đào tạo ở `references/bid/house-style.md` đo lại từ hồ sơ mẫu của công ty: 7, 33, 9, 9,
+  11, 31 và 7, 29, 15, 33, 17. Hai bộ số cũ là số chỉnh tay lúc dựng hồ sơ, và `schedule-letters.md` ghi một bộ thứ ba;
+  giờ `schedule-letters.md` trỏ sang `house-style.md`.
+
 ## 0.22.1 (23/11/2026)
 
 - Skill tự đặt tên đời thường cho nhiều thứ đã có thuật ngữ trong sách Tiếng Việt và Ngữ văn. Đã đổi sang thuật ngữ: hư từ

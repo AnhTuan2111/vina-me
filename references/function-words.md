@@ -162,3 +162,6 @@ trung tính, báo cáo, văn bản hành chính không dùng tình thái từ.
 
 Đọc lướt cả bài thì mắt trượt qua hư từ. Tìm lần lượt từng chữ trong bài (grep hay Ctrl+F): "đã được", "được", "các",
 "của", "việc", "sự", "có thể", "sẽ". Xét từng chỗ bằng cách thử ở đầu tệp: bỏ từ đi, nghĩa không đổi thì bỏ.
+
+Bỏ hư từ xong hay phải gộp hai câu, và câu gộp dễ để vế sau mượn chủ ngữ của vế trước. Đọc lại mỗi câu gộp: chủ ngữ vế
+đầu có làm được việc ở vế sau không (`core-rules.md`, điều 3). Không làm được thì nói chủ ngữ riêng cho vế sau.
