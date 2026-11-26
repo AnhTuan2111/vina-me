@@ -1,6 +1,8 @@
 # Ví dụ: trước và sau
 
-Mỗi cặp minh hoạ một quy tắc. Đọc để thấy cách sửa, không chép lại câu chữ.
+Luật nói bằng lời thì dễ hiểu sai; đặt câu trước và câu sau cạnh nhau thì thấy ngay chỗ khác. Mỗi mục dưới đây là một cặp
+như thế, minh hoạ một luật, kèm một đoạn ngắn nói câu trước hỏng ở đâu. Đọc để thấy cách sửa, không chép lại câu chữ. Các
+tệp khác trỏ tới mục ở đây bằng số ("`examples.md`, mục 20"), nên số mục giữ cố định.
 
 ## 1. Định nghĩa trước hình
 
@@ -9,8 +11,8 @@ Trước:
 > Định nghĩa dùng được thì nhìn theo đường đi của packet: hai máy cùng mạng khi packet đi từ máy này tới máy kia mà
 > không phải qua router nào.
 
-Vấn đề là người đọc chưa có hình nào trong đầu, chủ ngữ là một cụm trừu tượng, và dấu hai chấm bị dùng làm khung
-cho định nghĩa.
+Câu này hỏng ba chỗ: người đọc chưa có hình nào trong đầu, chủ ngữ là một cụm trừu tượng, và dấu hai chấm bị dùng làm
+khung cho định nghĩa.
 
 Sau:
 
@@ -29,7 +31,7 @@ Trước:
 
 > DNS dịch tên thành địa chỉ. Máy người dùng không biết địa chỉ. Nó hỏi một server DNS. Server đó trả lời.
 
-Vấn đề là không câu nào nhắc tới câu trước.
+Bốn câu đứng cạnh nhau mà không câu nào nhắc tới câu trước.
 
 Sau:
 
@@ -235,7 +237,7 @@ Trước:
 
 > App trả lời chậm thì Nginx hết proxy_read_timeout, trả 504 cho browser và ghi "upstream timed out" vào error log.
 
-Vấn đề là một câu mang ba thuật ngữ mới (proxy_read_timeout, 504, upstream) mà không cái nào được giải nghĩa.
+Một câu mang ba thuật ngữ mới (proxy_read_timeout, 504, upstream) mà không cái nào được giải nghĩa.
 
 Sau:
 
@@ -256,7 +258,7 @@ Trước:
 > Gateway đặt rate limit 100 request mỗi phút cho mỗi khách, tức là hạn mức gọi API. Vượt hạn mức thì gateway chặn
 > request và trả 429. Đặt ngưỡng thấp quá thì gateway drop nhầm cả khách thật.
 
-Vấn đề là rate limit có ba tên (rate limit, hạn mức, ngưỡng), và một việc của gateway có hai động từ (chặn, drop).
+Rate limit có ba tên (rate limit, hạn mức, ngưỡng), và một việc của gateway có hai động từ (chặn, drop).
 Người đọc tưởng đang có ba thứ và hai việc khác nhau.
 
 Sau:
@@ -274,7 +276,7 @@ Trước:
 > Request không kèm token thì server trả 401. Token lấy ở trang cài đặt tài khoản, mỗi token có hạn riêng, hết hạn thì
 > tạo cái mới. […] Kèm token rồi mà vẫn lỗi thì đó là 403, do tài khoản thiếu quyền.
 
-Vấn đề là hai mã cách nhau cả đoạn, mỗi mã một khuôn câu, nên người đọc không thấy chúng là một cặp để phân biệt.
+Hai mã cách nhau cả đoạn, mỗi mã một khuôn câu, nên người đọc không thấy chúng là một cặp để phân biệt.
 
 Sau:
 
@@ -293,7 +295,7 @@ Trước:
 > Giống một cái tủ 100 ngăn đã đầy 95 ngăn. Bạn mở các ngăn quen ra đếm được 60 ngăn đồ của mình, vậy 35 ngăn kia là đồ
 > người khác để vào. Ví von này hết đúng ở chỗ tủ thì có cửa, còn ổ đĩa thì không.
 
-Vấn đề là phép so sánh gán số và chủ cho phần chênh ("35 ngăn kia là đồ người khác"), mà đó là điều bài vừa nói là chưa biết. Chỗ
+Phép so sánh gán số và chủ cho phần chênh ("35 ngăn kia là đồ người khác"), mà đó là điều bài vừa nói là chưa biết. Chỗ
 hết đúng được chọn là một khác biệt vô hại, không chặn được cách suy sai đó.
 
 Sau:
@@ -310,7 +312,7 @@ Trước:
 > đoán. Nginx chỉ chuyển request, còn app mất cả phút mới nhận request nên lần chuyển đầu bị lỗi. Ví von trong ghi chú là
 > quán ăn mở cửa muộn. Đã soát bằng `lint.mjs` (0 chỗ) và đọc lại hai lượt.
 
-Vấn đề là lời trả tóm lại cả ghi chú, nhắc lại ví von, kể việc đã soát và báo số chữ không ai hỏi.
+Lời trả tóm lại cả ghi chú, nhắc lại ví von, kể việc đã soát và báo số chữ không ai hỏi.
 
 Sau:
 
@@ -328,7 +330,7 @@ Trước:
 >
 > Pod vào `CrashLoopBackOff` vì liveness probe fail, kubelet restart container liên tục và pod lại crash.
 
-Vấn đề là người dùng đã gõ `CrashLoopBackOff` và liveness probe nhưng chưa hiểu, nên cả hai vẫn là thuật ngữ mới, và
+Người dùng đã gõ `CrashLoopBackOff` và liveness probe nhưng chưa hiểu, nên cả hai vẫn là thuật ngữ mới, và
 một câu mang ba thuật ngữ (thêm kubelet). Pod và container dùng lẫn cho cùng một thứ bị chạy lại. Exception đứng ở đoạn
 mở làm bằng chứng, còn liveness probe xuất hiện ở đoạn sau với khuôn khác, nên người đọc không thấy hai cách chết là
 một cặp.
@@ -358,7 +360,7 @@ Trước:
 > Còn chỉnh thì nói qua: tăng `initialDelaySeconds`, hoặc thêm startup probe với `failureThreshold: 30` và
 > `periodSeconds: 10`, rồi chạy `kubectl describe` xem phần Events.
 
-Vấn đề là người dùng xin "nói qua" mà đoạn đưa ba tên trường cấu hình, một tên tính năng mới và một lệnh, tức năm thuật
+Người dùng xin "nói qua" mà đoạn đưa ba tên trường cấu hình, một tên tính năng mới và một lệnh, tức năm thuật
 ngữ trong một câu. "Còn chỉnh thì nói qua" mở chuyện mới, không nắm đoạn trước, và chép lời yêu cầu vào ghi chú; đọc lại
 sau thì không rõ ai "nói qua".
 
@@ -381,7 +383,7 @@ Trước:
 > có thể chật, vì đồ người khác nằm ngoài ngăn. Ví von này hết đúng ở chỗ tủ mở ra là thấy đồ của ai, còn ổ thì chưa
 > biết phần ngoài log gồm gì.
 
-Vấn đề là câu mở bằng "Giống" mà không có cái gì giống, dấu hai chấm làm khung. Vế so là một luật không ai làm ngoài đời
+Câu mở bằng "Giống" mà không có cái gì giống, dấu hai chấm làm khung. Vế so là một luật không ai làm ngoài đời
 (dọn ngăn sao cho bằng cả tủ), nên đọc lần đầu không hiểu. Chỗ hết đúng nói "chưa biết gồm gì" trong khi đoạn trước vừa
 kể nó gồm gì, và bỏ qua chỗ người đọc dễ suy sai nhất: đồ người khác trong tủ thì nằm yên một cỡ.
 
