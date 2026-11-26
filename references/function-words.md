@@ -9,12 +9,13 @@ Vì thế văn dịch sát tiếng Anh hay thừa hư từ, và văn AI slop m�
 tiếng Việt. "Was deployed" thành "đã được triển khai", "the users" thành "các người dùng", "the configuration of the
 proxy" thành "việc cấu hình của proxy". Câu vẫn đúng ngữ pháp nhưng nặng, và người đọc nghe ra giọng dịch.
 
-Cách thử dùng cho cả tệp: bỏ hư từ đi rồi đọc lại câu. Nghĩa không đổi thì bỏ. Nghĩa đổi, hay câu đọc được hai cách, thì
-giữ. Hư từ đúng ở rất nhiều câu, nên xét từng chỗ chứ không xoá hàng loạt.
+Có một cách thử dùng được cho mọi mục trong tệp: bỏ hư từ đi rồi đọc lại câu. Nghĩa không đổi thì bỏ. Nghĩa đổi, hay câu
+đọc được hai cách, thì giữ. Rất nhiều câu cần hư từ của nó, nên xét từng chỗ chứ không xoá hàng loạt.
 
 ## Phó từ
 
-Phó từ đi kèm động từ, tính từ để thêm ý về thời gian, phủ định, mức độ, cầu khiến.
+Phó từ đi kèm động từ, tính từ để thêm ý về thời gian, phủ định, mức độ, cầu khiến. Văn dịch thừa phó từ nhiều nhất ở
+chữ chỉ thời gian.
 
 ### "đã", "đang", "sẽ"
 
@@ -31,8 +32,8 @@ Giữ "sẽ" khi việc xảy ra sau lúc nói: "bản 2.5 sẽ bỏ option này
 
 ### "được", "bị"
 
-Tiếng Anh dùng bị động rất nhiều ("is used", "was deployed"). Tiếng Việt thường để vật chịu việc đứng làm chủ ngữ mà không
-cần "được": "Tệp này dùng để lưu cấu hình", không phải "Tệp này được sử dụng để lưu cấu hình". Bị động không nói ai làm thì
+Tiếng Anh dùng bị động ở rất nhiều câu ("is used", "was deployed"). Tiếng Việt thì thường để vật chịu việc đứng làm chủ
+ngữ mà không cần "được": "Tệp này dùng để lưu cấu hình", không phải "Tệp này được sử dụng để lưu cấu hình". Bị động không nói ai làm thì
 xem thêm `machine-tells.md` mục B.
 
 "Được" đi với việc có lợi hay trung tính cho chủ ngữ, "bị" đi với việc thiệt cho chủ ngữ. "Tài khoản được khoá sau năm lần
@@ -79,7 +80,7 @@ Danh từ tiếng Việt không biến đổi hình thái khi chỉ nhiều th�
 dùng để dịch "the" hay đuôi "-s". Câu nói chung về một loại thì để danh từ trơn: "Người dùng phải đăng nhập trước", không
 phải "Các người dùng phải đăng nhập trước".
 
-Khi cần lượng từ thì chọn theo ý:
+Lượng từ chỉ cần khi câu phải nói rõ bao nhiêu thứ trong một tập. Lúc đó chọn theo ý:
 
 | Từ | Nghĩa | Ví dụ |
 |---|---|---|
@@ -102,8 +103,8 @@ khi câu trước đã rõ. "Điều này giúp…" mở đầu câu tóm cuối
 
 ## Quan hệ từ
 
-Quan hệ từ nối các phần của câu, hay nối câu với câu: "của", "với", "về", "để", "vì", "nhưng", "và". Sách Ngữ văn 7 chia
-lỗi quan hệ từ làm bốn loại.
+Quan hệ từ nối các phần của câu, hay nối câu với câu: "của", "với", "về", "để", "vì", "nhưng", "và". Dùng sai quan hệ từ
+thì câu đổi nghĩa hay mất chủ ngữ, và sách Ngữ văn 7 chia các lỗi ấy làm bốn loại.
 
 | Lỗi | Câu dịch sát | Sửa |
 |---|---|---|
@@ -133,7 +134,8 @@ như "Việc sao lưu chạy lúc 02:00", vì bản sao lưu là tệp, còn vi�
 
 ## Trợ từ
 
-Trợ từ đứng trước từ ngữ để nhấn, hoặc để nói người viết đánh giá thứ đó ra sao.
+Trợ từ đứng trước từ ngữ để nhấn, hoặc để nói người viết đánh giá thứ đó ra sao. Có trợ từ bỏ đi thì nghĩa đổi, có trợ
+từ chỉ để nhấn.
 
 - "Chỉ", "ngay cả" thu hẹp hay mở rộng phạm vi, bỏ đi thì nghĩa đổi, nên giữ: "chỉ máy A bị lỗi", "ngay cả máy mới cũng bị".
 - "Chính" giữ khi câu đang tách một người, một thứ ra khỏi những thứ người đọc có thể nghĩ tới: "Chính bản vá hôm qua làm
@@ -143,8 +145,8 @@ Trợ từ đứng trước từ ngữ để nhấn, hoặc để nói người 
 
 ## Tình thái từ
 
-Tình thái từ đứng cuối câu, thêm sắc thái của người nói: "ạ", "nhé", "nhỉ", "mà", "cơ", "chứ", "đi". Chọn theo quan hệ với
-người đọc, ăn với cột Giọng của `SKILL.md`.
+Tình thái từ đứng cuối câu, thêm sắc thái của người nói: "ạ", "nhé", "nhỉ", "mà", "cơ", "chứ", "đi". Chọn từ nào là chọn theo
+quan hệ với người đọc, hợp với bảng Giọng của `SKILL.md`.
 
 | Từ | Dùng khi | Ví dụ |
 |---|---|---|
@@ -160,7 +162,7 @@ trung tính, báo cáo, văn bản hành chính không dùng tình thái từ.
 
 ## Soát
 
-Đọc lướt cả bài thì mắt trượt qua hư từ. Tìm lần lượt từng chữ trong bài (grep hay Ctrl+F): "đã được", "được", "các",
+Đọc lướt cả bài thì mắt trượt qua hư từ, nên soát hư từ bằng cách tìm lần lượt từng chữ trong bài (grep hay Ctrl+F): "đã được", "được", "các",
 "của", "việc", "sự", "có thể", "sẽ". Xét từng chỗ bằng cách thử ở đầu tệp: bỏ từ đi, nghĩa không đổi thì bỏ.
 
 Bỏ hư từ xong hay phải gộp hai câu, và câu gộp dễ để vế sau mượn chủ ngữ của vế trước. Đọc lại mỗi câu gộp: chủ ngữ vế

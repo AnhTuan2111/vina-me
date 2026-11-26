@@ -1,11 +1,16 @@
 # Dấu hiệu văn AI slop và văn mẫu
 
-Một dấu hiệu đơn lẻ chưa phải là lỗi. Sửa khi nó lặp thành khuôn. Sửa ở đây là viết lại câu để nói ra điều muốn nói.
-Thay một từ bằng từ đồng nghĩa thì chưa phải là sửa.
+Văn AI slop không đến từ một chữ cấm nào. Nó đến từ những thói quen lặp lại: câu nào cũng chốt bằng một câu tóm, đoạn nào
+cũng mở bằng "Hơn nữa", ý nào cũng kể thành bộ ba. Vì vậy một dấu hiệu đơn lẻ chưa phải là lỗi; nó thành lỗi khi lặp
+thành khuôn. Sửa ở đây là viết lại câu để nói ra điều muốn nói. Thay một từ bằng từ đồng nghĩa thì chưa phải là sửa.
 
-Muốn thử một câu thì tự hỏi, nếu nói chuyện này với một người ngồi cạnh, mình có nói ra câu đó không?
+Muốn thử một câu thì tự hỏi: nếu nói chuyện này với một người ngồi cạnh, mình có nói ra câu đó không? Các bảng dưới chia
+dấu hiệu theo chỗ nó hay nằm, từ dấu câu (bảng A) tới mẫu câu, mở bài và kết bài, từ ngữ, cấu trúc, nội dung, và cuối
+cùng là những lỗi sinh ra do sửa quá tay (bảng G).
 
 ## A. Dấu câu và ký tự
+
+Dấu câu là chỗ dễ thấy nhất, và cũng dễ sửa nhất:
 
 | Dấu hiệu | Sửa |
 |---|---|
@@ -19,6 +24,8 @@ Muốn thử một câu thì tự hỏi, nếu nói chuyện này với một ng
 | Ngoặc kép quanh từ dùng với nghĩa thường | Bỏ ngoặc kép |
 
 ## B. Mẫu câu
+
+Mẫu câu thì khó thấy hơn, vì từng câu đứng riêng vẫn ổn. Nó lộ ra khi cả bài dùng cùng một khuôn:
 
 | Dấu hiệu | Sửa |
 |---|---|
@@ -42,6 +49,9 @@ Muốn thử một câu thì tự hỏi, nếu nói chuyện này với một ng
 
 ## C. Mở bài và kết bài
 
+Câu đầu và câu cuối là hai chỗ văn mẫu bám nhiều nhất, vì người viết chưa biết nói gì thì dựng cảnh, nói xong rồi thì
+tóm lại:
+
 | Dấu hiệu | Sửa |
 |---|---|
 | Mở bằng dựng cảnh ("Chín giờ tối, điện thoại rung…") | Mở bằng việc đã làm, kết luận, hoặc một câu hỏi thật |
@@ -57,9 +67,10 @@ Muốn thử một câu thì tự hỏi, nếu nói chuyện này với một ng
 
 ## D. Từ và cụm từ
 
-Một chữ ở cột trái được để khi chữ ở cột phải không nói được ý đó mà không mất nghĩa: "Hai pod restart đồng thời lúc
-09:12" giữ "đồng thời" vì hai việc xảy ra cùng lúc thật; "Em sửa config, đồng thời cập nhật tài liệu" thì viết "Em sửa
-config rồi cập nhật tài liệu". Riêng "đúng" để nhấn, "chúng ta", "hành trình" thì gặp là sửa.
+Bảng này không phải danh sách từ cấm. Một chữ ở cột trái được để lại khi chữ ở cột phải không nói được ý đó mà không mất
+nghĩa. "Hai pod restart đồng thời lúc 09:12" giữ "đồng thời", vì hai việc xảy ra cùng lúc thật. "Em sửa config, đồng thời
+cập nhật tài liệu" thì không có gì cùng lúc, nên viết "Em sửa config rồi cập nhật tài liệu". Riêng ba thứ thì gặp là sửa:
+"đúng" để nhấn, "chúng ta", "hành trình".
 
 | Ít gặp ngoài đời | Ngoài đời hay nói |
 |---|---|
@@ -69,16 +80,22 @@ config rồi cập nhật tài liệu". Riêng "đúng" để nhấn, "chúng ta
 | điều quan trọng nhất là, điều đáng chú ý là | bỏ khung, nói luôn |
 | đóng vai trò, mang tính, có tính chất | "là", "làm việc gì" |
 | thông qua việc, thực hiện việc, tiến hành | động từ trực tiếp |
-| đồng thời, qua đó, từ đó, bên cạnh đó, đặc biệt | bỏ, hoặc từ nối đúng quan hệ |
+| đồng thời, qua đó, từ đó, bên cạnh đó, đặc biệt | bỏ, hoặc từ nối hợp với quan hệ |
 | thiết nghĩ, đã đến lúc, chung tay, nhức nhối | bỏ |
 | chữ nhấn thừa: "đúng" để nhấn ("đúng dòng này", "mở đúng các cổng", "tới đúng thời điểm", "bằng đúng số"), chính là, thật sự, hoàn toàn | bỏ khi câu không mất nghĩa; giữ "đúng" khi nghĩa là không sai |
 | cạn (với tài nguyên) | hết, đầy, tràn |
 | chúng ta | bạn, mình, hoặc tên chủ thể |
 | sâu sắc, mạnh mẽ, toàn diện, liền mạch, tối ưu | một con số hoặc một việc cụ thể |
-| cơ chế, hệ quả, phạm vi, khía cạnh, yếu tố | chỗ, đoạn, thứ, lý do; giữ khi nó là thuật ngữ ("biến khai báo trong hàm chỉ có phạm vi trong hàm đó"). Sai: "Phạm vi ảnh hưởng của sự cố bao gồm nhiều khía cạnh." Sửa: "Sự cố làm 3 trong 5 pod restart và chặn đăng nhập 12 phút." |
+| cơ chế, hệ quả, phạm vi, khía cạnh, yếu tố | chỗ, đoạn, thứ, lý do; giữ khi nó là thuật ngữ ("biến khai báo trong hàm chỉ có phạm vi trong hàm đó") |
 | từ Hán Việt cổ hoặc ít dùng | từ thuần Việt cùng nghĩa |
 
+Danh từ trừu tượng ở dòng cuối hay đi thành chùm và làm câu rỗng. "Phạm vi ảnh hưởng của sự cố bao gồm nhiều khía cạnh."
+có ba chữ trừu tượng mà không nói sự cố làm gì. Câu sửa nói ra: "Sự cố làm 3 trong 5 pod restart và chặn đăng nhập 12
+phút."
+
 ## E. Cấu trúc
+
+Có những bài câu nào cũng ổn mà đọc cả bài vẫn thấy văn mẫu. Lỗi khi đó nằm ở cách dựng bài:
 
 | Dấu hiệu | Sửa |
 |---|---|
@@ -98,6 +115,8 @@ config rồi cập nhật tài liệu". Riêng "đúng" để nhấn, "chúng ta
 
 ## F. Nội dung
 
+Dấu hiệu nặng nhất là nội dung không có thật, vì người đọc làm theo nó:
+
 | Dấu hiệu | Sửa |
 |---|---|
 | Trải nghiệm ngôi thứ nhất không có thật | Bỏ, hoặc "rất dễ gặp…" |
@@ -114,6 +133,9 @@ config rồi cập nhật tài liệu". Riêng "đúng" để nhấn, "chúng ta
 
 ## G. Sửa quá tay
 
+Sửa văn AI slop cũng sinh ra lỗi của riêng nó. Người sửa chặt câu cho ngắn, dời câu cho gọn, đổi tên cho đỡ lặp, và bài
+ra còn khó đọc hơn bản gốc:
+
 | Dấu hiệu | Sửa |
 |---|---|
 | Chặt hết thành câu cụt, mỗi câu một chủ ngữ mới | Gộp các ý có quan hệ thành câu ghép |
@@ -122,6 +144,14 @@ config rồi cập nhật tài liệu". Riêng "đúng" để nhấn, "chúng ta
 | Giọng thân mật trong báo cáo, thư công việc | Đổi theo bảng giọng |
 | Bỏ định nghĩa chuẩn và nguồn cho đời thường | Giữ định nghĩa và nguồn, chỉ đổi cách nói |
 | Đổi tên thuật ngữ cho đỡ lặp | Giữ một tên |
-| Dời câu sang đoạn khác cho gọn, câu ngay sau chỗ dời phải trỏ qua mấy câu mới về chỗ dựa ("Cũng trong lúc đó" đứng sau hai câu nói chuyện khác) | Dời cả cụm dữ kiện cùng loại đi cùng nhau, hoặc để yên. Các số đo cùng một khung giờ (tỉ lệ lỗi, độ trễ, số máy restart) là một cụm, giữ liền; câu không có mốc giờ (lời dẫn, lời trích, đánh giá ảnh hưởng) không chen vào giữa cụm mà đứng sau cả cụm. Dời xong thì đọc câu ngay sau chỗ dời: nó phải dựa được vào câu ngay trước. Tìm mọi "cùng lúc đó", "trong cùng khoảng thời gian", "khi đó" ở đầu câu và đọc câu ngay trước nó: câu ấy phải có mốc giờ cho cụm đó trỏ về, không thì đưa câu về sát mốc giờ hoặc mở câu bằng chính mốc giờ ("Từ 09:00, độ trễ…"). Ví dụ ở dòng "Thiếu phép liên kết trong văn kỹ thuật: cụm "cùng lúc đó" trỏ qua câu không có mốc giờ" của `common-errors.md` |
+| Dời câu sang đoạn khác cho gọn, câu ngay sau chỗ dời phải trỏ qua mấy câu mới về chỗ dựa ("Cũng trong lúc đó" đứng sau hai câu nói chuyện khác) | Dời cả cụm dữ kiện cùng loại đi cùng nhau, hoặc để yên; cách làm ở đoạn dưới bảng |
 | Viết lại các câu quanh một câu gốc mở việc điều tra ("Ban đầu", "Lúc đầu nhóm nghi…") mà để yên câu đó, trong khi trước nó không còn câu nào nói đang tìm lý do | Đọc câu mở mỗi đoạn sau khi sắp lại. "Lúc đầu" phải có việc làm mốc; thêm câu dẫn ("Khi tìm lý do, lúc đầu…") |
 | Gỡ chỗ vênh trong gốc bằng cách đọc của mình, gắn một giờ hay một con số sang sự việc khác | Giữ giá trị và sự việc như gốc, hỏi người dùng bằng câu hỏi nêu câu nào ghi gì và cách hiểu khiến cả hai cùng đúng, không bảo người dùng "xem giá trị nào đúng thì sửa". Xem dòng "Hai dữ kiện vênh nhau" ở `common-errors.md` |
+
+Dời câu là chỗ hay hỏng nhất, vì câu bị dời mang theo chỗ dựa của câu đứng sau nó. Các số đo cùng một khung giờ (tỉ lệ
+lỗi, độ trễ, số máy restart) là một cụm, nên giữ liền nhau. Câu không có mốc giờ, như lời dẫn, lời trích hay đánh giá ảnh
+hưởng, không chen vào giữa cụm mà đứng sau cả cụm. Dời xong thì đọc câu ngay sau chỗ dời: nó phải dựa được vào câu ngay
+trước. Rồi tìm mọi "cùng lúc đó", "trong cùng khoảng thời gian", "khi đó" ở đầu câu và đọc câu ngay trước nó. Câu ấy phải
+có mốc giờ cho cụm từ kia trỏ về; không có thì đưa câu về sát mốc giờ, hoặc mở câu bằng chính mốc giờ ("Từ 09:00, độ
+trễ…"). Ví dụ ở dòng "Thiếu phép liên kết trong văn kỹ thuật: cụm "cùng lúc đó" trỏ qua câu không có mốc giờ" của
+`common-errors.md`.

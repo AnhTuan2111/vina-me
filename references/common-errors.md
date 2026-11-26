@@ -1,8 +1,9 @@
 # Lỗi thường gặp và cách sửa
 
-Gặp một câu khó hiểu thì soát theo thứ tự sau: câu có dùng từ khó không, có thiếu thành phần chính không, có sai
-trật tự không, có hai ý chọi nhau không. Phần lớn sửa được bằng một trong ba việc là thêm từ cho thành phần còn
-thiếu, bớt từ thừa, hoặc đổi trật tự.
+Gặp một câu khó hiểu thì hỏi lần lượt: câu có dùng từ khó không, có thiếu thành phần chính không, có sai trật tự không,
+có hai ý chọi nhau không. Phần lớn lỗi sửa được bằng một trong ba việc: thêm từ cho thành phần còn thiếu, bớt từ thừa,
+hoặc đổi trật tự. Các bảng dưới đi từ lớn tới nhỏ: lỗi đoạn, lỗi câu, câu hiểu được hai cách, rồi lỗi dùng từ. Ví dụ phần
+lớn lấy từ sách Ngữ văn, thêm vài ví dụ của văn kỹ thuật.
 
 ## Lỗi đoạn
 
@@ -12,24 +13,42 @@ thiếu, bớt từ thừa, hoặc đổi trật tự.
 | Đề tài nêu ra mà không triển khai đủ | Câu chủ đề nói ba ý, đoạn chỉ viết một | Viết đủ, hoặc sửa câu chủ đề |
 | Sai trình tự | Kể việc sau trước việc trước | Xếp lại theo thời gian hoặc nhân quả; đặc điểm đứng trước điều nó kéo theo |
 | Hai câu chọi nhau | Đoạn một: "Ta luôn dễ dàng bắt gặp hạnh phúc ở bất cứ đâu." Đoạn hai: "Hạnh phúc luôn khó nắm bắt." | "Vậy nhưng đối với một số người, hạnh phúc thật khó nắm bắt." |
-| Hai dữ kiện vênh nhau trong văn có sẵn | Một câu ghi "chuyển dữ liệu lúc 09:10", câu sau ghi "sau khi chuyển dữ liệu lúc 09:15, hệ thống chạy lại" | Giữ cả hai giá trị, gắn đúng sự việc mà gốc gắn. Không gán một giá trị sang sự việc khác theo cách đọc của mình ("hệ thống chạy lại từ 09:15"), vì đó là đoán. Hỏi người dùng bằng một câu hỏi tự đứng được: câu nào ghi giá trị nào, và cách hiểu khiến cả hai cùng đúng nếu có (hai mốc của cùng một việc, lúc bắt đầu và lúc xong): "Gốc ghi chuyển dữ liệu lúc 09:10 rồi lại 'sau khi chuyển dữ liệu lúc 09:15', bản sửa giữ cả hai; 09:10 là lúc bắt đầu chuyển, 09:15 là lúc chuyển xong, hay một giờ ghi nhầm?". Không hỏi "giờ nào đúng thì sửa lại cho khớp", vì cách hỏi đó coi sẵn một giá trị là sai và giao việc lại cho người dùng |
+| Hai dữ kiện vênh nhau trong văn có sẵn | Một câu ghi "chuyển dữ liệu lúc 09:10", câu sau ghi "sau khi chuyển dữ liệu lúc 09:15, hệ thống chạy lại" | Giữ cả hai giá trị, gắn với sự việc mà gốc gắn, rồi hỏi người dùng; cách hỏi ở đoạn dưới bảng |
 | Đổi giờ, múi giờ, đơn vị mà quên chữ đi kèm | "Mỗi đêm script chạy lúc 02:00 UTC, tức 9h sáng giờ Việt Nam" | Đổi xong thì đọc lại mọi chữ chỉ buổi, chỉ lượng quanh đó (đêm, sáng, cuối tuần, hôm nay): "Script chạy lúc 9h sáng mỗi ngày (02:00 UTC)" |
-| Hai câu lệch mức chắc chắn | "Lý do là ổ đĩa đầy." rồi câu sau "Có lẽ ổ đĩa đầy, chưa kiểm tra lại được." | Theo mức thấp hơn ở mọi câu ("có lẽ ổ đĩa đầy, chưa kiểm tra lại"), kể cả khi sửa văn có sẵn: chính gốc đã nói là chưa chắc, nên hạ câu nói chắc xuống là giữ ý tác giả. Nêu chỗ lệch trong lời trả, nhưng không để câu nói chắc ở lại bản sửa. |
+| Hai câu lệch mức chắc chắn | "Lý do là ổ đĩa đầy." rồi câu sau "Có lẽ ổ đĩa đầy, chưa kiểm tra lại được." | Theo mức thấp hơn ở mọi câu ("có lẽ ổ đĩa đầy, chưa kiểm tra lại"), kể cả khi sửa văn có sẵn; lý do ở đoạn dưới bảng |
 | Thiếu phép liên kết | "Có biết bao điều được và mất. Môi trường đang bị phá huỷ. Có một cái mất vô cùng to lớn, đó là sự vô cảm." | Thêm "Chẳng hạn như" trước câu hai, "Tuy nhiên" trước câu ba |
-| Thiếu phép liên kết trong văn kỹ thuật: câu mở việc điều tra không có chỗ dựa | "Bản 2.1 đổi cấu hình cache. Dịch vụ báo lỗi từ 10:00. Ban đầu nhóm nghi mạng chậm…" ("Ban đầu" của việc gì?) | Thêm câu dẫn nói đang làm việc gì: "…Khi tìm lý do, ban đầu nhóm nghi mạng chậm…". Đọc câu mở mỗi đoạn sau khi sắp lại: "ban đầu", "lúc đầu", "sau đó" phải có việc làm mốc ngay trong câu hoặc câu trước |
+| Thiếu phép liên kết trong văn kỹ thuật: câu mở việc điều tra không có chỗ dựa | "Bản 2.1 đổi cấu hình cache. Dịch vụ báo lỗi từ 10:00. Ban đầu nhóm nghi mạng chậm…" ("Ban đầu" của việc gì?) | Thêm câu dẫn nói đang làm việc gì: "…Khi tìm lý do, ban đầu nhóm nghi mạng chậm…" |
 | Thiếu phép liên kết trong văn kỹ thuật: cụm "cùng lúc đó" trỏ qua câu không có mốc giờ | "Từ 09:00 tới 09:30, API báo lỗi cho 10% request. Kế toán báo không xuất được hóa đơn. Trong cùng khoảng thời gian, độ trễ tăng gấp ba." | Giữ các số đo cùng khung giờ liền nhau, câu không có mốc giờ đứng sau cả cụm: "Từ 09:00 tới 09:30, API báo lỗi cho 10% request, và trong cùng khoảng thời gian đó độ trễ tăng gấp ba. Kế toán báo không xuất được hóa đơn." |
 | Dùng sai từ nối | "…tiếng khua lộp cộp. Và tôi không nghe thấy gì." | "Nhưng tôi không nghe thấy gì." |
 | Đại từ trỏ nhầm | "…nhận thức của người Lô Lô xưa. Họ còn khá giản đơn." | "Nhận thức ấy còn khá giản đơn." |
 | Không tách đoạn | Hai đề tài nhỏ viết liền | Xuống dòng ở chỗ đổi đề tài |
 | Tách đoạn tuỳ tiện | Xuống dòng rồi mở bằng "Đó là…" để giải thích câu trước | Viết liền |
 
-Sửa văn có sẵn thì chỉ hỏi người dùng về chỗ vênh hay chỗ đọc được hai cách mà bản sửa phải chọn một mới viết được. Gom
-lại thành một dòng ở cuối câu trả lời, viết thành câu hỏi thật (có dấu hỏi), nói câu nào ghi gì và cách hiểu có thể như
-dòng "Hai dữ kiện vênh nhau" ở bảng trên. Chỗ gốc thiếu mà bản sửa vẫn giữ như gốc, như một việc chưa có người nhận hay
-một câu ước lượng chưa có con số, thì không hỏi, vì người viết gốc đã biết điều đó. Dòng nêu thay đổi cũng không ghi "mọi
-con số giữ nguyên" khi có một giá trị đã dời chỗ hay đổi sự việc nó gắn, và không gọi tên một thứ tự ("xếp lại theo ảnh
-hưởng, lý do, xử lý") mà bản sửa không theo ở từng đoạn. Dời câu để khớp một thứ tự như vậy thì đọc lại câu ngay sau chỗ
-dời theo dòng "Dời câu sang đoạn khác" ở mục G của `machine-tells.md`.
+Hai dòng trong bảng cần nói thêm, vì cả hai hay gặp khi sửa văn có sẵn.
+
+Với hai dữ kiện vênh nhau, bản sửa giữ cả hai giá trị và gắn mỗi giá trị với sự việc mà gốc gắn. Gán một giá trị sang sự
+việc khác theo cách đọc của mình, kiểu "hệ thống chạy lại từ 09:15", là đoán. Câu hỏi gửi người dùng phải tự đứng được:
+nói câu nào ghi giá trị nào, và cách hiểu khiến cả hai cùng đúng nếu có, chẳng hạn hai mốc của cùng một việc, lúc bắt đầu
+và lúc xong. Với ví dụ trong bảng, câu hỏi là: "Gốc ghi chuyển dữ liệu lúc 09:10 rồi lại 'sau khi chuyển dữ liệu lúc
+09:15', bản sửa giữ cả hai; 09:10 là lúc bắt đầu chuyển, 09:15 là lúc chuyển xong, hay một giờ ghi nhầm?". Đừng hỏi "giờ
+nào đúng thì sửa lại cho khớp", vì cách hỏi đó coi sẵn một giá trị là sai và giao việc lại cho người dùng.
+
+Với hai câu lệch mức chắc chắn, chính gốc đã nói là chưa chắc. Hạ câu nói chắc xuống mức thấp hơn là giữ ý tác giả, chứ
+không phải đổi ý. Lời trả có thể nêu chỗ lệch, nhưng câu nói chắc không ở lại trong bản sửa.
+
+Hai lỗi liên kết của văn kỹ thuật trong bảng thì phải đọc lại sau mỗi lần sắp lại câu. Câu mở đoạn có "ban đầu", "lúc đầu", "sau đó" phải có
+việc làm mốc ngay trong câu hoặc câu trước. Cụm "cùng lúc đó", "trong cùng khoảng thời gian" phải có mốc giờ ở câu ngay
+trước để trỏ về.
+
+Sửa văn có sẵn thì chỉ hỏi người dùng về chỗ vênh, hay chỗ đọc được hai cách mà bản sửa phải chọn một mới viết được. Các
+câu hỏi ấy gom thành một dòng ở cuối câu trả lời, viết thành câu hỏi thật có dấu hỏi, như cách hỏi ở trên. Chỗ gốc thiếu
+mà bản sửa vẫn giữ như gốc, như một việc chưa có người nhận hay một câu ước lượng chưa có con số, thì không hỏi, vì người
+viết gốc đã biết điều đó.
+
+Dòng nêu thay đổi cũng phải khớp với bản sửa. Có một giá trị đã dời chỗ hay đổi sự việc nó gắn thì không ghi "mọi con số
+giữ nguyên". Bản sửa không theo một thứ tự ở từng đoạn thì không gọi tên thứ tự ấy ("xếp lại theo ảnh hưởng, lý do, xử
+lý"). Dời câu để khớp một thứ tự thì đọc lại câu ngay sau chỗ dời, theo dòng "Dời câu sang đoạn khác" ở mục G của
+`machine-tells.md`.
 
 ## Lỗi câu
 
@@ -50,6 +69,8 @@ dời theo dòng "Dời câu sang đoạn khác" ở mục G của `machine-tell
 
 ## Câu hiểu được hai cách
 
+Câu hiểu được hai cách thường do một từ đứng cạnh hai thứ nó có thể bổ nghĩa, hay một từ có hai nghĩa:
+
 | Ví dụ | Hai cách hiểu | Sửa |
 |---|---|---|
 | "Tôi đồng ý với những đánh giá về truyện ngắn của ông ấy." | đánh giá của ông ấy, hay truyện của ông ấy | "…những đánh giá của ông ấy về truyện ngắn." |
@@ -58,7 +79,8 @@ dời theo dòng "Dời câu sang đoạn khác" ở mục G của `machine-tell
 | "Đây là phương thuốc độc nhất trên đời." | có hại, hay chỉ có một | "…phương thuốc duy nhất…" |
 | "Cả nhà hát say sưa theo tiếng đàn." | cả gia đình đang hát, hay cả cái nhà hát | "Gia đình tôi hát say sưa…" |
 
-Cách sửa chung là xác định ý muốn nói, rồi đổi trật tự, thêm từ, hoặc thêm dấu phẩy để câu chỉ còn một cách hiểu.
+Cách sửa chung là xác định ý muốn nói trước, rồi đổi trật tự, thêm từ, hoặc thêm dấu phẩy cho tới khi câu chỉ còn một cách
+hiểu.
 
 ## Lỗi dùng từ
 
@@ -76,7 +98,7 @@ Cách sửa chung là xác định ý muốn nói, rồi đổi trật tự, th�
 | Hán Việt sai giọng | "Sức khoẻ phụ mẫu bạn thế nào?" | "cha mẹ" |
 | Lạm dụng Hán Việt | "Tiến hành thẩm định cấu hình trước khi triển khai." | "Xem lại cấu hình trước khi deploy." (`word-choice.md`, mục Chọn từ) |
 
-Năm câu tự soát từ ngữ:
+Soát từ ngữ của một bài thì tự hỏi năm câu:
 
 1. Có từ nào lặp mà không để nối, không để nhấn?
 2. Động từ có đi được với chủ ngữ không?
