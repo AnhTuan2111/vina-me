@@ -3,6 +3,16 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.25.0 (26/11/2026)
+
+- Viết lại 24 tệp `references/` (trừ thư mục `references/bid/`) thành văn liền mạch: mỗi tệp mở bằng câu nói nó dùng làm gì và
+  đi theo thứ tự nào, gạch đầu dòng dài tách thành mục con và đoạn văn, ví dụ đặt ngay trong câu nói luật, ô bảng dài tách
+  thành đoạn dưới bảng. `core-rules.md` bỏ khuôn "Sai, Sửa, Vì sao" lặp ở mọi mục.
+- Luật giữ nguyên. Tên các mục mà tệp khác trỏ tới giữ nguyên; `feedback.md` đổi mục "Không gửi" thành "Thứ không bao giờ
+  gửi", `bid-proposals.md` đổi "Những điều không được làm" thành "Việc cấm".
+- Thay các câu ví dụ trùng dữ kiện của đề thử (bản 2.4 và nhóm QA, OOMKilled, probe) bằng ví dụ khác.
+- `word-choice.md` thêm dòng viết hoa: chữ chung đứng trước tên nhóm (team, nhóm) viết thường giữa câu.
+
 ## 0.24.1 (23/11/2026)
 
 - Viết lại `core-rules.md` cho người đọc được: mỗi luật là một mục con có số (1.1, 4.2...), gồm một đoạn nói luật và lúc
