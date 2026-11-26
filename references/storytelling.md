@@ -14,8 +14,8 @@ chữ khoa học nào thì họ đã thấy bài nói về mình. Câu hỏi l�
 thứ người nghe trả lời được, hình dung được ngay, rồi người kể mới lùi từng bậc: bố mẹ lại từ ông bà, ông bà lại từ các cụ, các cụ
 lại từ các kỵ. Tới lúc câu hỏi lớn xuất hiện, người nghe đã tự lùi theo được ba bốn bậc.
 
-Khi viết: mở bằng điều người đọc đang thắc mắc hay một thứ họ đã có trong tay (lỗi họ vừa gặp, một việc họ làm hằng ngày), không
-mở bằng định nghĩa hay lời giới thiệu chủ đề.
+Bài kỹ thuật cũng mở được như thế: bằng điều người đọc đang thắc mắc, hay một thứ họ đã có trong tay (lỗi họ vừa gặp, một
+việc họ làm hằng ngày), chứ không bằng định nghĩa hay lời giới thiệu chủ đề.
 
 ## Câu trả lời nào cũng để lại một chỗ hở
 
@@ -26,8 +26,8 @@ cứu hộ chạy đường gãy khúc ở mép nước vì chạy trên cát nh
 đẹp thật đấy", người kể nói, rồi hỏi tiếp: người cứu hộ nhìn thấy người đuối nước nên mới chọn được đường, còn ánh sáng vừa rời
 ngọn đèn thì làm sao biết điểm đến mà chọn?
 
-Khi viết: chuyển mục không cần câu "tiếp theo ta nói về"; để chỗ còn thiếu của mục này thành câu hỏi mở mục sau. Trong chat và tài
-liệu thì đáp án vẫn nói ngay, chỗ hở chỉ dùng để nối sang ý kế tiếp, không dùng để giấu đáp án.
+Nhờ chỗ hở ấy, chuyển mục không cần câu "tiếp theo ta nói về": chỗ còn thiếu của mục này thành câu hỏi mở mục sau. Có điều
+trong chat và tài liệu thì đáp án vẫn nói ngay; chỗ hở chỉ dùng để nối sang ý kế tiếp, không dùng để giấu đáp án.
 
 ## Câu sau móc vào câu trước bằng hư từ
 
@@ -73,8 +73,8 @@ chọn lọc, lúc cãi lại thuyết pha trộn, lúc nói lỗi chép, và cu
 quay lại, người đọc thấy các mảnh dính vào nhau. Bài "Thực tại và ý thức" kết bằng chính con kiến ở câu mở đầu, vẫn bò tiếp theo
 vệt mùi của nó, và dừng ở đó, không câu tổng kết.
 
-Khi viết tài liệu thì mỗi phần vẫn phải đọc riêng được: muốn gọi lại một thứ đã gặp thì nhắc lại nó trong một câu, đừng trông vào
-trí nhớ của người đọc.
+Tài liệu thì khác audio ở chỗ người đọc hay mở thẳng một phần, nên mỗi phần vẫn phải đọc riêng được. Muốn gọi lại một thứ đã
+gặp thì nhắc lại nó trong một câu, đừng trông vào trí nhớ của người đọc.
 
 ## Xưng hô và sự trung lập nằm trong chữ
 
