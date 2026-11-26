@@ -1,11 +1,13 @@
 # Văn bản hành chính nhà nước
 
 Báo cáo, tờ trình, công văn, kế hoạch, quyết định gửi cho cơ quan nhà nước hay do cơ quan nhà nước ban hành phải theo
-thể thức của Nghị định 30/2020/NĐ-CP về công tác văn thư. Ở loại văn bản này khuôn mẫu là yêu cầu bắt buộc, không bị coi
-là văn mẫu. Nên một số điều của skill được làm ngược lại, xem mục cuối.
+thể thức của Nghị định 30/2020/NĐ-CP về công tác văn thư. Ở loại văn bản này khuôn mẫu là yêu cầu bắt buộc, nên nó không bị
+coi là văn mẫu, và một số luật của skill được làm ngược lại (mục Văn phong).
 
-Mục nào ghi "quy định" là có trong văn bản pháp luật. Mục nào ghi "thực tế" là cách các cơ quan hay viết, chưa có văn bản
-nào bắt buộc.
+Tệp đi theo thứ tự người soạn cần. Phần đầu là thể thức: văn bản nào theo quy định nào, trang và chữ, phần đầu và phần
+cuối văn bản, đề mục, viết hoa, viện dẫn. Phần sau là cách viết: báo cáo, số liệu, dữ kiện thiếu, câu mở và câu kết, bố
+cục, hồ sơ, văn phong. Cuối cùng là cách soát. Mục nào ghi "quy định" là có trong văn bản pháp luật; mục nào ghi "thực tế" là cách các cơ quan hay
+viết, chưa có văn bản nào bắt buộc.
 
 ## Văn bản nào theo quy định nào
 
@@ -153,7 +155,7 @@ Báo cáo, kế hoạch, đề án chia theo phần, mục, khoản, điểm:
 
 Theo Nghị định 09/2019, báo cáo là văn bản "để thể hiện tình hình, kết quả thực hiện công việc nhằm giúp cho cơ quan,
 người có thẩm quyền có thông tin phục vụ việc phân tích, đánh giá, điều hành và ban hành các quyết định quản lý phù hợp".
-Nên viết sao cho người nhận đọc xong ra được quyết định.
+Vì vậy báo cáo viết sao cho người nhận đọc xong ra được quyết định.
 
 Có ba loại báo cáo là định kỳ, chuyên đề, đột xuất. Phần lời văn đi theo năm khối (Điều 8):
 
@@ -178,7 +180,7 @@ Thời gian chốt số liệu báo cáo định kỳ không trùng tháng và n
 | 6 tháng đầu năm | 15/12 năm trước | 14/6 |
 | Năm | 15/12 năm trước | 14/12 năm báo cáo |
 
-Nên câu đầu phần số liệu nói kỳ số liệu, ví dụ "số liệu tính từ ngày 15/12/2025 đến ngày 14/12/2026".
+Vì kỳ số liệu lệch với tháng và năm như vậy, câu đầu phần số liệu nói rõ kỳ, ví dụ "số liệu tính từ ngày 15/12/2025 đến ngày 14/12/2026".
 
 ## Số liệu
 
@@ -259,7 +261,7 @@ Tên hạng mục trong bảng người dùng đưa cũng là dữ kiện của 
 
 ## Hồ sơ
 
-"Hồ sơ" có hai nghĩa.
+Chữ "hồ sơ" trong văn thư có hai nghĩa, và mỗi nghĩa có luật riêng.
 
 **Hồ sơ công việc** (quy định, Nghị định 30/2020, Điều 28 tới 31) là tập văn bản, tài liệu hình thành khi giải quyết một
 việc. Người được giao việc mở hồ sơ theo danh mục hồ sơ ban hành đầu năm; việc không có trong danh mục thì tự ghi tiêu đề,
@@ -267,7 +269,7 @@ số và ký hiệu, thời hạn bảo quản, người lập, ngày bắt đ�
 trình tự sự việc. Xong việc thì bỏ bản trùng, bản nháp, sửa lại tiêu đề, rồi nộp lưu trong 01 năm (tài liệu xây dựng cơ
 bản trong 03 tháng kể từ khi quyết toán). Tiêu đề hồ sơ phải "ngắn gọn, rõ ràng nhưng phải khái quát được nội dung".
 
-**Bộ hồ sơ gửi đi** (thực tế, trừ phần phụ lục) gồm:
+**Bộ hồ sơ gửi đi** (thực tế, trừ phần phụ lục) gồm bốn thứ:
 
 - văn bản chính (tờ trình, báo cáo hoặc công văn), trong đó có câu chỉ tới từng tài liệu kèm;
 - các phụ lục: từ hai phụ lục trở lên thì đánh số La Mã; chữ "Phụ lục" và số trên một dòng, cỡ 14, đậm; tên phụ lục in
@@ -281,21 +283,22 @@ bản trong 03 tháng kể từ khi quyết toán). Tiêu đề hồ sơ phải 
 Luật 64/2025 (Điều 7) yêu cầu ngôn ngữ văn bản quy phạm "bảo đảm chính xác, phổ thông, thống nhất, diễn đạt rõ ràng, dễ
 hiểu". Văn bản hành chính viết theo cùng tinh thần đó.
 
-Những điều vẫn giữ từ skill: nói thật, con số có nguồn và mốc so sánh, một thứ một tên, chữ viết tắt có chỗ giải, câu
-ghép đúng quan hệ, dùng từ phổ thông thay từ Hán Việt hiếm.
+Phần lớn luật của skill vẫn giữ ở đây: nói thật, con số có nguồn và mốc so sánh, một thứ một tên, chữ viết tắt có chỗ
+giải, câu ghép đúng quan hệ, dùng từ phổ thông thay từ Hán Việt hiếm.
 
-Những điều làm ngược lại với các văn bản khác:
+Một số luật thì đổi ngược, vì thể thức đòi vậy:
 
-- Khuôn mẫu là bắt buộc. Các khối Căn cứ, Kính gửi, Nơi nhận, câu mở và câu kết ở trên dùng nguyên văn.
-- Không xưng "mình, bạn", không xưng "tôi" (trừ đơn từ cá nhân). Chủ ngữ là cơ quan, đơn vị: "Sở Tài chính báo cáo...".
-- Không hỏi rồi đáp, không phép so sánh hay ẩn dụ, không từ cảm thán.
+- Khuôn mẫu là bắt buộc: các khối Căn cứ, Kính gửi, Nơi nhận, câu mở và câu kết ở trên dùng nguyên văn.
+- Văn bản không xưng "mình, bạn", không xưng "tôi" (trừ đơn từ cá nhân). Chủ ngữ là cơ quan, đơn vị: "Sở Tài chính báo
+  cáo...".
+- Văn bản không hỏi rồi đáp, không có phép so sánh hay ẩn dụ, không có từ cảm thán.
 - "Thì" không đứng một mình sau chủ đề hay sau vế điều kiện không có "nếu" (khẩu ngữ, xem bảng lỗi câu); cặp "Nếu…,
   thì…" vẫn dùng được.
 - Đề mục in hoa ở cấp mục là quy định, không phải in hoa để nhấn.
-- Câu ngắn, mỗi khoản một việc. Đoạn một câu ở cấp khoản, điểm là bình thường.
-- Chữ viết tắt: lần đầu viết đủ rồi ghi chữ tắt trong ngoặc, ví dụ "Ủy ban nhân dân (UBND)" (thực tế).
+- Câu ngắn, mỗi khoản một việc, và đoạn một câu ở cấp khoản, điểm là bình thường.
+- Chữ viết tắt lần đầu viết đủ rồi ghi chữ tắt trong ngoặc, ví dụ "Ủy ban nhân dân (UBND)" (thực tế).
 
-Những lỗi câu hay gặp khi sửa bản nháp thành văn hành chính:
+Sửa bản nháp thành văn hành chính thì hay gặp các lỗi câu sau:
 
 | Lỗi | Ví dụ sai | Sửa |
 |---|---|---|
@@ -316,8 +319,8 @@ Những lỗi câu hay gặp khi sửa bản nháp thành văn hành chính:
 Phạm vi phải khớp chữ: "tài liệu giai đoạn 1980-2000" không nằm trọn trong "tài liệu trước năm 2000" vì có năm 2000; viết
 "đến năm 2000" hay "từ năm 2000 trở về trước" cho khớp.
 
-Rút gọn, gộp câu cho vừa trang (mục "Soát", bước 4) thì soát lại bảng trên một lượt nữa với các câu vừa sửa: bỏ câu hay gộp
-đoạn dễ làm mất "Vì vậy" giữa hiện trạng và đề nghị, và câu gộp vội dễ sinh khẩu ngữ, vế lệch kiểu câu.
+Rút gọn, gộp câu cho vừa trang (mục Soát, bước 4) thì soát lại bảng trên một lượt nữa với các câu vừa sửa, vì bỏ câu hay
+gộp đoạn dễ làm mất "Vì vậy" giữa hiện trạng và đề nghị, còn câu gộp vội dễ sinh khẩu ngữ, vế lệch kiểu câu.
 
 ## Soát
 
@@ -331,10 +334,8 @@ Rút gọn, gộp câu cho vừa trang (mục "Soát", bước 4) thì soát l�
 - khối Kính gửi, Nơi nhận, Căn cứ sai dấu cuối dòng; có Kính gửi mà Nơi nhận thiếu "Như trên";
 - viện dẫn viết hoa "Khoản", "Điểm" hoặc viết thường "điều" sau khoản, điểm.
 
-Script không kiểm tra được cỡ chữ, lề, phông. Xuất ra Word thì dùng `scripts/official-doc-docx.mjs` (xem `docx-export.md`), rồi
-mở bản PDF xem từng trang.
-
-Các bước khi ra tệp Word:
+Script không kiểm tra được cỡ chữ, lề, phông, nên văn bản xuất ra Word bằng `scripts/official-doc-docx.mjs` (xem
+`docx-export.md`) rồi mở bản PDF xem từng trang. Các bước khi ra tệp Word:
 
 1. Dựng kèm bản chữ để soát: `node scripts/official-doc-docx.mjs vb.json vb.docx --text vb.txt`, rồi
    `node scripts/lint.mjs --official vb.txt`. Đừng soát trên chữ rút từ PDF bằng `pdftotext -layout`: cột Nơi nhận dính
