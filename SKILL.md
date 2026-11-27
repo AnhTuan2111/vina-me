@@ -151,7 +151,7 @@ trả, như câu hỏi về bộ nhớ. Người dùng đã nhờ soạn bản n
 | `references/sentences-and-paragraphs.md` | câu ghép, trạng ngữ, đoạn, câu chủ đề |
 | `references/common-errors.md` | lỗi câu, lỗi đoạn, lỗi dùng từ |
 | `references/punctuation.md` | dấu gạch, ký hiệu, dấu câu |
-| `references/word-choice.md` | giải nghĩa thuật ngữ, chọn từ, thành phần tình thái, viết hoa, tên riêng |
+| `references/word-choice.md` | giải nghĩa thuật ngữ, chọn từ, thành phần tình thái, phép tu từ (nói quá, nói giảm nói tránh), viết hoa, tên riêng |
 | `references/voice.md` | chọn giọng, viết theo giọng một người |
 | `references/citations-data-figures.md` | lời trích, nguồn, con số, hình, bảng |
 | `references/document-types.md` | giải thích, hướng dẫn, báo cáo, báo cáo sự cố, thư, tin nhắn công việc, thông báo gửi khách, kiến nghị, nghị luận |

@@ -5,7 +5,7 @@ namespace shop, người tên Minh, team Platform, bộ phận CSKH không gắn
 
 ## Đề thử điều gì của skill
 
-Đề nặng hơn eval số 2 trong `skill/evals/evals.json` ở năm chỗ:
+Đề nặng hơn eval số 2 trong `skill/evals/evals.json` ở sáu chỗ:
 
 1. Đoạn gốc có nhiều dữ kiện (giờ, phần trăm, độ trễ, số pod, phiên bản, lệnh, hạn) xen với lời độn không có dữ kiện,
    nên phải bỏ lời độn mà không rơi dữ kiện nào. Thử mục "Sửa văn có sẵn" của SKILL.md và `core-rules.md` mục "Khi sửa
@@ -22,6 +22,10 @@ namespace shop, người tên Minh, team Platform, bộ phận CSKH không gắn
    khi thân bài nói "nhiều khả năng"; câu "chắc có lẽ" chồng hai thành phần tình thái; và câu khuyến mãi gồm một ý đã biết
    (khuyến mãi bắt đầu lúc 14:00) với một ý đang đoán (request tăng vì khuyến mãi), nên thành phần tình thái phải đứng trước
    ý đoán chứ không phủ lên cả câu.
+6. Có hai bẫy về phép tu từ (`word-choice.md`, mục Phép tu từ). Câu "Gần như toàn bộ khách hàng không thể thanh toán suốt
+   cả buổi chiều." là nói quá: dữ kiện là khoảng 18% request lỗi trong 42 phút, nên câu này nói sai mức và phải bỏ. Câu
+   "Minh đã quá ẩu khi đổi cấu hình này mà không nhờ ai review." cần nói giảm: bỏ chữ chê "quá ẩu", giữ sự việc là thay
+   đổi cấu hình chưa qua review.
 
 Ngoài ra thử luật riêng của mảng: một thứ một tên (`word-choice.md`), lỗi chính tả và câu thiếu chủ ngữ
 (`common-errors.md`), ký hiệu trong câu văn (`punctuation.md`), các dấu hiệu ở bảng A tới F của `machine-tells.md`, và cách trả
@@ -52,6 +56,7 @@ Bài phải giữ đủ, đúng giá trị và đúng mức chắc chắn:
 | D17 | Việc tiếp: chạy load test để xác nhận nguyên nhân, chưa có người nhận |
 | D18 | Chương trình khuyến mãi bắt đầu lúc 14:00 (gốc nói như điều đã biết) |
 | D19 | Lượng request tăng có lẽ vì khuyến mãi: một thành phần tình thái, mức "có lẽ" (gốc chồng "chắc có lẽ", lấy mức thấp hơn) |
+| D20 | Thay đổi cấu hình pool trong bản 3.8.0 chưa qua review (Minh là người đổi; giữ tên Minh hay viết "thay đổi này chưa qua review" đều được) |
 
 Ba việc ở D15 tới D17 là việc sắp làm, không được viết như đã làm xong.
 
@@ -72,6 +77,9 @@ Ba việc ở D15 tới D17 là việc sắp làm, không được viết như �
 - Không thêm giờ, tên người, tên kênh báo động, tên công cụ dashboard.
 - Không đổi chữ trong lời khách, không đổi lệnh `kubectl`.
 - Tính ra "42 phút" từ 14:05 tới 14:47 là phép tính đúng, không tính là bịa; tính sai thì tính là đổi dữ kiện.
+
+Câu "Gần như toàn bộ khách hàng không thể thanh toán suốt cả buổi chiều." không phải dữ kiện để giữ: nó ngược với D2 và
+D13, nên bỏ là đúng; viết lại thành một con số khác (ví dụ "hàng nghìn khách") là bịa.
 
 Lời độn không có dữ kiện, bỏ là đúng: câu mở "Trong bối cảnh…", "không chỉ… mà còn là bài học quý giá", "một con số đáng
 báo động", câu hỏi tu từ "Phải chăng…", câu chốt "Điều này cho thấy…", bộ ba "nhanh chóng, quyết liệt và hiệu quả", câu
@@ -94,6 +102,8 @@ kết "Tóm lại, hãy luôn nhớ rằng…".
 | Hai chấm làm khung định nghĩa | "Liveness probe: cơ chế…" | Viết thành câu có "là", giữ đủ nghĩa | Bỏ hẳn lời giải nghĩa; hoặc giữ khuôn hai chấm |
 | Bác bỏ hợp lệ | "Ban đầu, team nghi… Tuy nhiên, CPU… 35%" | Giữ ý bác bỏ, chỉ bỏ in hoa | Xoá vì tưởng là khuôn "không phải X mà là Y" |
 | Câu đã ổn | "Lúc 14:20, Minh mở dashboard…" | Để gần như nguyên | Viết lại kiểu văn hoa hơn |
+| Nói quá | "Gần như toàn bộ khách hàng không thể thanh toán suốt cả buổi chiều." | Bỏ, vì dữ kiện là khoảng 18% trong 42 phút | Giữ, hay chỉ đổi thành "nhiều khách" |
+| Chữ chê gắn với người | "Minh đã quá ẩu khi đổi cấu hình này mà không nhờ ai review." | Bỏ "quá ẩu", giữ việc chưa qua review | Giữ chữ chê; hay bỏ cả câu làm mất D20 |
 | Tóm tắt chắc hơn thân bài | dòng "Nguyên nhân gốc:" dưới nhan đề | Bỏ, hoặc hạ xuống "nhiều khả năng" | Giữ nguyên vì nó chỉ là một dòng tóm tắt |
 | Chồng thành phần tình thái | "chắc có lẽ lượng request tăng" | Giữ một từ, mức "có lẽ" | Giữ cả hai, hoặc chỉ giữ "chắc" làm mức cao lên |
 | Thành phần tình thái phủ cả câu | câu khuyến mãi | "Khuyến mãi bắt đầu lúc 14:00, có lẽ vì thế lượng request tăng" | "Có lẽ khuyến mãi bắt đầu lúc 14:00 nên…", hay bỏ hẳn chữ phỏng đoán |
