@@ -4,6 +4,12 @@ Báo cáo rà soát ghi lại những chỗ sai, chỗ lệch giữa một sản
 liệu khách gửi, quyết định, đặc tả), để người nhận sửa hoặc xác nhận. Người nhận kiểm tra báo cáo bằng một câu hỏi: mở chỗ
 đó ra thì có thấy như báo cáo nói không. Mọi luật trong tệp này phục vụ câu hỏi ấy.
 
+Tệp này không dùng cho việc soát văn bản của chính người dùng ("soát giúp mình bài này", "chỉ ra chỗ nào chưa ổn"). Việc ấy
+theo `core-rules.md`, mục Lời trả theo từng việc, phần Soát mà không sửa: mỗi chỗ trích nguyên văn câu gốc trong ngoặc kép,
+và nhắc lại chỗ khác bằng vài chữ của câu gốc chứ không bằng số mục. Hai cách khác nhau vì người nhận khác nhau. Báo cáo lỗi
+đi tới một người sửa site, sửa code, họ trả lời theo số mục nên mục cần số. Lời soát trả về chính tác giả đang mở bài của
+mình, họ tìm câu bằng Ctrl+F, nên cần câu trích hơn là số.
+
 Tệp này dành cho báo cáo có từ hai mục trở lên, giao thành tệp. Báo một lỗi qua tin nhắn thì theo `document-types.md`, mục
 Tin nhắn công việc, và nói ba thứ (chỗ bị, cách thấy lại, đoán lý do) thành câu văn: "Anh ơi, trang `/orders` bấm Lưu thì
 trả 500 từ 09:00 ạ. Log ghi timeout ở câu truy vấn bảng `orders`, em đoán thiếu index cột `created_at`, em đang kiểm tra."

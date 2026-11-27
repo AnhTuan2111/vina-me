@@ -422,6 +422,22 @@ Dữ kiện, con số, tên riêng, mức chắc chắn và ý của tác giả 
 thiếu một chi tiết mà bản sửa cần chi tiết đó mới viết được thì nói với người dùng là thiếu, không tự điền. Hai dữ kiện
 vênh nhau thì giữ như gốc và hỏi, không gỡ theo cách đọc của mình (`common-errors.md`, dòng Hai dữ kiện vênh nhau).
 
+Cách gỡ sai hay gặp nhất là gán cho một trong hai con số một việc khác để hai câu hết chọi nhau. Gốc ghi "Bản 4.1 deploy lúc
+21:05" ở đoạn đầu và "deploy xong lúc 21:20" ở đoạn sau. Bản sửa viết "Bản 4.1 deploy lúc 21:05, tới 21:20 thì web chạy lại
+bình thường" là đã bịa, vì gốc không nói 21:20 là lúc web chạy lại. Có thể 21:05 là lúc bắt đầu và 21:20 là lúc xong, có thể
+một trong hai giờ ghi nhầm; chỉ tác giả biết. Bản sửa giữ cả hai giờ ở đúng câu của chúng, và lời trả hỏi một câu: "Gốc ghi
+deploy lúc 21:05 ở đoạn đầu và 21:20 ở đoạn sau; đó là lúc bắt đầu và lúc xong, hay một giờ ghi nhầm?"
+
+Câu đoán cũng là dữ kiện, chỉ khác là nó mang mức chắc chắn. "Lượng truy cập tăng có lẽ vì đợt gửi email quảng cáo" cho
+người đọc một hướng để kiểm tra, nên bản sửa giữ câu đó với đúng chữ "có lẽ". Bỏ hẳn câu vì nó chưa chắc là làm mất dữ kiện;
+viết "lượng truy cập tăng vì đợt email" là nói chắc hơn tác giả; viết "chưa rõ có liên quan tới đợt email không" là nói kém
+chắc hơn. Cả ba cách đều đổi ý của tác giả.
+
+Câu bác bỏ có ý kiến đã nêu cũng là ý của tác giả. "Ban đầu nhóm nghi do mạng. Ping tới máy chủ vẫn ổn, nên không phải do
+mạng." gồm ý bị bác, lý do và kết luận. Bản sửa giữ cả ba, chỉ sửa câu chữ, ví dụ "Ban đầu nhóm nghi do mạng, nhưng ping tới
+máy chủ vẫn ổn nên loại khả năng này." Bỏ vế kết luận để chỉ còn con số thì người đọc không biết con số ấy dùng để làm gì.
+Luật bỏ câu "không phải X, mà là Y" (`machine-tells.md`) chỉ áp cho câu bác một ý chưa ai nói.
+
 Riêng mức chắc chắn thì có một trường hợp phải đổi. Gốc tự lệch mức, một câu nói chắc còn câu khác nói chưa xác nhận, thì
 bản sửa theo mức thấp hơn ở mọi câu, vì chính tác giả đã nói là chưa chắc (`common-errors.md`, dòng Hai câu lệch mức chắc
 chắn). Gốc ghi "Lỗi do certificate hết hạn" ở đoạn đầu rồi "có lẽ certificate hết hạn, chưa xem lại ngày" ở đoạn sau thì
@@ -543,6 +559,13 @@ kiện, cả thảy không quá ba câu như mục Trả lời trong chat ở tr
 tự chốt, không kể việc đã soát. Nói dữ kiện nào đã đối chiếu với nguồn thì không tính là kể việc soát, vì người dùng cần
 biết điều đó. Tài liệu gửi khách thì theo `diagrams-and-docs.md`.
 
+### Thư, tin nhắn công việc
+
+Lời trả là văn bản chép đi gửi được ngay, thư và tin nhắn tách rõ nếu có cả hai. Sau văn bản chỉ một hai câu về dữ kiện còn
+thiếu, như email người nhận hay chữ ký đầy đủ. Không thêm bảng so sánh, không giải thích vì sao viết thế, không tự chấm,
+không kể đã soát những gì. Bốn luật về câu đầu, câu nhờ, câu kết và cách trình bày nằm dưới bảng Trả kết quả trong
+`SKILL.md`; lý do và ví dụ ở `document-types.md`, mục Thư và email công việc.
+
 ### Sửa đoạn được dán vào
 
 Người dùng dán đoạn vào là để lấy bản sửa, nên bản đã sửa đứng ngay đầu lời trả, không có câu dẫn kiểu "Bản sửa đây:" hay
@@ -570,7 +593,9 @@ Chỉ sửa phần văn, rồi báo số chỗ đã sửa theo loại, kiểu "6
 
 ### Soát mà không sửa
 
-Lời soát đi từng chỗ theo khuôn "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ, hay theo thứ tự người dùng dặn nếu có. Mỗi
+Lời soát đi từng chỗ theo khuôn "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ, hay theo thứ tự người dùng dặn nếu có. Câu
+gốc chép nguyên văn từ tệp, trọn câu, trong ngoặc kép, để tác giả tìm ra ngay bằng Ctrl+F. Tả lại câu bằng lời của mình
+("câu nói về lịch backup", "lệnh ở Bước 3") thì tác giả phải tự đi tìm, nên chưa tính là có câu gốc. Mỗi
 mục một chỗ, không gộp bằng "thêm nữa". Chỗ thiếu thì câu gốc là câu liền trước nơi cần thêm, ghi "thiếu, thêm sau câu …".
 Gom nhiều câu vào một mục thì gọi tên lỗi của từng câu (`common-errors.md`). Lời soát dùng lại cái tên mình vừa đề xuất,
 không đổi sang tên khác. Lời trả nói script báo mấy chỗ, nhận chỗ nào, bỏ chỗ nào và vì sao. Người dùng dặn không sửa tệp
@@ -580,10 +605,15 @@ Ba luật sau hay bị quên khi soát.
 
 - Lỗi làm người đọc hiểu sai giờ, ngày, con số (chữ chỉ buổi lệch với giờ ghi bên cạnh, hai số chọi nhau) là lỗi nội
   dung, xếp trên mọi lỗi câu chữ.
+- Hướng dẫn làm theo từng bước thì đọc như người đang làm theo, từ trên xuống. Lời cảnh báo hay điều kiện ("đóng app trước
+  khi xoá thư mục cache") đứng sau bước nó cảnh báo thì người làm chỉ đọc thấy khi đã làm xong bước đó. Chỗ này là lỗi nội dung,
+  và cách sửa phải chỉ chỗ đặt mới, ví dụ đưa thành một bước đứng trước.
 - Nhắc lại một chỗ khác trong lời soát thì gọi bằng vài chữ của câu gốc ("lời dặn kiểm tra tên máy"), không bằng số mục
   tự đặt ("như mục 1"), vì người đọc phải lật lại mới biết mục 1 là gì.
 - Câu gốc lạc đề hay sai thì chỉ ra và đề nghị bỏ, hay hỏi tác giả. Đừng đưa dữ kiện ngoài tệp (năm, tên, số) để bác nó,
   vì dữ kiện ấy cũng chưa ai kiểm tra.
+- Cách sửa cần một thứ tệp không có (tên bảng, lệnh tạo tài khoản, một con số) thì ghi rõ đó là ví dụ chưa kiểm tra, hay
+  để chỗ trống cho tác giả điền. Viết như thể đó là cấu hình thật của hệ thống là bịa.
 
 ### Các việc có tệp riêng
 

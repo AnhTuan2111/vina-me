@@ -27,7 +27,9 @@ không bỏ qua với lý do đây chỉ là một dòng ngắn.
 4. Viết theo bảy điều dưới. Văn bản dài hay cần soát kỹ thì đọc bản đầy đủ ở `references/core-rules.md`. Trước mỗi lần
    viết hay viết lại văn dài thì đọc lại skill và tệp tham khảo hợp loại, kể cả khi đầu phiên đã đọc; viết theo trí nhớ
    thì giữ được luật câu chữ nhưng hay rơi mất cách dựng bài, nên bài ra kể lể.
-5. Soát: `node scripts/lint.mjs <tệp>` nếu chạy được lệnh, rồi đọc lại hai lượt, một lượt làm người chưa biết gì, một
+5. Soát: chạy `node scripts/lint.mjs <tệp>` nếu chạy được lệnh. `scripts/` nằm cạnh tệp SKILL.md này, nên đang đứng ở
+   thư mục khác thì gọi script bằng đường dẫn đầy đủ. Câu trả lời trong chat thì ghi ra một tệp tạm rồi chạy lint trên
+   tệp đó. Chưa chạy được thì đừng nói là đã chạy. Sau lint thì đọc lại hai lượt, một lượt làm người chưa biết gì, một
    lượt bắt văn AI slop theo `references/machine-tells.md`, kèm năm câu hỏi theo phương châm hội thoại (lượng, chất,
    quan hệ, cách thức, lịch sự; `references/core-rules.md`). Soát văn của người khác thì chạy lint trên tệp đó và trên chính
    lời soát; lint bỏ qua lời trích trong ngoặc kép, nên báo nào còn lại trong lời soát là của mình. Người dùng muốn có
@@ -88,20 +90,43 @@ hỏi lý do trước khi áp cho cả bài. Bản cần sửa do agent viết t
 thì bỏ; tên riêng agent tự đặt mà dữ kiện gốc không có thì giữ và hỏi một câu (tên nào, ở đâu, giữ hay bỏ). Không áp skill cho văn bản quy phạm pháp luật, hợp đồng, biểu mẫu,
 thơ, lời thoại.
 
+Hai chỗ hay sai nhất khi sửa văn đều là chỗ đụng tới dữ kiện:
+
+- Bài gốc có hai chỗ nói khác nhau về cùng một việc, như hai giờ cho cùng một lần deploy, thì bản sửa giữ cả hai như gốc,
+  rồi hỏi người dùng chỗ nào đúng. Đừng tự gỡ bằng cách gán một con số cho việc khác ("21:20 là lúc web chạy lại"), vì gốc
+  không nói thế, nên nghĩa mới ấy là một dữ kiện bịa.
+- Câu đoán ("có lẽ", "nhiều khả năng", "chưa xác nhận") thì giữ cả ý lẫn mức đoán của nó. Đừng bỏ câu vì nó chưa chắc,
+  cũng đừng viết chắc hơn hay kém chắc hơn gốc. Chỉ khi gốc tự lệch mức, như dòng tóm tắt nói chắc mà thân bài nói chưa xác
+  nhận, thì cả bài theo mức thấp hơn.
+- Câu bác một ý đã nêu ngay trước ("Ban đầu nhóm nghi do mạng. Ping vẫn ổn, nên không phải do mạng.") là lập luận của tác
+  giả, nên bản sửa giữ cả lý do lẫn kết luận. Chỉ câu bác một ý chưa ai nói mới bỏ đi. Thấy lập luận của tác giả còn yếu thì
+  bản sửa vẫn giữ kết luận như gốc, đừng thêm nhận định của mình kiểu "số đo này chưa đủ để loại trừ"; muốn góp ý thì nói ở
+  một dòng thay đổi hay câu hỏi cuối lời trả, không viết vào bài.
+
 ## Trả kết quả
 
 | Việc | Trả gì |
 |---|---|
 | Viết mới | đường dẫn tuyệt đối của tệp (hay chính văn bản), thêm một hai câu về chỗ chưa kiểm tra hay thiếu dữ kiện |
-| Sửa đoạn được dán vào | bản đã sửa, rồi tối đa năm dòng, mỗi dòng một thay đổi kèm lý do |
+| Thư, tin nhắn công việc | văn bản chép đi gửi được ngay, theo bốn luật dưới bảng; sau văn bản luôn có một hai câu nói dữ kiện còn thiếu để gửi được (email người nhận, chữ ký), và ngoài mấy câu đó không bình luận gì thêm |
+| Sửa đoạn được dán vào | bản đã sửa đứng ngay đầu lời trả, rồi tối đa năm dòng, mỗi dòng một thay đổi kèm lý do; có chỗ vênh thì thêm một câu hỏi ở cuối |
 | Sửa một tệp | chỉ sửa phần văn, báo số chỗ đã sửa theo loại |
-| Soát mà không sửa | từng chỗ "câu gốc, vấn đề, cách sửa", từ nặng tới nhẹ |
+| Soát mà không sửa | mỗi chỗ một mục, gồm câu gốc trích nguyên văn trong ngoặc kép, vấn đề, cách sửa; không gom nhiều lỗi vào một mục, không mở mục bằng nhãn in đậm tự đặt; xếp từ nặng tới nhẹ; nhắc lại một chỗ khác thì trích vài chữ của câu gốc, không gọi bằng số mục tự đặt |
 | Báo cáo lỗi, báo cáo rà soát | theo `references/review-reports.md` |
 | Hồ sơ dự thầu | làm đủ quy trình trong `references/bid-proposals.md` |
 | Tệp Word | theo `references/docx-export.md`, kèm bản PDF đã xem từng trang |
 | Bộ nhớ, học từ phiên cũ | theo `references/agent-memory.md` |
 
-Chi tiết của từng dòng ở `references/core-rules.md`, mục Lời trả theo từng việc.
+Thư và tin nhắn công việc gửi đi thì người nhận đọc vội, nên có bốn luật không được bỏ:
+
+1. Câu đầu của thân thư nói mục đích: người nhận cần làm gì, vì sao. Tình hình đi sau câu đó.
+2. Mỗi việc nhờ là một câu gồm việc, hạn và lý do của hạn. Nhờ khách, sếp thì câu có từ nhờ ("giúp", "nhờ", "phiền") hoặc
+   viết thành câu hỏi, không dùng câu cầu khiến trần.
+3. Thư kết bằng việc cần ở người nhận, kèm hạn, không kết bằng việc bên mình sẽ làm.
+4. Thư viết liền, không nhãn in đậm, không đề mục. Chỉ danh sách thật (các phương án, các việc cần làm) mới xuống dòng.
+
+Lời trả nào cũng không mở bằng "Dưới đây là", không tự chấm điểm bài vừa viết, không giải thích lại mình đã viết thế nào,
+không ghi ra tệp khi người dùng không nhờ. Chi tiết của từng dòng ở `references/core-rules.md`, mục Lời trả theo từng việc.
 
 ## Gọi bằng lệnh
 
