@@ -11,6 +11,13 @@ dòng đầu của mục là dòng được in ra khi cập nhật.
 - Mục Nghị luận, thuyết phục có ba lỗi lập luận của sách Ngữ văn 12: luận điểm không nhất quán, luận cứ không xác đáng hay
   không đủ, lập luận mâu thuẫn hay luận cứ không dẫn tới kết luận. Mục Kiến nghị, đề xuất dẫn sang đó.
 - Thêm đề thử `evals/proposal`: bản kiến nghị chuyển CI mắc cả ba lỗi lập luận, pha giọng quảng cáo và khẩu ngữ.
+- `word-choice.md` có mục mới Phép tu từ, gom hai mục So sánh và ẩn dụ, Liệt kê và lặp cú pháp làm mục con. Bảng mười phép
+  tu từ nói mỗi phép dùng được ở loại văn nào và giới hạn ra sao. Mục con Nói quá: trong báo cáo, tài liệu, nói quá là nói
+  sai mức, có số đo thì để số đo nói. Mục con Nói giảm nói tránh: chỉ giảm chữ chê, không giảm sự việc.
+- Luật nói quá được chép thêm vào bảng F của `machine-tells.md` và mục 6.3 của `core-rules.md`, vì agent sửa văn đọc hai
+  tệp này mà có lúc không mở `word-choice.md`.
+- Đề thử `evals/rewrite` có thêm một câu nói quá và một chữ chê gắn với người (dữ kiện D20); prompt trong `evals.json` chép
+  lại theo `prompt.md`.
 
 ## 0.26.0 (27/11/2026)
 

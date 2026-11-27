@@ -1,12 +1,12 @@
 # Thang chấm nhóm rewrite
 
-Thang 100 điểm, đạt từ 95. Đáp án dữ kiện (mã D1 tới D19) và danh sách bẫy ở `scenario.md`. Đề không có tệp Word nên
+Thang 100 điểm, đạt từ 95. Đáp án dữ kiện (mã D1 tới D20) và danh sách bẫy ở `scenario.md`. Đề không có tệp Word nên
 không chấm hình thức trang.
 
 ## Cách chấm
 
 1. Đọc `scenario.md` trước, rồi mới đọc bài.
-2. Dò dữ kiện: đi từng mã D1 tới D19, tìm câu tương ứng trong bài, ghi "có, đúng", "thiếu", "đổi" kèm câu trích.
+2. Dò dữ kiện: đi từng mã D1 tới D20, tìm câu tương ứng trong bài, ghi "có, đúng", "thiếu", "đổi" kèm câu trích.
 3. Đọc độ lưu loát tuần tự: đánh số từng câu của bản sửa (S1, S2…), đọc từng câu, che câu trước đi rồi hỏi câu này có nối
    và dựa trên câu trước không (lặp từ khoá, "này, ấy, đó", từ nối đúng quan hệ, mốc thời gian). Không quét cả bài rồi
    chấm theo cảm giác. Ghi mọi chỗ đứt kèm số câu.
@@ -30,7 +30,7 @@ Trần áp sau khi cộng, lấy trần thấp nhất:
 
 | Lỗi | Trừ |
 |---|---|
-| Thiếu một dữ kiện trong D1 tới D19 | 4 mỗi dữ kiện |
+| Thiếu một dữ kiện trong D1 tới D20 | 4 mỗi dữ kiện |
 | Giữ "chắc có lẽ" (hai thành phần tình thái chồng nhau), hoặc chỉ giữ "chắc" làm mức phỏng đoán cao lên | 3 |
 | Thành phần tình thái đặt sai chỗ: giờ bắt đầu khuyến mãi thành điều đang đoán, hoặc "request tăng vì khuyến mãi" thành điều chắc | 3 |
 | Đổi giá trị một dữ kiện (số, giờ, phiên bản, tên, "quá 10" thành "từ 10", 50 và 20 đảo chỗ) | 5 mỗi chỗ |
@@ -60,7 +60,7 @@ dòng nêu thay đổi chính và lý do. Câu hỏi về chỗ vênh được t
 | Giọng không trung tính: xưng "mình, bạn, chúng tôi", hay giọng bài giảng, hỏi rồi đáp | 4 |
 | Bỏ khung đoạn văn của gốc để chuyển cả bài thành bảng hay toàn gạch đầu dòng | 4 |
 
-## C. Độ lưu loát, đọc tuần tự từng câu: 30 điểm
+## C. Độ lưu loát, đọc tuần tự từng câu: 26 điểm
 
 Chấm theo bảng số câu đã ghi ở bước 3. Văn AI slop cụ thể chấm ở mục D, ở đây chấm mạch câu.
 
@@ -100,7 +100,7 @@ Mỗi dấu hiệu dưới đây còn sót từ gốc, hay mới xuất hiện t
 | Ký hiệu trong câu văn: `->`, mũi tên, `~`, `>`, `&`, `=`, `vs` | 1 mỗi chỗ |
 | Dấu hai chấm làm khung định nghĩa ("Liveness probe: …") | 2 |
 
-## E. Luật riêng của mảng sửa văn: 10 điểm
+## E. Luật riêng của mảng sửa văn: 14 điểm
 
 Luật ở `machine-tells.md`, `common-errors.md`, `word-choice.md`, `punctuation.md`.
 
@@ -114,14 +114,16 @@ Luật ở `machine-tells.md`, `common-errors.md`, `word-choice.md`, `punctuatio
 | Thay từ đồng nghĩa mà không sửa cấu trúc câu ở chỗ cấu trúc là lỗi (ví dụ đổi "tiến hành rollback thông qua việc chạy lệnh" thành "thực hiện rollback bằng việc chạy lệnh") | 2 |
 | Đổi thuật ngữ kỹ thuật sang lời thường làm mất nghĩa (bỏ "p95", đổi "liveness probe" thành "kiểm tra sức khoẻ" mà không giữ tên) | 2 |
 | Dùng "cạn" cho tài nguyên | 1 |
+| Giữ câu nói quá "Gần như toàn bộ khách hàng không thể thanh toán suốt cả buổi chiều.", hay chỉ đổi thành một mức mơ hồ khác ("nhiều khách", "phần lớn khách") (`word-choice.md`, mục con Nói quá) | 3 |
+| Giữ chữ chê "quá ẩu" hay một chữ chê khác gắn với Minh (`word-choice.md`, mục con Nói giảm nói tránh) | 3 |
 
 ## Thang tham chiếu
 
 | Tổng | Bài trông thế nào |
 |---|---|
-| 95-100 | Đủ D1 tới D19 đúng mức chắc chắn, nêu chỗ vênh giờ rollback, không gạch dài, mạch câu liền, không văn AI slop cũ hay mới, đúng cách trả kết quả |
+| 95-100 | Đủ D1 tới D20 đúng mức chắc chắn, bỏ câu nói quá, bỏ chữ chê gắn với Minh, nêu chỗ vênh giờ rollback, không gạch dài, mạch câu liền, không văn AI slop cũ hay mới, đúng cách trả kết quả |
 | khoảng 80 | Giữ dòng "Nguyên nhân gốc:", hoặc bỏ hết lời độn và ký hiệu nhưng lặng lẽ chọn một giờ rollback hoặc không nêu chỗ vênh, còn hai tên cho pool, vài chỗ câu rời hay chặt cụt, danh sách thay đổi dài hơn năm dòng |
 | dưới 70 | Bịa con số hay người nhận việc, nói chắc nguyên nhân, còn gạch dài, hoặc chỉ thay từ đồng nghĩa |
 
-Ghi `grade.md`: điểm từng mục, mọi điểm trừ kèm câu trích, bảng dò D1 tới D19, bảng số câu S1, S2… với chỗ đứt, trần đã áp,
+Ghi `grade.md`: điểm từng mục, mọi điểm trừ kèm câu trích, bảng dò D1 tới D20, bảng số câu S1, S2… với chỗ đứt, trần đã áp,
 tổng, đạt hay chưa.
