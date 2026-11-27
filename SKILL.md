@@ -6,7 +6,7 @@ argument-hint: "[write|edit|review|score|word|bid|memory|secret|feedback] <yêu 
 metadata:
   author: AnhTuan2111
   language: vi
-  version: "0.26.0"
+  version: "0.27.0"
 ---
 
 # Viết cho lưu loát
@@ -154,7 +154,7 @@ trả, như câu hỏi về bộ nhớ. Người dùng đã nhờ soạn bản n
 | `references/word-choice.md` | giải nghĩa thuật ngữ, chọn từ, thành phần tình thái, phép tu từ (nói quá, nói giảm nói tránh), viết hoa, tên riêng |
 | `references/voice.md` | chọn giọng, viết theo giọng một người |
 | `references/citations-data-figures.md` | lời trích, nguồn, con số, hình, bảng |
-| `references/document-types.md` | giải thích, hướng dẫn, báo cáo, báo cáo sự cố, thư, tin nhắn công việc, thông báo gửi khách, kiến nghị, nghị luận |
+| `references/document-types.md` | giải thích, hướng dẫn, báo cáo, báo cáo sự cố, thư, tin nhắn công việc, thông báo gửi khách, kiến nghị, nghị luận; phong cách chức năng, lỗi lập luận |
 | `references/structure.md` | dàn ý, mở bài, triển khai, kết bài |
 | `references/storytelling.md` | dẫn dắt người đọc đi một mạch: mở bằng câu của người đọc, câu sau móc vào câu trước, tả trước gọi tên sau |
 | `references/teaching.md` | bài giảng, tài liệu dạy học, câu hỏi kiểm tra; soát bằng `references/teaching-checklist.md` |
