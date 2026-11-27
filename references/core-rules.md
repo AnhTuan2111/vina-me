@@ -358,7 +358,7 @@ nào để quay về." nói ra vì sao phải nhấn.
 
 Bảng đầy đủ ở `machine-tells.md`. Mấy dấu hiệu gặp nhiều nhất:
 
-- "Không phải X, mà là Y" khi chưa ai nói X.
+- "Không phải X, mà là Y" khi chưa ai nói X. Đó là câu phủ định bác bỏ, nên cần một ý kiến X có thật để bác.
 - "Không chỉ… mà còn…" để nâng tầm; bộ ba cho đủ vần; dãy từ gần nghĩa thay cho một con số.
 - Mở bằng dựng cảnh, "Trong xã hội hiện đại…", "Trong cuộc sống…".
 - Kết bằng "Tóm lại", "Hãy…", "Nhớ gọn:", một câu châm ngôn, hay một câu khẳng định ý nghĩa dùng cho bài nào cũng được.

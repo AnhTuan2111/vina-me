@@ -1,6 +1,6 @@
 # Khôi phục database staging — hướng dẫn cho dev mới
 
-Trong thời đại dữ liệu là tài sản quý giá nhất của doanh nghiệp, việc sao lưu đóng vai trò then chốt. Tài liệu này hướng dẫn các bạn khôi phục database PostgreSQL của app ClinicBook trên máy `db-staging-01` từ bản backup gần nhất. PostgreSQL ra đời năm 1996 ở Đại học Berkeley nên rất ổn định, ít khi hỏng dữ liệu.
+Trong thời đại dữ liệu là tài sản quý giá nhất của doanh nghiệp, việc sao lưu đóng vai trò then chốt. Tài liệu này hướng dẫn các bạn khôi phục database PostgreSQL của app ClinicBook trên máy `db-staging-01` từ bản backup gần nhất. Khôi phục database không phải là việc khó, mà là việc phải làm cẩn thận từng bước. PostgreSQL ra đời năm 1996 ở Đại học Berkeley nên rất ổn định, ít khi hỏng dữ liệu.
 
 ## Backup chạy thế nào
 

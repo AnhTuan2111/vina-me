@@ -15,6 +15,10 @@ người, máy, đường dẫn đều giả.
   sách khi có danh sách thật (ở đây hai phương án và ba việc cần khách làm là danh sách thật).
 - Đổi giọng giữa hai người nhận trong cùng một lượt: mail cho khách trang trọng vừa phải, em và chị; Zalo cho trưởng nhóm ngắn,
   em và anh, được nói chuyện nội bộ.
+- Câu nhờ việc theo phép lịch sự và hành động nói gián tiếp (`document-types.md`, mục Tin nhắn công việc): nhờ khách và
+  nhờ trưởng nhóm thì có từ nhờ hay dùng câu hỏi, không dùng câu cầu khiến trần; báo tình hình thì dùng câu trần thuật.
+  Tin của anh Khoa trong chat toàn câu cầu khiến trần ("xin luôn danh sách thủ kho", "đưa 2 phương án"), nên bài dễ chép
+  theo giọng đó vào mail gửi khách.
 - Ràng buộc độ dài có trong dữ kiện chứ không ở lời yêu cầu: Linh dặn "chị Thu hay đọc mail trên điện thoại, viết ngắn thôi".
 - Cách trả kết quả theo bảng "Trả kết quả" của `SKILL.md`, dòng Viết mới: "Văn bản, thêm một hai câu về chỗ chưa kiểm tra hay
   thiếu dữ kiện".
@@ -87,3 +91,4 @@ không tự khen bài, không chấm điểm.
 | Phạm vi của việc mượn máy | "phương án nào cũng phải mượn" | Mail nói rõ việc mượn máy cần cho cả hai phương án |
 | Ngày cho phương án A | Không có ngày, chỉ "3 ngày làm việc kể từ khi nhận máy" | Không tự đổi ra ngày |
 | Hai người nhận, hai giọng | | Mail trang trọng vừa, Zalo ngắn và thân |
+| Câu nhờ việc | Tin của anh Khoa toàn câu cầu khiến trần ("xin luôn danh sách thủ kho (họ tên + email)") | Mail: "Chị gửi giúp em danh sách…", "Nhờ chị…"; Zalo: "Anh xem giúp em mail… được không ạ?" hay "…nhé"; tình hình viết bằng câu trần thuật |

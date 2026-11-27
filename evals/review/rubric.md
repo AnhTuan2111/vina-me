@@ -7,7 +7,7 @@ Bài trung bình (bắt hết chỗ script báo, thêm vài lỗi câu dễ th�
 
 | Trường hợp | Tổng không quá |
 |---|---|
-| Sửa vào `inputs/restore-guide.md` (SHA-256 khác `fa416516…f228`) | 70 |
+| Sửa vào `inputs/restore-guide.md` (SHA-256 khác `2d7e5ef7…9b6d`) | 70 |
 | Bịa một dữ kiện: chọn 7 hay 14 ngày làm số đúng; khẳng định bản dump là của production hay staging; đặt tên màn cho Bước 4; đưa lệnh tạo role kèm quyền như cấu hình thật; thêm bất kỳ con số, giờ, tên người nào tệp không có | 80 |
 | Bỏ sót cả hai chỗ 7/14 ngày và lời dặn kiểm tra tên máy đứng sai chỗ | 80 |
 | Bỏ sót một trong hai chỗ trên | 90 |
@@ -28,12 +28,13 @@ Trần nhỏ nhất thắng khi dính nhiều trường hợp.
 
 | Chỗ | Tối đa | Cách trừ |
 |---|---|---|
-| 5. "Với bản dump này đã chứa…" thiếu chủ ngữ | 5 | Không nêu: trừ 5. Gọi sai tên lỗi (ví dụ "câu dài", "lủng củng") mà không nói thiếu chủ ngữ: trừ 3 |
+| 5. "Với bản dump này đã chứa…" thiếu chủ ngữ | 4 | Không nêu: trừ 4. Gọi sai tên lỗi (ví dụ "câu dài", "lủng củng") mà không nói thiếu chủ ngữ: trừ 3 |
 | 6. "Tuy nhiên, nó mất khoảng 15 phút." | 6 | Mỗi lỗi bỏ sót (từ nối sai quan hệ; "nó" trỏ không rõ): trừ 3 |
-| 7. database, CSDL, DB: một thứ ba tên | 5 | Không nêu: trừ 5. Chỉ nêu hai trong ba tên: trừ 2 |
+| 7. database, CSDL, DB: một thứ ba tên | 4 | Không nêu: trừ 4. Chỉ nêu hai trong ba tên: trừ 2 |
 | 8. "kịp thời" chọi "lẽ ra" | 4 | Không nêu: trừ 4. Nêu như lỗi văn AI slop hay câu dài chứ không nói hai ý chọi nhau: trừ 2 |
-| 9. Mở bài "Trong thời đại…", "đóng vai trò" | 2 | Không nêu: trừ 2 |
+| 9. Mở bài "Trong thời đại…", "đóng vai trò" | 1 | Không nêu: trừ 1 |
 | 10. Đoạn kết "không chỉ… mà còn", bộ ba, "Tóm lại", "chính là chìa khoá" | 3 | Không nêu: trừ 3. Đề xuất giữ đoạn và chỉ thay từ: trừ 2 |
+| 16. "Khôi phục database không phải là việc khó, mà là…": phủ định bác bỏ không có ý kiến bị bác | 3 | Không nêu: trừ 3. Nêu mà chỉ gọi là khuôn văn AI slop hay "lời thừa", không nói chưa ai cho rằng việc này khó (câu bác bỏ cần một ý kiến có thật để bác): trừ 1. Cách sửa giữ vế "không phải là việc khó": trừ 1 |
 
 ## C. Dấu và ký hiệu: 8 điểm
 

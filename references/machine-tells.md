@@ -47,6 +47,19 @@ Mẫu câu thì khó thấy hơn, vì từng câu đứng riêng vẫn ổn. Nó
 | Bị động không chủ thể trong văn trung tính ("X được chọn vì đây là…", "lỗi đếm sai đã được sửa") | Nói ai làm: "Nhóm đặt X vào… vì", "Bản 2.4.2 sửa lỗi đếm sai" |
 | Đuôi dịch sát "…, với N thay đổi sau", "…, với N mục dưới đây" | Tách câu: "Bản này có N thay đổi:" |
 
+Dòng đầu bảng cần nói thêm lý do. Câu "Không phải X, mà là Y" là câu phủ định bác bỏ, sách Ngữ văn 8 gọi như vậy: nó gạt
+đi một ý kiến X mà ai đó đã nêu hay đang nghĩ. Câu phủ định miêu tả ("Bản 2.3 không có lỗi này") chỉ báo một điều không
+có, nên không cần ai nói trước. Câu bác bỏ thì cần một X có thật để bác. Chưa ai cho rằng X đúng mà câu vẫn bác X, thì
+người viết đang tự dựng ra một ý kiến cho dễ bác. Người đọc thấy mình bị gán một cách nghĩ họ không có, còn ý Y bị đẩy ra
+sau một vế thừa.
+
+Muốn biết câu bác bỏ có chỗ đứng không thì tìm X ở phía trước: câu trước nêu một cách hiểu sai ("Rất dễ nghĩ là container
+chết vì thiếu RAM."), người dùng hay tài liệu gốc đã nói X, hay nhóm đã nghi X trong lúc xử lý sự cố. Có một trong ba thì
+giữ câu bác bỏ. Không có thì nói thẳng Y. Trong câu "Viết test không phải để làm đẹp báo cáo, mà là để bắt lỗi trước khi
+lên production.", chẳng ai nói test để làm đẹp báo cáo, nên chỉ cần viết "Viết test để bắt lỗi trước khi lên production."
+Soát văn người khác thì nói rõ lý do này, đừng chỉ gọi đó là khuôn văn AI slop, vì tác giả cần biết câu nào giữ được và
+vì sao.
+
 ## C. Mở bài và kết bài
 
 Câu đầu và câu cuối là hai chỗ văn mẫu bám nhiều nhất, vì người viết chưa biết nói gì thì dựng cảnh, nói xong rồi thì
