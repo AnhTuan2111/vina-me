@@ -285,6 +285,9 @@ Một số đo chỉ nói được điều nó đo. Có ba chỗ hay nói quá.
 - Dữ kiện chỉ phủ một khoảng, như quanh một lần lỗi hay trong một ngày, thì câu chỉ nói về khoảng đó, không viết "chưa lần
   nào", "lúc nào cũng".
 
+Câu phóng đại quy mô ("cả công ty không ai vào được", "suốt cả ngày") đứng cạnh một số đo nhỏ hơn là phép nói quá, và trong văn
+công việc nó là nói sai mức. Bỏ câu đó, để số đo nói (`word-choice.md`, mục con Nói quá).
+
 ### 6.4 Đã rào thì không nghiêng
 
 Đã rào một điều ("chưa tách được", "chưa đủ dữ kiện") thì câu sau không được nghiêng kết luận về phía mà lời rào vừa nói là

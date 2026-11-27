@@ -14,7 +14,7 @@ registry, con số đều là dữ kiện giả.
 - Dữ kiện có sẵn đủ để kết luận phần chính, nhưng thiếu dữ kiện để chia bộ nhớ ngoài heap; skill dặn không thêm con số,
   suy diễn ngoài dữ kiện, thiếu thì nói là thiếu (`core-rules.md` điều 6).
 - Người dùng xin "ví von đời thường": skill cho tối đa một phép so sánh hay ẩn dụ, đặt sau lời thường, nói chỗ nó hết đúng
-  (`core-rules.md` mục Trình bày, `word-choice.md` mục So sánh và ẩn dụ).
+  (`core-rules.md` mục Trình bày, `word-choice.md` mục Phép tu từ, mục con So sánh và ẩn dụ).
 - Ghi chú ngắn thì viết liền, không chia đề mục, không in đậm nhãn (`core-rules.md` mục Trình bày, `machine-tells.md` mục E).
 - Cách trả kết quả của việc "Viết mới" trong bảng Trả kết quả của `SKILL.md`: văn bản, thêm một hai câu về chỗ chưa kiểm tra
   hay thiếu dữ kiện.

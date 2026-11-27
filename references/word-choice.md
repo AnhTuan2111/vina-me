@@ -1,8 +1,8 @@
 # Chọn từ và thuật ngữ
 
 Chọn từ là chọn chữ người đọc hiểu ngay mà không phải dịch lại trong đầu. Tệp này đi từ thuật ngữ (chữ của nghề) tới cách
-giải nghĩa một từ, cách chọn từ thường, thành phần tình thái và phạm vi của câu, phép so sánh, liệt kê, rồi tới viết hoa
-và chữ viết tắt.
+giải nghĩa một từ, cách chọn từ thường, thành phần tình thái và phạm vi của câu, phép tu từ, rồi tới viết hoa và chữ viết
+tắt.
 
 ## Thuật ngữ
 
@@ -116,7 +116,46 @@ Thành phần tình thái nói người viết chắc tới đâu, còn phạm v
 thể ("tất cả", "mọi") và phó từ "luôn luôn", "không bao giờ" nói sự việc đúng cho mọi trường hợp, nên chỉ dùng khi không
 có ngoại lệ. Có ngoại lệ thì thu hẹp lại bằng "thường thì", "phần lớn", "ít khi", "không mấy".
 
-## So sánh và ẩn dụ
+## Phép tu từ
+
+Phép tu từ là cách dùng từ, dùng câu cho lời có sức gợi hơn lời thường. Sách Ngữ văn 6 tới 12 dạy cả loạt: so sánh, ẩn dụ,
+nhân hoá, hoán dụ, điệp, đối, liệt kê, nói quá, nói giảm nói tránh, nhịp câu. Văn công việc cần ít phép tu từ hơn văn kể,
+và mỗi phép có chỗ dùng được, chỗ không. Bảng dưới đi từ phép hay dùng tới phép gần như không dùng.
+
+| Phép | Dùng được ở | Giới hạn |
+|---|---|---|
+| So sánh, ẩn dụ | bài giảng, lời giải thích, bài kể | mục con So sánh và ẩn dụ ngay dưới |
+| Nói giảm nói tránh | lời chỉ lỗi, chỗ viết về lỗi của một người, sự cố gây thiệt hại | giảm chữ chê, không giảm sự việc; mục con Nói giảm nói tránh |
+| Liệt kê, lặp cú pháp | mọi loại văn, khi các ý ngang hàng thật | mục con Liệt kê và lặp cú pháp; bộ ba cho đủ vần là văn AI slop (`machine-tells.md`, bảng B) |
+| Điệp từ ngữ | lặp từ khoá để nối câu (`cohesion.md`) | lặp để dồn cảm xúc ("rất nhanh, rất gọn, rất mạnh") thì bỏ |
+| Nhịp câu (tu từ ngữ âm) | bài giảng, bài kể (`storytelling.md`) | câu dài ngắn xen nhau, không đếm chữ cho đều; câu không kết bằng hư từ (`sentences-and-paragraphs.md`, mục Trật tự từ) |
+| Nhân hoá | bài kể, bài giảng cho người mới, một lần trong bài | tài liệu, báo cáo không viết "server đang mệt", "database kêu cứu", vì người đọc cần biết máy làm gì thật |
+| Hoán dụ | chat, bài kể | báo cáo không gọi người bằng tên bộ phận khi kể lỗi ("phòng IT làm sập web"), vì câu giấu mất ai làm việc gì |
+| Phép đối | nhan đề, câu mở của bài kể | câu đối xứng lặp ở nhiều đoạn là văn AI slop |
+| Nói quá | chat với người quen, bài kể khi người đọc biết là phóng đại | không dùng trong tài liệu, báo cáo, thư, kiến nghị; mục con Nói quá |
+| Chơi chữ, câu hỏi tu từ | không dùng trong văn công việc | câu hỏi tu từ ở `machine-tells.md`, bảng B |
+
+### Nói quá
+
+Nói quá là phóng đại mức độ, quy mô của sự việc để gây ấn tượng. Sách Ngữ văn 8 phân biệt nó với nói khoác ở chỗ người
+nghe biết đó là phóng đại. Người đọc báo cáo và tài liệu thì không biết: họ đọc "Cả công ty không ai đăng nhập được." như
+một dữ kiện, trong khi log ghi 120 trên 900 lượt đăng nhập lỗi trong 15 phút. Vì vậy trong văn công việc, nói quá là nói
+sai mức, phạm điều 6 của bảy điều cốt lõi (nói thật). Chữ tăng mức như "cực kỳ", "khủng khiếp", "chưa từng có", "tăng
+vọt" cũng là nói quá khi đứng thay con số. Có số thì viết số ("độ trễ tăng từ 200ms lên 1,8 giây"); không có số thì tả
+đúng điều đã thấy, không thêm mức.
+
+### Nói giảm nói tránh
+
+Nói giảm nói tránh là nói cho bớt nặng nề, bớt mất lòng. Sách dạy mấy cách làm: phủ định từ trái nghĩa ("chưa tốt" thay
+"tệ"), nói vòng, dùng từ đồng nghĩa nhẹ hơn. Văn công việc dùng nó ở lời chỉ lỗi và ở chỗ kể lỗi của một người: "chưa
+khớp", "cần sửa", "chưa kịp kiểm tra" thay cho "cẩu thả", "ẩu", "sai bét".
+
+Nói giảm chỉ được giảm chữ chê, không được giảm sự việc. "Long làm ẩu nên xoá nhầm bảng." bỏ chữ "ẩu" rồi vẫn phải giữ
+việc đã xảy ra: "Lệnh xoá chạy trên bảng production vì script không hỏi lại tên database." Báo cáo sự cố viết theo cách
+này thì nói việc và chỗ quy trình còn thiếu, không phán xét người. Giảm tới mức người đọc không biết có lỗi, lỗi gì, ai cần
+sửa ("có một vài điểm có thể cân nhắc thêm") là đã giấu lỗi (`review-reports.md`, mục Giọng).
+
+### So sánh và ẩn dụ
 
 So sánh có từ so sánh ("giống", "như"); ẩn dụ là so sánh ngầm, bỏ từ so sánh đi. Luật về số lượng, chỗ đặt và chỗ hết
 đúng ở `core-rules.md` áp cho cả hai. So sánh thì nói rõ so về mặt nào. Ẩn dụ dễ bị hiểu rộng hơn ý muốn nói, nên mỗi văn
@@ -125,7 +164,7 @@ bản tối đa một cái, đặt sau lời giải thích bằng lời thườn
 Câu mở phép so sánh có chủ ngữ là thứ đang bàn, không mở bằng "Giống…:". Vế đem ra so là việc người ta làm thật ngoài đời,
 và chỗ hết đúng không nói ngược điều bài đã kể (`core-rules.md`, mục Trình bày).
 
-## Liệt kê và lặp cú pháp
+### Liệt kê và lặp cú pháp
 
 Các mục trong một lần liệt kê cùng loại, cùng cấp. Có tăng tiến thì xếp theo thứ tự tăng dần. Các ý ngang hàng viết theo
 cùng một kiểu câu, sách giáo khoa gọi là phép lặp cú pháp, để người đọc thấy ngay chúng ngang hàng.
