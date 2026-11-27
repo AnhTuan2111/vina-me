@@ -150,8 +150,8 @@ trả, như câu hỏi về bộ nhớ. Người dùng đã nhờ soạn bản n
 | `references/function-words.md` | câu thừa "đã được", "các", "của", "việc", văn dịch sát tiếng Anh; chọn phó từ, lượng từ, quan hệ từ, trợ từ, tình thái từ |
 | `references/sentences-and-paragraphs.md` | câu ghép, trạng ngữ, đoạn, câu chủ đề |
 | `references/common-errors.md` | lỗi câu, lỗi đoạn, lỗi dùng từ |
-| `references/punctuation.md` | dấu gạch, ký hiệu, dấu câu |
-| `references/word-choice.md` | giải nghĩa thuật ngữ, chọn từ, thành phần tình thái, phép tu từ (nói quá, nói giảm nói tránh), viết hoa, tên riêng |
+| `references/punctuation.md` | dấu gạch, ký hiệu, dấu câu, dấu phẩy, dấu chấm lửng |
+| `references/word-choice.md` | giải nghĩa thuật ngữ, chọn từ, thành phần tình thái, phép tu từ (nói quá, nói giảm nói tránh), chữ tiếng Anh pha tạp, viết hoa, tên riêng |
 | `references/voice.md` | chọn giọng, viết theo giọng một người |
 | `references/citations-data-figures.md` | lời trích, nguồn, con số, hình, bảng |
 | `references/document-types.md` | giải thích, hướng dẫn, báo cáo, báo cáo sự cố, thư, tin nhắn công việc, thông báo gửi khách, kiến nghị, nghị luận; phong cách chức năng, lỗi lập luận |

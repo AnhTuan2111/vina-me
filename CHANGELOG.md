@@ -18,6 +18,14 @@ dòng đầu của mục là dòng được in ra khi cập nhật.
   tệp này mà có lúc không mở `word-choice.md`.
 - Đề thử `evals/rewrite` có thêm một câu nói quá và một chữ chê gắn với người (dữ kiện D20); prompt trong `evals.json` chép
   lại theo `prompt.md`.
+- `punctuation.md`: dấu phẩy có bốn việc theo sách Tiếng Việt 5 và Ngữ văn 6, kèm ba lỗi hay gặp (thiếu dấu phẩy sau
+  trạng ngữ, dấu phẩy giữa chủ ngữ và vị ngữ, hai câu không liên quan nối bằng dấu phẩy). Dấu chấm lửng có ba việc theo
+  sách Ngữ văn 7, văn công việc chỉ dùng nó để báo đã cắt bớt lời trích hay output. Dấu chấm phẩy nói rõ hai việc.
+- `word-choice.md`, mục Thuật ngữ: ranh giới giữa thuật ngữ được giữ (deploy, merge, pull request) và chữ tiếng Anh pha tạp
+  ("deadline", "confirm", "check"), kèm phép thử: người đọc có cần nhận ra chữ này ở lệnh, nút, log không. Bảng viết hoa
+  thêm dòng viết hoa để tỏ sự tôn trọng ("Bác", "Người").
+- Thêm dấu phẩy cho câu ví dụ tin nhắn trong `document-types.md`.
+- Thêm đề thử `evals/loanwords`: thông báo bảo trì nội bộ chêm chữ tiếng Anh, sai dấu phẩy, để dấu chấm lửng cuối dãy.
 
 ## 0.26.0 (27/11/2026)
 
