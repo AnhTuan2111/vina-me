@@ -27,6 +27,17 @@ vậy. Thuật ngữ viết thế nào ở nguồn gốc thì để yên thế, 
 Động từ tiếng Anh quen trong nghề như "deploy", "rollback", "restart" cũng giữ như gốc, một dạng suốt bài, không lúc
 "restart" lúc "khởi động lại". Viết cho người ngoài nghề thì giải nghĩa ở lần đầu, chứ không dịch.
 
+Giữ thuật ngữ tiếng Anh không có nghĩa là chữ tiếng Anh nào cũng được giữ. Ranh giới nằm ở chỗ chữ đó có gọi tên một thứ
+của nghề hay không. Deploy, merge, pull request, staging là tên của việc, của chỗ mà người đọc sẽ gặp lại trong lệnh, trên
+giao diện, trong log, nên giữ. Còn "deadline", "confirm", "feedback", "check", "update", "basically" khi chỉ là chữ thường
+thì tiếng Việt đã có chữ nói được ý đó: hạn, xác nhận, góp ý, kiểm tra, cập nhật, còn "basically" thì bỏ. Chen những chữ
+này vào câu là pha tạp, điều sách Ngữ văn 12 gọi là làm mất sự trong sáng của tiếng Việt. "Anh confirm giúp em deadline để
+em check lại plan." viết lại thành "Anh xác nhận giúp em hạn nộp để em xem lại kế hoạch."
+
+Một chữ có thể đứng ở cả hai phía. "Update" là tên nút trên giao diện thì giữ, đặt trong ngoặc kép như mọi chữ trên giao
+diện; "update tài liệu" thì viết "cập nhật tài liệu". Thử bằng câu hỏi: người đọc có cần nhận ra đúng chữ này ở một chỗ khác
+(lệnh, nút, log) không. Cần thì giữ; không cần thì viết tiếng Việt.
+
 Hai thuật ngữ dễ lẫn thì đặt cạnh nhau và chỉ nói điểm khác nhau liên quan tới việc người đọc đang làm, thường chỉ có một
 điểm. Chữ dùng để gọi thay một thuật ngữ thì phải chưa dùng cho thứ khác trong bài. "Bản" đã là phiên bản (bản 2.4) thì
 không gọi máy đang chạy là "bản đang chạy". Ghi chú gọi một thứ bằng tên mơ hồ ("bản cũ", "con kia") thì bài dùng tên đã
@@ -139,6 +150,7 @@ cùng một kiểu câu, sách giáo khoa gọi là phép lặp cú pháp, để
 | Tên nước ngoài đọc theo Hán Việt | Như tên Việt | "Lỗ Tấn", "Thái Lan" |
 | Tên công cụ, hãng, sản phẩm | Giữ nguyên dạng gốc | "PostgreSQL", "GitLab" |
 | Danh từ chung | Không viết hoa để nhấn mạnh | "container", không "Container" |
+| Danh từ chung dùng để tỏ sự tôn trọng đặc biệt | Viết hoa, theo chương trình Tiếng Việt lớp 5; chỉ dùng trong văn bản hành chính, hồ sơ gửi cơ quan và bài viết về người được tôn kính | "Bác", "Người" khi chỉ Chủ tịch Hồ Chí Minh; "Nhân dân", "Nhà nước" (`official-documents.md`) |
 | Chữ chung đứng trước tên một nhóm trong công ty (team, nhóm) | Viết thường chữ chung giữa câu, giữ hoa tên riêng | "team Billing báo lỗi", không "Team Billing báo lỗi" giữa câu |
 | Loại tài nguyên Kubernetes (pod, node, deployment) | Bài kể sự việc, báo cáo sự cố: danh từ chung, viết thường như "container". Bài giảng về các đối tượng API thì viết hoa như tên kind cả loạt ("Deployment giữ đủ số Pod đã khai"). Một bài một kiểu | "2 trong 5 pod bị restart", không "2 trong 5 Pod" cạnh "container" |
 

@@ -166,7 +166,7 @@ dùng được. Tin nhắn không có "Kính gửi", "Trân trọng", không đ�
 
 Câu đầu tuỳ tin để làm gì. Tin có việc nhờ thì câu đầu là việc nhờ, kèm hạn; tình hình hay thông tin kèm theo đi sau. Tin
 chỉ báo thì câu đầu là kết quả, không kể lại từ đầu theo thời gian: "Anh ơi, bản 2.5 lên production lúc 22:10 rồi ạ. Lúc
-chạy migration bảng `orders` bị khoá 5 phút, em đã gỡ khoá và web chạy lại bình thường."
+chạy migration, bảng `orders` bị khoá 5 phút; em đã gỡ khoá và web chạy lại bình thường."
 
 Câu nhờ việc chọn kiểu câu theo người nhận. Nhờ sếp, người lớn tuổi hơn hay khách thì không dùng câu cầu khiến trần như
 "Anh duyệt bản này trước giờ họp.", vì đọc lên nghe như ra lệnh. Sách Tiếng Việt 4 dạy giữ phép lịch sự khi nêu yêu cầu
