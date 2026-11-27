@@ -3,6 +3,15 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.27.0 (27/11/2026)
+
+- `document-types.md` có mục mới Phong cách chức năng: bảng năm phong cách của sách Ngữ văn 10 tới 12 (khoa học, hành chính,
+  báo chí, chính luận, sinh hoạt), mỗi phong cách ba đặc trưng kèm luật của skill ứng với đặc trưng đó. Mục này nói thêm
+  lỗi lẫn phong cách: giọng quảng cáo trong tài liệu kỹ thuật, lời kêu gọi trong báo cáo, khẩu ngữ trong kiến nghị.
+- Mục Nghị luận, thuyết phục có ba lỗi lập luận của sách Ngữ văn 12: luận điểm không nhất quán, luận cứ không xác đáng hay
+  không đủ, lập luận mâu thuẫn hay luận cứ không dẫn tới kết luận. Mục Kiến nghị, đề xuất dẫn sang đó.
+- Thêm đề thử `evals/proposal`: bản kiến nghị chuyển CI mắc cả ba lỗi lập luận, pha giọng quảng cáo và khẩu ngữ.
+
 ## 0.26.0 (27/11/2026)
 
 - `machine-tells.md` giải thích dòng "Không phải X, mà là Y": đó là câu phủ định bác bỏ (sách Ngữ văn 8), cần một ý kiến X

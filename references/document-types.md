@@ -11,8 +11,32 @@ phục bỗng thiếu dẫn chứng. Bảng dưới nối mục đích với lo�
 | Hướng dẫn | quy trình, quy tắc, nội quy | các bước, các quy tắc | làm theo được không |
 | Ghi lại việc đã xảy ra | báo cáo, tường trình, biên bản | sự việc, mốc thời gian | đúng, đủ, không cảm tính |
 
-Các mục sau đi lần lượt từng loại, từ văn bản thông tin, hướng dẫn, báo cáo, thư, tin nhắn, thông báo gửi khách, tới kiến
-nghị, nghị luận và mấy loại ngắn hơn.
+Mục Phong cách chức năng ngay dưới nói mỗi loại mang đặc trưng gì. Các mục sau đó đi lần lượt từng loại, từ văn bản thông
+tin, hướng dẫn, báo cáo, thư, tin nhắn, thông báo gửi khách, tới kiến nghị, nghị luận và mấy loại ngắn hơn.
+
+## Phong cách chức năng
+
+Sách Ngữ văn 10 tới 12 chia văn bản theo phong cách chức năng: văn dùng ở đâu thì mang đặc trưng của nơi đó. Mỗi loại văn
+bản trong tệp này thuộc một phong cách, và nhiều luật của skill cho loại đó là đặc trưng của phong cách ấy viết thành lời.
+Skill không viết văn chương, nên bảng dưới bỏ phong cách nghệ thuật.
+
+| Phong cách | Loại văn bản | Ba đặc trưng | Luật của skill ứng với đặc trưng |
+|---|---|---|---|
+| Khoa học | tài liệu kỹ thuật, hướng dẫn, lời giải thích, bài giảng | khái quát trừu tượng, lí trí lô-gíc, khách quan phi cá thể | định nghĩa có "là", một thứ một tên; từ nối đúng quan hệ; không bịa trải nghiệm, không cảm thán |
+| Hành chính | văn bản nhà nước, biên bản, đơn, tờ trình | khuôn mẫu, minh xác, công vụ | thể thức ở `official-documents.md`; mỗi câu một nghĩa, ngày giờ và con số cụ thể; không xưng hô cá nhân |
+| Báo chí | thông báo gửi khách, bài đăng công khai, bản tin | thông tin thời sự, ngắn gọn, sinh động hấp dẫn | câu đầu nói điều người đọc nhận được, kèm ngày giờ; bỏ lời độn; sinh động bằng chi tiết thật, không bằng tít giật gân |
+| Chính luận | kiến nghị, nghị luận, bài thuyết phục | công khai quan điểm, chặt chẽ trong suy luận, truyền cảm thuyết phục | nêu ý kiến của mình ở mở bài; luận cứ dẫn tới kết luận (mục Nghị luận, thuyết phục); thuyết phục bằng dẫn chứng, không bằng lời kêu gọi |
+| Sinh hoạt | tin nhắn, chat, thư cho người quen | cụ thể, cảm xúc, cá thể | giọng nói chuyện, tình thái từ theo quan hệ (`function-words.md`); tin công việc giữ cảm xúc ở mức |
+
+Bài giảng của skill pha hai phong cách. Phần xưng "mình, bạn" và câu hỏi mở bài lấy từ lời nói, còn phần giảng giữ đặc
+trưng khoa học: có định nghĩa, có trình tự lô-gíc, không kể cảm xúc của người viết.
+
+Lỗi hay gặp là lẫn phong cách, tức là mang đặc trưng của phong cách này sang văn bản thuộc phong cách khác. Tài liệu kỹ
+thuật viết "giải pháp đột phá", "trải nghiệm vượt trội" là đang dùng giọng quảng cáo của báo chí. Báo cáo sự cố kết bằng
+"Hãy cùng nhau…" là giọng kêu gọi của chính luận. Kiến nghị gửi sếp chen "kiểu như là", "nói chung là" là khẩu ngữ, tức là
+chữ chỉ quen dùng khi nói. Sách Ngữ văn 10 dặn viết thì tránh đưa đặc điểm của lời nói vào khi không cần, nên từ đưa đẩy,
+khẩu ngữ, câu rút gọn tới mức mất chủ ngữ hợp với chat mà không hợp với tài liệu, báo cáo. Gặp chỗ lẫn thì sửa theo cột
+đặc trưng của phong cách mà văn bản thuộc về.
 
 ## Xưng hô theo loại văn bản
 
@@ -215,7 +239,8 @@ Sau đó bài đi theo chuỗi biểu hiện, tác động, nguyên nhân, giả
 cluster thử từ 15/11, chưa thử trên production"), không tự đặt con số, không "chắc chắn thành công".
 
 Kiến nghị kết bằng việc người nhận cần làm, kèm hạn ("Anh duyệt trước thứ Sáu để em làm trong giờ bảo trì tối thứ Bảy"),
-không kết bằng "Rất mong anh quan tâm".
+không kết bằng "Rất mong anh quan tâm". Kiến nghị là văn chính luận, nên viết xong thì soát lập luận theo ba lỗi ở mục
+Nghị luận, thuyết phục.
 
 ## Tường trình, biên bản, kế hoạch
 
@@ -235,6 +260,20 @@ bác từng mặt, không phủ nhận tất cả. Điều mình khẳng định
 
 Mở bài làm ba việc: nêu vấn đề, nói vì sao đáng bàn, nêu ý kiến của mình. Kết bài ngắn, không kêu gọi, không hứa. Viết xong
 thì tự hỏi ba câu: bài chứng minh điều gì, bằng cách nào, dùng cái gì để chứng minh.
+
+Ba câu hỏi đó bắt được ba lỗi lập luận mà sách Ngữ văn 12 dạy chữa. Kiến nghị và đề xuất kỹ thuật hay mắc cả ba:
+
+- Luận điểm không rõ hay không nhất quán. Mở bài đề xuất một việc, giữa bài lý do chính đổi sang chuyện khác, kết bài lại
+  đề xuất việc thứ ba. Cách sửa là chốt một luận điểm ở mở bài và để mọi đoạn đỡ cho nó; lý do phụ thì nói rõ là phụ.
+- Luận cứ không xác đáng hay không đủ. Dẫn chứng không dính tới hoàn cảnh của người nhận ("Nhiều công ty lớn đều dùng
+  X"), nguồn không kiểm tra được, hay một lần gặp lỗi được kể thành "lúc nào cũng lỗi". Cách sửa là dùng số liệu của chính
+  hệ thống đang bàn và nói nguồn; thiếu dữ kiện thì nói là chưa có, không tự đặt con số.
+- Lập luận mâu thuẫn hay luận cứ không dẫn tới kết luận. Hai câu nói ngược nhau về cùng một việc, hay vế sau "vì vậy" không
+  theo được từ vế trước ("Bản cũ chạy ổn suốt hai năm, vì vậy cần thay"). Cách sửa là đọc lại từng chữ "vì vậy", "nên" và
+  hỏi vế trước có đủ dẫn tới vế sau không. Hai câu ngược nhau thì hỏi tác giả câu nào đúng, không tự chọn một câu.
+
+Sửa văn nghị luận của người khác thì giữ luận điểm của họ. Lập luận hỏng vì thiếu dữ kiện thì báo chỗ thiếu, đừng tự bịa
+dẫn chứng cho bài chặt hơn.
 
 ## Giới thiệu một cuốn sách, một sản phẩm, một nơi chốn
 
