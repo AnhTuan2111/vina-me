@@ -2,10 +2,10 @@
 
 Agent quên hết sau mỗi phiên, nên người dùng phải dặn lại những điều đã dặn: gọi mình là gì, trả lời dài hay ngắn, văn bản
 gửi sếp mở thế nào. Bộ nhớ là một thư mục `~/agent-memory/` mà agent đọc ở đầu mỗi phiên và tự ghi thêm khi người dùng sửa hay
-khen một cách làm. Mọi agent trên máy dùng chung thư mục đó, nên dặn Claude Code điều gì thì Codex cũng biết. Thư mục có thể là
-một repo GitHub riêng tư: sửa ở máy này thì máy kia kéo về ở phiên sau.
+khen một cách làm. Mọi agent trên máy dùng chung thư mục đó, nên dặn Claude Code điều gì thì Codex và omp cũng biết. Thư mục có
+thể là một repo GitHub riêng tư: sửa ở máy này thì máy kia kéo về ở phiên sau.
 
-Tệp này đi từ thứ nằm trong thư mục, cách agent đọc nó, cách lưu và kéo, cách vina-me tự cập nhật, tới cài lần đầu, việc sau
+Tệp này đi từ thứ nằm trong thư mục, cách agent đọc nó, cách lưu và kéo, cách vina-me tự cập nhật, tới các script cài, việc sau
 khi cài, học từ phiên cũ, và cuối cùng là cách cất mật khẩu cho agent.
 
 ## Trong thư mục có gì
@@ -13,10 +13,10 @@ khi cài, học từ phiên cũ, và cuối cùng là cách cất mật khẩu c
 | Tệp | Chứa gì | Ai sửa | Lên repo |
 |---|---|---|---|
 | `AGENTS.md` | cửa vào: nạp bốn tệp dưới, luật khi nào ghi, ghi vào tệp nào, lưu thế nào | ít khi sửa | có |
-| `machine.md` | lệnh và đường dẫn trên máy đang chạy (`<setup>`, `<secrets>`, thư mục skill, địa chỉ repo) | script cài đặt | không |
+| `machine.md` | lệnh và đường dẫn trên máy đang chạy (`<memory>`, `<secrets>`, thư mục skill, địa chỉ repo, đã cài tự lưu chưa) | script cài | không |
 | `user.md` | con người: là ai, vai trò, viết cho ai, muốn được nói chuyện thế nào | agent, theo lời người dùng | có |
 | `memory.md` | cách làm việc: quy trình, quy ước, định dạng tài liệu người dùng đã dặn hoặc đã khen | agent, theo lời người dùng | có |
-| `team.md` | luật chung của đội: phông chữ, mẫu văn bản, việc không được làm | đội, qua `<setup> team` | có |
+| `team.md` | luật chung của đội: phông chữ, mẫu văn bản, việc không được làm | đội, qua `<memory> team` | có |
 
 Agent tự xếp một ý vào `user.md` hay `memory.md` theo bảng trong `AGENTS.md`: nói về con người thì vào `user.md`, nói về cách
 làm việc thì vào `memory.md`, ý có cả hai thì tách làm hai. `machine.md` tách riêng vì mỗi máy một đường dẫn: máy này có
@@ -24,51 +24,60 @@ Claude Code ở `~/.claude`, máy kia chỉ có Codex. Mẫu của các tệp n�
 
 ## Agent đọc bộ nhớ bằng cách nào
 
-Mỗi agent có tệp chỉ dẫn toàn cục riêng, nên script nối bộ nhớ vào từng tệp ấy theo cách agent đó đọc được.
+Mỗi agent có tệp chỉ dẫn toàn cục riêng, nên `install-memory.mjs` nối bộ nhớ vào từng tệp ấy theo cách agent đó đọc được.
 
 Claude Code đọc `CLAUDE.md` trong thư mục cấu hình (`~/.claude`, hoặc `$CLAUDE_CONFIG_DIR` nếu có) ở mọi phiên. Script thêm
 vào đó dòng `@~/agent-memory/AGENTS.md`, và `AGENTS.md` lại có bốn dòng `@`, nên Claude nạp đủ năm tệp.
 
 Codex đọc `~/.codex/AGENTS.md` (hoặc `$CODEX_HOME/AGENTS.md`) ở mọi phiên nhưng không có cú pháp `@`. Script chép cả bộ nhớ vào
 tệp đó, giữa hai dòng đánh dấu "vina-me memory: start" và "vina-me memory: end", và chép lại mỗi lần `sync` chạy. Codex có hook
-riêng nhưng phải bật flag thử nghiệm và tin cậy hook, nên script chưa dùng; thay vào đó `machine.md` dặn Codex chạy `<setup>
+riêng nhưng phải bật flag thử nghiệm và tin cậy hook, nên script chưa dùng; thay vào đó `machine.md` dặn Codex chạy `<memory>
 sync` ở đầu phiên.
+
+omp đưa `~/.omp/agent/AGENTS.md` vào ngữ cảnh mọi phiên. Script ghi vào đó, cũng giữa hai dòng đánh dấu, một lời dặn đọc
+`~/agent-memory/AGENTS.md` trước câu trả lời đầu tiên. Lời dặn đó chỉ có tác dụng ở lượt đầu: thử trên nhiều model của omp,
+từ lượt hai agent không đọc lại bộ nhớ, và khi người dùng chỉ đưa thông tin mới chứ không nói "nhớ giúp" thì agent không ghi
+gì. Vì vậy script còn ghi extension `~/.omp/agent/extensions/vina-me-memory.ts`. Extension này bắt sự kiện `before_agent_start`
+chạy trước mỗi tin người dùng gửi và chèn một lời nhắc ẩn: chưa đọc bộ nhớ thì đọc, gặp điều cần nhớ thì ghi ngay trong lượt
+đó và báo người dùng một dòng.
 
 Agent khác thì trỏ tệp chỉ dẫn toàn cục của nó tới `~/agent-memory/AGENTS.md`, hoặc chép nội dung các tệp vào đó.
 
 ## Lưu và kéo bộ nhớ
 
-Agent chỉ sửa tệp, không tự commit. Lệnh `<setup> sync` làm cả việc lưu lẫn việc kéo, theo năm bước:
+Agent chỉ sửa tệp, không tự commit. Lệnh `<memory> sync` làm cả việc lưu lẫn việc kéo, theo bốn bước:
 
-1. kéo vina-me mới nhất (mục dưới);
-2. gom mọi thay đổi chưa commit trong `~/agent-memory` thành một commit, tên commit liệt kê tệp đã đổi và tên máy;
-3. kéo bản trên repo về gộp; máy khác đã sửa cùng chỗ thì huỷ gộp, giữ nguyên bản trên máy, báo lỗi;
-4. đẩy lên repo;
-5. chép lại bộ nhớ sang Codex.
+1. gom mọi thay đổi chưa commit trong `~/agent-memory` thành một commit, tên commit liệt kê tệp đã đổi và tên máy;
+2. kéo bản trên repo về gộp; máy khác đã sửa cùng chỗ thì huỷ gộp, giữ nguyên bản trên máy, báo lỗi;
+3. đẩy lên repo;
+4. chép lại bộ nhớ sang Codex.
 
-`sync` chạy ở bốn lúc, nên thay đổi không mất dù phiên bị tắt ngang hay máy tắt đột ngột:
+Máy đã chạy `install-autosave.mjs` thì `sync` tự chạy ở hai lúc. Lúc mở phiên Claude Code, hook `SessionStart` (matcher
+`startup`) trong `settings.json` chạy nó; tệp nào vừa được kéo về từ máy khác thì hook in nội dung tệp đó ra, và Claude Code
+đưa chữ đó vào ngữ cảnh của phiên. Lúc đóng phiên, hook `SessionEnd` chạy nó lần nữa để lưu nốt.
 
-- lúc mở phiên Claude Code, qua hook `SessionStart` (matcher `startup`) trong `settings.json`. Tệp nào vừa được kéo về từ máy
-  khác thì hook in nội dung tệp đó ra, và Claude Code đưa chữ đó vào ngữ cảnh của phiên;
-- lúc đóng phiên Claude Code, qua hook `SessionEnd`;
+Cài kèm `--schedule` thì máy còn tự chạy `sync` theo lịch, nên thay đổi không mất dù phiên bị tắt ngang hay máy tắt đột ngột:
+
 - lúc đăng nhập máy: Windows đặt `vina-me-sync.vbs` trong thư mục Startup, chạy ẩn không bật cửa sổ; macOS và Linux dùng dòng
   `@reboot` trong crontab;
 - mỗi 2 giờ: Windows tạo task "vina-me sync" trong Task Scheduler; macOS và Linux dùng dòng `0 */2 * * *` trong crontab.
 
+Lịch là phần tuỳ chọn vì nó cần quyền tạo task, và đó là chỗ hay hỏng trên máy công ty.
+
 Nhiều lần `sync` chạy chồng nhau (hai phiên cùng mở) thì lần sau thấy khoá ở `~/.config/vina-me/sync.lock` và bỏ qua. Mỗi lần
-chạy ghi một dòng vào `~/.config/vina-me/sync.log`, giữ 200 dòng cuối. Người dùng bảo lưu ngay thì chạy `<setup> save "<đã ghi
-gì>"`: lệnh commit với lời commit đó và đẩy luôn.
+chạy ghi một dòng vào `~/.config/vina-me/sync.log`, giữ 200 dòng cuối. Máy chưa cài tự lưu, hay người dùng bảo lưu ngay, thì
+chạy `<memory> save "<đã ghi gì>"`: lệnh commit với lời commit đó và đẩy luôn.
 
 ## Tự cập nhật vina-me
 
-Khi cài, script giữ một bản clone của vina-me ở `~/.config/vina-me/source`, chép từ thư mục đã clone, hoặc clone lại từ GitHub
-nếu người dùng tải zip. Mỗi lần `sync` chạy (tối đa 6 giờ kiểm tra một lần), nó lấy tag phát hành `vX.Y.Z` mới nhất. Có bản mới
-thì nó chép sang mọi thư mục skill đã cài và in một dòng "vina-me vừa được cập nhật lên vX.Y.Z", kèm dòng đầu của mục đó trong
-`CHANGELOG.md`. Commit mới trên `main` mà chưa gắn tag thì máy người dùng chưa nhận. Muốn cập nhật ngay thì chạy `<setup>
-update`.
+`install-update.mjs` giữ một bản clone của vina-me ở `~/.config/vina-me/source`, chép từ thư mục đã clone, hoặc clone lại từ
+GitHub nếu người dùng tải zip. Script thêm vào Claude Code một hook `SessionStart` chạy `scripts/update.mjs --quiet`. Hook kiểm
+tra tối đa 6 giờ một lần và lấy tag phát hành `vX.Y.Z` mới nhất. Có bản mới thì nó chép sang mọi thư mục skill đã cài và in một
+dòng "vina-me vừa được cập nhật lên vX.Y.Z", kèm dòng đầu của mục đó trong `CHANGELOG.md`. Commit mới trên `main` mà chưa gắn tag
+thì máy người dùng chưa nhận. Muốn cập nhật ngay, hay máy không có Claude Code, thì chạy `node scripts/update.mjs`.
 
-Người bảo trì muốn máy mình chạy bản đang làm thì chạy `<setup> channel main`, và máy đó theo đầu nhánh `main`; về lại bản phát
-hành bằng `<setup> channel release`. Danh sách thư mục skill và kênh nằm ở `~/.config/vina-me/config.json`.
+Người bảo trì muốn máy mình chạy bản đang làm thì chạy `node scripts/update.mjs channel main`, và máy đó theo đầu nhánh `main`;
+về lại bản phát hành bằng `channel release`. Danh sách thư mục skill và kênh nằm ở `~/.config/vina-me/config.json`.
 
 Phát hành một bản thì làm ba việc:
 
@@ -76,42 +85,37 @@ Phát hành một bản thì làm ba việc:
 2. merge vào `main`, gắn tag: `git tag v0.9.0 && git push origin v0.9.0`;
 3. tạo bản phát hành trên GitHub: `gh release create v0.9.0 --notes-file <mục changelog>`.
 
-## Cài lần đầu
+## Các script cài
 
-Người dùng tự chạy lệnh dưới, trong thư mục vina-me vừa clone:
+Mỗi việc một script trong `scripts/`, cần việc nào thì chạy script đó, chạy lại bao nhiêu lần cũng không sinh dòng, hook hay
+khối trùng. Tệp cấu hình nào sắp bị sửa thì được sao lưu một lần thành `<tệp>.vina-me-backup`. Script nào cũng nhận `--help`
+(chỉ in cách dùng) và `--home <thư mục>` (thử trên home giả); option lạ thì script báo lỗi và dừng, không làm gì trên máy.
 
-```bash
-node scripts/setup.mjs
-```
+| Script | Làm gì | Ai cần |
+|---|---|---|
+| `install-skill.mjs` | chép skill vào `~/.claude/skills` (Claude Code), `~/.agents/skills` (Codex, omp), `~/.codex/skills` (Codex bản cũ) | mọi người |
+| `install-remind.mjs` | gắn lời nhắc dùng vina-me vào mỗi tin: hook `UserPromptSubmit` của Claude Code, extension `vina-me-remind.ts` của omp | người dùng Claude Code, omp |
+| `install-memory.mjs` | dựng `~/agent-memory/` và nối vào Claude Code, Codex, omp | người muốn agent nhớ điều đã dặn |
+| `install-autosave.mjs` | hook tự lưu bộ nhớ khi mở, đóng phiên Claude Code; `--schedule` thêm lịch của máy | người có repo cho bộ nhớ |
+| `install-update.mjs` | giữ bản clone, kiểm tra bản phát hành mới khi mở phiên Claude Code | người muốn tự lên bản mới |
 
-Trong cửa sổ dòng lệnh có màu, script hỏi theo kiểu dải màu như prompt oh-my-posh: mỗi câu có số thứ tự và nhãn, câu đã trả
-lời thu thành một dòng, câu có/không và câu chọn độ dài thì chọn bằng phím mũi tên. Dải màu dùng ký tự Powerline, có sẵn trong
-phông Cascadia của Windows Terminal và các phông Nerd Font. Phông nào hiện thành ô vuông thì thêm `--plain` để hỏi trơn từng
-dòng; chạy qua pipe hoặc có biến `NO_COLOR` thì script tự hỏi trơn.
+Script tự nhận agent có trên máy qua thư mục cấu hình của nó (`~/.claude`, `~/.codex`, `~/.omp`). Agent chưa có thư mục đó thì
+thêm `--claude`, `--codex` hay `--omp`. Bốn script sau cần `install-skill.mjs` chạy trước, vì hook và lệnh trong `machine.md`
+trỏ tới bản skill đã cài; chạy sai thứ tự thì script báo cần chạy gì trước rồi dừng.
 
-Script hỏi tám câu: gọi là gì, vai trò, hay viết cho ai, trả lời dài hay ngắn, điều không muốn agent làm, tệp luật của đội, có
-cho agent học từ các phiên cũ không, có lưu bộ nhớ lên GitHub không. Rồi nó làm bốn việc:
+Lời nhắc của `install-remind.mjs` cần vì nội dung `SKILL.md` chỉ được nạp một lần lúc gọi skill, phiên dài thì bị tóm gọn, nên
+agent dễ quên áp luật cho câu trả lời ngắn. Claude Code chạy `scripts/remind.mjs` ở mỗi tin và chèn dòng nó in ra vào ngữ cảnh
+của lượt ấy. omp không chạy được hook kiểu đó, nên script ghi một extension làm cùng việc. Codex chưa có chỗ gắn.
 
-1. chép skill vào thư mục skill của Claude Code nếu có, vào `~/.agents/skills/vina-me` và `~/.codex/skills/vina-me` nếu có
-   Codex, và giữ bản clone để tự cập nhật;
-2. dựng `~/agent-memory/` từ câu trả lời;
-3. nếu người dùng muốn lưu lên GitHub: tạo repo riêng tư `<tài khoản GitHub>/agent-memory` bằng `gh`, commit và đẩy lên;
-4. sinh `machine.md`, nối bộ nhớ vào từng agent, cài hook và lịch tự lưu (bỏ lịch bằng `--no-schedule`).
+`install-memory.mjs` hỏi bảy câu: gọi là gì, vai trò, hay viết cho ai, trả lời dài hay ngắn, điều không muốn agent làm, tệp
+luật của đội, có cho agent học từ các phiên cũ không. Bộ nhớ đã có thì script giữ nguyên và chỉ nối lại vào agent. Ba option
+lo phần repo:
 
-Ngoài hai hook tự lưu, Claude Code còn được cài hook `UserPromptSubmit`. Mỗi lần người dùng gửi một tin, hook chạy
-`scripts/remind.mjs`, in một dòng nhắc agent soát lời trả theo vina-me, và Claude Code chèn dòng đó vào ngữ cảnh của lượt ấy.
-Hook này cần vì nội dung `SKILL.md` chỉ được nạp một lần lúc gọi skill, phiên dài thì bị tóm gọn, nên agent dễ quên áp luật cho
-câu trả lời ngắn. Máy cài từ bản trước được `sync` thêm hook này một lần sau khi cập nhật; người dùng tự gỡ thì không thêm lại.
-
-Lưu lên GitHub cần `gh` đã đăng nhập (`gh auth login`, chạy một lần). Chưa đăng nhập thì script vẫn dựng bộ nhớ trên máy và nói
-lệnh để đưa lên sau: `<setup> github`. Muốn dùng repo khác, như GitLab của công ty, thì tạo repo trống rồi chạy `<setup> remote
-<url git>`.
-
-Máy thứ hai chạy lệnh cài như trên. Script thấy trên GitHub đã có repo `agent-memory` của người dùng thì hỏi có kéo về không,
-và kéo về rồi thì khỏi hỏi tám câu. Với repo khác thì cài kèm `--remote <url>`: repo đã có bộ nhớ thì script kéo về.
-
-Tệp cấu hình nào sắp bị sửa thì được sao lưu một lần thành `<tệp>.vina-me-backup`. Chạy lại nhiều lần không sinh thêm dòng,
-hook hay khối trùng.
+- `--github [tên repo]`: dựng xong thì tạo repo riêng tư `<tài khoản GitHub>/agent-memory` bằng `gh`, commit và đẩy lên. Cần
+  `gh` đã đăng nhập (`gh auth login`, chạy một lần); chưa đăng nhập thì script vẫn dựng bộ nhớ trên máy, đưa lên sau bằng
+  `<memory> github`.
+- `--remote <url git>`: dùng repo khác đã tạo sẵn, như GitLab của công ty. Repo đó đã có bộ nhớ thì script kéo về thay vì hỏi.
+- `--clone <url hay chủ/repo>`: máy thứ hai kéo bộ nhớ đã có về, không hỏi lại bảy câu.
 
 ## Agent cài thay người dùng
 
@@ -124,52 +128,56 @@ dùng tự làm. Mỗi bước xong thì báo một câu ngắn bằng lời th�
    install node git`, Ubuntu `sudo apt install nodejs git`. Cài xong trên Windows thì terminal cũ chưa thấy lệnh mới, nên mở lại
    phiên, hoặc gọi bằng đường dẫn đầy đủ.
 2. **Lấy vina-me về.** Chạy `git clone https://github.com/AnhTuan2111/vina-me.git ~/vina-me`; đã có thư mục đó thì `git -C
-   ~/vina-me pull`. Script tự giữ một bản riêng để cập nhật, nên thư mục này chỉ cần cho lần cài.
-3. **GitHub.** Đăng nhập GitHub để lưu bộ nhớ lên repo riêng và để gửi góp ý thành issue. Chạy `gh auth status`; chưa có `gh`
-   thì cài (`winget install GitHub.cli`, `brew install gh`). Chưa đăng nhập thì chạy `gh auth login --hostname github.com
-   --git-protocol https --web` ở chế độ chạy nền. Lệnh in một mã tám ký tự rồi đứng chờ. Đưa người dùng mã đó và link
+   ~/vina-me pull`. Các lệnh dưới chạy trong thư mục đó.
+3. **Cài skill.** Chạy `node scripts/install-skill.mjs`. Đây là phần ai cũng cần, không phải hỏi.
+4. **Hỏi người dùng cần thêm gì.** Hỏi trong một tin, mỗi phần một dòng nói nó làm gì: lời nhắc dùng vina-me ở mỗi tin; bộ nhớ
+   dùng chung (kèm câu: có lưu lên GitHub không); tự lưu bộ nhớ lên repo; tự cập nhật vina-me. Phần nào người dùng không cần thì
+   bỏ, đừng cài cho đủ bộ.
+5. **GitHub, nếu cần.** Chỉ làm khi người dùng muốn lưu bộ nhớ lên GitHub. Chạy `gh auth status`; chưa có `gh` thì cài (`winget
+   install GitHub.cli`, `brew install gh`). Chưa đăng nhập thì chạy `gh auth login --hostname github.com --git-protocol https
+   --web` ở chế độ chạy nền. Lệnh in một mã tám ký tự rồi đứng chờ. Đưa người dùng mã đó và link
    `https://github.com/login/device`, bảo họ mở link, đăng nhập GitHub, nhập mã, bấm cho phép. Lệnh tự xong khi họ cho phép;
-   kiểm tra lại bằng `gh auth status`. Người dùng không có tài khoản GitHub thì bỏ bước này và trả lời `n` ở câu GitHub.
-4. **Tám câu hỏi.** Hỏi người dùng tám câu ở trên ngay trong chat, gộp vào một tin, câu nào cũng kèm gợi ý như script hỏi. Câu
-   nào người dùng bỏ trống thì để trống.
-5. **Chạy script.** Ghi câu trả lời vào một tệp JSON tạm, các khoá là `name`, `role`, `writesFor`, `length` (`1` ngắn, `2` vừa,
-   `3` đủ chi tiết), `avoid`, `teamRules` (đường dẫn tệp luật của đội), `learnFromSessions` và `github` (`y` hoặc `n`). Khoá tuỳ
-   chọn là `repo` (tên repo, mặc định `agent-memory`), `remote` (url git), `pullFromGithub` (`y`/`n`, khi đã có repo từ máy
-   khác). Chạy `node ~/vina-me/scripts/setup.mjs --answers <tệp JSON>`, rồi xoá tệp tạm. Trên Windows còn một cách: chạy `node
-   ~/vina-me/scripts/setup.mjs` không kèm `--answers`, script tự mở cửa sổ PowerShell riêng cho người dùng trả lời rồi chờ cửa
-   sổ đóng. Báo người dùng trước là sắp có cửa sổ hiện lên; khi đó bỏ bước 4.
-6. **Kiểm tra và báo.** Chạy `node ~/vina-me/scripts/setup.mjs check`. Báo người dùng bộ nhớ nằm ở đâu, có repo chưa, đã nối vào
-   agent nào, và phải mở phiên mới thì agent mới đọc skill và bộ nhớ.
+   kiểm tra lại bằng `gh auth status`.
+6. **Bảy câu hỏi, nếu cài bộ nhớ.** Hỏi người dùng bảy câu ở trên ngay trong chat, gộp vào một tin, câu nào cũng kèm gợi ý.
+   Câu nào người dùng bỏ trống thì để trống. Ghi câu trả lời vào một tệp JSON tạm, các khoá là `name`, `role`, `writesFor`,
+   `length` (`1` ngắn, `2` vừa, `3` đủ chi tiết), `avoid`, `teamRules` (đường dẫn tệp luật của đội) và `learnFromSessions` (`y`
+   hoặc `n`).
+7. **Chạy các script đã chọn,** theo thứ tự trong bảng: `install-remind.mjs`, `install-memory.mjs --answers <tệp JSON>` (thêm
+   `--github` nếu người dùng muốn), `install-autosave.mjs`, `install-update.mjs`. Xong thì xoá tệp tạm. Script nào báo lỗi thì
+   dừng, đọc lỗi, sửa chỗ thiếu rồi chạy lại đúng script đó; không chạy tiếp script sau như chưa có gì.
+8. **Kiểm tra và báo.** Có bộ nhớ thì chạy `node scripts/memory.mjs check`. Báo người dùng đã cài những phần nào, bộ nhớ nằm ở
+   đâu, có repo chưa, và phải mở phiên mới thì agent mới đọc skill và bộ nhớ.
 
-Cần xem script nhận lệnh con và option nào thì chạy `node ~/vina-me/scripts/setup.mjs --help`.
-
-Máy không có Node thì dựng tay: chép ba tệp trong `memory-template/` vào `~/agent-memory/` (đổi `AGENTS.template.md` thành
-`AGENTS.md`, thay `{{DATE}}` bằng ngày hôm nay), viết `user.md` từ câu trả lời và `machine.md` theo bảng trên, rồi thêm dòng
-`@~/agent-memory/AGENTS.md` vào `~/.claude/CLAUDE.md` hoặc chép nội dung vào `~/.codex/AGENTS.md`.
+Máy không có Node thì dựng tay: chép thư mục vina-me vào thư mục skill của agent, chép ba tệp trong `memory-template/` vào
+`~/agent-memory/` (đổi `AGENTS.template.md` thành `AGENTS.md`, thay `{{DATE}}` bằng ngày hôm nay), viết `user.md` từ câu trả
+lời và `machine.md` theo bảng trên, rồi thêm dòng `@~/agent-memory/AGENTS.md` vào `~/.claude/CLAUDE.md` hoặc chép nội dung vào
+`~/.codex/AGENTS.md`.
 
 Người dùng không muốn có bộ nhớ thì tạo tệp rỗng `~/agent-memory/.disabled` để lần sau khỏi hỏi.
 
 ## Việc sau khi cài
 
-### Chạy setup sau khi cài
+### Lệnh bộ nhớ sau khi cài
 
-Sau khi cài, `<setup>` chỉ chạy kèm một lệnh con đã ghi trong tài liệu này hay `machine.md` (`check`, `save`, `sync`,
-`conflict`, `resolve`...). Chạy trơn không kèm lệnh con là cài lại từ đầu: chép skill, sửa `CLAUDE.md`, thêm hook vào
-`settings.json` và tạo lịch tự lưu. Lệnh con và option xem bằng `--help`; option lạ thì script báo lỗi và dừng, không cài gì.
-Chạy với `--home` giả thì script không tạo task trong Task Scheduler thật, trừ khi thêm `--real-schedule`. Lỡ cài lại khi người
-dùng không nhờ thì nói ngay ở câu đầu, gỡ theo mục Gỡ ở dưới (tìm tên task bằng `schtasks /Query /FO LIST | findstr /I vina`),
-rồi kiểm tra lại đã hết.
+`<memory>` là `scripts/memory.mjs` của bản skill đã cài, đường dẫn ghi ở `machine.md`. Nó chỉ làm việc khi kèm một lệnh con
+(`sync`, `save`, `check`, `conflict`, `resolve`, `github`, `remote`, `team`, `codex`); chạy trơn hay kèm `--help` thì chỉ in cách
+dùng, không cài gì lên máy. Các script cài thì chạy lại lúc nào cũng được. Chạy với `--home` giả thì `install-autosave.mjs
+--schedule` không tạo task trong Task Scheduler thật, trừ khi thêm `--real-schedule`.
+
+Máy cài từ bản trước 0.28.0 có hook, lịch và `machine.md` gọi `scripts/setup.mjs`. Tệp đó vẫn còn và chỉ chuyển tiếp: `sync`
+kiểm tra bản mới như cũ rồi chuyển sang `memory.mjs sync`, các lệnh bộ nhớ khác chuyển sang `memory.mjs`, `update` và `channel`
+chuyển sang `update.mjs`. Chạy `setup.mjs` không kèm lệnh con thì nó chỉ in danh sách script mới, không cài lại như bản cũ.
 
 ### Hai máy sửa cùng chỗ
 
-`sync` báo "không gộp được" nghĩa là máy khác đã sửa cùng chỗ. Bản trên máy vẫn còn và chưa đẩy. Agent chạy `<setup> conflict`
-để in phần khác nhau, hỏi người dùng giữ bản nào, rồi chạy một trong hai lệnh. `<setup> resolve mine` giữ bản máy này ở chỗ
-đụng nhau, còn phần không đụng vẫn gộp bản trên repo. `<setup> resolve theirs` lấy bản trên repo, và bản cũ của máy này sao lưu
+`sync` báo "không gộp được" nghĩa là máy khác đã sửa cùng chỗ. Bản trên máy vẫn còn và chưa đẩy. Agent chạy `<memory> conflict`
+để in phần khác nhau, hỏi người dùng giữ bản nào, rồi chạy một trong hai lệnh. `<memory> resolve mine` giữ bản máy này ở chỗ
+đụng nhau, còn phần không đụng vẫn gộp bản trên repo. `<memory> resolve theirs` lấy bản trên repo, và bản cũ của máy này sao lưu
 ở `~/.config/vina-me/conflict-backup-<số>`. Không ép đẩy.
 
 ### Soát bộ nhớ
 
-`<setup> check` báo khi `user.md` cộng `memory.md` quá 200 dòng, khi hai gạch đầu dòng gần trùng, và khi một dòng có lời trích
+`<memory> check` báo khi `user.md` cộng `memory.md` quá 200 dòng, khi hai gạch đầu dòng gần trùng, và khi một dòng có lời trích
 mà thiếu ngày. Lệnh chỉ báo, không tự sửa.
 
 Lệnh coi mọi chữ từ 8 ký tự trong ngoặc kép là lời trích, nên tên cột, tên nút, tên mục trong ngoặc kép cũng bị báo. Đó là
@@ -180,24 +188,25 @@ mỗi gạch đầu dòng, nên mỗi gạch đầu dòng viết liền trên m�
 ### Mất mạng, luật đội, mật khẩu
 
 Mất mạng thì các lượt kéo, đẩy chờ tối đa 15 giây rồi bỏ qua; đầu phiên agent chỉ thấy một dòng báo, và lần sync sau thử lại.
-vina-me được kiểm tra bản mới tối đa 6 giờ một lần; muốn kiểm tra ngay thì chạy `<setup> update`.
 
-Đội đổi luật chung thì chạy `<setup> team <tệp luật>`, và lần `sync` sau sẽ lưu lên repo.
+Đội đổi luật chung thì chạy `<memory> team <tệp luật>`, rồi `<memory> save` để lưu lên repo.
 
 Mật khẩu lưu bằng `secrets.mjs` không theo repo: nó mã hoá bằng tài khoản của từng máy, nên máy mới phải lưu lại.
 
 ### Gỡ
 
-Gỡ bộ nhớ khỏi máy thì làm các việc sau:
+Mỗi phần gỡ riêng, phần nào không cần nữa thì gỡ phần đó:
 
-- xoá dòng `@~/agent-memory/AGENTS.md` trong `CLAUDE.md`, hai hook có `setup.mjs` và hook có `remind.mjs` trong
-  `settings.json`;
-- xoá khối giữa hai dòng đánh dấu trong `~/.codex/AGENTS.md`;
-- Windows: xoá `vina-me-sync.vbs` trong thư mục Startup, chạy `schtasks /Delete /TN "vina-me sync" /F` (cài với `--home` thì
-  Startup là `<home>/Startup` và task tên "vina-me sync test <tên thư mục home>"); macOS, Linux: xoá hai dòng có `# vina-me
-  sync` trong crontab;
-- hoặc chép lại các bản `.vina-me-backup`; rồi xoá `~/agent-memory/` và `~/.config/vina-me/` nếu không cần nữa. Repo trên GitHub
-  thì xoá trên GitHub.
+- lời nhắc: xoá hook có `remind.mjs` trong `settings.json` của Claude Code, xoá `~/.omp/agent/extensions/vina-me-remind.ts`;
+- bộ nhớ: xoá dòng `@~/agent-memory/AGENTS.md` trong `CLAUDE.md`, khối giữa hai dòng đánh dấu trong `~/.codex/AGENTS.md` và
+  `~/.omp/agent/AGENTS.md`, tệp `~/.omp/agent/extensions/vina-me-memory.ts`, rồi xoá `~/agent-memory/` nếu không cần nữa. Repo
+  trên GitHub thì xoá trên GitHub;
+- tự lưu: xoá hai hook có `memory.mjs sync` (máy cài bản cũ là `setup.mjs sync`) trong `settings.json`. Có lịch thì trên
+  Windows xoá `vina-me-sync.vbs` trong thư mục Startup và chạy `schtasks /Delete /TN "vina-me sync" /F` (cài với `--home` thì
+  Startup là `<home>/Startup` và task tên "vina-me sync test <tên thư mục home>"); macOS, Linux xoá hai dòng có `# vina-me sync`
+  trong crontab;
+- tự cập nhật: xoá hook có `update.mjs` trong `settings.json`, xoá `~/.config/vina-me/`;
+- hoặc chép lại các bản `.vina-me-backup` của tệp cấu hình.
 
 ## Học từ phiên cũ
 
@@ -225,12 +234,12 @@ Script có mấy option để thu hẹp. Chỉ muốn từ một ngày thì thê
 rồi lọc tay, vì đọc đợt là đã gửi lên nhà cung cấp mô hình. Script báo số chỗ đã che và số phiên đã bỏ theo từng nguồn (Claude
 Code, Codex).
 
-`machine.md` ghi `<setup>` kèm `--home` thì truyền đúng `--home` đó cho script; không có `--home` mà máy có biến
+`machine.md` ghi `<memory>` kèm `--home` thì truyền đúng `--home` đó cho script; không có `--home` mà máy có biến
 `CLAUDE_CONFIG_DIR`, `CODEX_HOME` thì script đọc cả hai thư mục ấy. `--out` chọn thư mục ra; script chỉ xoá `overview.md`,
 `batch-*.md` cũ trong đó, tệp khác để nguyên.
 
 Option xem ở `--help`, lệnh chỉ in cách dùng chứ không rút gì; đừng chạy thử với option đoán. Lần chạy nào cũng kèm `--home`
-(nếu `machine.md` có) và mọi `--exclude` người dùng đã nói. Gõ sai option thì script báo lỗi và không rút gì. `<setup> --help`
+(nếu `machine.md` có) và mọi `--exclude` người dùng đã nói. Gõ sai option thì script báo lỗi và không rút gì. `<memory> --help`
 cũng chỉ in cách dùng từ bản 0.16.0; máy còn bản cũ hơn thì gõ nó là cài lại cả bộ, nên xem phiên bản trong `SKILL.md` trước.
 
 ### Bước 3. Đọc từng đợt
@@ -316,9 +325,9 @@ trích trong ngoặc kép và ngày, đừng chỉ kể lại bằng lời mình
 dùng"), không gọi "bạn", vì "bạn" trong tệp bộ nhớ sẽ trỏ tới agent đang đọc.
 
 Ngoài nháp, lời trả chỉ nói điều người dùng cần biết hay cần làm: bí mật bị lọt, câu hỏi cần trả lời, điều đã ghi ngay, kết quả
-`<setup> check`. Các ý đã bỏ không liệt kê lại, nhất là chuyện riêng. Con số đã kiểm tra (số phiên, số tin, số chỗ đã che, số
+`<memory> check`. Các ý đã bỏ không liệt kê lại, nhất là chuyện riêng. Con số đã kiểm tra (số phiên, số tin, số chỗ đã che, số
 phiên đã bỏ ở từng nguồn) lấy nguyên như script in ra, không đoán thêm. Lời trả kể đủ việc còn lại sau khi duyệt: ghi vào bộ
-nhớ, chạy `<setup> save`, xoá thư mục tạm và tệp `.pending-learn`. Có lần chạy lỡ rút dự án người dùng dặn bỏ thì nói ngay ở
+nhớ, chạy `<memory> save`, xoá thư mục tạm và tệp `.pending-learn`. Có lần chạy lỡ rút dự án người dùng dặn bỏ thì nói ngay ở
 câu đầu, đừng mở bằng câu khẳng định đã bỏ từ đầu. Đừng dựng vế "chứ không ..." để bác một điều chưa ai nói ("dòng này đi ngược
 dòng cũ chứ không bổ sung cho nó"). Điều đã kiểm tra thì nói cách kiểm tra (đọc hết đợt, chạy lệnh gì), đừng nối nó bằng "nên"
 vào một việc khác, vì người đọc sẽ hiểu thành suy luận.
@@ -341,7 +350,7 @@ trả lời "mình" chỉ trỏ agent; kể lại hay hỏi về lời người 
 
 ### Bước 7. Ghi và lưu
 
-Ghi các ý đã duyệt theo luật ở `AGENTS.md`, chạy `<setup> save "học từ phiên cũ"`, xoá thư mục tạm và tệp `.pending-learn`. Bộ
+Ghi các ý đã duyệt theo luật ở `AGENTS.md`, chạy `<memory> save "học từ phiên cũ"`, xoá thư mục tạm và tệp `.pending-learn`. Bộ
 nhớ chưa có repo vẫn chạy `save`, vì lệnh đó còn chép bộ nhớ sang Codex.
 
 ### Điều dặn thẳng và việc dọn bộ nhớ

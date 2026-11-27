@@ -26,7 +26,7 @@ Bài làm, home giả và khóa Word không đưa lên repo, `.gitignore` đã c
 
 - Hai đề memory và feedback chạy script của skill, nên luôn trỏ `HOME` và `USERPROFILE` vào một thư mục tạm. Đề memory dựng
   sẵn thư mục đó bằng `node evals/memory/inputs/build-home.mjs`.
-- Không chạy `scripts/setup.mjs` để cài thật, không chạy `tests/setup.test.mjs` trên bản checkout đang dùng, không gửi issue
+- Không chạy các script `scripts/install-*.mjs` để cài thật (chỉ chạy với `--home` giả), không gửi issue
   thật.
 - Xuất PDF bằng Word thì giữ khóa để hai agent không mở Word cùng lúc. Trước khi mở Word, tạo thư mục `evals/.word-lock`; tạo
   không được thì chờ 20 giây rồi thử lại. Xong việc thì xoá thư mục đó.

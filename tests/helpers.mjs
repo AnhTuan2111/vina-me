@@ -32,17 +32,19 @@ export function bareRepo(dir) {
   return dir;
 }
 
-// Một máy giả: home có .claude (và .codex nếu cần), tệp câu trả lời cho lượt hỏi.
-export function machine(root, name, { codex = false } = {}) {
+// Một máy giả: home có .claude (thêm .codex, .omp/agent nếu cần), tệp câu trả lời cho lượt hỏi.
+export function machine(root, name, { codex = false, omp = false, claude = true } = {}) {
   const home = path.join(root, name);
-  fs.mkdirSync(path.join(home, '.claude'), { recursive: true });
+  fs.mkdirSync(home, { recursive: true });
+  if (claude) fs.mkdirSync(path.join(home, '.claude'), { recursive: true });
   if (codex) fs.mkdirSync(path.join(home, '.codex'), { recursive: true });
+  if (omp) fs.mkdirSync(path.join(home, '.omp', 'agent'), { recursive: true });
   return home;
 }
 
 export function answers(root, extra = {}) {
   const file = path.join(root, 'answers.json');
-  fs.writeFileSync(file, JSON.stringify({ name: 'Lan', role: 'BA', writesFor: 'sếp', length: '2', learnFromSessions: 'n', github: 'n', ...extra }));
+  fs.writeFileSync(file, JSON.stringify({ name: 'Lan', role: 'BA', writesFor: 'sếp', length: '2', learnFromSessions: 'n', ...extra }));
   return file;
 }
 

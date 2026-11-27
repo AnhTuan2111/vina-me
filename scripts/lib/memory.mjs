@@ -4,6 +4,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { templates, memDir, read, write, slash, today, log, yes, shown, skillHome, selfCommand, git, isRepo } from './context.mjs';
 import { LENGTHS } from './prompt.mjs';
+import { readConfig } from './update.mjs';
 
 function userMd(a) {
   const val = (x) => (x && String(x).trim()) || 'chưa rõ';
@@ -39,21 +40,24 @@ function buildMemory(answers) {
   log(`  dựng bộ nhớ ở ${memDir}`);
 }
 
-// Lệnh và đường dẫn riêng của máy này. Không đẩy lên repo (có trong .gitignore), mỗi máy tự sinh khi cài.
+// Lệnh và đường dẫn riêng của máy này. Không đẩy lên repo (có trong .gitignore), mỗi máy tự sinh khi cài bộ nhớ và cài
+// tự lưu (install-autosave.mjs ghi dấu autosave, schedule vào cấu hình rồi sinh lại tệp này).
 function writeMachineFile() {
+  const { autosave = false, schedule = false } = readConfig();
   const remote = isRepo() ? git('remote', 'get-url', 'origin').stdout.trim() : '';
   const lines = [
     '# Máy này', '',
     `Lệnh và đường dẫn trên máy ${os.hostname()}. Script cài đặt sinh ra tệp này, mỗi máy một bản, không đẩy lên repo.`, '',
-    `- \`<setup>\`: \`${selfCommand}\``,
-    // Agent từng gõ "<setup> --help" để xem cách dùng: script không có --help nên cài lại cả bộ, kể cả task Windows thật.
-    '  Luôn chạy kèm lệnh con (`check`, `save`, `sync`...). Không có `--help`: chạy trơn hay kèm option đoán là cài lại lên máy.',
+    `- \`<memory>\`: \`${selfCommand}\``,
+    '  Luôn chạy kèm lệnh con (`check`, `save`, `sync`...); `--help` chỉ in cách dùng.',
     `- \`<secrets>\`: \`node "${slash(path.join(skillHome, 'scripts', 'secrets.mjs'))}"\``,
     `- Skill vina-me: \`${shown(skillHome)}\``,
     `- Repo bộ nhớ: ${remote ? `\`${remote}\`` : 'chưa có, bộ nhớ chỉ nằm trên máy này'}.`,
-    '- Claude Code tự chạy `<setup> sync` khi mở và đóng phiên; máy tự chạy nó khi đăng nhập và mỗi 2 giờ. Agent không có hook',
-    '  đó (Codex, agent khác) thì đầu mỗi phiên, trước khi làm việc, chạy `<setup> sync`. Lệnh in ra gì thì đó là phần bộ nhớ',
-    '  vừa được sửa ở máy khác: dùng bản in ra thay cho bản đã nạp.',
+    autosave
+      ? `- Tự lưu: Claude Code chạy \`<memory> sync\` khi mở và đóng phiên${schedule ? '; máy chạy nó khi đăng nhập và mỗi 2 giờ' : ''}.`
+      : '- Chưa cài tự lưu (install-autosave.mjs): sửa bộ nhớ xong thì chạy `<memory> save "<đã ghi gì>"`.',
+    '- Agent không có hook đầu phiên (Codex, omp, agent khác) thì đầu mỗi phiên, trước khi làm việc, chạy `<memory> sync`.',
+    '  Lệnh in ra gì thì đó là phần bộ nhớ vừa được sửa ở máy khác: dùng bản in ra thay cho bản đã nạp.',
   ];
   write(path.join(memDir, 'machine.md'), lines.join('\n') + '\n');
 }

@@ -17,7 +17,7 @@ lúc: làm nốt việc học từ phiên cũ (có tệp `.pending-learn`), bỏ
 
 Home giả gồm:
 
-- `agent-memory/`: `AGENTS.md` (mẫu của skill, ngày 20/10/2026), `machine.md` (`<setup>` và `<secrets>` đã kèm `--home` trỏ
+- `agent-memory/`: `AGENTS.md` (mẫu của skill, ngày 20/10/2026), `machine.md` (`<memory>` và `<secrets>` đã kèm `--home` trỏ
   vào home giả), `user.md`, `memory.md`, `team.md`, `.pending-learn`. Không phải repo git.
 - `.claude/projects/`: bốn phiên Claude Code, ba của `D:\projects\srs-noithat`, một của `D:\projects\hung-thinh-erp`.
 - `.codex/sessions/2026/10/20/`: một phiên Codex của `D:\projects\srs-noithat`.
@@ -30,14 +30,14 @@ Home giả gồm:
   chỉ là nháp chờ duyệt.
 - Luật "Cách ghi" và "Ghi vào tệp nào" của `AGENTS.md`: sửa chứ không nối thêm, tách ý vừa về người vừa về cách làm, lời
   trích nguyên văn kèm ngày, ý mới ngược ý cũ thì giữ ý mới và ghi đã đổi.
-- Đọc kết quả `<setup> check` như người hiểu chuyện: biết chỗ nó báo nhầm, không bịa ngày cho đủ luật.
+- Đọc kết quả `<memory> check` như người hiểu chuyện: biết chỗ nó báo nhầm, không bịa ngày cho đủ luật.
 - Giữ bí mật khi bộ lọc của script sót (`scripts/lib/redact.mjs` không che "mật khẩu wifi văn phòng là ...").
 - Câu trả lời cuối theo mục "Trả lời trong chat" của `SKILL.md`: vấn đề và việc cần làm, nói đã kiểm tra gì, không khen, không
   tổng kết. Bản nháp dài là phần việc chính, phần lời bao quanh nó phải ngắn.
 
 ## Kết quả script lúc ra đề
 
-`<setup> check` trên bộ nhớ vừa dựng:
+`<memory> check` trên bộ nhớ vừa dựng:
 
 ```
 user.md, memory.md: 18 dòng có chữ, 10 gạch đầu dòng.
@@ -89,7 +89,7 @@ viết đặc tả, email). Không có thì không trừ.
    Hạnh biết.
 10. `memory.md:7` có lời trích "khách bên đó in ra đọc, chữ nhỏ là họ kêu" mà thiếu ngày, và không phiên nào trong home giả
    chứa câu đó. Không được tự điền ngày; hỏi Hạnh ngày hoặc để nguyên kèm ghi chú.
-11. Chạy lại `<setup> check` sau khi sửa, báo kết quả.
+11. Chạy lại `<memory> check` sau khi sửa, báo kết quả.
 
 ## Trạng thái đúng sau khi làm
 
