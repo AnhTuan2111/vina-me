@@ -63,7 +63,11 @@ thành tiếng trong đầu, và mũi tên không có tiếng nào để đọc:
 | `vs` | "so với" |
 | `v.v.`, dấu chấm lửng cuối dãy liệt kê | kể đủ, hoặc "và vài thứ khác" khi còn thứ chưa kể |
 
-Dấu chấm lửng chỉ dùng để báo đã cắt bớt trong lời trích hay output, ghi `[…]` hoặc `…`.
+Sách Ngữ văn 7 dạy ba việc của dấu chấm lửng: báo còn nhiều thứ chưa kể ra, ghi lời nói ngập ngừng, và làm giãn nhịp câu
+trước một ý bất ngờ. Văn công việc không dùng việc nào trong ba việc đó. Kể chưa hết thì nói rõ còn gì ("và hai máy khác ở
+cụm staging") hoặc kể đủ, đừng để người đọc tự đoán phần sau dấu chấm lửng. Ngập ngừng và giãn nhịp thuộc về lời thoại,
+bài kể, không thuộc về tài liệu, báo cáo. Dấu chấm lửng trong văn công việc chỉ còn một việc: báo đã cắt bớt trong lời
+trích hay output, ghi `[…]` hoặc `…`.
 
 Dấu so sánh trong câu văn cũng viết thành chữ, và khi viết thì không được đổi nghĩa: `>` là "trên", "quá", "lớn hơn"; `>=`
 là "từ… trở lên"; `<` là "dưới". "> 5 lỗi" thành "trên 5 lỗi", không thành "từ 5 lỗi".
@@ -81,9 +85,22 @@ giá trị, vì gốc dùng dấu chấm cho cả hàng nghìn lẫn thập phâ
 
 ## Dấu phẩy
 
-Dấu phẩy ngăn trạng ngữ đầu câu với phần còn lại, nối hai vế câu ghép khi không dùng từ nối, và bọc thành phần phụ chú giữa
-câu bằng hai dấu ở hai đầu. Nó còn gỡ được câu hai nghĩa: đặt dấu phẩy ở ranh giới giữa hai thành phần thì người đọc biết từ
-nào đi với từ nào.
+Sách Tiếng Việt 5 và Ngữ văn 6 dạy bốn việc của dấu phẩy:
+
+- Ngăn thành phần phụ với nòng cốt câu, hay gặp nhất là trạng ngữ đứng đầu câu: "Từ tối nay, job backup chạy lúc 2h."
+- Ngăn các từ ngữ cùng chức vụ trong một dãy liệt kê: "web-1, web-2 và db-1 đã lên bản mới."
+- Ngăn một từ ngữ với phần chú thích của nó. Phần chú thích đứng giữa câu thì bọc bằng hai dấu ở hai đầu: "Máy db-1, máy chứa
+  database chính, tắt sau cùng."
+- Ngăn các vế câu ghép khi không dùng từ nối: "Web chạy lại rồi, hàng đợi vẫn còn 300 việc."
+
+Dấu phẩy còn gỡ được câu hai nghĩa: đặt dấu phẩy ở ranh giới giữa hai thành phần thì người đọc biết từ nào đi với từ nào.
+"Lúc chạy migration bảng orders bị khoá." đọc được như "migration bảng orders", còn "Lúc chạy migration, bảng orders bị
+khoá." thì chỉ hiểu được một cách.
+
+Ba lỗi dấu phẩy hay gặp đi ngược ba việc trên. Lỗi thứ nhất là thiếu dấu phẩy sau trạng ngữ dài, như câu migration vừa kể.
+Lỗi thứ hai là đặt dấu phẩy giữa chủ ngữ và vị ngữ: "Bản 2.6 deploy tối qua, đã sửa lỗi đăng nhập." tách chủ ngữ "Bản 2.6
+deploy tối qua" khỏi vị ngữ của nó, nên bỏ dấu phẩy đi. Lỗi thứ ba là nối hai câu trọn vẹn không liên quan bằng dấu phẩy;
+hai vế ấy không phải câu ghép, nên tách bằng dấu chấm.
 
 ## Dấu hai chấm
 
@@ -97,8 +114,9 @@ cũng không viết định nghĩa theo khuôn "Tên: lời giải thích".
 
 ## Dấu chấm phẩy
 
-Dấu chấm phẩy ngăn các vế lớn của một câu ghép có cấu tạo phức tạp. Nó cũng ngăn các mục của một dãy liệt kê khi trong mỗi
-mục đã có dấu phẩy.
+Dấu chấm phẩy có hai việc theo sách Ngữ văn 7. Nó ngăn các vế lớn của một câu ghép có cấu tạo phức tạp, khi trong mỗi vế
+đã có dấu phẩy. Nó cũng ngăn các mục của một dãy liệt kê khi trong mỗi mục đã có dấu phẩy. Câu ghép hai vế ngắn thì dấu
+phẩy là đủ, không cần chấm phẩy.
 
 ## Ngoặc đơn
 
