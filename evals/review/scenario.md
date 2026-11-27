@@ -2,20 +2,23 @@
 
 ## Lời yêu cầu
 
-Ở `prompt.md`. Tệp vào: `inputs/restore-guide.md` (362 tiếng, Markdown, hai khối code bash). Dữ kiện giả: app ClinicBook,
+Ở `prompt.md`. Tệp vào: `inputs/restore-guide.md` (379 tiếng, Markdown, hai khối code bash). Dữ kiện giả: app ClinicBook,
 máy `db-staging-01`, bucket `clinicbook-backup`, role `report_reader`, kênh #staging.
 
 SHA-256 của tệp vào lúc ra đề, để người chấm kiểm tra bài làm có sửa tệp hay không:
-`fa41651643caa074d338e4afc5ae3b5559d7bb40232951386bad22447a0df228`
+`2d7e5ef770178b6b534257069770552815bb84ce6b8690afda6249ca00a49b6d`
 
 ## Đề thử điều gì của skill
 
 - Đúng loại việc "Soát mà không sửa" trong bảng Trả kết quả của `SKILL.md`: từng chỗ "câu gốc, vấn đề, cách sửa", từ
   nặng tới nhẹ, không viết lại cả bài, không đụng vào tệp. Người dùng còn dặn thêm thứ tự: nội dung sai và chỗ làm người
   đọc làm sai lên trước, lỗi câu chữ sau.
-- Có đọc tuần tự từng câu như người đọc thật hay chỉ chép lại kết quả của `scripts/lint.mjs`. Script bắt được mười ba chỗ;
+- Có đọc tuần tự từng câu như người đọc thật hay chỉ chép lại kết quả của `scripts/lint.mjs`. Script bắt được mười bốn chỗ;
   những chỗ nặng nhất và hai chỗ phạm phương châm hội thoại nằm ngoài tầm của nó.
 - Có biết khi nào kết quả của script là báo nhầm (luật "không phải X mà là Y" được giữ khi sửa một cách hiểu có thật).
+- Phân biệt được hai câu phủ định bác bỏ (`references/machine-tells.md`, đoạn dưới bảng B): câu ở mục Backup chạy thế
+  nào bác một cách hiểu sai mà câu trước đã nêu, nên giữ; câu ở mở bài bác một ý chưa ai nói, nên bỏ. Bài phải nói được
+  lý do (câu bác bỏ cần một ý kiến có thật để bác), không chỉ gọi đó là khuôn văn AI slop.
 - Có giữ được luật "nói thật" khi soát: gặp hai con số chọi nhau thì hỏi tác giả, không tự chọn một số; không bịa cách sửa
   dựa trên dữ kiện tệp không có.
 - Không bắt nhầm ký hiệu trong code (skill chỉ cấm `~`, `&` trong câu văn).
@@ -26,13 +29,14 @@ SHA-256 của tệp vào lúc ra đề, để người chấm kiểm tra bài l�
 
 ## Kết quả lint lúc ra đề
 
-`node scripts/lint.mjs inputs/restore-guide.md` (bản 0.22.2) báo mười ba chỗ: gạch dài ở nhan đề; "đóng vai trò", "không
+`node scripts/lint.mjs inputs/restore-guide.md` (bản 0.26.0) báo mười bốn chỗ: gạch dài ở nhan đề; "đóng vai trò", "không
 chỉ", "chìa khoá", "then chốt"; "Hãy"; "Tóm lại"; "KHÔNG" in hoa; dấu `&`; mở bài "Trong thời đại…"; câu mở bằng "Với";
-database, CSDL, DB; "Mỗi đêm" với "9h sáng"; "kịp thời" với "lẽ ra"; giữ 7 ngày với giữ 14 ngày. Nó cũng ghi chú câu "không
-phải … mà là" thường là chỗ được giữ.
+database, CSDL, DB; "Mỗi đêm" với "9h sáng"; "kịp thời" với "lẽ ra"; giữ 7 ngày với giữ 14 ngày; câu "không phải … mà là" ở mở bài. Câu "không phải … mà là" ở
+mục Backup chạy thế nào thì nó chỉ ghi chú là thường được giữ, vì câu trước có "Rất dễ nghĩ".
 
 Script không bắt được: lời dặn kiểm tra tên máy đứng sau lệnh xoá, bản dump lấy từ database nào, "Tuy nhiên" sai quan hệ,
-"nó" trỏ không rõ, câu PostgreSQL lạc đề và câu phán xét dev mới.
+"nó" trỏ không rõ, câu PostgreSQL lạc đề và câu phán xét dev mới. Script cũng không nói vì sao câu bác bỏ ở mở bài
+phải bỏ còn câu ở mục Backup được giữ; lý do đó bài phải tự nói.
 
 ## Đáp án: chỗ bài phải chỉ ra
 
@@ -73,6 +77,11 @@ Xếp từ nặng tới nhẹ như người dùng dặn. Câu gốc trích nguy�
     lại, nắm vững quy trình này chính là chìa khoá để làm chủ hệ thống." Gồm "không chỉ… mà còn" nâng tầm, bộ ba cho đủ
     vần, dấu `&` trong câu văn, "Tóm lại", "chính là" nhấn thừa, ẩn dụ "chìa khoá", câu khẳng định ý nghĩa dùng cho bài
     nào cũng được. Sửa: bỏ cả đoạn, hướng dẫn hết ở mục Khi có lỗi là dừng.
+16. "Khôi phục database không phải là việc khó, mà là việc phải làm cẩn thận từng bước." Câu phủ định bác bỏ mà không có
+    ý kiến nào để bác: trong tệp chưa ai nói khôi phục là việc khó, nên vế "không phải là việc khó" gán cho người đọc một
+    cách nghĩ họ không có. Khác với câu "Lịch thật không phải 2h sáng giờ Việt Nam…", nơi câu trước đã nêu cách hiểu sai.
+    Sửa: nói thẳng vế sau, ví dụ "Làm lần lượt từng bước, vì Bước 3 xoá database cũ.", hoặc bỏ câu nếu lời dặn đọc kỹ ở
+    đầu mục Các bước đã nói ý này.
 
 ### Phương châm hội thoại
 
@@ -115,9 +124,11 @@ Xếp từ nặng tới nhẹ như người dùng dặn. Câu gốc trích nguy�
   là phạm phương châm lịch sự.
 - Ký hiệu trong code: `~` và `&&` nằm trong hai khối code bash. Skill chỉ cấm chúng trong câu văn; script cũng bỏ qua code.
   Bắt chúng là bắt nhầm.
-- "Lịch thật không phải 2h sáng giờ Việt Nam mà là 2h sáng giờ UTC…": script báo khuôn "không phải … mà là", nhưng câu
+- "Lịch thật không phải 2h sáng giờ Việt Nam mà là 2h sáng giờ UTC…": script ghi chú khuôn "không phải … mà là", và câu
   trước đã nêu cách hiểu sai có thật ("Rất dễ nghĩ là cron chạy theo giờ Việt Nam"), đúng chỗ `machine-tells.md` cho giữ.
   Bài coi đây là lỗi cần sửa là bắt nhầm; bài nói script báo nhưng câu này giữ được là đúng.
+- Hai câu "không phải … mà là" trong cùng tệp: bài bỏ cả hai, hay giữ cả hai, là chưa phân biệt được câu bác bỏ có ý kiến
+  bị bác với câu không có.
 - Phép đổi giờ "2h sáng giờ UTC, tức 9h sáng ở Việt Nam" đúng. Bài bảo sai là bắt nhầm. Lỗi ở chữ "Mỗi đêm", không ở phép đổi.
 - Các bước đánh số Bước 1 tới Bước 4: được phép, vì là các bước làm theo thứ tự. Bắt lỗi đánh số là bắt nhầm.
 - "Rất dễ nghĩ là…" là đúng mẫu skill khuyên dùng, không phải lỗi.

@@ -68,10 +68,11 @@ Bảng "Trả kết quả" của `SKILL.md`, dòng Viết mới: "Văn bản, th
 | Câu đầu thân mail nói mục đích (in tem chưa kịp UAT 18/11, cần chị chọn phương án). Lời chào một câu ngắn trước đó thì được | 3 | câu đầu là lời hỏi thăm, cảm ơn chung hay "em viết mail này để cập nhật tình hình" trừ 2; mục đích nằm sau đoạn thứ hai trừ 3 |
 | Mỗi yêu cầu gói việc, hạn và lý do của hạn trong một câu | 4 | mỗi yêu cầu tách hạn hay lý do ra câu, đoạn khác trừ 1 |
 | Kết bằng điều cần ở chị Thu (chọn phương án, kèm hạn). Một câu cảm ơn ngắn sau đó thì được | 3 | kết bằng câu xã giao văn mẫu ("Rất mong nhận được sự hợp tác của chị", "Mọi thắc mắc xin liên hệ") trừ 2; kết bằng lời hứa, lời trấn an trừ 2 |
-| Xưng hô: mail em, chị, bên em suốt bài; Zalo em, anh | 3 | mỗi chỗ lẫn "chúng tôi", "quý khách", "bạn", "mình" trừ 1; Zalo dùng "Kính gửi", "Trân trọng" trừ 2 |
-| Viết liền; chỉ dùng danh sách cho hai phương án và ba việc cần làm; không đề mục, không in đậm nhãn | 3 | mỗi đề mục hay nhãn in đậm trừ 1; chia mail thành các mục có tên ("Tình hình hiện tại:", "Đề xuất:") trừ 3 |
+| Xưng hô: mail em, chị, bên em suốt bài; Zalo em, anh | 2 | mỗi chỗ lẫn "chúng tôi", "quý khách", "bạn", "mình" trừ 1; Zalo dùng "Kính gửi", "Trân trọng" trừ 2 |
+| Câu nhờ việc và câu báo tình hình (`document-types.md`, mục Tin nhắn công việc): mỗi việc nhờ chị Thu, và câu nhờ anh Khoa xem mail, có từ nhờ ("giúp", "nhờ", "phiền") hay là câu hỏi ("được không ạ?"); tình hình năm chức năng viết bằng câu trần thuật | 3 | mỗi câu cầu khiến trần với chị Thu hay anh Khoa ("Chị gửi danh sách 8 thủ kho trước 17h…", "Anh xem mail trước 15h.") trừ 1; báo tình hình bằng câu hỏi ("Anh biết in tem vẫn chưa xong không?") trừ 1; đổi mọi câu trong Zalo thành câu hỏi trừ 1 |
+| Viết liền; chỉ dùng danh sách cho hai phương án và ba việc cần làm; không đề mục, không in đậm nhãn | 2 | mỗi đề mục hay nhãn in đậm trừ 1; chia mail thành các mục có tên ("Tình hình hiện tại:", "Đề xuất:") trừ 2 |
 | Ngắn theo dặn trong chat: thân mail 120 tới 250 tiếng, Zalo 30 tới 80 tiếng (không tính lời chào, chữ ký, dòng Tiêu đề, Cc) | 2 | mail 251 tới 300 tiếng trừ 1, trên 300 trừ 2; Zalo trên 80 tiếng hay chép lại nội dung mail trừ 1 |
-| Không hỏi rồi đáp, không dựng cảnh, không mở bằng "Như chị đã biết" | 2 | mỗi chỗ trừ 1 |
+| Không hỏi rồi đáp, không dựng cảnh, không mở bằng "Như chị đã biết" | 1 | có một chỗ trở lên trừ 1 |
 
 ## 5. Độ lưu loát: 25 điểm
 

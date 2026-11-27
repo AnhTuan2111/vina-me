@@ -135,7 +135,8 @@ số lượng, nơi nhận, ai nhận) thì phần chi tiết vào ngoặc đơn
 động từ nhờ. "Anh gửi giúp em bản scan hợp đồng đã ký và giấy ủy quyền. Hạn là 12h thứ Năm 5/3, vì bên em phải nộp hồ sơ
 thanh toán thứ Sáu." tách hạn ra một câu riêng. Viết gộp thì thành: "Anh gửi giúp em bản scan hợp đồng đã ký và giấy ủy
 quyền trước 12h thứ Năm 5/3, để bên em kịp nộp hồ sơ thanh toán thứ Sáu." Mấy yêu cầu liền nhau thì đổi cách mở câu, đừng
-để cả ba câu cùng khuôn "chị… giúp em… để…".
+để cả ba câu cùng khuôn "chị… giúp em… để…". Câu nhờ có từ nhờ hay là câu hỏi, còn tình hình viết bằng câu trần thuật,
+như mục Tin nhắn công việc nói ở dưới.
 
 Mỗi dữ kiện nói một lần, ở chỗ nó được dùng. Con số thuộc về một phương án hay một yêu cầu thì để ở đó, không nói trước ở
 đoạn tình hình rồi nhắc lại. Thư có hai thứ cùng loại (bản hợp đồng cũ và bản mới, văn phòng Hà Nội và văn phòng Đà Nẵng)
@@ -166,6 +167,18 @@ dùng được. Tin nhắn không có "Kính gửi", "Trân trọng", không đ�
 Câu đầu tuỳ tin để làm gì. Tin có việc nhờ thì câu đầu là việc nhờ, kèm hạn; tình hình hay thông tin kèm theo đi sau. Tin
 chỉ báo thì câu đầu là kết quả, không kể lại từ đầu theo thời gian: "Anh ơi, bản 2.5 lên production lúc 22:10 rồi ạ. Lúc
 chạy migration bảng `orders` bị khoá 5 phút, em đã gỡ khoá và web chạy lại bình thường."
+
+Câu nhờ việc chọn kiểu câu theo người nhận. Nhờ sếp, người lớn tuổi hơn hay khách thì không dùng câu cầu khiến trần như
+"Anh duyệt bản này trước giờ họp.", vì đọc lên nghe như ra lệnh. Sách Tiếng Việt 4 dạy giữ phép lịch sự khi nêu yêu cầu
+bằng cách thêm từ nhờ ("giúp", "nhờ", "phiền") hay chuyển sang câu hỏi. Sách Ngữ văn 8 gọi cách dùng câu hỏi để nhờ là
+hành động nói gián tiếp: hình thức là hỏi, việc làm là nhờ. Vì vậy câu nhờ sếp viết "Anh duyệt giúp em bản này trước giờ
+họp được không ạ?" hay "Anh duyệt giúp em bản này trước giờ họp nhé." Với đồng nghiệp ngang hàng thì câu cầu khiến có
+"giúp" và "nhé" là đủ. Một tin chỉ cần một câu nhờ; đừng đổi mọi câu thành câu hỏi.
+
+Báo lỗi, báo tình hình thì ngược lại, dùng câu trần thuật. Câu hỏi kiểu "Anh có biết job backup tối qua lỗi không?" bắt
+người nhận đoán là mình đang được hỏi hay đang được báo. Viết thẳng "Job backup tối qua lỗi lúc 2h05, em đang chạy lại."
+thì người nhận biết ngay việc gì xảy ra. Thư gửi khách theo cùng hai luật này: việc nhờ khách có từ nhờ hay là câu hỏi, còn tình hình
+dự án viết bằng câu trần thuật.
 
 Tin đi kèm một thư hay một tệp thì không chép lại nội dung thư, vì người nhận mở thư ra là đọc được. Tin cũng không báo
 lại cho người nhận điều chính họ đã chốt. Cần nói thêm một điều về thư thì đặt nó liền sau câu nhắc tới thư; đã sang tình

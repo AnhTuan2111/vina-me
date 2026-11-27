@@ -210,6 +210,19 @@ test('lint bắt mở bài "Trong thời đại…", câu thiếu chủ ngữ, m
   assert.doesNotMatch(out, /ký hiệu trong câu văn/);
 });
 
+test('lint báo "không phải … mà là" khi chưa ai nói X, chỉ ghi chú khi câu trước nêu ý kiến bị bác', () => {
+  const dir = tmp();
+  const bare = path.join(dir, 'bare.md');
+  fs.writeFileSync(bare, 'Viết test không phải để làm đẹp báo cáo, mà là để bắt lỗi trước khi lên production. Bộ test chạy ở mỗi pull request.\n');
+  const outBare = node('lint.mjs', [bare]).stdout;
+  assert.match(outBare, /- "không phải … mà là": 1 lần/);
+  const kept = path.join(dir, 'kept.md');
+  fs.writeFileSync(kept, 'Ban đầu, nhóm nghi ngờ database bị quá tải. CPU lúc đó chỉ 35%, nên nguyên nhân không phải database quá tải mà là pool kết nối quá nhỏ.\n');
+  const outKept = node('lint.mjs', [kept]).stdout;
+  assert.match(outKept, /· "không phải … mà là" ngay sau câu nêu một cách hiểu sai: 1 lần/);
+  assert.doesNotMatch(outKept, /- "không phải … mà là"/);
+});
+
 test('lint không bắt lỗi trong lời trích của một báo cáo soát, đo câu cả trong mục danh sách', () => {
   const dir = tmp();
   const file = path.join(dir, 'reply.md');

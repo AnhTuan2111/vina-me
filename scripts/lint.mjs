@@ -232,11 +232,12 @@ function lint(file, forceOfficial) {
   const notOnly = (lower.match(/không chỉ[^.?!\n]{1,90}mà còn/g) || []).length;
   if (notOnly >= 2) report.push(`"không chỉ … mà còn": ${notOnly} lần (văn mẫu dùng khuôn này để nâng tầm; người viết thật ít dùng)`);
   // "không phải … mà là" được giữ khi câu đó sửa một cách hiểu sai đã nêu ra (core-rules.md mục 1, machine-tells.md).
-  // Câu trước hay chính câu đó có "dễ nghĩ", "tưởng", "nhầm"… thì nhiều khả năng là chỗ được giữ: chỉ ghi chú, không báo.
+  // Câu trước hay chính câu đó có "dễ nghĩ", "tưởng", "nhầm", "nghi ngờ", "cho rằng"… thì nhiều khả năng là chỗ được giữ:
+  // câu phủ định bác bỏ cần một ý kiến có thật để bác (machine-tells.md, dưới bảng B). Chỉ ghi chú, không báo.
   let correcting = 0, bare = 0;
   for (const m of prose.matchAll(/không phải[^.?!\n]{1,80}(, | )mà là/gi)) {
     const before = prose.slice(Math.max(0, m.index - 300), m.index).split(/[.!?]\s+/).slice(-2).join(' ');
-    if (/dễ nghĩ|hay nghĩ|cứ nghĩ|tưởng|nhầm|hiểu sai|hiểu lầm/i.test(before)) correcting++; else bare++;
+    if (/dễ nghĩ|hay nghĩ|cứ nghĩ|tưởng|nhầm|hiểu sai|hiểu lầm|nghi ngờ|nghi là|cho rằng|cho là/i.test(before)) correcting++; else bare++;
   }
   if (bare) report.push(`"không phải … mà là": ${bare} lần (chỉ giữ khi sửa một chỗ hiểu sai có thật)`);
   if (correcting) notes.push(`"không phải … mà là" ngay sau câu nêu một cách hiểu sai: ${correcting} lần, thường là chỗ được giữ; soát văn người khác thì đừng báo là lỗi`);

@@ -3,6 +3,18 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.26.0 (27/11/2026)
+
+- `machine-tells.md` giải thích dòng "Không phải X, mà là Y": đó là câu phủ định bác bỏ (sách Ngữ văn 8), cần một ý kiến X
+  có thật để bác. Tìm X ở câu trước, trong lời người dùng hay tài liệu gốc, hay trong điều nhóm đã nghi; có thì giữ câu,
+  không có thì nói thẳng Y. Soát văn người khác thì nói lý do này, không chỉ gọi là khuôn văn AI slop.
+- `document-types.md`, mục Tin nhắn công việc: nhờ sếp, người lớn tuổi hơn hay khách thì thêm từ nhờ hoặc dùng câu hỏi
+  (hành động nói gián tiếp, sách Ngữ văn 8; phép lịch sự khi nêu yêu cầu, sách Tiếng Việt 4), không dùng câu cầu khiến
+  trần; báo lỗi, báo tình hình thì dùng câu trần thuật. Mục Thư và email dẫn sang luật này.
+- `scripts/lint.mjs` coi câu "không phải … mà là" đứng sau "nghi ngờ", "cho rằng" là chỗ thường được giữ, chỉ ghi chú.
+- Đề thử `evals/review` có thêm câu bác bỏ không có ý kiến bị bác ở mở bài, đặt cạnh câu bác bỏ hợp lệ đã có; đề thử
+  `evals/message` chấm thêm câu nhờ việc và câu báo tình hình.
+
 ## 0.25.0 (26/11/2026)
 
 - Viết lại 24 tệp `references/` (trừ thư mục `references/bid/`) thành văn liền mạch: mỗi tệp mở bằng câu nói nó dùng làm gì và
