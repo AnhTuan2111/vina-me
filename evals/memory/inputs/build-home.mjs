@@ -20,13 +20,13 @@ write(`${mem}/machine.md`, `# Máy này
 
 Lệnh và đường dẫn trên máy HANH-LAPTOP. Script cài đặt sinh ra tệp này, mỗi máy một bản, không đẩy lên repo.
 
-- \`<setup>\`: \`node "${skill}/scripts/setup.mjs" --home "${slash(dest)}"\`
+- \`<memory>\`: \`node "${skill}/scripts/memory.mjs" --home "${slash(dest)}"\`
 - \`<secrets>\`: \`node "${skill}/scripts/secrets.mjs" --home "${slash(dest)}"\`
 - Skill vina-me: \`${skill}\`
 - Repo bộ nhớ: chưa có, bộ nhớ chỉ nằm trên máy này.
-- Claude Code tự chạy \`<setup> sync\` khi mở và đóng phiên; máy tự chạy nó khi đăng nhập và mỗi 2 giờ. Agent không có hook
-  đó (Codex, agent khác) thì đầu mỗi phiên, trước khi làm việc, chạy \`<setup> sync\`. Lệnh in ra gì thì đó là phần bộ nhớ
-  vừa được sửa ở máy khác: dùng bản in ra thay cho bản đã nạp.
+- Tự lưu: Claude Code chạy \`<memory> sync\` khi mở và đóng phiên.
+- Agent không có hook đầu phiên (Codex, omp, agent khác) thì đầu mỗi phiên, trước khi làm việc, chạy \`<memory> sync\`.
+  Lệnh in ra gì thì đó là phần bộ nhớ vừa được sửa ở máy khác: dùng bản in ra thay cho bản đã nạp.
 `);
 write(`${mem}/user.md`, `# Người dùng
 

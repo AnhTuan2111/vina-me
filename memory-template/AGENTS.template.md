@@ -50,7 +50,7 @@ không in đậm cả câu" vào `memory.md`. Đừng gắn luật về một lo
 
 - Sửa chứ đừng nối thêm. Ý mới trùng ý cũ thì gộp, ý cũ đã sai thì xoá.
 - Mỗi luật một gạch đầu dòng: luật, rồi lý do. Lời người dùng thì trích nguyên văn trong ngoặc kép, kèm ngày (dd/MM/yyyy).
-  Viết mỗi gạch đầu dòng liền trên một dòng, vì `<setup> check` chỉ đọc dòng đầu của gạch đầu dòng. Trong tệp gọi người dùng
+  Viết mỗi gạch đầu dòng liền trên một dòng, vì `<memory> check` chỉ đọc dòng đầu của gạch đầu dòng. Trong tệp gọi người dùng
   bằng tên hay "người dùng", không "bạn": "bạn" ở đây trỏ tới agent đang đọc.
 - Ý mới ngược ý cũ thì thay dòng cũ và ghi ngay trong dòng là đã đổi, kèm lời cũ và ngày, ví dụ: Báo cáo tuần gửi bằng Word
   để khách sửa được: "gửi Word nhé, bên kia cần sửa" (03/11/2026); đổi từ "gửi PDF cho gọn" (01/09/2026). Dòng cũ chỉ mang
@@ -62,21 +62,20 @@ không in đậm cả câu" vào `memory.md`. Đừng gắn luật về một lo
 - Không ghi mật khẩu, token, khoá API, thông tin khách hàng, chuyện riêng người dùng kể.
 - Không sửa `team.md`. Thấy luật của đội cần đổi thì nói với người dùng.
 - Ghi xong thì báo người dùng một dòng: đã ghi gì, vào tệp nào, ví dụ "Đã sửa dòng báo cáo tuần trong `memory.md` (gửi Word
-  thay PDF)." Không chép lại cả dòng bộ nhớ vào câu báo. Rồi chạy `<setup> check` (lệnh ở `machine.md`); nó báo ý gần trùng
+  thay PDF)." Không chép lại cả dòng bộ nhớ vào câu báo. Rồi chạy `<memory> check` (lệnh ở `machine.md`); nó báo ý gần trùng
   hay quá dài thì gộp lại. Nó báo "lời trích thiếu ngày" ở chữ trong ngoặc kép không phải lời người dùng (tên cột, tên nút)
   thì là báo nhầm: để yên dòng đó và nói với người dùng.
 
 ## Lưu lên repo
 
-Chỉ sửa tệp, không tự commit. Lệnh `<setup> sync` (ghi ở `machine.md`) gom mọi thay đổi chưa commit thành một commit rồi
-đẩy lên repo. Claude Code chạy nó khi mở và khi đóng phiên, máy chạy nó khi đăng nhập và mỗi 2 giờ, nên thay đổi không mất
-dù phiên bị tắt ngang. Người dùng bảo lưu ngay thì chạy `<setup> save "<đã ghi gì, một dòng>"`. Lệnh báo không gộp được
-(máy khác đã sửa cùng chỗ) thì chạy `<setup> conflict`, đưa người dùng xem hai bản, hỏi giữ bản nào, rồi chạy
-`<setup> resolve mine` hay `<setup> resolve theirs`. Không tự chọn thay người dùng, không ép đẩy.
+Chỉ sửa tệp, không tự commit. Lệnh `<memory> sync` (ghi ở `machine.md`) gom mọi thay đổi chưa commit thành một commit rồi
+đẩy lên repo. Máy đã cài tự lưu thì Claude Code chạy nó khi mở và khi đóng phiên, có lịch thì máy chạy nó khi đăng nhập và
+mỗi 2 giờ; `machine.md` ghi máy này đã cài gì. Người dùng bảo lưu ngay thì chạy `<memory> save "<đã ghi gì, một dòng>"`. Lệnh báo không gộp được
+(máy khác đã sửa cùng chỗ) thì chạy `<memory> conflict`, đưa người dùng xem hai bản, hỏi giữ bản nào, rồi chạy
+`<memory> resolve mine` hay `<memory> resolve theirs`. Không tự chọn thay người dùng, không ép đẩy.
 
-`<setup>` luôn chạy kèm một lệnh con ghi ở tệp này (`check`, `save`, `sync`, `conflict`, `resolve`). Nó không có `--help`:
-chạy trơn hay kèm option đoán là cài lại skill, hook và lịch tự lưu lên máy người dùng, kể cả task trong Task Scheduler của
-Windows. Cần lệnh khác thì đọc phần chú thích đầu tệp `scripts/setup.mjs`, đừng chạy thử.
+`<memory>` luôn chạy kèm một lệnh con ghi ở tệp này (`check`, `save`, `sync`, `conflict`, `resolve`). Cần lệnh khác thì chạy
+`<memory> --help`; lệnh này chỉ in cách dùng, không cài gì.
 
 ## Học từ phiên cũ
 

@@ -5,39 +5,38 @@
 Bạn nhờ AI viết một đoạn tiếng Việt, đọc lên là nhận ra ngay văn AI slop: câu nào cũng ngắn cũn như gạch đầu dòng, chữ thì
 to tát mà chẳng nói được gì cụ thể, hết đoạn lại chốt thêm một câu tổng kết. vina-me dạy agent viết khác đi, để câu sau nối
 vào câu trước như một người thật đang kể, dù là bài giảng, báo cáo gửi sếp, văn bản hành chính, email hay tệp Word. Cùng cách
-viết ấy, cộng thêm các script dựng tệp Word và soát lỗi, agent còn làm được phần kỹ thuật của hồ sơ dự thầu. Cài một lần là
-có thêm bộ nhớ dùng chung cho Claude Code và Codex, nên điều đã dặn agent một lần thì không phải dặn lại.
+viết ấy, cộng thêm các script dựng tệp Word và soát lỗi, agent còn làm được phần kỹ thuật của hồ sơ dự thầu. Cài thêm bộ nhớ
+dùng chung thì Claude Code, Codex và omp cùng nhớ điều đã dặn, nên dặn agent một lần là đủ.
 
 ## Cài
 
-Cần Node 18 trở lên và git.
+Cần Node 18 trở lên và git. Lấy vina-me về rồi cài skill, đây là phần ai cũng cần:
 
 ```bash
 git clone https://github.com/AnhTuan2111/vina-me.git
-node vina-me/scripts/setup.mjs
+cd vina-me
+node scripts/install-skill.mjs
 ```
 
-Script hỏi tám câu, câu chọn thì dùng phím mũi tên. Phông của terminal hiện ô vuông thay cho mũi nhọn thì thêm `--plain`.
+Script tự nhận Claude Code, Codex, omp có trên máy và chép skill cho từng agent. Bốn phần dưới là tuỳ chọn, mỗi phần một
+script, cần phần nào thì chạy phần đó:
 
-<img src="assets/setup.svg" alt="Màn hỏi của setup.mjs: dải màu tím, lam, xanh lục; các câu đã trả lời thu thành một dòng" width="100%">
+| Lệnh | Bạn được gì |
+|---|---|
+| `node scripts/install-remind.mjs` | mỗi tin bạn gửi đi kèm một dòng nhắc agent viết theo vina-me, kể cả câu trả lời ngắn (Claude Code, omp) |
+| `node scripts/install-memory.mjs` | bộ nhớ ở `~/agent-memory/`: agent đọc ở đầu mỗi phiên, tự ghi khi bạn sửa hay khen một cách làm. Script hỏi bảy câu; thêm `--github` để lưu bộ nhớ vào một repo GitHub riêng tư |
+| `node scripts/install-autosave.mjs` | bộ nhớ tự lưu lên repo khi mở và đóng phiên Claude Code; thêm `--schedule` để máy tự lưu cả khi đăng nhập và mỗi 2 giờ |
+| `node scripts/install-update.mjs` | vina-me tự lên bản phát hành mới khi mở phiên Claude Code |
 
-Trả lời xong là có:
-
-- skill trong Claude Code và Codex, agent nào có trên máy thì cài cho agent đó;
-- bộ nhớ ở `~/agent-memory/`: agent đọc ở đầu mỗi phiên, tự ghi khi bạn sửa hay khen một cách làm;
-- repo GitHub riêng tư cho bộ nhớ nếu bạn chọn, tự lưu khi mở và đóng phiên, khi đăng nhập máy và mỗi 2 giờ;
-- trong Claude Code, mỗi tin bạn gửi đi kèm một dòng nhắc agent soát câu trả lời theo vina-me, kể cả câu trả lời ngắn;
-- vina-me tự lên bản phát hành mới nhất.
-
-Cài trên máy thứ hai bằng hai lệnh trên: script thấy repo bộ nhớ đã có thì kéo về, không hỏi lại.
+Cài trên máy thứ hai thì chạy `install-skill.mjs`, rồi `node scripts/install-memory.mjs --clone <repo bộ nhớ>` để kéo bộ nhớ đã
+có về thay vì trả lời lại. Script nào cũng chạy lại được nhiều lần mà không sinh gì trùng, và `--help` chỉ in cách dùng.
 
 Không quen dòng lệnh thì nhờ Claude Code cài giúp. Mở một phiên Claude Code ở thư mục nào cũng được rồi gõ:
 
 > Cài giúp mình vina-me từ https://github.com/AnhTuan2111/vina-me. Clone repo về rồi làm theo mục "Agent cài thay người dùng" trong references/agent-memory.md.
 
-Claude tự kiểm tra Node, git, tải vina-me về, hỏi bạn tám câu ngay trong chat rồi cài. Có một chỗ bạn phải tự làm: Claude đưa
-một mã tám ký tự và một link GitHub, bạn mở link, đăng nhập, nhập mã và bấm cho phép, để bộ nhớ lưu được lên repo riêng và góp
-ý gửi được thành issue.
+Claude tự kiểm tra Node, git, tải vina-me về, cài skill, rồi hỏi bạn cần thêm phần nào. Chọn lưu bộ nhớ lên GitHub thì có một
+chỗ bạn phải tự làm: Claude đưa một mã tám ký tự và một link GitHub, bạn mở link, đăng nhập, nhập mã và bấm cho phép.
 
 ## Dùng
 
@@ -94,9 +93,7 @@ bao giờ mang tài liệu nội bộ.
 
 ## Chỉ cài skill, không cần bộ nhớ
 
-- Claude Code: `git clone https://github.com/AnhTuan2111/vina-me.git ~/.claude/skills/vina-me`, cập nhật bằng `git pull`.
-  Muốn agent nhớ dùng skill ở mọi lượt chat thì thêm một hook `UserPromptSubmit` vào settings.json của Claude Code. Hook đó
-  chạy lệnh `node ~/.claude/skills/vina-me/scripts/remind.mjs`.
+- Claude Code, Codex, omp: `node scripts/install-skill.mjs` ở mục Cài là đủ; không chạy các script còn lại thì không có bộ nhớ.
 - Claude trên web, ứng dụng desktop: tải zip, đổi thư mục bên trong thành `vina-me`, nén lại rồi tải lên ở mục Skills.
 - Agent khác có Agent Skills: chép thư mục `vina-me` (có `SKILL.md` ngay bên trong) vào thư mục skill của agent.
 - AI không có skill: dán `SKILL.md` vào phần chỉ dẫn hệ thống. Còn chỗ thì dán thêm ba tệp core-rules.md, machine-tells.md và
@@ -105,7 +102,7 @@ bao giờ mang tài liệu nội bộ.
 ## Phát triển
 
 ```bash
-node --test tests/setup.test.mjs tests/tools.test.mjs tests/bid.test.mjs tests/bid-package.test.mjs
+node --test tests/install.test.mjs tests/tools.test.mjs tests/bid.test.mjs tests/bid-package.test.mjs
 ```
 
 Bộ test chạy trên home giả và repo git trần, không chạm GitHub hay lịch thật. Muốn chấm chất lượng văn của skill thì dùng các

@@ -29,7 +29,7 @@ Agent hỏi khi lời chê hay góp ý nhắm vào cách skill làm việc:
 
 - văn agent viết theo skill vẫn bị chê là máy móc, rời rạc, văn mẫu, và lỗi lặp lại sau khi đã sửa theo quy tắc;
 - người dùng nói một quy tắc của skill sai, thừa, hay thiếu một trường hợp;
-- script của skill (`setup.mjs`, `lint.mjs`, `learn-from-sessions.mjs`, script xuất Word) báo lỗi hay chạy sai;
+- script của skill (các script `install-*.mjs`, `memory.mjs`, `lint.mjs`, `learn-from-sessions.mjs`, script xuất Word) báo lỗi hay chạy sai;
 - người dùng nói thẳng muốn góp ý cho skill.
 
 Người dùng chỉ sửa dữ kiện, con số, ý của bài, hay chê thứ không do skill quyết (mô hình chậm, công cụ khác lỗi), thì không

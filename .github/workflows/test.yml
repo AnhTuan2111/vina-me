@@ -27,4 +27,4 @@ jobs:
       - name: Poppler cho test tài liệu hãng (pdftotext, pdftoppm)
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
-      - run: node --test tests/setup.test.mjs tests/tools.test.mjs tests/bid.test.mjs tests/bid-package.test.mjs
+      - run: node --test tests/install.test.mjs tests/tools.test.mjs tests/bid.test.mjs tests/bid-package.test.mjs

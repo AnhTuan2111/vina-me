@@ -3,6 +3,19 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.28.0 (27/11/2026)
+
+- Bỏ cách cài một lệnh `setup.mjs`. Mỗi việc giờ là một script riêng, cần việc nào thì chạy script đó: `install-skill.mjs`
+  (chép skill, ai cũng cần), `install-remind.mjs` (nhắc dùng vina-me ở mỗi tin), `install-memory.mjs` (bộ nhớ dùng chung),
+  `install-autosave.mjs` (tự lưu bộ nhớ, `--schedule` thêm lịch của máy), `install-update.mjs` (tự cập nhật).
+- Lệnh hằng ngày của bộ nhớ chuyển sang `memory.mjs` (sync, save, check, conflict, resolve, github, remote, team, codex), tự
+  cập nhật chuyển sang `update.mjs`. Chạy trơn hay kèm `--help` chỉ in cách dùng, không cài gì.
+- Bỏ màn hỏi tô màu và cửa sổ PowerShell tự bật khi không có TTY, hai chỗ hay hỏng trên máy lạ. Lịch tự lưu (Task Scheduler,
+  crontab) thành tuỳ chọn. Bộ nhớ hỏi bảy câu; lưu lên GitHub chọn bằng `--github`, máy thứ hai kéo về bằng `--clone`.
+- Hỗ trợ omp: skill chép vào `~/.agents/skills`, bộ nhớ nối vào `~/.omp/agent/AGENTS.md`, và hai extension chèn lời nhắc ẩn
+  trước mỗi tin (dùng vina-me; đọc và ghi bộ nhớ).
+- Máy cài bản cũ vẫn chạy: `setup.mjs` chỉ còn chuyển tiếp các lệnh mà hook, lịch và `machine.md` cũ đang gọi.
+
 ## 0.27.0 (27/11/2026)
 
 - `document-types.md` có mục mới Phong cách chức năng: bảng năm phong cách của sách Ngữ văn 10 tới 12 (khoa học, hành chính,
