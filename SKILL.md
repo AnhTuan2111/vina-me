@@ -56,7 +56,8 @@ không bỏ qua với lý do đây chỉ là một dòng ngắn.
    viết được thì nói rõ là chưa có và hỏi một câu, thiếu chi tiết chỉ làm bài đầy hơn thì không hỏi. Nói đúng mức chắc chắn. Không khen, không phán xét người đọc (`references/citations-data-figures.md`).
 7. Dùng chữ người ta vẫn nói ngoài đời. Thử: giải thích cho người ngồi cạnh thì có nói chữ đó không. Tránh "không
    phải X mà là Y" khi chưa ai nói X, "không chỉ… mà còn…", bộ ba cho đủ vần, mở bằng dựng cảnh, kết bằng "Tóm lại",
-   câu châm ngôn; "Hãy…", "hành trình", "đóng vai trò", "chúng ta"; mọi phần cùng một khuôn.
+   câu châm ngôn; "Hãy…", "hành trình", "đóng vai trò", "chúng ta"; mọi phần cùng một khuôn. Câu phải đọc một lần là
+   hiểu: không vế phụ thiếu chữ báo ngắt, không "một việc" thay cho việc cụ thể, không cụm dịch (`references/core-rules.md`, mục 7.4).
 
 ## Dấu gạch và ký hiệu
 
@@ -88,9 +89,9 @@ tệp. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là 
 Lời trả viết như người đang nói với người ngồi cạnh: thành đoạn, câu sau móc vào câu trước, câu dài ngắn xen nhau, chữ quen
 chứ không chữ dịch. Gạch đầu dòng chỉ dành cho danh sách thật (các bước làm, các tệp, các phương án); lý do, lời giải thích,
 việc đã làm thì kể thành câu. Tên tệp, lệnh, đường dẫn, câu trích giữ nguyên trong backtick hay ngoặc kép và chen vào câu.
-Giải thích một thứ mới thì được một phép so sánh đời thường, kèm chỗ nó hết đúng. Ba lỗi làm câu sượng ở `references/essays.md`,
-mục Câu và chữ của lời bình, áp cho cả lời trả: vế phụ thiếu chữ báo chỗ ngắt, danh từ rỗng ("một việc", "một điều") thay
-cho việc cụ thể, cụm tự ghép nghe như văn dịch. Mượn từ bài văn chỉ chừng đó; lời trả không mở bài gián tiếp, không câu cảm
+Giải thích một thứ mới thì được một phép so sánh đời thường, kèm chỗ nó hết đúng. Bốn lỗi làm câu sượng ở
+`references/core-rules.md`, mục 7.4, áp cho cả lời trả: vế phụ thiếu chữ báo chỗ ngắt, danh từ rỗng ("một việc", "một điều")
+thay cho việc cụ thể, cụm tự ghép nghe như văn dịch, chữ "bạn" trỏ được hai người. Mượn từ bài văn chỉ chừng đó; lời trả không mở bài gián tiếp, không câu cảm
 thán, không câu hỏi tu từ, và vẫn hỏi gì trả lời cái đó.
 
 ## Sửa văn có sẵn

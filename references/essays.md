@@ -197,30 +197,10 @@ làm, hay một câu hỏi còn mở thật mà bài đã chuẩn bị cho ngư�
 ## Câu và chữ của lời bình
 
 Bài nghị luận có thể đúng dàn ý, đủ hình ảnh mà vẫn sượng, vì câu phải đọc hai lần mới hiểu, hay vì chữ không phải chữ người
-Việt quen viết. Người dùng chấm một bài như thế 8/10 và chỉ ra ba lỗi ngay ở hai đoạn đầu.
-
-Lỗi thứ nhất là câu có một vế phụ chen vào mà thiếu chữ báo chỗ ngắt. "Thạch Lam để Sơn nhận ra cái rét của người khác vào
-buổi sáng cậu được mẹ mặc cho mấy lớp áo" đọc lần đầu dễ hiểu thành "nhận ra… vào buổi sáng", rồi mới thấy "cậu được mẹ mặc
-cho mấy lớp áo" là vế bổ nghĩa cho "buổi sáng". Vế phụ có chủ ngữ riêng (cậu được mẹ mặc) đi sau một danh từ thì thêm "mà",
-"khi", "lúc" để người đọc biết chỗ ngắt: "vào chính buổi sáng mà cậu được mẹ mặc cho mấy lớp áo". Câu có hai vế phụ lồng nhau
-thì tách thành hai câu. Phần phụ chú đặt sau tên người ở cuối câu ("đến tay Hiên, cô bé chỉ còn một manh áo rách") cũng dễ
-đọc nhầm; viết thành vế có chữ nối ("đến tay Hiên, khi cô bé chỉ còn một manh áo rách") hay đưa lên trước.
-
-Danh từ rỗng là lỗi thứ hai: chữ chung chung đứng chỗ của một việc cụ thể. "Cậu đã nghĩ ngay đến một việc có thể làm cho bạn" bắt người đọc
-đoán việc ấy là gì, trong khi người viết biết rõ: đem cái áo bông cũ cho bạn. Gặp "một việc", "một điều", "một cách", "điều
-đó", "điều bà cần nhắc" thì hỏi việc ấy là gì và viết thẳng nó ra. Lối nói vòng chỉ dùng khi chính tác phẩm cố ý giấu.
-
-Còn lỗi thứ ba là cụm từ tự ghép mà người Việt không quen nói. "Vẻ thật của một đứa trẻ" đúng ý nhưng không ai viết thế; người
-viết văn quen nói "vẻ hồn nhiên của một đứa trẻ". Cụm tự ghép hay sinh ra khi người viết nghĩ bằng ý rồi tìm chữ dịch cho
-từng ý, nên câu nghe như văn dịch: "nhận phần trách nhiệm về mình", "để tâm đến điều Sơn nhận ra", "làm rõ cái thiếu của
-Hiên", "những chỗ rách vốn quen mắt bỗng trở nên khó làm ngơ". Viết xong mỗi câu bình thì hỏi: cụm này đã gặp trong bài văn,
-trang sách nào chưa? Chưa gặp thì đổi sang cách nói quen, hay nói thẳng bằng lời thường.
-
-Chữ chỉ người trong lời bình phải trỏ về một người duy nhất. "Bạn" là chữ dễ hiểu nhầm nhất: người viết dùng nó để chỉ bạn
-của nhân vật ("một chiếc áo có thể giúp bạn bớt rét", ý là giúp Hiên), nhưng trong bài văn, "bạn" còn là cách gọi người
-đọc, nên người đọc thấy như mình bị gọi tới, hay như có một người thứ ba nào đó. "Mình" cũng không gỡ được, vì nó đọc thành
-chính nhân vật. Cách sửa là gọi tên nhân vật ("giúp Hiên bớt rét") hay dùng chữ chỉ quan hệ rõ ("người bạn nhỏ", "lũ bạn
-cùng xóm"). "Em", "cậu", "cô bé" thì chỉ dùng khi câu trước vừa nhắc đúng một nhân vật.
+Việt quen viết. Người dùng chấm một bài như thế 8/10 và chỉ ra ba lỗi ngay ở hai đoạn đầu, rồi thêm một lỗi về chữ "bạn".
+Bốn lỗi ấy giờ là luật chung ở `core-rules.md`, mục 7.4 Câu đọc một lần là hiểu: vế phụ thiếu chữ báo chỗ ngắt, danh từ rỗng
+thay cho việc cụ thể, cụm tự ghép nghe như văn dịch, chữ chỉ người trỏ được hai người. Đọc mục ấy trước khi viết lời bình;
+ví dụ trong mục lấy từ chính bài nghị luận về "Gió lạnh đầu mùa".
 
 Văn bình tiếng Việt có một vốn chữ quen để gọi tên tâm hồn và cảm xúc: vẻ hồn nhiên, tâm hồn ngây thơ, trong trẻo, lòng trắc
 ẩn, lòng nhân hậu, niềm xót thương, nỗi buồn man mác, nỗi buồn mơ hồ, khát khao, ước mơ nhỏ bé, kiếp người nhỏ bé; để gọi tên
@@ -260,7 +240,8 @@ Viết xong thì đọc bài từ đầu tới cuối như người đọc thậ
 8. Câu nào nói chắc về ý nghĩ, động cơ của nhân vật? Dò từng câu ấy với tác phẩm; truyện không viết thì thêm dấu đoán
    ("có lẽ", "tôi đọc thấy") hay bỏ. Mọi chi tiết kể lại đã dò với nguyên văn chưa?
 9. Đọc từng câu như người đọc lần đầu: câu nào phải đọc lại mới hiểu, câu nào có "một việc", "một điều" thay cho việc cụ
-   thể, cụm nào nghe như dịch hay chưa gặp trong văn người Việt viết? Sửa theo mục Câu và chữ của lời bình.
+   thể, cụm nào nghe như dịch hay chưa gặp trong văn người Việt viết, chữ "bạn" nào trỏ được hai người? Sửa theo
+   `core-rules.md`, mục 7.4.
 
 Lint (`scripts/lint.mjs`) bắt được các cụm ở bảng Sáo ngữ học đường và văn AI slop; nó không biết bài khô hay có hồn, nên
 câu hỏi 5 phải tự đọc.
