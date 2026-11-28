@@ -46,7 +46,8 @@ Theo `references/essays.md`, mục Nghị luận văn học.
 | Lỗi | Trừ |
 |---|---|
 | Mở bài không nói tác phẩm, tác giả và vấn đề sẽ bàn trong ba câu đầu | 3 |
-| Mở bài bằng danh ngôn chung, tiểu sử dài, câu xếp hạng ("một cây bút không thể thiếu") | 3 |
+| Mở bài bằng số đo của tác phẩm (số chữ, số trang), nghịch lý nói quá, tiểu sử dài, hay danh ngôn không nối sang vấn đề | 3 |
+| Mở bài gián tiếp mà câu dẫn không dẫn tới vấn đề của đề | 2 |
 | Không có luận điểm nào nói một nhận xét có nội dung (chỉ có lời dẫn "Trước hết, ta đến với…") | 5 |
 | Một luận điểm không có câu trích nguyên văn nào đỡ | 3 mỗi luận điểm |
 | Dẫn chứng trơ: câu trích đứng đó, không có câu nào bàn về chữ trong nó | 2 mỗi chỗ, tối đa 6 |
@@ -64,10 +65,10 @@ Theo `references/essays.md`, mục Hình ảnh lấy từ đâu và mục Cảm 
 | Cả bài không có đoạn nào người đọc thấy, nghe, chạm được cảnh trong truyện qua lời của người viết | 6 |
 | Không có câu nào mang cảm nhận của người viết gắn với một chi tiết | 5 |
 | Cảm xúc nói bằng tính từ chấm điểm ("vô cùng xúc động", "thật cảm động", "sâu sắc") thay cho chi tiết | 2 mỗi chỗ, tối đa 6 |
-| Hình ảnh mượn từ kho văn mẫu (bức tranh, bản nhạc, gam màu, ngọn lửa, viên ngọc, hành trình) | 2 mỗi chỗ |
-| Không có hình ảnh chủ đạo: mỗi đoạn một hình ảnh rời, không quay lại | 3 |
+| Hình ảnh mượn không dính gì tới truyện (bản hoà ca, nốt trầm, viên ngọc, hành trình), hay "khắc hoạ thành công bức tranh…" thay cho phân tích | 2 mỗi chỗ |
+| Lời bình ít hình ảnh: quá nửa số đoạn thân bài không có câu bình nào bằng so sánh, ẩn dụ, nhân hoá hay câu cảm thán | 3 |
 | Ẩn dụ cầu kì, phải đọc hai lần, hay hai ẩn dụ chồng trong một câu | 2 mỗi chỗ |
-| Câu hỏi tu từ mở bài, hay câu hỏi tu từ không có câu trả lời ngay sau | 2 mỗi chỗ |
+| Câu hỏi tu từ không có câu trả lời ngay sau | 2 mỗi chỗ |
 
 ## D. Sáo ngữ học đường và văn AI slop: 15 điểm
 

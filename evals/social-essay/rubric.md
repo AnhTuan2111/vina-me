@@ -52,7 +52,7 @@ Theo `references/essays.md`, mục Nghị luận xã hội.
 | Cảm xúc nói bằng tính từ chấm điểm ("vô cùng nguy hiểm", "đáng báo động") | 2 mỗi chỗ, tối đa 6 |
 | Hình ảnh mượn kho văn mẫu ("con dao hai lưỡi", "vòng xoáy", "cái bẫy ngọt ngào", "hố đen") | 2 mỗi chỗ |
 | Ẩn dụ cầu kì hay hai ẩn dụ chồng trong một câu | 2 mỗi chỗ |
-| Câu hỏi tu từ mở bài, hay câu hỏi tu từ không có câu trả lời ngay sau | 2 mỗi chỗ |
+| Câu hỏi tu từ không có câu trả lời ngay sau | 2 mỗi chỗ |
 
 ## D. Sáo, hô hào, văn AI slop: 15 điểm
 

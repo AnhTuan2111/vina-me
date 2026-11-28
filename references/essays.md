@@ -34,17 +34,22 @@ Luật "tối đa một phép so sánh cho cả bài" trong `core-rules.md` dàn
 này dùng được so sánh, ẩn dụ, nhân hoá, hoán dụ, điệp, lặp cú pháp ở chỗ cần gợi hình gợi cảm, theo mấy luật sau.
 
 - Hình ảnh lấy từ chính tác phẩm, hay từ đời thật mà người đọc đã thấy. Bàn về "Hai đứa trẻ" thì hình ảnh có sẵn là ngọn
-  đèn, chuyến tàu, chiếc chõng, tiếng trống; người viết dùng lại chúng để nói ý của mình. Hình ảnh mượn từ kho văn mẫu
-  (bức tranh, bản hoà ca, nốt trầm, gam màu, viên ngọc, ngọn lửa, hành trình, dòng chảy) thì bỏ, trừ khi tác phẩm nói đúng
-  tới thứ đó.
+  đèn, chuyến tàu, chiếc chõng, tiếng trống; người viết dùng lại chúng để nói ý của mình. "Bức tranh phố huyện" là cách
+  gọi quen của bài nghị luận cho phần tả cảnh, dùng được; cái sáo là để "bức tranh" thay cho phân tích ("khắc hoạ thành
+  công bức tranh…"). Hình ảnh mượn không dính gì tới tác phẩm (bản hoà ca, nốt trầm, viên ngọc, hành trình) thì bỏ.
 - Mỗi ẩn dụ phải cho người đọc biết ngay cái gì ứng với cái gì. Câu bắt người đọc dừng lại giải đố là câu cầu kì.
-- Một bài có một hai hình ảnh chủ đạo, quay lại ở mở bài, thân bài, kết bài. Đổi hình ảnh ở mỗi câu thì bài thành chuỗi
-  ảnh rời. Một câu không chồng hai ẩn dụ.
+- Bài văn nghị luận tốt dùng hình ảnh dày hơn văn công việc nhiều: gần như đoạn nào cũng có một hai câu bình bằng so sánh,
+  ẩn dụ hay nhân hoá cho chi tiết đang bàn, như "Đoàn tàu như một vệt sao băng lao lên chốc lát rồi tất cả chìm vào bóng tối
+  mênh mang" (bài mẫu trên loigiaihay). Giới hạn là mỗi hình ảnh bám một chi tiết của tác phẩm, và một câu không chồng hai
+  ẩn dụ. Bài có thể có thêm một hình ảnh chủ đạo chạy từ mở bài tới kết bài.
 - Hình ảnh đứng cạnh dẫn chứng, không thay dẫn chứng. Câu bình giàu hình ảnh mà không có câu trích nào đỡ thì người đọc
   không biết lấy gì để tin.
-- Câu hỏi tu từ, lặp cú pháp, câu cảm thán dùng được ở chỗ chuyển ý hay chỗ cảm xúc dồn lên, một hai lần trong bài. Câu hỏi
-  tu từ phải có câu trả lời của người viết ngay sau, và không dùng để mở bài. Luật "không hỏi tu từ" ở `SKILL.md` áp cho bài
-  giảng, tài liệu; ở đây sách Ngữ văn 12 dạy câu hỏi tu từ và lặp cú pháp là cách "tạo nhịp điệu, nhấn mạnh rõ thái độ, cảm xúc".
+- Câu cảm thán, câu hỏi tu từ, điệp, câu ngắn dồn nhau, cặp từ đối dùng được ở chỗ cảm xúc dồn lên hay chỗ chuyển ý. Bài
+  mẫu dùng chúng như thế này: câu cảm thán sau một chi tiết nhỏ ("Chi tiết chiếc chõng tre cũ, sắp gãy được Thạch Lam đưa
+  vào đây thật đầy ý nghĩa: cuộc sống của hai đứa trẻ lớn lên sao mà đã sớm già nua tàn tạ!"); câu ngắn điệp chủ ngữ ("Nó tỏa
+  sáng. Nó vang động. Nó xa xăm."); câu hỏi tu từ rồi tự trả lời bằng dẫn chứng ("Phải chăng hai chị em chờ tàu để bán được
+  hàng? Không…"). Câu hỏi tu từ cần câu trả lời ngay sau. Luật "không hỏi tu từ" ở `SKILL.md` áp cho bài giảng, tài liệu; ở
+  đây sách Ngữ văn 12 dạy câu hỏi tu từ và lặp cú pháp là cách "tạo nhịp điệu, nhấn mạnh rõ thái độ, cảm xúc".
 - Nhịp câu: câu dài kể và tả, câu ngắn chốt cảm xúc. Đọc to đoạn văn lên, chỗ nào hụt hơi thì tách, chỗ nào cụt thì nối.
 
 ## Cảm xúc của người viết
@@ -80,14 +85,47 @@ nhân vật, về một ý kiến bàn về văn học. Đề "phân tích" đò
 
 ### Mở bài
 
-Hai ba câu: tác phẩm nào, của ai, và bài sẽ bàn điều gì về nó. Mở trực tiếp thì nói ngay ba thứ đó. Mở gián tiếp thì đi vào
-bằng một chi tiết của chính tác phẩm, một câu của tác giả có nguồn, hay một chỗ so sánh với tác phẩm khác mà người viết
-chắc chắn về tên và nội dung. Danh ngôn chung chung ("Văn học là nhân học"), câu giới thiệu tiểu sử dài, câu xếp hạng ("một
-cái tên không thể thiếu") thì không dùng.
+Mở bài dài ba tới năm câu và đi từ rộng tới hẹp: câu dẫn, rồi tác giả và tác phẩm, rồi câu cuối nêu vấn đề bài sẽ bàn,
+thường sát với lời của đề. Phần này và các ví dụ dưới lấy từ khoảng mười hai bài nghị luận về "Hai đứa trẻ" đăng trên
+loigiaihay.com và vietjack.com từ 2014 tới 2022.
+
+Mở bài trực tiếp có tên tác phẩm hay tên nhà văn ngay câu đầu, rồi nói luôn vấn đề:
+
+> "Hai đứa trẻ tuy chưa phải là truyện ngắn hay nhất nhưng lại khá tiêu biểu cho phong cách nghệ thuật của Thạch Lam: bình
+> dị, nhẹ nhàng mà tinh tế, thâm thúy."
+
+Mở bài gián tiếp đi vào từ một chỗ gần với vấn đề rồi mới tới tác phẩm. Các lối dẫn hay gặp:
+
+| Lối dẫn | Ví dụ trong bài mẫu |
+|---|---|
+| Ấn tượng chung về thế giới nghệ thuật của tác giả | "Bước vào những trang viết của Thạch Lam là ta bước vào một thế giới nghệ thuật riêng, một thế giới hiện thực đẫm chất thơ." |
+| Vị trí của tác giả so với người cùng thời, cùng nhóm | "Trong Tự Lực văn đoàn, nhà văn Thạch Lam đứng thành một dòng riêng biệt. Nhất Linh với Khái Hưng còn có thể viết tiểu thuyết chung nhưng Thạch Lam thì không." |
+| Quan niệm sáng tác của chính tác giả | lời Thạch Lam trong "Theo dòng": "văn chương là một thứ khí giới thanh cao và đắc lực…" |
+| Nhận định của nhà văn, nhà phê bình có tên | Nguyễn Tuân: "Nói đến Thạch Lam người ta vẫn nhớ đến truyện ngắn nhiều hơn là truyện dài" |
+| Một hình tượng văn học rộng hơn tác phẩm | con tàu trong văn chương Việt Nam, "bên cạnh hình ảnh con thuyền, bến sông" |
+| Kỉ niệm đọc, một tác phẩm khác của cùng tác giả | "Mỗi lần đọc Thạch Lam trong trí tôi lại hiện lên hình ảnh cánh cổng gỗ của khu vườn êm ả được miêu tả trong truyện Dưới bóng hoàng lan." |
+| Tuổi thơ, hoàn cảnh sống của nhà văn | "Nhiều truyện ngắn của Thạch Lam là những hồi ức và kỉ niệm, nhất là những kỉ niệm thời thơ ấu." |
+
+Câu dẫn phải dẫn được tới vấn đề của đề. Đề về tâm trạng Liên thì dẫn từ thế giới nội tâm trong truyện Thạch Lam; đề về chất
+thơ thì dẫn từ lời bàn về chất thơ hay chất trữ tình. Câu dẫn hay mà không nối sang vấn đề thì người đọc phải tự bắc cầu.
+
+Những lối mở bài hỏng:
+
+- Mở bằng số đo của tác phẩm: số chữ, số trang, số phút đọc. Người đọc văn không đo truyện bằng con số; mở bằng số là thói
+  quen của văn kỹ thuật mang sang.
+- Dựng nghịch lý nói quá cho câu mở có vẻ lạ ("Cả truyện chỉ có một chuyến tàu đi qua trong vài giây, vậy mà…"). Câu ấy làm
+  ra một điều bất thường mà tác phẩm không có. "Truyện không có cốt truyện" thì nói bằng chính cách gọi của giới phê bình
+  ("truyện không có truyện", "truyện tâm tình").
+- Chép tiểu sử dài (tên khai sinh, quê nội, năm đi học) không dính tới vấn đề.
+- Danh ngôn dùng được cho mọi đề ("Văn học là nhân học") mà không nối thẳng sang vấn đề.
+- Nhận định của nhà phê bình mà người viết không chắc nguyên văn và tên người nói.
 
 ### Thân bài
 
-Mỗi luận điểm chiếm một đoạn hay vài đoạn, và đi theo năm bước:
+Thân bài thường mở bằng một đoạn khái quát ngắn: phong cách của tác giả, hoàn cảnh ra đời, vài câu tóm tắt truyện. Đoạn này
+chỉ để đặt người đọc vào tác phẩm, nên một đoạn là đủ. Sau đó luận điểm đi theo trình tự của truyện (chiều tàn, đêm,
+chuyến tàu) hay theo từng phương diện (cảnh, người, tâm trạng nhân vật, nghệ thuật). Mỗi luận điểm chiếm một đoạn hay vài
+đoạn, và đi theo năm bước:
 
 1. Câu luận điểm nói một nhận xét có nội dung, tức là có người có thể không đồng ý. "Thạch Lam cho phố huyện tối dần bằng
    cách bớt đi từng ngọn đèn" là luận điểm; "Trước hết, ta đến với bức tranh phố huyện lúc chiều tàn" chỉ là lời dẫn.
@@ -102,14 +140,25 @@ Lỗi hay gặp nhất của bài nghị luận văn học là kể lại cốt 
 nghị luận; kể chỉ để đặt dẫn chứng vào chỗ của nó, một hai câu là đủ. Lỗi thứ hai là dẫn chứng trơ: câu trích đứng đó mà
 không có câu nào bàn về chữ trong nó.
 
-So sánh mở rộng với tác phẩm khác chỉ dùng khi người viết chắc về tên tác phẩm, tác giả và chi tiết được so; không chắc thì
-bỏ, vì một chi tiết sai làm người đọc mất tin cả bài.
+Lí lẽ của bài nghị luận văn học lấy từ ba chỗ: chính tác phẩm, lời của tác giả về văn chương (quan niệm sáng tác), và lời
+của nhà văn, nhà phê bình có tên. Bài mẫu về "Hai đứa trẻ" dẫn Nguyễn Tuân, Vũ Ngọc Phan ("buồn mà rất đẹp"), Chu Văn Sơn,
+cả hồi kí của chị ruột Thạch Lam về chuyện hai chị em thức đợi tàu. Lời phê bình làm bài vững hơn, nhưng chỉ trích khi có
+nguồn trong tay (người dùng đưa, sách giáo khoa, trang đọc được), đúng nguyên văn, ghi tên người nói. Trích theo trí nhớ thì
+nói với người dùng ở dòng sau bài để họ đối chiếu.
+
+So sánh với tác phẩm khác là thao tác thường gặp của bài nghị luận văn học, vì nó làm rõ cái riêng của tác phẩm đang bàn.
+Bài mẫu đặt tiếng trống thu không của Thạch Lam cạnh tiếng trống thúc sưu trong "Tắt đèn" và tiếng trống hộ đê trong "Sống
+chết mặc bay": cùng là tiếng trống làng quê, mà ở Thạch Lam nó "Thật buồn nhưng thật êm, thật đẹp". So sánh chỉ dùng khi
+người viết chắc về tên tác phẩm, tác giả và chi tiết được so; không chắc thì bỏ, vì một chi tiết sai làm người đọc mất tin
+cả bài.
 
 ### Kết bài
 
-Kết bài không tóm lại từng luận điểm. Nó quay về hình ảnh ở mở bài với một nghĩa mới mà thân bài vừa mở ra, hay nói điều tác
-phẩm còn để lại cho người đọc hôm nay, bằng một chi tiết cụ thể. Không kết bằng "Tóm lại", không kết bằng lời khen chung
-("tác phẩm sẽ mãi sống trong lòng người đọc").
+Kết bài hai ba câu: khẳng định lại vấn đề, đánh giá giá trị của tác phẩm, và nói điều còn lại trong người đọc. Bài mẫu kết
+theo mấy lối: bằng một nhận định có tên (lời Nguyễn Tuân: "đọc lại Thạch Lam, vẫn thấy đầy đủ cái dư vị và cái nhã thú của
+những tác phẩm có cốt cách và phẩm chất văn học"), bằng ấn tượng khi gấp sách lại, hay bằng hình ảnh trung tâm với một nghĩa
+mới (chuyến tàu "vừa như một tia hồi quang… vừa như một tia vọng quang"). Kết bài không tóm lại từng luận điểm, không bằng
+"Tóm lại", không hô hào ("Hãy biết, lắng nghe cuộc sống xung quanh…"), không bằng "Qua đây, nhà văn muốn gửi một thông điệp".
 
 ### Nghị luận về một ý kiến bàn về văn học
 
@@ -158,9 +207,9 @@ vào bài nào cũng được. Gặp những cụm sau thì viết lại bằng 
 | "để lại ấn tượng sâu đậm trong lòng người đọc", "khiến người đọc không khỏi xúc động" | nói thay cảm xúc của người đọc | nói cảm nhận của người viết, gắn với một chi tiết |
 | "một cái tên không thể thiếu", "một trong những tác phẩm tiêu biểu" | xếp hạng không ai hỏi | bỏ |
 | "Có thể nói", "Có thể khẳng định rằng" | lời rào trước một câu khẳng định | bỏ, nói thẳng câu khẳng định |
-| "bức tranh", "bản hoà ca", "nốt trầm", "gam màu" khi tác phẩm không nói tới tranh, nhạc | hình ảnh mượn | dùng hình ảnh của chính tác phẩm |
+| "bản hoà ca", "nốt trầm", "viên ngọc" khi tác phẩm không nói tới nhạc, ngọc; "khắc hoạ thành công bức tranh…" | hình ảnh mượn, hay "bức tranh" thay cho phân tích | dùng hình ảnh của chính tác phẩm; "bức tranh phố huyện" để gọi tên phần tả cảnh thì được |
 | "Qua đó, ta thấy được…" cuối mỗi đoạn | câu chốt lặp khuôn | bỏ; câu nối sang đoạn sau móc vào chữ khoá |
-| "Văn học là nhân học", danh ngôn mở bài không nguồn | mở bài dùng được cho mọi đề | mở bằng tác phẩm |
+| "Văn học là nhân học" hay danh ngôn khác mà không nối sang vấn đề | mở bài dùng được cho mọi đề | dùng một lối dẫn ở mục Mở bài, câu dẫn nối thẳng sang vấn đề |
 | "Lẽ nào…? Không!", "Hãy…", "chung tay" ở kết bài nghị luận xã hội | hô hào thay cho kết luận | kết bằng việc cụ thể hay câu hỏi còn mở thật |
 
 ## Soát bài
@@ -180,30 +229,33 @@ Viết xong thì đọc bài từ đầu tới cuối như người đọc thậ
 Lint (`scripts/lint.mjs`) bắt được các cụm ở bảng Sáo ngữ học đường và văn AI slop; nó không biết bài khô hay có hồn, nên
 câu hỏi 5 phải tự đọc.
 
-## Ví dụ: một đoạn viết ba cách
+## Ví dụ
 
-Đề: bàn về cách Thạch Lam dùng ánh sáng trong "Hai đứa trẻ".
+Câu mở do một agent viết theo bản đầu của tệp này, người dùng chấm hỏng ngay từ câu đầu:
 
-Bản khô, đúng mà không gợi gì:
+> Cả truyện "Hai đứa trẻ" chỉ có một chuyến tàu đi qua phố huyện trong vài giây, vậy mà Thạch Lam dành gần ba nghìn chữ cho
+> buổi tối chờ nó.
 
-> Truyện nói về ánh sáng và bóng tối, nhưng Thạch Lam gần như không nói ra điều đó. Ông để ánh sáng nhỏ dần qua từng đoạn.
-> Giữa đêm chỉ còn "ngọn đèn con của chị Tí, và cái bếp lửa của bác Siêu". Ngọn đèn của chị Tí được nhắc bốn lần.
+Câu này đếm chữ của một tác phẩm văn học và dựng một nghịch lý nói quá. Hai mở bài của bài mẫu dưới đây đi vào cùng truyện
+mà không cần con số nào. Mở trực tiếp:
 
-Bản sáo, chữ đẹp mà thay tên truyện nào cũng được:
+> Thạch Lam là một ngòi bút truyện ngắn được nhiều người yêu thích. Không phải vì cốt truyện đặc biệt, vì tình tiết li kì, mà
+> chủ yếu là do ông đã sáng tạo ra một lối truyện ngắn: loại truyện tâm tình. Sức hấp dẫn của truyện ngắn Thạch Lam là ở tâm
+> trạng nhân vật. Có thể thấy điều đó qua tâm trạng cô bé Liên đêm đêm thức đợi xem chuyến tàu đi qua phố huyện trong truyện
+> ngắn Hai đứa trẻ của ông.
 
-> Bằng ngòi bút tài hoa và tinh tế, Thạch Lam đã khắc hoạ thành công bức tranh phố huyện nghèo với những gam màu sáng tối
-> đan xen, qua đó thể hiện giá trị nhân đạo sâu sắc và để lại ấn tượng khó phai trong lòng người đọc.
+Mở gián tiếp, dẫn từ vị trí của tác giả trong nhóm văn:
 
-Bản có hồn, cùng dữ kiện với bản khô:
+> Nếu như các nhà văn thuộc Tự lực văn đoàn miêu tả cuộc sống với tất cả những gì đẹp nhất, trong sáng nhất thì Thạch Lam lại
+> tìm cho mình một lối đi riêng.
 
-> Thạch Lam cho phố huyện tối dần bằng cách bớt đi từng ngọn đèn. Buổi chiều còn "Phương tây đỏ rực như lửa cháy", lúc
-> lên đèn còn đèn nhà bác phở Mĩ, nhà ông Cửu, hiệu khách, nhưng tới khuya thì "Giờ chỉ còn ngọn đèn con của chị Tí, và cái
-> bếp lửa của bác Siêu". Thứ ánh sáng còn lại ấy nhỏ nhoi như chính đời những người ngồi quanh nó: một hàng nước "chả kiếm
-> được bao nhiêu", một gánh phở mà hai chị em "không bao giờ mua được". Vì thế chuyến tàu đi qua mới sáng trưng đến vậy. Nó
-> mang cả Hà Nội "sáng rực vui vẻ và huyên náo" lướt qua trước mặt hai đứa trẻ, rồi chỉ để lại "cái chấm đỏ" khuất sau rặng
-> tre. Đọc tới đó, tôi hiểu vì sao Liên và An cố thức: chúng không chờ khách mua hàng, chúng chờ được nhìn ánh sáng của một
-> thế giới khác trong vài giây.
+Một đoạn thân bài của bài mẫu (đã sửa vài lỗi gõ của trang), cho thấy phân tích chi tiết, so sánh với tác phẩm khác và lời bình có cảm xúc đi cùng nhau:
 
-Bản có hồn giữ mọi dữ kiện của bản khô và vẫn trích đúng nguyên văn. Nó thêm ba thứ: một phép so sánh lấy từ chính truyện
-(ánh sáng nhỏ nhoi như đời người), một hoán dụ (chuyến tàu mang cả Hà Nội), và một câu cảm nhận của người viết đặt ở cuối,
-sau khi dẫn chứng đã đủ.
+> Tiếng trống thu không là âm thanh quen thuộc xuất hiện thường nhật, trở thành một mảnh linh hồn của buổi chiều phố huyện,
+> tạo cho phố huyện cái vẻ bình lặng đến nao nao buồn. […] Đây hoàn toàn không phải là tiếng trống thúc sưu thuế bức bách
+> khiến cho không gian trở nên ngột ngạt đầy sợ hãi trong Tắt đèn của Ngô Tất Tố, càng không phải là tiếng trống hộ đê giục
+> giã hồi đầu thế kỉ của Phạm Duy Tốn trong Sống chết mặc bay. Thật buồn nhưng thật êm, thật đẹp.
+
+Câu "không phải… càng không phải…" ở đây không phải văn AI slop: hai tiếng trống bị bác đều có thật trong hai tác phẩm người
+đọc đã học, nên phép so sánh làm rõ cái riêng của Thạch Lam. Bài mẫu cũng có chỗ yếu nên tránh: chép nhau, khen chung
+("tinh tế", "đặc sắc", "tài hoa") thay cho phân tích, kết bằng lời hô hào.

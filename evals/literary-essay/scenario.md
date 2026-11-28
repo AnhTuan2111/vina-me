@@ -40,20 +40,23 @@ Bài không cần dùng hết, nhưng chi tiết nào dùng thì phải đúng n
 - Sơn khóc, Hiên khóc, Hiên cảm ơn, Hiên mặc áo về khoe mẹ (truyện kể qua lời mẹ Hiên: "Tôi về thấy cháu nó mặc cái áo bông").
 - Ý cho áo là của chị Lan, hay của cả hai cùng nghĩ ra.
 - Tuổi của Sơn, nghề của bố mẹ Sơn, ý nghĩ của Sơn mà truyện không viết (ví dụ "Sơn tự hứa từ nay sẽ…").
-- Dữ kiện ngoài truyện sai hay không kiểm tra được: năm in khác 1937, giải thưởng, lời Thạch Lam nói về truyện này, lời phê
-  bình gán cho một nhà phê bình có tên. Dữ kiện đúng và phổ biến (Thạch Lam thuộc Tự Lực văn đoàn) thì không trừ.
+- Dữ kiện ngoài truyện sai hay không kiểm tra được: năm in khác 1937, giải thưởng, lời Thạch Lam nói về truyện này. Lời phê
+  bình có tên người nói (Nguyễn Tuân, Vũ Ngọc Phan) thì dùng được nếu bài nói rõ ở dòng sau bài là trích theo trí nhớ, cần
+  đối chiếu; trích như điều chắc chắn mà sai nguyên văn hay sai người nói thì tính là bịa. Dữ kiện đúng và phổ biến (Thạch
+  Lam thuộc Tự Lực văn đoàn) thì không trừ.
 
 ## Bẫy đã cài
 
 | Bẫy | Bài tốt làm gì | Lỗi hay gặp |
 |---|---|---|
 | Đề "cảm nhận về tấm lòng" | Có luận điểm: tấm lòng ấy lớn lên từ đâu (nhớ em Duyên thành thương Hiên), có cả nét trẻ con (khoe áo, sợ mẹ mắng) | Kể lại truyện từ đầu tới cuối rồi khen "tấm lòng nhân hậu" |
-| Hình ảnh có sẵn trong truyện | Dùng gió lạnh và hơi ấm (cái lạnh ngoài trời, "ấm áp vui vui" trong lòng, cái áo của người đã mất) làm hình ảnh chủ đạo | Mượn "bức tranh", "bản nhạc", "ngọn lửa", "viên ngọc" |
+| Hình ảnh có sẵn trong truyện | Dùng gió lạnh và hơi ấm (cái lạnh ngoài trời, "ấm áp vui vui" trong lòng, cái áo của người đã mất) làm hình ảnh chủ đạo, và đoạn nào cũng có lời bình bằng hình ảnh | Mượn "bản hoà ca", "viên ngọc"; hay cả bài không một câu bình có hình ảnh |
 | Nét trẻ con của Sơn | Thấy câu khoe áo D5 và đặt nó cạnh lúc động lòng thương; tấm lòng tốt mà vẫn là trẻ con | Bỏ qua, hay lý tưởng hoá Sơn thành người lớn |
 | Chi tiết Duyên | Thấy câu nối "cũng như ban sáng Sơn đã nhớ thương đến em Duyên" là chỗ tấm lòng chuyển từ nhà ra ngoài | Không nhắc Duyên |
 | Câu kết của mẹ | Bàn câu "Hai con tôi quý quá…": lời trách nhẹ mà là lời khen, mẹ là nơi tấm lòng ấy được nuôi | Viết "mẹ Sơn tha thứ cho hai con" hay "mẹ Sơn khen" mà không trích |
 | Sáo ngữ học đường | Không có | "Bằng ngòi bút tài hoa", "đã khắc hoạ thành công", "giá trị nhân đạo sâu sắc", "để lại ấn tượng sâu đậm trong lòng người đọc" |
 | Khô | Có đoạn người đọc thấy được cảnh, có câu cảm nhận của người viết gắn với chi tiết | Toàn câu "chi tiết này cho thấy", không một hình ảnh |
 | Cầu kì | Ẩn dụ hiểu ngay | Ẩn dụ chồng ẩn dụ, câu phải đọc hai lần |
-| Kết bài | Quay về hình ảnh ở mở bài với nghĩa mới, hay điều truyện để lại hôm nay | "Tóm lại", tóm từng luận điểm, "tác phẩm sẽ mãi sống trong lòng người đọc" |
+| Mở bài | Trực tiếp, hay gián tiếp bằng một lối dẫn nối thẳng sang tấm lòng của Sơn (thế giới tuổi thơ trong truyện Thạch Lam, cái lạnh đầu mùa) | Mở bằng số đo, nghịch lý nói quá, tiểu sử dài |
+| Kết bài | Khẳng định lại vấn đề, ấn tượng còn lại, hay hình ảnh trung tâm với nghĩa mới | "Tóm lại", tóm từng luận điểm, hô hào, "Qua đây, nhà văn muốn gửi một thông điệp" |
 | Cách trả | Bài trong chat, sau bài tối đa một hai câu | Ghi ra tệp, mở bằng "Dưới đây là", tự chấm, giải thích cách viết |

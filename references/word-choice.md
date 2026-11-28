@@ -146,7 +146,7 @@ này rộng hơn cột Giới hạn, theo `essays.md`.
 | Hoán dụ | chat, bài kể, bài nghị luận | báo cáo không gọi người bằng tên bộ phận khi kể lỗi ("phòng IT làm sập web"), vì câu giấu mất ai làm việc gì |
 | Phép đối | nhan đề, câu mở của bài kể | câu đối xứng lặp ở nhiều đoạn là văn AI slop |
 | Nói quá | chat với người quen, bài kể khi người đọc biết là phóng đại | không dùng trong tài liệu, báo cáo, thư, kiến nghị; mục con Nói quá |
-| Chơi chữ, câu hỏi tu từ | không dùng trong văn công việc; bài nghị luận dùng câu hỏi tu từ ở chỗ chuyển ý, một hai lần, có câu trả lời ngay sau (`essays.md`) | câu hỏi tu từ ở `machine-tells.md`, bảng B |
+| Chơi chữ, câu hỏi tu từ | không dùng trong văn công việc; bài nghị luận dùng câu hỏi tu từ ở chỗ chuyển ý hay chỗ cảm xúc dồn lên, có câu trả lời ngay sau (`essays.md`) | câu hỏi tu từ ở `machine-tells.md`, bảng B |
 
 ### Nói quá
 
