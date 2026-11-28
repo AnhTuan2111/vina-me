@@ -58,21 +58,22 @@ Người viết bài nghị luận có quyền thích, thương, giận, và ph�
 và cách nói về chi tiết, không qua tính từ chấm điểm. "Đoạn kết vô cùng xúc động" không cho người đọc cảm gì; "Liên vừa nhận ra
 mình nhỏ bé như ngọn đèn của chị Tí thì giấc ngủ đã kéo cô đi" cho người đọc tự thấy xót.
 
-Từ ngữ biểu cảm phải hợp đối tượng. Bài tập trong sách Ngữ văn 12 đưa một đoạn bàn về thơ Huy Cận dùng những chữ như
-"chàng", "nỗi hắt hiu trong cõi trời", "hơi gió nhớ thương"; lời giải bài chỉ ra rằng thay chúng bằng "nhà thơ", "nỗi buồn
-trong không gian", "tình cảm nhớ thương" thì đoạn văn "sẽ thiếu cảm xúc". Từ biểu cảm hay là từ vừa đúng nghĩa vừa mang giọng của đối tượng đang bàn.
+Từ ngữ biểu cảm phải hợp đối tượng. Bài tập trong sách Ngữ văn 12 đưa một đoạn bàn về thơ Huy Cận dùng những chữ như "chàng",
+"nỗi hắt hiu trong cõi trời", "hơi gió nhớ thương"; lời giải bài chỉ ra rằng thay chúng bằng "nhà thơ", "nỗi buồn trong không
+gian", "tình cảm nhớ thương" thì đoạn văn "sẽ thiếu cảm xúc". Từ biểu cảm hay là từ vừa đúng nghĩa vừa mang giọng của đối
+tượng đang bàn.
 
 Xưng "tôi" khi nói cảm nhận riêng ("Đọc tới đó, tôi hiểu vì sao hai đứa trẻ cố thức"). "Ta", "chúng ta" chỉ dùng khi câu nói
 về mọi người đọc thật, không dùng để mở câu kiểu "Chúng ta có thể thấy". Bài nộp, bài thi, bài đăng trang trọng không xưng
 "mình, bạn"; bài blog thì theo bảng Giọng ở `SKILL.md`.
 
 Cảm xúc không thay được sự thật. Người viết không bịa cảm xúc của tác giả ("Thạch Lam đã khóc khi viết"), không bịa trải
-nghiệm của mình, không gán cho nhân vật ý nghĩ tác phẩm không viết.
+nghiệm của mình, không gán cho nhân vật ý nghĩ mà tác phẩm không viết.
 
-Bài nghị luận văn học được đoán ý nghĩ của nhân vật, vì đọc ra điều tác phẩm không nói thẳng là việc của người bình. Nhưng
-câu đoán phải mang dấu của người đọc: "có lẽ", "tôi đọc thấy", "như thể". Câu nói chắc về ý nghĩ, động cơ của nhân vật
-("Sơn không hề nghĩ tới lời khen", "bác Hiên mang áo trả vì sợ mang tiếng") chỉ viết khi truyện viết ra đúng ý ấy; không thì
-đó là chi tiết bịa. Lời nhân vật tự nói ra lý do thì giữ lý do ấy, không thay bằng lý do người viết thấy hay hơn.
+Bài nghị luận văn học được đoán ý nghĩ của nhân vật, vì đọc ra điều mà tác phẩm không nói thẳng là việc của người bình. Nhưng
+câu đoán phải mang dấu của người đọc: "có lẽ", "tôi đọc thấy", "như thể". Câu nói chắc về ý nghĩ, động cơ của nhân vật ("Sơn
+không hề nghĩ tới lời khen", "bác Hiên mang áo trả vì sợ mang tiếng") chỉ viết khi truyện viết ra đúng ý ấy; không thì đó là
+chi tiết bịa. Lời nhân vật tự nói ra lý do thì giữ lý do ấy, không thay bằng lý do người viết thấy hay hơn.
 
 Chi tiết phụ cũng phải đúng. Bài kể lại một việc nhỏ (ai xách nước, ai nhóm lửa, ai chạy về lấy áo) thì mở tệp ra xem lại
 câu đó, đừng kể theo trí nhớ, vì người chấm và cô giáo dò được từng chi tiết.
@@ -248,7 +249,7 @@ câu hỏi 5 phải tự đọc.
 
 ## Ví dụ
 
-Câu mở do một agent viết theo bản đầu của tệp này, người dùng chấm hỏng ngay từ câu đầu:
+Câu mở dưới đây do một agent viết theo bản đầu của tệp này, và người dùng chấm bài hỏng ngay từ câu ấy:
 
 > Cả truyện "Hai đứa trẻ" chỉ có một chuyến tàu đi qua phố huyện trong vài giây, vậy mà Thạch Lam dành gần ba nghìn chữ cho
 > buổi tối chờ nó.
@@ -266,7 +267,8 @@ Mở gián tiếp, dẫn từ vị trí của tác giả trong nhóm văn:
 > Nếu như các nhà văn thuộc Tự lực văn đoàn miêu tả cuộc sống với tất cả những gì đẹp nhất, trong sáng nhất thì Thạch Lam lại
 > tìm cho mình một lối đi riêng.
 
-Một đoạn thân bài của bài mẫu (đã sửa vài lỗi gõ của trang), cho thấy phân tích chi tiết, so sánh với tác phẩm khác và lời bình có cảm xúc đi cùng nhau:
+Một đoạn thân bài của bài mẫu (đã sửa vài lỗi gõ của trang), cho thấy phân tích chi tiết, so sánh với tác phẩm khác và lời
+bình có cảm xúc đi cùng nhau:
 
 > Tiếng trống thu không là âm thanh quen thuộc xuất hiện thường nhật, trở thành một mảnh linh hồn của buổi chiều phố huyện,
 > tạo cho phố huyện cái vẻ bình lặng đến nao nao buồn. […] Đây hoàn toàn không phải là tiếng trống thúc sưu thuế bức bách

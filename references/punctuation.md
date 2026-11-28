@@ -107,10 +107,10 @@ hai vế ấy không phải câu ghép, nên tách bằng dấu chấm.
 Dấu hai chấm có bốn việc: đứng trước lời trích, trước một danh sách, trước vế giải thích cho vế đứng trước, và trước lời
 giải nghĩa ở cuối câu.
 
-Hai việc sau dễ thành thói quen. Từ khoảng ba chỗ trong văn bản dưới 800 tiếng là thành khuôn (`machine-tells.md`, bảng A),
-và khi đó đổi bớt sang "vì", "tức là", hoặc tách câu. "Pod restart: probe hết giờ. Ổ đầy: log không xoay vòng." đọc như
-ghi chú; viết thành câu thì quan hệ hiện ra: "Pod restart vì probe hết giờ, còn ổ đầy vì log không xoay vòng." Câu văn
-cũng không viết định nghĩa theo khuôn "Tên: lời giải thích".
+Hai việc sau dễ thành thói quen. Văn bản dưới 800 tiếng mà dùng hai việc này từ khoảng ba chỗ là thành khuôn
+(`machine-tells.md`, bảng A), và khi đó đổi bớt sang "vì", "tức là", hoặc tách câu. "Pod restart: probe hết giờ. Ổ
+đầy: log không xoay vòng." đọc như ghi chú; viết thành câu thì quan hệ hiện ra: "Pod restart vì probe hết giờ, còn ổ đầy
+vì log không xoay vòng." Câu văn cũng không viết định nghĩa theo khuôn "Tên: lời giải thích".
 
 ## Dấu chấm phẩy
 

@@ -1,7 +1,7 @@
 # Gửi góp ý về skill thành issue
 
-Người dùng chê một câu agent viết thì phần lớn là chuyện của bài đó: sửa xong là hết. Nhưng có lúc cái sai nằm ở chính skill,
-ví dụ một quy tắc khuyên kiểu câu mà người dùng thấy gượng, một loại văn bản skill chưa nói tới, `lint.mjs` báo nhầm, script
+Người dùng chê một câu mà agent viết thì phần lớn là chuyện của bài đó: sửa xong là hết. Nhưng có lúc cái sai nằm ở chính skill,
+ví dụ một quy tắc khuyên kiểu câu mà người dùng thấy gượng, một loại văn bản mà skill chưa nói tới, `lint.mjs` báo nhầm, script
 cài lỗi. Những chỗ đó tác giả skill cần biết để sửa cho mọi người dùng. Vì vậy agent ghi chúng lại trong lúc làm, rồi hỏi
 người dùng có muốn gửi thành issue trên repo `github.com/AnhTuan2111/vina-me` không.
 
@@ -20,8 +20,8 @@ Một chỗ có khi chỉ do bài này đặc biệt, nhưng ghi lại vẫn hơ
 
 Làm xong việc chính mà sổ có dòng mới của phiên này thì hỏi người dùng một lần, ở một dòng cuối lời trả, có muốn gửi các dòng
 ấy thành góp ý không. Đồng ý thì soạn bản nháp từ các dòng đó theo các bước dưới. Máy không có `gh` mà người dùng cũng không có
-tài khoản GitHub thì chỉ đường dẫn của sổ, để họ gửi tệp ấy cho người cài skill cho họ (qua chat, email). Người dùng không muốn
-gửi thì sổ vẫn giữ trên máy, và lần sau chỉ hỏi về dòng mới.
+tài khoản GitHub thì đưa họ đường dẫn của sổ, để họ gửi tệp ấy cho người cài skill cho họ (qua chat, email). Người dùng không
+muốn gửi thì sổ vẫn giữ trên máy, và lần sau chỉ hỏi về dòng mới.
 
 ## Khi nào hỏi
 
@@ -29,7 +29,8 @@ Agent hỏi khi lời chê hay góp ý nhắm vào cách skill làm việc:
 
 - văn agent viết theo skill vẫn bị chê là máy móc, rời rạc, văn mẫu, và lỗi lặp lại sau khi đã sửa theo quy tắc;
 - người dùng nói một quy tắc của skill sai, thừa, hay thiếu một trường hợp;
-- script của skill (các script `install-*.mjs`, `memory.mjs`, `lint.mjs`, `learn-from-sessions.mjs`, script xuất Word) báo lỗi hay chạy sai;
+- script của skill (các script `install-*.mjs`, `memory.mjs`, `lint.mjs`, `learn-from-sessions.mjs`, script xuất Word) báo
+  lỗi hay chạy sai;
 - người dùng nói thẳng muốn góp ý cho skill.
 
 Người dùng chỉ sửa dữ kiện, con số, ý của bài, hay chê thứ không do skill quyết (mô hình chậm, công cụ khác lỗi), thì không
@@ -40,7 +41,7 @@ Lời nào do người dùng hiểu nhầm skill, như tưởng `lint.mjs` báo 
 nhầm ở đâu (dòng nào, ký tự nào), và không đưa chuyện đó vào issue, kể cả dưới dạng một đề xuất phụ. Trước khi nói script lỗi
 thì chạy thử nó trên một tệp nhỏ hoặc đọc đoạn code bắt lỗi ấy; chưa kiểm tra thì chỉ được ghi là đoán.
 
-Trong lời trả, các lời chê không do skill gom vào một đoạn. Đoạn ấy mở bằng một câu nói luôn có mấy chỗ và chúng không do
+Trong lời trả, các lời chê không do skill thì gom vào một đoạn. Đoạn ấy mở bằng một câu nói luôn có mấy chỗ và chúng không do
 skill, kiểu "Ba chỗ còn lại không do skill, nên không vào góp ý:", rồi mỗi chỗ một câu: lời chê nào, do đâu, đã làm gì. Câu
 nào đưa số đo (thời gian chạy, số dòng, mã ký tự) thì nói trước nó trả lời lời chê nào, kiểu "Chuyện xuất Word lâu: chạy lại
 script chỉ mất hai giây, nên ...", để người đọc che câu trước đi vẫn biết vì sao có con số đó.
@@ -59,14 +60,14 @@ Lời chê trúng một script mà bản sửa vẫn dính, vì chữ bị bắt
 này: chạy script lên bản mới vẫn ra dòng đó, giữ vì sao, và chỗ báo nhầm ấy đã vào bản nháp góp ý. Không nói thì người dùng
 chạy lại thấy lỗi cũ, tưởng chưa sửa.
 
-Đối chiếu bản cũ với dữ kiện gốc thì chỉ bỏ lời tả việc mà dữ kiện không có (cách làm cũ của người nhận, vị trí trên màn, lời
-hứa). Tên riêng có sẵn trong bản cũ mà người dùng không chê (tên hệ thống, tên đơn vị, tên phân hệ) thì giữ, kể cả khi tin
+Đối chiếu bản cũ với dữ kiện gốc thì chỉ bỏ lời tả việc mà dữ kiện không có (cách làm cũ của người nhận, vị trí trên màn hình,
+lời hứa). Tên riêng có sẵn trong bản cũ mà người dùng không chê (tên hệ thống, tên đơn vị, tên phân hệ) thì giữ, kể cả khi tin
 nhắn đưa dữ kiện không nhắc tới, và không đếm nó vào số chi tiết bịa. Chưa chắc cái tên ấy có thật thì vẫn giữ nó rồi hỏi
-trong lời trả. Bỏ trước hỏi sau thì người dùng gửi ngay sẽ gửi đi một văn bản không nói là của hệ thống nào.
+trong lời trả. Bỏ trước hỏi sau thì người dùng mà gửi ngay sẽ gửi đi một văn bản không nói là của hệ thống nào.
 
 Lời chê nằm ở chỗ skill chưa có loại văn bản ấy thì bản sửa không dựa được vào skill. Khi đó tự hỏi người nhận mở văn bản ra
 cần biết gì trước, rồi đặt điều đó vào câu đầu: thư mời họp thì họp gì, lúc nào, ở đâu; thông báo đổi giá thì giá mới áp từ
-ngày nào. Việc phía người viết làm (cài đặt, tạm dừng, chuẩn bị) và lý do của nó đi sau. Bản sửa vẫn theo mọi luật khác của
+ngày nào. Việc mà phía người viết làm (cài đặt, tạm dừng, chuẩn bị) và lý do của nó đi sau. Bản sửa vẫn theo mọi luật khác của
 skill, và đọc lại từng câu như bất kỳ bản sửa nào. Văn bản gửi người nhận kiểu này hay dính hai mẫu dịch sát (đuôi "với N thay
 đổi", bị động không nói ai làm), nên soát theo `document-types.md`, mục Thông báo gửi khách, bài đăng công khai.
 
@@ -84,15 +85,15 @@ giọng vừa sai xưng hô), thì vẫn là một chỗ sai, một bản. Bản
 dùng không chê thì không nhét thêm vào.
 
 Tiêu đề là một câu nói chỗ sai, như "Quy tắc hỏi rồi đáp bị áp cho cả thư gửi sếp". Loại văn bản bị chê thì gọi bằng một tên
-suốt bản nháp: lấy tên người dùng gọi, lần đầu có thể kèm một tên giải nghĩa trong ngoặc, từ đó chỉ dùng tên ấy, không đổi qua
-"thông báo gửi khách", "văn bản phát hành" cho đỡ lặp.
+suốt bản nháp: lấy tên mà người dùng gọi, lần đầu có thể kèm một tên giải nghĩa trong ngoặc, từ đó chỉ dùng tên ấy, không đổi
+qua "thông báo gửi khách", "văn bản phát hành" cho đỡ lặp.
 
 Thân có bốn mục, giữ nguyên bốn tên này:
 
 - **Người dùng nói gì**: lời phàn nàn, trích nguyên văn trong ngoặc kép, giữ cả chữ viết thường, chữ số, lối gõ tắt của người
-  dùng; chỉ thay những thứ bước 4 bảo thay.
+  dùng; chỉ thay những thứ mà bước 4 bảo thay.
 - **Skill đã làm gì**: loại văn bản đang viết, đoạn bị chê (tối đa mười dòng); lỗi của script thì chép dòng output. Câu tả cả
-  bản cũ ("đoạn nào cũng ...", "mọi đoạn ...") thì đếm lại trên bản cũ. Số script báo là số chỗ bị bắt, không phải tổng số
+  bản cũ ("đoạn nào cũng ...", "mọi đoạn ...") thì đếm lại trên bản cũ. Số mà script báo là số chỗ bị bắt, không phải tổng số
   đoạn, nên bản cũ có đoạn không bị bắt thì viết "N đoạn liền nhau ..." chứ không viết "đoạn nào cũng".
 - **Lẽ ra thế nào**: theo lời người dùng, kèm quy tắc nào của skill dính vào (tên tệp, tên mục). Cách viết mục này ở mấy đoạn
   ngay dưới.
@@ -113,8 +114,8 @@ bước lọc khác của script (độ dài tối thiểu, vùng được dò, 
 bắt sẽ hiện ra như "vẫn bị báo". Soát từng ví dụ có lọt các điều kiện đó không; không chạy qua script được thì ghi rõ chỉ mới
 thử riêng đoạn nào.
 
-Lời chê về một loại văn bản skill chưa nói tới thì ngoài quy tắc đã bị áp nhầm, nêu cả hai chỗ loại ấy lẽ ra phải có: bảng loại
-văn bản ở `document-types.md` (bước 1 của mục Quy trình trong `SKILL.md` dựa vào tệp này để chọn loại) và bảng Giọng của
+Lời chê về một loại văn bản mà skill chưa nói tới thì ngoài quy tắc đã bị áp nhầm, nêu cả hai chỗ mà loại ấy lẽ ra phải có: bảng
+loại văn bản ở `document-types.md` (bước 1 của mục Quy trình trong `SKILL.md` dựa vào tệp này để chọn loại) và bảng Giọng của
 `SKILL.md`. Nói đã tìm tên loại ấy ở hai chỗ đó mà không thấy, rồi viết đề xuất cho từng tệp. Chỉ đề xuất sửa quy tắc bị áp
 nhầm thì tác giả vá được một câu mà loại văn bản ấy vẫn không có chỗ.
 
@@ -135,10 +136,10 @@ Trước khi đưa, chạy thử từng bản nháp với `--dry-run` (cách ch�
 nháp, cả tiêu đề lẫn thân, ngay trong lời trả. Ghi thêm ra tệp thì được, nhưng chỉ đưa đường dẫn hay tóm tắt thì người dùng
 phải mở tệp mới duyệt được.
 
-Sau các bản nháp là một hai câu gồm: repo công khai nên đã che những gì, chưa gửi gì, đồng ý thì gửi bằng `scripts/feedback.mjs`.
-Ví dụ: "Issue nằm ở repo công khai nên trong cả hai bản mình đã thay tên khách, tên người và số liệu dự án bằng chữ chung. Mình
-chưa gửi gì; bạn đọc xong đồng ý thì mình gửi bằng `scripts/feedback.mjs`." Người dùng muốn sửa thì sửa theo ý họ, và có câu
-đồng ý mới gửi.
+Sau các bản nháp là một hai câu gồm: repo công khai nên đã che những gì, chưa gửi gì, đồng ý thì gửi bằng
+`scripts/feedback.mjs`. Ví dụ: "Issue nằm ở repo công khai nên trong cả hai bản mình đã thay tên khách, tên người và số liệu
+dự án bằng chữ chung. Mình chưa gửi gì; bạn đọc xong đồng ý thì mình gửi bằng `scripts/feedback.mjs`." Người dùng muốn sửa
+thì sửa theo ý họ, và có câu đồng ý mới gửi.
 
 Lúc soát bằng `--dry-run`, đọc lại từng câu của bản nháp và cả lời trả theo luật như mọi văn bản khác. Văn góp ý hay dính chữ
 "đúng", "chính" để nhấn, kiểu "chạy lại vẫn ra đúng dòng này", "lỗi xoay quanh đúng chữ đó", "agent viện chính quy tắc ấy";
@@ -164,13 +165,13 @@ từng dòng: là dữ liệu của dự án thì thay bằng chữ chung, là c
 
 ### 7. Đưa link
 
-Đưa người dùng link script in ra. Máy có `gh` đã đăng nhập thì đó là link issue vừa tạo. Chưa có thì đó là link trang tạo
+Đưa người dùng link mà script in ra. Máy có `gh` đã đăng nhập thì đó là link issue vừa tạo. Chưa có thì đó là link trang tạo
 issue đã điền sẵn: người dùng mở, đăng nhập GitHub, xem lại rồi bấm "Submit new issue". Người dùng không có tài khoản GitHub
 thì họ gửi link đó cho người có tài khoản, hoặc báo thẳng cho tác giả.
 
 Link có giới hạn độ dài, mà chữ có dấu khi vào link dài lên sáu tới chín lần, nên bản nháp tiếng Việt quá khoảng 2.000 ký tự
 có thể bị cắt đuôi. Khi đó script in dòng "Link chỉ mang được ..." kèm mục bị cắt giữa chừng và các mục bị mất. Chép lại dòng
-ấy cho người dùng và chỉ tệp nháp để họ dán nốt phần còn lại vào ô nội dung trước khi bấm gửi. Thấy dòng này ngay ở lần chạy
+ấy cho người dùng và chỉ cho họ tệp nháp để dán nốt phần còn lại vào ô nội dung trước khi bấm gửi. Thấy dòng này ngay ở lần chạy
 thử thì nói luôn trong câu kết của bước 5.
 
 ## Thứ không bao giờ gửi

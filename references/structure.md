@@ -49,8 +49,8 @@ Mỗi đoạn nói một nội dung. Đề mục và số thứ tự giúp thôn
 Câu đầu nói ngay đang bàn về cái gì; thư và văn bản công việc thì nói ngay viết để làm gì. Câu thứ hai là một thứ cụ thể:
 một trường hợp có tên, một con số, một chi tiết thấy được.
 
-Người đọc đã đưa ra một cách đoán sai thì cách mở ấy nhường chỗ. Câu đầu nêu cách đoán đó, câu thứ hai "Nhưng" kèm dữ kiện
-bác nó (`core-rules.md`, điều 1).
+Người đọc đã đưa ra một cách đoán sai thì cách mở ấy nhường chỗ. Câu đầu nêu cách đoán đó, câu thứ hai mở bằng "Nhưng" kèm dữ
+kiện bác nó (`core-rules.md`, điều 1).
 
 Mở bằng câu hỏi hay một sự việc thì nó phải dính trực tiếp tới điều sắp bàn. Bài giảng mở bằng một tình huống cụ thể làm
 người đọc cần câu trả lời, rồi mới nêu câu hỏi của bài. Bài nào cũng không dựng cảnh, không mở bằng bối cảnh thời đại hay
@@ -64,8 +64,8 @@ chính nó, để người đọc tự thấy.
 
 ## Triển khai một ý
 
-Một ý đi theo thứ tự: nêu ý, lý do, bằng chứng hoặc ví dụ, rồi nói bằng chứng đó cho thấy gì. Nhận định trừu tượng được trả
-ngay bằng một việc thấy được; nhiều việc thì xếp tăng dần. Mỗi ý phụ đỡ trực tiếp cho ý chính, và các ý không chọi nhau.
+Một ý đi theo thứ tự: nêu ý, lý do, bằng chứng hoặc ví dụ, rồi nói bằng chứng đó cho thấy gì. Nhận định trừu tượng đi kèm
+ngay một việc thấy được; nhiều việc thì xếp tăng dần. Mỗi ý phụ đỡ trực tiếp cho ý chính, và các ý không chọi nhau.
 Mỗi quy tắc, mỗi yêu cầu kèm lý do của nó.
 
 Giải thích một thứ lạ thì đi từ thứ người đọc đã thấy tận mắt. Một vật thì tả hình dáng và chỗ đặt, gọi tên, rồi nói nó
@@ -77,7 +77,7 @@ từng phần, rồi nói các phần gặp nhau thế nào. Hai khái niệm d�
 Số liệu đi cùng mốc so sánh, và ví dụ thì cụ thể, có tên. Ví dụ về người nêu tên khi dữ kiện có tên, không có thì gọi theo
 vai. Ví dụ ấy nói cả mặt được và cái giá phải trả, bằng việc cụ thể chứ không bằng tính từ.
 
-Muốn bác một cách nghĩ thì nêu nó ra trước bằng ví dụ của chính nó, rồi mới "Nhưng".
+Muốn bác một cách nghĩ thì nêu nó ra trước bằng ví dụ của chính nó, rồi mới tới "Nhưng".
 
 ## Chuyển ý
 
@@ -132,13 +132,13 @@ Viết xong thì soát theo thứ tự dưới, từ nội dung tới câu chữ
    và tên trong lời khuyên: đoạn nào có từ hai trở lên? Thứ nào có hai tên, kể cả lời giải nghĩa bị dùng lại như tên, động
    từ cho cùng một việc, và hai thứ dính nhau bị dùng lẫn (máy chủ với máy ảo)? Hai khái niệm dễ lẫn đã đứng thành một câu
    cặp có "còn" chưa, kể cả khi thứ nhất chỉ mới xuất hiện làm bằng chứng? Câu cặp có giữ nguyên động từ, chữ trạng thái
-   câu trước đã dùng không? Tên dashboard, biểu đồ chép lại có mang chữ chưa giải không? Việc người dùng hỏi tới (chạy lại,
-   bị chặn) đã có câu nói thành phần nào làm chưa, hay chỉ còn câu bị động?
+   mà câu trước đã dùng không? Tên dashboard, biểu đồ chép lại có mang chữ chưa giải nghĩa không? Việc người dùng hỏi
+   tới (chạy lại, bị chặn) đã có câu nói thành phần nào làm chưa, hay chỉ còn câu bị động?
 5. Che câu trước đi, câu sau còn đứng một mình được không? Đọc liền câu cuối đoạn trước với câu đầu đoạn sau ở mọi chỗ
-   xuống dòng. Câu nào nói lại con số câu trước vừa dẫn, hay dặn lại việc cần đo đã dặn?
+   xuống dòng. Câu nào nói lại con số mà câu trước vừa dẫn, hay dặn lại việc cần đo đã dặn?
 6. Phép so sánh có mang con số hay phép chia mà bài nói là chưa biết không? Nó có đứng ngay sau đoạn nó minh hoạ không, hay
    đoạn ngay trước đã sang ý khác (số liệu, chỗ chưa biết)? Câu mở phép so sánh có chủ ngữ không, vế đem ra so có phải việc
-   người ta làm thật không, chỗ hết đúng có nói ngược câu bài vừa viết không? Câu nào nghiêng kết luận ngược lời rào ngay
+   người ta làm thật không, chỗ hết đúng có nói ngược câu mà bài vừa viết không? Câu nào nghiêng kết luận ngược lời rào ngay
    trước nó? Lý do bài đưa cho một phép trừ không ra có nói số nào chứa thứ gì không, hay chỉ nói hai số do hai bên đo?
 7. Có dấu hiệu văn AI slop, văn mẫu nào lặp thành khuôn không?
 8. Câu nào phải đọc hai lần mới hiểu? Câu nào quá khoảng 40 tiếng, mang từ ba đoạn mã trở lên, hay có thành phần phụ chú

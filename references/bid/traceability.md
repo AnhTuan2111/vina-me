@@ -1,7 +1,7 @@
 # Bảng truy vết
 
 Bảng truy vết trả lời một câu: yêu cầu nào của HSMT được đáp ứng ở đâu trong hồ sơ, bằng tài liệu nào. Người soát dùng nó để
-chắc không bỏ sót; BA dùng nó để biết còn phải đi lấy tài liệu gì.
+chắc chắn không bỏ sót yêu cầu nào; BA dùng nó để biết còn phải đi lấy tài liệu gì.
 
 | Mã | Yêu cầu (nguyên văn) | Nguồn | Mức | Mục đáp ứng | Chứng minh | Trạng thái |
 |---|---|---|---|---|---|---|

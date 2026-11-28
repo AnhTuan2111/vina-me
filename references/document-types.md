@@ -67,9 +67,10 @@ mục Kết).
 Giải thích một hiện tượng, một lỗi, một thứ xảy ra thế nào trong tài liệu, bài viết, báo cáo phân tích lỗi thì đi theo tám
 bước dưới đây. Trả lời trong chat thì chỉ giữ ba bước: tả, nguyên nhân, và việc cần làm, mỗi bước một hai câu.
 
-Người đọc đã tự đoán thì trước bước 1 nêu cách đoán đó, rồi "Nhưng" kèm dữ kiện bác nó (`core-rules.md`, điều 1). Chẳng
-hạn: "Bạn đoán Nginx chặn. Nhưng log Nginx ghi request đã đi qua và app trả 403, nên chỗ chặn là app." Bài giảng kể chỗ người học đoán sai
-thì thêm một câu ở giữa: câu thứ hai nói vì sao cách đoán nghe hợp lý, câu thứ ba mới "Nhưng" (`teaching-checklist.md`).
+Người đọc đã tự đoán thì trước bước 1 nêu cách đoán đó, rồi "Nhưng" kèm dữ kiện bác nó (`core-rules.md`, điều 1). Chẳng hạn:
+"Bạn đoán Nginx chặn. Nhưng log Nginx ghi request đã đi qua và app trả 403, nên chỗ chặn là app." Bài giảng kể chỗ mà người
+học đoán sai thì thêm một câu ở giữa: câu thứ hai nói vì sao cách đoán nghe hợp lý, câu thứ ba mới "Nhưng"
+(`teaching-checklist.md`).
 
 1. Tả biểu hiện: nó trông thế nào, xảy ra ở đâu, khi nào.
 2. Gọi tên nó, ngay sau phần tả. Gọi tên trước thì người đọc phải nhớ một chữ chưa có nghĩa: "Lỗi này là deadlock. Hai
@@ -92,7 +93,7 @@ ngay sau đó, khi… thì).
 
 ## Hướng dẫn, quy tắc, quy trình
 
-Người đọc hướng dẫn vừa đọc vừa làm, nên hướng dẫn sắp theo thứ tự họ cần:
+Người đọc hướng dẫn vừa đọc vừa làm, nên hướng dẫn sắp theo thứ tự mà họ cần:
 
 1. Nhan đề nêu tên việc.
 2. Một hai câu nói việc này làm ở đâu, khi nào, để làm gì.
@@ -105,14 +106,13 @@ Người đọc hướng dẫn vừa đọc vừa làm, nên hướng dẫn sắ
 8. Một ví dụ hoặc tình huống áp dụng.
 9. Thông tin thực dụng (giờ, địa chỉ, liên hệ) đặt thành mục riêng ở cuối.
 
-Mỗi bước nói kết quả mong đợi, để người làm biết mình đã làm xong bước đó chưa. Bước chỉ ghi việc người làm; việc máy tự làm
-sau đó viết nối vào bước trước ("Bấm Lưu, hệ thống gửi thư xác nhận"), không thành một bước riêng.
+Mỗi bước nói kết quả mong đợi, để người làm biết mình đã làm xong bước đó chưa. Bước chỉ ghi việc của người làm; việc máy tự
+làm sau đó viết nối vào bước trước ("Bấm Lưu, hệ thống gửi thư xác nhận"), không thành một bước riêng.
 
-Soát một hướng dẫn người khác viết cũng theo khung này. Chỗ hay hỏng là thiếu phần chuẩn bị, thiếu kết quả mong đợi, con
+Soát một hướng dẫn mà người khác viết cũng theo khung này. Chỗ hay hỏng là thiếu phần chuẩn bị, thiếu kết quả mong đợi, con
 số chọi nhau giữa hai bước, và nguy hiểm nhất là lời dặn của một bước đứng sau bước đó. Người làm theo thứ tự sẽ chạy lệnh
-trước khi đọc tới lời dặn: "3. Chạy `DROP DATABASE shop;` 4. Lưu ý: sao lưu trước khi làm bước 3." Lời dặn phải thành
-bước đứng trước: "3. Sao lưu: `pg_dump shop > shop.sql`. Chưa có tệp `shop.sql` thì dừng ở đây. 4. Chạy `DROP DATABASE
-shop;`"
+trước khi đọc tới lời dặn: "3. Chạy `DROP DATABASE shop;` 4. Lưu ý: sao lưu trước khi làm bước 3." Lời dặn phải thành bước
+đứng trước: "3. Sao lưu: `pg_dump shop > shop.sql`. Chưa có tệp `shop.sql` thì dừng ở đây. 4. Chạy `DROP DATABASE shop;`"
 
 ## Báo cáo
 
@@ -154,7 +154,7 @@ Người nhận thư công việc đọc dòng tiêu đề để biết có ph�
 người nhận, có hạn thì kèm hạn, không quá khoảng 15 tiếng. Tiêu đề chung chung kiểu "Cập nhật tiến độ dự án" không cho họ
 biết gì.
 
-Câu đầu thư nói mục đích bằng chính việc đó. Cụm mở kiểu "Em viết mail này để", "Em xin gửi chị" bỏ đi câu vẫn đứng được,
+Câu đầu thư nói mục đích bằng chính việc đó. Cụm mở kiểu "Em viết mail này để", "Em xin gửi chị" bỏ đi thì câu vẫn đứng được,
 nên bỏ. Sau câu đầu là thông tin người nhận cần biết, như thời gian, địa điểm, con số.
 
 Lỗi hay gặp nhất ở câu đầu là báo tình hình trước rồi mới tới việc cần người nhận làm. "Bên em đã xong bốn trong năm hạng
@@ -186,16 +186,16 @@ Thư kết bằng điều cần ở người nhận, kèm hạn. Câu kết ki�
 bên mình, nên người nhận đọc tới cuối thư lại thấy việc của họ chìm ở đoạn giữa. Đưa việc đó lên câu kết: "Anh chọn giúp em
 một cách trước 17h thứ Ba để bên em kịp sắp người; anh chọn xong thì bên em gửi tài khoản dùng thử."
 
-Thư chỉ dùng dữ kiện được đưa, không thêm lời giải thích mình tự suy ra. Thời hạn tính theo một sự việc ("hai tuần sau khi
+Thư chỉ dùng dữ kiện được đưa, không thêm lời giải thích mà mình tự suy ra. Thời hạn tính theo một sự việc ("hai tuần sau khi
 ký") thì giữ nguyên, không tự đổi ra ngày.
 
-Viết thư gửi ra ngoài từ tài liệu nội bộ (đoạn chat nhóm, ghi chú họp) thì đọc hết tài liệu rồi mới viết. Một dữ kiện bị
-tin sau sửa thì lấy tin chốt sau cùng, hay theo nguồn có thẩm quyền (biên bản, người được giao chốt), không lấy tin đầu
-tiên gặp. Những thứ chỉ người trong nhóm được biết thì bỏ ra: đường dẫn, tài khoản, mật khẩu, sự cố nội bộ, lỗi của một
-người trong nhóm, lời trách người nhận. Việc chậm thì nói phần thuộc về bên mình, không nói khéo sang người nhận. Phần nói
-thêm với người dùng chỉ nêu chỗ thiếu dữ kiện (email người nhận, chữ ký, địa chỉ) hay chỗ nguồn còn lệch mà chưa ai chốt.
-Chỗ người dùng hay người chốt đã tự sửa trong tài liệu thì không kể lại. Phần nói thêm cũng không giải thích mình đã viết thế
-nào, không tự chấm bài, không đếm số tiếng cho người dùng xem.
+Viết thư gửi ra ngoài từ tài liệu nội bộ (đoạn chat nhóm, ghi chú họp) thì đọc hết tài liệu rồi mới viết. Một dữ kiện bị tin
+sau sửa thì lấy tin chốt sau cùng, hay theo nguồn có thẩm quyền (biên bản, người được giao chốt), không lấy tin đầu tiên gặp.
+Những thứ chỉ người trong nhóm được biết thì bỏ ra: đường dẫn, tài khoản, mật khẩu, sự cố nội bộ, lỗi của một người trong
+nhóm, lời trách người nhận. Việc chậm thì nói phần thuộc về bên mình, không nói khéo sang người nhận. Phần nói thêm với người
+dùng chỉ nêu chỗ thiếu dữ kiện (email người nhận, chữ ký, địa chỉ) hay chỗ nguồn còn lệch mà chưa ai chốt. Chỗ mà người dùng
+hay người chốt đã tự sửa trong tài liệu thì không kể lại. Phần nói thêm cũng không giải thích mình đã viết thế nào, không tự
+chấm bài, không đếm số tiếng cho người dùng xem.
 
 Viết xong thì đọc lại thư theo năm câu hỏi, mỗi câu ứng với một chỗ hay sai:
 
@@ -222,9 +222,9 @@ hành động nói gián tiếp: hình thức là hỏi, việc làm là nhờ. 
 họp được không ạ?" hay "Anh duyệt giúp em bản này trước giờ họp nhé." Với đồng nghiệp ngang hàng thì câu cầu khiến có
 "giúp" và "nhé" là đủ. Một tin chỉ cần một câu nhờ; đừng đổi mọi câu thành câu hỏi.
 
-Báo lỗi, báo tình hình thì ngược lại, dùng câu trần thuật. Câu hỏi kiểu "Anh có biết job backup tối qua lỗi không?" bắt
-người nhận đoán là mình đang được hỏi hay đang được báo. Viết thẳng "Job backup tối qua lỗi lúc 2h05, em đang chạy lại."
-thì người nhận biết ngay việc gì xảy ra. Thư gửi khách theo cùng hai luật này: việc nhờ khách có từ nhờ hay là câu hỏi, còn tình hình
+Báo lỗi, báo tình hình thì ngược lại, dùng câu trần thuật. Câu hỏi kiểu "Anh có biết job backup tối qua lỗi không?" bắt người
+nhận đoán là mình đang được hỏi hay đang được báo. Viết thẳng "Job backup tối qua lỗi lúc 2h05, em đang chạy lại." thì người
+nhận biết ngay việc gì xảy ra. Thư gửi khách theo cùng hai luật này: việc nhờ khách có từ nhờ hay là câu hỏi, còn tình hình
 dự án viết bằng câu trần thuật.
 
 Tin đi kèm một thư hay một tệp thì không chép lại nội dung thư, vì người nhận mở thư ra là đọc được. Tin cũng không báo

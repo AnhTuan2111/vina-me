@@ -11,7 +11,8 @@ việc đó trong lời nhờ; cách làm từng việc ở hai mục cuối t�
 
 Agent đang chạy lệnh tự chấm, ngay trong phiên hiện tại. Trước khi chấm, agent đọc `SKILL.md` và tệp về văn AI slop
 `references/machine-tells.md`. Agent đọc thêm tệp về nối câu `references/cohesion.md` và tệp về dẫn dắt
-`references/storytelling.md`. Bài giảng thì đọc thêm `references/teaching.md`. Người dùng có hồ sơ giọng riêng thì đọc cả tệp ấy.
+`references/storytelling.md`. Bài giảng thì đọc thêm `references/teaching.md`. Người dùng có hồ sơ giọng riêng thì đọc cả tệp
+ấy.
 
 ## Cách đọc
 
@@ -27,8 +28,8 @@ không tính là chấm. Ở mỗi câu, người chấm tự hỏi:
 - Câu có nói sai sự thật, con số có lệch với chỗ khác trong bài không.
 - Hết bài thì hỏi thêm năm câu theo phương châm hội thoại ở `core-rules.md`. Bài thiếu hay thừa so với điều người đọc
   cần (lượng)? Có điều nào viết chắc mà chưa có bằng chứng (chất)? Có đoạn nào lạc đề (quan hệ)? Có chỗ nào mơ hồ
-  (cách thức)? Xưng hô và lời chỉ lỗi có hợp người đọc không (lịch sự)? Mỗi chỗ phạm trừ theo mức của lỗi cụ thể ở bảng
-  dưới.
+  (cách thức)? Xưng hô và lời chỉ lỗi có hợp người đọc không (lịch sự)? Mỗi chỗ vi phạm thì trừ theo mức của lỗi cụ thể ở
+  bảng dưới.
 
 Output lệnh, code và lời trích nguyên văn thì không chấm văn, chỉ kiểm tra có khớp với lời kể quanh nó không.
 
@@ -51,16 +52,16 @@ Ranh giới giữa các mức:
 - Chữ hay cụm có trong `machine-tells.md` tính mức vừa ("Redis đóng vai trò bộ nhớ đệm"); chữ kém tự nhiên khác tính mức
   nhẹ ("app tiến hành khởi động", sửa thành "app khởi động").
 
-Điểm cuối là 100 trừ tổng các chỗ, và phải khớp với danh sách. Một số luật riêng của loại văn bản tính là nặng: bài giảng
-hẹn bài sau, dùng chữ chưa dạy mà câu cần, câu hỏi kiểm tra lộ đáp án hay bắt đoán điều chưa kể; văn bản hành chính sai
-thể thức ở phần đầu, phần cuối. Luật riêng khác tính theo bảng trên.
+Điểm cuối là 100 trừ tổng các chỗ, và phải khớp với danh sách. Một số lỗi phạm luật riêng của loại văn bản tính là nặng:
+bài giảng hẹn bài sau, dùng chữ chưa dạy mà câu cần, câu hỏi kiểm tra lộ đáp án hay bắt đoán điều chưa kể; văn bản hành
+chính sai thể thức ở phần đầu, phần cuối. Lỗi phạm luật riêng khác tính theo bảng trên.
 
 ## Lời trả của người chấm
 
 Dòng đầu là `ĐIỂM: <số>`. Bài do chính agent viết trong phiên này thì dòng thứ hai ghi rằng người chấm cũng là người viết.
-Người dùng cần biết điều đó, vì người viết đọc lại bài mình hay đọc theo ý đã có trong đầu nên dễ lướt qua câu tối nghĩa. Sau đó là danh sách xếp từ
-nặng tới nhẹ, mỗi chỗ gồm vị trí (tệp và dòng), câu gốc nguyên văn trong ngoặc kép, mức và vấn đề, rồi câu thay thế viết
-sẵn. Không khen, không nhận xét chung, không có phần "điểm tốt".
+Người dùng cần biết điều đó, vì người viết đọc lại bài mình hay đọc theo ý đã có trong đầu nên dễ lướt qua câu tối nghĩa. Sau
+đó là danh sách xếp từ nặng tới nhẹ, mỗi chỗ gồm vị trí (tệp và dòng), câu gốc nguyên văn trong ngoặc kép, mức và vấn đề, rồi
+câu thay thế viết sẵn. Không khen, không nhận xét chung, không có phần "điểm tốt".
 
 ## Nhờ một agent khác chấm
 
@@ -74,12 +75,12 @@ chỗ khác.
 
 Việc này chỉ làm khi người dùng nhờ sửa tới một mốc điểm, ví dụ "sửa tới khi đạt 90". Người viết sửa theo danh sách rồi
 chấm lại cả bài. Người dùng nói số lần liền phải đạt mốc, hay nói lần chấm lại do agent khác làm, thì theo lời đó; không nói
-thì agent tự chấm lại và một lần từ mốc trở lên là đạt.
+thì agent tự chấm lại và một lần chấm từ mốc trở lên là đạt.
 
 Điểm của người chấm dao động. Cùng một bản, hai người chấm cho điểm cách nhau khoảng 5, và người chấm sau hay bắt lỗi ở
 chính câu vừa sửa. Vì vậy:
 
-- Mốc người dùng đặt cao (97 cho ba lần liền) thì báo trước rằng mốc ấy gần như không đạt được, vì mỗi lần chấm mới đều
+- Người dùng đặt mốc cao (97 cho ba lần liền) thì báo trước rằng mốc ấy gần như không đạt được, vì mỗi lần chấm mới đều
   tìm thêm vài chỗ nhẹ.
 - Hai lần chấm chê ngược nhau ở cùng một câu (lần này bảo viết "lên GitLab", lần sau bảo viết "lên đó") thì giữ bản đang
   có, không sửa qua sửa lại.

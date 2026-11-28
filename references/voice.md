@@ -37,8 +37,8 @@ Bảng này dành cho văn của chính người viết. Viết theo giọng m�
 sơ bên dưới.
 
 Chữ viết không có ngữ điệu, nét mặt, cử chỉ, nên phải bù bằng thứ khác: dấu câu, trợ từ ("chính", "chỉ"), hình, bảng, sơ
-đồ, và nói thành lời điều mà khi nói mình chỉ cần nhấn giọng. Người đọc lại đọc được nhiều lần, nên văn viết phải chịu được
-đọc kỹ: các đoạn không chọi nhau, và một thứ chỉ có một tên.
+đồ, và nói thành lời điều mà khi nói mình chỉ cần nhấn giọng. Người đọc thì đọc lại được nhiều lần, nên văn viết phải chịu
+được lúc họ đọc kỹ: các đoạn không chọi nhau, và một thứ chỉ có một tên.
 
 ## Giọng thân mật mặc định
 
@@ -119,8 +119,8 @@ Mỗi mục trong khuôn có luật ghi của nó:
 - Mục "Phản ứng thật" chỉ giữ câu nói cảm giác của chính người đó (ngại, mệt, vui, xấu hổ), vì mục này là kho cảm xúc được
   phép dùng khi viết. Lời dặn, lời cấm ("đừng viết kiểu…") thì đưa vào "Không bao giờ làm" hay "Cách nói".
 - Mục "Không bao giờ làm" không suy ra từ văn người khác mà người đó chỉ dán lại hay chuyển tiếp. Họ dán một bài để khen
-  hay để cho người khác coi thì bài đó không phải bằng chứng họ ghét kiểu văn ấy. Viết xong thì đối mục này với mục "Nguồn"
-  và "Phản ứng thật": ba mục không được nói ngược nhau về cùng một văn bản.
+  hay để cho người khác coi thì bài đó không phải bằng chứng họ ghét kiểu văn ấy. Viết xong thì đối chiếu mục này với mục
+  "Nguồn" và "Phản ứng thật": ba mục không được nói ngược nhau về cùng một văn bản.
 - Hồ sơ lưu thành tệp Markdown riêng, tên kiểu `voice-profile-<tên>.md`, ở thư mục người dùng nói; họ không nói thì để cạnh
   tệp vào. Muốn lần sau agent tự nạp hồ sơ thì đó là việc của bộ nhớ dùng chung (`SKILL.md`, mục Bộ nhớ cho agent).
 
@@ -130,15 +130,15 @@ Hồ sơ cho biết chọn chữ nào, chứ không cho phép bịa việc ngư�
 cách chọn chữ của họ, nhưng không chép lỗi gõ, viết tắt của văn nói.
 
 Hồ sơ riêng đè lên bảng "Giọng thân mật mặc định". Chữ người đó không dùng (0 lần) thì không đưa vào bài, kể cả khi bảng mặc
-định xếp nó vào cột Dùng. Văn bản đứng tên người đó thì giữ chữ họ dùng nhiều với nhóm người nghe ấy, kể cả chữ của một
+định xếp nó vào cột Dùng. Văn bản đứng tên người đó thì giữ chữ họ dùng nhiều với nhóm người nhận văn bản ấy, kể cả chữ của một
 vùng; còn chữ họ chỉ dùng với bạn thân thì không mang sang văn gửi người ngoài.
 
 Tầng giọng chọn theo người nhận văn bản. Văn gửi khách hay người ngoài lấy cột "với khách" trong bảng Xưng hô, không lấy
 xưng hô với bạn hay với cấp dưới, và giữ một cách xưng suốt bài. Hồ sơ lệch với ngữ cảnh, chẳng hạn hồ sơ giọng thân mật mà
 văn bản là báo cáo, thì giữ cách lập luận và độ thẳng thắn, đổi xưng hô.
 
-Cảm xúc trong bài chỉ lấy từ mục "Phản ứng thật đã ghi lại", giữ nguyên ý và chữ chính. Câu đó nói với người nghe khác thì
-chỉ đổi xưng hô ("tui" thành "mình"), viết đủ chữ viết tắt, bỏ biểu tượng gõ tay; không phóng to, không thêm cảm xúc mới.
+Cảm xúc trong bài chỉ lấy từ mục "Phản ứng thật đã ghi lại", giữ nguyên ý và chữ chính. Câu đó vốn nói với người nghe khác
+thì chỉ đổi xưng hô ("tui" thành "mình"), viết đủ chữ viết tắt, bỏ biểu tượng gõ tay; không phóng to, không thêm cảm xúc mới.
 
 Một con số người đó chưa chốt thì tìm trong mẫu câu họ đã nói cho tình huống ấy (kiểu "còn tính, chốt rồi báo") và đặt
 thẳng vào bài, để bài dán đi được ngay. Văn gửi người ngoài không để ô trống kiểu "[__]". Mẫu không có câu nào như vậy thì

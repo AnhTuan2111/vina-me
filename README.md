@@ -4,9 +4,9 @@
 
 Bạn nhờ AI viết một đoạn tiếng Việt, đọc lên là nhận ra ngay văn AI slop: câu nào cũng ngắn cũn như gạch đầu dòng, chữ thì
 to tát mà chẳng nói được gì cụ thể, hết đoạn lại chốt thêm một câu tổng kết. vina-me dạy agent viết khác đi, để câu sau nối
-vào câu trước như một người thật đang kể, dù là bài giảng, báo cáo gửi sếp, văn bản hành chính, email hay tệp Word. Cùng cách
-viết ấy, cộng thêm các script dựng tệp Word và soát lỗi, agent còn làm được phần kỹ thuật của hồ sơ dự thầu. Cài thêm bộ nhớ
-dùng chung thì Claude Code, Codex và omp cùng nhớ điều đã dặn, nên dặn agent một lần là đủ.
+vào câu trước như một người thật đang kể, dù là bài giảng, báo cáo gửi sếp, bài văn nghị luận, văn bản hành chính, email
+hay tệp Word. Cùng cách viết ấy, cộng thêm các script dựng tệp Word và soát lỗi, agent còn làm được phần kỹ thuật của hồ sơ
+dự thầu. Cài thêm bộ nhớ dùng chung thì Claude Code, Codex và omp cùng nhớ điều đã dặn, nên dặn agent một lần là đủ.
 
 ## Cài
 
@@ -24,7 +24,7 @@ script, cần phần nào thì chạy phần đó:
 | Lệnh | Bạn được gì |
 |---|---|
 | `node scripts/install-remind.mjs` | mỗi tin bạn gửi đi kèm một dòng nhắc agent viết theo vina-me, kể cả câu trả lời ngắn (Claude Code, omp) |
-| `node scripts/install-memory.mjs` | bộ nhớ ở `~/agent-memory/`: agent đọc ở đầu mỗi phiên, tự ghi khi bạn sửa hay khen một cách làm. Script hỏi bảy câu; thêm `--github` để lưu bộ nhớ vào một repo GitHub riêng tư |
+| `node scripts/install-memory.mjs` | bộ nhớ ở `~/agent-memory/`: agent đọc ở đầu mỗi phiên, tự ghi khi bạn sửa hay khen cách agent làm. Script hỏi bảy câu; thêm `--github` để lưu bộ nhớ vào một repo GitHub riêng tư |
 | `node scripts/install-autosave.mjs` | bộ nhớ tự lưu lên repo khi mở và đóng phiên Claude Code; thêm `--schedule` để máy tự lưu cả khi đăng nhập và mỗi 2 giờ |
 | `node scripts/install-update.mjs` | vina-me tự lên bản phát hành mới khi mở phiên Claude Code |
 
@@ -40,7 +40,7 @@ chỗ bạn phải tự làm: Claude đưa một mã tám ký tự và một lin
 
 ## Dùng
 
-Mở phiên Claude Code mới rồi cứ nhờ viết, sửa văn tiếng Việt như thường, agent tự dùng skill. Muốn gọi thẳng một việc thì gõ
+Mở phiên Claude Code mới rồi cứ nhờ viết, sửa văn tiếng Việt như thường, agent tự dùng skill. Muốn nói thẳng việc cần làm thì gõ
 `/vina-me` kèm tên việc:
 
 | Gõ | Làm gì |
@@ -64,9 +64,9 @@ trình nào chạy bằng tài khoản của bạn, kể cả agent, vẫn giả
 Khi một cơ quan nhà nước ở Việt Nam muốn mua thiết bị hay phần mềm, họ đăng một bộ hồ sơ mời thầu lên mạng đấu thầu quốc
 gia, và công ty nào muốn bán thì nộp lại một bộ hồ sơ dự thầu. Phần tốn công nhất của hồ sơ dự thầu thường là phần kỹ thuật.
 Hồ sơ mời thầu có một bảng kê yêu cầu kỹ thuật cho từng thứ cần mua, kiểu máy chủ phải có ít nhất bao nhiêu RAM, bảo hành bao
-lâu, và một bảng tiêu chí để tổ chấm thầu cho điểm. Công ty phải trả lời từng dòng của bảng yêu cầu, câu trả lời nào cũng phải
-chỉ ra được trang nào trong tài liệu của hãng sản xuất ghi thông số đó và tô vàng chỗ ấy cho người chấm thấy, tài liệu tiếng
-Anh thì kèm bản dịch, rồi viết một bản thuyết minh đi lần lượt qua các tiêu chí chấm.
+lâu, và một bảng tiêu chí để tổ chấm thầu cho điểm. Công ty phải trả lời từng dòng của bảng yêu cầu. Câu trả lời nào cũng
+phải chỉ ra trang nào trong tài liệu của hãng sản xuất ghi thông số đó, và tô vàng chỗ ấy cho người chấm thấy; tài liệu tiếng
+Anh thì kèm bản dịch. Sau đó công ty viết một bản thuyết minh đi lần lượt qua các tiêu chí chấm.
 
 Bạn đưa agent thư mục gói thầu, gồm hồ sơ mời thầu, giấy tờ của công ty, catalog thiết bị nếu có, và một bộ hồ sơ dự thầu cũ
 công ty từng nộp để làm mẫu về hình thức. Agent tự đọc hồ sơ mời thầu để tìm bảng yêu cầu và bảng tiêu chí nằm ở đâu, rồi dựng
@@ -78,18 +78,19 @@ lại đủ bộ tệp kỹ thuật, mỗi tệp một bản Word và một bả
 - bản thuyết minh theo các tiêu chí chấm, tài liệu kỹ thuật phần mềm, tiến độ, các bản cam kết;
 - báo cáo cho người duyệt hồ sơ.
 
-Thiếu tài liệu hãng thì agent tự tìm trên trang chính thức của hãng, câu tìm chỉ có tên sản phẩm. Thông số nào chưa có tài
-liệu chứng minh, hay điều gì phải để người duyệt quyết, thì agent để dấu `[cần xác nhận: ...]` ngay chỗ đó chứ không tự điền.
-Trong tệp Word, dấu này được tô nền vàng để người duyệt thấy ngay, và báo cáo kê lại từng dấu cùng các giấy tờ cần xin thêm. Tài liệu gói thầu không rời máy: agent không gửi chúng lên mạng.
+Thiếu tài liệu hãng thì agent tự tìm trên trang chính thức của hãng, và câu tìm kiếm chỉ chứa tên sản phẩm. Thông số nào chưa
+có tài liệu chứng minh, hay điều gì phải để người duyệt quyết, thì agent để dấu `[cần xác nhận: ...]` ngay chỗ đó chứ không
+tự điền. Trong tệp Word, dấu này được tô nền vàng để người duyệt thấy ngay, và báo cáo kê lại từng dấu cùng các giấy tờ cần
+xin thêm. Tài liệu gói thầu không rời máy: agent không gửi chúng lên mạng.
 
 ## Góp ý
 
 Bạn không cần nhớ để góp ý. Trong lúc làm, hễ gặp chỗ skill hướng dẫn sai hay script chạy lỗi, agent tự ghi một dòng vào sổ
-góp ý trên máy, chỉ ghi chuyện của skill chứ không chép tài liệu của bạn. Làm xong việc, agent hỏi một câu có gửi các dòng ấy
-thành issue ở repo này không, soạn bản nháp cho bạn xem, bạn đồng ý mới gửi. Máy có `gh` đăng nhập thì issue được tạo luôn;
-chưa có thì agent đưa link trang tạo issue đã điền sẵn. Không dùng GitHub thì gửi tệp sổ cho người đã cài skill cho bạn. Thấy
-skill viết chưa ổn thì cứ chê ngay trong phiên, agent cũng ghi lại như thế. Issue ở đây ai cũng đọc được, nên bản nháp không
-bao giờ mang tài liệu nội bộ.
+góp ý trên máy, chỉ ghi chuyện của skill chứ không chép tài liệu của bạn. Làm xong việc, agent hỏi bạn có muốn gửi các dòng
+ấy thành issue ở repo này không. Bạn muốn thì agent soạn bản nháp cho bạn xem, bạn đồng ý mới gửi. Máy có `gh` đăng nhập thì
+issue được tạo luôn; chưa có thì agent đưa link trang tạo issue đã điền sẵn. Không dùng GitHub thì gửi tệp sổ cho người đã
+cài skill cho bạn. Thấy skill viết chưa ổn thì cứ chê ngay trong phiên, agent cũng ghi lại như thế. Issue ở đây ai cũng đọc
+được, nên bản nháp không bao giờ mang tài liệu nội bộ.
 
 ## Chỉ cài skill, không cần bộ nhớ
 

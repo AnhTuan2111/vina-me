@@ -36,18 +36,18 @@ nào đúng thì sửa lại cho khớp", vì cách hỏi đó coi sẵn một g
 Với hai câu lệch mức chắc chắn, chính gốc đã nói là chưa chắc. Hạ câu nói chắc xuống mức thấp hơn là giữ ý tác giả, chứ
 không phải đổi ý. Lời trả có thể nêu chỗ lệch, nhưng câu nói chắc không ở lại trong bản sửa.
 
-Hai lỗi liên kết của văn kỹ thuật trong bảng thì phải đọc lại sau mỗi lần sắp lại câu. Câu mở đoạn có "ban đầu", "lúc đầu", "sau đó" phải có
-việc làm mốc ngay trong câu hoặc câu trước. Cụm "cùng lúc đó", "trong cùng khoảng thời gian" phải có mốc giờ ở câu ngay
-trước để trỏ về.
+Hai lỗi liên kết của văn kỹ thuật trong bảng thì phải đọc lại sau mỗi lần sắp lại câu. Câu mở đoạn có "ban đầu", "lúc đầu",
+"sau đó" phải có việc làm mốc ngay trong câu hoặc câu trước. Cụm "cùng lúc đó", "trong cùng khoảng thời gian" phải có mốc giờ
+ở câu ngay trước để trỏ về.
 
 Sửa văn có sẵn thì chỉ hỏi người dùng về chỗ vênh, hay chỗ đọc được hai cách mà bản sửa phải chọn một mới viết được. Các
 câu hỏi ấy gom thành một dòng ở cuối câu trả lời, viết thành câu hỏi thật có dấu hỏi, như cách hỏi ở trên. Chỗ gốc thiếu
 mà bản sửa vẫn giữ như gốc, như một việc chưa có người nhận hay một câu ước lượng chưa có con số, thì không hỏi, vì người
 viết gốc đã biết điều đó.
 
-Dòng nêu thay đổi cũng phải khớp với bản sửa. Có một giá trị đã dời chỗ hay đổi sự việc nó gắn thì không ghi "mọi con số
-giữ nguyên". Bản sửa không theo một thứ tự ở từng đoạn thì không gọi tên thứ tự ấy ("xếp lại theo ảnh hưởng, lý do, xử
-lý"). Dời câu để khớp một thứ tự thì đọc lại câu ngay sau chỗ dời, theo dòng "Dời câu sang đoạn khác" ở mục G của
+Dòng nêu thay đổi cũng phải khớp với bản sửa. Có một giá trị đã dời chỗ hay đổi sự việc mà nó gắn với thì không ghi "mọi
+con số giữ nguyên". Bản sửa không theo một thứ tự ở từng đoạn thì không gọi tên thứ tự ấy ("xếp lại theo ảnh hưởng, lý do,
+xử lý"). Dời câu để khớp một thứ tự thì đọc lại câu ngay sau chỗ dời, theo dòng "Dời câu sang đoạn khác" ở mục G của
 `machine-tells.md`.
 
 ## Lỗi câu

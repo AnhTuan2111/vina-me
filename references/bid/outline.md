@@ -4,7 +4,7 @@
 
 - Phần lớn (A, B, C…) là các tiêu chí tổng quát trong mục Tiêu chuẩn đánh giá về kỹ thuật của HSMT đang làm: đủ số tiêu chí,
   giữ thứ tự, tên giữ nguyên chữ của HSMT.
-- Dưới mỗi phần lớn, mỗi ý HSMT kể ra trong điều kiện đạt có một mục con riêng, tên sát chữ HSMT. Ví dụ tiêu chí "Giải
+- Dưới mỗi phần lớn, mỗi ý mà HSMT kể ra trong điều kiện đạt có một mục con riêng, tên sát chữ HSMT. Ví dụ tiêu chí "Giải
   pháp kỹ thuật, biện pháp tổ chức cung cấp, lắp đặt, bảo hành, bảo trì hàng hóa" kể "biện pháp phòng cháy, chữa cháy; biện
   pháp bảo đảm vệ sinh môi trường, an toàn lao động; đào tạo hướng dẫn sử dụng, chuyển giao công nghệ" thì mỗi biện pháp một
   mục, kể cả khi gói chỉ có phần mềm.
@@ -25,7 +25,7 @@
 HSMT có tiêu chí khác (kết quả thực hiện hợp đồng, điều kiện thương mại, tác động môi trường…) thì làm theo HSMT.
 
 Phần lớn ngắn (uy tín nhà thầu chỉ có vài câu cam kết) vẫn mở trang mới, nên viết thành bảng Nội dung | Cam kết của Nhà thầu
-đủ từng ý của điều kiện đạt và dẫn tới bản cam kết tương ứng, để trang không gần trắng.
+kê đủ từng ý của điều kiện đạt và dẫn tới bản cam kết tương ứng, để trang không gần trắng.
 
 ## Dàn mục hồ sơ mẫu (gói phần mềm, đánh giá theo hồ sơ yêu cầu)
 
@@ -55,11 +55,11 @@ tin; quy trình và môi trường phát triển; năng lực tổ chức, cán 
 
 ## Bộ tệp
 
-Thuyết minh là một tệp trong bộ hồ sơ kỹ thuật (`package.md`). Mục "Bảng đáp ứng yêu cầu kỹ thuật hàng hóa" của phần A không chép
-lại bảng: kể hàng hóa chào theo từng hạng mục (hãng, model, ký mã hiệu, xuất xứ, số lượng) trong bảng ngắn, dẫn sang KT-01 và mã
-tài liệu hãng. Tài liệu kỹ thuật phần mềm là tệp riêng; thuyết minh tóm tắt và dẫn "KT-04, mục 3.2".
+Thuyết minh là một tệp trong bộ hồ sơ kỹ thuật (`package.md`). Mục "Bảng đáp ứng yêu cầu kỹ thuật hàng hóa" của phần A không
+chép lại bảng: kể hàng hóa chào theo từng hạng mục (hãng, model, ký mã hiệu, xuất xứ, số lượng) trong bảng ngắn, dẫn sang
+KT-01 và mã tài liệu hãng. Tài liệu kỹ thuật phần mềm là tệp riêng; thuyết minh tóm tắt và dẫn "KT-04, mục 3.2".
 
 ## Kết quả `03-outline.md`
 
-Danh sách tệp và mã; cây đề mục từng tệp tới cấp 2, mỗi mục ghi các mã truy vết nó đáp ứng; bảng so với dàn mục mẫu; danh sách
-bản cam kết và người ký từng bản.
+Danh sách tệp và mã; cây đề mục từng tệp tới cấp 2, mỗi mục ghi các mã truy vết mà mục đó đáp ứng; bảng so với dàn mục
+mẫu; danh sách bản cam kết và người ký từng bản.
