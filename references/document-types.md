@@ -154,6 +154,11 @@ biết gì.
 Câu đầu thư nói mục đích bằng chính việc đó. Cụm mở kiểu "Em viết mail này để", "Em xin gửi chị" bỏ đi câu vẫn đứng được,
 nên bỏ. Sau câu đầu là thông tin người nhận cần biết, như thời gian, địa điểm, con số.
 
+Lỗi hay gặp nhất ở câu đầu là báo tình hình trước rồi mới tới việc cần người nhận làm. "Bên em đã xong bốn trong năm hạng
+mục của đợt bàn giao." là một câu báo; người nhận đọc xong vẫn chưa biết thư muốn gì ở họ, và việc cần họ làm bị đẩy xuống
+đoạn hai. Câu đầu nên là: "Hạng mục báo cáo chưa kịp bàn giao ngày 10/3, nên bên em cần anh chọn một trong hai cách xử lý
+dưới đây." Bốn hạng mục đã xong là tình hình, đi ở câu sau.
+
 Yêu cầu, hạn chót và lý do của hạn gói trong một câu, để người nhận thấy cả ba cùng lúc. Yêu cầu có nhiều phần (vật cần,
 số lượng, nơi nhận, ai nhận) thì phần chi tiết vào ngoặc đơn hay vế phụ của câu ghép, còn hạn và lý do vẫn ở cùng câu với
 động từ nhờ. "Anh gửi giúp em bản scan hợp đồng đã ký và giấy ủy quyền. Hạn là 12h thứ Năm 5/3, vì bên em phải nộp hồ sơ
@@ -170,8 +175,13 @@ Người nhận đọc trên điện thoại, hay có lời dặn "viết ngắn
 không quá khoảng 250 tiếng, không tính lời chào, chữ ký, tiêu đề. Đếm trước khi đưa. Quá thì bỏ câu nhắc lại và cụm thừa,
 không nén câu cho cụt.
 
-Thư viết liền thành thư: không chia mục in đậm, không gạch đầu dòng, trừ khi có một danh sách thật. Xưng hô theo quan hệ với
-người nhận; không hỏi rồi đáp, không dựng cảnh. Thư kết bằng điều cần ở người nhận.
+Thư viết liền thành thư: không chia mục in đậm, không gạch đầu dòng, trừ khi có một danh sách thật. Nhãn in đậm ở đầu dòng
+("**Phương án A:**", "**Tình hình:**") cũng là đề mục, nên bỏ; danh sách phương án thì viết "Cách thứ nhất là…" hay để gạch
+đầu dòng trơn. Xưng hô theo quan hệ với người nhận; không hỏi rồi đáp, không dựng cảnh.
+
+Thư kết bằng điều cần ở người nhận, kèm hạn. Câu kết kiểu "Bên em sẽ gửi tài khoản dùng thử sau khi anh chọn." nói việc của
+bên mình, nên người nhận đọc tới cuối thư lại thấy việc của họ chìm ở đoạn giữa. Đưa việc đó lên câu kết: "Anh chọn giúp em
+một cách trước 17h thứ Ba để bên em kịp sắp người; anh chọn xong thì bên em gửi tài khoản dùng thử."
 
 Thư chỉ dùng dữ kiện được đưa, không thêm lời giải thích mình tự suy ra. Thời hạn tính theo một sự việc ("hai tuần sau khi
 ký") thì giữ nguyên, không tự đổi ra ngày.
@@ -181,7 +191,17 @@ tin sau sửa thì lấy tin chốt sau cùng, hay theo nguồn có thẩm quy�
 tiên gặp. Những thứ chỉ người trong nhóm được biết thì bỏ ra: đường dẫn, tài khoản, mật khẩu, sự cố nội bộ, lỗi của một
 người trong nhóm, lời trách người nhận. Việc chậm thì nói phần thuộc về bên mình, không nói khéo sang người nhận. Phần nói
 thêm với người dùng chỉ nêu chỗ thiếu dữ kiện (email người nhận, chữ ký, địa chỉ) hay chỗ nguồn còn lệch mà chưa ai chốt.
-Chỗ người dùng hay người chốt đã tự sửa trong tài liệu thì không kể lại.
+Chỗ người dùng hay người chốt đã tự sửa trong tài liệu thì không kể lại. Phần nói thêm cũng không giải thích mình đã viết thế
+nào, không tự chấm bài, không đếm số tiếng cho người dùng xem.
+
+Viết xong thì đọc lại thư theo năm câu hỏi, mỗi câu ứng với một chỗ hay sai:
+
+1. Câu đầu thân thư đã nói người nhận cần làm gì chưa, hay mới báo tình hình?
+2. Mỗi việc nhờ có nằm trọn trong một câu gồm việc, hạn và lý do của hạn không?
+3. Câu nhờ khách, nhờ sếp có từ nhờ hay là câu hỏi không, hay đang là câu cầu khiến trần như "Chị gửi danh sách trước thứ
+   Ba."?
+4. Câu kết là việc cần ở người nhận, hay việc bên mình sẽ làm?
+5. Thư còn nhãn in đậm, đề mục, dấu gạch dài nào không?
 
 ## Tin nhắn công việc
 

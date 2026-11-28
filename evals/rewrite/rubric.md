@@ -57,7 +57,7 @@ dòng nêu thay đổi chính và lý do. Câu hỏi về chỗ vênh được t
 | Câu hỏi về giờ rollback không tự đứng được (không nói câu nào ghi giờ nào, không nêu cách hiểu có thể) | 3 |
 | Hỏi người dùng quá một câu, hoặc hỏi điều đọc gốc là biết | 2 |
 | Ghi bản sửa ra tệp thay vì trả trong chat khi không được nhờ | 3 |
-| Giọng không trung tính: xưng "mình, bạn, chúng tôi", hay giọng bài giảng, hỏi rồi đáp | 4 |
+| Bản sửa có giọng không trung tính: xưng "mình, bạn, chúng tôi", hay giọng bài giảng, hỏi rồi đáp. Dòng thay đổi và câu hỏi sau bản sửa là lời chat với người dùng, xưng "mình" ở đó không trừ | 4 |
 | Bỏ khung đoạn văn của gốc để chuyển cả bài thành bảng hay toàn gạch đầu dòng | 4 |
 
 ## C. Độ lưu loát, đọc tuần tự từng câu: 26 điểm
