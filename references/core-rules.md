@@ -598,7 +598,8 @@ gốc chép nguyên văn từ tệp, trọn câu, trong ngoặc kép, để tác
 ("câu nói về lịch backup", "lệnh ở Bước 3") thì tác giả phải tự đi tìm, nên chưa tính là có câu gốc. Mỗi
 mục một chỗ, không gộp bằng "thêm nữa". Chỗ thiếu thì câu gốc là câu liền trước nơi cần thêm, ghi "thiếu, thêm sau câu …".
 Gom nhiều câu vào một mục thì gọi tên lỗi của từng câu (`common-errors.md`). Lời soát dùng lại cái tên mình vừa đề xuất,
-không đổi sang tên khác. Lời trả nói script báo mấy chỗ, nhận chỗ nào, bỏ chỗ nào và vì sao. Người dùng dặn không sửa tệp
+không đổi sang tên khác. Lời trả nói script báo mấy chỗ, nhận chỗ nào, bỏ chỗ nào và vì sao. Số chỗ
+script báo là số dòng "-" trong phần "Cần sửa"; dòng "·" trong phần "Ghi chú" không tính vào số đó. Người dùng dặn không sửa tệp
 thì việc mình làm gọi là "tính lại", "kiểm tra lại", không gọi là sửa.
 
 Mấy luật sau hay bị quên khi soát. Bảy câu hỏi đọc từng câu nằm dưới bảng Trả kết quả trong `SKILL.md`.

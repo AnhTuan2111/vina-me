@@ -376,6 +376,21 @@ function lint(file, forceOfficial) {
     (found.length >= 3 ? report : notes).push(`một thứ nhiều tên: ${list}; chọn một tên dùng suốt văn bản`);
   }
 
+  // Thuật ngữ Kubernetes viết hoa giữa câu ("3 Pod bị restart"). Tài liệu Kubernetes có viết hoa tên object, nên chỉ báo khi
+  // cùng văn bản còn viết thường chữ đó hay chữ khác trong danh sách ("Pod" hoa mà "container" thường là hai quy ước lẫn
+  // nhau); viết hoa suốt bài thì chỉ ghi chú.
+  const plainProse = prose.replace(/`[^`\n]*`/g, ' ');
+  const K8S = ['Pod', 'Container', 'Deployment', 'Namespace', 'Ingress'];
+  const lowerAny = K8S.some((w) => new RegExp(`(?<![\\p{L}])${w.toLowerCase()}s?(?![\\p{L}])`, 'u').test(plainProse));
+  const capped = [];
+  for (const w of K8S) {
+    const mid = (plainProse.match(new RegExp(`(?<=[\\p{Ll}\\d,)%] )${w}s?(?![\\p{L}])`, 'gu')) || []).length;
+    if (mid) capped.push([w, mid, lowerAny]);
+  }
+  const cappedMixed = capped.filter(([, , l]) => l), cappedOnly = capped.filter(([, , l]) => !l);
+  if (cappedMixed.length) report.push(`thuật ngữ viết hoa giữa câu mà chỗ khác viết thường: ${cappedMixed.map(([w, n]) => `${w} (${n})`).join(', ')}; viết thường cả bài, chỉ tên riêng mới viết hoa`);
+  if (cappedOnly.length) notes.push(`thuật ngữ viết hoa giữa câu: ${cappedOnly.map(([w, n]) => `${w} (${n})`).join(', ')}; văn thường viết thường, giữ hoa khi theo quy ước của tài liệu Kubernetes`);
+
   // Chữ chỉ buổi ("mỗi đêm", "buổi sáng") đứng cùng đoạn với giờ cụ thể của buổi khác.
   const FITS = { đêm: (h) => h >= 20 || h <= 6, tối: (h) => h >= 17 || h <= 1, sáng: (h) => h >= 4 && h <= 11, trưa: (h) => h >= 10 && h <= 14, chiều: (h) => h >= 12 && h <= 18 };
   const clashes = [], quotedClashes = [];
@@ -435,7 +450,7 @@ function lint(file, forceOfficial) {
     if (guesses.length) notes.push(`lượng, mức chắc chắn trong lời tả hậu quả: ${guesses.slice(0, 4).join(', ')}; chỉ nói phần chắc (lỗi gì, dừng hay chạy tiếp), lượng ước chừng thì bỏ hoặc thêm "có thể"`);
     const body = raw.replace(/```[\s\S]*?```/g, ' ').replace(QUOTED, 'x');
     if (/(?<![\p{L}])(script|lint)(?![\p{L}])/iu.test(body) && !/\d+\s*(chỗ|báo|lỗi)/u.test(body)) {
-      report.push('lời soát nhắc tới script mà không nói nó báo mấy chỗ: ghi script báo N chỗ, nhận chỗ nào, bỏ chỗ nào và vì sao (báo nhầm, ghi chú · là chỗ thường giữ)');
+      report.push('lời soát nhắc tới script mà không nói nó báo mấy chỗ: ghi script báo N chỗ, nhận chỗ nào, bỏ chỗ nào và vì sao (báo nhầm); dòng ghi chú · không tính vào số này');
     }
   }
 
@@ -449,10 +464,16 @@ function lint(file, forceOfficial) {
   const bullets = (raw.match(/^\s*[-*]\s+\S/gm) || []).length;
   if (bullets >= 6 && labelled / bullets > 0.6) report.push(`${labelled}/${bullets} gạch đầu dòng mở bằng nhãn in đậm`);
 
-  for (const n of notes) console.log('  · ' + n + ' (có ít, xem từng chỗ rồi quyết)');
-  if (report.length) for (const r of report) console.log('  - ' + r);
-  else console.log('  không thấy chỗ nào máy đếm được mà cần sửa');
-  return report.length;
+  // Hai phần in tách nhau, mỗi phần có số đếm riêng: người soát văn người khác hay cộng lẫn ghi chú vào số chỗ cần sửa.
+  if (report.length) {
+    console.log(`  Cần sửa: ${report.length} chỗ (mỗi dòng "-" là một chỗ)`);
+    for (const r of report) console.log('  - ' + r);
+  } else console.log('  Cần sửa: 0 chỗ, không thấy chỗ nào máy đếm được mà cần sửa');
+  if (notes.length) {
+    console.log(`  Ghi chú: ${notes.length} dòng "·", chỉ để xem, không tính vào số cần sửa; xem từng chỗ rồi quyết`);
+    for (const n of notes) console.log('  · ' + n);
+  }
+  return [report.length, notes.length];
 }
 
 const args = process.argv.slice(2);
@@ -470,7 +491,7 @@ if (docx.length) {
   console.error(`Chưa đọc được tệp Word: ${docx.join(', ')}. Dựng lại kèm --text <tệp.md> (report-docx.mjs, official-doc-docx.mjs) rồi soát tệp .md đó.`);
   process.exit(1);
 }
-let total = 0;
-for (const f of files) { console.log(f); total += lint(f, forceOfficial); }
-console.log(`\n${total} chỗ cần xem lại. Xong bước này vẫn phải tự đọc hai lượt: người mới, và người bắt văn AI slop.`);
+let total = 0, noteTotal = 0;
+for (const f of files) { console.log(f); const [r, n] = lint(f, forceOfficial); total += r; noteTotal += n; }
+console.log(`\n${total} chỗ cần xem lại (dòng "-")${noteTotal ? `, ${noteTotal} ghi chú không tính (dòng "·")` : ''}. Xong bước này vẫn phải tự đọc hai lượt: người mới, và người bắt văn AI slop.`);
 console.log('Soát văn của người khác thì ghi trong lời trả: script báo mấy chỗ, nhận chỗ nào, bỏ chỗ nào và vì sao.');
