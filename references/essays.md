@@ -206,11 +206,11 @@ cho mấy lớp áo" là vế bổ nghĩa cho "buổi sáng". Vế phụ có ch�
 thì tách thành hai câu. Phần phụ chú đặt sau tên người ở cuối câu ("đến tay Hiên, cô bé chỉ còn một manh áo rách") cũng dễ
 đọc nhầm; viết thành vế có chữ nối ("đến tay Hiên, khi cô bé chỉ còn một manh áo rách") hay đưa lên trước.
 
-Lỗi thứ hai là danh từ rỗng đứng chỗ của một việc cụ thể. "Cậu đã nghĩ ngay đến một việc có thể làm cho bạn" bắt người đọc
+Danh từ rỗng là lỗi thứ hai: chữ chung chung đứng chỗ của một việc cụ thể. "Cậu đã nghĩ ngay đến một việc có thể làm cho bạn" bắt người đọc
 đoán việc ấy là gì, trong khi người viết biết rõ: đem cái áo bông cũ cho bạn. Gặp "một việc", "một điều", "một cách", "điều
 đó", "điều bà cần nhắc" thì hỏi việc ấy là gì và viết thẳng nó ra. Lối nói vòng chỉ dùng khi chính tác phẩm cố ý giấu.
 
-Lỗi thứ ba là cụm từ tự ghép mà người Việt không quen nói. "Vẻ thật của một đứa trẻ" đúng ý nhưng không ai viết thế; người
+Còn lỗi thứ ba là cụm từ tự ghép mà người Việt không quen nói. "Vẻ thật của một đứa trẻ" đúng ý nhưng không ai viết thế; người
 viết văn quen nói "vẻ hồn nhiên của một đứa trẻ". Cụm tự ghép hay sinh ra khi người viết nghĩ bằng ý rồi tìm chữ dịch cho
 từng ý, nên câu nghe như văn dịch: "nhận phần trách nhiệm về mình", "để tâm đến điều Sơn nhận ra", "làm rõ cái thiếu của
 Hiên", "những chỗ rách vốn quen mắt bỗng trở nên khó làm ngơ". Viết xong mỗi câu bình thì hỏi: cụm này đã gặp trong bài văn,
