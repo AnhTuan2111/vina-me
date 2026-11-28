@@ -227,9 +227,10 @@ Sau, theo thể thức văn bản hành chính:
 >
 > Đề nghị Sở Giáo dục và Đào tạo hướng dẫn cách ghi nhận các đầu sách không còn phiếu nhập gốc.
 
-Chủ ngữ là đơn vị chứ không phải "bọn mình". "Khoảng", "gần như đủ hết", "mấy chục" thay bằng con số có kỳ số liệu. Số
-viết theo kiểu Việt Nam. Ý đoán "chắc phải hỏi Sở" thành một kiến nghị cụ thể. Ba mục theo khung của Nghị định 09/2019.
-Bản "trước" thiếu con số 19 và 98,5% nên người viết phải đi tra lại; không có dữ kiện thì viết câu nói rõ chưa có số, không tự điền, không để ô trống.
+Chủ ngữ là đơn vị chứ không phải "bọn mình". "Khoảng", "gần như đủ hết", "mấy chục" thay bằng con số có kỳ số liệu. Số viết
+theo kiểu Việt Nam. Ý đoán "chắc phải hỏi Sở" thành một kiến nghị cụ thể. Ba mục theo khung của Nghị định 09/2019. Bản
+"trước" thiếu con số 19 và 98,5% nên người viết phải đi tra lại; không có dữ kiện thì viết câu nói rõ chưa có số, không tự
+điền, không để ô trống.
 
 ## 18. Một chuỗi việc kéo theo nhiều thuật ngữ
 
@@ -330,8 +331,8 @@ Trước:
 >
 > Pod vào `CrashLoopBackOff` vì liveness probe fail, kubelet restart container liên tục và pod lại crash.
 
-Người dùng đã gõ `CrashLoopBackOff` và liveness probe nhưng chưa hiểu, nên cả hai vẫn là thuật ngữ mới, và
-một câu mang ba thuật ngữ (thêm kubelet). Pod và container dùng lẫn cho cùng một thứ bị chạy lại. Exception đứng ở đoạn
+Người dùng đã gõ `CrashLoopBackOff` và liveness probe nhưng chưa hiểu, nên cả hai vẫn là thuật ngữ mới. Câu
+cuối mang tới ba thuật ngữ (thêm kubelet). Pod và container dùng lẫn cho cùng một thứ bị chạy lại. Exception đứng ở đoạn
 mở làm bằng chứng, còn liveness probe xuất hiện ở đoạn sau với khuôn khác, nên người đọc không thấy hai cách chết là
 một cặp.
 
@@ -369,8 +370,8 @@ Sau:
 > Chưa biết app cần bao lâu để khởi động xong nên cũng chưa biết liveness probe phải chờ bao lâu mới bắt đầu hỏi thăm.
 > Đo thời gian khởi động thật của app trước, rồi cho liveness probe chờ lâu hơn số đó, hoặc làm app khởi động nhanh hơn.
 
-Đoạn mở bằng chỗ chưa biết của đoạn trước, nói việc cần làm và lý do bằng lời thường. Tên trường cấu hình để khi người
-dùng hỏi tiếp.
+Đoạn mở bằng chỗ chưa biết của đoạn trước, nói việc cần làm và lý do bằng lời thường. Tên trường cấu hình để tới lúc
+người dùng hỏi tiếp.
 
 ## 25. Ẩn dụ mở không chủ ngữ, chỗ hết đúng nói ngược bài
 
@@ -383,9 +384,9 @@ Trước:
 > có thể chật, vì đồ người khác nằm ngoài ngăn. Ví von này hết đúng ở chỗ tủ mở ra là thấy đồ của ai, còn ổ thì chưa
 > biết phần ngoài log gồm gì.
 
-Câu mở bằng "Giống" mà không có cái gì giống, dấu hai chấm làm khung. Vế so là một luật không ai làm ngoài đời
-(dọn ngăn sao cho bằng cả tủ), nên đọc lần đầu không hiểu. Chỗ hết đúng nói "chưa biết gồm gì" trong khi đoạn trước vừa
-kể nó gồm gì, và bỏ qua chỗ người đọc dễ suy sai nhất: đồ người khác trong tủ thì nằm yên một cỡ.
+Câu mở bằng "Giống" mà không nói cái gì giống, rồi dùng dấu hai chấm làm khung. Vế so là một luật không ai làm
+ngoài đời (dọn ngăn sao cho bằng cả tủ), nên đọc lần đầu không hiểu. Chỗ hết đúng nói "chưa biết gồm gì" trong khi đoạn
+trước vừa kể phần ngoài log gồm gì, và bỏ qua chỗ người đọc dễ suy sai nhất: đồ người khác trong tủ thì nằm yên một cỡ.
 
 Sau:
 

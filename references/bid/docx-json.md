@@ -43,15 +43,16 @@ thì dùng khuôn dựng sẵn theo số đo của hồ sơ mẫu. Không cần 
 }
 ```
 
-- `cover`: khuôn có bìa thì đủ số dòng chữ của bìa khuôn, theo thứ tự (dòng nhắc lại tên tài liệu ở đầu thân, sau mục lục, của
-  khuôn tài liệu kỹ thuật cũng tính là một dòng bìa; chạy thử với `"cover": []` để script in đủ các dòng); sai số dòng thì script in ra các dòng của bìa khuôn
-  và dừng. Chữ dài hơn bìa khuôn thì script tự bớt khoảng trống để bìa vẫn vừa một trang. Dòng bìa nào của khuôn ghi thông
-  tin gói không có (khuôn có "GÓI THẦU SỐ ..." mà HSMT không đánh số gói) thì thay bằng thông tin cùng vai mà gói có: tên tài
-  liệu ("THUYẾT MINH ĐỀ XUẤT KỸ THUẬT") ở dòng đó, tên gói kèm số E-TBMT ở dòng tên gói.
+- `cover`: khuôn có bìa thì đủ số dòng chữ của bìa khuôn, theo thứ tự (dòng nhắc lại tên tài liệu ở đầu thân, sau mục lục,
+  của khuôn tài liệu kỹ thuật cũng tính là một dòng bìa; chạy thử với `"cover": []` để script in đủ các dòng); sai số dòng
+  thì script in ra các dòng của bìa khuôn và dừng. Chữ dài hơn bìa khuôn thì script tự bớt khoảng trống để bìa vẫn vừa một
+  trang. Dòng bìa nào của khuôn ghi thông tin mà gói không có (khuôn có "GÓI THẦU SỐ ..." mà HSMT không đánh số gói) thì thay
+  bằng thông tin cùng vai mà gói có: tên tài liệu ("THUYẾT MINH ĐỀ XUẤT KỸ THUẬT") ở dòng đó, tên gói kèm số E-TBMT ở dòng
+  tên gói.
 - Tên phần lớn, tài liệu con dài (giữ nguyên chữ HSMT): script tự dính hai chữ cuối để dòng cuối không còn một chữ ("NGHỆ");
   không tự đổi chữ của HSMT.
-- `part` là phần lớn (sang trang mới); `doc` là tài liệu con (sang trang mới, trừ khi ngay sau `part`); `h1`, `h2`, `h3` tự ghi
-  số vào chữ, script không đánh số.
+- `part` là phần lớn (sang trang mới); `doc` là tài liệu con (sang trang mới, trừ khi ngay sau `part`); `h1`, `h2`, `h3` thì
+  người viết tự ghi số vào chữ, script không đánh số.
 - Viết chữ đề mục như khuôn gõ, không tự viết hoa: khuôn mẫu gõ phần lớn và đề mục cấp 1 chữ thường ("A. Yêu cầu kỹ thuật
   của hàng hóa", "1. Giới thiệu phần mềm"), kiểu đoạn tự hiện chữ hoa trên trang, còn mục lục giữ chữ thường. Tài liệu con
   cũng viết chữ thường ("I. Bảng đáp ứng yêu cầu kỹ thuật hàng hóa"): với `tocStyle` mặc định, khuôn mẫu gõ chữ hoa tài liệu
@@ -64,21 +65,21 @@ thì dùng khuôn dựng sẵn theo số đo của hồ sơ mẫu. Không cần 
   chữ xanh đậm, hàng nhóm nền xám nhạt, ô có lề), sửa chỗ yếu của bảng mẫu (viền đen dày, nền xám nhạt khó phân biệt, chữ sát
   viền). `"template"` thì giữ kiểu bảng của khuôn. Cột có từ tiêu đề không vừa một dòng ("STT") được script tự nới, lấy bớt từ
   cột rộng nhất.
-- `table.widths` là phần trăm; `center` là các cột căn giữa (mặc định cột STT); hàng nhóm `bold`, `shade`. Hàng có ít ô hơn số
-  cột thì ô cuối trải ngang hết các cột còn lại (hàng nhóm `["B", "TRIỂN KHAI, ĐÀO TẠO"]`). Bảng rộng hết bề ngang chữ; trong khối
-  `gantt`, `landscape` thì theo bề ngang trang ngang.
+- `table.widths` là phần trăm; `center` là các cột căn giữa (mặc định cột STT); hàng nhóm `bold`, `shade`. Hàng có ít ô hơn
+  số cột thì ô cuối trải ngang hết các cột còn lại (hàng nhóm `["B", "TRIỂN KHAI, ĐÀO TẠO"]`). Bảng rộng hết bề ngang chữ;
+  trong khối `gantt`, `landscape` thì theo bề ngang trang ngang.
 - Đề mục, nhãn tự giữ với đoạn sau; đoạn `p` đứng ngay trước bảng, hình tự giữ với hàng đầu bảng. Đề mục vẫn rơi cuối trang
   (đoạn sau quá dài) thì `page-check.mjs` báo; sửa bằng cách thêm câu mở ngắn trước bảng hoặc chia đoạn.
 - `gantt` tự mở và đóng section ngang. `outro` là các khối in ngay dưới bảng cuối, trên trang ngang (câu "Nhà thầu cam kết
-  ..." kết phần tiến độ khi phần kết bằng bảng tiến độ). `dayOne` bắt buộc (mốc ngày 1, in ở tiêu đề mọi bảng). `intro` là các khối in trên
-  trang ngang đầu tiên trước bảng 1 (đề mục, câu mở). `title` là phần lớn đặt trên trang ngang, chỉ dùng khi cả phần tiến độ
-  chỉ có bảng theo ngày (như hồ sơ mẫu: "E. TIẾN ĐỘ"); `title` vào mục lục như mọi phần lớn. `landscape: [blocks]` đặt các khối
-  thường trên trang ngang.
+  ..." kết phần tiến độ khi phần kết bằng bảng tiến độ). `dayOne` bắt buộc (mốc ngày 1, in ở tiêu đề mọi bảng). `intro` là
+  các khối in trên trang ngang đầu tiên trước bảng 1 (đề mục, câu mở). `title` là phần lớn đặt trên trang ngang, chỉ dùng khi
+  cả phần tiến độ chỉ có bảng theo ngày (như hồ sơ mẫu: "E. TIẾN ĐỘ"); `title` vào mục lục như mọi phần lớn. `landscape:
+  [blocks]` đặt các khối thường trên trang ngang.
 - `letter.org`: các dòng tên công ty, in đậm hết. Dòng đầu là cơ quan chủ quản (không phải một phần tên công ty) thì thêm
-  `"orgParent": true` để dòng đó chữ thường theo Nghị định 30.
-- `letter.signers`: thay cho `signer` khi nhiều người cùng ký (liên danh): mỗi người `title`, `org`, `note`, `name`, mỗi người một
-  cột. Một người thì khối ký ở nửa phải. `sign` là khối ký đứng riêng cuối tài liệu không phải bản cam kết (KT-01), cùng cách ghi.
-  `\n` trong `title`, `org` là xuống dòng.
+  `"orgParent": true` để dòng đó in chữ thường theo Nghị định 30.
+- `letter.signers`: thay cho `signer` khi nhiều người cùng ký (liên danh): mỗi người `title`, `org`, `note`, `name`, mỗi
+  người một cột. Một người thì khối ký ở nửa phải. `sign` là khối ký đứng riêng cuối tài liệu không phải bản cam kết (KT-01),
+  cùng cách ghi. `\n` trong `title`, `org` là xuống dòng.
 - Tài liệu không bìa (bảng đáp ứng, bản dịch, mục lục hồ sơ, bộ cam kết): `"cover": false`, dùng được cả khi có `--template`
   (bỏ bìa, mục lục của khuôn, giữ định dạng của khuôn), mở bằng `part` mang tên tài liệu.
 - Dấu sao thật (dấu chú thích "8.400 mAh*", "**") viết `\\*` trong chuỗi JSON; dấu `*` trần đi cặp sẽ thành chữ nghiêng, đậm.

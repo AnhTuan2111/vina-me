@@ -14,7 +14,7 @@ việc để làm thì nói sự việc: "Redis dừng lúc 09:12 vì hết RAM,
 
 Bài chỉ cần một thuật ngữ khi người đọc sẽ gặp lại chữ đó trong log, trên dashboard, trong lệnh phải gõ (`core-rules.md`,
 điều 5). Cần thì giải nghĩa ngay tại lần đầu dùng; không cần thì nói bằng lời thường. Tin gửi sếp mà viết "Pod bị
-OOMKilled do vượt memory limit của cgroup." là đưa cho sếp ba chữ sếp không dùng tới, vì sếp không gõ lệnh, không đọc
+OOMKilled do vượt memory limit của cgroup." là đưa cho sếp ba chữ mà sếp không dùng tới, vì sếp không gõ lệnh, không đọc
 cgroup. Thứ sếp cần là hỏng gì và đang làm gì: "App bị Kubernetes tắt vì dùng quá mức RAM cho phép; em đang nâng mức đó
 lên 1 GB."
 
@@ -31,7 +31,7 @@ Giữ thuật ngữ tiếng Anh không có nghĩa là chữ tiếng Anh nào cũ
 của nghề hay không. Deploy, merge, pull request, staging là tên của việc, của chỗ mà người đọc sẽ gặp lại trong lệnh, trên
 giao diện, trong log, nên giữ. Còn "deadline", "confirm", "feedback", "check", "update", "basically" khi chỉ là chữ thường
 thì tiếng Việt đã có chữ nói được ý đó: hạn, xác nhận, góp ý, kiểm tra, cập nhật, còn "basically" thì bỏ. Chen những chữ
-này vào câu là pha tạp, điều sách Ngữ văn 12 gọi là làm mất sự trong sáng của tiếng Việt. "Anh confirm giúp em deadline để
+này vào câu là pha tạp, điều mà sách Ngữ văn 12 gọi là làm mất sự trong sáng của tiếng Việt. "Anh confirm giúp em deadline để
 em check lại plan." viết lại thành "Anh xác nhận giúp em hạn nộp để em xem lại kế hoạch."
 
 Một chữ có thể đứng ở cả hai phía. "Update" là tên nút trên giao diện thì giữ, đặt trong ngoặc kép như mọi chữ trên giao
@@ -82,7 +82,7 @@ là hai bản sao lưu hay hai phiên bản app; "Giữ hai bản sao lưu gần
 Câu cũng nói tường minh, không để người mới phải đoán hàm ý. "Cái vụ hôm trước lại bị rồi anh" chỉ người trong cuộc hiểu;
 "Trang đăng nhập lại trả 502 lúc 09:10, giống lỗi ngày 21/11" thì ai đọc cũng hiểu.
 
-Biệt ngữ xã hội ở đây là tiếng lóng của một nhóm ("toang", "out trình"). Buộc phải dùng thì để trong ngoặc kép và chú
+Biệt ngữ xã hội ở đây là tiếng lóng của một nhóm ("toang", "out trình"). Buộc phải dùng thì để trong ngoặc kép và giải
 nghĩa. Từ chuyên môn của nghề (deploy, rollback, restart) thì khác: đó là thuật ngữ, theo mục Thuật ngữ, và không để trong
 ngoặc kép. Viết "Em deploy lại lúc 14h", không viết 'Em "deploy" lại lúc 14h'; viết "Bản 2.4 lỗi trang đăng nhập", không
 viết "Bản 2.4 toang rồi".
@@ -113,7 +113,7 @@ ghi rõ "chưa kiểm tra". Ngược lại, thêm "chắc chắn" vào câu đã
 Thành phần tình thái đặt ở đầu câu ("Có lẽ ổ đã đầy.") hay ngay trước vị ngữ ("Ổ có lẽ đã đầy."), và nó áp cho cả phần
 đứng sau. Câu có một ý đã kiểm tra và một ý đang đoán thì từ phỏng đoán đứng ngay trước ý đoán: trong "Ổ đầy, có lẽ vì log
 tăng sau bản 2.4.", ổ đầy là việc đã thấy, còn lý do thì mới đoán. Mỗi câu chỉ có một thành phần tình thái; "có lẽ hình
-như", "chắc có lẽ" chồng hai mức lên nhau, người đọc không biết người viết chắc tới đâu.
+như", "chắc có lẽ" chồng hai mức lên nhau nên người đọc không biết người viết chắc tới đâu.
 
 Mọi câu nói về cùng một việc giữ cùng một mức, kể cả câu tóm tắt ở đầu báo cáo. Thân bài ghi "có lẽ" thì tóm tắt không được
 viết "Nguyên nhân là ổ đầy" (`common-errors.md`, dòng Hai câu lệch mức chắc chắn).
@@ -163,10 +163,10 @@ Nói giảm nói tránh là nói cho bớt nặng nề, bớt mất lòng. Sách
 "tệ"), nói vòng, dùng từ đồng nghĩa nhẹ hơn. Văn công việc dùng nó ở lời chỉ lỗi và ở chỗ kể lỗi của một người: "chưa
 khớp", "cần sửa", "chưa kịp kiểm tra" thay cho "cẩu thả", "ẩu", "sai bét".
 
-Nói giảm chỉ được giảm chữ chê, không được giảm sự việc. "Long làm ẩu nên xoá nhầm bảng." bỏ chữ "ẩu" rồi vẫn phải giữ
-việc đã xảy ra: "Lệnh xoá chạy trên bảng production vì script không hỏi lại tên database." Báo cáo sự cố viết theo cách
-này thì nói việc và chỗ quy trình còn thiếu, không phán xét người. Giảm tới mức người đọc không biết có lỗi, lỗi gì, ai cần
-sửa ("có một vài điểm có thể cân nhắc thêm") là đã giấu lỗi (`review-reports.md`, mục Giọng).
+Nói giảm chỉ được giảm chữ chê, không được giảm sự việc. Bỏ chữ "ẩu" khỏi câu "Long làm ẩu nên xoá nhầm bảng." thì
+vẫn phải giữ việc đã xảy ra: "Lệnh xoá chạy trên bảng production vì script không hỏi lại tên database." Báo cáo sự cố
+viết theo cách này thì nói việc và chỗ mà quy trình còn thiếu, không phán xét người. Giảm tới mức người đọc không biết có
+lỗi, lỗi gì, ai cần sửa ("có một vài điểm có thể cân nhắc thêm") là đã giấu lỗi (`review-reports.md`, mục Giọng).
 
 ### So sánh và ẩn dụ
 

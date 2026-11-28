@@ -39,7 +39,7 @@ tắt và kết luận của một báo cáo đủ khung, nên ngoài nó, mở 
 Khối lặp ở mọi trang (thanh trên cùng, chân trang, menu) đặt tên ở đây, một lần, rồi giữ tên đó ở tên mục, thân mục và chú
 thích ảnh.
 
-Xuất Word bằng `scripts/report-docx.mjs` thì một dòng ngắn nói kiểm tra gì, lúc nào, đối chiếu với gì để ở `meta`. Ví dụ
+Xuất Word bằng `scripts/report-docx.mjs` thì để ở `meta` một dòng ngắn nói kiểm tra gì, lúc nào, đối chiếu với gì. Ví dụ
 của dòng ấy có trong `docx-export.md`. Câu đếm và tên khối lặp để ở `intro`, vì `meta` in chữ nhỏ màu xám như dòng phụ.
 
 Báo cáo dựa trên tài liệu người khác gửi thì sau đoạn mở liệt kê mỗi tệp chứa gì, mỗi tệp một dòng, vì người nhận thường chỉ
@@ -109,8 +109,8 @@ Chữ của nguồn nhắc lại ở tên mục, chú thích ảnh, câu hỏi c
 gạch dài thì tả bằng lời (dấu gạch dài giữa "A" và "B"), không trích cả câu (`punctuation.md`).
 
 Lời trích nói nó nằm ở đâu: trang mấy, mục nào, dòng nào của bảng theo dõi. Bảng theo dõi có mã hạng mục thì gọi bằng mã
-("hạng mục E3"). Số dòng của một tệp chữ là số dòng trình soạn thảo hiện, tính cả dòng tên cột; luật không tính dòng tên cột
-chỉ dùng khi đếm có bao nhiêu hạng mục, bao nhiêu người.
+("hạng mục E3"). Số dòng của một tệp chữ là số dòng mà trình soạn thảo hiện, tính cả dòng tên cột; chỉ khi đếm có bao nhiêu hạng
+mục, bao nhiêu người thì mới không tính dòng tên cột.
 
 Ngày, số trong nguồn thiếu một phần (không ghi năm, không ghi đơn vị) thì giữ nguyên cách ghi ở mọi chỗ, kể cả câu hỏi gửi
 người nhận (`citations-data-figures.md`, mục Dẫn lời).
@@ -134,11 +134,11 @@ tệp nào, còn chữ khen thì không tài liệu nào có. Câu hỏi đi kè
 mọi chỗ nhắc tới nó đều giữ cả hai bên.
 
 - Tên mục nêu cả hai tài liệu và nói sản phẩm khớp với bên nào: "Trang Giao hàng ghi miễn phí nội thành như bảng phí, email
-  của khách báo thu 20.000 đồng từ 5/3". Tên mục chỉ đặt sản phẩm cạnh một tài liệu thì người đọc lướt danh sách tên mục
+  của khách báo thu 20.000 đồng từ 5/3". Tên mục chỉ đặt sản phẩm cạnh một tài liệu thì ai lướt danh sách tên mục cũng
   hiểu là sản phẩm sai. Chữ ngầm chọn bên ("vẫn", "còn", "chưa sửa theo", "đã cũ") cũng không dùng, vì chúng coi một bên là
   bản mới.
 - Câu hỏi nêu đủ hai phương án, gọi tên từng tài liệu, và hỏi bên nào áp dụng: "Từ 5/3 thu 20.000 đồng như email, hay giữ
-  miễn phí như bảng phí?". Điều chỉ có nghĩa khi một bên đúng thì hỏi sau, mở bằng "Nếu…": "Nếu thu phí thì áp dụng cho
+  miễn phí như bảng phí?". Câu hỏi chỉ có nghĩa khi một bên đúng thì hỏi sau, mở bằng "Nếu…": "Nếu thu phí thì áp dụng cho
   những quận nào?". Đừng hỏi "ghi phí thế nào", "thu ở quận nào" như thể việc thu phí đã chốt.
 - Phần thiếu không liệt kê thứ chỉ cần khi một bên đúng, như thể bên đó đã được chốt; viết "nếu áp dụng email thì còn thiếu…".
 - Lời trả trong chat chỉ nói "không chọn hộ" khi tên mục, câu hỏi và phần thiếu đều đã giữ cả hai bên.
@@ -180,8 +180,8 @@ danh người phụ trách có trong danh sách nhân sự ở mục 2.7, thì d
 "tài liệu gốc chưa có phần nào".
 
 "Còn thiếu" chỉ dành cho thứ không tài liệu gốc nào có. Một số đã đếm được trên tài liệu gốc (số người trong danh sách) thì
-không ghi là còn thiếu; việc còn lại là chốt ô nên ghi số nào, thì nói vậy và trỏ về mục đã hỏi. Thứ chỉ cần khi một bên của
-chỗ hai tài liệu nói khác nhau đúng thì mở bằng "nếu" (mục Trích và mức chắc chắn).
+không ghi là còn thiếu; việc còn lại là chốt ô nên ghi số nào, thì nói vậy và trỏ về mục đã hỏi. Thứ chỉ cần tới khi một trong
+hai tài liệu nói khác nhau là đúng thì mở bằng "nếu" (mục Trích và mức chắc chắn).
 
 ## Giọng
 
@@ -196,8 +196,8 @@ câu hỏi, không gọi trống bằng tên chung cho một trong hai bản.
 
 Trong thân mục, câu sau nối với câu trước bằng chính chỗ đang nêu. Che câu trước đi mà không biết câu này đứng đây làm gì thì
 viết lại. Chỗ hay hỏng nhất là câu dẫn mã hạng mục của bảng theo dõi, nên có một luật cứng: câu ấy luôn mở bằng chủ ngữ trỏ
-về chỗ đang nêu, như "Ô này", "Câu này", "Số này", "Thẻ này", "Dòng này". Lỗi đã gặp nhiều lần là câu trước nói chữ khen trong
-ô không tài liệu nào có, còn câu sau mở bằng "Số liệu giới thiệu thuộc hạng mục E3…". Chủ ngữ "số liệu giới thiệu" là tên
+về chỗ đang nêu, như "Ô này", "Câu này", "Số này", "Thẻ này", "Dòng này". Lỗi đã gặp nhiều lần là câu trước nói ô có chữ khen
+mà không tài liệu nào có, còn câu sau mở bằng "Số liệu giới thiệu thuộc hạng mục E3…". Chủ ngữ "số liệu giới thiệu" là tên
 một nhóm, nên người đọc không biết ô vừa nêu có nằm trong nhóm ấy không. Câu sửa: "Ô này thuộc phần số liệu giới thiệu, hạng
 mục E3 của bảng theo dõi, trạng thái "Chưa nhận"." Mở bằng một chủ ngữ mới đứng trơ, kiểu "Khối giới thiệu chưa có: bảng
 theo dõi, dòng 12…", cũng hỏng theo cùng một cách.
@@ -225,11 +225,11 @@ không có đoạn kết chung chung: hết mục cuối là hết, vì việc c
 5. Tìm mọi chữ gọi sản phẩm (web, site, trang, ứng dụng) và khối lặp; mỗi thứ chỉ còn một tên.
 6. Đếm lại trên tệp gốc mọi con số báo cáo tự đếm (số hạng mục, số dòng, số người, số mục, số ảnh), không tính dòng tên cột
    của CSV hay bảng.
-7. Đọc lần lượt dòng mô tả từng tệp ở mở đầu: tệp nào bảng theo dõi ghi "Đã nhận" mà còn thiếu một phần thì dòng đó đã nói
-   chưa. Rồi đọc từng câu thân mục theo thứ tự, xem câu thứ hai trở đi có nối với câu trước không. Tìm mọi câu có mã hạng mục
-   trong thân mục: chủ ngữ phải là "Ô này", "Câu này", "Số này"…
+7. Đọc lần lượt dòng mô tả từng tệp ở mở đầu: tệp nào mà bảng theo dõi ghi "Đã nhận" nhưng còn thiếu một phần thì dòng đó
+   đã nói chưa. Rồi đọc từng câu thân mục theo thứ tự, xem câu thứ hai trở đi có nối với câu trước không. Tìm mọi câu có mã
+   hạng mục trong thân mục: chủ ngữ phải là "Ô này", "Câu này", "Số này"…
 8. Đọc từng dòng phần thiếu, so với các mục nó trỏ tới. Thứ đã đối chiếu được ở một mục không được ghi là còn thiếu hay
-   "chưa có phần nào"; thứ chỉ cần khi một bên của chỗ mâu thuẫn đúng thì phải mở bằng "nếu".
+   "chưa có phần nào"; thứ chỉ cần tới khi một bên của chỗ mâu thuẫn là đúng thì phải mở bằng "nếu".
 9. Tìm dấu gạch dài, gạch vừa trong cả nội dung lẫn chú thích ảnh.
 10. Xuất ra định dạng người nhận sẽ mở (PDF, Word) và nhìn từng trang.
 

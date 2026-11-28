@@ -32,18 +32,18 @@ Giữ "sẽ" khi việc xảy ra sau lúc nói: "bản 2.5 sẽ bỏ option này
 
 ### "được", "bị"
 
-Tiếng Anh dùng bị động ở rất nhiều câu ("is used", "was deployed"). Tiếng Việt thì thường để vật chịu việc đứng làm chủ
-ngữ mà không cần "được": "Tệp này dùng để lưu cấu hình", không phải "Tệp này được sử dụng để lưu cấu hình". Bị động không nói ai làm thì
-xem thêm `machine-tells.md` mục B.
+Tiếng Anh dùng bị động ở rất nhiều câu ("is used", "was deployed"). Tiếng Việt thì thường để vật chịu việc đứng làm chủ ngữ
+mà không cần "được": "Tệp này dùng để lưu cấu hình", không phải "Tệp này được sử dụng để lưu cấu hình". Bị động không nói ai
+làm thì xem thêm `machine-tells.md` mục B.
 
 "Được" đi với việc có lợi hay trung tính cho chủ ngữ, "bị" đi với việc thiệt cho chủ ngữ. "Tài khoản được khoá sau năm lần
-nhập sai" sai sắc thái, vì người dùng chịu thiệt, nên viết "tài khoản bị khoá". Việc hệ thống làm theo lịch hay theo thiết kế (xoá
-bản cũ, đóng phiên hết hạn) không thiệt cho ai, nên thường bỏ cả "được" lẫn "bị": "Phiên đăng nhập hết hạn sau 30 phút thì
-tự đóng", không "bị đóng".
+nhập sai" sai sắc thái, vì người dùng chịu thiệt, nên viết "tài khoản bị khoá". Việc mà hệ thống làm theo lịch hay theo thiết
+kế (xoá bản cũ, đóng phiên hết hạn) không thiệt cho ai, nên thường bỏ cả "được" lẫn "bị": "Phiên đăng nhập hết hạn sau 30
+phút thì tự đóng", không "bị đóng".
 
 Giữ "được" khi bỏ đi thì chủ ngữ đọc thành người làm việc đó. "Phần mềm thuê từ tháng 02" đọc như phần mềm đi thuê, nên phải
-viết "Phần mềm được thuê từ tháng 02" (`official-documents.md`). Bị động cũng dùng được có chủ ý, để giữ thứ đang bàn ở đầu
-câu (`sentences-and-paragraphs.md`, mục Câu).
+viết "Phần mềm được thuê từ tháng 02" (`official-documents.md`). Người viết cũng có thể cố ý dùng bị động để giữ thứ đang
+bàn ở đầu câu (`sentences-and-paragraphs.md`, mục Câu).
 
 ### "có thể"
 
@@ -104,7 +104,7 @@ khi câu trước đã rõ. "Điều này giúp…" mở đầu câu tóm cuối
 ## Quan hệ từ
 
 Quan hệ từ nối các phần của câu, hay nối câu với câu: "của", "với", "về", "để", "vì", "nhưng", "và". Dùng sai quan hệ từ
-thì câu đổi nghĩa hay mất chủ ngữ, và sách Ngữ văn 7 chia các lỗi ấy làm bốn loại.
+thì câu đổi nghĩa hay mất chủ ngữ. Sách Ngữ văn 7 chia các lỗi ấy làm bốn loại.
 
 | Lỗi | Câu dịch sát | Sửa |
 |---|---|---|
@@ -140,8 +140,8 @@ từ chỉ để nhấn.
 - "Chỉ", "ngay cả" thu hẹp hay mở rộng phạm vi, bỏ đi thì nghĩa đổi, nên giữ: "chỉ máy A bị lỗi", "ngay cả máy mới cũng bị".
 - "Chính" giữ khi câu đang tách một người, một thứ ra khỏi những thứ người đọc có thể nghĩ tới: "Chính bản vá hôm qua làm
   hỏng đăng nhập, không phải cấu hình mạng." Nó chỉ để nhấn thì bỏ, cũng như "đúng", "chính là" (`machine-tells.md` mục D).
-- "Những", "có" đứng trước số nói người viết thấy nhiều hay ít: "mất những ba giờ" là nhấn rằng lâu, "chỉ có hai lỗi" là thấy ít.
-  Báo cáo nêu số trơn ("mất ba giờ") để người đọc tự đánh giá.
+- "Những", "có" đứng trước số nói người viết thấy nhiều hay ít: "mất những ba giờ" là nhấn rằng lâu, "chỉ có hai lỗi" là thấy
+  ít. Báo cáo nêu số trơn ("mất ba giờ") để người đọc tự đánh giá.
 
 ## Tình thái từ
 
@@ -157,13 +157,14 @@ quan hệ với người đọc, hợp với bảng Giọng của `SKILL.md`.
 
 Một tin nhắn thường chỉ một tình thái từ, đặt ở câu nhờ hay câu chào. Sai: "Em gửi anh bản sửa ạ. Lỗi do thiếu biến môi
 trường ạ. Em deploy lại lúc 14h ạ." Sửa: "Lỗi do production thiếu một biến môi trường. Em deploy lại lúc 14h, anh duyệt
-giúp em trước giờ đó ạ." Rải "nhé", "ạ" ở mọi câu thành giọng dỗ dành, là một kiểu văn mẫu (`voice.md`). Tài liệu
+giúp em trước giờ đó ạ." Rải "nhé", "ạ" ở mọi câu thì nghe thành giọng dỗ dành, là một kiểu văn mẫu (`voice.md`). Tài liệu
 trung tính, báo cáo, văn bản hành chính không dùng tình thái từ.
 
 ## Soát
 
-Đọc lướt cả bài thì mắt trượt qua hư từ, nên soát hư từ bằng cách tìm lần lượt từng chữ trong bài (grep hay Ctrl+F): "đã được", "được", "các",
-"của", "việc", "sự", "có thể", "sẽ". Xét từng chỗ bằng cách thử ở đầu tệp: bỏ từ đi, nghĩa không đổi thì bỏ.
+Đọc lướt cả bài thì mắt trượt qua hư từ, nên soát hư từ bằng cách tìm lần lượt từng chữ trong bài (grep hay Ctrl+F): "đã
+được", "được", "các", "của", "việc", "sự", "có thể", "sẽ". Xét từng chỗ bằng cách thử ở đầu tệp: bỏ từ đi, nghĩa không đổi
+thì bỏ.
 
 Bỏ hư từ xong hay phải gộp hai câu, và câu gộp dễ để vế sau mượn chủ ngữ của vế trước. Đọc lại mỗi câu gộp: chủ ngữ vế
 đầu có làm được việc ở vế sau không (`core-rules.md`, điều 3). Không làm được thì nói chủ ngữ riêng cho vế sau.

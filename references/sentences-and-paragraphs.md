@@ -76,12 +76,12 @@ cách nào cần tới dấu gạch ngang.
 Bỏ thành phần phụ chú đi thì câu vẫn phải đúng ngữ pháp. Ngoặc đơn hợp với tên gọi khác, dạng đầy đủ của chữ viết tắt, và
 danh sách ví dụ.
 
-Thành phần phụ chú đặt ở cuối phần nó giải, không chen giữa động từ và bổ ngữ của động từ đó. Đọc câu "Muốn biết query nào
-chậm thì bật slow query log, chức năng của MySQL ghi lại query chạy quá lâu, bằng biến `slow_query_log`, rồi đọc tệp đó
-vài lần trong ngày để xem query nào lặp lại.", người đọc thấy "bằng biến" dính vào "ghi lại query" chứ không dính vào
-"bật". Câu ấy tách làm hai: một câu nói bật cái gì và nó là gì, câu sau nói bật bằng gì và làm gì tiếp. Cụm giải nghĩa
-("tức là…", "tức…") cũng tách thành câu riêng đặt trước khi nó chen giữa chủ ngữ và động từ, giữa danh từ và phần bổ nghĩa
-của nó, hay đứng ngay trước dấu hai chấm mở danh sách.
+Thành phần phụ chú đặt ở cuối phần nó giải thích, không chen giữa động từ và bổ ngữ của động từ đó. Đọc câu "Muốn biết query
+nào chậm thì bật slow query log, chức năng của MySQL ghi lại query chạy quá lâu, bằng biến `slow_query_log`, rồi đọc tệp đó
+vài lần trong ngày để xem query nào lặp lại.", người đọc thấy "bằng biến" dính vào "ghi lại query" chứ không dính vào "bật".
+Câu ấy tách làm hai: một câu nói bật cái gì và nó là gì, câu sau nói bật bằng gì và làm gì tiếp. Cụm giải nghĩa ("tức là…",
+"tức…") cũng tách thành câu riêng, đặt lên trước, khi nó chen giữa chủ ngữ và động từ, giữa danh từ và phần bổ nghĩa của nó,
+hay đứng ngay trước dấu hai chấm mở danh sách.
 
 Tân ngữ dài đặt ngay sau động từ, nơi đến đặt sau: "chép liên tục nhật ký giao dịch của database sang NAS", không viết
 "chép liên tục sang NAS nhật ký giao dịch của database".
@@ -94,7 +94,7 @@ sau vế dẫn tới nó. Câu "Số hiện có chưa cho biết bao nhiêu ngư
 bảo vệ đếm, nên lấy số này trừ số kia không ra số người vắng." hỏng hai chỗ: hai người đếm khác nhau không dẫn tới chuyện
 phép trừ hỏng, và vế "nên" nói lại vế đầu. Câu sửa nói thẳng số nào chứa thứ gì mà số kia không có: "Lấy số đăng ký trừ số
 người đến không ra số người vắng, vì số người đến có cả người không đăng ký mà vẫn tới." Muốn biết chữ "nên" có đặt sai
-không thì bỏ vế "vì", đọc liền vế ngay trước "nên" với vế "nên". Vế trước không dẫn tới vế sau là "nên" đang sai.
+không thì bỏ vế "vì", đọc liền vế ngay trước "nên" với vế "nên". Vế trước không dẫn tới vế sau thì "nên" đang đặt sai.
 
 ## Nhấn mạnh không cần in đậm
 
@@ -109,7 +109,7 @@ hành chỉ để liệt kê, đoạn nào cũng có một câu chủ đề ng�
 
 Có hai kiểu câu làm đoạn thừa chữ. Kiểu thứ nhất là câu phủ định điều hiển nhiên sau một mốc đã nêu: đã viết "lỗi đầu tiên
 lúc 07:05" thì câu "trước 07:00 không có lỗi" không thêm gì, bỏ đi. Kiểu thứ hai là câu ngay sau câu dẫn số mà nói lại số
-đó bằng chữ, như "Ổ chưa lần nào đầy" ngay sau câu vừa nói ổ cao nhất mới dùng 60%. Câu sau nên đi thẳng sang điều con số
+đó bằng chữ, như "Ổ chưa lần nào đầy" ngay sau câu vừa nói ổ cao nhất mới dùng 60%. Câu sau nên đi thẳng sang điều mà con số
 kéo theo, hoặc nhập vế "nên" vào chính câu dẫn số.
 
 Sách giáo khoa chia đoạn theo chỗ đặt câu chủ đề:

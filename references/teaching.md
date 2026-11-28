@@ -33,7 +33,7 @@ Viết xong thì đối chiếu bài với bảng kê.
 
 Bài mở bằng một vụ cụ thể người học đã gặp hay sẽ gặp, như thông báo lỗi họ vừa thấy hay việc họ vừa làm hỏng. Phần mở kể đủ
 để họ thấy đó là chuyện của mình, rồi đặt câu hỏi của bài ở cuối. Bài không mở bằng "X là…", không dựng cảnh, không mở bằng lời
-giới thiệu chủ đề. Câu kể vụ đi một mạch tới chỗ hỏng; ngày và máy đứng câu riêng.
+giới thiệu chủ đề. Câu kể vụ đi một mạch tới chỗ hỏng; ngày và máy đứng ở câu riêng.
 
 ### Câu trả lời mở ra câu hỏi sau
 
@@ -43,7 +43,7 @@ nhưng ai đang ghi vào nó?".
 
 Câu báo lộ trình thì không dùng để chuyển mục: "Tiếp theo ta xem…", "Phần này…", "Bài đi lần lượt hai cách", hay câu đếm "đã có
 hai cách" rồi "Cách thứ nhất…". Mục thực hành mở bằng việc người học sắp tự tay làm lại. Bài có hai cách xử lý thì cách đầu kể
-bằng việc người trong vụ đã làm, còn cách sau mở bằng chỗ cách đầu không dùng được ("Nhưng nhánh ấy còn người khác đang dùng
+bằng việc người trong vụ đã làm, còn cách sau mở bằng chỗ mà cách đầu không dùng được ("Nhưng nhánh ấy còn người khác đang dùng
 thì sao?") hay bằng câu hỏi thật của người học.
 
 Câu hỏi của bài gọi bằng nội dung, không bằng số hay vị trí. Vật nào được nhắc thì gọi tên, không để "một lệnh", "một công cụ"
@@ -61,9 +61,9 @@ Tả thứ đó làm gì bằng một vật người học đã có trong tay, n
 tên; tên đứng cuối câu, sau "gọi là". Chữ Hán Việt thì tách ra từng tiếng khi việc tách giúp nhớ ("tiến trình: tiến là đi tới,
 trình là chặng đường").
 
-Phép so sánh nào cũng nói luôn chỗ nó hết đúng ("giống…, chỉ khác là…"), và chủ ngữ câu so ứng với cả vật được so chứ không với
-một phần của nó (chi tiết ở checklist). Vật đem ra so giữ một tên tới hết đoạn. Quay lại nó ở mục sau là gài sớm quay lại muộn,
-không tính là ẩn dụ thứ hai.
+Phép so sánh nào cũng nói luôn chỗ nó hết đúng ("giống…, chỉ khác là…"), và chủ ngữ câu so sánh ứng với cả vật được so chứ
+không với một phần của nó (chi tiết ở checklist). Vật đem ra so giữ một tên tới hết đoạn. Quay lại nó ở mục sau là gài sớm quay
+lại muộn, không tính là ẩn dụ thứ hai.
 
 ### Nói hộ chỗ người học đoán sai, rồi gỡ
 
@@ -76,8 +76,8 @@ không còn dòng của nó, chỉ `docker ps -a` còn" đã nói container vẫ
 không gán cho người đọc.
 
 Chỗ đoán sai mà một output trong bài gỡ được thì kể nó trước đoạn đọc output ấy, như người kể nói điều người nghe đoán rồi mới
-kể thí nghiệm, để chính output làm việc gỡ. Gỡ một lần, ở câu suy ra điều thật. Câu kế không thêm vế đuôi nói lại điều ấy, và
-câu hỏi của bài đặt ngay sau cũng không mang lại nó, mà chỉ hỏi thứ còn thiếu.
+kể thí nghiệm, để chính output gỡ cách đoán ấy. Gỡ một lần, ở câu suy ra điều thật. Câu kế không thêm vế đuôi nói lại điều ấy,
+và câu hỏi của bài đặt ngay sau cũng không nhắc lại nó, mà chỉ hỏi thứ còn thiếu.
 
 ### Gài sớm, quay lại muộn
 
@@ -92,7 +92,7 @@ thì nhắc lại danh từ kèm "ấy, đó, này" ("Container `web` dùng imag
 trước chỉ có một danh từ thì "nó" được.
 
 Một kết luận nói một lần, ở chỗ bằng chứng cho ra nó, rồi đoạn sau dựa vào nó mà đi tiếp. Hai đoạn đang nối nhau (cách xử lý
-sau và câu chọn cách) đứng liền nhau, và câu hỏi phụ đặt ngay sau đoạn giảng thứ nó dựa vào. Nhịp không đều: chỗ khó viết
+sau và câu chọn cách) đứng liền nhau, và câu hỏi phụ đặt ngay sau đoạn giảng điều mà nó dựa vào. Nhịp không đều: chỗ khó viết
 chậm, nhiều ví dụ; chỗ chỉ để nối thì đi nhanh.
 
 ## Thứ gì cũng có chỗ dùng
@@ -126,12 +126,12 @@ Câu hỏi kiểm tra bắt người học suy luận từ một tình huống m
 lại một câu thân bài đã nói gần nguyên thì chỉ kiểm tra trí nhớ.
 
 Viết đáp án trước. Kê mọi khái niệm, mọi hành vi và quan hệ nhân quả đáp án dùng, rồi đối chiếu với bảng kê chữ và thân bài:
-có thứ chưa dạy, hay chữ bài chỉ nhắc qua mà chưa giải nghĩa, thì bỏ câu đó. Tình huống mới là đổi dữ kiện (ảnh khác, số khác),
-không đổi cách hệ thống chạy.
+có thứ chưa dạy, hay chữ mà bài chỉ nhắc qua, chưa giải nghĩa, thì bỏ câu đó. Tình huống mới là đổi dữ kiện (ảnh khác, số
+khác), không đổi cách hệ thống chạy.
 
 Lấy ví dụ một bài vừa giảng bước detection của OCR. Câu hỏi "Ảnh có con dấu đỏ đè lên dòng chữ thì detection ra sao? Nếu
 thiếu dòng thì có nên fine-tune không?" là đánh đố: nó bắt đoán việc bài chưa kể (con dấu đè làm detection ra sao) và dùng chữ
-bài chỉ nhắc qua (fine-tune). Câu hỏi được hỏi từ chính điều bài đã kể: "Bài đã kể detection bỏ sót dòng chữ quá mờ. Một ảnh
+mà bài chỉ nhắc qua (fine-tune). Câu hỏi được hỏi từ chính điều bài đã kể: "Bài đã kể detection bỏ sót dòng chữ quá mờ. Một ảnh
 scan có dòng cuối mờ hẳn thì phần chữ đọc ra thiếu gì, vì sao?"
 
 Đề tả output bằng lời thì nói đủ số dòng và mỗi dòng là gì, hoặc dán khối output. Đáp án để riêng ở cuối bài, kết luận trước,
@@ -142,8 +142,8 @@ lý do sau, bằng tên bài đã dùng.
 Bài chỉ kể điều ghi chú và tệp vào có: người thật làm gì, nói gì, theo thứ tự nào. Điều họ nghĩ hay lý do họ làm mà ghi chú
 không ghi ("bạn ấy không cần nó nữa") thì không thêm; cần lý do thì viết thành điều chung.
 
-Tài liệu công khai không mang họ tên đủ, tên máy, tên công ty. Che phần riêng trong output, giữ số hiệu, giờ, chữ lỗi, và một
-câu nói đã che gì. Lời dặn đọc lướt phần output bài không giảng là câu riêng, không nối vào câu che bằng "và".
+Tài liệu công khai không mang họ tên đủ, tên máy, tên công ty. Che phần riêng trong output, giữ số hiệu, giờ, chữ lỗi, rồi thêm
+một câu nói đã che gì. Lời dặn đọc lướt phần output mà bài không giảng là câu riêng, không nối vào câu che bằng "và".
 
 Dữ kiện chưa kiểm tra thì giữ lời rào. Con số ghi chú kèm chữ rào ("gần", "khoảng") thì giữ chữ ấy ở mọi lần nhắc lại.
 

@@ -1,8 +1,9 @@
 # Hình thức hồ sơ: đo từ mẫu, dựng theo mẫu
 
-Hồ sơ cũ là chuẩn hình thức. Kiểu đoạn (style) không đủ để biết nó trông thế nào, vì người làm hồ sơ hay chỉnh tay đè lên:
-đề mục "1." mang kiểu Heading 1 nhưng được chỉnh từ cỡ 16 căn giữa về cỡ 13 căn trái. Nên đo định dạng thực tế, và dựng bằng
-`bid-docx.mjs` với chính tệp mẫu làm khuôn: script học định dạng thực tế của từng loại đoạn trong mẫu rồi dùng lại.
+Hồ sơ cũ là chuẩn hình thức. Kiểu đoạn (style) không đủ để biết đoạn văn trông thế nào, vì người làm hồ sơ hay chỉnh tay đè
+lên: đề mục "1." mang kiểu Heading 1 nhưng được chỉnh từ cỡ 16 căn giữa về cỡ 13 căn trái. Vì vậy cần đo định dạng thực
+tế, và dựng bằng `bid-docx.mjs` với chính tệp mẫu làm khuôn: script học định dạng thực tế của từng loại đoạn trong mẫu
+rồi dùng lại.
 
 ## Đo một hồ sơ mẫu
 
@@ -28,13 +29,14 @@ cam kết. Ghi vào `02-sample.md` những gì đo được, theo các mục dư
 Bảng thường dựng theo kiểu "clean" của `bid-docx` (xem `docx-json.md`, `tableStyle`) thay cho bảng viền đen dày, tiêu đề nền xám
 nhạt của mẫu: người dùng duyệt kiểu này ngày 10/11/2026 ("không cần phải theo ý bản tham khảo BA gửi 100% mà mình có thể làm
 tốt hơn bằng cách khắc phục điểm yếu của họ"). Ngày 10/11/2026 người dùng duyệt thêm (xem trang so sánh, "ổn đấy"):
-- Mục lục: tài liệu con (I, II...) chữ thường, không đậm trong mục lục, trên trang vẫn in hoa nhờ kiểu đoạn; dòng thứ hai của mục
-  dài thụt thẳng sau "A. ", "II. "; mục cha cách trên 6pt (`tocStyle`). Mẫu gõ sẵn chữ hoa nên mục con trông to hơn mục cha.
+- Mục lục: tài liệu con (I, II...) chữ thường, không đậm trong mục lục, trên trang vẫn in hoa nhờ kiểu đoạn; dòng thứ hai của
+  mục dài thụt thẳng sau "A. ", "II. "; mục cha cách trên 6pt (`tocStyle`). Mẫu gõ sẵn chữ hoa nên mục con trông to hơn mục
+  cha.
 - Bìa: khung viền đôi xanh đậm chỉ ở trang bìa, tên tài liệu cùng màu, dòng nhà thầu dài ngắt hai dòng cân nhau (`coverStyle`).
 - Bảng tiến độ theo ngày: ô ngày tô xanh, không ghi số 1 trong ô (mẫu tô cam, ô nào cũng ghi 1).
 - Đoạn sau bảng cách mép dưới bảng 8pt; bản cam kết in đậm cả mấy dòng tên công ty.
-Phông, cỡ chữ, lề, đề mục, trang ngang, khối ký vẫn theo mẫu. Những lỗi bố cục mẫu mắc (đề mục cuối trang, trang gần trắng)
-skill không chép theo.
+Phông, cỡ chữ, lề, đề mục, trang ngang, khối ký vẫn theo mẫu. Skill không chép theo những lỗi bố cục mà mẫu mắc (đề mục cuối
+trang, trang gần trắng).
 
 ### Bìa
 - "NHÀ THẦU: <TÊN CÔNG TY VIẾT HOA>" đậm cỡ 14, căn giữa, dòng đầu trang.
@@ -76,7 +78,7 @@ skill không chép theo.
 | Lớp, Tên lớp, Nhóm học viên, Thời lượng, Thời gian | 7, 29, 15, 33, 17 |
 
   Tỉ lệ trên là điểm bắt đầu. `bid-docx` đo chữ dài nhất của từng cột và in dòng `SỬA` kèm số % cần cho cột đó (tiêu đề
-  xuống mỗi dòng một tiếng, chữ bị ngắt giữa từ); khi số đó khác bảng trên thì theo số `bid-docx` in ra.
+  xuống mỗi dòng một tiếng, chữ bị ngắt giữa từ); khi số đó khác bảng trên thì theo số mà `bid-docx` in ra.
 
 ### Hình
 - Rộng 16 cm, căn giữa, không khung; chú thích ngay dưới. Hình là sơ đồ dựng sẵn (kiến trúc, mô hình triển khai).
