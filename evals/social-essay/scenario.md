@@ -9,8 +9,8 @@ cầu, không gắn với người thật nào.
   động, giải pháp rút từ nguyên nhân, bài học), nhìn cả phía bên kia, dẫn chứng chỉ từ dữ kiện người dùng đưa hay có nguồn.
 - Hình ảnh lấy từ chính cảnh đời đang bàn (màn hình sáng trong phòng tối, chiếc điện thoại sạc ở bàn học), cảm xúc đi qua
   chi tiết, không hô hào ở kết bài.
-- Giọng: blog cá nhân, người dùng dặn "viết như mình đang kể cho người đọc", nên xưng "mình", gọi người đọc "bạn" (bảng
-  Giọng của `SKILL.md`), không giọng bài thi.
+- Giọng: blog cá nhân, người dùng tự xưng "mình" và dặn "viết như mình đang kể cho người đọc", nên bài theo cách xưng ấy
+  (`essays.md`, mục Nghị luận xã hội), không giọng bài thi.
 - Luật nói thật: không bịa số liệu, nghiên cứu, chuyên gia, nhân vật; không đổi dữ kiện người dùng kể.
 - Cách trả: viết mới, trả bài trong chat, sau bài tối đa một hai câu.
 

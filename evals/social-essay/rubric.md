@@ -66,7 +66,7 @@ Theo `references/essays.md`, mục Nghị luận xã hội.
 
 | Lỗi | Trừ |
 |---|---|
-| Không theo giọng blog người dùng dặn: giọng bài thi, xưng "tôi" cứng, hay "chúng ta" mở câu | 4 |
+| Không theo giọng người dùng: họ tự xưng "mình" và dặn "viết như mình đang kể cho người đọc", mà bài viết giọng bài thi, đổi sang xưng hô khác, hay mở câu bằng "chúng ta" | 4 |
 | Câu sau rời câu trước | 2 mỗi chỗ |
 | Từ nối sai quan hệ | 2 mỗi chỗ |
 | Nhịp đều: nhiều câu liền cùng độ dài, cùng khuôn | 2 mỗi chuỗi |
