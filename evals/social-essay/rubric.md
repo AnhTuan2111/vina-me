@@ -70,6 +70,7 @@ Theo `references/essays.md`, mục Nghị luận xã hội.
 | Câu sau rời câu trước | 2 mỗi chỗ |
 | Từ nối sai quan hệ | 2 mỗi chỗ |
 | Nhịp đều: nhiều câu liền cùng độ dài, cùng khuôn | 2 mỗi chuỗi |
+| Câu phải đọc hai lần mới hiểu, danh từ rỗng thay cho việc cụ thể, cụm tự ghép nghe như văn dịch | 2 mỗi chỗ, tối đa 6 |
 | Bài ngoài khoảng 450 tới 800 chữ | 2 |
 
 ## F. Cách trả kết quả: 10 điểm

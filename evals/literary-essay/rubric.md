@@ -90,6 +90,9 @@ Theo `references/essays.md`, bảng Sáo ngữ học đường, và `machine-tel
 | Câu sau rời câu trước | 2 mỗi chỗ |
 | Từ nối sai quan hệ | 2 mỗi chỗ |
 | Nhịp đều: nhiều câu liền cùng độ dài, cùng khuôn | 2 mỗi chuỗi |
+| Câu phải đọc hai lần mới hiểu: vế phụ chen vào thiếu "mà", "khi", phụ chú cuối câu đọc nhầm được | 2 mỗi câu |
+| Danh từ rỗng thay cho việc cụ thể ("một việc có thể làm cho bạn", "một điều", "một cách") | 2 mỗi chỗ |
+| Cụm tự ghép không quen, nghe như văn dịch ("vẻ thật của một đứa trẻ", "nhận phần trách nhiệm về mình") | 2 mỗi chỗ, tối đa 6 |
 | Bài ngoài khoảng 600 tới 1000 chữ | 2 |
 
 ## F. Cách trả kết quả: 10 điểm

@@ -194,6 +194,34 @@ Hình ảnh trong bài nghị luận xã hội lấy từ chính cảnh đời �
 mỗi người cúi một màn hình. Kết bài không hô hào ("Hãy chung tay", "Lẽ nào ta lại…? Không!"); kết bằng điều người viết sẽ
 làm, hay một câu hỏi còn mở thật mà bài đã chuẩn bị cho người đọc tự trả lời.
 
+## Câu và chữ của lời bình
+
+Bài nghị luận có thể đúng dàn ý, đủ hình ảnh mà vẫn sượng, vì câu phải đọc hai lần mới hiểu, hay vì chữ không phải chữ người
+Việt quen viết. Người dùng chấm một bài như thế 8/10 và chỉ ra ba lỗi ngay ở hai đoạn đầu.
+
+Lỗi thứ nhất là câu có một vế phụ chen vào mà thiếu chữ báo chỗ ngắt. "Thạch Lam để Sơn nhận ra cái rét của người khác vào
+buổi sáng cậu được mẹ mặc cho mấy lớp áo" đọc lần đầu dễ hiểu thành "nhận ra… vào buổi sáng", rồi mới thấy "cậu được mẹ mặc
+cho mấy lớp áo" là vế bổ nghĩa cho "buổi sáng". Vế phụ có chủ ngữ riêng (cậu được mẹ mặc) đi sau một danh từ thì thêm "mà",
+"khi", "lúc" để người đọc biết chỗ ngắt: "vào chính buổi sáng mà cậu được mẹ mặc cho mấy lớp áo". Câu có hai vế phụ lồng nhau
+thì tách thành hai câu. Phần phụ chú đặt sau tên người ở cuối câu ("đến tay Hiên, cô bé chỉ còn một manh áo rách") cũng dễ
+đọc nhầm; viết thành vế có chữ nối ("đến tay Hiên, khi cô bé chỉ còn một manh áo rách") hay đưa lên trước.
+
+Lỗi thứ hai là danh từ rỗng đứng chỗ của một việc cụ thể. "Cậu đã nghĩ ngay đến một việc có thể làm cho bạn" bắt người đọc
+đoán việc ấy là gì, trong khi người viết biết rõ: đem cái áo bông cũ cho bạn. Gặp "một việc", "một điều", "một cách", "điều
+đó", "điều bà cần nhắc" thì hỏi việc ấy là gì và viết thẳng nó ra. Lối nói vòng chỉ dùng khi chính tác phẩm cố ý giấu.
+
+Lỗi thứ ba là cụm từ tự ghép mà người Việt không quen nói. "Vẻ thật của một đứa trẻ" đúng ý nhưng không ai viết thế; người
+viết văn quen nói "vẻ hồn nhiên của một đứa trẻ". Cụm tự ghép hay sinh ra khi người viết nghĩ bằng ý rồi tìm chữ dịch cho
+từng ý, nên câu nghe như văn dịch: "nhận phần trách nhiệm về mình", "để tâm đến điều Sơn nhận ra", "làm rõ cái thiếu của
+Hiên", "những chỗ rách vốn quen mắt bỗng trở nên khó làm ngơ". Viết xong mỗi câu bình thì hỏi: cụm này đã gặp trong bài văn,
+trang sách nào chưa? Chưa gặp thì đổi sang cách nói quen, hay nói thẳng bằng lời thường.
+
+Văn bình tiếng Việt có một vốn chữ quen để gọi tên tâm hồn và cảm xúc: vẻ hồn nhiên, tâm hồn ngây thơ, trong trẻo, lòng trắc
+ẩn, lòng nhân hậu, niềm xót thương, nỗi buồn man mác, nỗi buồn mơ hồ, khát khao, ước mơ nhỏ bé, kiếp người nhỏ bé; để gọi tên
+cách viết: chất thơ, giọng văn nhẹ nhàng, êm đềm, bút pháp tương phản, những biến thái tinh vi của tâm hồn. Dùng vốn chữ này
+cho đúng chỗ thì câu bình nghe như người trong nghề viết. Nhưng nó là chữ để gọi tên, không thay được chi tiết: câu nào chỉ
+có chữ đẹp mà không bám một chi tiết của tác phẩm thì vẫn là sáo (mục Sáo ngữ học đường).
+
 ## Sáo ngữ học đường
 
 Văn mẫu trên lớp có một kho chữ riêng, khác với văn AI slop (`machine-tells.md`) nhưng hỏng cùng một cách: chữ đẹp mà thay
@@ -214,7 +242,7 @@ vào bài nào cũng được. Gặp những cụm sau thì viết lại bằng 
 
 ## Soát bài
 
-Viết xong thì đọc bài từ đầu tới cuối như người đọc thật, rồi hỏi tám câu:
+Viết xong thì đọc bài từ đầu tới cuối như người đọc thật, rồi hỏi chín câu:
 
 1. Thay tên tác phẩm khác vào, câu nào vẫn đúng? Câu đó sáo, viết lại bằng chi tiết.
 2. Mỗi luận điểm có ít nhất một câu trích nguyên văn, và một câu bàn về chữ trong câu trích không?
@@ -225,6 +253,8 @@ Viết xong thì đọc bài từ đầu tới cuối như người đọc thậ
 7. Mở bài và kết bài có gặp nhau ở cùng một hình ảnh, hay kết bài chỉ tóm lại thân bài?
 8. Câu nào nói chắc về ý nghĩ, động cơ của nhân vật? Dò từng câu ấy với tác phẩm; truyện không viết thì thêm dấu đoán
    ("có lẽ", "tôi đọc thấy") hay bỏ. Mọi chi tiết kể lại đã dò với nguyên văn chưa?
+9. Đọc từng câu như người đọc lần đầu: câu nào phải đọc lại mới hiểu, câu nào có "một việc", "một điều" thay cho việc cụ
+   thể, cụm nào nghe như dịch hay chưa gặp trong văn người Việt viết? Sửa theo mục Câu và chữ của lời bình.
 
 Lint (`scripts/lint.mjs`) bắt được các cụm ở bảng Sáo ngữ học đường và văn AI slop; nó không biết bài khô hay có hồn, nên
 câu hỏi 5 phải tự đọc.
