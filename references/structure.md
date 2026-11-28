@@ -54,7 +54,13 @@ bác nó (`core-rules.md`, điều 1).
 
 Mở bằng câu hỏi hay một sự việc thì nó phải dính trực tiếp tới điều sắp bàn. Bài giảng mở bằng một tình huống cụ thể làm
 người đọc cần câu trả lời, rồi mới nêu câu hỏi của bài. Bài nào cũng không dựng cảnh, không mở bằng bối cảnh thời đại hay
-một nhận định to về cuộc đời.
+một nhận định to về cuộc đời. Bài nghị luận văn học, nghị luận xã hội là ngoại lệ: ở đó mở bài gián tiếp, đi từ rộng tới hẹp,
+là cách dựng bài đã dạy trong trường (`essays.md`, mục Mở bài).
+
+Câu mở cũng không dựng nghịch lý cho có vẻ lạ bằng cách đặt hai thứ không đo cùng một kiểu cạnh nhau: "Cả truyện chỉ có một
+chuyến tàu đi qua trong vài giây, vậy mà tác giả viết gần ba nghìn chữ". Câu ấy nói quá, và nó tạo ra một điều bất thường mà
+sự việc không có: truyện ngắn nào cũng dài hơn sự việc nó kể. Việc thật đáng ngạc nhiên thì kể sự việc và số đo của
+chính nó, để người đọc tự thấy.
 
 ## Triển khai một ý
 
@@ -100,7 +106,8 @@ Mỗi loại văn bản có cách kết riêng. Báo cáo trả lời câu hỏi
 nó tự đứng được và không hẹn chỗ khác trả lời (`teaching.md`).
 
 Loại nào thì phần kết cũng ngắn, không kêu gọi, không hứa, không có câu khẳng định ý nghĩa chung chung, không có câu chốt cho
-dễ nhớ.
+dễ nhớ. Bài nghị luận văn học còn được kết bằng một nhận định có tên người nói hay bằng hình ảnh trung tâm mang nghĩa mới
+(`essays.md`, mục Kết bài).
 
 ## Nhịp
 

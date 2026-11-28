@@ -124,7 +124,7 @@ Có những bài câu nào cũng ổn mà đọc cả bài vẫn thấy văn m�
 | Độ sâu đều tăm tắp | Dừng lâu ở chỗ khó, lướt chỗ dễ và nói rõ là lướt: "Cài Docker như bài 03, phần này không nhắc lại. Chỗ cần dừng là volume, vì xoá container thì dữ liệu mất theo." |
 | Đánh số mọi thứ rồi gọi lại bằng số ("điều kiện 2") | Gọi bằng tên. Chỉ đánh số các bước làm theo thứ tự |
 | Nhan đề, đề mục giật gân, chơi chữ | Nói nội dung |
-| Phép so sánh vừa khít ở mọi mục | Tối đa một phép so sánh hay ẩn dụ cho cả văn bản |
+| Phép so sánh vừa khít ở mọi mục | Văn công việc, tài liệu: tối đa một phép so sánh hay ẩn dụ cho cả văn bản. Bài nghị luận, blog: một hai hình ảnh chủ đạo lấy từ chính tác phẩm hay vấn đề đang bàn (`essays.md`) |
 
 ## F. Nội dung
 

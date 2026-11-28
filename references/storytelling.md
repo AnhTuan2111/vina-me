@@ -83,6 +83,33 @@ người đọc phật lòng thì gắn niềm tin vào người tin ("họ tin 
 động từ đặt sát nhau: "Họ coi đây là sự giải phóng vùng đất tổ tiên", rồi một câu sau, "Họ coi Đông Jerusalem là vùng đất bị
 chiếm đóng".
 
+## Cảm xúc đi qua chi tiết
+
+Ba mục từ đây tới mục Chỗ không bắt chước lấy thêm từ truyện "Hai đứa trẻ" của Thạch Lam và các bài nghị luận về nó
+(`essays.md`), vì người kể audio làm cùng những việc ấy mà tệp này chưa viết thành lời.
+
+Thạch Lam không mở bằng "Liên buồn". Ông cho bóng tối vào mắt cô bé trước ("đôi mắt chị bóng tối ngập đầy dần"), rồi mới gọi
+tên nỗi buồn, và gọi bằng chữ của một đứa trẻ: "Liên không hiểu sao, nhưng chị thấy lòng buồn man mác". Cảm xúc tới người đọc
+qua thứ thấy được, nghe được, chạm được, còn tên của cảm xúc đến sau và nhẹ. Tính từ chấm điểm ("vô cùng xúc động", "thật
+đáng sợ") làm ngược lại: báo cho người đọc biết phải cảm gì mà không cho họ thấy gì. Bài blog kỹ thuật cũng vậy: "Hai giờ
+sáng, log vẫn đỏ một màu" kể được cái mệt mà không cần chữ "mệt mỏi". Chi tiết ấy phải có thật; không có thì nói thẳng,
+đừng bịa cảnh cho có cảm xúc.
+
+## Dồn nhịp ở chỗ cao nhất
+
+Câu dài ngắn xen nhau là nhịp thường của bài. Riêng ở chỗ cao nhất, chỗ mọi thứ dồn về một khoảnh khắc, mấy câu ngắn liền
+nhau làm người đọc đi nhanh theo: bài bình "Hai đứa trẻ" tả chuyến tàu bằng "Nó tỏa sáng. Nó vang động. Nó xa xăm." Chỗ dồn
+nhịp chỉ có một trong bài, và mỗi câu nói một điều riêng về cùng một thứ, bám vào chi tiết có trong bài (đèn sáng trưng, tiếng
+còi, cái chấm đỏ khuất sau rặng tre). Ba chữ gần nghĩa cùng nói một ý ("nhanh chóng, quyết liệt, hiệu quả") thì không phải
+dồn nhịp; đó là bộ ba văn AI slop (`machine-tells.md`, bảng B).
+
+## Giọng người kể trượt vào ý nghĩ nhân vật
+
+Bài kể có nhân vật, kể cả chính người viết ở một lúc trước, được để giọng người kể trượt hẳn vào ý nghĩ của nhân vật mà
+không cần "Liên nghĩ": "Hà Nội nhiều đèn quá!", "Nhưng họ ở Hà Nội về!" Dấu chấm than ở đó là của nhân vật. Lối này gọi là
+lời nửa trực tiếp, và nó cho người đọc nghe được giọng nhân vật thay vì nghe kể lại. Bài blog kể một lần sửa lỗi dùng được
+nó ở một hai chỗ ("Mình mở log ra. Lại là cái cron chạy lúc ba giờ!"). Tài liệu, hướng dẫn, báo cáo thì không dùng.
+
 ## Chỗ không bắt chước
 
 - Treo đáp án tới cuối, đi đường vòng cho đổi không khí, tràng câu hỏi liền nhau: hợp với audio nghe một mạch, không hợp với

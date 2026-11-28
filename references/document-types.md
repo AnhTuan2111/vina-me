@@ -8,6 +8,7 @@ phục bỗng thiếu dẫn chứng. Bảng dưới nối mục đích với lo�
 |---|---|---|---|
 | Cung cấp thông tin, giải thích | văn bản thông tin, thuyết minh, tài liệu kỹ thuật | thông tin chính, đề mục, câu chủ đề | nguồn có tin được không, thông tin có đúng không |
 | Thuyết phục | nghị luận, bài thuyết phục, kiến nghị | luận điểm, lí lẽ, dẫn chứng | luận điểm rõ không, dẫn chứng đủ và đáng tin không, lập luận chặt không |
+| Bày tỏ cảm nhận, đánh giá | nghị luận văn học, bài cảm nhận, blog kể chuyện | luận điểm, dẫn chứng, hình ảnh | dẫn chứng có đúng tác phẩm không, người viết có thấy và cảm được điều mình nói không (`essays.md`) |
 | Hướng dẫn | quy trình, quy tắc, nội quy | các bước, các quy tắc | làm theo được không |
 | Ghi lại việc đã xảy ra | báo cáo, tường trình, biên bản | sự việc, mốc thời gian | đúng, đủ, không cảm tính |
 
@@ -18,14 +19,16 @@ tin, hướng dẫn, báo cáo, thư, tin nhắn, thông báo gửi khách, tớ
 
 Sách Ngữ văn 10 tới 12 chia văn bản theo phong cách chức năng: văn dùng ở đâu thì mang đặc trưng của nơi đó. Mỗi loại văn
 bản trong tệp này thuộc một phong cách, và nhiều luật của skill cho loại đó là đặc trưng của phong cách ấy viết thành lời.
-Skill không viết văn chương, nên bảng dưới bỏ phong cách nghệ thuật.
+Skill không sáng tác thơ, truyện, nhưng bài nghị luận văn học, bài cảm nhận và blog kể chuyện mượn đặc trưng của phong cách
+nghệ thuật, nên bảng có cả phong cách ấy.
 
 | Phong cách | Loại văn bản | Ba đặc trưng | Luật của skill ứng với đặc trưng |
 |---|---|---|---|
 | Khoa học | tài liệu kỹ thuật, hướng dẫn, lời giải thích, bài giảng | khái quát trừu tượng, lí trí lô-gíc, khách quan phi cá thể | định nghĩa có "là", một thứ một tên; từ nối đúng quan hệ; không bịa trải nghiệm, không cảm thán |
 | Hành chính | văn bản nhà nước, biên bản, đơn, tờ trình | khuôn mẫu, minh xác, công vụ | thể thức ở `official-documents.md`; mỗi câu một nghĩa, ngày giờ và con số cụ thể; không xưng hô cá nhân |
 | Báo chí | thông báo gửi khách, bài đăng công khai, bản tin | thông tin thời sự, ngắn gọn, sinh động hấp dẫn | câu đầu nói điều người đọc nhận được, kèm ngày giờ; bỏ lời độn; sinh động bằng chi tiết thật, không bằng tít giật gân |
-| Chính luận | kiến nghị, nghị luận, bài thuyết phục | công khai quan điểm, chặt chẽ trong suy luận, truyền cảm thuyết phục | nêu ý kiến của mình ở mở bài; luận cứ dẫn tới kết luận (mục Nghị luận, thuyết phục); thuyết phục bằng dẫn chứng, không bằng lời kêu gọi |
+| Chính luận | kiến nghị, nghị luận, bài thuyết phục, nghị luận xã hội | công khai quan điểm, chặt chẽ trong suy luận, truyền cảm thuyết phục | nêu ý kiến của mình ở mở bài; luận cứ dẫn tới kết luận (mục Nghị luận, thuyết phục); thuyết phục bằng dẫn chứng, truyền cảm bằng hình ảnh lấy từ chính vấn đề đang bàn và giọng có cảm xúc, không bằng lời kêu gọi (`essays.md`) |
+| Nghệ thuật | thơ, truyện; nghị luận văn học, bài cảm nhận, blog kể chuyện mượn đặc trưng của nó | hình tượng, truyền cảm, cá thể hoá | so sánh, ẩn dụ, nhân hoá, hoán dụ ở chỗ cần gợi hình gợi cảm, hình ảnh lấy từ chính tác phẩm hay đời thật; cảm xúc đi qua chi tiết, không qua tính từ (`essays.md`) |
 | Sinh hoạt | tin nhắn, chat, thư cho người quen | cụ thể, cảm xúc, cá thể | giọng nói chuyện, tình thái từ theo quan hệ (`function-words.md`); tin công việc giữ cảm xúc ở mức |
 
 Bài giảng của skill pha hai phong cách. Phần xưng "mình, bạn" và câu hỏi mở bài lấy từ lời nói, còn phần giảng giữ đặc
@@ -270,6 +273,10 @@ và chỉ phần việc giao sau họp mới là bảng ba cột. Biên bản ch
 Biên bản, kế hoạch của cơ quan nhà nước theo thể thức và bố cục ở `official-documents.md`.
 
 ## Nghị luận, thuyết phục
+
+Mục này dùng cho kiến nghị, đề xuất, bài thuyết phục trong công việc. Nghị luận văn học, nghị luận xã hội và bài cảm nhận
+thì theo `essays.md`: dàn ý ở đó theo sách Ngữ văn, và mức dùng hình ảnh khác hẳn văn công việc. Luật lập luận dưới đây áp
+cho cả hai.
 
 Bài nghị luận có một luận đề, và ít nhất hai luận điểm đỡ trực tiếp cho luận đề ấy. Mỗi ý đi theo thứ tự: nêu ý, lí lẽ vì
 sao, dẫn chứng, rồi phân tích dẫn chứng, để dẫn chứng không đứng trơ. Bằng chứng cụ thể, chính xác, và dính trực tiếp tới

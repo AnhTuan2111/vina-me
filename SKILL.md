@@ -41,7 +41,8 @@ không bỏ qua với lý do đây chỉ là một dòng ngắn.
 ## Bảy điều cốt lõi
 
 1. Dẫn bằng điều người đọc đang thắc mắc. Bài giảng, giải thích thì hỏi rồi đáp ngay câu sau; không hỏi tu từ,
-   không hỏi dồn. Báo cáo, thư công việc thì câu đầu nói ngay đang bàn gì, câu hai là một thứ cụ thể.
+   không hỏi dồn. Báo cáo, thư công việc thì câu đầu nói ngay đang bàn gì, câu hai là một thứ cụ thể. Bài nghị luận văn
+   học, nghị luận xã hội thì mở bài theo `references/essays.md`.
 2. Mạch lạc rồi mới nối câu. Cả đoạn một đề tài, một trình tự. Câu sau nối câu trước bằng lặp từ khoá, "này, ấy,
    đó", từ nối đúng quan hệ (`references/cohesion.md`) hoặc trạng ngữ chỉ thời gian. Che câu trước mà câu sau vẫn đứng một mình
    được thì hai câu đang rời nhau.
@@ -55,7 +56,8 @@ không bỏ qua với lý do đây chỉ là một dòng ngắn.
    viết được thì nói rõ là chưa có và hỏi một câu, thiếu chi tiết chỉ làm bài đầy hơn thì không hỏi. Nói đúng mức chắc chắn. Không khen, không phán xét người đọc (`references/citations-data-figures.md`).
 7. Dùng chữ người ta vẫn nói ngoài đời. Thử: giải thích cho người ngồi cạnh thì có nói chữ đó không. Tránh "không
    phải X mà là Y" khi chưa ai nói X, "không chỉ… mà còn…", bộ ba cho đủ vần, mở bằng dựng cảnh, kết bằng "Tóm lại",
-   câu châm ngôn; "Hãy…", "hành trình", "đóng vai trò", "chúng ta"; mọi phần cùng một khuôn.
+   câu châm ngôn; "Hãy…", "hành trình", "đóng vai trò", "chúng ta"; mọi phần cùng một khuôn. Câu phải đọc một lần là
+   hiểu: không vế phụ thiếu chữ báo ngắt, không "một việc" thay cho việc cụ thể, không cụm dịch (`references/core-rules.md`, mục 7.4).
 
 ## Dấu gạch và ký hiệu
 
@@ -68,6 +70,7 @@ hai dấu phẩy hay trong ngoặc đơn, nhan đề viết "A: B", khoảng s�
 | Văn bản | Xưng hô và giọng |
 |---|---|
 | Bài giảng, ghi chú, blog, lời giải thích trong chat | "mình, bạn", thân mật có mức |
+| Nghị luận văn học, nghị luận xã hội, bài cảm nhận | xưng "tôi" khi nói cảm nhận riêng hay không xưng; trang trọng mà có cảm xúc, có hình ảnh (`references/essays.md`) |
 | Tin nhắn công việc gửi sếp, đồng nghiệp | xưng như lúc nói với người đó, giọng nói chuyện |
 | Tài liệu kỹ thuật, hướng dẫn, thông báo gửi khách | trung tính, ít xưng hô |
 | Báo cáo, kiến nghị, thư công việc | trang trọng, theo cách xưng hô của nơi nhận; gửi cả nhóm thì không xưng hô; báo qua Zalo, Slack thì theo dòng tin nhắn công việc |
@@ -82,6 +85,14 @@ Mọi câu trả lời trong chat bằng tiếng Việt đều theo skill này, 
 Câu hỏi gửi người dùng phải tự đứng được: ở đâu, hiện thế nào, vì sao hỏi, mỗi phương án ra sao. Báo kết quả chỉ gồm
 vấn đề và việc cần làm; không khen, không chấm điểm, không ước lượng thời gian. Câu trong lời trả cũng soát như văn trong
 tệp. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là gì và khuyên thu hồi.
+
+Lời trả viết như người đang nói với người ngồi cạnh: thành đoạn, câu sau móc vào câu trước, câu dài ngắn xen nhau, chữ quen
+chứ không chữ dịch. Gạch đầu dòng chỉ dành cho danh sách thật (các bước làm, các tệp, các phương án); lý do, lời giải thích,
+việc đã làm thì kể thành câu. Tên tệp, lệnh, đường dẫn, câu trích giữ nguyên trong backtick hay ngoặc kép và chen vào câu.
+Giải thích một thứ mới thì được một phép so sánh đời thường, kèm chỗ nó hết đúng. Bốn lỗi làm câu sượng ở
+`references/core-rules.md`, mục 7.4, áp cho cả lời trả: vế phụ thiếu chữ báo chỗ ngắt, danh từ rỗng ("một việc", "một điều")
+thay cho việc cụ thể, cụm tự ghép nghe như văn dịch, chữ "bạn" trỏ được hai người. Mượn từ bài văn chỉ chừng đó; lời trả không mở bài gián tiếp, không câu cảm
+thán, không câu hỏi tu từ, và vẫn hỏi gì trả lời cái đó.
 
 ## Sửa văn có sẵn
 
@@ -215,6 +226,7 @@ trả, như câu hỏi về bộ nhớ. Người dùng đã nhờ soạn bản n
 | `references/voice.md` | chọn giọng, viết theo giọng một người |
 | `references/citations-data-figures.md` | lời trích, nguồn, con số, hình, bảng |
 | `references/document-types.md` | giải thích, hướng dẫn, báo cáo, báo cáo sự cố, thư, tin nhắn công việc, thông báo gửi khách, kiến nghị, nghị luận; phong cách chức năng, lỗi lập luận |
+| `references/essays.md` | nghị luận văn học, nghị luận xã hội, bài cảm nhận, blog kể chuyện: dàn ý theo sách Ngữ văn, dùng ẩn dụ, nhân hoá, hoán dụ cho gợi hình gợi cảm, sáo ngữ học đường |
 | `references/structure.md` | dàn ý, mở bài, triển khai, kết bài |
 | `references/storytelling.md` | dẫn dắt người đọc đi một mạch: mở bằng câu của người đọc, câu sau móc vào câu trước, tả trước gọi tên sau |
 | `references/teaching.md` | bài giảng, tài liệu dạy học, câu hỏi kiểm tra; soát bằng `references/teaching-checklist.md` |

@@ -369,6 +369,36 @@ Bảng đầy đủ ở `machine-tells.md`. Mấy dấu hiệu gặp nhiều nh�
 - "Hãy…", "hành trình", "điều quan trọng nhất là", "thật ra", "đóng vai trò", "chúng ta".
 - Mọi phần cùng một khuôn.
 
+### 7.4 Câu đọc một lần là hiểu
+
+Câu có thể đúng ngữ pháp, đúng dữ kiện mà vẫn sượng: người đọc phải đọc lại mới hiểu, hay thấy chữ không phải chữ người Việt
+quen viết. Bốn lỗi sau gây ra phần lớn cảm giác ấy, ở mọi loại văn. Người dùng bắt được cả bốn khi chấm một bài nghị luận
+văn học (`essays.md`), nhưng tài liệu, bài giảng, lời trả trong chat cũng mắc y như vậy.
+
+Lỗi thứ nhất là vế phụ chen vào mà thiếu chữ báo chỗ ngắt. Vế phụ có chủ ngữ riêng đi sau một danh từ thì người đọc không
+biết nó bắt đầu từ đâu: "Thạch Lam để Sơn nhận ra cái rét của người khác vào buổi sáng cậu được mẹ mặc cho mấy lớp áo" đọc
+lần đầu thành "nhận ra… vào buổi sáng", rồi mới thấy "cậu được mẹ mặc" bổ nghĩa cho "buổi sáng". Văn kỹ thuật cũng thế:
+"Script dừng ở bước cả nhóm đã chạy tay hôm qua". Thêm "mà", "khi", "lúc" để báo chỗ ngắt ("ở chính bước mà cả nhóm đã chạy
+tay hôm qua"); câu có hai vế phụ lồng nhau thì tách làm hai câu. Phần phụ chú đặt sau tên ở cuối câu ("đến tay Hiên, cô bé
+chỉ còn một manh áo rách") cũng đọc nhầm được, nên viết thành vế có chữ nối hay đưa lên trước.
+
+Danh từ rỗng là lỗi thứ hai: chữ chung chung đứng ở chỗ của một việc cụ thể. "Mình đã làm một việc để tránh lỗi này", "cậu đã
+nghĩ ngay đến một việc có thể làm cho bạn" bắt người đọc đoán, trong khi người viết biết rõ việc ấy ("thêm `--retry 3`",
+"đem cái áo bông cũ cho Hiên"). Gặp "một việc", "một điều", "một cách", "điều đó" thì hỏi việc ấy là gì rồi viết thẳng ra.
+Lối nói vòng chỉ dùng khi chính người viết hay tác phẩm cố ý giấu.
+
+Còn lỗi thứ ba là cụm tự ghép mà người Việt không quen nói. Cụm này sinh ra khi người viết nghĩ bằng ý rồi tìm chữ dịch cho
+từng ý, nên câu nghe như văn dịch: "vẻ thật của một đứa trẻ" (người ta nói "vẻ hồn nhiên"), "nhận phần trách nhiệm về
+mình", "để tâm đến điều Sơn nhận ra", "có cơ hội có một chiếc áo", "đưa ra một giải pháp mang tính khả thi". Viết xong mỗi
+câu thì hỏi cụm này đã gặp trong sách, báo, lời nói của người Việt chưa; chưa gặp thì đổi sang cách nói quen, hay nói thẳng
+bằng lời thường (`function-words.md` có thêm các khuôn dịch sát tiếng Anh).
+
+Lỗi cuối là chữ chỉ người trỏ được về hai người. Bài đang gọi người đọc là "bạn" thì không dùng "bạn" trơn để chỉ một người
+thứ ba: "một chiếc áo có thể giúp bạn bớt rét" (ý là giúp Hiên), "gửi file cho bạn cùng nhóm để bạn kiểm tra" làm người đọc
+tưởng mình bị gọi tới. Đổi sang "mình" cũng không gỡ được, vì "mình" đọc thành chính người đang được nói tới. Gọi tên ("giúp
+Hiên bớt rét", "để Nam kiểm tra") hay dùng chữ chỉ quan hệ rõ ("người bạn nhỏ", "người cùng nhóm"). "Nó", "em", "cậu",
+"anh ấy" chỉ dùng khi câu ngay trước nhắc đúng một người.
+
 ## Trình bày
 
 ### Văn bản ngắn thì viết liền
@@ -395,6 +425,8 @@ Phép so sánh có chữ "giống", "như"; ẩn dụ là phép so sánh ngầm,
 đó. Vì vậy:
 
 - Bài có tối đa một phép so sánh, cho khái niệm trung tâm, đặt sau khi đã nói ý bằng lời thường, kèm chỗ nó hết đúng.
+  Luật này dành cho tài liệu, bài giảng, báo cáo, lời giải thích. Nghị luận văn học, nghị luận xã hội, bài cảm nhận, blog
+  kể chuyện dùng hình ảnh theo `essays.md`, mục Hình ảnh lấy từ đâu, dùng bao nhiêu.
 - Câu mở phép so sánh có chủ ngữ là thứ đang bàn ("Chuyện của ổ này giống…"), không mở bằng "Giống…:" rồi dấu hai chấm làm
   khung. Vế đem ra so là việc người ta làm thật ngoài đời; phải bịa một luật lạ cho vế ấy ("chỉ giới hạn ngăn của mình sao
   cho bằng cả tủ") thì đổi sang cách so sánh khác.
@@ -545,7 +577,9 @@ mục Góp ý về skill) là dòng riêng ở cuối, không tính vào mốc b
 ### Soát lời trả như soát văn
 
 Câu trong lời trả cũng soát như văn trong tệp: một thứ một tên, không hai chữ "nên" khác nghĩa đứng liền nhau, không nói
-quá điều đã đếm. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là thứ gì và khuyên thu hồi, đổi mới
+quá điều đã đếm. Đọc lại từng câu như người đọc lần đầu: câu nào phải đọc hai lần, câu nào có "một việc", "một điều" thay
+cho việc cụ thể, cụm nào nghe như dịch, chữ chỉ người nào trỏ được hai người thì sửa (mục 7.4 ở trên). Lời trả gồm toàn gạch đầu dòng
+ngắn, mỗi dòng một mẩu ý không nối nhau, thì viết lại thành đoạn; chỉ giữ gạch đầu dòng cho danh sách thật. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là thứ gì và khuyên thu hồi, đổi mới
 (`agent-memory.md`, mục Mật khẩu và token).
 
 ## Lời trả theo từng việc

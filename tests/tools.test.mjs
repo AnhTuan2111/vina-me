@@ -255,6 +255,15 @@ test('lint báo thuật ngữ Kubernetes viết hoa giữa câu khi bài còn vi
   assert.doesNotMatch(node('lint.mjs', [code]).stdout, /viết hoa giữa câu/);
 });
 
+test('lint đếm sáo ngữ học đường của bài nghị luận văn học', () => {
+  const dir = tmp();
+  const file = path.join(dir, 'essay.md');
+  fs.writeFileSync(file, 'Bằng ngòi bút tài hoa, Thạch Lam đã khắc hoạ thành công bức tranh phố huyện nghèo. Có thể khẳng định rằng truyện mang giá trị nhân đạo sâu sắc và để lại ấn tượng sâu đậm trong lòng người đọc.\n');
+  const out = node('lint.mjs', [file]).stdout;
+  for (const want of ['ngòi bút', 'khắc hoạ thành công', 'giá trị nhân đạo', 'ấn tượng sâu đậm', 'có thể khẳng định']) assert.ok(out.includes(want), want);
+  assert.match(out, /- cụm ít gặp ngoài đời, đang dày/);
+});
+
 test('lint không bắt lỗi trong lời trích của một báo cáo soát, đo câu cả trong mục danh sách', () => {
   const dir = tmp();
   const file = path.join(dir, 'reply.md');

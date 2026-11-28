@@ -1,0 +1,1 @@
+viết giúp mình bài nghị luận văn học khoảng 700 tới 900 chữ, đề: Cảm nhận về tấm lòng của nhân vật Sơn trong truyện ngắn Gió lạnh đầu mùa của Thạch Lam. truyện mình để ở evals/literary-essay/inputs/gio-lanh-dau-mua.md. bài nộp cho cô nên viết trang trọng, nhưng đừng khô như báo cáo mà cũng đừng sáo như văn mẫu. trả bài ngay trong chat nhé

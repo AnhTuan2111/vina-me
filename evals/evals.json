@@ -225,6 +225,20 @@
       "prompt": "sửa giúp mình cái thông báo này trước khi gửi cả nhóm dev, viết vội nên lủng củng, chêm tiếng anh nhiều quá. dữ kiện giữ nguyên nhé\n\n**Thông báo bảo trì staging tối thứ Sáu 04/12**\n\nBasically tối thứ Sáu 04/12 team Platform sẽ bảo trì cụm staging từ 20h tới 23h. Trong lúc bảo trì cụm staging không nhận job mới. Các pipeline đang chạy lúc 20h, sẽ bị dừng và không deploy được cho tới khi bảo trì xong.\n\nCác bạn check lại các pull request đang mở, merge xong trước 18h hôm đó nhé. Deadline gửi danh sách app cần giữ chạy là 17h thứ Năm 03/12, ai cần thì confirm qua kênh #staging.\n\nSau bảo trì, cụm staging được update lên bản Kubernetes mới, các app order-api, payment-api, user-api... sẽ được deploy lại. Máy stg-db-1 máy chứa database của staging sẽ restart sau cùng. Lịch này đã chốt với anh Long, phòng họp tầng 3 vẫn mở như thường.\n\nCó feedback gì về lịch này thì các bạn cứ gửi, team sẽ support.",
       "expected_output": "Bản sửa bỏ chữ tiếng Anh pha tạp mà giữ thuật ngữ nghề (deploy, pipeline, pull request, merge, job, restart), sửa bốn lỗi dấu phẩy, thay dấu chấm lửng cuối dãy bằng lời nói rõ danh sách chưa đủ, không bịa tên app. Bài làm đạt khi được từ 95 trên 100 điểm theo evals/loanwords/rubric.md; đề thử luật nào của skill, đáp án dữ kiện và các bẫy ghi ở evals/loanwords/scenario.md.",
       "files": []
+    },
+    {
+      "id": 30,
+      "prompt": "viết giúp mình bài nghị luận văn học khoảng 700 tới 900 chữ, đề: Cảm nhận về tấm lòng của nhân vật Sơn trong truyện ngắn Gió lạnh đầu mùa của Thạch Lam. truyện mình để ở evals/literary-essay/inputs/gio-lanh-dau-mua.md. bài nộp cho cô nên viết trang trọng, nhưng đừng khô như báo cáo mà cũng đừng sáo như văn mẫu. trả bài ngay trong chat nhé",
+      "expected_output": "Bài nghị luận văn học về tấm lòng của Sơn trong \"Gió lạnh đầu mùa\": có luận điểm có nội dung, câu trích đúng nguyên văn kèm câu bàn chữ, hình ảnh chủ đạo lấy từ truyện, thấy cả nét trẻ con của Sơn và chi tiết Duyên, không kể lại cốt truyện, không sáo ngữ học đường, không bịa chi tiết. Bài làm đạt khi được từ 95 trên 100 điểm theo evals/literary-essay/rubric.md; đề thử luật nào của skill, dữ kiện của truyện và các bẫy ghi ở evals/literary-essay/scenario.md.",
+      "files": [
+        "evals/literary-essay/inputs/gio-lanh-dau-mua.md"
+      ]
+    },
+    {
+      "id": 31,
+      "prompt": "viết cho mình một bài nghị luận xã hội khoảng 600 chữ để đăng blog cá nhân, chủ đề: thói quen lướt video ngắn trước khi ngủ của người trẻ. mấy ý mình có sẵn đây: mình hay lướt TikTok tới 1 2h sáng dù định ngủ lúc 11h, sáng hôm sau vào lớp 7h30 hay ngủ gật. thằng bạn cùng phòng cũng thế, có hôm nó mở phần thời gian sử dụng ra xem thì hết hơn 3 tiếng. mình đã thử để điện thoại sạc ở bàn học xa giường, được 4 hôm thì bỏ vì sợ lỡ tin nhắn nhóm lớp. nhưng mình cũng không ghét video ngắn đâu, có nhiều kênh dạy nấu ăn với giải toán mình học được thật. đừng viết kiểu văn mẫu hô hào nha, viết như mình đang kể cho người đọc ấy. trả bài trong chat luôn",
+      "expected_output": "Bài nghị luận xã hội đăng blog về thói quen lướt video ngắn trước khi ngủ: mở bằng cảnh của người viết, đủ sáu dữ kiện người dùng kể, không bịa số liệu hay nghiên cứu, nhận phần có lí của video ngắn, giải pháp rút từ lần thử thất bại, có hình ảnh từ cảnh đời thật, giọng blog, không hô hào. Bài làm đạt khi được từ 95 trên 100 điểm theo evals/social-essay/rubric.md; đề thử luật nào của skill, dữ kiện và các bẫy ghi ở evals/social-essay/scenario.md.",
+      "files": []
     }
   ]
 }
