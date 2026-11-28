@@ -223,6 +223,38 @@ test('lint báo "không phải … mà là" khi chưa ai nói X, chỉ ghi chú 
   assert.doesNotMatch(outKept, /- "không phải … mà là"/);
 });
 
+test('lint in phần Cần sửa và phần Ghi chú tách nhau, mỗi phần một số đếm; số tổng không gộp ghi chú', () => {
+  const dir = tmp();
+  const file = path.join(dir, 'mixed.md');
+  // Một chỗ cần sửa ("không phải … mà là" chưa ai nói X), một ghi chú (chữ nhấn thừa "thật sự").
+  fs.writeFileSync(file, 'Viết test không phải để làm đẹp báo cáo, mà là để bắt lỗi trước khi lên production. Bộ test thật sự chạy ở mỗi pull request của nhóm, kể cả nhánh nhỏ.\n');
+  const out = node('lint.mjs', [file]).stdout;
+  assert.match(out, /Cần sửa: 1 chỗ/);
+  assert.match(out, /Ghi chú: 1 dòng "·", chỉ để xem, không tính vào số cần sửa/);
+  assert.ok(out.indexOf('Cần sửa:') < out.indexOf('Ghi chú:'));
+  assert.match(out, /1 chỗ cần xem lại \(dòng "-"\), 1 ghi chú không tính \(dòng "·"\)/);
+  const clean = path.join(dir, 'clean.md');
+  fs.writeFileSync(clean, 'Bộ test chạy ở mỗi pull request của nhóm, kể cả nhánh nhỏ, nên lỗi lộ ra trước khi merge vào nhánh chính.\n');
+  const o = node('lint.mjs', [clean]).stdout;
+  assert.match(o, /Cần sửa: 0 chỗ/);
+  assert.doesNotMatch(o, /Ghi chú:/);
+});
+
+test('lint báo thuật ngữ Kubernetes viết hoa giữa câu khi bài còn viết thường; viết hoa suốt bài thì chỉ ghi chú', () => {
+  const dir = tmp();
+  const mixed = path.join(dir, 'mixed.md');
+  fs.writeFileSync(mixed, 'Sự cố làm 3 trong 6 Pod restart liên tục vì liveness probe fail, nên Kubernetes restart container đó nhiều lần trong giờ cao điểm.\n');
+  assert.match(node('lint.mjs', [mixed]).stdout, /- thuật ngữ viết hoa giữa câu mà chỗ khác viết thường: Pod \(1\)/);
+  const capped = path.join(dir, 'capped.md');
+  fs.writeFileSync(capped, 'Cluster có 6 Pod và 2 Deployment chạy ổn suốt tuần, nên nhóm chưa cần thêm máy cho đợt khuyến mãi tới.\n');
+  const o = node('lint.mjs', [capped]).stdout;
+  assert.match(o, /· thuật ngữ viết hoa giữa câu: Pod \(1\), Deployment \(1\)/);
+  assert.doesNotMatch(o, /- thuật ngữ viết hoa/);
+  const code = path.join(dir, 'code.md');
+  fs.writeFileSync(code, 'Lệnh `kubectl get Pod` in danh sách pod của namespace hiện tại, nên chạy nó trước khi xoá bất cứ thứ gì.\n');
+  assert.doesNotMatch(node('lint.mjs', [code]).stdout, /viết hoa giữa câu/);
+});
+
 test('lint không bắt lỗi trong lời trích của một báo cáo soát, đo câu cả trong mục danh sách', () => {
   const dir = tmp();
   const file = path.join(dir, 'reply.md');
