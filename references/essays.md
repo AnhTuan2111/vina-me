@@ -64,6 +64,14 @@ về mọi người đọc thật, không dùng để mở câu kiểu "Chúng t
 Cảm xúc không thay được sự thật. Người viết không bịa cảm xúc của tác giả ("Thạch Lam đã khóc khi viết"), không bịa trải
 nghiệm của mình, không gán cho nhân vật ý nghĩ tác phẩm không viết.
 
+Bài nghị luận văn học được đoán ý nghĩ của nhân vật, vì đọc ra điều tác phẩm không nói thẳng là việc của người bình. Nhưng
+câu đoán phải mang dấu của người đọc: "có lẽ", "tôi đọc thấy", "như thể". Câu nói chắc về ý nghĩ, động cơ của nhân vật
+("Sơn không hề nghĩ tới lời khen", "bác Hiên mang áo trả vì sợ mang tiếng") chỉ viết khi truyện viết ra đúng ý ấy; không thì
+đó là chi tiết bịa. Lời nhân vật tự nói ra lý do thì giữ lý do ấy, không thay bằng lý do người viết thấy hay hơn.
+
+Chi tiết phụ cũng phải đúng. Bài kể lại một việc nhỏ (ai xách nước, ai nhóm lửa, ai chạy về lấy áo) thì mở tệp ra xem lại
+câu đó, đừng kể theo trí nhớ, vì người chấm và cô giáo dò được từng chi tiết.
+
 ## Nghị luận văn học
 
 Sách Ngữ văn 9 tới 12 dạy bốn dạng: nghị luận về một tác phẩm hay đoạn trích văn xuôi, về một bài thơ hay đoạn thơ, về một
@@ -153,7 +161,7 @@ vào bài nào cũng được. Gặp những cụm sau thì viết lại bằng 
 
 ## Soát bài
 
-Viết xong thì đọc bài từ đầu tới cuối như người đọc thật, rồi hỏi bảy câu:
+Viết xong thì đọc bài từ đầu tới cuối như người đọc thật, rồi hỏi tám câu:
 
 1. Thay tên tác phẩm khác vào, câu nào vẫn đúng? Câu đó sáo, viết lại bằng chi tiết.
 2. Mỗi luận điểm có ít nhất một câu trích nguyên văn, và một câu bàn về chữ trong câu trích không?
@@ -162,6 +170,8 @@ Viết xong thì đọc bài từ đầu tới cuối như người đọc thậ
 5. Có đoạn nào người đọc thấy, nghe, chạm được không? Có câu nào mang cảm xúc của người viết không? Không có thì bài khô.
 6. Dẫn chứng ngoài tác phẩm (năm, tên, số liệu, lời danh nhân) có nguồn không? Không có thì bỏ.
 7. Mở bài và kết bài có gặp nhau ở cùng một hình ảnh, hay kết bài chỉ tóm lại thân bài?
+8. Câu nào nói chắc về ý nghĩ, động cơ của nhân vật? Dò từng câu ấy với tác phẩm; truyện không viết thì thêm dấu đoán
+   ("có lẽ", "tôi đọc thấy") hay bỏ. Mọi chi tiết kể lại đã dò với nguyên văn chưa?
 
 Lint (`scripts/lint.mjs`) bắt được các cụm ở bảng Sáo ngữ học đường và văn AI slop; nó không biết bài khô hay có hồn, nên
 câu hỏi 5 phải tự đọc.
