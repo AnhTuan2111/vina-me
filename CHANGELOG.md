@@ -3,6 +3,28 @@
 Mỗi bản phát hành có một tag `vX.Y.Z` và một mục ở đây. Máy đã cài bằng `scripts/setup.mjs` tự cập nhật lên tag mới nhất;
 dòng đầu của mục là dòng được in ra khi cập nhật.
 
+## 0.29.0 (28/11/2026)
+
+- Tệp mới `references/essays.md` cho nghị luận văn học, nghị luận xã hội, bài cảm nhận, blog kể chuyện: dàn ý theo sách
+  Ngữ văn, mở bài trực tiếp và gián tiếp với bảng lối dẫn lấy từ các bài nghị luận về "Hai đứa trẻ" đăng từ 2014 tới 2022,
+  lời phê bình có tên, so sánh với tác phẩm khác, mức dùng ẩn dụ, nhân hoá, hoán dụ của bài văn, cảm xúc đi qua chi tiết,
+  bảng sáo ngữ học đường. Câu đoán ý nghĩ nhân vật phải mang dấu của người đọc ("có lẽ", "tôi đọc thấy").
+- `document-types.md` thêm phong cách nghệ thuật vào bảng phong cách chức năng. Luật "tối đa một phép so sánh cho cả bài"
+  giờ chỉ áp cho văn công việc, tài liệu, bài giảng.
+- `core-rules.md` thêm mục 7.4 Câu đọc một lần là hiểu, áp cho mọi loại văn: vế phụ thiếu chữ báo chỗ ngắt, danh từ rỗng
+  ("một việc", "một điều") thay cho việc cụ thể, cụm tự ghép nghe như văn dịch, chữ "bạn" trỏ được hai người.
+- Lời trả trong chat viết thành đoạn liền mạch, câu sau móc vào câu trước; gạch đầu dòng chỉ còn cho danh sách thật.
+- `storytelling.md` thêm cảm xúc đi qua chi tiết, dồn nhịp ở chỗ cao nhất, lời nửa trực tiếp. `structure.md` thêm ngoại lệ
+  mở, kết của bài nghị luận và lỗi dựng nghịch lý ở câu mở.
+- Luật cho các model khác ngoài Claude (thử bằng omp trên gpt, deepseek, glm, kimi): trước khi sửa văn, dò chỗ vênh, câu đoán
+  kèm chữ chỉ mức đoán, thứ bị gọi nhiều tên; bỏ lời chê thì giữ dữ kiện bên trong; bốn luật thư (câu đầu là mục đích, câu nhờ
+  có từ nhờ, kết bằng việc của người nhận, không nhãn in đậm); chín câu hỏi đọc từng câu khi soát; lời dặn "lỗi câu chữ để
+  sau" là thứ tự, không phải bỏ; mỗi bản chạy lint tối đa hai lượt.
+- `scripts/lint.mjs` in phần "Cần sửa" và phần "Ghi chú" tách nhau, mỗi phần một số đếm; báo "Pod", "Container" viết hoa
+  giữa câu khi bài còn viết thường; đếm thêm các cụm sáo ngữ học đường.
+- Thêm đề thử `evals/literary-essay` (tấm lòng của Sơn trong "Gió lạnh đầu mùa") và `evals/social-essay` (bài blog về thói
+  quen lướt video ngắn trước khi ngủ).
+
 ## 0.28.0 (27/11/2026)
 
 - Bỏ cách cài một lệnh `setup.mjs`. Mỗi việc giờ là một script riêng, cần việc nào thì chạy script đó: `install-skill.mjs`
