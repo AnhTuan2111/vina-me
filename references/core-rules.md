@@ -601,7 +601,7 @@ Gom nhiều câu vào một mục thì gọi tên lỗi của từng câu (`comm
 không đổi sang tên khác. Lời trả nói script báo mấy chỗ, nhận chỗ nào, bỏ chỗ nào và vì sao. Người dùng dặn không sửa tệp
 thì việc mình làm gọi là "tính lại", "kiểm tra lại", không gọi là sửa.
 
-Ba luật sau hay bị quên khi soát.
+Mấy luật sau hay bị quên khi soát. Bảy câu hỏi đọc từng câu nằm dưới bảng Trả kết quả trong `SKILL.md`.
 
 - Lỗi làm người đọc hiểu sai giờ, ngày, con số (chữ chỉ buổi lệch với giờ ghi bên cạnh, hai số chọi nhau) là lỗi nội
   dung, xếp trên mọi lỗi câu chữ.

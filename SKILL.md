@@ -29,7 +29,9 @@ không bỏ qua với lý do đây chỉ là một dòng ngắn.
    thì giữ được luật câu chữ nhưng hay rơi mất cách dựng bài, nên bài ra kể lể.
 5. Soát: chạy `node scripts/lint.mjs <tệp>` nếu chạy được lệnh. `scripts/` nằm cạnh tệp SKILL.md này, nên đang đứng ở
    thư mục khác thì gọi script bằng đường dẫn đầy đủ. Câu trả lời trong chat thì ghi ra một tệp tạm rồi chạy lint trên
-   tệp đó. Chưa chạy được thì đừng nói là đã chạy. Sau lint thì đọc lại hai lượt, một lượt làm người chưa biết gì, một
+   tệp đó. Chưa chạy được thì đừng nói là đã chạy. Mỗi bản chạy lint tối đa hai lượt: sửa theo lượt đầu, chạy lại một
+   lần, báo nào còn thì tự xét có phải lỗi không rồi gửi, vì viết đi viết lại để hết báo làm hết giờ mà bài không tốt
+   hơn. Sau lint thì đọc lại hai lượt, một lượt làm người chưa biết gì, một
    lượt bắt văn AI slop theo `references/machine-tells.md`, kèm năm câu hỏi theo phương châm hội thoại (lượng, chất,
    quan hệ, cách thức, lịch sự; `references/core-rules.md`). Soát văn của người khác thì chạy lint trên tệp đó và trên chính
    lời soát; lint bỏ qua lời trích trong ngoặc kép, nên báo nào còn lại trong lời soát là của mình. Người dùng muốn có
@@ -90,18 +92,29 @@ hỏi lý do trước khi áp cho cả bài. Bản cần sửa do agent viết t
 thì bỏ; tên riêng agent tự đặt mà dữ kiện gốc không có thì giữ và hỏi một câu (tên nào, ở đâu, giữ hay bỏ). Không áp skill cho văn bản quy phạm pháp luật, hợp đồng, biểu mẫu,
 thơ, lời thoại.
 
-Hai chỗ hay sai nhất khi sửa văn đều là chỗ đụng tới dữ kiện:
+Những chỗ hay sai nhất khi sửa văn đều đụng tới dữ kiện. Vì thế, trước khi viết bản sửa thì đọc gốc một lượt và ghi
+ra ba thứ: các cặp câu nói khác nhau về cùng một việc (hai giờ, hai con số); mỗi câu đoán cùng chữ chỉ mức đoán của nó; những
+thứ gốc gọi bằng nhiều tên. Bản sửa xử lý ba thứ ấy như sau:
 
 - Bài gốc có hai chỗ nói khác nhau về cùng một việc, như hai giờ cho cùng một lần deploy, thì bản sửa giữ cả hai như gốc,
-  rồi hỏi người dùng chỗ nào đúng. Đừng tự gỡ bằng cách gán một con số cho việc khác ("21:20 là lúc web chạy lại"), vì gốc
-  không nói thế, nên nghĩa mới ấy là một dữ kiện bịa.
-- Câu đoán ("có lẽ", "nhiều khả năng", "chưa xác nhận") thì giữ cả ý lẫn mức đoán của nó. Đừng bỏ câu vì nó chưa chắc,
-  cũng đừng viết chắc hơn hay kém chắc hơn gốc. Chỉ khi gốc tự lệch mức, như dòng tóm tắt nói chắc mà thân bài nói chưa xác
-  nhận, thì cả bài theo mức thấp hơn.
+  và câu hỏi cuối lời trả hỏi đúng chỗ vênh ấy: câu nào ghi gì, có những cách hiểu nào. Đừng tự gỡ bằng cách gán một con
+  số cho việc khác ("21:20 là lúc web chạy lại"), vì gốc không nói thế, nên nghĩa mới ấy là một dữ kiện bịa. Có chỗ vênh
+  mà lời trả hỏi chuyện khác thì vẫn tính là chưa nêu.
+- Câu đoán ("có lẽ", "nhiều khả năng", "chưa xác nhận") thì giữ cả ý lẫn chữ chỉ mức đoán của nó: "hình như" vẫn là "hình
+  như", không thành "nhiều khả năng". Gốc chồng hai chữ đoán lên nhau thì giữ một chữ, chữ nhẹ hơn. Đừng bỏ câu vì nó chưa chắc,
+  cũng đừng viết chắc hơn hay kém chắc hơn gốc. Gốc tự lệch mức, như dòng tóm tắt đầu bài nói chắc mà thân bài nói chưa
+  xác nhận, thì mọi câu theo mức thấp hơn, kể cả nhan đề, dòng tóm tắt và câu mở bài.
+- Gốc gọi một thứ bằng nhiều tên ("Redis cache", "bộ đệm", "cache Redis") thì bản sửa chọn một tên và dùng tên
+  đó ở mọi câu, cả trong danh sách việc cần làm.
 - Câu bác một ý đã nêu ngay trước ("Ban đầu nhóm nghi do mạng. Ping vẫn ổn, nên không phải do mạng.") là lập luận của tác
   giả, nên bản sửa giữ cả lý do lẫn kết luận. Chỉ câu bác một ý chưa ai nói mới bỏ đi. Thấy lập luận của tác giả còn yếu thì
   bản sửa vẫn giữ kết luận như gốc, đừng thêm nhận định của mình kiểu "số đo này chưa đủ để loại trừ"; muốn góp ý thì nói ở
   một dòng thay đổi hay câu hỏi cuối lời trả, không viết vào bài.
+- Bỏ một lời phán xét hay lời bình thì giữ dữ kiện nằm trong nó: "Lan làm ẩu nên quên chạy migration" còn lại "chưa chạy
+  migration", không mất cả câu.
+
+Viết xong bản sửa thì đi lại từng câu của gốc và tìm dữ kiện của câu đó trong bản sửa. Chỉ câu thuần lời bình, không mang
+dữ kiện nào, mới được mất hẳn.
 
 ## Trả kết quả
 
@@ -119,11 +132,33 @@ Hai chỗ hay sai nhất khi sửa văn đều là chỗ đụng tới dữ ki�
 
 Thư và tin nhắn công việc gửi đi thì người nhận đọc vội, nên có bốn luật không được bỏ:
 
-1. Câu đầu của thân thư nói mục đích: người nhận cần làm gì, vì sao. Tình hình đi sau câu đó.
+1. Câu đầu của thân thư nói mục đích, gồm cả người nhận cần làm gì lẫn vì sao phải làm. Tình hình đi sau câu đó.
 2. Mỗi việc nhờ là một câu gồm việc, hạn và lý do của hạn. Nhờ khách, sếp thì câu có từ nhờ ("giúp", "nhờ", "phiền") hoặc
    viết thành câu hỏi, không dùng câu cầu khiến trần.
-3. Thư kết bằng việc cần ở người nhận, kèm hạn, không kết bằng việc bên mình sẽ làm.
+3. Thư kết bằng việc cần ở người nhận, kèm hạn, không kết bằng việc bên mình sẽ làm. Câu cảm ơn không thay được câu kết ấy.
 4. Thư viết liền, không nhãn in đậm, không đề mục. Chỉ danh sách thật (các phương án, các việc cần làm) mới xuống dòng.
+   Dòng Tiêu đề, Cc viết chữ thường, không in đậm; thư có cc ai thì ghi dòng Cc.
+
+Soát mà không sửa thì đọc từng câu theo thứ tự trong tệp và hỏi mấy câu sau, vì đây là những lỗi người soát hay bỏ sót:
+
+1. Câu có nói giờ, ngày, con số khớp với chữ bên cạnh không ("chiều nay" mà giờ ghi là 08:00)?
+2. Từ nối đầu câu ("Tuy nhiên", "Đồng thời", "Vì vậy") có đúng quan hệ với câu trước không?
+3. Câu mở bằng "Với", "Qua", "Bằng", "Đối với" có còn chủ ngữ không?
+4. Trong cùng một câu có hai chữ chọi nghĩa nhau không (việc "đã hoàn tất" mà lại "đang chờ duyệt")?
+5. Câu "không phải X, mà là Y" thì câu trước đã nêu X chưa? Đã nêu thì đó là câu đính chính, để yên; chưa ai nêu thì bắt.
+6. "Nó", "điều này" trỏ về đâu; có hai thứ để trỏ thì bắt.
+7. Lời dặn, cảnh báo có đứng trước bước nó dặn không?
+8. Cùng một thứ có bị gọi bằng hai ba tên không?
+9. Có dấu gạch dài, chữ in hoa để nhấn, "Hãy" mở câu hướng dẫn, câu mở hay câu kết văn mẫu không?
+
+Câu gốc có dấu gạch dài thì khi trích vào lời soát đổi thành gạch nối, chữ giữ nguyên.
+
+Người dùng dặn "lỗi nội dung nói trước, lỗi câu chữ để sau" là dặn thứ tự trong cùng một lời soát: lỗi câu chữ vẫn phải
+soát đủ và nêu từng chỗ, chỉ là đứng sau. Đừng hiểu "để sau" thành để lượt khác rồi bỏ phần câu chữ.
+
+Lời soát không khẳng định điều tệp không ghi, như tệp cấu hình lấy từ máy nào hay script chạy bằng tài khoản gì; tệp không nói
+thì ghi là tệp không nói và hỏi tác giả. Đề nghị bỏ một câu phán xét người đọc mà câu ấy có kèm lời dặn có ích ("chạy thử
+trên máy test trước") thì giữ lời dặn, chỉ bỏ phần phán xét.
 
 Lời trả nào cũng không mở bằng "Dưới đây là", không tự chấm điểm bài vừa viết, không giải thích lại mình đã viết thế nào,
 không ghi ra tệp khi người dùng không nhờ. Chi tiết của từng dòng ở `references/core-rules.md`, mục Lời trả theo từng việc.
