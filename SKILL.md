@@ -41,7 +41,8 @@ không bỏ qua với lý do đây chỉ là một dòng ngắn.
 ## Bảy điều cốt lõi
 
 1. Dẫn bằng điều người đọc đang thắc mắc. Bài giảng, giải thích thì hỏi rồi đáp ngay câu sau; không hỏi tu từ,
-   không hỏi dồn. Báo cáo, thư công việc thì câu đầu nói ngay đang bàn gì, câu hai là một thứ cụ thể.
+   không hỏi dồn. Báo cáo, thư công việc thì câu đầu nói ngay đang bàn gì, câu hai là một thứ cụ thể. Bài nghị luận văn
+   học, nghị luận xã hội thì mở bài theo `references/essays.md`.
 2. Mạch lạc rồi mới nối câu. Cả đoạn một đề tài, một trình tự. Câu sau nối câu trước bằng lặp từ khoá, "này, ấy,
    đó", từ nối đúng quan hệ (`references/cohesion.md`) hoặc trạng ngữ chỉ thời gian. Che câu trước mà câu sau vẫn đứng một mình
    được thì hai câu đang rời nhau.
@@ -68,6 +69,7 @@ hai dấu phẩy hay trong ngoặc đơn, nhan đề viết "A: B", khoảng s�
 | Văn bản | Xưng hô và giọng |
 |---|---|
 | Bài giảng, ghi chú, blog, lời giải thích trong chat | "mình, bạn", thân mật có mức |
+| Nghị luận văn học, nghị luận xã hội, bài cảm nhận | xưng "tôi" khi nói cảm nhận riêng hay không xưng; trang trọng mà có cảm xúc, có hình ảnh (`references/essays.md`) |
 | Tin nhắn công việc gửi sếp, đồng nghiệp | xưng như lúc nói với người đó, giọng nói chuyện |
 | Tài liệu kỹ thuật, hướng dẫn, thông báo gửi khách | trung tính, ít xưng hô |
 | Báo cáo, kiến nghị, thư công việc | trang trọng, theo cách xưng hô của nơi nhận; gửi cả nhóm thì không xưng hô; báo qua Zalo, Slack thì theo dòng tin nhắn công việc |
@@ -215,6 +217,7 @@ trả, như câu hỏi về bộ nhớ. Người dùng đã nhờ soạn bản n
 | `references/voice.md` | chọn giọng, viết theo giọng một người |
 | `references/citations-data-figures.md` | lời trích, nguồn, con số, hình, bảng |
 | `references/document-types.md` | giải thích, hướng dẫn, báo cáo, báo cáo sự cố, thư, tin nhắn công việc, thông báo gửi khách, kiến nghị, nghị luận; phong cách chức năng, lỗi lập luận |
+| `references/essays.md` | nghị luận văn học, nghị luận xã hội, bài cảm nhận, blog kể chuyện: dàn ý theo sách Ngữ văn, dùng ẩn dụ, nhân hoá, hoán dụ cho gợi hình gợi cảm, sáo ngữ học đường |
 | `references/structure.md` | dàn ý, mở bài, triển khai, kết bài |
 | `references/storytelling.md` | dẫn dắt người đọc đi một mạch: mở bằng câu của người đọc, câu sau móc vào câu trước, tả trước gọi tên sau |
 | `references/teaching.md` | bài giảng, tài liệu dạy học, câu hỏi kiểm tra; soát bằng `references/teaching-checklist.md` |

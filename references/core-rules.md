@@ -395,6 +395,8 @@ Phép so sánh có chữ "giống", "như"; ẩn dụ là phép so sánh ngầm,
 đó. Vì vậy:
 
 - Bài có tối đa một phép so sánh, cho khái niệm trung tâm, đặt sau khi đã nói ý bằng lời thường, kèm chỗ nó hết đúng.
+  Luật này dành cho tài liệu, bài giảng, báo cáo, lời giải thích. Nghị luận văn học, nghị luận xã hội, bài cảm nhận, blog
+  kể chuyện dùng hình ảnh theo `essays.md`, mục Hình ảnh lấy từ đâu, dùng bao nhiêu.
 - Câu mở phép so sánh có chủ ngữ là thứ đang bàn ("Chuyện của ổ này giống…"), không mở bằng "Giống…:" rồi dấu hai chấm làm
   khung. Vế đem ra so là việc người ta làm thật ngoài đời; phải bịa một luật lạ cho vế ấy ("chỉ giới hạn ngăn của mình sao
   cho bằng cả tủ") thì đổi sang cách so sánh khác.

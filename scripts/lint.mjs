@@ -22,6 +22,10 @@ const RARE_PHRASES = [
   'sâu sắc', 'mạnh mẽ', 'toàn diện', 'liền mạch', 'phải chăng', 'không chỉ',
   // bảng D của references/machine-tells.md
   'bức tranh', 'chìa khoá', 'chìa khóa', 'bài toán', 'then chốt', 'có tính chất', 'đã đến lúc', 'chung tay', 'nhức nhối',
+  // sáo ngữ học đường (references/essays.md, bảng Sáo ngữ học đường)
+  'ngòi bút', 'khắc hoạ thành công', 'khắc họa thành công', 'xây dựng thành công', 'giá trị nhân đạo', 'giá trị hiện thực',
+  'ấn tượng sâu đậm', 'không khỏi xúc động', 'không thể thiếu', 'có thể khẳng định', 'bản hoà ca', 'bản hòa ca',
+  'nốt trầm', 'gam màu', 'qua đó, ta thấy', 'văn học là nhân học',
 ];
 // Chữ nhấn thừa (machine-tells.md, bảng D): bỏ khi câu không mất nghĩa. "đúng" chỉ bắt khi đứng trước chữ chỉ lượng, chỗ,
 // thời điểm, vì "đúng" nghĩa là không sai thì vẫn giữ.

@@ -131,20 +131,22 @@ có ngoại lệ. Có ngoại lệ thì thu hẹp lại bằng "thường thì",
 
 Phép tu từ là cách dùng từ, dùng câu cho lời có sức gợi hơn lời thường. Sách Ngữ văn 6 tới 12 dạy cả loạt: so sánh, ẩn dụ,
 nhân hoá, hoán dụ, điệp, đối, liệt kê, nói quá, nói giảm nói tránh, nhịp câu. Văn công việc cần ít phép tu từ hơn văn kể,
-và mỗi phép có chỗ dùng được, chỗ không. Bảng dưới đi từ phép hay dùng tới phép gần như không dùng.
+và mỗi phép có chỗ dùng được, chỗ không. Bảng dưới đi từ phép hay dùng tới phép gần như không dùng trong văn công việc.
+Nghị luận văn học, nghị luận xã hội, bài cảm nhận, blog kể chuyện mượn đặc trưng của phong cách nghệ thuật, nên dùng các phép
+này rộng hơn cột Giới hạn, theo `essays.md`.
 
 | Phép | Dùng được ở | Giới hạn |
 |---|---|---|
-| So sánh, ẩn dụ | bài giảng, lời giải thích, bài kể | mục con So sánh và ẩn dụ ngay dưới |
+| So sánh, ẩn dụ | bài giảng, lời giải thích, bài kể, bài nghị luận | mục con So sánh và ẩn dụ ngay dưới; bài nghị luận theo `essays.md` |
 | Nói giảm nói tránh | lời chỉ lỗi, chỗ viết về lỗi của một người, sự cố gây thiệt hại | giảm chữ chê, không giảm sự việc; mục con Nói giảm nói tránh |
 | Liệt kê, lặp cú pháp | mọi loại văn, khi các ý ngang hàng thật | mục con Liệt kê và lặp cú pháp; bộ ba cho đủ vần là văn AI slop (`machine-tells.md`, bảng B) |
 | Điệp từ ngữ | lặp từ khoá để nối câu (`cohesion.md`) | lặp để dồn cảm xúc ("rất nhanh, rất gọn, rất mạnh") thì bỏ |
 | Nhịp câu (tu từ ngữ âm) | bài giảng, bài kể (`storytelling.md`) | câu dài ngắn xen nhau, không đếm chữ cho đều; câu không kết bằng hư từ (`sentences-and-paragraphs.md`, mục Trật tự từ) |
-| Nhân hoá | bài kể, bài giảng cho người mới, một lần trong bài | tài liệu, báo cáo không viết "server đang mệt", "database kêu cứu", vì người đọc cần biết máy làm gì thật |
-| Hoán dụ | chat, bài kể | báo cáo không gọi người bằng tên bộ phận khi kể lỗi ("phòng IT làm sập web"), vì câu giấu mất ai làm việc gì |
+| Nhân hoá | bài kể, bài giảng cho người mới, một lần trong bài; bài nghị luận, blog theo `essays.md` | tài liệu, báo cáo không viết "server đang mệt", "database kêu cứu", vì người đọc cần biết máy làm gì thật |
+| Hoán dụ | chat, bài kể, bài nghị luận | báo cáo không gọi người bằng tên bộ phận khi kể lỗi ("phòng IT làm sập web"), vì câu giấu mất ai làm việc gì |
 | Phép đối | nhan đề, câu mở của bài kể | câu đối xứng lặp ở nhiều đoạn là văn AI slop |
 | Nói quá | chat với người quen, bài kể khi người đọc biết là phóng đại | không dùng trong tài liệu, báo cáo, thư, kiến nghị; mục con Nói quá |
-| Chơi chữ, câu hỏi tu từ | không dùng trong văn công việc | câu hỏi tu từ ở `machine-tells.md`, bảng B |
+| Chơi chữ, câu hỏi tu từ | không dùng trong văn công việc; bài nghị luận dùng câu hỏi tu từ ở chỗ chuyển ý, một hai lần, có câu trả lời ngay sau (`essays.md`) | câu hỏi tu từ ở `machine-tells.md`, bảng B |
 
 ### Nói quá
 
