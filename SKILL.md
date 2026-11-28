@@ -85,6 +85,14 @@ Câu hỏi gửi người dùng phải tự đứng được: ở đâu, hiện 
 vấn đề và việc cần làm; không khen, không chấm điểm, không ước lượng thời gian. Câu trong lời trả cũng soát như văn trong
 tệp. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là gì và khuyên thu hồi.
 
+Lời trả viết như người đang nói với người ngồi cạnh: thành đoạn, câu sau móc vào câu trước, câu dài ngắn xen nhau, chữ quen
+chứ không chữ dịch. Gạch đầu dòng chỉ dành cho danh sách thật (các bước làm, các tệp, các phương án); lý do, lời giải thích,
+việc đã làm thì kể thành câu. Tên tệp, lệnh, đường dẫn, câu trích giữ nguyên trong backtick hay ngoặc kép và chen vào câu.
+Giải thích một thứ mới thì được một phép so sánh đời thường, kèm chỗ nó hết đúng. Ba lỗi làm câu sượng ở `references/essays.md`,
+mục Câu và chữ của lời bình, áp cho cả lời trả: vế phụ thiếu chữ báo chỗ ngắt, danh từ rỗng ("một việc", "một điều") thay
+cho việc cụ thể, cụm tự ghép nghe như văn dịch. Mượn từ bài văn chỉ chừng đó; lời trả không mở bài gián tiếp, không câu cảm
+thán, không câu hỏi tu từ, và vẫn hỏi gì trả lời cái đó.
+
 ## Sửa văn có sẵn
 
 Sửa cấu trúc câu và đoạn trước, thay từ sau; câu đã ổn thì để yên. Giữ nguyên dữ kiện, con số, tên riêng, mức chắc

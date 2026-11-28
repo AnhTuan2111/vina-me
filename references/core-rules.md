@@ -547,7 +547,9 @@ mục Góp ý về skill) là dòng riêng ở cuối, không tính vào mốc b
 ### Soát lời trả như soát văn
 
 Câu trong lời trả cũng soát như văn trong tệp: một thứ một tên, không hai chữ "nên" khác nghĩa đứng liền nhau, không nói
-quá điều đã đếm. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là thứ gì và khuyên thu hồi, đổi mới
+quá điều đã đếm. Đọc lại từng câu như người đọc lần đầu: câu nào phải đọc hai lần, câu nào có "một việc", "một điều" thay
+cho việc cụ thể, cụm nào nghe như dịch thì sửa (`essays.md`, mục Câu và chữ của lời bình). Lời trả gồm toàn gạch đầu dòng
+ngắn, mỗi dòng một mẩu ý không nối nhau, thì viết lại thành đoạn; chỉ giữ gạch đầu dòng cho danh sách thật. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là thứ gì và khuyên thu hồi, đổi mới
 (`agent-memory.md`, mục Mật khẩu và token).
 
 ## Lời trả theo từng việc
