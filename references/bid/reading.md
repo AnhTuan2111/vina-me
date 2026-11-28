@@ -1,7 +1,8 @@
 # Đọc bộ tài liệu gói thầu
 
 Viết sai thường bắt đầu từ đọc sai: lấy tên nhà thầu từ hồ sơ cũ, lấy số lượng từ bản chữ lệch cột, bỏ sót một ý trong điều
-kiện đạt. Bước này đọc hết, đọc ảnh những chỗ bản chữ không tin được, và đối chiếu các tệp với nhau.
+kiện đạt. Bước này đọc hết, đọc ảnh ở những chỗ mà bản chữ không tin được, và đối chiếu các tệp với
+nhau.
 
 ## Kiểm kê
 
@@ -36,7 +37,7 @@ pdfinfo "<tệp>.pdf"                                          # số trang, t�
 Tệp Word: `node scripts/bid/docx-profile.mjs <tệp.docx>` cho dàn mục và hình thức; muốn đọc chữ thì
 `node scripts/bid/lib/doc-text.mjs <tệp.docx>` (in từng đoạn kèm kiểu, hàng bảng nối ô bằng " | ", cùng bộ đọc của `bid-check`).
 
-Bản chữ trích từ PDF sai ở những chỗ đã gặp thật, nên các chỗ sau phải đọc bằng ảnh trang:
+Bản chữ trích từ PDF đã sai thật ở các chỗ sau, nên những chỗ này phải đọc bằng ảnh trang:
 
 - ký hiệu so sánh mất: "Nguồn ≥ 1.200W" thành "Nguồn 1.200W", "Trọng lượng ≤ 500 g" thành "Trọng lượng 500 g";
 - bảng tràn trang: dòng cuối của hạng mục 1 nằm đầu trang sau, bản chữ ghép nó vào hạng mục kế;
@@ -48,20 +49,21 @@ Mọi con số đưa vào hồ sơ (thông số, số lượng, thời hạn, ti
 
 ## Đối chiếu chéo
 
-- **Ngành nghề**: đọc trang ngành nghề kinh doanh của đăng ký kinh doanh (kể cả giấy xác nhận thay đổi). Gói có phần mềm mà không
-  thấy ngành lập trình (mã 62) hay xuất bản phần mềm (5820) thì luôn đưa vào câu hỏi cho BA. Địa chỉ còn ghi quận, huyện đã bỏ
-  từ 01/7/2025 thì nêu trong câu hỏi về địa chỉ.
+- **Ngành nghề**: đọc trang ngành nghề kinh doanh của đăng ký kinh doanh (kể cả giấy xác nhận thay đổi). Gói có phần mềm mà
+  không thấy ngành lập trình (mã 62) hay xuất bản phần mềm (5820) thì luôn đưa vào câu hỏi cho BA. Địa chỉ còn ghi quận,
+  huyện đã bỏ từ 01/7/2025 thì nêu trong câu hỏi về địa chỉ.
 - **Nhà thầu** là đơn vị trên đăng ký kinh doanh và báo cáo tài chính trong thư mục nhà thầu. Hồ sơ cũ có thể đứng tên công ty
-  khác (công ty phát triển phần mềm, công ty liên danh). Khác nhau thì ghi rõ trong `00-reading.md` và luôn đưa vào câu hỏi cho
-  BA, kể cả khi hồ sơ mới không nhắc đơn vị kia: đơn vị đứng tên ở hồ sơ mẫu là gì với nhà thầu (thầu phụ, liên danh, đơn vị
-  phát triển), ai ký, tài liệu kỹ thuật sản phẩm đứng tên ai.
+  khác (công ty phát triển phần mềm, công ty liên danh). Hai đơn vị khác nhau thì ghi rõ trong `00-reading.md` và luôn đưa
+  vào câu hỏi cho BA, kể cả khi hồ sơ mới không nhắc đơn vị kia: đơn vị đứng tên ở hồ sơ mẫu là gì với nhà thầu (thầu phụ,
+  liên danh, đơn vị phát triển), ai ký, tài liệu kỹ thuật sản phẩm đứng tên ai.
 - **Nhà thầu phụ**: đọc điều về nhà thầu phụ ở Chương I (E-CDNT, thường mục 27) và E-BDL, Mẫu 01D (dịch vụ liên quan). HSMT
-  chỉ cho thầu phụ làm dịch vụ liên quan mà Mẫu 01D ghi "Không", hay giới hạn phần việc, thì BA định giao cho thầu phụ phần
-  việc khác (phát triển phần mềm) là rủi ro bị loại: nêu đầu báo cáo (BA có tệp trả lời thì nêu ở dòng của câu trả lời đó trong bảng mở báo cáo), trích nguyên văn điều HSMT, hỏi BA cách xử lý (nhà thầu tự làm,
-  liên danh), không tự khuyên kê thầu phụ.
-- Liên danh mà thư mục giấy tờ nhà thầu chỉ có giấy tờ của một thành viên: thông tin thành viên còn lại (tên, mã số doanh nghiệp,
-  người đại diện) lấy từ tệp trả lời của BA hay HSMT; thiếu thì `[cần bổ sung: ...]` và đưa vào câu hỏi cho BA, không lấy từ hồ
-  sơ mẫu.
+  chỉ cho thầu phụ làm dịch vụ liên quan mà Mẫu 01D ghi "Không", hay giới hạn phần việc, thì việc BA định giao cho thầu phụ
+  phần việc khác (phát triển phần mềm) là rủi ro bị loại: nêu đầu báo cáo (BA có tệp trả lời thì nêu ở dòng của câu trả lời
+  đó trong bảng mở báo cáo), trích nguyên văn điều HSMT, hỏi BA cách xử lý (nhà thầu tự làm, liên danh), không tự khuyên kê
+  thầu phụ.
+- Liên danh mà thư mục giấy tờ nhà thầu chỉ có giấy tờ của một thành viên: thông tin thành viên còn lại (tên, mã số doanh
+  nghiệp, người đại diện) lấy từ tệp trả lời của BA hay HSMT; thiếu thì ghi `[cần bổ sung: ...]` và đưa vào câu hỏi cho BA,
+  không lấy từ hồ sơ mẫu.
 - **Tên gói** so giữa quyết định phê duyệt, Chương II, Chương IV, Chương V. Khác một chữ cũng ghi lại; dùng tên trong quyết
   định.
 - **Địa chỉ nhà thầu**: đăng ký kinh doanh cũ có thể ghi phường, quận trước khi sắp xếp đơn vị hành chính; báo cáo tài chính

@@ -15,7 +15,7 @@ khi cài, học từ phiên cũ, và cuối cùng là cách cất mật khẩu c
 | `AGENTS.md` | cửa vào: nạp bốn tệp dưới, luật khi nào ghi, ghi vào tệp nào, lưu thế nào | ít khi sửa | có |
 | `machine.md` | lệnh và đường dẫn trên máy đang chạy (`<memory>`, `<secrets>`, thư mục skill, địa chỉ repo, đã cài tự lưu chưa) | script cài | không |
 | `user.md` | con người: là ai, vai trò, viết cho ai, muốn được nói chuyện thế nào | agent, theo lời người dùng | có |
-| `memory.md` | cách làm việc: quy trình, quy ước, định dạng tài liệu người dùng đã dặn hoặc đã khen | agent, theo lời người dùng | có |
+| `memory.md` | cách làm việc: quy trình, quy ước, định dạng tài liệu mà người dùng đã dặn hoặc đã khen | agent, theo lời người dùng | có |
 | `team.md` | luật chung của đội: phông chữ, mẫu văn bản, việc không được làm | đội, qua `<memory> team` | có |
 
 Agent tự xếp một ý vào `user.md` hay `memory.md` theo bảng trong `AGENTS.md`: nói về con người thì vào `user.md`, nói về cách
@@ -35,11 +35,11 @@ riêng nhưng phải bật flag thử nghiệm và tin cậy hook, nên script c
 sync` ở đầu phiên.
 
 omp đưa `~/.omp/agent/AGENTS.md` vào ngữ cảnh mọi phiên. Script ghi vào đó, cũng giữa hai dòng đánh dấu, một lời dặn đọc
-`~/agent-memory/AGENTS.md` trước câu trả lời đầu tiên. Lời dặn đó chỉ có tác dụng ở lượt đầu: thử trên nhiều model của omp,
-từ lượt hai agent không đọc lại bộ nhớ, và khi người dùng chỉ đưa thông tin mới chứ không nói "nhớ giúp" thì agent không ghi
-gì. Vì vậy script còn ghi extension `~/.omp/agent/extensions/vina-me-memory.ts`. Extension này bắt sự kiện `before_agent_start`
-chạy trước mỗi tin người dùng gửi và chèn một lời nhắc ẩn: chưa đọc bộ nhớ thì đọc, gặp điều cần nhớ thì ghi ngay trong lượt
-đó và báo người dùng một dòng.
+`~/agent-memory/AGENTS.md` trước câu trả lời đầu tiên. Lời dặn đó chỉ có tác dụng ở lượt đầu. Khi thử trên nhiều model của
+omp, từ lượt hai agent không đọc lại bộ nhớ, và khi người dùng chỉ đưa thông tin mới chứ không nói "nhớ giúp" thì agent không
+ghi gì. Vì vậy script còn ghi extension `~/.omp/agent/extensions/vina-me-memory.ts`. Extension này bắt sự kiện
+`before_agent_start` (chạy trước mỗi tin mà người dùng gửi) và chèn một lời nhắc ẩn: chưa đọc bộ nhớ thì đọc, gặp điều cần nhớ
+thì ghi ngay trong lượt đó và báo người dùng một dòng.
 
 Agent khác thì trỏ tệp chỉ dẫn toàn cục của nó tới `~/agent-memory/AGENTS.md`, hoặc chép nội dung các tệp vào đó.
 
@@ -71,10 +71,11 @@ chạy `<memory> save "<đã ghi gì>"`: lệnh commit với lời commit đó v
 ## Tự cập nhật vina-me
 
 `install-update.mjs` giữ một bản clone của vina-me ở `~/.config/vina-me/source`, chép từ thư mục đã clone, hoặc clone lại từ
-GitHub nếu người dùng tải zip. Script thêm vào Claude Code một hook `SessionStart` chạy `scripts/update.mjs --quiet`. Hook kiểm
-tra tối đa 6 giờ một lần và lấy tag phát hành `vX.Y.Z` mới nhất. Có bản mới thì nó chép sang mọi thư mục skill đã cài và in một
-dòng "vina-me vừa được cập nhật lên vX.Y.Z", kèm dòng đầu của mục đó trong `CHANGELOG.md`. Commit mới trên `main` mà chưa gắn tag
-thì máy người dùng chưa nhận. Muốn cập nhật ngay, hay máy không có Claude Code, thì chạy `node scripts/update.mjs`.
+GitHub nếu người dùng tải zip. Script thêm vào Claude Code một hook `SessionStart` chạy `scripts/update.mjs --quiet`. Hook
+kiểm tra tối đa 6 giờ một lần và lấy tag phát hành `vX.Y.Z` mới nhất. Có bản mới thì nó chép sang mọi thư mục skill đã cài và
+in một dòng "vina-me vừa được cập nhật lên vX.Y.Z", kèm dòng đầu của mục đó trong `CHANGELOG.md`. Commit mới trên `main` mà
+chưa gắn tag thì máy người dùng chưa nhận. Muốn cập nhật ngay, hay máy không có Claude Code, thì chạy `node
+scripts/update.mjs`.
 
 Người bảo trì muốn máy mình chạy bản đang làm thì chạy `node scripts/update.mjs channel main`, và máy đó theo đầu nhánh `main`;
 về lại bản phát hành bằng `channel release`. Danh sách thư mục skill và kênh nằm ở `~/.config/vina-me/config.json`.
@@ -87,9 +88,10 @@ Phát hành một bản thì làm ba việc:
 
 ## Các script cài
 
-Mỗi việc một script trong `scripts/`, cần việc nào thì chạy script đó, chạy lại bao nhiêu lần cũng không sinh dòng, hook hay
-khối trùng. Tệp cấu hình nào sắp bị sửa thì được sao lưu một lần thành `<tệp>.vina-me-backup`. Script nào cũng nhận `--help`
-(chỉ in cách dùng) và `--home <thư mục>` (thử trên home giả); option lạ thì script báo lỗi và dừng, không làm gì trên máy.
+Mỗi việc có một script trong `scripts/`, cần việc nào thì chạy script đó; script chạy lại bao nhiêu lần cũng không sinh dòng,
+hook hay khối trùng. Tệp cấu hình nào sắp bị sửa thì được sao lưu một lần thành `<tệp>.vina-me-backup`. Script nào cũng nhận
+`--help` (chỉ in cách dùng) và `--home <thư mục>` (thử trên home giả); option lạ thì script báo lỗi và dừng, không làm gì
+trên máy.
 
 | Script | Làm gì | Ai cần |
 |---|---|---|
@@ -103,9 +105,10 @@ Script tự nhận agent có trên máy qua thư mục cấu hình của nó (`~
 thêm `--claude`, `--codex` hay `--omp`. Bốn script sau cần `install-skill.mjs` chạy trước, vì hook và lệnh trong `machine.md`
 trỏ tới bản skill đã cài; chạy sai thứ tự thì script báo cần chạy gì trước rồi dừng.
 
-Lời nhắc của `install-remind.mjs` cần vì nội dung `SKILL.md` chỉ được nạp một lần lúc gọi skill, phiên dài thì bị tóm gọn, nên
-agent dễ quên áp luật cho câu trả lời ngắn. Claude Code chạy `scripts/remind.mjs` ở mỗi tin và chèn dòng nó in ra vào ngữ cảnh
-của lượt ấy. omp không chạy được hook kiểu đó, nên script ghi một extension làm cùng việc. Codex chưa có chỗ gắn.
+Lời nhắc của `install-remind.mjs` cần có vì nội dung `SKILL.md` chỉ được nạp một lần lúc gọi skill, phiên dài thì bị tóm gọn,
+nên agent dễ quên áp luật cho câu trả lời ngắn. Claude Code chạy `scripts/remind.mjs` ở mỗi tin và chèn dòng mà script đó in
+ra vào ngữ cảnh của lượt ấy. omp không chạy được hook kiểu đó, nên script ghi một extension làm cùng việc. Codex chưa có chỗ
+gắn.
 
 `install-memory.mjs` hỏi bảy câu: gọi là gì, vai trò, hay viết cho ai, trả lời dài hay ngắn, điều không muốn agent làm, tệp
 luật của đội, có cho agent học từ các phiên cũ không. Bộ nhớ đã có thì script giữ nguyên và chỉ nối lại vào agent. Ba option
@@ -144,7 +147,7 @@ dùng tự làm. Mỗi bước xong thì báo một câu ngắn bằng lời th�
    hoặc `n`).
 7. **Chạy các script đã chọn,** theo thứ tự trong bảng: `install-remind.mjs`, `install-memory.mjs --answers <tệp JSON>` (thêm
    `--github` nếu người dùng muốn), `install-autosave.mjs`, `install-update.mjs`. Xong thì xoá tệp tạm. Script nào báo lỗi thì
-   dừng, đọc lỗi, sửa chỗ thiếu rồi chạy lại đúng script đó; không chạy tiếp script sau như chưa có gì.
+   dừng, đọc lỗi, sửa chỗ thiếu rồi chạy lại chính script đó; không chạy tiếp script sau như chưa có gì.
 8. **Kiểm tra và báo.** Có bộ nhớ thì chạy `node scripts/memory.mjs check`. Báo người dùng đã cài những phần nào, bộ nhớ nằm ở
    đâu, có repo chưa, và phải mở phiên mới thì agent mới đọc skill và bộ nhớ.
 
@@ -160,13 +163,14 @@ Người dùng không muốn có bộ nhớ thì tạo tệp rỗng `~/agent-mem
 ### Lệnh bộ nhớ sau khi cài
 
 `<memory>` là `scripts/memory.mjs` của bản skill đã cài, đường dẫn ghi ở `machine.md`. Nó chỉ làm việc khi kèm một lệnh con
-(`sync`, `save`, `check`, `conflict`, `resolve`, `github`, `remote`, `team`, `codex`); chạy trơn hay kèm `--help` thì chỉ in cách
-dùng, không cài gì lên máy. Các script cài thì chạy lại lúc nào cũng được. Chạy với `--home` giả thì `install-autosave.mjs
---schedule` không tạo task trong Task Scheduler thật, trừ khi thêm `--real-schedule`.
+(`sync`, `save`, `check`, `conflict`, `resolve`, `github`, `remote`, `team`, `codex`); chạy trơn hay kèm `--help` thì chỉ in
+cách dùng, không cài gì lên máy. Các script cài thì chạy lại lúc nào cũng được. Chạy với `--home` giả thì
+`install-autosave.mjs --schedule` không tạo task trong Task Scheduler thật, trừ khi thêm `--real-schedule`.
 
-Máy cài từ bản trước 0.28.0 có hook, lịch và `machine.md` gọi `scripts/setup.mjs`. Tệp đó vẫn còn và chỉ chuyển tiếp: `sync`
-kiểm tra bản mới như cũ rồi chuyển sang `memory.mjs sync`, các lệnh bộ nhớ khác chuyển sang `memory.mjs`, `update` và `channel`
-chuyển sang `update.mjs`. Chạy `setup.mjs` không kèm lệnh con thì nó chỉ in danh sách script mới, không cài lại như bản cũ.
+Trên máy cài từ bản trước 0.28.0, hook, lịch và `machine.md` gọi `scripts/setup.mjs`. Tệp đó vẫn còn và chỉ chuyển tiếp:
+`sync` kiểm tra bản mới như cũ rồi chuyển sang `memory.mjs sync`, các lệnh bộ nhớ khác chuyển sang `memory.mjs`, `update` và
+`channel` chuyển sang `update.mjs`. Chạy `setup.mjs` không kèm lệnh con thì nó chỉ in danh sách script mới, không cài lại như
+bản cũ.
 
 ### Hai máy sửa cùng chỗ
 
@@ -210,8 +214,8 @@ Mỗi phần gỡ riêng, phần nào không cần nữa thì gỡ phần đó:
 
 ## Học từ phiên cũ
 
-Bộ nhớ dựng từ tám câu hỏi thì còn mỏng. Phần dày lên được là những gì người dùng đã sửa, đã khen, đã kể về mình trong các
-phiên trước. Agent làm việc này một lần, khi người dùng đồng ý; tệp `~/agent-memory/.pending-learn` là dấu đã đồng ý.
+Bộ nhớ dựng từ bảy câu hỏi thì còn mỏng. Phần dày lên được là những gì người dùng đã sửa, đã khen, đã kể về mình trong các
+phiên trước. Agent học từ phiên cũ một lần, khi người dùng đồng ý; tệp `~/agent-memory/.pending-learn` là dấu đã đồng ý.
 
 ### Bước 1. Nói trước với người dùng
 
@@ -234,13 +238,14 @@ Script có mấy option để thu hẹp. Chỉ muốn từ một ngày thì thê
 rồi lọc tay, vì đọc đợt là đã gửi lên nhà cung cấp mô hình. Script báo số chỗ đã che và số phiên đã bỏ theo từng nguồn (Claude
 Code, Codex).
 
-`machine.md` ghi `<memory>` kèm `--home` thì truyền đúng `--home` đó cho script; không có `--home` mà máy có biến
+`machine.md` ghi `<memory>` kèm `--home` thì truyền chính `--home` đó cho script; không có `--home` mà máy có biến
 `CLAUDE_CONFIG_DIR`, `CODEX_HOME` thì script đọc cả hai thư mục ấy. `--out` chọn thư mục ra; script chỉ xoá `overview.md`,
 `batch-*.md` cũ trong đó, tệp khác để nguyên.
 
-Option xem ở `--help`, lệnh chỉ in cách dùng chứ không rút gì; đừng chạy thử với option đoán. Lần chạy nào cũng kèm `--home`
-(nếu `machine.md` có) và mọi `--exclude` người dùng đã nói. Gõ sai option thì script báo lỗi và không rút gì. `<memory> --help`
-cũng chỉ in cách dùng từ bản 0.16.0; máy còn bản cũ hơn thì gõ nó là cài lại cả bộ, nên xem phiên bản trong `SKILL.md` trước.
+Xem option ở `--help`, lệnh này chỉ in cách dùng chứ không rút gì; đừng chạy thử với option tự đoán. Lần chạy nào cũng kèm
+`--home` (nếu `machine.md` có) và mọi `--exclude` người dùng đã nói. Gõ sai option thì script báo lỗi và không rút gì.
+`<memory> --help` cũng chỉ in cách dùng từ bản 0.16.0; máy còn bản cũ hơn thì gõ nó là cài lại cả bộ, nên xem phiên bản trong
+`SKILL.md` trước.
 
 ### Bước 3. Đọc từng đợt
 
@@ -258,8 +263,9 @@ ngày, không viết thành luật "thì dùng skill X" và không có lời tr�
 lượt, 02/09 tới 28/10/2026)." `AGENTS.md` đã có luật dùng skill đó (như vina-me ở mục Viết tiếng Việt) thì chỉ ghi loại việc
 hay nhờ, đừng viết lại luật.
 
-Dòng của agent trong đợt chỉ để hiểu tin người dùng. Câu "không phải thế" ngay sau dòng `agent trả lời` cho biết agent đã làm sai
-điều gì, và luật ghi vào bộ nhớ là điều người dùng muốn thay vào. Suy nghĩ hay câu trả lời của agent thì không chép vào bộ nhớ.
+Dòng của agent trong đợt chỉ để hiểu tin người dùng. Câu "không phải thế" ngay sau dòng `agent trả lời` cho biết agent đã làm
+sai điều gì, và luật ghi vào bộ nhớ là điều người dùng muốn thay vào. Suy nghĩ hay câu trả lời của agent thì không chép vào
+bộ nhớ.
 
 ### Bước 4. Bỏ thứ không ghi và xử lý mật khẩu lọt
 
@@ -292,14 +298,14 @@ dùng trước", và lần xoá nhánh chỉ là ví dụ trong ngoặc. Lời c
 đừng đổi thành tên mấy lần đã xảy ra.
 
 Hai ý ngược nhau thì giữ ý mới hơn, và ghi ngay trong dòng nháp là đã đổi, trích cả lời cũ kèm ngày; bộ nhớ đang có dòng theo ý
-cũ thì đề xuất thay dòng đó. Dòng dựng từ tám câu hỏi lúc cài chỉ mang ngày dựng, nên có khi trùng ngày với lời trong phiên cũ.
+cũ thì đề xuất thay dòng đó. Dòng dựng từ bảy câu hỏi lúc cài chỉ mang ngày dựng, nên có khi trùng ngày với lời trong phiên cũ.
 Khi đó lời có "từ giờ", "từ nay", "lần sau" là lời đổi điều đang có, nên coi nó là ý mới và đề xuất thay dòng, không hỏi lại
 điều người dùng đã nói rõ.
 
-Không đoán được lời nào sau thì mới hỏi, và câu hỏi phải tự đứng được: chép nguyên dòng đang có kèm tên tệp, nói lời kia nằm ở
-phiên nào (agent, ngày, giờ ghi trong đợt). Dòng nháp không ghi "đổi từ" khi chính mình còn đang hỏi. Ví dụ: "Dòng `- So sánh
-thì kẻ bảng.` trong `memory.md` có từ lúc cài bộ nhớ ngày 03/11/2026, còn phiên Codex 15:40 cùng ngày bạn dặn "từ giờ so sánh
-thì viết thành đoạn". Mình đã để dòng thay trong nháp; nếu dòng cũ mới là ý sau cùng thì bạn bỏ ý đó đi."
+Không đoán được lời nào nói sau thì mới hỏi, và câu hỏi phải tự đứng được: chép nguyên dòng đang có kèm tên tệp, nói lời kia
+nằm ở phiên nào (agent, ngày, giờ ghi trong đợt). Dòng nháp không ghi "đổi từ" khi chính mình còn đang hỏi. Ví dụ: "Dòng `-
+So sánh thì kẻ bảng.` trong `memory.md` có từ lúc cài bộ nhớ ngày 03/11/2026, còn phiên Codex 15:40 cùng ngày bạn dặn "từ giờ
+so sánh thì viết thành đoạn". Mình đã để dòng thay trong nháp; nếu dòng cũ mới là ý sau cùng thì bạn bỏ ý đó đi."
 
 Ý về sau này ("từ tháng sau", "sắp chuyển") ghi là dự định kèm mốc, không ghi như đã xảy ra. Từng ý xếp vào `user.md` hay
 `memory.md` theo bảng trong `AGENTS.md`. Luật về một loại tài liệu không gắn làm lý do cho dòng về cách trả lời trong chat, dù
@@ -313,30 +319,30 @@ luật, rồi lý do, lời trích nguyên văn trong ngoặc kép kèm ngày. �
 không chỉ ghi "thêm lý do". Người dùng duyệt, sửa, bỏ từng ý.
 
 Dòng thay ý cũ chỉ gồm luật, lý do, lời trích mới kèm ngày, và "đổi từ "<lời cũ của người dùng>" (ngày)". Dòng bộ nhớ cũ do
-lượt cài dựng không phải lời người dùng, nên đừng đặt nó trong ngoặc kép kèm ngày như một lời trích; nó đã hiện ở câu dẫn "thay
-dòng `...` bằng:". Lý lẽ mình dùng để chọn lời nào mới hơn (lời mới có "từ giờ", cùng ngày dựng bộ nhớ) không vào dòng bộ nhớ,
-vì agent đọc bộ nhớ lần sau không cần nó. Cần nói thì viết thành một mệnh đề trong câu dẫn, ví dụ "Mục Cách trả lời, thay dòng
-`- Trả lời dài.` (dòng dựng lúc cài, cùng ngày với lời "từ giờ ..." nên mình coi lời đó là ý sau) bằng:", đừng viết thành đoạn
-riêng dưới nháp.
+lượt cài dựng ra thì không phải lời người dùng, nên đừng đặt nó trong ngoặc kép kèm ngày như một lời trích; nó đã hiện ở câu
+dẫn "thay dòng `...` bằng:". Lý lẽ mình dùng để chọn lời nào mới hơn (lời mới có "từ giờ", cùng ngày dựng bộ nhớ) không vào
+dòng bộ nhớ, vì agent nào đọc bộ nhớ lần sau cũng không cần nó. Cần nói thì viết thành một mệnh đề trong câu dẫn, ví dụ "Mục
+Cách trả lời, thay dòng `- Trả lời dài.` (dòng dựng lúc cài, cùng ngày với lời "từ giờ ..." nên mình coi lời đó là ý sau)
+bằng:", đừng viết thành đoạn riêng dưới nháp.
 
 Các dòng thêm vào cùng một mục thì gom dưới một câu dẫn ("Mục Là ai, thêm ba dòng:"), đừng mở hai câu dẫn cho cùng một mục. Ý về
 vai trò, kinh nghiệm, người đọc văn bản cũng cần lời trích: dòng kể lại lời người dùng ("làm kế toán được hai năm") vẫn kèm lời
 trích trong ngoặc kép và ngày, đừng chỉ kể lại bằng lời mình. Dòng nháp gọi người dùng bằng tên như trong `user.md` (hay "người
 dùng"), không gọi "bạn", vì "bạn" trong tệp bộ nhớ sẽ trỏ tới agent đang đọc.
 
-Ngoài nháp, lời trả chỉ nói điều người dùng cần biết hay cần làm: bí mật bị lọt, câu hỏi cần trả lời, điều đã ghi ngay, kết quả
-`<memory> check`. Các ý đã bỏ không liệt kê lại, nhất là chuyện riêng. Con số đã kiểm tra (số phiên, số tin, số chỗ đã che, số
-phiên đã bỏ ở từng nguồn) lấy nguyên như script in ra, không đoán thêm. Lời trả kể đủ việc còn lại sau khi duyệt: ghi vào bộ
-nhớ, chạy `<memory> save`, xoá thư mục tạm và tệp `.pending-learn`. Có lần chạy lỡ rút dự án người dùng dặn bỏ thì nói ngay ở
-câu đầu, đừng mở bằng câu khẳng định đã bỏ từ đầu. Đừng dựng vế "chứ không ..." để bác một điều chưa ai nói ("dòng này đi ngược
-dòng cũ chứ không bổ sung cho nó"). Điều đã kiểm tra thì nói cách kiểm tra (đọc hết đợt, chạy lệnh gì), đừng nối nó bằng "nên"
-vào một việc khác, vì người đọc sẽ hiểu thành suy luận.
+Ngoài nháp, lời trả chỉ nói điều người dùng cần biết hay cần làm: bí mật bị lọt, câu hỏi cần trả lời, điều đã ghi ngay, kết
+quả `<memory> check`. Các ý đã bỏ không liệt kê lại, nhất là chuyện riêng. Con số đã kiểm tra (số phiên, số tin, số chỗ đã
+che, số phiên đã bỏ ở từng nguồn) lấy nguyên như script in ra, không đoán thêm. Lời trả kể đủ việc còn lại sau khi duyệt: ghi
+vào bộ nhớ, chạy `<memory> save`, xoá thư mục tạm và tệp `.pending-learn`. Có lần chạy lỡ rút dự án mà người dùng dặn bỏ thì
+nói ngay ở câu đầu, đừng mở bằng câu khẳng định đã bỏ từ đầu. Đừng dựng vế "chứ không ..." để bác một điều chưa ai nói ("dòng
+này đi ngược dòng cũ chứ không bổ sung cho nó"). Điều đã kiểm tra thì nói cách kiểm tra (đọc hết đợt, chạy lệnh gì), đừng nối
+nó bằng "nên" vào một việc khác, vì người đọc sẽ hiểu thành suy luận.
 
-Phần lời ngoài nháp viết liền thành câu thường, như nói với người ngồi cạnh. Không in đậm nhãn đầu đoạn, không mở đoạn hay câu
-bằng khuôn "Nhãn: nội dung" ("Script báo: ...", "Đã dọn bộ nhớ: ...", "Kết quả `check`: ..."), và ý nối bằng vì, nên, nếu...
-thì. Khối nháp được có tiêu đề, phần lời quanh nó thì không. Con số của script viết vào câu chứ không chép dòng stdout. Trong câu
-trả lời "mình" chỉ trỏ agent; kể lại hay hỏi về lời người dùng thì gọi họ là "bạn", dù trong lời trích họ xưng "mình". Chữ
-"đúng" để nhấn thì bỏ: viết "đã có dòng nói điều đó", không "nói đúng điều đó". Mấy cặp ví dụ:
+Phần lời ngoài nháp viết liền thành câu thường, như nói với người ngồi cạnh. Không in đậm nhãn đầu đoạn, không mở đoạn hay
+câu bằng khuôn "Nhãn: nội dung" ("Script báo: ...", "Đã dọn bộ nhớ: ...", "Kết quả `check`: ..."), và ý nối bằng vì, nên,
+nếu... thì. Khối nháp được có tiêu đề, phần lời quanh nó thì không. Con số của script viết vào câu chứ không chép dòng
+stdout. Trong câu trả lời "mình" chỉ trỏ agent; kể lại hay hỏi về lời người dùng thì gọi họ là "bạn", dù trong lời trích họ
+xưng "mình". Chữ "đúng" để nhấn thì bỏ: viết "đã có dòng nói điều đó", không "nói đúng điều đó". Mấy cặp ví dụ:
 
 - thay "**Có một mật khẩu lọt.** Mật khẩu VPN bạn dán hôm 04/09 không bị che." bằng "Bộ lọc của script sót mật khẩu VPN bạn
   dán hôm 04/09, nên mình đã xoá tệp đợt chứa nó; bạn đổi mật khẩu đó đi, vì nó vẫn nằm trong lịch sử phiên.";
@@ -391,7 +397,7 @@ Agent không in, không echo, không ghi mật khẩu ra tệp. Lệnh con tự 
 
 Cách này có phạm vi bảo vệ của nó. Nó chặn được hai việc: mật khẩu gõ vào cửa sổ riêng thì không vào chat, không vào lịch sử
 phiên, không bị gửi lên nhà cung cấp mô hình; và tệp bí mật chép sang máy khác hay tài khoản Windows khác thì không giải mã
-được. Nó không chặn được chương trình chạy bằng tài khoản của bạn, kể cả agent. Agent chỉ cần `secrets.mjs run <tên> -- node -e
-"console.log(process.env)"` là thấy mật khẩu, và chữ in ra đó sẽ vào lịch sử phiên. Mật khẩu đã dán vào chat thì đã nằm trong
-lịch sử, lưu lại không xoá được bản đó. Vì vậy dùng token có phạm vi hẹp và hạn dùng ngắn thay cho mật khẩu chính khi được, và
-để agent hỏi trước khi chạy lệnh nếu không muốn nó tự dùng bí mật.
+được. Nó không chặn được chương trình chạy bằng tài khoản của người dùng, kể cả agent. Agent chỉ cần `secrets.mjs run <tên>
+-- node -e "console.log(process.env)"` là thấy mật khẩu, và chữ in ra đó sẽ vào lịch sử phiên. Mật khẩu đã dán vào chat thì
+đã nằm trong lịch sử, lưu lại không xoá được bản đó. Vì vậy dùng token có phạm vi hẹp và hạn dùng ngắn thay cho mật khẩu
+chính khi được, và để agent hỏi trước khi chạy lệnh nếu không muốn nó tự dùng bí mật.

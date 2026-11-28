@@ -7,7 +7,7 @@ riêng, ở mục cuối.
 
 ## Trình bày
 
-Có mẫu hay quy định trình bày của bên nhận thì theo mẫu đó, vì mẫu thắng mọi mặc định ở mục này (`diagrams-and-docs.md`, mục
+Có mẫu hay quy định trình bày của bên nhận thì theo mẫu đó, vì mẫu đứng trên mọi mặc định ở mục này (`diagrams-and-docs.md`, mục
 Tài liệu kỹ thuật gửi khách). Không có mẫu thì dùng các mặc định sau.
 
 Cả tệp dùng một phông có đủ dấu tiếng Việt, như Arial. Người dùng hay nơi nhận đòi phông khác (Times New Roman) thì đặt khoá
@@ -44,7 +44,7 @@ Chữ số của thân bài 11pt in ra cao khoảng 2,5 mm; nhãn trục biểu 
 
 ### Ảnh người dùng đưa
 
-Biểu đồ, ảnh chụp màn hình người dùng đưa và bảo chèn thì chèn chính ảnh đó. Chữ in ra quá nhỏ thì trước hết cắt bỏ vùng
+Biểu đồ, ảnh chụp màn hình mà người dùng đưa và bảo chèn thì chèn chính ảnh đó. Chữ in ra quá nhỏ thì trước hết cắt bỏ vùng
 không nói tới (thanh menu, chú giải thừa, khoảng thời gian ngoài đợt đang kể) cho ảnh in to hơn.
 
 Cắt rồi vẫn nhỏ mà có số liệu gốc của chính biểu đồ đó (tệp CSV xuất từ cùng bảng điều khiển) thì vẽ lại từ số liệu ấy, giữ
@@ -94,9 +94,9 @@ khi ghi rõ là lời đoán, vì nó vẫn là câu quy lỗi cho một ngườ
 phát hành) để người đọc tự kết luận. Phép tính khoảng chờ đặt cạnh tên người ("An bắt đầu xem lỗi, 17 phút sau cảnh báo") cũng
 vậy: ghi giờ của từng việc ở bảng mốc là đủ.
 
-Người được gọi theo `document-types.md`, mục Báo cáo: chức danh khi nguồn có. Nguồn chỉ có tên kèm "anh", "chị" thì bỏ "anh",
-"chị", ghi tên kèm vai trò trong sự việc ("An, người trực ca"). Viết mới thì hỏi chức danh trong lời trả; sửa văn có sẵn thì giữ
-cách gọi của gốc và không hỏi.
+Người trong báo cáo được gọi theo `document-types.md`, mục Báo cáo: gọi bằng chức danh khi nguồn có chức danh. Nguồn chỉ có
+tên kèm "anh", "chị" thì bỏ "anh", "chị", ghi tên kèm vai trò trong sự việc ("An, người trực ca"). Viết mới thì hỏi chức danh
+trong lời trả; sửa văn có sẵn thì giữ cách gọi của gốc và không hỏi.
 
 ### Từ của quy trình nội bộ
 
@@ -126,8 +126,8 @@ người dùng trong lời trả để họ quyết, không tự thêm lời bà
 ## Kiểm tra sau khi xuất
 
 1. Soát chữ trước khi đưa: dựng kèm `--text report.md` rồi chạy `node scripts/lint.mjs report.md`. Tệp này có cả chữ trong
-   bảng, chú thích, dòng nguồn, nên đọc lại nó hai lượt như văn thường. Lint không bắt được mấy chỗ báo cáo có mốc giờ hay
-   sai, nên lượt đọc thứ hai dừng ở từng câu có giờ, số liệu:
+   bảng, chú thích, dòng nguồn, nên đọc lại nó hai lượt như văn thường. Lint không bắt được mấy lỗi hay gặp ở báo cáo có
+   mốc giờ, nên lượt đọc thứ hai dừng ở từng câu có giờ, số liệu:
    - "Trong khoảng đó", "lúc đó", "khi ấy" trỏ về mốc gần nhất. Câu trước vừa nêu hai mốc mới (07:40 xong việc, 07:55 hết lỗi)
      mà ý là cả đợt lỗi thì gọi lại bằng chính hai mốc của đợt: "từ 07:05 tới 07:55".
    - Cụm giải nghĩa ("tức là …", "tức …", ", phần … ,") chen vào giữa câu thì tách thành câu riêng đặt trước. Chỗ hay chen là
@@ -140,9 +140,9 @@ người dùng trong lời trả để họ quyết, không tự thêm lời bà
      đầu câu, chủ ngữ là người hay hệ thống làm việc đó. "Việc khởi động lại …" ở đầu câu cũng viết lại theo cách ấy.
    - Câu chỉ nói lại điều câu trước đã đủ ("lỗi đầu tiên lúc 07:05" rồi "trước 07:00 không có lỗi") thì bỏ. Câu cuối đoạn mở
      bằng "Vậy", "Như vậy" rồi kể lại các câu vừa đọc cũng bỏ.
-2. Xuất tệp sang PDF bằng chính phần mềm người nhận hay dùng, rồi xem từng trang. Windows có Word thì chạy `pwsh -NoProfile
+2. Xuất tệp sang PDF bằng chính phần mềm mà người nhận hay dùng, rồi xem từng trang. Windows có Word thì chạy `pwsh -NoProfile
    -File scripts/bid/render-pdf.ps1 report.docx`. Script nằm trong thư mục hồ sơ dự thầu nhưng dùng được cho mọi tệp Word; nó
-   ra `report.pdf` cạnh tệp Word, PDF có số trang đúng, và tệp Word chỉ được lưu lại khi kèm `-UpdateDocx`. Văn bản hành chính
+   ghi `report.pdf` cạnh tệp Word, PDF có số trang đúng, và tệp Word chỉ được lưu lại khi kèm `-UpdateDocx`. Văn bản hành chính
    thì chạy thêm `node scripts/official-doc-docx.mjs --check-pdf vb.pdf` để đo khoảng trống trang. Không có Word thì dùng
    `soffice --headless --convert-to pdf report.docx`. Đổi trang ra ảnh để xem bằng `pdftoppm -r 80 -png report.pdf page`.
 3. Trên ảnh trang, tìm: ảnh tràn lề, chú thích rơi sang trang sau ảnh hay bảng, trang trống, đề mục nằm cuối trang mà nội dung

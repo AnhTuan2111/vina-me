@@ -59,7 +59,7 @@ câu). Ba kiểu hay dùng:
 | Câu có khởi ngữ "Còn X thì…" | Chuyển sang thứ thứ hai cùng loại, đặt nó cạnh thứ thứ nhất | "Phòng họp tầng 3 đã sửa xong máy chiếu. Phòng họp tầng 5 chưa sửa xong máy chiếu." | "Phòng họp tầng 3 đã sửa xong máy chiếu. Còn phòng tầng 5 thì chưa." |
 | Câu có trạng ngữ chỉ tình huống | Gộp hai câu liền nhau cùng một chủ thể | "Chị Mai đọc xong hợp đồng. Chị Mai gọi cho khách." | "Đọc xong hợp đồng, chị Mai gọi cho khách." |
 
-Câu bị động vẫn phải nói ai làm khi đó là chỗ người đọc cần biết (`core-rules.md`, điều 5).
+Câu bị động vẫn phải nói ai làm khi đó là chỗ người đọc cần biết (`core-rules.md`, mục 4.3).
 
 Gộp bằng trạng ngữ chỉ tình huống thì chỉ gộp khi hai việc nối tiếp nhau trong gốc, và không thêm "nên", "vì" mà gốc
 không nói. Hai câu liền nhau cùng một chủ thể thì gộp hẳn làm một. Chỉ đưa mốc giờ lên đầu câu thứ nhất rồi để câu thứ
@@ -153,8 +153,8 @@ Hỏi rồi đáp cũng là một cách nối: câu hỏi nắm lấy điều v�
 
 Câu đáp trả lời thẳng câu hỏi trước (có, không, là gì), rồi mới tới lý do.
 
-Câu đáp có khi chỉ là một danh từ ("Cron job dọn ổ."). Lúc đó câu ngay sau lấy chính danh từ ấy làm chủ ngữ. Nó nói danh
-từ ấy làm gì, vì sao: "Vậy ai xoá tệp? Cron job dọn ổ. Cron job này chạy lúc 2 giờ và xoá mọi tệp cũ hơn bảy ngày trong thư mục
+Câu đáp có khi chỉ là một danh từ ("Cron job dọn ổ."). Lúc đó câu ngay sau lấy chính danh từ ấy làm chủ ngữ, rồi nói
+thứ đó làm gì, vì sao: "Vậy ai xoá tệp? Cron job dọn ổ. Cron job này chạy lúc 2 giờ và xoá mọi tệp cũ hơn bảy ngày trong thư mục
 tạm." Câu sau mà chuyển sang một thứ khác ("Thư mục tạm có giới hạn…") thì người đọc phải tự đoán thứ đó dính gì tới câu
 đáp, tức là hai câu đã rời nhau.
 

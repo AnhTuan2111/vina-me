@@ -67,7 +67,7 @@ sáng thứ Hai. Log của app chiếm 60 GB.", câu về cuộc họp phải ra
 Có mạch lạc rồi mới tới chuyện nối từng câu. Mỗi câu nối với câu trước bằng ít nhất một trong bốn cách sau; bảng đầy đủ
 ở `cohesion.md`.
 
-- Phép lặp: lặp từ khoá của câu trước. Tốt nhất là mở câu sau bằng thứ câu trước vừa kết thúc.
+- Phép lặp: lặp từ khoá của câu trước. Tốt nhất là mở câu sau bằng thứ vừa đứng cuối câu trước.
 - Phép thế: thay bằng danh từ gốc kèm "này", "ấy", "đó" ("Nhận thức ấy…"). Chỉ dùng "nó", "họ" khi câu trước có một danh
   từ duy nhất để trỏ về.
 - Phép nối: dùng từ nối hợp với quan hệ thật giữa hai ý.
@@ -105,7 +105,7 @@ Câu 20 tới 30 tiếng không sao, miễn khớp nối rõ. Thứ làm bài kh
 việc. "Mất điện. Máy chủ tắt. Ổ RAID hỏng một đĩa." là ba sự việc đứng cạnh nhau. Gộp lại thì người đọc thấy việc nào kéo
 theo việc nào: "Mất điện lúc 03:00 làm máy chủ tắt đột ngột, và lúc bật lại thì ổ RAID báo hỏng một đĩa."
 
-Câu cụt vẫn có chỗ dùng: nói kết quả của một bước kiểm tra ("Log app sạch."). Nó không dùng để tóm hay răn. Câu dài và
+Câu cụt vẫn có chỗ dùng: nói kết quả của một bước kiểm tra ("Log app sạch."). Nó không dùng để tóm tắt hay răn dạy. Câu dài và
 câu ngắn nên xen nhau, vì câu nào cũng dài bằng nhau thì đọc đều đều. Đoạn chỉ có một câu thì để dành cho kết quả hay
 bước ngoặt cần đứng riêng; báo cáo, hướng dẫn không chèn đoạn một câu cho có nhịp.
 
@@ -132,18 +132,18 @@ gọi API trong một phút."
 
 Có những cặp người đọc hay lẫn: 401 với 403, exception với dòng lỗi trong log. Cặp như vậy thì định nghĩa cả hai trong một
 câu, hay hai câu kề nhau, theo cùng một khuôn và nối bằng "còn": "401 là server chưa biết bạn là ai, còn 403 là server biết
-bạn là ai mà không cho vào." Skill gọi câu như vậy là câu cặp. Hai định nghĩa cách xa nhau thì người đọc không so được, và
-câu cặp hay hỏng ở ba chỗ.
+bạn là ai mà không cho vào." Skill gọi câu như vậy là câu cặp. Hai định nghĩa cách xa nhau thì người đọc không so được.
+Câu cặp hay hỏng ở ba chỗ.
 
-- Thứ nhất đã được định nghĩa ở đoạn trước. Tới khi thứ hai xuất hiện thì gọi lại thứ nhất ngay cạnh nó cho thành cặp
-  (`examples.md`, mục 20).
-- Thứ nhất mới xuất hiện như một bằng chứng ("log không có dòng X", "X không xảy ra"), dù câu đó có giải X là gì. Như vậy
-  chưa tính là đã định nghĩa thành cặp, nên câu đầu tiên gọi tên thứ hai phải viết đủ cặp: "Y là…, còn X (cái đã nhắc ở
-  trên) là…" (`examples.md`, mục 23).
-- Câu cặp đổi chữ khi gọi lại thứ nhất. Câu trước viết "app ném exception" thì câu cặp vẫn viết "exception là lỗi app tự
-  ném ra khi gặp chuyện không xử lý được, còn dòng ERROR trong log là chữ app ghi lại", không đổi "ném" thành "báo". Đổi
-  chữ thì người đọc tưởng là một việc khác, nhất là chữ "báo" đứng cạnh "log" dễ đọc thành ghi log. Chữ chỉ trạng thái
-  cũng giữ: câu trước viết "ổ đầy" thì câu cặp không đổi sang "hết chỗ".
+- Khái niệm thứ nhất đã được định nghĩa ở đoạn trước. Tới khi khái niệm thứ hai xuất hiện thì gọi lại khái niệm thứ nhất
+  ngay cạnh nó cho thành cặp (`examples.md`, mục 20).
+- Khái niệm thứ nhất mới xuất hiện như một bằng chứng ("log không có dòng X", "X không xảy ra"), dù câu đó có giải X là gì.
+  Như vậy chưa tính là đã định nghĩa thành cặp, nên câu đầu tiên gọi tên khái niệm thứ hai phải viết đủ cặp: "Y là…, còn X
+  (cái đã nhắc ở trên) là…" (`examples.md`, mục 23).
+- Câu cặp đổi chữ khi gọi lại khái niệm thứ nhất. Câu trước viết "app ném exception" thì câu cặp vẫn viết "exception là
+  lỗi app tự ném ra khi gặp chuyện không xử lý được, còn dòng ERROR trong log là chữ app ghi lại", không đổi "ném" thành
+  "báo". Đổi chữ thì người đọc tưởng là một việc khác, nhất là chữ "báo" đứng cạnh "log" dễ đọc thành ghi log. Chữ chỉ
+  trạng thái cũng giữ: câu trước viết "ổ đầy" thì câu cặp không đổi sang "hết chỗ".
 
 ### 4.3 Chủ ngữ là người hay vật làm việc
 
@@ -168,10 +168,10 @@ Người đọc thấy tên khác thì tưởng là thứ khác. Vì vậy mỗi
 Chỗ đầu tiên là lời giải nghĩa. Giải "cache là chỗ giữ sẵn kết quả" xong thì những câu sau vẫn gọi là cache. Viết tiếp
 "Khi bộ đệm đầy, chỗ giữ sẵn sẽ xoá bớt mục cũ" là đã có ba tên cho một thứ.
 
-Động từ cũng lọt tên thứ hai như vậy, khi cùng một việc kỹ thuật được gọi bằng hai chữ. Đã viết "chặn" thì chỗ khác không đổi sang "từ chối", "drop"; đã viết
-"deploy" thì không đổi sang "triển khai", "đẩy lên". Người dùng gõ chữ nào trong lời nhờ ("bị drop") thì bài không buộc
-phải theo chữ đó, nhưng chọn chữ nào thì giữ chữ ấy suốt bài. Tên in ra trong output thì để trong dấu mã, không tính là
-động từ thứ hai.
+Động từ cũng lọt tên thứ hai như vậy, khi cùng một việc kỹ thuật được gọi bằng hai chữ. Đã viết "chặn" thì chỗ khác không đổi
+sang "từ chối", "drop"; đã viết "deploy" thì không đổi sang "triển khai", "đẩy lên". Người dùng gõ chữ nào trong lời nhờ ("bị
+drop") thì bài không buộc phải theo chữ đó, nhưng chọn chữ nào thì giữ chữ ấy suốt bài. Tên in ra trong output thì để trong
+dấu mã, không tính là động từ thứ hai.
 
 Khó thấy hơn cả là hai thứ dính nhau mà khác nhau: máy chủ và máy ảo, repo và nhánh, ổ đĩa và phân vùng. Bài chọn một chữ cho
 thứ đang được nói tới, hoặc giải cả hai một lần rồi giữ rõ thứ nào là thứ nào. Câu chép lại từ tệp của người dùng ("máy
@@ -406,7 +406,7 @@ Hiên bớt rét", "để Nam kiểm tra") hay dùng chữ chỉ quan hệ rõ (
 Văn bản ngắn như ghi chú, email, câu trả lời trong chat thì viết liền: không chia đề mục, không in đậm nhãn. Ngắn ở đây là
 dưới khoảng 800 tiếng. Văn bản cỡ đó không cần bảng hay hình làm chỗ nghỉ mắt, xuống dòng giữa các đoạn là đủ. Danh sách
 việc cần làm có người nhận, có hạn thì vẫn giữ gạch đầu dòng, chỉ bỏ nhãn in đậm. Bài nào cũng giải thích bằng lời trước;
-bảng tóm thì ngắn, bảng dài chỉ để tra.
+bảng tóm tắt thì ngắn, bảng dài chỉ để tra.
 
 Đếm chữ thì đếm theo tiếng, không tính nhan đề, đề mục và khối code nhiều dòng. Đoạn mã trong dòng (`-Xmx1g`) vẫn tính, mỗi
 chữ tách bằng dấu cách là một tiếng, kể cả mốc giờ, ngày, số và đơn vị (`09:15`, `21/4`, `GB`). Người dùng xin một khoảng
@@ -576,11 +576,11 @@ mục Góp ý về skill) là dòng riêng ở cuối, không tính vào mốc b
 
 ### Soát lời trả như soát văn
 
-Câu trong lời trả cũng soát như văn trong tệp: một thứ một tên, không hai chữ "nên" khác nghĩa đứng liền nhau, không nói
-quá điều đã đếm. Đọc lại từng câu như người đọc lần đầu: câu nào phải đọc hai lần, câu nào có "một việc", "một điều" thay
-cho việc cụ thể, cụm nào nghe như dịch, chữ chỉ người nào trỏ được hai người thì sửa (mục 7.4 ở trên). Lời trả gồm toàn gạch đầu dòng
-ngắn, mỗi dòng một mẩu ý không nối nhau, thì viết lại thành đoạn; chỉ giữ gạch đầu dòng cho danh sách thật. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là thứ gì và khuyên thu hồi, đổi mới
-(`agent-memory.md`, mục Mật khẩu và token).
+Câu trong lời trả cũng soát như văn trong tệp: một thứ một tên, không hai chữ "nên" khác nghĩa đứng liền nhau, không nói quá
+điều đã đếm. Đọc lại từng câu như người đọc lần đầu: câu nào phải đọc hai lần, câu nào có "một việc", "một điều" thay cho
+việc cụ thể, cụm nào nghe như dịch, chữ chỉ người nào trỏ được hai người thì sửa (mục 7.4 ở trên). Lời trả gồm toàn gạch đầu
+dòng ngắn, mỗi dòng một mẩu ý không nối nhau, thì viết lại thành đoạn; chỉ giữ gạch đầu dòng cho danh sách thật. Người dùng
+dán mật khẩu, token vào chat thì nói rõ đó là thứ gì và khuyên thu hồi, đổi mới (`agent-memory.md`, mục Mật khẩu và token).
 
 ## Lời trả theo từng việc
 

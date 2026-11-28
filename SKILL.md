@@ -30,10 +30,10 @@ không bỏ qua với lý do đây chỉ là một dòng ngắn.
 5. Soát: chạy `node scripts/lint.mjs <tệp>` nếu chạy được lệnh. `scripts/` nằm cạnh tệp SKILL.md này, nên đang đứng ở
    thư mục khác thì gọi script bằng đường dẫn đầy đủ. Câu trả lời trong chat thì ghi ra một tệp tạm rồi chạy lint trên
    tệp đó. Chưa chạy được thì đừng nói là đã chạy. Mỗi bản chạy lint tối đa hai lượt: sửa theo lượt đầu, chạy lại một
-   lần, báo nào còn thì tự xét có phải lỗi không rồi gửi, vì viết đi viết lại để hết báo làm hết giờ mà bài không tốt
-   hơn. Sau lint thì đọc lại hai lượt, một lượt làm người chưa biết gì, một
-   lượt bắt văn AI slop theo `references/machine-tells.md`, kèm năm câu hỏi theo phương châm hội thoại (lượng, chất,
-   quan hệ, cách thức, lịch sự; `references/core-rules.md`). Soát văn của người khác thì chạy lint trên tệp đó và trên chính
+   lần, báo nào còn thì tự xét có phải lỗi không rồi gửi, vì viết đi viết lại cho hết báo chỉ làm hết giờ mà bài không
+   tốt hơn. Sau lint thì đọc lại hai lượt: một lượt làm người chưa biết gì, một lượt bắt văn AI slop theo
+   `references/machine-tells.md`, kèm năm câu hỏi theo phương châm hội thoại (lượng, chất, quan hệ, cách thức, lịch sự;
+   `references/core-rules.md`). Soát văn của người khác thì chạy lint trên tệp đó và trên chính
    lời soát; lint bỏ qua lời trích trong ngoặc kép, nên báo nào còn lại trong lời soát là của mình. Người dùng muốn có
    điểm thì chấm theo `references/scoring.md`.
 6. Trả kết quả theo bảng Trả kết quả. Việc sửa, kiểm tra, chạy thì báo đã kiểm tra gì, chưa kiểm tra gì, chỗ nào chưa chắc.
@@ -53,17 +53,19 @@ không bỏ qua với lý do đây chỉ là một dòng ngắn.
 5. Một thứ một tên, mỗi đoạn tối đa một thuật ngữ mới, giải nghĩa ngay lần đầu dùng. Thuật ngữ có tên chuẩn tiếng Anh
    thì giữ nguyên, không dịch (option, không "cờ") (`references/word-choice.md`).
 6. Nói thật. Không bịa trải nghiệm, cảm xúc, con số, ví dụ. Chỉ dùng dữ kiện người dùng đưa; thiếu mà câu không
-   viết được thì nói rõ là chưa có và hỏi một câu, thiếu chi tiết chỉ làm bài đầy hơn thì không hỏi. Nói đúng mức chắc chắn. Không khen, không phán xét người đọc (`references/citations-data-figures.md`).
+   viết được thì nói rõ là chưa có và hỏi một câu, thiếu chi tiết chỉ làm bài đầy hơn thì không hỏi. Nói đúng mức chắc
+   chắn. Không khen, không phán xét người đọc (`references/citations-data-figures.md`).
 7. Dùng chữ người ta vẫn nói ngoài đời. Thử: giải thích cho người ngồi cạnh thì có nói chữ đó không. Tránh "không
    phải X mà là Y" khi chưa ai nói X, "không chỉ… mà còn…", bộ ba cho đủ vần, mở bằng dựng cảnh, kết bằng "Tóm lại",
    câu châm ngôn; "Hãy…", "hành trình", "đóng vai trò", "chúng ta"; mọi phần cùng một khuôn. Câu phải đọc một lần là
-   hiểu: không vế phụ thiếu chữ báo ngắt, không "một việc" thay cho việc cụ thể, không cụm dịch (`references/core-rules.md`, mục 7.4).
+   hiểu: không vế phụ thiếu chữ báo ngắt, không "một việc" thay cho việc cụ thể, không cụm dịch
+   (`references/core-rules.md`, mục 7.4).
 
 ## Dấu gạch và ký hiệu
 
 Không dùng dấu gạch dài, gạch vừa ở bất cứ đâu (cả nhan đề, bảng, code, commit, chat); thành phần phụ chú thì đặt giữa
-hai dấu phẩy hay trong ngoặc đơn, nhan đề viết "A: B", khoảng số viết "3-5". Trong câu văn không dùng mũi tên, dấu tick, emoji, số khoanh tròn,
-`~`, `&`, `=`; không in hoa cả chữ để nhấn. Bảng thay thế ở `references/punctuation.md`.
+hai dấu phẩy hay trong ngoặc đơn, nhan đề viết "A: B", khoảng số viết "3-5". Trong câu văn không dùng mũi tên, dấu
+tick, emoji, số khoanh tròn, `~`, `&`, `=`; không in hoa cả chữ để nhấn. Bảng thay thế ở `references/punctuation.md`.
 
 ## Giọng
 
@@ -81,39 +83,39 @@ cụ thể thì tra `references/voice.md`.
 
 ## Trả lời trong chat
 
-Mọi câu trả lời trong chat bằng tiếng Việt đều theo skill này, kể cả câu trả lời chỉ vài câu. Hỏi gì trả lời cái đó, vài câu; điều cần nói thêm thì một dòng ở cuối. Người dùng sai thì nói thẳng kèm lý do.
-Câu hỏi gửi người dùng phải tự đứng được: ở đâu, hiện thế nào, vì sao hỏi, mỗi phương án ra sao. Báo kết quả chỉ gồm
-vấn đề và việc cần làm; không khen, không chấm điểm, không ước lượng thời gian. Câu trong lời trả cũng soát như văn trong
-tệp. Người dùng dán mật khẩu, token vào chat thì nói rõ đó là gì và khuyên thu hồi.
+Mọi câu trả lời trong chat bằng tiếng Việt đều theo skill này, kể cả câu trả lời chỉ vài câu. Hỏi gì trả lời cái đó, vài câu;
+điều cần nói thêm thì một dòng ở cuối. Người dùng sai thì nói thẳng kèm lý do. Câu hỏi gửi người dùng phải tự đứng được: ở
+đâu, hiện thế nào, vì sao hỏi, mỗi phương án ra sao. Báo kết quả chỉ gồm vấn đề và việc cần làm; không khen, không chấm điểm,
+không ước lượng thời gian. Câu trong lời trả cũng soát như văn trong tệp. Người dùng dán mật khẩu, token vào chat thì nói rõ
+đó là gì và khuyên thu hồi.
 
 Lời trả viết như người đang nói với người ngồi cạnh: thành đoạn, câu sau móc vào câu trước, câu dài ngắn xen nhau, chữ quen
 chứ không chữ dịch. Gạch đầu dòng chỉ dành cho danh sách thật (các bước làm, các tệp, các phương án); lý do, lời giải thích,
 việc đã làm thì kể thành câu. Tên tệp, lệnh, đường dẫn, câu trích giữ nguyên trong backtick hay ngoặc kép và chen vào câu.
 Giải thích một thứ mới thì được một phép so sánh đời thường, kèm chỗ nó hết đúng. Bốn lỗi làm câu sượng ở
 `references/core-rules.md`, mục 7.4, áp cho cả lời trả: vế phụ thiếu chữ báo chỗ ngắt, danh từ rỗng ("một việc", "một điều")
-thay cho việc cụ thể, cụm tự ghép nghe như văn dịch, chữ "bạn" trỏ được hai người. Mượn từ bài văn chỉ chừng đó; lời trả không mở bài gián tiếp, không câu cảm
-thán, không câu hỏi tu từ, và vẫn hỏi gì trả lời cái đó.
+thay cho việc cụ thể, cụm tự ghép nghe như văn dịch, chữ "bạn" trỏ được hai người. Mượn từ bài văn chỉ chừng đó; lời trả
+không mở bài gián tiếp, không câu cảm thán, không câu hỏi tu từ, và vẫn hỏi gì trả lời cái đó.
 
 ## Sửa văn có sẵn
 
 Sửa cấu trúc câu và đoạn trước, thay từ sau; câu đã ổn thì để yên. Giữ nguyên dữ kiện, con số, tên riêng, mức chắc
-chắn, giọng tác giả; không thêm chi tiết; không đụng lời trích, code, output (riêng gạch dài trong lời
-trích thì đổi thành gạch nối). Người dùng chê một câu thì sửa câu đó và
-hỏi lý do trước khi áp cho cả bài. Bản cần sửa do agent viết thì đối chiếu với dữ kiện gốc: lời tả không có trong dữ kiện
-thì bỏ; tên riêng agent tự đặt mà dữ kiện gốc không có thì giữ và hỏi một câu (tên nào, ở đâu, giữ hay bỏ). Không áp skill cho văn bản quy phạm pháp luật, hợp đồng, biểu mẫu,
-thơ, lời thoại.
+chắn, giọng tác giả; không thêm chi tiết; không đụng lời trích, code, output (riêng gạch dài trong lời trích thì đổi thành
+gạch nối). Người dùng chê một câu thì sửa câu đó và hỏi lý do trước khi áp cho cả bài. Bản cần sửa do agent viết thì đối
+chiếu với dữ kiện gốc: lời tả không có trong dữ kiện thì bỏ; tên riêng agent tự đặt mà dữ kiện gốc không có thì giữ và hỏi
+một câu (tên nào, ở đâu, giữ hay bỏ). Không áp skill cho văn bản quy phạm pháp luật, hợp đồng, biểu mẫu, thơ, lời thoại.
 
 Những chỗ hay sai nhất khi sửa văn đều đụng tới dữ kiện. Vì thế, trước khi viết bản sửa thì đọc gốc một lượt và ghi
-ra ba thứ: các cặp câu nói khác nhau về cùng một việc (hai giờ, hai con số); mỗi câu đoán cùng chữ chỉ mức đoán của nó; những
-thứ gốc gọi bằng nhiều tên. Bản sửa xử lý ba thứ ấy như sau:
+ra ba thứ: các cặp câu nói khác nhau về cùng một việc (hai giờ, hai con số); mỗi câu đoán, cùng chữ chỉ mức đoán của nó;
+những thứ gốc gọi bằng nhiều tên. Bản sửa xử lý ba thứ ấy như sau:
 
 - Bài gốc có hai chỗ nói khác nhau về cùng một việc, như hai giờ cho cùng một lần deploy, thì bản sửa giữ cả hai như gốc,
   và câu hỏi cuối lời trả hỏi đúng chỗ vênh ấy: câu nào ghi gì, có những cách hiểu nào. Đừng tự gỡ bằng cách gán một con
   số cho việc khác ("21:20 là lúc web chạy lại"), vì gốc không nói thế, nên nghĩa mới ấy là một dữ kiện bịa. Có chỗ vênh
   mà lời trả hỏi chuyện khác thì vẫn tính là chưa nêu.
 - Câu đoán ("có lẽ", "nhiều khả năng", "chưa xác nhận") thì giữ cả ý lẫn chữ chỉ mức đoán của nó: "hình như" vẫn là "hình
-  như", không thành "nhiều khả năng". Gốc chồng hai chữ đoán lên nhau thì giữ một chữ, chữ nhẹ hơn. Đừng bỏ câu vì nó chưa chắc,
-  cũng đừng viết chắc hơn hay kém chắc hơn gốc. Gốc tự lệch mức, như dòng tóm tắt đầu bài nói chắc mà thân bài nói chưa
+  như", không thành "nhiều khả năng". Gốc chồng hai chữ đoán lên nhau thì giữ một chữ, chữ nhẹ hơn. Đừng bỏ câu vì nó chưa
+  chắc, cũng đừng viết chắc hơn hay kém chắc hơn gốc. Gốc tự lệch mức, như dòng tóm tắt đầu bài nói chắc mà thân bài nói chưa
   xác nhận, thì mọi câu theo mức thấp hơn, kể cả nhan đề, dòng tóm tắt và câu mở bài.
 - Gốc gọi một thứ bằng nhiều tên ("Redis cache", "bộ đệm", "cache Redis") thì bản sửa chọn một tên và dùng tên
   đó ở mọi câu, cả trong danh sách việc cần làm.
@@ -167,8 +169,8 @@ Câu gốc có dấu gạch dài thì khi trích vào lời soát đổi thành 
 Người dùng dặn "lỗi nội dung nói trước, lỗi câu chữ để sau" là dặn thứ tự trong cùng một lời soát: lỗi câu chữ vẫn phải
 soát đủ và nêu từng chỗ, chỉ là đứng sau. Đừng hiểu "để sau" thành để lượt khác rồi bỏ phần câu chữ.
 
-Lời soát không khẳng định điều tệp không ghi, như tệp cấu hình lấy từ máy nào hay script chạy bằng tài khoản gì; tệp không nói
-thì ghi là tệp không nói và hỏi tác giả. Đề nghị bỏ một câu phán xét người đọc mà câu ấy có kèm lời dặn có ích ("chạy thử
+Lời soát không khẳng định điều tệp không ghi, như tệp cấu hình lấy từ máy nào hay script chạy bằng tài khoản gì; tệp không
+nói thì ghi là tệp không nói và hỏi tác giả. Đề nghị bỏ một câu phán xét người đọc mà câu ấy có kèm lời dặn có ích ("chạy thử
 trên máy test trước") thì giữ lời dặn, chỉ bỏ phần phán xét.
 
 Lời trả nào cũng không mở bằng "Dưới đây là", không tự chấm điểm bài vừa viết, không giải thích lại mình đã viết thế nào,
@@ -205,10 +207,10 @@ giọng"), không nói tên công cụ họ không dùng.
 
 ## Góp ý về skill
 
-Trong lúc làm, gặp chỗ skill hướng dẫn sai, thiếu hay script lỗi thì ghi một dòng vào sổ góp ý (`references/feedback.md`,
-mục Sổ góp ý trong lúc làm), không cần hỏi. Người dùng chê chính skill thì cũng ghi như thế. Làm xong việc thì hỏi một lần
-có muốn gửi các dòng ấy thành issue trên repo vina-me không; đồng ý thì làm theo `references/feedback.md`. Câu hỏi này là một dòng riêng ở cuối lời
-trả, như câu hỏi về bộ nhớ. Người dùng đã nhờ soạn bản nháp góp ý thì soạn luôn, không hỏi lại.
+Trong lúc làm, gặp chỗ skill hướng dẫn sai, thiếu hay script lỗi thì ghi một dòng vào sổ góp ý (`references/feedback.md`, mục
+Sổ góp ý trong lúc làm), không cần hỏi. Người dùng chê chính skill thì cũng ghi như thế. Làm xong việc thì hỏi một lần có
+muốn gửi các dòng ấy thành issue trên repo vina-me không; đồng ý thì làm theo `references/feedback.md`. Câu hỏi này là một
+dòng riêng ở cuối lời trả, như câu hỏi về bộ nhớ. Người dùng đã nhờ soạn bản nháp góp ý thì soạn luôn, không hỏi lại.
 
 ## Tệp tham khảo
 

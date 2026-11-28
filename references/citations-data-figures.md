@@ -19,8 +19,8 @@ Trích nguyên văn thì chép nguyên văn từng chữ, kể cả chỗ bản 
 bớt thì đánh dấu […], và chỉ cắt phần ít quan trọng, không cắt tới mức đổi nghĩa. Câu chữ trong lời trích không được sửa
 cho hợp giọng của bài. Ngoại lệ duy nhất là dấu gạch dài, ghi thành gạch nối (`punctuation.md`).
 
-Lời trích còn nằm ở cả những chỗ ngoài phần dẫn lời. Chữ của nguồn được nhắc lại ở chỗ khác (chú thích ảnh, tên mục, câu hỏi gửi người
-nhận) mà để trong ngoặc kép thì cũng là lời trích: giữ chính tả của nguồn, không sửa lỗi gõ.
+Lời trích còn nằm ở cả những chỗ ngoài phần dẫn lời. Chữ của nguồn được nhắc lại ở chỗ khác (chú thích ảnh, tên mục, câu hỏi
+gửi người nhận) mà để trong ngoặc kép thì cũng là lời trích: giữ chính tả của nguồn, không sửa lỗi gõ.
 
 Ngày, số trong nguồn thiếu một phần (ngày không ghi năm, số không ghi đơn vị) thì giữ nguyên cách ghi đó ở mọi chỗ nhắc lại,
 kể cả câu hỏi gửi người nhận: "từ 5/3 như thông báo ghi", không "từ 5/3/2026". Cần phần thiếu thì hỏi phần đó, không tự
@@ -45,8 +45,8 @@ cứu nào. Nguồn chính thức đi trước: văn bản chuẩn, tài liệu 
 ## Chú thích
 
 Chú thích trong câu, đặt trong ngoặc đơn, dùng cho tên gọi khác, nghĩa của một từ, chữ viết tắt. Chú thích cuối trang thì
-đánh số ngay sau từ cần chú, rồi ghi số đó kèm nội dung ở cuối trang. Chú thích nào cũng có dấu đánh ở chỗ được chú, và
-chú thích không dồn hết xuống cuối văn bản.
+đánh số ngay sau từ cần chú thích, rồi ghi số đó kèm nội dung ở cuối trang. Chú thích nào cũng có dấu đánh ở chỗ được
+chú thích, và chú thích không dồn hết xuống cuối văn bản.
 
 ## Số liệu
 
@@ -87,5 +87,5 @@ Hình nào cũng qua bốn yêu cầu:
 Hình đi kèm chữ, không thay chữ, vì hình không lời dễ bị hiểu sai. Chú thích nói hình chứng minh điều gì cho bài; chỉ tả lại
 hình thì chưa đủ. Đọc một biểu đồ thành lời thì đi ba bước: trong hình có gì, nhìn thấy điều gì, rút ra điều gì.
 
-Bảng tóm ý thì ngắn, 3 tới 6 dòng; bảng dài chỉ để tra. Nhan đề nói nội dung chính, đề mục làm nổi thông tin chính, và đề
-mục dạng câu hỏi thì đoạn ngay dưới đáp luôn.
+Bảng tóm tắt ý thì ngắn, 3 tới 6 dòng; bảng dài chỉ để tra. Nhan đề nói nội dung chính, đề mục làm nổi bật thông tin
+chính, và đề mục dạng câu hỏi thì đoạn ngay dưới đáp luôn.

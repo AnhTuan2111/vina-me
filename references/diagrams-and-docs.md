@@ -19,10 +19,10 @@ giao thức, vì đó là chữ sẽ gặp trên màn hình thật. Sơ đồ qu
 Việt ("gửi hồ sơ", "duyệt", không "submit request", "approve"), nhưng tên phần mềm, tên máy vẫn giữ như gốc ("Keycloak").
 Tiêu đề và chú thích thì tiếng Việt.
 
-Một thứ một tên trên mọi nhãn, và tên ấy khớp với tài liệu đi kèm. Một luồng đã gọi "sync" ở nhãn này thì nhãn khác không
-gọi "replicate"; một việc làm trên hai mũi tên thì hai nhãn dùng cùng chữ. Động từ trên nhãn dùng lại tên tài liệu đã gọi
-luồng đó. Tài liệu viết "LDAP sync" thì nhãn là "sync users (LDAPS 636)", không đặt động từ mới như "pull accounts" chỉ để
-nói chiều, vì chiều đã có mũi tên và chú giải lo. Muốn soát thì đặt từng nhãn cạnh cột Mục đích của bảng cổng và câu thân
+Một thứ một tên trên mọi nhãn, và tên ấy khớp với tài liệu đi kèm. Một luồng đã gọi "sync" ở nhãn này thì nhãn khác không gọi
+"replicate"; cùng một việc mà hiện trên hai mũi tên thì hai nhãn dùng cùng chữ. Động từ trên nhãn dùng lại tên mà tài liệu đã
+gọi luồng đó. Tài liệu viết "LDAP sync" thì nhãn là "sync users (LDAPS 636)", không đặt động từ mới như "pull accounts" chỉ
+để nói chiều, vì chiều đã có mũi tên và chú giải lo. Muốn soát thì đặt từng nhãn cạnh cột Mục đích của bảng cổng và câu thân
 bài nói về luồng đó: ba chỗ phải gọi cùng một tên.
 
 ### Mũi tên
@@ -36,13 +36,13 @@ nhận gì. Khung bao chỉ dùng khi nó là một thứ thật, như một m�
 
 Sơ đồ triển khai đi kèm bảng cổng thì chiều mũi tên là chiều mở kết nối, khớp cột Từ, Đến của bảng, và chú giải nói điều
 đó. Chiều mở kết nối có thể ngược chiều dữ liệu chạy: máy giám sát mở kết nối để kéo số đo về, máy dự phòng mở kết nối để
-kéo dữ liệu từ máy chính. Chiều do mũi tên và chú giải nói, còn nhãn vẫn giữ tên tài liệu gọi luồng đó, không đổi động từ
+kéo dữ liệu từ máy chính. Chiều do mũi tên và chú giải nói, còn nhãn vẫn giữ tên mà tài liệu gọi luồng đó, không đổi động từ
 thành "pull", "fetch" chỉ để nói chiều.
 
 Mỗi mũi tên mang một nghĩa. Có nhiều loại luồng thì phân bằng màu hay nét, có chú giải, và nhãn trên mũi tên nói việc gì xảy
-ra ("đọc để so", "sửa cho khớp"); tên giao thức, cổng hay tên phần mềm đứng một mình thì chưa đủ. Cổng, giao thức để sau động từ, trong
-ngoặc: "HTTPS 443" thành "open web app (HTTPS 443)", "Keycloak :8443" thành "log in (8443)". Một nhãn một việc; luồng phụ
-(cổng 80 chỉ để chuyển sang 443) thì vẽ một mũi tên riêng hay để trong bảng, không nhồi vào ngoặc của nhãn chính.
+ra ("đọc để so", "sửa cho khớp"); tên giao thức, cổng hay tên phần mềm đứng một mình thì chưa đủ. Cổng, giao thức để sau động
+từ, trong ngoặc: "HTTPS 443" thành "open web app (HTTPS 443)", "Keycloak :8443" thành "log in (8443)". Một nhãn một việc;
+luồng phụ (cổng 80 chỉ để chuyển sang 443) thì vẽ một mũi tên riêng hay để trong bảng, không nhồi vào ngoặc của nhãn chính.
 
 ### Dữ kiện và hình trên sơ đồ
 
@@ -121,7 +121,7 @@ Mục xử lý sự cố đánh số các bước, và bước chỉ ghi việc 
 viết nối vào bước vừa làm trong cùng một câu, không thành bước riêng.
 
 Bên nhận đã sửa tay trong tài liệu thì không dán đè cả tài liệu: tải bản hiện tại về so trước, rồi chỉ sửa chỗ cần. Không có
-bản đó, chỉ có email tóm chỗ sửa, thì dựng theo email cộng nguồn, rồi trong chat xin người dùng bản bên nhận trả về để so
+bản đó, chỉ có email tóm tắt chỗ sửa, thì dựng theo email cộng nguồn, rồi trong chat xin người dùng bản bên nhận trả về để so
 trước khi gửi.
 
 ### Soát câu văn trong tài liệu gửi khách
@@ -151,10 +151,10 @@ Cổng, giao thức, phiên bản, hệ điều hành, người thực hiện, h
 ("đường dẫn `\\máy\thư mục` thì là SMB 445") hay từ việc máy thuộc bên nào. Ô đó ghi "cần bổ sung" và tô vàng. Đừng điền
 bản đoán kèm dấu hỏi, vì người dùng quên sửa thì bản đoán tới tay khách.
 
-Ngoại lệ duy nhất là giao thức suy theo phần mềm. Nguồn đã ghi phần mềm nghe ở một cổng, và phần mềm ấy chỉ nói một giao
-thức ở cổng đó, thì giao thức ghi được, vì nó theo phần mềm nguồn đã chốt chứ không đoán. Ví dụ là Redis ở 6379 của máy
-chạy Redis, HTTP ở cổng số đo của một exporter Prometheus, HTTPS ở 443 khi nguồn ghi Nginx nhận TLS. Mọi cổng trong bảng xử cùng một
-cách: cổng nào thoả điều kiện thì ghi giao thức, cổng nào không (nguồn chỉ có số cổng, hay chỉ có đường dẫn như
+Ngoại lệ duy nhất là giao thức suy theo phần mềm. Nguồn đã ghi phần mềm nghe ở một cổng, và phần mềm ấy chỉ nói một giao thức
+ở cổng đó, thì giao thức ghi được, vì nó theo phần mềm nguồn đã chốt chứ không đoán. Ví dụ là Redis ở 6379 của máy chạy
+Redis, HTTP ở cổng số đo của một exporter Prometheus, HTTPS ở 443 khi nguồn ghi Nginx nhận TLS. Mọi cổng trong bảng xử lý
+theo cùng một cách: cổng nào thoả điều kiện thì ghi giao thức, cổng nào không (nguồn chỉ có số cổng, hay chỉ có đường dẫn như
 `\\máy\thư mục` mà không ghi phần mềm) thì "cần bổ sung" tô vàng. Hai cổng cùng loại nguồn thì không để cổng này ghi, cổng
 kia tô vàng.
 
@@ -173,8 +173,8 @@ chốt thì không còn ở mục chờ. Ghi chú sai kỹ thuật (chiều kế
 trong chat đã sửa gì, vì sao.
 
 Cột mẫu đòi mà nguồn không cho, như cột hạn khi khách chỉ hẹn "sau ngày X", thì chép nguyên lời nguồn ("sau ngày nghiệm thu
-giai đoạn 1"), không đổi thành một ngày. Nguồn không có lời nào thì ghi "cần bổ sung" và tô vàng như ô dữ kiện khác, vì ô
-trống tới tay khách đọc như bên mình quên điền.
+giai đoạn 1"), không đổi thành một ngày. Nguồn không có lời nào thì ghi "cần bổ sung" và tô vàng như ô dữ kiện khác, vì khách
+nhận tài liệu có ô trống sẽ hiểu là bên mình quên điền.
 
 Ô tô vàng là việc của bên mình phải làm xong trước khi gửi; chỗ chờ khách mới vào mục cuối. Mỗi ô tô vàng có một dòng trong
 chat, và chat có nói thì ô trong tệp vẫn phải tô, vì hai thứ không thay được cho nhau.
@@ -188,18 +188,18 @@ bộ nào, vì người dùng mở tệp là thấy.
 
 Dòng ô tô vàng nào cũng đủ bốn thứ kể trên, kể cả "ai kiểm tra được" (người quản trị máy đó, bên khách, người đã viết ghi
 chú). Lý do chưa điền được dùng lời nguồn ("ghi chú ghi chưa hỏi lại bản nào"), không thêm điều nguồn không nói, như tên một
-bản phần mềm nguồn không nhắc. Tên máy, đường dẫn, domain nhắc trong chat đặt trong backtick, chép từ nguồn chứ không gõ
+bản phần mềm mà nguồn không nhắc. Tên máy, đường dẫn, domain nhắc trong chat đặt trong backtick, chép từ nguồn chứ không gõ
 lại, rồi so từng ký tự với tệp Word. Đường dẫn mạng `\\máy\thư mục` mở bằng hai dấu `\`, mất một dấu là thành đường dẫn
 khác.
 
 ## Báo cáo trạng thái hệ thống
 
-Báo cáo trạng thái trả lời câu "giờ nó đang thế nào", và người đọc dùng nó để quyết có phải làm gì không. Vì vậy câu đầu là
-kết luận: chạy bình thường, hay có chỗ hỏng, hỏng ở đâu. Số đo kèm giờ đo và nguồn: "lúc 19:57, ổ `/` dùng 179G trên 194G
-(93%)".
+Báo cáo trạng thái trả lời câu "giờ nó đang thế nào", và người đọc dùng nó để quyết định có phải làm gì không. Vì vậy câu đầu
+là kết luận: chạy bình thường, hay có chỗ hỏng, hỏng ở đâu. Số đo kèm giờ đo và nguồn: "lúc 19:57, ổ `/` dùng 179G trên
+194G (93%)".
 
-Phần còn lại chỉ nêu cái lệch khỏi bình thường, kèm lý do đã biết hay ghi rõ là chưa biết lý do. Thứ chạy bình thường thì gom một
-dòng.
+Phần còn lại chỉ nêu cái lệch khỏi bình thường, kèm lý do đã biết hay ghi rõ là chưa biết lý do. Thứ chạy bình thường thì gom
+một dòng.
 
 Báo cáo dọn dẹp, đề xuất thay đổi thì chia theo mức rủi ro (dọn được ngay, cần hỏi chủ, không nên đụng), mỗi dòng có dung
 lượng hay tác động đo được. Báo cáo ghi rõ đã làm gì và chưa làm gì ("chỉ xem, chưa xoá gì"). Đã làm thay người nhận việc

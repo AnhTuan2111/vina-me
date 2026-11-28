@@ -4,10 +4,10 @@ Báo cáo, tờ trình, công văn, kế hoạch, quyết định gửi cho cơ 
 thể thức của Nghị định 30/2020/NĐ-CP về công tác văn thư. Ở loại văn bản này khuôn mẫu là yêu cầu bắt buộc, nên nó không bị
 coi là văn mẫu, và một số luật của skill được làm ngược lại (mục Văn phong).
 
-Tệp đi theo thứ tự người soạn cần. Phần đầu là thể thức: văn bản nào theo quy định nào, trang và chữ, phần đầu và phần
-cuối văn bản, đề mục, viết hoa, viện dẫn. Phần sau là cách viết: báo cáo, số liệu, dữ kiện thiếu, câu mở và câu kết, bố
-cục, hồ sơ, văn phong. Cuối cùng là cách soát. Mục nào ghi "quy định" là có trong văn bản pháp luật; mục nào ghi "thực tế" là cách các cơ quan hay
-viết, chưa có văn bản nào bắt buộc.
+Tệp đi theo thứ tự mà người soạn cần. Phần đầu là thể thức: văn bản nào theo quy định nào, trang và chữ, phần đầu và phần
+cuối văn bản, đề mục, viết hoa, viện dẫn. Phần sau là cách viết: báo cáo, số liệu, dữ kiện thiếu, câu mở và câu kết, bố cục,
+hồ sơ, văn phong. Cuối cùng là cách soát. Mục nào ghi "quy định" là có trong văn bản pháp luật; mục nào ghi "thực tế" là cách
+các cơ quan hay viết, chưa có văn bản nào bắt buộc.
 
 ## Văn bản nào theo quy định nào
 
@@ -59,9 +59,9 @@ Ký hiệu viết tắt tên loại (Phụ lục III): QĐ quyết định, CT c
 CTr chương trình, KH kế hoạch, PA phương án, ĐA đề án, DA dự án, BC báo cáo, BB biên bản, TTr tờ trình, HĐ hợp đồng, CĐ
 công điện, GM giấy mời, GGT giấy giới thiệu. Ký hiệu công văn là tên cơ quan cộng tên đơn vị soạn, ví dụ 12/UBND-VX.
 
-Các mẫu ở Phụ lục III chỉ để chỗ ghi trích yếu dưới tên loại, không ghi sẵn chữ "Về việc"; thực tế nhiều cơ quan vẫn viết
-"Về việc..." dưới "TỜ TRÌNH". Cả hai cách đều gặp, nên theo cách cơ quan đó đang dùng; người dùng không nói thì viết thẳng cụm nội dung, như
-trích yếu báo cáo ở mẫu trên.
+Các mẫu ở Phụ lục III chỉ để chỗ ghi trích yếu dưới tên loại, không ghi sẵn chữ "Về việc"; thực tế nhiều cơ quan vẫn viết "Về
+việc..." dưới "TỜ TRÌNH". Cả hai cách đều gặp, nên theo cách cơ quan đó đang dùng; người dùng không nói thì viết thẳng cụm
+nội dung, như trích yếu báo cáo ở mẫu trên.
 
 Trích yếu là "một câu ngắn gọn hoặc một cụm từ phản ánh khái quát nội dung chủ yếu của văn bản". Tên báo cáo phải "rõ
 ràng, ngắn gọn và thể hiện được bao quát nội dung, phạm vi yêu cầu báo cáo" (Nghị định 09/2019, Điều 8).
@@ -180,7 +180,8 @@ Thời gian chốt số liệu báo cáo định kỳ không trùng tháng và n
 | 6 tháng đầu năm | 15/12 năm trước | 14/6 |
 | Năm | 15/12 năm trước | 14/12 năm báo cáo |
 
-Vì kỳ số liệu lệch với tháng và năm như vậy, câu đầu phần số liệu nói rõ kỳ, ví dụ "số liệu tính từ ngày 15/12/2025 đến ngày 14/12/2026".
+Vì kỳ số liệu lệch với tháng và năm như vậy, câu đầu phần số liệu nói rõ kỳ, ví dụ "số liệu tính từ ngày 15/12/2025 đến ngày
+14/12/2026".
 
 ## Số liệu
 
@@ -197,8 +198,8 @@ Vì kỳ số liệu lệch với tháng và năm như vậy, câu đầu phần
 
 ### Kiểm tra phép tính trước khi chép
 
-Bảng dự toán, bảng tổng hợp người dùng đưa (CSV, Excel, lời nhắn) hay có một dòng nhân sai mà dòng tổng cộng lại cộng theo
-dòng sai, nên tổng khớp với số người dùng nhớ và đọc lướt không thấy. Trước khi chép, tính lại:
+Bảng dự toán, bảng tổng hợp mà người dùng đưa (CSV, Excel, lời nhắn) thường có một dòng nhân sai mà dòng tổng cộng lại
+cộng theo dòng sai, nên tổng khớp với số mà người dùng nhớ và đọc lướt không thấy. Trước khi chép, tính lại:
 
 1. mỗi dòng: số lượng nhân đơn giá bằng thành tiền;
 2. dòng tổng: cộng các dòng bằng tổng;
@@ -213,7 +214,7 @@ nghị):
 - hoặc chưa chắc số nào đúng (đơn giá sai hay thành tiền sai) thì đặt chỗ đánh dấu "[cần xác nhận: A hay B đồng]" ở mọi chỗ
   đó, rồi hỏi người dùng.
 
-Biết ô nào sai bằng cách chia ngược: lấy thành tiền chia cho đơn giá, rồi chia cho số lượng. Không phép chia nào ra số nguyên
+Muốn biết ô nào sai thì chia ngược: lấy thành tiền chia cho đơn giá, rồi chia cho số lượng. Không phép chia nào ra số nguyên
 thì gần như chắc ô thành tiền ghi sai, viết số đã tính lại. Một phép chia ra số nguyên thì thừa số kia cũng có thể là ô sai,
 nên đánh dấu cần xác nhận và hỏi. Script in sẵn kết luận này sau mỗi dòng lệch.
 
@@ -222,14 +223,13 @@ và nơi nhận chỉ đọc văn bản, không đọc chat.
 
 ## Dữ kiện thiếu hay lệch
 
-Văn bản hành chính được ký và lưu, nên chỗ nào thiếu dữ kiện (trích yếu văn bản viện dẫn, số biên bản, đơn vị thực hiện
-chưa chọn) thì để chỗ đánh dấu trong ngoặc vuông ngay trong văn bản, "[cần bổ sung: ...]" hay "[cần xác nhận: ...]" (script xuất Word
-tô nền vàng các chỗ này), và nêu
-từng chỗ trong câu trả lời. Không tự điền cho đủ thể thức, không bỏ trống mà không đánh dấu. Số liệu trong bản nháp của người
-khác mà người dùng dặn không dùng hay chưa kiểm tra thì bỏ, không chép sang.
+Văn bản hành chính được ký và lưu, nên chỗ nào thiếu dữ kiện (trích yếu văn bản viện dẫn, số biên bản, đơn vị thực hiện chưa
+chọn) thì để chỗ đánh dấu trong ngoặc vuông ngay trong văn bản, "[cần bổ sung: ...]" hay "[cần xác nhận: ...]" (script xuất
+Word tô nền vàng các chỗ này), và nêu từng chỗ trong câu trả lời. Không tự điền cho đủ thể thức, không bỏ trống mà không đánh
+dấu. Số liệu trong bản nháp của người khác mà người dùng dặn không dùng hay chưa kiểm tra thì bỏ, không chép sang.
 
-Tên hạng mục trong bảng người dùng đưa cũng là dữ kiện của họ. Đổi tên cho khớp một tên ở cả văn bản (mục "Văn phong") thì
-được, nhưng nêu trong câu trả lời tên cũ và tên mới, như với số đã tính lại.
+Tên hạng mục trong bảng mà người dùng đưa cũng là dữ kiện của họ. Đổi tên để cả văn bản dùng một tên (mục "Văn phong")
+thì được, nhưng nêu trong câu trả lời tên cũ và tên mới, như với số đã tính lại.
 
 ## Câu mở và câu kết hay gặp (thực tế)
 
@@ -347,8 +347,8 @@ Script không kiểm tra được cỡ chữ, lề, phông, nên văn bản xu�
 4. Soát khoảng trống trang: `node scripts/official-doc-docx.mjs --check-pdf vb.pdf` (cần `pdftotext` của Poppler). Script
    báo trang của văn bản chính trống quá 20% ở cuối mà văn bản còn sang trang sau, và trang cuối chỉ có câu kết, khối ký.
    Lỗi này hay gặp: script giữ đoạn cuối thân bài, câu kết và khối ký cùng một trang, nên khi cả khối không vừa phần còn
-   lại của trang, Word đẩy cả khối sang trang sau. Còn báo thì dồn trang theo thứ tự, mỗi cách xong dựng lại, xuất PDF,
-   chạy lại `--check-pdf`:
+   lại của trang, Word đẩy cả khối sang trang sau. Script còn báo thì dồn trang theo thứ tự dưới đây; xong mỗi cách
+   thì dựng lại, xuất PDF và chạy lại `--check-pdf`:
    1. bỏ câu thân bài nhắc lại thứ phụ lục đã có (liệt kê lại các mốc khi đã có phụ lục tiến độ, kể lại từng hạng mục
       khi đã có bảng dự toán), chỉ giữ câu dẫn tới phụ lục;
    2. gộp khoản, câu ngắn cùng ý, rồi soát lại các câu vừa gộp theo bảng lỗi câu ở mục "Văn phong";
@@ -361,15 +361,15 @@ Script không kiểm tra được cỡ chữ, lề, phông, nên văn bản xu�
    ... của ...)" của phụ lục có đủ tên cơ quan như câu mở. `--check-pdf` chỉ đo khoảng trống, không thay được bước này.
 6. Trả kết quả kèm đường dẫn đầy đủ của cả tệp Word và tệp PDF, số trang, và một câu nói đã xem từng trang PDF, thấy gì: khối
    ký cùng trang câu kết, bảng không tràn, chỗ đã sửa sau khi xem (hay không phải sửa gì). Người dùng chỉ đọc lời trả, chưa
-   mở tệp, nên câu này là thứ duy nhất cho họ biết bố cục trang đã được xem. Sau đó mỗi chỗ thiếu dữ kiện, số đã tính lại,
-   tên đã đổi một gạch đầu dòng; văn bản đưa đi ký nên các chỗ này đều phải nêu, kể cả khi lời trả dài hơn ba câu.
+   mở tệp, nên câu này là thứ duy nhất cho họ biết bố cục trang đã được xem. Sau đó ghi mỗi chỗ thiếu dữ kiện, số đã tính
+   lại, tên đã đổi thành một gạch đầu dòng; văn bản đưa đi ký nên các chỗ này đều phải nêu, kể cả khi lời trả dài hơn ba câu.
 
 Tùy chọn của script mà bảng ở `docx-export.md` chưa ghi: bảng có `align` (mỗi cột `"left"`, `"center"`, `"right"`; cột số
 tiền canh phải) và `boldRows` (chỉ số hàng in đậm, `-1` là hàng cuối, cho dòng "Tổng cộng"); mục, khoản, phụ lục có
 `paragraphsAfter` cho đoạn đứng sau danh sách điểm hay bảng (`paragraphs` luôn in trước `points`). Ở gốc JSON: `lineSpacing`
-(cách dòng thân bài, từ `1` tới `1.5`, mặc định `1.2`) và `fontSize` (`13` hay `14`, mặc định `14`), dùng khi dồn trang ở bước 4;
-ngoài khoảng của Phụ lục I thì script báo và dùng mặc định. Script tự giữ đoạn cuối thân bài, câu kết và khối ký cùng một
-trang, và tự giữ khoảng số như "2015-2020" không bị ngắt dòng.
+(cách dòng thân bài, từ `1` tới `1.5`, mặc định `1.2`) và `fontSize` (`13` hay `14`, mặc định `14`), dùng khi dồn trang ở
+bước 4; ngoài khoảng của Phụ lục I thì script báo và dùng mặc định. Script tự giữ đoạn cuối thân bài, câu kết và khối ký cùng
+một trang, và tự giữ khoảng số như "2015-2020" không bị ngắt dòng.
 
 Tên cơ quan ở phần đầu: script ước bề ngang từng dòng, dòng không vừa cột trái thì nới cột trái từ 40% lên 44% bề ngang hay
 hạ cỡ chữ từ 13 xuống 12, vẫn không vừa thì tự ngắt trước địa danh ("tỉnh", "huyện", "xã"...). Script báo khi câu mở gọi

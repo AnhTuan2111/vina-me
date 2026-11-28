@@ -1,14 +1,14 @@
 # Thuyết minh phần mềm
 
 Hạng mục phần mềm không có catalog; tài liệu chứng minh là thuyết minh cùng tài liệu kỹ thuật sản phẩm. Người chấm so từng
-chức năng HSMT liệt kê với thuyết minh, nên đi theo đúng danh sách của HSMT.
+chức năng mà HSMT liệt kê với thuyết minh, nên thuyết minh đi theo đúng danh sách của HSMT.
 
 ## Chức năng
 
 - Bảng đáp ứng chức năng: STT; Yêu cầu chức năng của E-HSMT (chép nguyên văn từng gạch đầu dòng); Đáp ứng (phần mềm làm gì,
   ai dùng, kết quả); Mục chi tiết. Tỉ lệ 7, 38, 40, 15. Có tài liệu kỹ thuật riêng thì cột cuối dẫn mục của tài liệu đó; không
   có thì cột cuối đổi tên "Thuyết minh tại" và dẫn mục trong chính hồ sơ (A.II.3, B.6). Có thể dùng chung bảng bốn cột của
-  Chương V cho các hạng mục phần mềm, dịch vụ để cả hồ sơ một kiểu bảng.
+  Chương V cho các hạng mục phần mềm, dịch vụ để cả hồ sơ dùng một kiểu bảng.
 - Mô tả chức năng bằng việc người dùng làm và phần mềm trả lại: "Cán bộ nhập từ khóa hoặc chọn lĩnh vực; phần mềm
   trả danh sách quy trình, văn bản pháp lý liên quan." Không mô tả bằng tính từ.
 - Nếu HSMT có quy trình nghiệp vụ (tiếp nhận hồ sơ, sinh văn bản theo mẫu), mô tả quy trình: hiện trạng làm thủ công, các
@@ -16,23 +16,27 @@ chức năng HSMT liệt kê với thuyết minh, nên đi theo đúng danh sác
 
 ## Công nghệ, kiến trúc, triển khai
 
-- Công nghệ, kiến trúc là đề xuất của nhà thầu: viết rõ ràng nhưng chỉ những gì nhà thầu làm được; stack cụ thể (ngôn ngữ, cơ sở
-  dữ liệu, mô hình AI) lấy từ tài liệu kỹ thuật hoặc BA, không có thì viết ở mức thành phần ("máy chủ ứng dụng", "cơ sở dữ liệu
-  quan hệ", "mô hình ngôn ngữ chạy tại máy chủ của Chủ đầu tư") và đánh dấu `[cần xác nhận: công nghệ cụ thể]` ở câu đầu mục; mỗi chỗ khác trong hồ sơ nhắc lại công nghệ ấy có `[cần xác nhận]` ngắn (`writing.md`), như "PostgreSQL 16 [cần xác nhận] mã hoá dữ liệu khi lưu".
+- Công nghệ, kiến trúc là đề xuất của nhà thầu: viết rõ ràng nhưng chỉ những gì nhà thầu làm được; stack cụ thể (ngôn ngữ, cơ
+  sở dữ liệu, mô hình AI) lấy từ tài liệu kỹ thuật hoặc BA, không có thì viết ở mức thành phần ("máy chủ ứng dụng", "cơ sở dữ
+  liệu quan hệ", "mô hình ngôn ngữ chạy tại máy chủ của Chủ đầu tư") và đánh dấu `[cần xác nhận: công nghệ cụ thể]` ở câu đầu
+  mục; mỗi chỗ khác trong hồ sơ nhắc lại công nghệ ấy có `[cần xác nhận]` ngắn (`writing.md`), như "PostgreSQL 16 [cần xác
+  nhận] mã hoá dữ liệu khi lưu".
 - Gói có mua máy chủ thì mô hình triển khai đặt phần mềm lên chính máy chủ đã chào, nêu thông số đã chào; có thiết bị đầu cuối
   (máy tính bảng) thì nêu ứng dụng chạy trên thiết bị đó.
-- Kết nối, đồng bộ, IPv6, xác thực theo đúng yêu cầu HSMT; không thêm kết nối HSMT không nói.
+- Kết nối, đồng bộ, IPv6, xác thực theo đúng yêu cầu HSMT; không thêm kết nối mà HSMT không nói.
 - Tên và phiên bản phần mềm nền (hệ điều hành "Ubuntu 24.04 LTS", cơ sở dữ liệu, máy chủ ứng dụng) mà HSMT, BA không đưa là
-  lựa chọn của nhà thầu: đánh dấu `[cần xác nhận: công nghệ cụ thể]`, kể cả khi catalog ghi có hỗ trợ; `bid-check` nêu tên kèm số
-  phiên bản không có trong HSMT.
-- Tính năng Chương V không đòi (dùng ngoại tuyến, đồng bộ khi mất mạng, thông báo đẩy) không tự hứa; đề xuất thêm thì đánh dấu
-  như cam kết mới.
-- Chi tiết kỹ thuật cụ thể (giao thức, cách lưu mật khẩu, khóa tài khoản, giao diện chạy ở đâu, mã hóa) chỉ viết khi HSMT hay BA
-  nêu; nhà thầu đề xuất thêm thì đánh dấu `[cần xác nhận: đề xuất của nhà thầu]` ở câu đầu mục, và `[cần xác nhận]` ngắn ở mỗi chỗ khác nhắc lại đề xuất ấy. Điều gì báo cáo bảo "nên hỏi
-  đơn vị phát triển" thì trong hồ sơ cũng phải có chỗ đánh dấu.
-- BA đã nêu công nghệ thì giữ nguyên chữ BA dùng. Dù BA nêu hay chưa, không suy thêm cách chạy (mô hình chạy trên CPU hay GPU, Chủ
-  đầu tư lắp thêm phần cứng, "còn khe PCIe cho GPU rời khi cần", phần mềm nào đặt trên ổ nào, số luồng, bản phát hành): mỗi chi tiết thêm là một cam kết BA chưa duyệt, và câu đẩy việc sang
-  Chủ đầu tư (tự lắp, tự mua) là bất lợi cho hồ sơ.
+  lựa chọn của nhà thầu: đánh dấu `[cần xác nhận: công nghệ cụ thể]`, kể cả khi catalog ghi có hỗ trợ; `bid-check` nêu tên
+  kèm số phiên bản không có trong HSMT.
+- Tính năng mà Chương V không đòi (dùng ngoại tuyến, đồng bộ khi mất mạng, thông báo đẩy) thì không tự hứa; đề xuất thêm thì
+  đánh dấu như cam kết mới.
+- Chi tiết kỹ thuật cụ thể (giao thức, cách lưu mật khẩu, khóa tài khoản, giao diện chạy ở đâu, mã hóa) chỉ viết khi HSMT hay
+  BA nêu; nhà thầu đề xuất thêm thì đánh dấu `[cần xác nhận: đề xuất của nhà thầu]` ở câu đầu mục, và `[cần xác nhận]` ngắn ở
+  mỗi chỗ khác nhắc lại đề xuất ấy. Điều gì báo cáo bảo "nên hỏi đơn vị phát triển" thì trong hồ sơ cũng phải có chỗ đánh
+  dấu.
+- BA đã nêu công nghệ thì giữ nguyên chữ BA dùng. Dù BA nêu hay chưa, không suy thêm cách chạy (mô hình chạy trên CPU hay
+  GPU, Chủ đầu tư lắp thêm phần cứng, "còn khe PCIe cho GPU rời khi cần", phần mềm nào đặt trên ổ nào, số luồng, bản phát
+  hành): mỗi chi tiết thêm là một cam kết mà BA chưa duyệt, và câu đẩy việc sang Chủ đầu tư (tự lắp, tự mua) là bất lợi cho
+  hồ sơ.
 
 ## Phi chức năng, tiêu chuẩn, an toàn thông tin, kiểm thử
 

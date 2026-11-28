@@ -1,7 +1,7 @@
 # Dấu hiệu văn AI slop và văn mẫu
 
-Văn AI slop không đến từ một chữ cấm nào. Nó đến từ những thói quen lặp lại: câu nào cũng chốt bằng một câu tóm, đoạn nào
-cũng mở bằng "Hơn nữa", ý nào cũng kể thành bộ ba. Vì vậy một dấu hiệu đơn lẻ chưa phải là lỗi; nó thành lỗi khi lặp
+Văn AI slop không đến từ một chữ cấm nào. Nó đến từ những thói quen lặp lại: đoạn nào cũng chốt bằng một câu tóm, đoạn
+sau lại mở bằng "Hơn nữa", ý nào cũng kể thành bộ ba. Vì vậy một dấu hiệu đơn lẻ chưa phải là lỗi; nó thành lỗi khi lặp
 thành khuôn. Sửa ở đây là viết lại câu để nói ra điều muốn nói. Thay một từ bằng từ đồng nghĩa thì chưa phải là sửa.
 
 Muốn thử một câu thì tự hỏi: nếu nói chuyện này với một người ngồi cạnh, mình có nói ra câu đó không? Các bảng dưới chia
@@ -108,18 +108,18 @@ phút."
 
 ## E. Cấu trúc
 
-Có những bài câu nào cũng ổn mà đọc cả bài vẫn thấy văn mẫu. Lỗi khi đó nằm ở cách dựng bài:
+Có những bài đọc từng câu thì câu nào cũng ổn, mà đọc cả bài vẫn thấy văn mẫu. Lỗi khi đó nằm ở cách dựng bài:
 
 | Dấu hiệu | Sửa |
 |---|---|
-| Mọi phần cùng một khuôn: mở, thân, khối chốt (đoạn in đậm hay đóng khung ở cuối mục), câu dẫn | Mỗi phần mở một kiểu. Khối chốt chỉ khi có kết luận đáng ghim. Áp cho các mục, các đoạn văn xuôi của bài giảng, lời giải thích; không áp cho các mục trong một danh sách, các bước hướng dẫn, bảng, văn bản hành chính |
+| Mọi phần cùng một khuôn: mở, thân, khối chốt (đoạn in đậm hay đóng khung ở cuối mục), câu dẫn | Mỗi phần mở một kiểu. Chỉ đặt khối chốt khi có kết luận đáng ghim. Áp cho các mục, các đoạn văn xuôi của bài giảng, lời giải thích; không áp cho các mục trong một danh sách, các bước hướng dẫn, bảng, văn bản hành chính |
 | Đoạn nào cũng ba câu, dài bằng nhau | Để nhịp tự nhiên |
 | Dãy từ nối cố định đầu đoạn: Trước hết, Bên cạnh đó, Hơn nữa, Ngoài ra, Cuối cùng | Nối bằng từ khoá của đoạn trước; gắn số thứ tự vào danh từ ("Lý do thứ hai…") |
 | Bài nào cũng đủ thực trạng, nguyên nhân, hậu quả, giải pháp, dài bằng nhau | Chỉ viết phần có điều để nói |
 | Để lộ khung xương ("Phần này trả lời câu hỏi thứ hai…") | Gọi câu hỏi bằng nội dung |
 | Mọi gạch đầu dòng mở bằng nhãn in đậm | Viết thành câu, hoặc bỏ nhãn |
 | Đề mục cho phần chỉ có một hai câu | Gộp vào đoạn trên |
-| Toàn bảng và gạch đầu dòng, không có mạch kể | Kể bằng lời trước, bảng để tóm |
+| Toàn bảng và gạch đầu dòng, không có mạch kể | Kể bằng lời trước, bảng để tóm tắt |
 | Ghi chú, email, câu trả lời ngắn mà chia đề mục và in đậm nhãn | Viết liền. Khối nháp, bảng dài nằm trong câu trả lời được có tiêu đề; phần lời quanh nó thì không |
 | Độ sâu đều tăm tắp | Dừng lâu ở chỗ khó, lướt chỗ dễ và nói rõ là lướt: "Cài Docker như bài 03, phần này không nhắc lại. Chỗ cần dừng là volume, vì xoá container thì dữ liệu mất theo." |
 | Đánh số mọi thứ rồi gọi lại bằng số ("điều kiện 2") | Gọi bằng tên. Chỉ đánh số các bước làm theo thứ tự |
