@@ -216,6 +216,12 @@ từng ý, nên câu nghe như văn dịch: "nhận phần trách nhiệm về m
 Hiên", "những chỗ rách vốn quen mắt bỗng trở nên khó làm ngơ". Viết xong mỗi câu bình thì hỏi: cụm này đã gặp trong bài văn,
 trang sách nào chưa? Chưa gặp thì đổi sang cách nói quen, hay nói thẳng bằng lời thường.
 
+Chữ chỉ người trong lời bình phải trỏ về một người duy nhất. "Bạn" là chữ dễ hiểu nhầm nhất: người viết dùng nó để chỉ bạn
+của nhân vật ("một chiếc áo có thể giúp bạn bớt rét", ý là giúp Hiên), nhưng trong bài văn, "bạn" còn là cách gọi người
+đọc, nên người đọc thấy như mình bị gọi tới, hay như có một người thứ ba nào đó. "Mình" cũng không gỡ được, vì nó đọc thành
+chính nhân vật. Cách sửa là gọi tên nhân vật ("giúp Hiên bớt rét") hay dùng chữ chỉ quan hệ rõ ("người bạn nhỏ", "lũ bạn
+cùng xóm"). "Em", "cậu", "cô bé" thì chỉ dùng khi câu trước vừa nhắc đúng một nhân vật.
+
 Văn bình tiếng Việt có một vốn chữ quen để gọi tên tâm hồn và cảm xúc: vẻ hồn nhiên, tâm hồn ngây thơ, trong trẻo, lòng trắc
 ẩn, lòng nhân hậu, niềm xót thương, nỗi buồn man mác, nỗi buồn mơ hồ, khát khao, ước mơ nhỏ bé, kiếp người nhỏ bé; để gọi tên
 cách viết: chất thơ, giọng văn nhẹ nhàng, êm đềm, bút pháp tương phản, những biến thái tinh vi của tâm hồn. Dùng vốn chữ này
