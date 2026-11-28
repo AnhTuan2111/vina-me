@@ -24,6 +24,9 @@ dòng đầu của mục là dòng được in ra khi cập nhật.
   giữa câu khi bài còn viết thường; đếm thêm các cụm sáo ngữ học đường.
 - Thêm đề thử `evals/literary-essay` (tấm lòng của Sơn trong "Gió lạnh đầu mùa") và `evals/social-essay` (bài blog về thói
   quen lướt video ngắn trước khi ngủ).
+- Skill tự soát văn của chính nó theo mục 7.4: khoảng 290 chỗ trong README, `SKILL.md`, `references/` và mẫu bộ nhớ, phần
+  lớn là vế phụ thiếu "mà", từ ghép bị cắt, câu nén, chữ "nó" trỏ hai chỗ. Sửa thêm số câu hỏi của bộ nhớ (bảy, không phải
+  tám) và một tham chiếu sai trong `cohesion.md`.
 
 ## 0.28.0 (27/11/2026)
 
