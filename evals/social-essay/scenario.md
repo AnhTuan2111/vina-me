@@ -47,4 +47,4 @@ cầu, không gắn với người thật nào.
 | Lần thử thất bại | Giữ thật: được 4 hôm thì bỏ vì sợ lỡ tin nhắn nhóm lớp | Kể như đã thành công |
 | Kết bài | Kết bằng điều người viết sẽ thử tiếp, hay câu hỏi còn mở thật cho người đọc | "Hãy cùng nhau…", "Lẽ nào…? Không!", "chung tay", "phiên bản tốt nhất của chính mình" |
 | Khô | Có hình ảnh từ cảnh đời (ánh màn hình trong phòng tối, ngón tay vuốt, chiếc điện thoại ở bàn học), có cảm xúc qua chi tiết | Toàn câu khái quát, không cảnh nào |
-| Giọng | "mình, bạn", kể chuyện như blog | Giọng bài thi, "chúng ta" mở câu, "mỗi người cần" |
+| Giọng | theo cách người dùng tự xưng ("mình"), kể chuyện như blog | Giọng bài thi, "chúng ta" mở câu, "mỗi người cần" |
