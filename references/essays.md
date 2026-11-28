@@ -137,6 +137,9 @@ không có nguồn. Luật nói thật của skill áp đủ ở đây:
   làm gì). Câu chung chung kiểu "giới trẻ ngày nay" thì thay bằng trường hợp có tên.
 - Không bịa nhân vật, không bịa câu nói của người nổi tiếng. Câu danh ngôn không chắc nguyên văn và người nói thì bỏ.
 
+Bài nghị luận xã hội đăng blog cá nhân thì xưng "mình", gọi người đọc là "bạn", kể như đang nói với một người đọc cụ thể;
+xưng "tôi" suốt bài là giọng bài thi, không phải giọng blog. Bài nộp, bài thi thì xưng "tôi" hay không xưng.
+
 Hình ảnh trong bài nghị luận xã hội lấy từ chính cảnh đời đang bàn: chiếc điện thoại sáng trong bóng tối phòng ngủ, mâm cơm
 mỗi người cúi một màn hình. Kết bài không hô hào ("Hãy chung tay", "Lẽ nào ta lại…? Không!"); kết bằng điều người viết sẽ
 làm, hay một câu hỏi còn mở thật mà bài đã chuẩn bị cho người đọc tự trả lời.
